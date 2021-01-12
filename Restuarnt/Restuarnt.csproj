@@ -628,7 +628,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Restuarnt_TemporaryKey.pfx" />
     <None Include="RPT\Exstra_Report\DataSet1_Order.xsc">
       <DependentUpon>DataSet1_Order.xsd</DependentUpon>
     </None>
