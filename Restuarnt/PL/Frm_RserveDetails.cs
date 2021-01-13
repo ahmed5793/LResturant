@@ -71,7 +71,7 @@ namespace Restuarnt.PL
             {
               
                 r.AddReserveDetails(Convert.ToInt32(comboBox1.SelectedValue), txt_description.Text,
-                    Convert.ToDecimal(txt_amont.Text), dateTimePicker1.Value);
+                    Convert.ToDecimal(txt_amont.Text), dateTimePicker1.Value,Program.Id_USer);
                 MessageBox.Show("تم التسجيل بنجاح", "عمليه التسجيل");
                 dataGridView1.DataSource = r.SelectReserveDetails();
                 Clear();

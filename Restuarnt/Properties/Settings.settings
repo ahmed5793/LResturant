@@ -11,5 +11,8 @@
     <Setting Name="OrderType" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="ProudectKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">NO</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -15,12 +15,12 @@ namespace Restuarnt.BL
     {
         
 
-            internal DataTable Logins(string id, string pass)
+            internal DataTable Logins(string UserName, string pass)
             {
            DataAccessLayer da = new DataAccessLayer();
                 SqlParameter[] param = new SqlParameter[2];
-                param[0] = new SqlParameter("@ID", SqlDbType.NVarChar, 50);
-                param[0].Value = id;
+                param[0] = new SqlParameter("@UserName", SqlDbType.NVarChar, 50);
+                param[0].Value = UserName;
 
                 param[1] = new SqlParameter("@PASS", SqlDbType.VarChar, 50);
                 param[1].Value = pass;
@@ -145,20 +145,30 @@ namespace Restuarnt.BL
                 return dt;
 
             }
+        internal DataTable vidldateUser(string id)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id", SqlDbType.NVarChar, 50);
+            param[0].Value = id;
 
-            internal DataTable vidldateUser(string id)
-            {
-                DataAccessLayer da = new DataAccessLayer();
-                SqlParameter[] param = new SqlParameter[1];
-                param[0] = new SqlParameter("@id", SqlDbType.NVarChar, 50);
-                param[0].Value = id;
+            da.open();
+            DataTable dt = new DataTable();
+            dt = da.selected("vidldateUser", param);
 
-                da.open();
-                DataTable dt = new DataTable();
-                dt = da.selected("vidldateUser", param);
+            return dt;
 
-                return dt;
-
+        }
+        internal DataTable Select_UserPermession(int Id_User)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Id_User", SqlDbType.Int);
+            param[0].Value = Id_User;
+            da.open();
+            dt = da.selected("Select_UserPermession", param);
+            return dt;
             }
         internal void Add_UserPermession(int Id_User , int Add_Category , int Add_Item ,int Add_Table , int add_Delivery,
             int Add_Captin , int management_Oreder , int Order ,int Move_Product , int Report_Captin , int Report_Delivery)
