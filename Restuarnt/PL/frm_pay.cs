@@ -90,7 +90,7 @@ namespace Restuarnt.PL
 
                                         dt = o.AddOrder(Convert.ToInt32(FOrder.getmain.cmb_customer.EditValue), Convert.ToDateTime(FOrder.getmain.lable_date.Text), Convert.ToDecimal(FOrder.getmain.txt_delivery.Text), Convert.ToDecimal(FOrder.getmain.txt_invo.Text),
                                Convert.ToDecimal(FOrder.getmain.txt_invo.Text), 0, Convert.ToDecimal(FOrder.getmain.txt_discount.Text)
-                               , " Take away", Program.Id_USer, "true");
+                               , "Take away", Program.Id_USer, "true");
                                         FOrder.getmain.Lable_Num.Text = dt.Rows[0][0].ToString();
 
                                         for (int i = 0; i < FOrder.getmain.gridView2.RowCount; i++)
@@ -136,7 +136,7 @@ namespace Restuarnt.PL
 
                                     dt = o.AddOrder(Convert.ToInt32(FOrder.getmain.txt_cust.Text), Convert.ToDateTime(FOrder.getmain.lable_date.Text), Convert.ToDecimal(FOrder.getmain.txt_delivery.Text), Convert.ToDecimal(FOrder.getmain.txt_invo.Text),
                                    Convert.ToDecimal(FOrder.getmain.txt_invo.Text), 0,
-                                   Convert.ToDecimal(FOrder.getmain.txt_discount.Text), " Take away", Program.Id_USer, "true");
+                                   Convert.ToDecimal(FOrder.getmain.txt_discount.Text), "Take away", Program.Id_USer, "true");
                                     FOrder.getmain.Lable_Num.Text = dt.Rows[0][0].ToString();
 
                                     for (int i = 0; i < FOrder.getmain.gridView2.RowCount; i++)

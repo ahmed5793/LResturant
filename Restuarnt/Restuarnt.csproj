@@ -731,6 +731,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icons-Land-Points-Of-Interest-Restaurant-Blue-2.ico" />
+    <None Include="Resources\lookup&amp;reference_32x32.png" />
     <None Include="Resources\projectfile_16x16.png" />
     <None Include="Resources\projectfile_32x32.png" />
     <None Include="Resources\usergroup_16x16.png" />
@@ -758,6 +759,7 @@
     <None Include="Resources\bouser_16x16.png" />
     <None Include="Resources\exportfile_32x32.png" />
     <None Include="Resources\exportfile_16x16.png" />
+    <None Include="Resources\find_32x32.png" />
     <Content Include="Resources\image-not-found-scaled-1150x6471.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
