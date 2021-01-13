@@ -33,10 +33,10 @@ namespace Restuarnt.BL
             return dt;
         }
 
-        internal void AddReserveDetails(int IdReserve, string decription, decimal amount, DateTime date)
+        internal void AddReserveDetails(int IdReserve, string decription, decimal amount, DateTime date,int Id_USer)
         {
             DataAccessLayer da = new DataAccessLayer();
-            SqlParameter[] param = new SqlParameter[4];
+            SqlParameter[] param = new SqlParameter[5];
             da.open();
             param[0] = new SqlParameter("@idReserve", SqlDbType.Int);
             param[0].Value = IdReserve;
@@ -46,7 +46,8 @@ namespace Restuarnt.BL
             param[2].Value = amount;
             param[3] = new SqlParameter("@date", SqlDbType.DateTime);
             param[3].Value = date;
-
+            param[4] = new SqlParameter("@Id_User", SqlDbType.Int);
+            param[4].Value = Id_USer;
             da.excutequery("AddReserveDetails", param);
             da.close();
         }
