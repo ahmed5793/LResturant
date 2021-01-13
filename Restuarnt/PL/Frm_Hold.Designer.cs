@@ -52,6 +52,7 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.عرض = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.controlNavigator1 = new DevExpress.XtraEditors.ControlNavigator();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -94,7 +95,7 @@
             this.rdb_takeaway.AutoSize = true;
             this.rdb_takeaway.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdb_takeaway.Image = ((System.Drawing.Image)(resources.GetObject("rdb_takeaway.Image")));
-            this.rdb_takeaway.Location = new System.Drawing.Point(19, 26);
+            this.rdb_takeaway.Location = new System.Drawing.Point(19, 21);
             this.rdb_takeaway.Name = "rdb_takeaway";
             this.rdb_takeaway.Size = new System.Drawing.Size(114, 131);
             this.rdb_takeaway.TabIndex = 84;
@@ -142,7 +143,7 @@
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.AppearanceHovered.Options.UseTextOptions = true;
             this.labelControl1.AppearanceHovered.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl1.Location = new System.Drawing.Point(197, 4);
+            this.labelControl1.Location = new System.Drawing.Point(260, -3);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(435, 28);
             this.labelControl1.TabIndex = 1;
@@ -351,17 +352,30 @@
             this.simpleButton1.TabIndex = 169;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
+            // controlNavigator1
+            // 
+            this.controlNavigator1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.controlNavigator1.Location = new System.Drawing.Point(40, 8);
+            this.controlNavigator1.Name = "controlNavigator1";
+            this.controlNavigator1.NavigatableControl = this.gridControl2;
+            this.controlNavigator1.Size = new System.Drawing.Size(287, 19);
+            this.controlNavigator1.TabIndex = 88;
+            this.controlNavigator1.Text = "controlNavigator1";
+            this.controlNavigator1.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
+            // 
             // Frm_Hold
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(762, 530);
             this.ControlBox = false;
+            this.Controls.Add(this.controlNavigator1);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.groupControl1);
             this.Name = "Frm_Hold";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Hold";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_Hold_FormClosed);
             this.Load += new System.EventHandler(this.Frm_Hold_Load);
@@ -397,5 +411,6 @@
         public DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         public DevExpress.XtraGrid.Columns.GridColumn Statues;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.ControlNavigator controlNavigator1;
     }
 }

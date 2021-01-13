@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FOrder));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ID_Dep = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -372,20 +372,20 @@
             // repositoryItemButtonEdit3
             // 
             this.repositoryItemButtonEdit3.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.repositoryItemButtonEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit3.Name = "repositoryItemButtonEdit3";
             this.repositoryItemButtonEdit3.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // grb_customer
             // 
+            this.grb_customer.Controls.Add(this.textEdit1);
             this.grb_customer.Controls.Add(this.label3);
             this.grb_customer.Controls.Add(this.label2);
             this.grb_customer.Controls.Add(this.label1);
             this.grb_customer.Controls.Add(this.txt_address);
             this.grb_customer.Controls.Add(this.txt_phones);
-            this.grb_customer.Controls.Add(this.textEdit1);
             this.grb_customer.Controls.Add(this.rdb_clientsave);
             this.grb_customer.Controls.Add(this.rdb_newclient);
             this.grb_customer.Controls.Add(this.cmb_customer);
@@ -416,7 +416,7 @@
             this.label2.BackColor = System.Drawing.Color.LightSlateGray;
             this.label2.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(442, 79);
+            this.label2.Location = new System.Drawing.Point(440, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 23);
             this.label2.TabIndex = 100;
@@ -428,7 +428,7 @@
             this.label1.BackColor = System.Drawing.Color.LightSlateGray;
             this.label1.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(439, 31);
+            this.label1.Location = new System.Drawing.Point(440, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 23);
             this.label1.TabIndex = 82;
@@ -437,7 +437,7 @@
             // 
             // txt_address
             // 
-            this.txt_address.Location = new System.Drawing.Point(328, 105);
+            this.txt_address.Location = new System.Drawing.Point(335, 112);
             this.txt_address.Name = "txt_address";
             this.txt_address.Size = new System.Drawing.Size(255, 20);
             this.txt_address.TabIndex = 99;
@@ -451,7 +451,7 @@
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(327, 57);
+            this.textEdit1.Location = new System.Drawing.Point(335, 61);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(254, 20);
             this.textEdit1.TabIndex = 97;
@@ -484,7 +484,7 @@
             // 
             // cmb_customer
             // 
-            this.cmb_customer.Location = new System.Drawing.Point(327, 57);
+            this.cmb_customer.Location = new System.Drawing.Point(327, 61);
             this.cmb_customer.Name = "cmb_customer";
             this.cmb_customer.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.cmb_customer.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -635,14 +635,13 @@
             // 
             // Lable_Num
             // 
-            this.Lable_Num.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Lable_Num.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Lable_Num.AutoSize = true;
             this.Lable_Num.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lable_Num.Location = new System.Drawing.Point(721, 6);
             this.Lable_Num.Name = "Lable_Num";
-            this.Lable_Num.Size = new System.Drawing.Size(111, 16);
+            this.Lable_Num.Size = new System.Drawing.Size(0, 16);
             this.Lable_Num.TabIndex = 83;
-            this.Lable_Num.Text = "lable_numOrder";
             // 
             // lable_date
             // 
