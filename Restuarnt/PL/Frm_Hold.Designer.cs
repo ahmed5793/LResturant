@@ -143,7 +143,7 @@
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.AppearanceHovered.Options.UseTextOptions = true;
             this.labelControl1.AppearanceHovered.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl1.Location = new System.Drawing.Point(260, -3);
+            this.labelControl1.Location = new System.Drawing.Point(243, -3);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(435, 28);
             this.labelControl1.TabIndex = 1;
@@ -355,13 +355,13 @@
             // controlNavigator1
             // 
             this.controlNavigator1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.controlNavigator1.Location = new System.Drawing.Point(40, 8);
+            this.controlNavigator1.Location = new System.Drawing.Point(12, 12);
             this.controlNavigator1.Name = "controlNavigator1";
             this.controlNavigator1.NavigatableControl = this.gridControl2;
-            this.controlNavigator1.Size = new System.Drawing.Size(287, 19);
+            this.controlNavigator1.Size = new System.Drawing.Size(225, 19);
             this.controlNavigator1.TabIndex = 88;
             this.controlNavigator1.Text = "controlNavigator1";
-            this.controlNavigator1.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
+            this.controlNavigator1.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.End;
             // 
             // Frm_Hold
             // 

@@ -643,7 +643,6 @@ namespace Restuarnt.PL
             rdb_sala.Checked = true;
             txt_delivery.Enabled = false;
             rdb_takeaway.Enabled = true;
-            cmb_Table.Enabled = true;
             rdb_sala.Enabled = true;
             rdb_delivery.Enabled = true;
             timer1.Enabled = true;
@@ -651,7 +650,6 @@ namespace Restuarnt.PL
             textEdit1.Text = "";
             txt_phones.Text = "";
             txt_discount.Text = "0";
-            gridControl2.Enabled = true;
             flowLayoutPanel1.Enabled = true;
             flowLayoutPanel2.Enabled = true;
             dt2.Clear();
@@ -2676,7 +2674,7 @@ namespace Restuarnt.PL
 
 
 
-                        clear2();
+                       // clear2();
                         dt.Clear();
                         dt = o.SELECTOrderRentALLORDER();
 
