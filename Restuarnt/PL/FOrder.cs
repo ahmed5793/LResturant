@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media.Imaging;
+using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using Restuarnt.BL;
 using Restuarnt.RPT;
@@ -58,7 +59,7 @@ namespace Restuarnt.PL
             {
                 farm = this;
             }
-            textEdit1.Text = "عميل نقدى";
+           
             texT.Hide();
             SelectdataTable();
 
@@ -96,7 +97,7 @@ namespace Restuarnt.PL
             textEdit1.Text = "";
             txt_phones.Text = "";
             txt_delivery.Enabled = false;
-            btn_update.Hide();
+           // btn_update.Hide();
             textEdit1.Text = "";
 
         }
@@ -632,72 +633,37 @@ namespace Restuarnt.PL
         }
         public void clear2()
         {
-            cmb_stuff.Enabled = false;
-
+            
             grb_customer.Hide();
+            grb_delivry.Hide();
             grb_customer.Enabled = true;
             grb_sala.Enabled = true;
             grb_delivry.Enabled = true;
             grb_sala.Show();
-            cmb_stuff.Enabled = true;
-            textEdit1.Text = "نقدى";
             rdb_sala.Checked = true;
-            textEdit1.Show();
-            cmb_customer.Hide();
-            textEdit1.Enabled = true;
-           // btn_update.Enabled = true;
-            rdb_clientsave.Enabled = true;
-            rdb_newclient.Enabled = true;
-            rdb_clientsave.Checked = true;
+            txt_delivery.Enabled = false;
+            rdb_takeaway.Enabled = true;
+            cmb_Table.Enabled = true;
+            rdb_sala.Enabled = true;
+            rdb_delivery.Enabled = true;
+            timer1.Enabled = true;
+            txt_address.Text = "";
+            textEdit1.Text = "";
+            txt_phones.Text = "";
             txt_discount.Text = "0";
             gridControl2.Enabled = true;
             flowLayoutPanel1.Enabled = true;
             flowLayoutPanel2.Enabled = true;
-            //btn_hold.Show();
-            //btn_hold.Enabled = true;
-            //txt_discount.Enabled = true;
-           // btn_update.Hide();
-
             dt2.Clear();
-           
-         
             txt_delivery.Text = "0";
-
-            //txt_pay.Text = "0";
-            //txt_mark.Text = "0";
             txt_invo.Text = "0";
-            
             Lable_Num.Text = "";
 
 
 
             
 
-            
-
-
-            txt_delivery.Enabled = false;
-            
-
-
-            rdb_takeaway.Enabled = true;
-            cmb_delivery.Enabled = true;
-            cmb_Table.Enabled = true;
-            cmb_customer.Enabled = true;
-
-
-            rdb_sala.Enabled = true;
-
-            rdb_delivery.Enabled = true;
-            timer1.Enabled = true;
-            txt_address.Text = "";
-
-
-
-
-            textEdit1.Text = "";
-            txt_phones.Text = "";
-
+           
         }
 
 
@@ -1050,7 +1016,13 @@ namespace Restuarnt.PL
                     //return;
 
                     row[5] = Convert.ToInt32(row[5]) + quantity;
+                    totalProudect();
+                    totalInvoice();
+                    TOTALFINALYDELIVERY();
+                    TOTALFINALYDISCOUNT();
+
                     Console.Beep();
+
                     return;
 
                 }
@@ -1515,9 +1487,101 @@ namespace Restuarnt.PL
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            frm_pay fp = new frm_pay();
-            fp.txt_totalPay.Text = txt_invo.Text;
-            fp.ShowDialog();
+            if (gridView2.RowCount > 0)
+            {
+
+
+                frm_pay fp = new frm_pay();
+                fp.txt_totalPay.Text = txt_invo.Text;
+                if (rdb_sala.Checked == true)
+                {
+                    if (cmb_Table.Text == "")
+                    {
+                        XtraMessageBox.Show("من فضلك قم بتسجيل رقم الطاولة ", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                       
+                        return;
+                    }
+
+                    if (cmb_stuff.Text == "")
+                    {
+                        XtraMessageBox.Show("من فضلك قم بااختيار اسم الكابتن", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                      
+                        return;
+                    }
+
+                }
+                else if (rdb_takeaway.Checked == true)
+                {
+
+                    if (rdb_clientsave.Checked == true)
+                    {
+                        if (cmb_customer.Text == "" && txt_phones.Text == "" && txt_address.Text == "")
+                        {
+                            XtraMessageBox.Show("من فضلك قم بكتابه بيانات العميل", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
+                            return;
+                        }
+
+
+
+                    }
+                    else
+                    {
+                        if (textEdit1.Text == "" && txt_phones.Text == "" && txt_address.Text == "")
+                        {
+                            XtraMessageBox.Show("من فضلك قم بكتابه بيانات العميل", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
+                            return;
+                        }
+                    }
+                }
+                if (rdb_delivery.Checked == true)
+                {
+                    if (cmb_delivery.Text == "")
+                    {
+
+                        XtraMessageBox.Show("من فضلك قم بتسجيل اسم الطيار", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                       
+                        return;
+                    }
+
+                     if (rdb_clientsave.Checked==true)
+                        {
+                        if (cmb_customer.Text == "" && txt_phones.Text == "" && txt_address.Text == "")
+                        {
+                            XtraMessageBox.Show("من فضلك قم بكتابه بيانات العميل", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
+                            return;
+                        }
+                      
+
+                       
+                     }
+                    else
+                    {
+                         if (textEdit1.Text == "" && txt_phones.Text == "" && txt_address.Text == "")
+                        {
+                            XtraMessageBox.Show("من فضلك قم بكتابه بيانات العميل", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
+                            return;
+                        }
+                    }
+                }
+
+                fp.ShowDialog();
+            }
+            else
+            {
+
+
+                MessageBox.Show("من فضلك فم بااختيار اصناف الفاتورة اولا");
+            }
         }
 
         private void rdb_sala_CheckedChanged_1(object sender, EventArgs e)
@@ -1575,9 +1639,10 @@ namespace Restuarnt.PL
 
             if (rdb_delivery.Checked == true)
             {
-               
 
-               
+                grb_customer.Show();
+                grb_delivry.Show();
+                rdb_clientsave.Checked = true;
                 cmb_customer.Properties.DataSource = cu.SelectCompoCustomer();
                 cmb_customer.Properties.DisplayMember = "Client_Name";
                 cmb_customer.Properties.ValueMember = "Client_ID";
@@ -1586,19 +1651,19 @@ namespace Restuarnt.PL
                 textEdit1.Text = "";
                 txt_phones.Text = "";
                 txt_delivery.Enabled = true;
-                grb_delivry.Show();
+                
 
 
                 txt_address.Text = "";
                 textEdit1.Hide();
 
-                rdb_clientsave.Checked = true;
+      
 
 
                 InformationClient();
 
 
-                grb_customer.Show();
+               
 
                 grb_sala.Hide();
 
@@ -2049,7 +2114,7 @@ namespace Restuarnt.PL
                 flowLayoutPanel1.Enabled = true;
                 flowLayoutPanel2.Enabled = true;
                 txt_discount.Enabled = true;
-
+               
 
                 if (fh.gridView2.GetFocusedRowCellValue("نوع الطلب").ToString() == "Delivery")
                 {
@@ -2077,7 +2142,7 @@ namespace Restuarnt.PL
                     Dep.Visible = false;
                     ID_Items.Visible = false;
 
-                    
+                   
                     dt5.Clear();
                     dt5 = o.SELECTOrder(Convert.ToInt32(fh.gridView2.GetFocusedRowCellValue("رقم الفاتورة")));
 

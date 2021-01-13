@@ -76,6 +76,7 @@ namespace Restuarnt.PL
             if (e.Column.Caption == "عرض")
 
             {
+          
 
                
                 this.Close();
