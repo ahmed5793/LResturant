@@ -11,6 +11,7 @@ using DevExpress.XtraBars;
 using Restuarnt.PL;
 using Restuarnt.DAL;
 using DevExpress.XtraEditors.Controls;
+using DevExpress.ClipboardSource.SpreadsheetML;
 
 namespace Restuarnt.PL
 {
@@ -76,7 +77,7 @@ namespace Restuarnt.PL
 
         private void Frm_Main_Load(object sender, EventArgs e)
         {
-       //     barStaticItem1.Caption = Program.salesman;
+            barStaticItem1.Caption = Program.salesman;
         }
      
         private void timer1_Tick(object sender, EventArgs e)

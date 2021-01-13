@@ -149,7 +149,7 @@
             this.Ribon_Kashf7sabCustomer = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Ribon_DebitCustomer = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.أ = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.Sales = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Ribon_AddSuppliers = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Ribon_AddSupplierMoney = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Ribon_PaySuppliers = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -286,7 +286,7 @@
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.Ribon_Customer,
-            this.أ,
+            this.Sales,
             this.Ribon_MasrofatManagement,
             this.ribbonPage1});
             this.ribbon.Size = new System.Drawing.Size(1008, 168);
@@ -444,6 +444,8 @@
             // 
             this.Btn_AddDelivery.Caption = "إضافة طيار";
             this.Btn_AddDelivery.Id = 11;
+            this.Btn_AddDelivery.ImageOptions.Image = global::Restuarnt.Properties.Resources.employee_16x16;
+            this.Btn_AddDelivery.ImageOptions.LargeImage = global::Restuarnt.Properties.Resources.employee_32x32;
             this.Btn_AddDelivery.ItemAppearance.Hovered.BackColor = System.Drawing.Color.DarkGray;
             this.Btn_AddDelivery.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
             this.Btn_AddDelivery.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Black;
@@ -474,6 +476,8 @@
             // 
             this.Btn_AddCaptin.Caption = "إضافة كابتن";
             this.Btn_AddCaptin.Id = 13;
+            this.Btn_AddCaptin.ImageOptions.Image = global::Restuarnt.Properties.Resources.user_16x16;
+            this.Btn_AddCaptin.ImageOptions.LargeImage = global::Restuarnt.Properties.Resources.user_32x32;
             this.Btn_AddCaptin.ItemAppearance.Hovered.BackColor = System.Drawing.Color.DarkGray;
             this.Btn_AddCaptin.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
             this.Btn_AddCaptin.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Black;
@@ -504,6 +508,8 @@
             // 
             this.Btn_AddSuppliers.Caption = "فاتورة مبيعات";
             this.Btn_AddSuppliers.Id = 14;
+            this.Btn_AddSuppliers.ImageOptions.Image = global::Restuarnt.Properties.Resources.financial_16x16;
+            this.Btn_AddSuppliers.ImageOptions.LargeImage = global::Restuarnt.Properties.Resources.financial_32x32;
             this.Btn_AddSuppliers.ItemAppearance.Hovered.BackColor = System.Drawing.Color.DarkGray;
             this.Btn_AddSuppliers.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
             this.Btn_AddSuppliers.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Black;
@@ -534,6 +540,8 @@
             // 
             this.Btn_OrderManagement.Caption = "إدارة المبيعات";
             this.Btn_OrderManagement.Id = 15;
+            this.Btn_OrderManagement.ImageOptions.Image = global::Restuarnt.Properties.Resources.boreport_16x16;
+            this.Btn_OrderManagement.ImageOptions.LargeImage = global::Restuarnt.Properties.Resources.boreport_32x32;
             this.Btn_OrderManagement.ItemAppearance.Hovered.BackColor = System.Drawing.Color.DarkGray;
             this.Btn_OrderManagement.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
             this.Btn_OrderManagement.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Black;
@@ -564,6 +572,8 @@
             // 
             this.Btn_MoveItems.Caption = "حركة الاصناف";
             this.Btn_MoveItems.Id = 16;
+            this.Btn_MoveItems.ImageOptions.Image = global::Restuarnt.Properties.Resources.version_16x16;
+            this.Btn_MoveItems.ImageOptions.LargeImage = global::Restuarnt.Properties.Resources.version_32x32;
             this.Btn_MoveItems.ItemAppearance.Hovered.BackColor = System.Drawing.Color.DarkGray;
             this.Btn_MoveItems.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
             this.Btn_MoveItems.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Black;
@@ -1526,6 +1536,8 @@
             // 
             this.Btn_settingOrder.Caption = "إعدادات الفاتورة";
             this.Btn_settingOrder.Id = 89;
+            this.Btn_settingOrder.ImageOptions.Image = global::Restuarnt.Properties.Resources.pagesetup_16x16;
+            this.Btn_settingOrder.ImageOptions.LargeImage = global::Restuarnt.Properties.Resources.pagesetup_32x32;
             this.Btn_settingOrder.ItemAppearance.Hovered.BackColor = System.Drawing.Color.DarkGray;
             this.Btn_settingOrder.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
             this.Btn_settingOrder.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Black;
@@ -1562,6 +1574,8 @@
             // 
             this.Btn_AddUser.Caption = "إضافة مستخدم جديد";
             this.Btn_AddUser.Id = 91;
+            this.Btn_AddUser.ImageOptions.Image = global::Restuarnt.Properties.Resources.bouser_16x16;
+            this.Btn_AddUser.ImageOptions.LargeImage = global::Restuarnt.Properties.Resources.bouser_32x32;
             this.Btn_AddUser.ItemAppearance.Hovered.BackColor = System.Drawing.Color.DarkGray;
             this.Btn_AddUser.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
             this.Btn_AddUser.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Black;
@@ -1592,6 +1606,8 @@
             // 
             this.Btn_UserPermession.Caption = "صلاحية المستخدمين";
             this.Btn_UserPermession.Id = 92;
+            this.Btn_UserPermession.ImageOptions.Image = global::Restuarnt.Properties.Resources.usergroup_16x16;
+            this.Btn_UserPermession.ImageOptions.LargeImage = global::Restuarnt.Properties.Resources.usergroup_32x32;
             this.Btn_UserPermession.ItemAppearance.Hovered.BackColor = System.Drawing.Color.DarkGray;
             this.Btn_UserPermession.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
             this.Btn_UserPermession.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Black;
@@ -1621,6 +1637,8 @@
             // 
             this.btnBackUp.Caption = "إنشاء نسخه إحتياطية";
             this.btnBackUp.Id = 93;
+            this.btnBackUp.ImageOptions.Image = global::Restuarnt.Properties.Resources.exportfile_16x16;
+            this.btnBackUp.ImageOptions.LargeImage = global::Restuarnt.Properties.Resources.exportfile_32x32;
             this.btnBackUp.ItemAppearance.Hovered.BackColor = System.Drawing.Color.DarkGray;
             this.btnBackUp.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
             this.btnBackUp.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Black;
@@ -1651,6 +1669,8 @@
             // 
             this.BtnRestore.Caption = "إسترجاع نسخه احتياطية";
             this.BtnRestore.Id = 94;
+            this.BtnRestore.ImageOptions.Image = global::Restuarnt.Properties.Resources.projectfile_16x16;
+            this.BtnRestore.ImageOptions.LargeImage = global::Restuarnt.Properties.Resources.projectfile_32x32;
             this.BtnRestore.ItemAppearance.Hovered.BackColor = System.Drawing.Color.DarkGray;
             this.BtnRestore.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
             this.BtnRestore.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Black;
@@ -1734,23 +1754,23 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.Btn_settingOrder);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
-            // أ
+            // Sales
             // 
-            this.أ.Appearance.BackColor = System.Drawing.Color.White;
-            this.أ.Appearance.BackColor2 = System.Drawing.Color.White;
-            this.أ.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.أ.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 11.25F, System.Drawing.FontStyle.Bold);
-            this.أ.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.أ.Appearance.Options.UseBackColor = true;
-            this.أ.Appearance.Options.UseBorderColor = true;
-            this.أ.Appearance.Options.UseFont = true;
-            this.أ.Appearance.Options.UseForeColor = true;
-            this.أ.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.Sales.Appearance.BackColor = System.Drawing.Color.White;
+            this.Sales.Appearance.BackColor2 = System.Drawing.Color.White;
+            this.Sales.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Sales.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 11.25F, System.Drawing.FontStyle.Bold);
+            this.Sales.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.Sales.Appearance.Options.UseBackColor = true;
+            this.Sales.Appearance.Options.UseBorderColor = true;
+            this.Sales.Appearance.Options.UseFont = true;
+            this.Sales.Appearance.Options.UseForeColor = true;
+            this.Sales.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.Ribon_AddSuppliers,
             this.Ribon_AddSupplierMoney,
             this.Ribon_PaySuppliers});
-            this.أ.Name = "أ";
-            this.أ.Text = "المبيعات";
+            this.Sales.Name = "Sales";
+            this.Sales.Text = "المبيعات";
             // 
             // Ribon_AddSuppliers
             // 
@@ -2492,7 +2512,7 @@
         public DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
         public DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         public DevExpress.XtraBars.Ribbon.RibbonPage Ribon_Customer;
-        public DevExpress.XtraBars.Ribbon.RibbonPage أ;
+        public DevExpress.XtraBars.Ribbon.RibbonPage Sales;
         public DevExpress.XtraBars.Ribbon.RibbonPage Ribon_MasrofatManagement;
         public DevExpress.XtraBars.Ribbon.RibbonPageGroup Ribon_Masrofat;
         public DevExpress.XtraBars.BarButtonItem Btn_addProduct;

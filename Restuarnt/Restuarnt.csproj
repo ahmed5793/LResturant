@@ -149,6 +149,9 @@
     <Reference Include="DevExpress.XtraTreeMap.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraVerticalGrid.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -214,6 +217,12 @@
     <Compile Include="PL\Frm_Hold.Designer.cs">
       <DependentUpon>Frm_Hold.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_LoginMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_LoginMain.designer.cs">
+      <DependentUpon>Frm_LoginMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_MainNew.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +252,12 @@
     </Compile>
     <Compile Include="PL\frm_ReportStuff.Designer.cs">
       <DependentUpon>frm_ReportStuff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\frm_SerielNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frm_SerielNumber.designer.cs">
+      <DependentUpon>frm_SerielNumber.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_Setting.cs">
       <SubType>Form</SubType>
@@ -512,6 +527,9 @@
     <EmbeddedResource Include="PL\Frm_Hold.resx">
       <DependentUpon>Frm_Hold.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_LoginMain.resx">
+      <DependentUpon>Frm_LoginMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_MainNew.resx">
       <DependentUpon>Frm_MainNew.cs</DependentUpon>
     </EmbeddedResource>
@@ -526,6 +544,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\frm_ReportStuff.resx">
       <DependentUpon>frm_ReportStuff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\frm_SerielNumber.resx">
+      <DependentUpon>frm_SerielNumber.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Setting.resx">
       <DependentUpon>Frm_Setting.cs</DependentUpon>
@@ -713,6 +734,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icons-Land-Points-Of-Interest-Restaurant-Blue-2.ico" />
+    <None Include="Resources\projectfile_16x16.png" />
+    <None Include="Resources\projectfile_32x32.png" />
+    <None Include="Resources\usergroup_16x16.png" />
+    <None Include="Resources\usergroup_32x32.png" />
+    <None Include="Resources\pagesetup_16x16.png" />
+    <None Include="Resources\pagesetup_32x32.png" />
+    <None Include="Resources\user_16x16.png" />
+    <None Include="Resources\user_32x32.png" />
+    <None Include="Resources\version_16x16.png" />
+    <None Include="Resources\version_32x32.png" />
     <None Include="Resources\restaurant-table-icon-9.png" />
     <None Include="Resources\restaurant-table-icon-9.jpg" />
     <None Include="Resources\delivery2.jpg" />
@@ -720,6 +751,16 @@
     <None Include="Resources\3081371.png" />
     <None Include="Resources\delivery21.jpg" />
     <None Include="Resources\30813711.png" />
+    <None Include="Resources\boreport_32x32.png" />
+    <None Include="Resources\boreport_16x16.png" />
+    <None Include="Resources\financial_32x32.png" />
+    <None Include="Resources\financial_16x16.png" />
+    <None Include="Resources\employee_32x32.png" />
+    <None Include="Resources\employee_16x16.png" />
+    <None Include="Resources\bouser_32x32.png" />
+    <None Include="Resources\bouser_16x16.png" />
+    <None Include="Resources\exportfile_32x32.png" />
+    <None Include="Resources\exportfile_16x16.png" />
     <Content Include="Resources\image-not-found-scaled-1150x6471.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

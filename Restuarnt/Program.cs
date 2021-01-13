@@ -14,6 +14,7 @@ namespace Restuarnt
         /// </summary>
         /// 
         internal static string salesman;
+        internal static int Id_USer;
         [STAThread]
        
         static void Main()
