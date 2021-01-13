@@ -13,12 +13,13 @@ namespace Restuarnt.BL
 {
     class Order
     {
-        internal DataTable AddOrder( int IdClient, DateTime Date, decimal deliveryService ,decimal total, decimal pay, decimal rent,decimal discont,string Statues)
+        internal DataTable AddOrder( int IdClient, DateTime Date, decimal deliveryService ,decimal total, decimal pay,
+            decimal rent,decimal discont,string Statues,int Id_User , string Show)
         {
             DataTable dt = new DataTable();
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[8];
+            SqlParameter[] param = new SqlParameter[10];
 
 
 
@@ -44,8 +45,11 @@ namespace Restuarnt.BL
             param[7] = new SqlParameter("@Statues", SqlDbType.NVarChar,50);
             param[7].Value = Statues;
 
-
-          dt=  da.selected("AddOrder", param);
+            param[8] = new SqlParameter("@USer_Id", SqlDbType.Int);
+            param[8].Value = Id_User;
+            param[9] = new SqlParameter("@Show", SqlDbType.NVarChar, 50);
+            param[9].Value = Show;
+            dt =  da.selected("AddOrder", param);
             da.close();
             return dt;
 
