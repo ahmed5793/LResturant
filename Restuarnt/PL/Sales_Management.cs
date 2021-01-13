@@ -29,9 +29,9 @@ namespace Restuarnt.PL
             try
             {
 
-            cmb_Users1.DataSource = l.SelectUsers();
-            cmb_Users1.DisplayMember = "اسم المستخدم";
-            cmb_Users1.ValueMember = "اسم المستخدم";
+            //cmb_Users1.DataSource = l.SelectUsers();
+            //cmb_Users1.DisplayMember = "اسم المستخدم";
+            //cmb_Users1.ValueMember = "اسم المستخدم";
 
             }
             catch (Exception ex)

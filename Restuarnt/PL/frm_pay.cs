@@ -89,7 +89,8 @@ namespace Restuarnt.PL
                                         cu.UpdateCustomer(Convert.ToInt32(FOrder.getmain.cmb_customer.EditValue), FOrder.getmain.txt_address.Text, FOrder.getmain.txt_phones.Text);
 
                                         dt = o.AddOrder(Convert.ToInt32(FOrder.getmain.cmb_customer.EditValue), Convert.ToDateTime(FOrder.getmain.lable_date.Text), Convert.ToDecimal(FOrder.getmain.txt_delivery.Text), Convert.ToDecimal(FOrder.getmain.txt_invo.Text),
-                                     Convert.ToDecimal(FOrder.getmain.txt_invo.Text), 0, Convert.ToDecimal(FOrder.getmain.txt_discount.Text), " Take away");
+                               Convert.ToDecimal(FOrder.getmain.txt_invo.Text), 0, Convert.ToDecimal(FOrder.getmain.txt_discount.Text)
+                               , " Take away", Program.Id_USer, "true");
                                         FOrder.getmain.Lable_Num.Text = dt.Rows[0][0].ToString();
 
                                         for (int i = 0; i < FOrder.getmain.gridView2.RowCount; i++)
@@ -134,7 +135,8 @@ namespace Restuarnt.PL
                                     FOrder.getmain.txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
 
                                     dt = o.AddOrder(Convert.ToInt32(FOrder.getmain.txt_cust.Text), Convert.ToDateTime(FOrder.getmain.lable_date.Text), Convert.ToDecimal(FOrder.getmain.txt_delivery.Text), Convert.ToDecimal(FOrder.getmain.txt_invo.Text),
-                                   Convert.ToDecimal(FOrder.getmain.txt_invo.Text), 0, Convert.ToDecimal(FOrder.getmain.txt_discount.Text), " Take away");
+                                   Convert.ToDecimal(FOrder.getmain.txt_invo.Text), 0,
+                                   Convert.ToDecimal(FOrder.getmain.txt_discount.Text), " Take away", Program.Id_USer, "true");
                                     FOrder.getmain.Lable_Num.Text = dt.Rows[0][0].ToString();
 
                                     for (int i = 0; i < FOrder.getmain.gridView2.RowCount; i++)
@@ -203,7 +205,8 @@ namespace Restuarnt.PL
                                         cu.UpdateCustomer(Convert.ToInt32(FOrder.getmain.cmb_customer.EditValue), FOrder.getmain.txt_address.Text, FOrder.getmain.txt_phones.Text);
 
                                         dt = o.AddOrder(Convert.ToInt32(FOrder.getmain.cmb_customer.EditValue), Convert.ToDateTime(FOrder.getmain.lable_date.Text), Convert.ToDecimal(FOrder.getmain.txt_delivery.Text), Convert.ToDecimal(FOrder.getmain.txt_invo.Text),
-                                     Convert.ToDecimal(FOrder.getmain.txt_invo.Text), 0, Convert.ToDecimal(FOrder.getmain.txt_discount.Text), "Delivery");
+                                Convert.ToDecimal(FOrder.getmain.txt_invo.Text), 0, Convert.ToDecimal(FOrder.getmain.txt_discount.Text),
+                                "Delivery", Program.Id_USer, "true");
                                         FOrder.getmain.Lable_Num.Text = dt.Rows[0][0].ToString();
 
                                         for (int i = 0; i < FOrder.getmain.gridView2.RowCount; i++)
@@ -246,7 +249,8 @@ namespace Restuarnt.PL
                                     FOrder.getmain.txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
 
                                     dt = o.AddOrder(Convert.ToInt32(FOrder.getmain.txt_cust.Text), Convert.ToDateTime(FOrder.getmain.lable_date.Text), Convert.ToDecimal(FOrder.getmain.txt_delivery.Text), Convert.ToDecimal(FOrder.getmain.txt_invo.Text),
-                                    Convert.ToDecimal(FOrder.getmain.txt_invo.Text), 0, Convert.ToDecimal(FOrder.getmain.txt_discount.Text), "Delivery");
+                                    Convert.ToDecimal(FOrder.getmain.txt_invo.Text), 0, 
+                                    Convert.ToDecimal(FOrder.getmain.txt_discount.Text), "Delivery", Program.Id_USer, "true");
                                     FOrder.getmain.Lable_Num.Text = dt.Rows[0][0].ToString();
 
                                     for (int i = 0; i < FOrder.getmain.gridView2.RowCount; i++)
@@ -298,7 +302,8 @@ namespace Restuarnt.PL
                                 cu.AddCustomerTakeAway(FOrder.getmain.textEdit1.Text);
                                 FOrder.getmain.txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
                                 dt = o.AddOrder(Convert.ToInt32(FOrder.getmain.txt_cust.Text), Convert.ToDateTime(FOrder.getmain.lable_date.Text), Convert.ToDecimal(FOrder.getmain.txt_delivery.Text), Convert.ToDecimal(FOrder.getmain.txt_invo.Text),
-                                   Convert.ToDecimal(FOrder.getmain.txt_invo.Text), 0, Convert.ToDecimal(FOrder.getmain.txt_discount.Text), "Table");
+                                   Convert.ToDecimal(FOrder.getmain.txt_invo.Text), 0, Convert.ToDecimal(FOrder.getmain.txt_discount.Text)
+                                   , "Table", Program.Id_USer, "true");
                                 FOrder.getmain.Lable_Num.Text = dt.Rows[0][0].ToString();
                                 for (int i = 0; i < FOrder.getmain.gridView2.RowCount; i++)
                                 {

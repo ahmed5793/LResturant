@@ -2318,7 +2318,7 @@ namespace Restuarnt.PL
                                     cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
                                     dt.Clear();
                                     dt = o.AddOrder(Convert.ToInt32(cmb_customer.EditValue), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
-                            0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text), " Take away");
+                            0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text), " Take away",Program.Id_USer,"true");
                                     Lable_Num.Text = dt.Rows[0][0].ToString();
 
                                     for (int i = 0; i < gridView2.RowCount; i++)
@@ -2357,7 +2357,7 @@ namespace Restuarnt.PL
                                 txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
                                 dt.Clear();
                                 dt = o.AddOrder(Convert.ToInt32(txt_cust.Text), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
-                                0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text), "Take away");
+                                0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text), "Take away",Program.Id_USer,"true");
                                 Lable_Num.Text = o.LasIdOrder().Rows[0][0].ToString();
 
                                 for (int i = 0; i < gridView2.RowCount; i++)
@@ -2416,7 +2416,7 @@ namespace Restuarnt.PL
                                     cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
                                     dt.Clear();
                                     dt = o.AddOrder(Convert.ToInt32(cmb_customer.EditValue), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
-                            0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text), "Delivery");
+                            0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text), "Delivery",Program.Id_USer,"true");
                                     Lable_Num.Text = dt.Rows[0][0].ToString();
 
                                     for (int i = 0; i < gridView2.RowCount; i++)
@@ -2455,7 +2455,7 @@ namespace Restuarnt.PL
                                 txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
                                 dt.Clear();
                                 dt = o.AddOrder(Convert.ToInt32(txt_cust.Text), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
-                                0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text), "Delivery");
+                                0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text), "Delivery", Program.Id_USer, "true");
                                 Lable_Num.Text = o.LasIdOrder().Rows[0][0].ToString();
 
                                 for (int i = 0; i < gridView2.RowCount; i++)
@@ -2504,7 +2504,7 @@ namespace Restuarnt.PL
                             txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
                             dt.Clear();
                             dt = o.AddOrder(Convert.ToInt32(txt_cust.Text), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
-                            0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text), "Table");
+                            0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text), "Table", Program.Id_USer, "true");
                             Lable_Num.Text = dt.Rows[0][0].ToString();
                             for (int i = 0; i < gridView2.RowCount; i++)
                             {
