@@ -816,5 +816,37 @@ namespace Restuarnt.BL
             da.close();
             return dt;
         }
+
+        internal DataTable SELECtALLORDER()
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+
+
+            dt = da.selected("SELECtALLORDER", null);
+            da.close();
+            return dt;
+        }
+        internal DataTable SELECtALLORDER(DateTime fromDate, DateTime ToDate)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@fromDate", SqlDbType.Date);
+            param[0].Value = fromDate;
+            param[1] = new SqlParameter("@ToDate", SqlDbType.Date);
+            param[1].Value = ToDate;
+
+
+
+            dt = da.selected("SELECtALLORDER", null);
+            da.close();
+            return dt;
+        }
     }
 }

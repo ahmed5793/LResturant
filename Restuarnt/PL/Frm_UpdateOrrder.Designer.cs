@@ -34,21 +34,34 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ID_Order = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Name_Cust = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.id_take = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Date = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Total = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Statues = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Update = new DevExpress.XtraGrid.Columns.GridColumn();
             this.عرض = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.Delete = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.عرض)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -57,17 +70,15 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.gridControl2);
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Location = new System.Drawing.Point(12, 78);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(841, 360);
+            this.groupBox2.Size = new System.Drawing.Size(851, 422);
             this.groupBox2.TabIndex = 169;
             this.groupBox2.TabStop = false;
             // 
             // gridControl2
             // 
-            this.gridControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridControl2.Location = new System.Drawing.Point(3, 16);
             this.gridControl2.LookAndFeel.SkinName = "DevExpress Dark Style";
@@ -75,9 +86,10 @@
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.عرض});
+            this.عرض,
+            this.repositoryItemButtonEdit1});
             this.gridControl2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gridControl2.Size = new System.Drawing.Size(835, 341);
+            this.gridControl2.Size = new System.Drawing.Size(845, 403);
             this.gridControl2.TabIndex = 127;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -145,11 +157,11 @@
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ID_Order,
             this.Name_Cust,
-            this.id_take,
             this.Date,
             this.Total,
             this.Statues,
-            this.gridColumn1});
+            this.Update,
+            this.Delete});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
@@ -180,22 +192,13 @@
             this.Name_Cust.VisibleIndex = 1;
             this.Name_Cust.Width = 103;
             // 
-            // id_take
-            // 
-            this.id_take.Caption = "رقم الطلب";
-            this.id_take.FieldName = "رقم الطلب";
-            this.id_take.Name = "id_take";
-            this.id_take.Visible = true;
-            this.id_take.VisibleIndex = 2;
-            this.id_take.Width = 103;
-            // 
             // Date
             // 
             this.Date.Caption = "تاريخ الفاتورة";
             this.Date.FieldName = "تاريخ الفاتورة";
             this.Date.Name = "Date";
             this.Date.Visible = true;
-            this.Date.VisibleIndex = 3;
+            this.Date.VisibleIndex = 2;
             this.Date.Width = 103;
             // 
             // Total
@@ -203,8 +206,10 @@
             this.Total.Caption = "الاجمالي";
             this.Total.FieldName = "الاجمالي";
             this.Total.Name = "Total";
+            this.Total.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "الاجمالي", "SUM={0:0.##}")});
             this.Total.Visible = true;
-            this.Total.VisibleIndex = 4;
+            this.Total.VisibleIndex = 3;
             this.Total.Width = 103;
             // 
             // Statues
@@ -213,21 +218,20 @@
             this.Statues.FieldName = "نوع الطلب";
             this.Statues.Name = "Statues";
             this.Statues.Visible = true;
-            this.Statues.VisibleIndex = 5;
+            this.Statues.VisibleIndex = 4;
             this.Statues.Width = 103;
             // 
-            // gridColumn1
+            // Update
             // 
-            this.gridColumn1.Caption = "عرض";
-            this.gridColumn1.ColumnEdit = this.عرض;
-            this.gridColumn1.FieldName = "عرض";
-            this.gridColumn1.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
-            this.gridColumn1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("gridColumn1.ImageOptions.Image")));
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.AllowEdit = false;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 6;
-            this.gridColumn1.Width = 110;
+            this.Update.ColumnEdit = this.عرض;
+            this.Update.FieldName = "Update";
+            this.Update.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
+            this.Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Update.ImageOptions.Image")));
+            this.Update.Name = "Update";
+            this.Update.OptionsColumn.AllowEdit = false;
+            this.Update.Visible = true;
+            this.Update.VisibleIndex = 5;
+            this.Update.Width = 110;
             // 
             // عرض
             // 
@@ -238,18 +242,72 @@
             this.عرض.Name = "عرض";
             this.عرض.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
+            // Delete
+            // 
+            this.Delete.ColumnEdit = this.repositoryItemButtonEdit1;
+            this.Delete.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
+            this.Delete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Delete.ImageOptions.Image")));
+            this.Delete.Name = "Delete";
+            this.Delete.Visible = true;
+            this.Delete.VisibleIndex = 6;
+            // 
+            // repositoryItemButtonEdit1
+            // 
+            this.repositoryItemButtonEdit1.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
+            this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
+            // dateEdit1
+            // 
+            this.dateEdit1.EditValue = null;
+            this.dateEdit1.Location = new System.Drawing.Point(445, 12);
+            this.dateEdit1.Name = "dateEdit1";
+            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit1.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.dateEdit1.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.dateEdit1.Size = new System.Drawing.Size(217, 20);
+            this.dateEdit1.TabIndex = 170;
+            // 
+            // dateEdit2
+            // 
+            this.dateEdit2.EditValue = null;
+            this.dateEdit2.Location = new System.Drawing.Point(210, 12);
+            this.dateEdit2.Name = "dateEdit2";
+            this.dateEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit2.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.dateEdit2.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.dateEdit2.Size = new System.Drawing.Size(217, 20);
+            this.dateEdit2.TabIndex = 171;
+            // 
             // Frm_UpdateOrrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(865, 375);
+            this.ClientSize = new System.Drawing.Size(875, 512);
+            this.Controls.Add(this.dateEdit2);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.dateEdit1);
             this.Name = "Frm_UpdateOrrder";
             this.Text = "Frm_UpdateOrrder";
+            this.Load += new System.EventHandler(this.Frm_UpdateOrrder_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.عرض)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -261,11 +319,14 @@
         public DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn ID_Order;
         private DevExpress.XtraGrid.Columns.GridColumn Name_Cust;
-        private DevExpress.XtraGrid.Columns.GridColumn id_take;
         private DevExpress.XtraGrid.Columns.GridColumn Date;
         private DevExpress.XtraGrid.Columns.GridColumn Total;
         public DevExpress.XtraGrid.Columns.GridColumn Statues;
-        public DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        public DevExpress.XtraGrid.Columns.GridColumn Update;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit عرض;
+        private DevExpress.XtraGrid.Columns.GridColumn Delete;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
+        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.DateEdit dateEdit2;
     }
 }

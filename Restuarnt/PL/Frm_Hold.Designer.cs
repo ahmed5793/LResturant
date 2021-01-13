@@ -404,7 +404,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Name_Cust;
         private DevExpress.XtraGrid.Columns.GridColumn Date;
         private DevExpress.XtraGrid.Columns.GridColumn Total;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit عرض;
         private DevExpress.XtraGrid.Columns.GridColumn id_take;
         public DevExpress.XtraGrid.GridControl gridControl2;
@@ -412,5 +411,6 @@
         public DevExpress.XtraGrid.Columns.GridColumn Statues;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.ControlNavigator controlNavigator1;
+        public DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

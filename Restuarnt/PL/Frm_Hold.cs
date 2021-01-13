@@ -28,8 +28,9 @@ namespace Restuarnt.PL
             id_take.Caption = "رقم الطلب";
             id_take.FieldName = "رقم الطلب";
             id_take.Visible = false;
-            
 
+          
+           
         }
 
         private void labelControl1_Click(object sender, EventArgs e)
