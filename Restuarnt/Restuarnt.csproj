@@ -157,6 +157,7 @@
     <Compile Include="BL\Order.cs" />
     <Compile Include="BL\Product.cs" />
     <Compile Include="BL\Reserve.cs" />
+    <Compile Include="BL\SettingPrint.cs" />
     <Compile Include="BL\Stuff.cs" />
     <Compile Include="BL\Suppliers.cs" />
     <Compile Include="BL\Tables.cs" />
@@ -192,6 +193,12 @@
     <Compile Include="PL\Frm_Hold.Designer.cs">
       <DependentUpon>Frm_Hold.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_MainNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_MainNew.designer.cs">
+      <DependentUpon>Frm_MainNew.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_Notes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +222,12 @@
     </Compile>
     <Compile Include="PL\frm_ReportStuff.Designer.cs">
       <DependentUpon>frm_ReportStuff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_Setting.designer.cs">
+      <DependentUpon>Frm_Setting.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_Stuff.cs">
       <SubType>Form</SubType>
@@ -349,6 +362,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1_Order.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RPT\Exstra_Report\XtraReport1Order.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\Exstra_Report\XtraReport1Order.designer.cs">
+      <DependentUpon>XtraReport1Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\Exstra_Report\XtraReportCheck.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\Exstra_Report\XtraReportCheck.designer.cs">
+      <DependentUpon>XtraReportCheck.cs</DependentUpon>
+    </Compile>
     <Compile Include="RPT\Frm_ReportOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -466,6 +491,9 @@
     <EmbeddedResource Include="PL\Frm_Hold.resx">
       <DependentUpon>Frm_Hold.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_MainNew.resx">
+      <DependentUpon>Frm_MainNew.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Notes.resx">
       <DependentUpon>Frm_Notes.cs</DependentUpon>
     </EmbeddedResource>
@@ -477,6 +505,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\frm_ReportStuff.resx">
       <DependentUpon>frm_ReportStuff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_Setting.resx">
+      <DependentUpon>Frm_Setting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Stuff.resx">
       <DependentUpon>Frm_Stuff.cs</DependentUpon>
@@ -552,6 +583,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RPT\Exstra_Report\XtraReport1Order.resx">
+      <DependentUpon>XtraReport1Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\Exstra_Report\XtraReportCheck.resx">
+      <DependentUpon>XtraReportCheck.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RPT\Frm_ReportOrder.resx">
       <DependentUpon>Frm_ReportOrder.cs</DependentUpon>
     </EmbeddedResource>

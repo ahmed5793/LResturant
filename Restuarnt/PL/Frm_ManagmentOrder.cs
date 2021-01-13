@@ -7,7 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraReports.UI;
 using Restuarnt.BL;
+using Restuarnt.RPT;
+using Restuarnt.RPT.Exstra_Report;
 
 namespace Restuarnt.PL
 {
@@ -279,62 +282,126 @@ namespace Restuarnt.PL
             {
                 if (dataGridViewList.Rows.Count > 0)
                 {
-                    if (rdb_delivery.Checked == true)
+                    //if (rdb_delivery.Checked == true)
+                    //{
+                    //    RPT.rptOrders ro = new RPT.rptOrders();
+                    //    RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
+
+                    //    s.crystalReportViewer1.RefreshReport();
+                    //    ro.SetDatabaseLogon("", "", ".", "Restuarnt");
+                    //    ro.SetParameterValue("@ID", (Convert.ToInt32(dataGridViewList.CurrentRow.Cells[0].Value)));
+                    //    s.crystalReportViewer1.ReportSource = ro;
+                    //    System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
+                    //    ro.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
+                    //    ro.PrintToPrinter(1, true, 0, 0);
+
+                    //    ro.Close();
+                    //    s.Dispose();
+
+                    //}
+                    //else if (rdb_sala.Checked == true)
+                    //{
+                    //    RPT.rptOrderSala rs = new RPT.rptOrderSala();
+                    //    RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
+
+                    //    s.crystalReportViewer1.RefreshReport();
+                    //    rs.SetDatabaseLogon("", "", ".", "Restuarnt");
+                    //    rs.SetParameterValue("@ID", (Convert.ToInt32(dataGridViewList.CurrentRow.Cells[0].Value)));
+                    //    s.crystalReportViewer1.ReportSource = rs;
+                    //    System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
+                    //    rs.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
+                    //    rs.PrintToPrinter(1, true, 0, 0);
+                    //    rs.Close();
+                    //    s.Dispose();
+                    //}
+                    //else if (rdb_takeaway.Checked == true)
+                    //{
+                    //    RPT.rptOrderTakeAway rt = new RPT.rptOrderTakeAway();
+                    //    RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
+
+                    //    s.crystalReportViewer1.RefreshReport();
+                    //    rt.SetDatabaseLogon("", "", ".", "Restuarnt");
+                    //    rt.SetParameterValue("@ID", (Convert.ToInt32(dataGridViewList.CurrentRow.Cells[0].Value)));
+                    //    s.crystalReportViewer1.ReportSource = rt;
+                    //    System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
+                    //    rt.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
+                    //    rt.PrintToPrinter(1, true, 0, 0);
+                    //    rt.Close();
+
+                    //    s.Dispose();
+                    //}
+                    DataTable dt5 = new DataTable();
+                    XtraReport1Order ro = new XtraReport1Order();
+                    DataSet1 ds = new DataSet1();
+
+                    if (dt5.Rows[0][11].ToString() == "Delivery")
                     {
-                        RPT.rptOrders ro = new RPT.rptOrders();
-                        RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
-
-                        s.crystalReportViewer1.RefreshReport();
-                        ro.SetDatabaseLogon("", "", ".", "Restuarnt");
-                        ro.SetParameterValue("@ID", (Convert.ToInt32(dataGridViewList.CurrentRow.Cells[0].Value)));
-                        s.crystalReportViewer1.ReportSource = ro;
-                        System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                        ro.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                        ro.PrintToPrinter(1, true, 0, 0);
-                       
-                        ro.Close();
-                        s.Dispose();
-
+                        dt5.Clear();
+                        dt5 = o.PrintOrderSala(Convert.ToInt32(dataGridViewList.CurrentRow.Cells[0].Value));
+                        ro.xrLabel11.Visible = true;
+                        ro.xrLabel10.Visible = true;
+                        ro.xrLabel18.Visible = true;
+                        ro.xrLabel19.Visible = true;
+                        ro.xrLabel19.Text = dt5.Rows[0][1].ToString();
                     }
-                    else if (rdb_sala.Checked == true)
+
+                    if (dt5.Rows[0][11].ToString() == "Table")
                     {
-                        RPT.rptOrderSala rs = new RPT.rptOrderSala();
-                        RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
-
-                        s.crystalReportViewer1.RefreshReport();
-                        rs.SetDatabaseLogon("", "", ".", "Restuarnt");
-                        rs.SetParameterValue("@ID", (Convert.ToInt32(dataGridViewList.CurrentRow.Cells[0].Value)));
-                        s.crystalReportViewer1.ReportSource = rs;
-                        System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                        rs.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                        rs.PrintToPrinter(1, true, 0, 0);
-                        rs.Close();
-                        s.Dispose();
+                        dt5.Clear();
+                        dt5 = o.Select_DeliveyMan(Convert.ToInt32(dataGridViewList.CurrentRow.Cells[0].Value));
+                        ro.xrLabel20.Visible = true;
+                        ro.xrLabel21.Visible = true;
+                        ro.xrLabel21.Text = dt5.Rows[0][1].ToString();
                     }
-                    else if (rdb_takeaway.Checked == true)
+                    dt5.Clear();
+                    dt5 = o.PrintOrder(Convert.ToInt32(dataGridViewList.CurrentRow.Cells[0].Value));
+
+                    ds.Tables["Order"].Clear();
+                    for (int i = 0; i < dt5.Rows.Count; i++)
                     {
-                        RPT.rptOrderTakeAway rt = new RPT.rptOrderTakeAway();
-                        RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
-
-                        s.crystalReportViewer1.RefreshReport();
-                        rt.SetDatabaseLogon("", "", ".", "Restuarnt");
-                        rt.SetParameterValue("@ID", (Convert.ToInt32(dataGridViewList.CurrentRow.Cells[0].Value)));
-                        s.crystalReportViewer1.ReportSource = rt;
-                        System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                        rt.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                        rt.PrintToPrinter(1, true, 0, 0);
-                        rt.Close();
-                       
-                        s.Dispose();
+                        ds.Tables["Order"].Rows.Add(dt5.Rows[i][0], dt5.Rows[i][1], dt5.Rows[i][4],
+                        dt5.Rows[i][5], dt5.Rows[i][7], dt5.Rows[i][6], dt5.Rows[i][9], dt5.Rows[i][8],
+                        dt5.Rows[i][2], (dt5.Rows[i][3]), dt5.Rows[i][11], dt5.Rows[i][10], dt5.Rows[i][12]);
                     }
+                    ro.Txt_Delivery.Visible = true;
+                    ro.DataSource = ds;
+                    ro.Parameters["Id"].Value = Convert.ToInt32(dataGridViewList.CurrentRow.Cells[0].Value);
+                    ro.Parameters["Id"].Visible = false;
+                    System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
+                    ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                    // ro.PrinterName = Properties.Settings.Default.PrinterName;
+                    ro.Print();
 
 
+                    DataTable dt6 = new DataTable();
+                    XtraReportCheck rc = new XtraReportCheck();
+                    DataSet1 ds1 = new DataSet1();
+                    dt6.Clear();
+                    dt6 = o.PrintOrder(Convert.ToInt32(dataGridViewList.CurrentRow.Cells[0].Value));
+
+
+                    ds.Tables["Order"].Clear();
+                    for (int i = 0; i < dt6.Rows.Count; i++)
+                    {
+                        ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
+                        dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
+                        dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                    }
+                    rc.DataSource = ds;
+                    rc.Parameters["Id"].Value = Convert.ToInt32(dataGridViewList.CurrentRow.Cells[0].Value);
+                    rc.Parameters["Id"].Visible = false;
+                    //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
+                    // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                    rc.PrinterName = Properties.Settings.Default.PrinterName;
+                    rc.Print();
                 }
                 else
                 {
                     MessageBox.Show("لايوجد بيانات للطباعه");
                 }
 
+            
+               
             }
             catch (Exception ex)
             {
@@ -388,65 +455,65 @@ namespace Restuarnt.PL
 
             try
             {
-                if (dataGridViewList.Rows.Count > 0)
-                {
-                    if (rdb_delivery.Checked == true)
-                    {
-                        RPT.rptOrders ro = new RPT.rptOrders();
-                        RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
+                //if (dataGridViewList.Rows.Count > 0)
+                //{
+                //    if (rdb_delivery.Checked == true)
+                //    {
+                //        RPT.rptOrders ro = new RPT.rptOrders();
+                //        RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
 
-                        s.crystalReportViewer1.RefreshReport();
-                        ro.SetDatabaseLogon("", "", ".", "Restuarnt");
-                        ro.SetParameterValue("@ID", (Convert.ToInt32(dataGridViewList.CurrentRow.Cells[0].Value)));
-                        s.crystalReportViewer1.ReportSource = ro;
-                        System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                        ro.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                       // ro.PrintToPrinter(1, true, 0, 0);
-                        s.ShowDialog();
-                        ro.Close();
-                        s.Dispose();
+                //        s.crystalReportViewer1.RefreshReport();
+                //        ro.SetDatabaseLogon("", "", ".", "Restuarnt");
+                //        ro.SetParameterValue("@ID", (Convert.ToInt32(dataGridViewList.CurrentRow.Cells[0].Value)));
+                //        s.crystalReportViewer1.ReportSource = ro;
+                //        System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
+                //        ro.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
+                //       // ro.PrintToPrinter(1, true, 0, 0);
+                //        s.ShowDialog();
+                //        ro.Close();
+                //        s.Dispose();
 
-                    }
-                    else if (rdb_sala.Checked == true)
-                    {
-                        RPT.rptOrderSala rs = new RPT.rptOrderSala();
-                        RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
+                //    }
+                //    else if (rdb_sala.Checked == true)
+                //    {
+                //        RPT.rptOrderSala rs = new RPT.rptOrderSala();
+                //        RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
 
-                        s.crystalReportViewer1.RefreshReport();
-                        rs.SetDatabaseLogon("", "", ".", "Restuarnt");
-                        rs.SetParameterValue("@ID", (Convert.ToInt32(dataGridViewList.CurrentRow.Cells[0].Value)));
-                        s.crystalReportViewer1.ReportSource = rs;
-                        System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                        rs.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                      //  rs.PrintToPrinter(1, true, 0, 0);
-                        s.ShowDialog();
-                        rs.Close();
-                        s.Dispose();
-                    }
-                    else if (rdb_takeaway.Checked == true)
-                    {
-                        RPT.rptOrderTakeAway rt = new RPT.rptOrderTakeAway();
-                        RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
+                //        s.crystalReportViewer1.RefreshReport();
+                //        rs.SetDatabaseLogon("", "", ".", "Restuarnt");
+                //        rs.SetParameterValue("@ID", (Convert.ToInt32(dataGridViewList.CurrentRow.Cells[0].Value)));
+                //        s.crystalReportViewer1.ReportSource = rs;
+                //        System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
+                //        rs.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
+                //      //  rs.PrintToPrinter(1, true, 0, 0);
+                //        s.ShowDialog();
+                //        rs.Close();
+                //        s.Dispose();
+                //    }
+                //    else if (rdb_takeaway.Checked == true)
+                //    {
+                //        RPT.rptOrderTakeAway rt = new RPT.rptOrderTakeAway();
+                //        RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
 
-                        s.crystalReportViewer1.RefreshReport();
-                        rt.SetDatabaseLogon("", "", ".", "Restuarnt");
-                        rt.SetParameterValue("@ID", (Convert.ToInt32(dataGridViewList.CurrentRow.Cells[0].Value)));
-                        s.crystalReportViewer1.ReportSource = rt;
-                        System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                        rt.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                      //  rt.PrintToPrinter(1, true, 0, 0);
-                        s.ShowDialog();
-                        rt.Close();
+                //        s.crystalReportViewer1.RefreshReport();
+                //        rt.SetDatabaseLogon("", "", ".", "Restuarnt");
+                //        rt.SetParameterValue("@ID", (Convert.ToInt32(dataGridViewList.CurrentRow.Cells[0].Value)));
+                //        s.crystalReportViewer1.ReportSource = rt;
+                //        System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
+                //        rt.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
+                //      //  rt.PrintToPrinter(1, true, 0, 0);
+                //        s.ShowDialog();
+                //        rt.Close();
 
-                        s.Dispose();
-                    }
+                //        s.Dispose();
+                //    }
 
 
-                }
-                else
-                {
-                    MessageBox.Show("لايوجد بيانات للطباعه");
-                }
+                //}
+                //else
+                //{
+                //    MessageBox.Show("لايوجد بيانات للطباعه");
+                //}
 
             }
             catch (Exception ex)

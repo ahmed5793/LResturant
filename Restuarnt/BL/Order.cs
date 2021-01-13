@@ -771,5 +771,46 @@ namespace Restuarnt.BL
             da.close();
             return dt;
         }
+        internal DataTable PrintOrder(int id)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id", SqlDbType.Int);
+            param[0].Value = id;
+
+            dt = da.selected("PrintOrder", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable PrintOrderSala(int id)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id", SqlDbType.Int);
+            param[0].Value = id;
+
+            dt = da.selected("PrintOrderSala", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable Select_DeliveyMan(int id)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id", SqlDbType.Int);
+            param[0].Value = id;
+
+            dt = da.selected("Select_DeliveyMan", param);
+            da.close();
+            return dt;
+        }
     }
 }

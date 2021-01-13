@@ -33,6 +33,8 @@ namespace Restuarnt.PL
             txt_User.Text = "";
             txt_Pass.Text = "";
             txt_PassRealy.Text = "";
+            Txt_IdUser.Text = "";
+            
 
 
         }
@@ -61,7 +63,8 @@ namespace Restuarnt.PL
                     return;
 
                 }
-                if (txt_User.Text == string.Empty || txt_Pass.Text == string.Empty || txt_PassRealy.Text == string.Empty || txt_Fullname.Text == string.Empty && comboBox1.Text == string.Empty)
+                if (txt_User.Text == string.Empty || txt_Pass.Text == string.Empty ||
+                    txt_PassRealy.Text == string.Empty || txt_Fullname.Text == string.Empty)
                 {
                     MessageBox.Show("من فضلك ادخل البيانات كامله");
                     return;
@@ -74,26 +77,27 @@ namespace Restuarnt.PL
                     txt_PassRealy.Focus();
 
                     return;
-
-
-
                 }
+                dt2.Clear();
+                dt2 = l.AddUser(txt_User.Text, txt_Pass.Text, txt_Fullname.Text, "true");
+                int x = Convert.ToInt32(dt2.Rows[0][0]);
+                l.Add_UserPermession(x,0,0,0,0,0,0,0,0,0,0);
+                l.Add_UserPermession(0,0,0,0,0,0,0,0,0);
+                MessageBox.Show("تم اضافه المستخدم بنجاح");
+                dataGridViewList.DataSource = l.SelectUsers();
+                txt_Fullname.Text = "";
+                txt_Pass.Text = "";
+                txt_PassRealy.Text = "";
+                txt_User.Text = "";
+
+                txt_Fullname.Focus();
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-          
-            l.AddUser(txt_User.Text, txt_Pass.Text, comboBox1.Text, txt_Fullname.Text);
-            MessageBox.Show("تم اضافه المستخدم بنجاح");
-            dataGridViewList.DataSource = l.SelectUsers();
-            txt_Fullname.Text = "";
-            txt_Pass.Text = "";
-            txt_PassRealy.Text = "";
-            txt_User.Text = "";
-
-            txt_Fullname.Focus();
-
+            
 
 
 
@@ -130,7 +134,7 @@ namespace Restuarnt.PL
                         return;
 
                     }
-                    l.UpdateUsers(txt_User.Text, txt_Pass.Text, comboBox1.Text);
+                    l.UpdateUsers(Convert.ToInt32(Txt_IdUser.Text),txt_User.Text, txt_Pass.Text);
                     MessageBox.Show("تم التعديل بنجاح", "تعديل بيانات المستخدم", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                     dataGridViewList.DataSource = l.SelectUsers();
@@ -164,9 +168,9 @@ namespace Restuarnt.PL
 
         private void DataGridViewList_DoubleClick(object sender, EventArgs e)
         {
-            txt_User.Text = dataGridViewList.CurrentRow.Cells[0].Value.ToString();
-            txt_Pass.Text = dataGridViewList.CurrentRow.Cells[1].Value.ToString();
-            comboBox1.Text = dataGridViewList.CurrentRow.Cells[2].Value.ToString();
+            Txt_IdUser.Text = dataGridViewList.CurrentRow.Cells[0].Value.ToString();
+            txt_User.Text = dataGridViewList.CurrentRow.Cells[1].Value.ToString();
+            txt_Pass.Text = dataGridViewList.CurrentRow.Cells[2].Value.ToString();
             txt_Fullname.Text = dataGridViewList.CurrentRow.Cells[3].Value.ToString();
             txt_PassRealy.Text = txt_Pass.Text;
             txt_Fullname.Enabled = false;
@@ -184,7 +188,7 @@ namespace Restuarnt.PL
                 if (MessageBox.Show("هل تريد مسح هذا المستخدم", "عملية مسح مستخدم", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
 
-                    l.deleteusers(txt_User.Text);
+                    l.deleteusers(Convert.ToInt32(Txt_IdUser.Text));
                     MessageBox.Show("تم مسح المستخدم بنجاح", "عملية مسح مستخدم", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dataGridViewList.DataSource = l.SelectUsers();
                     delete();

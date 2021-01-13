@@ -24,9 +24,11 @@ namespace Restuarnt.RPT.Exstra_Report {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class DataSet1 : global::System.Data.DataSet {
         
-        private OrderDelevryDrinkDataTable tableOrderDelevryDrink;
+        private OrderTableUmberDataTable tableOrderTableUmber;
         
-        private OrderDelevryDDataTable tableOrderDelevryD;
+        private OrderDataTable tableOrder;
+        
+        private DeliveryNameDataTable tableDeliveryName;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -56,11 +58,14 @@ namespace Restuarnt.RPT.Exstra_Report {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["OrderDelevryDrink"] != null)) {
-                    base.Tables.Add(new OrderDelevryDrinkDataTable(ds.Tables["OrderDelevryDrink"]));
+                if ((ds.Tables["OrderTableUmber"] != null)) {
+                    base.Tables.Add(new OrderTableUmberDataTable(ds.Tables["OrderTableUmber"]));
                 }
-                if ((ds.Tables["OrderDelevryD"] != null)) {
-                    base.Tables.Add(new OrderDelevryDDataTable(ds.Tables["OrderDelevryD"]));
+                if ((ds.Tables["Order"] != null)) {
+                    base.Tables.Add(new OrderDataTable(ds.Tables["Order"]));
+                }
+                if ((ds.Tables["DeliveryName"] != null)) {
+                    base.Tables.Add(new DeliveryNameDataTable(ds.Tables["DeliveryName"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -84,9 +89,9 @@ namespace Restuarnt.RPT.Exstra_Report {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public OrderDelevryDrinkDataTable OrderDelevryDrink {
+        public OrderTableUmberDataTable OrderTableUmber {
             get {
-                return this.tableOrderDelevryDrink;
+                return this.tableOrderTableUmber;
             }
         }
         
@@ -94,9 +99,19 @@ namespace Restuarnt.RPT.Exstra_Report {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public OrderDelevryDDataTable OrderDelevryD {
+        public OrderDataTable Order {
             get {
-                return this.tableOrderDelevryD;
+                return this.tableOrder;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public DeliveryNameDataTable DeliveryName {
+            get {
+                return this.tableDeliveryName;
             }
         }
         
@@ -167,11 +182,14 @@ namespace Restuarnt.RPT.Exstra_Report {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["OrderDelevryDrink"] != null)) {
-                    base.Tables.Add(new OrderDelevryDrinkDataTable(ds.Tables["OrderDelevryDrink"]));
+                if ((ds.Tables["OrderTableUmber"] != null)) {
+                    base.Tables.Add(new OrderTableUmberDataTable(ds.Tables["OrderTableUmber"]));
                 }
-                if ((ds.Tables["OrderDelevryD"] != null)) {
-                    base.Tables.Add(new OrderDelevryDDataTable(ds.Tables["OrderDelevryD"]));
+                if ((ds.Tables["Order"] != null)) {
+                    base.Tables.Add(new OrderDataTable(ds.Tables["Order"]));
+                }
+                if ((ds.Tables["DeliveryName"] != null)) {
+                    base.Tables.Add(new DeliveryNameDataTable(ds.Tables["DeliveryName"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -206,16 +224,22 @@ namespace Restuarnt.RPT.Exstra_Report {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableOrderDelevryDrink = ((OrderDelevryDrinkDataTable)(base.Tables["OrderDelevryDrink"]));
+            this.tableOrderTableUmber = ((OrderTableUmberDataTable)(base.Tables["OrderTableUmber"]));
             if ((initTable == true)) {
-                if ((this.tableOrderDelevryDrink != null)) {
-                    this.tableOrderDelevryDrink.InitVars();
+                if ((this.tableOrderTableUmber != null)) {
+                    this.tableOrderTableUmber.InitVars();
                 }
             }
-            this.tableOrderDelevryD = ((OrderDelevryDDataTable)(base.Tables["OrderDelevryD"]));
+            this.tableOrder = ((OrderDataTable)(base.Tables["Order"]));
             if ((initTable == true)) {
-                if ((this.tableOrderDelevryD != null)) {
-                    this.tableOrderDelevryD.InitVars();
+                if ((this.tableOrder != null)) {
+                    this.tableOrder.InitVars();
+                }
+            }
+            this.tableDeliveryName = ((DeliveryNameDataTable)(base.Tables["DeliveryName"]));
+            if ((initTable == true)) {
+                if ((this.tableDeliveryName != null)) {
+                    this.tableDeliveryName.InitVars();
                 }
             }
         }
@@ -228,21 +252,29 @@ namespace Restuarnt.RPT.Exstra_Report {
             this.Namespace = "http://tempuri.org/DataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableOrderDelevryDrink = new OrderDelevryDrinkDataTable();
-            base.Tables.Add(this.tableOrderDelevryDrink);
-            this.tableOrderDelevryD = new OrderDelevryDDataTable();
-            base.Tables.Add(this.tableOrderDelevryD);
+            this.tableOrderTableUmber = new OrderTableUmberDataTable();
+            base.Tables.Add(this.tableOrderTableUmber);
+            this.tableOrder = new OrderDataTable();
+            base.Tables.Add(this.tableOrder);
+            this.tableDeliveryName = new DeliveryNameDataTable();
+            base.Tables.Add(this.tableDeliveryName);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeOrderDelevryDrink() {
+        private bool ShouldSerializeOrderTableUmber() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeOrderDelevryD() {
+        private bool ShouldSerializeOrder() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeDeliveryName() {
             return false;
         }
         
@@ -302,34 +334,29 @@ namespace Restuarnt.RPT.Exstra_Report {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void OrderDelevryDrinkRowChangeEventHandler(object sender, OrderDelevryDrinkRowChangeEvent e);
+        public delegate void OrderTableUmberRowChangeEventHandler(object sender, OrderTableUmberRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void OrderDelevryDRowChangeEventHandler(object sender, OrderDelevryDRowChangeEvent e);
+        public delegate void OrderRowChangeEventHandler(object sender, OrderRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void DeliveryNameRowChangeEventHandler(object sender, DeliveryNameRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class OrderDelevryDrinkDataTable : global::System.Data.TypedTableBase<OrderDelevryDrinkRow> {
+        public partial class OrderTableUmberDataTable : global::System.Data.TypedTableBase<OrderTableUmberRow> {
             
             private global::System.Data.DataColumn columnID_order;
             
-            private global::System.Data.DataColumn columnClientName;
-            
-            private global::System.Data.DataColumn columnDate_order;
-            
-            private global::System.Data.DataColumn columnItem_Name;
-            
-            private global::System.Data.DataColumn columnQuantity;
-            
-            private global::System.Data.DataColumn columnDataColumn1;
+            private global::System.Data.DataColumn columnTableNum;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OrderDelevryDrinkDataTable() {
-                this.TableName = "OrderDelevryDrink";
+            public OrderTableUmberDataTable() {
+                this.TableName = "OrderTableUmber";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -337,7 +364,7 @@ namespace Restuarnt.RPT.Exstra_Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal OrderDelevryDrinkDataTable(global::System.Data.DataTable table) {
+            internal OrderTableUmberDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -354,7 +381,290 @@ namespace Restuarnt.RPT.Exstra_Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected OrderDelevryDrinkDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected OrderTableUmberDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ID_orderColumn {
+                get {
+                    return this.columnID_order;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TableNumColumn {
+                get {
+                    return this.columnTableNum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public OrderTableUmberRow this[int index] {
+                get {
+                    return ((OrderTableUmberRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event OrderTableUmberRowChangeEventHandler OrderTableUmberRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event OrderTableUmberRowChangeEventHandler OrderTableUmberRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event OrderTableUmberRowChangeEventHandler OrderTableUmberRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event OrderTableUmberRowChangeEventHandler OrderTableUmberRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddOrderTableUmberRow(OrderTableUmberRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public OrderTableUmberRow AddOrderTableUmberRow(int ID_order, string TableNum) {
+                OrderTableUmberRow rowOrderTableUmberRow = ((OrderTableUmberRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        ID_order,
+                        TableNum};
+                rowOrderTableUmberRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowOrderTableUmberRow);
+                return rowOrderTableUmberRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                OrderTableUmberDataTable cln = ((OrderTableUmberDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new OrderTableUmberDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnID_order = base.Columns["ID_order"];
+                this.columnTableNum = base.Columns["TableNum"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnID_order = new global::System.Data.DataColumn("ID_order", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_order);
+                this.columnTableNum = new global::System.Data.DataColumn("TableNum", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTableNum);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public OrderTableUmberRow NewOrderTableUmberRow() {
+                return ((OrderTableUmberRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new OrderTableUmberRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(OrderTableUmberRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.OrderTableUmberRowChanged != null)) {
+                    this.OrderTableUmberRowChanged(this, new OrderTableUmberRowChangeEvent(((OrderTableUmberRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.OrderTableUmberRowChanging != null)) {
+                    this.OrderTableUmberRowChanging(this, new OrderTableUmberRowChangeEvent(((OrderTableUmberRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.OrderTableUmberRowDeleted != null)) {
+                    this.OrderTableUmberRowDeleted(this, new OrderTableUmberRowChangeEvent(((OrderTableUmberRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.OrderTableUmberRowDeleting != null)) {
+                    this.OrderTableUmberRowDeleting(this, new OrderTableUmberRowChangeEvent(((OrderTableUmberRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveOrderTableUmberRow(OrderTableUmberRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "OrderTableUmberDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class OrderDataTable : global::System.Data.TypedTableBase<OrderRow> {
+            
+            private global::System.Data.DataColumn columnID_order;
+            
+            private global::System.Data.DataColumn columnClientName;
+            
+            private global::System.Data.DataColumn columnDate_order;
+            
+            private global::System.Data.DataColumn columnItem_Name;
+            
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnprice;
+            
+            private global::System.Data.DataColumn columnDeliveryService;
+            
+            private global::System.Data.DataColumn columnTotal;
+            
+            private global::System.Data.DataColumn columnAddress;
+            
+            private global::System.Data.DataColumn columnPhone;
+            
+            private global::System.Data.DataColumn columnStatues;
+            
+            private global::System.Data.DataColumn columnDiscount;
+            
+            private global::System.Data.DataColumn columnTotProd;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public OrderDataTable() {
+                this.TableName = "Order";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal OrderDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected OrderDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -401,9 +711,65 @@ namespace Restuarnt.RPT.Exstra_Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DataColumn1Column {
+            public global::System.Data.DataColumn priceColumn {
                 get {
-                    return this.columnDataColumn1;
+                    return this.columnprice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DeliveryServiceColumn {
+                get {
+                    return this.columnDeliveryService;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TotalColumn {
+                get {
+                    return this.columnTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn AddressColumn {
+                get {
+                    return this.columnAddress;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PhoneColumn {
+                get {
+                    return this.columnPhone;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn StatuesColumn {
+                get {
+                    return this.columnStatues;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DiscountColumn {
+                get {
+                    return this.columnDiscount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TotProdColumn {
+                get {
+                    return this.columnTotProd;
                 }
             }
             
@@ -418,50 +784,57 @@ namespace Restuarnt.RPT.Exstra_Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OrderDelevryDrinkRow this[int index] {
+            public OrderRow this[int index] {
                 get {
-                    return ((OrderDelevryDrinkRow)(this.Rows[index]));
+                    return ((OrderRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event OrderDelevryDrinkRowChangeEventHandler OrderDelevryDrinkRowChanging;
+            public event OrderRowChangeEventHandler OrderRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event OrderDelevryDrinkRowChangeEventHandler OrderDelevryDrinkRowChanged;
+            public event OrderRowChangeEventHandler OrderRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event OrderDelevryDrinkRowChangeEventHandler OrderDelevryDrinkRowDeleting;
+            public event OrderRowChangeEventHandler OrderRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event OrderDelevryDrinkRowChangeEventHandler OrderDelevryDrinkRowDeleted;
+            public event OrderRowChangeEventHandler OrderRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddOrderDelevryDrinkRow(OrderDelevryDrinkRow row) {
+            public void AddOrderRow(OrderRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OrderDelevryDrinkRow AddOrderDelevryDrinkRow(int ID_order, string ClientName, System.DateTime Date_order, string Item_Name, int Quantity, string DataColumn1) {
-                OrderDelevryDrinkRow rowOrderDelevryDrinkRow = ((OrderDelevryDrinkRow)(this.NewRow()));
+            public OrderRow AddOrderRow(int ID_order, string ClientName, System.DateTime Date_order, string Item_Name, int Quantity, decimal price, string DeliveryService, decimal Total, string Address, string Phone, string Statues, decimal Discount, decimal TotProd) {
+                OrderRow rowOrderRow = ((OrderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID_order,
                         ClientName,
                         Date_order,
                         Item_Name,
                         Quantity,
-                        DataColumn1};
-                rowOrderDelevryDrinkRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowOrderDelevryDrinkRow);
-                return rowOrderDelevryDrinkRow;
+                        price,
+                        DeliveryService,
+                        Total,
+                        Address,
+                        Phone,
+                        Statues,
+                        Discount,
+                        TotProd};
+                rowOrderRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowOrderRow);
+                return rowOrderRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                OrderDelevryDrinkDataTable cln = ((OrderDelevryDrinkDataTable)(base.Clone()));
+                OrderDataTable cln = ((OrderDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -469,7 +842,7 @@ namespace Restuarnt.RPT.Exstra_Report {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new OrderDelevryDrinkDataTable();
+                return new OrderDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -480,7 +853,14 @@ namespace Restuarnt.RPT.Exstra_Report {
                 this.columnDate_order = base.Columns["Date_order"];
                 this.columnItem_Name = base.Columns["Item_Name"];
                 this.columnQuantity = base.Columns["Quantity"];
-                this.columnDataColumn1 = base.Columns["DataColumn1"];
+                this.columnprice = base.Columns["price"];
+                this.columnDeliveryService = base.Columns["DeliveryService"];
+                this.columnTotal = base.Columns["Total"];
+                this.columnAddress = base.Columns["Address"];
+                this.columnPhone = base.Columns["Phone"];
+                this.columnStatues = base.Columns["Statues"];
+                this.columnDiscount = base.Columns["Discount"];
+                this.columnTotProd = base.Columns["TotProd"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -496,34 +876,48 @@ namespace Restuarnt.RPT.Exstra_Report {
                 base.Columns.Add(this.columnItem_Name);
                 this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQuantity);
-                this.columnDataColumn1 = new global::System.Data.DataColumn("DataColumn1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDataColumn1);
+                this.columnprice = new global::System.Data.DataColumn("price", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprice);
+                this.columnDeliveryService = new global::System.Data.DataColumn("DeliveryService", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDeliveryService);
+                this.columnTotal = new global::System.Data.DataColumn("Total", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotal);
+                this.columnAddress = new global::System.Data.DataColumn("Address", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAddress);
+                this.columnPhone = new global::System.Data.DataColumn("Phone", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPhone);
+                this.columnStatues = new global::System.Data.DataColumn("Statues", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStatues);
+                this.columnDiscount = new global::System.Data.DataColumn("Discount", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDiscount);
+                this.columnTotProd = new global::System.Data.DataColumn("TotProd", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotProd);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OrderDelevryDrinkRow NewOrderDelevryDrinkRow() {
-                return ((OrderDelevryDrinkRow)(this.NewRow()));
+            public OrderRow NewOrderRow() {
+                return ((OrderRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new OrderDelevryDrinkRow(builder);
+                return new OrderRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(OrderDelevryDrinkRow);
+                return typeof(OrderRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.OrderDelevryDrinkRowChanged != null)) {
-                    this.OrderDelevryDrinkRowChanged(this, new OrderDelevryDrinkRowChangeEvent(((OrderDelevryDrinkRow)(e.Row)), e.Action));
+                if ((this.OrderRowChanged != null)) {
+                    this.OrderRowChanged(this, new OrderRowChangeEvent(((OrderRow)(e.Row)), e.Action));
                 }
             }
             
@@ -531,8 +925,8 @@ namespace Restuarnt.RPT.Exstra_Report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.OrderDelevryDrinkRowChanging != null)) {
-                    this.OrderDelevryDrinkRowChanging(this, new OrderDelevryDrinkRowChangeEvent(((OrderDelevryDrinkRow)(e.Row)), e.Action));
+                if ((this.OrderRowChanging != null)) {
+                    this.OrderRowChanging(this, new OrderRowChangeEvent(((OrderRow)(e.Row)), e.Action));
                 }
             }
             
@@ -540,8 +934,8 @@ namespace Restuarnt.RPT.Exstra_Report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.OrderDelevryDrinkRowDeleted != null)) {
-                    this.OrderDelevryDrinkRowDeleted(this, new OrderDelevryDrinkRowChangeEvent(((OrderDelevryDrinkRow)(e.Row)), e.Action));
+                if ((this.OrderRowDeleted != null)) {
+                    this.OrderRowDeleted(this, new OrderRowChangeEvent(((OrderRow)(e.Row)), e.Action));
                 }
             }
             
@@ -549,14 +943,14 @@ namespace Restuarnt.RPT.Exstra_Report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.OrderDelevryDrinkRowDeleting != null)) {
-                    this.OrderDelevryDrinkRowDeleting(this, new OrderDelevryDrinkRowChangeEvent(((OrderDelevryDrinkRow)(e.Row)), e.Action));
+                if ((this.OrderRowDeleting != null)) {
+                    this.OrderRowDeleting(this, new OrderRowChangeEvent(((OrderRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveOrderDelevryDrinkRow(OrderDelevryDrinkRow row) {
+            public void RemoveOrderRow(OrderRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -583,7 +977,7 @@ namespace Restuarnt.RPT.Exstra_Report {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "OrderDelevryDrinkDataTable";
+                attribute2.FixedValue = "OrderDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -629,22 +1023,16 @@ namespace Restuarnt.RPT.Exstra_Report {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class OrderDelevryDDataTable : global::System.Data.TypedTableBase<OrderDelevryDRow> {
+        public partial class DeliveryNameDataTable : global::System.Data.TypedTableBase<DeliveryNameRow> {
             
             private global::System.Data.DataColumn columnID_order;
             
-            private global::System.Data.DataColumn columnClientName;
-            
-            private global::System.Data.DataColumn columnDate_order;
-            
-            private global::System.Data.DataColumn columnItem_Name;
-            
-            private global::System.Data.DataColumn columnQuantity;
+            private global::System.Data.DataColumn columnDeliveryName;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OrderDelevryDDataTable() {
-                this.TableName = "OrderDelevryD";
+            public DeliveryNameDataTable() {
+                this.TableName = "DeliveryName";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -652,7 +1040,7 @@ namespace Restuarnt.RPT.Exstra_Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal OrderDelevryDDataTable(global::System.Data.DataTable table) {
+            internal DeliveryNameDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -669,7 +1057,7 @@ namespace Restuarnt.RPT.Exstra_Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected OrderDelevryDDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected DeliveryNameDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -684,33 +1072,9 @@ namespace Restuarnt.RPT.Exstra_Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ClientNameColumn {
+            public global::System.Data.DataColumn DeliveryNameColumn {
                 get {
-                    return this.columnClientName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Date_orderColumn {
-                get {
-                    return this.columnDate_order;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Item_NameColumn {
-                get {
-                    return this.columnItem_Name;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn QuantityColumn {
-                get {
-                    return this.columnQuantity;
+                    return this.columnDeliveryName;
                 }
             }
             
@@ -725,49 +1089,46 @@ namespace Restuarnt.RPT.Exstra_Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OrderDelevryDRow this[int index] {
+            public DeliveryNameRow this[int index] {
                 get {
-                    return ((OrderDelevryDRow)(this.Rows[index]));
+                    return ((DeliveryNameRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event OrderDelevryDRowChangeEventHandler OrderDelevryDRowChanging;
+            public event DeliveryNameRowChangeEventHandler DeliveryNameRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event OrderDelevryDRowChangeEventHandler OrderDelevryDRowChanged;
+            public event DeliveryNameRowChangeEventHandler DeliveryNameRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event OrderDelevryDRowChangeEventHandler OrderDelevryDRowDeleting;
+            public event DeliveryNameRowChangeEventHandler DeliveryNameRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event OrderDelevryDRowChangeEventHandler OrderDelevryDRowDeleted;
+            public event DeliveryNameRowChangeEventHandler DeliveryNameRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddOrderDelevryDRow(OrderDelevryDRow row) {
+            public void AddDeliveryNameRow(DeliveryNameRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OrderDelevryDRow AddOrderDelevryDRow(int ID_order, string ClientName, System.DateTime Date_order, string Item_Name, int Quantity) {
-                OrderDelevryDRow rowOrderDelevryDRow = ((OrderDelevryDRow)(this.NewRow()));
+            public DeliveryNameRow AddDeliveryNameRow(int ID_order, string DeliveryName) {
+                DeliveryNameRow rowDeliveryNameRow = ((DeliveryNameRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID_order,
-                        ClientName,
-                        Date_order,
-                        Item_Name,
-                        Quantity};
-                rowOrderDelevryDRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowOrderDelevryDRow);
-                return rowOrderDelevryDRow;
+                        DeliveryName};
+                rowDeliveryNameRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDeliveryNameRow);
+                return rowDeliveryNameRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                OrderDelevryDDataTable cln = ((OrderDelevryDDataTable)(base.Clone()));
+                DeliveryNameDataTable cln = ((DeliveryNameDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -775,17 +1136,14 @@ namespace Restuarnt.RPT.Exstra_Report {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new OrderDelevryDDataTable();
+                return new DeliveryNameDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnID_order = base.Columns["ID_order"];
-                this.columnClientName = base.Columns["ClientName"];
-                this.columnDate_order = base.Columns["Date_order"];
-                this.columnItem_Name = base.Columns["Item_Name"];
-                this.columnQuantity = base.Columns["Quantity"];
+                this.columnDeliveryName = base.Columns["DeliveryName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -793,40 +1151,35 @@ namespace Restuarnt.RPT.Exstra_Report {
             private void InitClass() {
                 this.columnID_order = new global::System.Data.DataColumn("ID_order", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_order);
-                this.columnClientName = new global::System.Data.DataColumn("ClientName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnClientName);
-                this.columnDate_order = new global::System.Data.DataColumn("Date_order", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDate_order);
-                this.columnItem_Name = new global::System.Data.DataColumn("Item_Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnItem_Name);
-                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnQuantity);
+                this.columnDeliveryName = new global::System.Data.DataColumn("DeliveryName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDeliveryName);
+                this.columnDeliveryName.Caption = "TableNum";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OrderDelevryDRow NewOrderDelevryDRow() {
-                return ((OrderDelevryDRow)(this.NewRow()));
+            public DeliveryNameRow NewDeliveryNameRow() {
+                return ((DeliveryNameRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new OrderDelevryDRow(builder);
+                return new DeliveryNameRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(OrderDelevryDRow);
+                return typeof(DeliveryNameRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.OrderDelevryDRowChanged != null)) {
-                    this.OrderDelevryDRowChanged(this, new OrderDelevryDRowChangeEvent(((OrderDelevryDRow)(e.Row)), e.Action));
+                if ((this.DeliveryNameRowChanged != null)) {
+                    this.DeliveryNameRowChanged(this, new DeliveryNameRowChangeEvent(((DeliveryNameRow)(e.Row)), e.Action));
                 }
             }
             
@@ -834,8 +1187,8 @@ namespace Restuarnt.RPT.Exstra_Report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.OrderDelevryDRowChanging != null)) {
-                    this.OrderDelevryDRowChanging(this, new OrderDelevryDRowChangeEvent(((OrderDelevryDRow)(e.Row)), e.Action));
+                if ((this.DeliveryNameRowChanging != null)) {
+                    this.DeliveryNameRowChanging(this, new DeliveryNameRowChangeEvent(((DeliveryNameRow)(e.Row)), e.Action));
                 }
             }
             
@@ -843,8 +1196,8 @@ namespace Restuarnt.RPT.Exstra_Report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.OrderDelevryDRowDeleted != null)) {
-                    this.OrderDelevryDRowDeleted(this, new OrderDelevryDRowChangeEvent(((OrderDelevryDRow)(e.Row)), e.Action));
+                if ((this.DeliveryNameRowDeleted != null)) {
+                    this.DeliveryNameRowDeleted(this, new DeliveryNameRowChangeEvent(((DeliveryNameRow)(e.Row)), e.Action));
                 }
             }
             
@@ -852,14 +1205,14 @@ namespace Restuarnt.RPT.Exstra_Report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.OrderDelevryDRowDeleting != null)) {
-                    this.OrderDelevryDRowDeleting(this, new OrderDelevryDRowChangeEvent(((OrderDelevryDRow)(e.Row)), e.Action));
+                if ((this.DeliveryNameRowDeleting != null)) {
+                    this.DeliveryNameRowDeleting(this, new DeliveryNameRowChangeEvent(((DeliveryNameRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveOrderDelevryDRow(OrderDelevryDRow row) {
+            public void RemoveDeliveryNameRow(DeliveryNameRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -886,7 +1239,7 @@ namespace Restuarnt.RPT.Exstra_Report {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "OrderDelevryDDataTable";
+                attribute2.FixedValue = "DeliveryNameDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -930,15 +1283,15 @@ namespace Restuarnt.RPT.Exstra_Report {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class OrderDelevryDrinkRow : global::System.Data.DataRow {
+        public partial class OrderTableUmberRow : global::System.Data.DataRow {
             
-            private OrderDelevryDrinkDataTable tableOrderDelevryDrink;
+            private OrderTableUmberDataTable tableOrderTableUmber;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal OrderDelevryDrinkRow(global::System.Data.DataRowBuilder rb) : 
+            internal OrderTableUmberRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableOrderDelevryDrink = ((OrderDelevryDrinkDataTable)(this.Table));
+                this.tableOrderTableUmber = ((OrderTableUmberDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -946,182 +1299,70 @@ namespace Restuarnt.RPT.Exstra_Report {
             public int ID_order {
                 get {
                     try {
-                        return ((int)(this[this.tableOrderDelevryDrink.ID_orderColumn]));
+                        return ((int)(this[this.tableOrderTableUmber.ID_orderColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ID_order\' in table \'OrderDelevryDrink\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_order\' in table \'OrderTableUmber\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableOrderDelevryDrink.ID_orderColumn] = value;
+                    this[this.tableOrderTableUmber.ID_orderColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ClientName {
+            public string TableNum {
                 get {
                     try {
-                        return ((string)(this[this.tableOrderDelevryDrink.ClientNameColumn]));
+                        return ((string)(this[this.tableOrderTableUmber.TableNumColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ClientName\' in table \'OrderDelevryDrink\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TableNum\' in table \'OrderTableUmber\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableOrderDelevryDrink.ClientNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime Date_order {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableOrderDelevryDrink.Date_orderColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Date_order\' in table \'OrderDelevryDrink\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableOrderDelevryDrink.Date_orderColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Item_Name {
-                get {
-                    try {
-                        return ((string)(this[this.tableOrderDelevryDrink.Item_NameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Item_Name\' in table \'OrderDelevryDrink\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableOrderDelevryDrink.Item_NameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Quantity {
-                get {
-                    try {
-                        return ((int)(this[this.tableOrderDelevryDrink.QuantityColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Quantity\' in table \'OrderDelevryDrink\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableOrderDelevryDrink.QuantityColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string DataColumn1 {
-                get {
-                    try {
-                        return ((string)(this[this.tableOrderDelevryDrink.DataColumn1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DataColumn1\' in table \'OrderDelevryDrink\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableOrderDelevryDrink.DataColumn1Column] = value;
+                    this[this.tableOrderTableUmber.TableNumColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsID_orderNull() {
-                return this.IsNull(this.tableOrderDelevryDrink.ID_orderColumn);
+                return this.IsNull(this.tableOrderTableUmber.ID_orderColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetID_orderNull() {
-                this[this.tableOrderDelevryDrink.ID_orderColumn] = global::System.Convert.DBNull;
+                this[this.tableOrderTableUmber.ID_orderColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsClientNameNull() {
-                return this.IsNull(this.tableOrderDelevryDrink.ClientNameColumn);
+            public bool IsTableNumNull() {
+                return this.IsNull(this.tableOrderTableUmber.TableNumColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetClientNameNull() {
-                this[this.tableOrderDelevryDrink.ClientNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDate_orderNull() {
-                return this.IsNull(this.tableOrderDelevryDrink.Date_orderColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDate_orderNull() {
-                this[this.tableOrderDelevryDrink.Date_orderColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsItem_NameNull() {
-                return this.IsNull(this.tableOrderDelevryDrink.Item_NameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetItem_NameNull() {
-                this[this.tableOrderDelevryDrink.Item_NameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsQuantityNull() {
-                return this.IsNull(this.tableOrderDelevryDrink.QuantityColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetQuantityNull() {
-                this[this.tableOrderDelevryDrink.QuantityColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDataColumn1Null() {
-                return this.IsNull(this.tableOrderDelevryDrink.DataColumn1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDataColumn1Null() {
-                this[this.tableOrderDelevryDrink.DataColumn1Column] = global::System.Convert.DBNull;
+            public void SetTableNumNull() {
+                this[this.tableOrderTableUmber.TableNumColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class OrderDelevryDRow : global::System.Data.DataRow {
+        public partial class OrderRow : global::System.Data.DataRow {
             
-            private OrderDelevryDDataTable tableOrderDelevryD;
+            private OrderDataTable tableOrder;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal OrderDelevryDRow(global::System.Data.DataRowBuilder rb) : 
+            internal OrderRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableOrderDelevryD = ((OrderDelevryDDataTable)(this.Table));
+                this.tableOrder = ((OrderDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1129,14 +1370,14 @@ namespace Restuarnt.RPT.Exstra_Report {
             public int ID_order {
                 get {
                     try {
-                        return ((int)(this[this.tableOrderDelevryD.ID_orderColumn]));
+                        return ((int)(this[this.tableOrder.ID_orderColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ID_order\' in table \'OrderDelevryD\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_order\' in table \'Order\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableOrderDelevryD.ID_orderColumn] = value;
+                    this[this.tableOrder.ID_orderColumn] = value;
                 }
             }
             
@@ -1145,14 +1386,14 @@ namespace Restuarnt.RPT.Exstra_Report {
             public string ClientName {
                 get {
                     try {
-                        return ((string)(this[this.tableOrderDelevryD.ClientNameColumn]));
+                        return ((string)(this[this.tableOrder.ClientNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ClientName\' in table \'OrderDelevryD\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ClientName\' in table \'Order\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableOrderDelevryD.ClientNameColumn] = value;
+                    this[this.tableOrder.ClientNameColumn] = value;
                 }
             }
             
@@ -1161,14 +1402,14 @@ namespace Restuarnt.RPT.Exstra_Report {
             public System.DateTime Date_order {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableOrderDelevryD.Date_orderColumn]));
+                        return ((global::System.DateTime)(this[this.tableOrder.Date_orderColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Date_order\' in table \'OrderDelevryD\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Date_order\' in table \'Order\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableOrderDelevryD.Date_orderColumn] = value;
+                    this[this.tableOrder.Date_orderColumn] = value;
                 }
             }
             
@@ -1177,14 +1418,14 @@ namespace Restuarnt.RPT.Exstra_Report {
             public string Item_Name {
                 get {
                     try {
-                        return ((string)(this[this.tableOrderDelevryD.Item_NameColumn]));
+                        return ((string)(this[this.tableOrder.Item_NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Item_Name\' in table \'OrderDelevryD\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Item_Name\' in table \'Order\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableOrderDelevryD.Item_NameColumn] = value;
+                    this[this.tableOrder.Item_NameColumn] = value;
                 }
             }
             
@@ -1193,75 +1434,370 @@ namespace Restuarnt.RPT.Exstra_Report {
             public int Quantity {
                 get {
                     try {
-                        return ((int)(this[this.tableOrderDelevryD.QuantityColumn]));
+                        return ((int)(this[this.tableOrder.QuantityColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Quantity\' in table \'OrderDelevryD\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Quantity\' in table \'Order\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableOrderDelevryD.QuantityColumn] = value;
+                    this[this.tableOrder.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal price {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableOrder.priceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'price\' in table \'Order\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrder.priceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DeliveryService {
+                get {
+                    try {
+                        return ((string)(this[this.tableOrder.DeliveryServiceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DeliveryService\' in table \'Order\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrder.DeliveryServiceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal Total {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableOrder.TotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Total\' in table \'Order\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrder.TotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Address {
+                get {
+                    try {
+                        return ((string)(this[this.tableOrder.AddressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Address\' in table \'Order\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrder.AddressColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Phone {
+                get {
+                    try {
+                        return ((string)(this[this.tableOrder.PhoneColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Phone\' in table \'Order\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrder.PhoneColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Statues {
+                get {
+                    try {
+                        return ((string)(this[this.tableOrder.StatuesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Statues\' in table \'Order\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrder.StatuesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal Discount {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableOrder.DiscountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Discount\' in table \'Order\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrder.DiscountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal TotProd {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableOrder.TotProdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TotProd\' in table \'Order\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrder.TotProdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsID_orderNull() {
-                return this.IsNull(this.tableOrderDelevryD.ID_orderColumn);
+                return this.IsNull(this.tableOrder.ID_orderColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetID_orderNull() {
-                this[this.tableOrderDelevryD.ID_orderColumn] = global::System.Convert.DBNull;
+                this[this.tableOrder.ID_orderColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsClientNameNull() {
-                return this.IsNull(this.tableOrderDelevryD.ClientNameColumn);
+                return this.IsNull(this.tableOrder.ClientNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetClientNameNull() {
-                this[this.tableOrderDelevryD.ClientNameColumn] = global::System.Convert.DBNull;
+                this[this.tableOrder.ClientNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsDate_orderNull() {
-                return this.IsNull(this.tableOrderDelevryD.Date_orderColumn);
+                return this.IsNull(this.tableOrder.Date_orderColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDate_orderNull() {
-                this[this.tableOrderDelevryD.Date_orderColumn] = global::System.Convert.DBNull;
+                this[this.tableOrder.Date_orderColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsItem_NameNull() {
-                return this.IsNull(this.tableOrderDelevryD.Item_NameColumn);
+                return this.IsNull(this.tableOrder.Item_NameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetItem_NameNull() {
-                this[this.tableOrderDelevryD.Item_NameColumn] = global::System.Convert.DBNull;
+                this[this.tableOrder.Item_NameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsQuantityNull() {
-                return this.IsNull(this.tableOrderDelevryD.QuantityColumn);
+                return this.IsNull(this.tableOrder.QuantityColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetQuantityNull() {
-                this[this.tableOrderDelevryD.QuantityColumn] = global::System.Convert.DBNull;
+                this[this.tableOrder.QuantityColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IspriceNull() {
+                return this.IsNull(this.tableOrder.priceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetpriceNull() {
+                this[this.tableOrder.priceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDeliveryServiceNull() {
+                return this.IsNull(this.tableOrder.DeliveryServiceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDeliveryServiceNull() {
+                this[this.tableOrder.DeliveryServiceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTotalNull() {
+                return this.IsNull(this.tableOrder.TotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTotalNull() {
+                this[this.tableOrder.TotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAddressNull() {
+                return this.IsNull(this.tableOrder.AddressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAddressNull() {
+                this[this.tableOrder.AddressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPhoneNull() {
+                return this.IsNull(this.tableOrder.PhoneColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPhoneNull() {
+                this[this.tableOrder.PhoneColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsStatuesNull() {
+                return this.IsNull(this.tableOrder.StatuesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetStatuesNull() {
+                this[this.tableOrder.StatuesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDiscountNull() {
+                return this.IsNull(this.tableOrder.DiscountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDiscountNull() {
+                this[this.tableOrder.DiscountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTotProdNull() {
+                return this.IsNull(this.tableOrder.TotProdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTotProdNull() {
+                this[this.tableOrder.TotProdColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class DeliveryNameRow : global::System.Data.DataRow {
+            
+            private DeliveryNameDataTable tableDeliveryName;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal DeliveryNameRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableDeliveryName = ((DeliveryNameDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int ID_order {
+                get {
+                    try {
+                        return ((int)(this[this.tableDeliveryName.ID_orderColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_order\' in table \'DeliveryName\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDeliveryName.ID_orderColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DeliveryName {
+                get {
+                    try {
+                        return ((string)(this[this.tableDeliveryName.DeliveryNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DeliveryName\' in table \'DeliveryName\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDeliveryName.DeliveryNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsID_orderNull() {
+                return this.IsNull(this.tableDeliveryName.ID_orderColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetID_orderNull() {
+                this[this.tableDeliveryName.ID_orderColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDeliveryNameNull() {
+                return this.IsNull(this.tableDeliveryName.DeliveryNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDeliveryNameNull() {
+                this[this.tableDeliveryName.DeliveryNameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1269,22 +1805,22 @@ namespace Restuarnt.RPT.Exstra_Report {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class OrderDelevryDrinkRowChangeEvent : global::System.EventArgs {
+        public class OrderTableUmberRowChangeEvent : global::System.EventArgs {
             
-            private OrderDelevryDrinkRow eventRow;
+            private OrderTableUmberRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OrderDelevryDrinkRowChangeEvent(OrderDelevryDrinkRow row, global::System.Data.DataRowAction action) {
+            public OrderTableUmberRowChangeEvent(OrderTableUmberRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OrderDelevryDrinkRow Row {
+            public OrderTableUmberRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1303,22 +1839,56 @@ namespace Restuarnt.RPT.Exstra_Report {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class OrderDelevryDRowChangeEvent : global::System.EventArgs {
+        public class OrderRowChangeEvent : global::System.EventArgs {
             
-            private OrderDelevryDRow eventRow;
+            private OrderRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OrderDelevryDRowChangeEvent(OrderDelevryDRow row, global::System.Data.DataRowAction action) {
+            public OrderRowChangeEvent(OrderRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OrderDelevryDRow Row {
+            public OrderRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class DeliveryNameRowChangeEvent : global::System.EventArgs {
+            
+            private DeliveryNameRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public DeliveryNameRowChangeEvent(DeliveryNameRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public DeliveryNameRow Row {
                 get {
                     return this.eventRow;
                 }

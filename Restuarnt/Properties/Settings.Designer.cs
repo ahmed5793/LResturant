@@ -12,7 +12,7 @@ namespace Restuarnt.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.3.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.5.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -25,13 +25,37 @@ namespace Restuarnt.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("repositoryItemButtonEdit1")]
-        public string btn_incremnt {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PrinterName {
             get {
-                return ((string)(this["btn_incremnt"]));
+                return ((string)(this["PrinterName"]));
             }
             set {
-                this["btn_incremnt"] = value;
+                this["PrinterName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal DeliveryService {
+            get {
+                return ((decimal)(this["DeliveryService"]));
+            }
+            set {
+                this["DeliveryService"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string OrderType {
+            get {
+                return ((string)(this["OrderType"]));
+            }
+            set {
+                this["OrderType"] = value;
             }
         }
     }
