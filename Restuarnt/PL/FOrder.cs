@@ -2318,7 +2318,7 @@ namespace Restuarnt.PL
                                     cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
                                     dt.Clear();
                                     dt = o.AddOrder(Convert.ToInt32(cmb_customer.EditValue), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
-                            0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text), " Take away",Program.Id_USer,"true");
+                            0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text), "Take away",Program.Id_USer,"true");
                                     Lable_Num.Text = dt.Rows[0][0].ToString();
 
                                     for (int i = 0; i < gridView2.RowCount; i++)
