@@ -109,7 +109,7 @@
             this.rdb_delivery.AutoSize = true;
             this.rdb_delivery.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdb_delivery.Image = global::Restuarnt.Properties.Resources.delivery2;
-            this.rdb_delivery.Location = new System.Drawing.Point(197, 30);
+            this.rdb_delivery.Location = new System.Drawing.Point(203, 30);
             this.rdb_delivery.Name = "rdb_delivery";
             this.rdb_delivery.Size = new System.Drawing.Size(142, 122);
             this.rdb_delivery.TabIndex = 86;
