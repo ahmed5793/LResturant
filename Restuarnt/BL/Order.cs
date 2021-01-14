@@ -844,7 +844,7 @@ namespace Restuarnt.BL
 
 
 
-            dt = da.selected("SELECtALLORDER", null);
+            dt = da.selected("SELECtALLORDER", param);
             da.close();
             return dt;
         }
