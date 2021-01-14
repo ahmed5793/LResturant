@@ -7,15 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using clothesStore.Bl;
-namespace clothesStore.PL
+using Restuarnt.Bl;
+namespace Restuarnt.PL
 {
     public partial class Validate_Users : Form
     {
         //Frm_Main Frm = new Frm_Main();
      
-        Permession p = new Permession();
-        Login l = new Login();
+        BL.Login l = new BL.Login();
         DataTable dt = new DataTable();
         DataTable dt10 = new DataTable();
         DataTable dt2 = new DataTable();
@@ -36,10 +35,10 @@ namespace clothesStore.PL
             try
             {
 
-            cmb_Users1.DataSource = l.SelectUsers();
-            cmb_Users1.DisplayMember = "اسم المستخدم";
-            cmb_Users1.ValueMember = "اسم المستخدم";
-
+            cmb_Users1.DataSource = l.SelectComboUsers();
+            cmb_Users1.DisplayMember = "UserName";
+            cmb_Users1.ValueMember = "ID_User";
+                cmb_Users1.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -57,189 +56,73 @@ namespace clothesStore.PL
 
 
                     dt2.Clear();
-                    dt2 = p.SelectUserProduct(cmb_Users1.Text);
+                    dt2 = l.Select_UserPermession(Convert.ToInt32(cmb_Users1.SelectedValue));
                     if (dt2.Rows.Count >= 1)
                     {
-                        if (Convert.ToInt32(dt2.Rows[0][1]) == 0) { check_AddItems.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][1]) == 1) { check_AddItems.Checked = true; }
+                        if (Convert.ToInt32(dt2.Rows[0][1]) == 0) { check_AddCategory.Checked = false; }
+                        else if (Convert.ToInt32(dt2.Rows[0][1]) == 1) { check_AddCategory.Checked = true; }
                         ///////
-                        if (Convert.ToInt32(dt2.Rows[0][2]) == 0) { check_reportMinItem.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][2]) == 1) { check_reportMinItem.Checked = true; }
+                        if (Convert.ToInt32(dt2.Rows[0][2]) == 0) { Check_AddItem.Checked = false; }
+                        else if (Convert.ToInt32(dt2.Rows[0][2]) == 1) { Check_AddItem.Checked = true; }
                         ////////
-                        if (Convert.ToInt32(dt2.Rows[0][3]) == 0) { check_Balance.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][3]) == 1) { check_Balance.Checked = true; }
+                        if (Convert.ToInt32(dt2.Rows[0][3]) == 0) { check_AddTable.Checked = false; }
+                        else if (Convert.ToInt32(dt2.Rows[0][3]) == 1) { check_AddTable.Checked = true; }
                         ///////
-                        if (Convert.ToInt32(dt2.Rows[0][4]) == 0) { check_ReportBalance.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][4]) == 1) { check_ReportBalance.Checked = true; }
+                        if (Convert.ToInt32(dt2.Rows[0][4]) == 0) { Check_AddDelivery.Checked = false; }
+                        else if (Convert.ToInt32(dt2.Rows[0][4]) == 1) { Check_AddDelivery.Checked = true; }
                         /////////
 
-                        if (Convert.ToInt32(dt2.Rows[0][5]) == 0) { check_Gard.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][5]) == 1) { check_Gard.Checked = true; }
+                        if (Convert.ToInt32(dt2.Rows[0][5]) == 0) { check_AddCaptin.Checked = false; }
+                        else if (Convert.ToInt32(dt2.Rows[0][5]) == 1) { check_AddCaptin.Checked = true; }
                         /////////
                         ///
-                        if (Convert.ToInt32(dt2.Rows[0][6]) == 0) { check_7arka.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][6]) == 1) { check_7arka.Checked = true; }
+                        if (Convert.ToInt32(dt2.Rows[0][6]) == 0) { Check_SettingOrder.Checked = false; }
+                        else if (Convert.ToInt32(dt2.Rows[0][6]) == 1) { Check_SettingOrder.Checked = true; }
                         /////////
 
-                    }
+                        if (Convert.ToInt32(dt2.Rows[0][7]) == 0) { Check_ManagementOrder.Checked = false; }
 
-                    dt2.Clear();
-                    dt2 = p.SelectUserClient(cmb_Users1.Text);
-                    if (dt2.Rows.Count >= 1)
-                    {
-                        if (Convert.ToInt32(dt2.Rows[0][1]) == 0) { check_AddClient.Checked = false; }
-
-                        else if (Convert.ToInt32(dt2.Rows[0][1]) == 1) { check_AddClient.Checked = true; }
+                        else if (Convert.ToInt32(dt2.Rows[0][7]) == 1) { Check_ManagementOrder.Checked = true; }
                         ///////
-                        if (Convert.ToInt32(dt2.Rows[0][2]) == 0) { Check_DiscountClient.Checked = false; }
+                        if (Convert.ToInt32(dt2.Rows[0][8]) == 0) { check_Order.Checked = false; }
 
-                        else if (Convert.ToInt32(dt2.Rows[0][2]) == 1) { Check_DiscountClient.Checked = true; }
+                        else if (Convert.ToInt32(dt2.Rows[0][8]) == 1) { check_Order.Checked = true; }
                         ////////
-                        if (Convert.ToInt32(dt2.Rows[0][3]) == 0) { Check_PayClient.Checked = false; }
+                        if (Convert.ToInt32(dt2.Rows[0][9]) == 0) { Check_MoveItem.Checked = false; }
 
-                        else if (Convert.ToInt32(dt2.Rows[0][3]) == 1) { Check_PayClient.Checked = true; }
+                        else if (Convert.ToInt32(dt2.Rows[0][9]) == 1) { Check_MoveItem.Checked = true; }
 
                         /////////
-                        if (Convert.ToInt32(dt2.Rows[0][4]) == 0) { Check_DepitClient.Checked = false; }
+                        if (Convert.ToInt32(dt2.Rows[0][10]) == 0) { check_ReciveMoney.Checked = false; }
 
-                        else if (Convert.ToInt32(dt2.Rows[0][4]) == 1) { Check_DepitClient.Checked = true; }
+                        else if (Convert.ToInt32(dt2.Rows[0][10]) == 1) { check_ReciveMoney.Checked = true; }
                         ///////
-                        if (Convert.ToInt32(dt2.Rows[0][5]) == 0) { check_ReportAccountCliet.Checked = false; }
+                        if (Convert.ToInt32(dt2.Rows[0][11]) == 0) { check_AddMasrof.Checked = false; }
 
-                        else if (Convert.ToInt32(dt2.Rows[0][5]) == 1) { check_ReportAccountCliet.Checked = true; }
+                        else if (Convert.ToInt32(dt2.Rows[0][11]) == 1) { check_AddMasrof.Checked = true; }
+                        //////////
 
-                        if (Convert.ToInt32(dt2.Rows[0][6]) == 0) { check_SarfPay.Checked = false; }
+                        if (Convert.ToInt32(dt2.Rows[0][12]) == 0) { check_ReportMasrofat.Checked = false; }
 
-                        else if (Convert.ToInt32(dt2.Rows[0][6]) == 1) { check_SarfPay.Checked = true; }
-
-                        if (Convert.ToInt32(dt2.Rows[0][7]) == 0) { check_ClientData.Checked = false; }
-
-                        else if (Convert.ToInt32(dt2.Rows[0][7]) == 1) { check_ClientData.Checked = true; }
-
-                    }
-                    dt2.Clear();
-                    dt2 = p.SelectUserSuppliers(cmb_Users1.Text);
-                    if (dt2.Rows.Count >= 1)
-                    {
-                        if (Convert.ToInt32(dt2.Rows[0][1]) == 0) { check_AddSuppliers.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][1]) == 1) { check_AddSuppliers.Checked = true; }
-                        ///////
-                        if (Convert.ToInt32(dt2.Rows[0][2]) == 0) { check_ReportSuppliers.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][2]) == 1) { check_ReportSuppliers.Checked = true; }
+                        else if (Convert.ToInt32(dt2.Rows[0][12]) == 1) { check_ReportMasrofat.Checked = true; }
                         ////////
-                        if (Convert.ToInt32(dt2.Rows[0][3]) == 0) { check_DiscountSuppliers.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][3]) == 1) { check_DiscountSuppliers.Checked = true; }
 
-                        ///////
-                        if (Convert.ToInt32(dt2.Rows[0][4]) == 0) { check_PaySuppliers.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][4]) == 1) { check_PaySuppliers.Checked = true; }
+                        if (Convert.ToInt32(dt2.Rows[0][13]) == 0) { check_AddUser.Checked = false; }
+
+                        else if (Convert.ToInt32(dt2.Rows[0][13]) == 1) { check_AddUser.Checked = true; }
                         /////////
-                  
-                        if (Convert.ToInt32(dt2.Rows[0][5]) == 0) { check_REportAccountSuppliers.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][5]) == 1) { check_REportAccountSuppliers.Checked = true; }
+
+                        if (Convert.ToInt32(dt2.Rows[0][14]) == 0) { check_Permession.Checked = false; }
+                        else if (Convert.ToInt32(dt2.Rows[0][14]) == 1) { check_Permession.Checked = true; }
                         ///////
-                        if (Convert.ToInt32(dt2.Rows[0][6]) == 0) { check_DepitSuppliers.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][6]) == 1) { check_DepitSuppliers.Checked = true; }
-                    }
-                    dt2.Clear();
-                    dt2 = p.selectUserOrder(cmb_Users1.Text);
-                    if (dt2.Rows.Count >= 1)
-                    {
-                        if (Convert.ToInt32(dt2.Rows[0][1]) == 0) { check_InvoiceOrder.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][1]) == 1) { check_InvoiceOrder.Checked = true; }
-                        ///////
-                        if (Convert.ToInt32(dt2.Rows[0][2]) == 0) { check_ReturnOrder.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][2]) == 1) { check_ReturnOrder.Checked = true; }
+                        if (Convert.ToInt32(dt2.Rows[0][15]) == 0) { check_BAckUp.Checked = false; }
+                        else if (Convert.ToInt32(dt2.Rows[0][15]) == 1) { check_BAckUp.Checked = true; }
                         ////////
-                        if (Convert.ToInt32(dt2.Rows[0][3]) == 0) { check_managmentOrder.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][3]) == 1) { check_managmentOrder.Checked = true; }
-                        ///////
-                        if (Convert.ToInt32(dt2.Rows[0][4]) == 0) { check_ReportReturnOrder.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][4]) == 1) { check_ReportReturnOrder.Checked = true; }
-                        /////////
-                        if (Convert.ToInt32(dt2.Rows[0][5]) == 0) { check_reb7Order.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][5]) == 1) { check_reb7Order.Checked = true; }
-
-                    }
-                    dt2.Clear();
-                    dt2 = p.selectUserPurshise(cmb_Users1.Text);
-                    if (dt2.Rows.Count >= 1)
-                    {
-                        if (Convert.ToInt32(dt2.Rows[0][1]) == 0) { check_InvoiceSupplier.Checked = false; }
-
-                        else if (Convert.ToInt32(dt2.Rows[0][1]) == 1) { check_InvoiceSupplier.Checked = true; }
-                        ///////
-                        if (Convert.ToInt32(dt2.Rows[0][2]) == 0) { check_ReturnSuppliers.Checked = false; }
-
-                        else if (Convert.ToInt32(dt2.Rows[0][2]) == 1) { check_ReturnSuppliers.Checked = true; }
-                        ////////
-                        if (Convert.ToInt32(dt2.Rows[0][3]) == 0) { check_ManagmentSuppliers.Checked = false; }
-
-                        else if (Convert.ToInt32(dt2.Rows[0][3]) == 1) { check_ManagmentSuppliers.Checked = true; }
-                        ///////
-                        if (Convert.ToInt32(dt2.Rows[0][4]) == 0) { check_ReportReturnSuppliers.Checked = false; }
-
-                        else if (Convert.ToInt32(dt2.Rows[0][4]) == 1) { check_ReportReturnSuppliers.Checked = true; }
-
-                    }
-                    dt2.Clear();
-                    dt2 = p.selectUserStock(cmb_Users1.Text);
-                    if (dt2.Rows.Count >= 1)
-                    {
-                        if (Convert.ToInt32(dt2.Rows[0][1]) == 0) { check_AddMasrof.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][1]) == 1) { check_AddMasrof.Checked = true; }
-                        ///////
-                        if (Convert.ToInt32(dt2.Rows[0][2]) == 0) { check_ReportMasrof.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][2]) == 1) { check_ReportMasrof.Checked = true; }
-                        ////////
-                        if (Convert.ToInt32(dt2.Rows[0][3]) == 0) { check_AddStock.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][3]) == 1) { check_AddStock.Checked = true; }
-                        ///////
-
-                     
-                        ///
-
-                        if (Convert.ToInt32(dt2.Rows[0][4]) == 0) { check_AddStockMoney.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][4]) == 1) { check_AddStockMoney.Checked = true; }
-                        /////
-                        if (Convert.ToInt32(dt2.Rows[0][5]) == 0) { check_PullStockMoney.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][5]) == 1) { check_PullStockMoney.Checked = true; }
-                        /////////
-                        if (Convert.ToInt32(dt2.Rows[0][6]) == 0) { check_ReportPullStockMoney.Checked = false; }
-
-                        else if (Convert.ToInt32(dt2.Rows[0][6]) == 1) { check_ReportPullStockMoney.Checked = true; }
-                        ///////
-                        if (Convert.ToInt32(dt2.Rows[0][7]) == 0) { check_TransferStock.Checked = false; }
-
-                        else if (Convert.ToInt32(dt2.Rows[0][7]) == 1) { check_TransferStock.Checked = true; }
-                        //////
-                        if (Convert.ToInt32(dt2.Rows[0][8]) == 0) { check_ReportAddStockMoney.Checked = false; }
-
-                        else if (Convert.ToInt32(dt2.Rows[0][8]) == 1) { check_ReportAddStockMoney.Checked = true; }
-                        ///////
-                        
-                    }
-                    dt2.Clear();
-                    dt2 = p.selectUserFile(cmb_Users1.Text);
-                    if (dt2.Rows.Count >= 1)
-                    {
-                        if (Convert.ToInt32(dt2.Rows[0][1]) == 0) { check_BackUp.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][1]) == 1) { check_BackUp.Checked = true; }
-                        ///////
-                        if (Convert.ToInt32(dt2.Rows[0][2]) == 0) { check_Restore.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][2]) == 1) { check_Restore.Checked = true; }
-                        ////////
-                        if (Convert.ToInt32(dt2.Rows[0][3]) == 0) { check_SettingPrint.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][3]) == 1) { check_SettingPrint.Checked = true; }
-                        ///////
-
-                        if (Convert.ToInt32(dt2.Rows[0][4]) == 0) { check_ManagmentUser.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][4]) == 1) { check_ManagmentUser.Checked = true; }
-                        /////
-                        if (Convert.ToInt32(dt2.Rows[0][5]) == 0) { check_ManagmentEmployee.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][5]) == 1) { check_ManagmentEmployee.Checked = true; }
+                        if (Convert.ToInt32(dt2.Rows[0][16]) == 0) { check_Restore.Checked = false; }
+                        else if (Convert.ToInt32(dt2.Rows[0][16]) == 1) { check_Restore.Checked = true; }
                     }
                 }
+
             }
             catch (Exception ex)
             {
@@ -253,63 +136,6 @@ namespace clothesStore.PL
         {
            
         }
-
-
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-            
-        }
-
-        private void btn_save_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                if (cmb_Users1.Text == "")
-                {
-                    MessageBox.Show("لا بد من تحديد إسم الموظف");
-                    return;
-                }
-                else
-                {
-                    int AddItem = 0, reportMinItem = 0, Balance = 0, ReportBalance = 0, gard=0,harka=0;
-                    if (check_AddItems.Checked == true){ AddItem = 1;}
-                    else if (check_AddItems.Checked == false){ AddItem = 0;}
-                    /////
-                    if (check_reportMinItem.Checked == true){ reportMinItem = 1;}
-                    else if (check_reportMinItem.Checked == false){ reportMinItem = 0;}
-                    /////
-                    if (check_Balance.Checked == true){ Balance = 1;}
-                    else if (check_Balance.Checked == false){ Balance = 0;}
-                    ////
-                    if (check_ReportBalance.Checked == true){ ReportBalance = 1;}
-                    else if (check_ReportBalance.Checked == false){ ReportBalance = 0;}
-                    ////////djaklsjdaklda
-                    if (check_Gard.Checked == true) { gard = 1; }
-                    else if (check_Gard.Checked == false) { gard = 0; }
-                    ////////
-                    if (check_7arka.Checked == true) { harka = 1; }
-                    else if (check_7arka.Checked == false) { harka = 0; }
-                    ////////
-
-
-                    p.UpdateUserProduct(cmb_Users1.Text, AddItem, reportMinItem, Balance, ReportBalance,gard, harka);
-
-
-
-                    MessageBox.Show(" تم حفظ الصلاحيات للمستخدم");
-
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             try
@@ -321,369 +147,91 @@ namespace clothesStore.PL
                 }
                 else
                 {
-                    int AddClient = 0, DiscountClient = 0, PayClient = 0, DepitClient = 0, ReportAccountCliet = 0
-                        ,sarfPay=0, ClientData=0;
+                    int AddCategory = 0, AddItem = 0, AddTable = 0, AddDelivery = 0, AddCaptin = 0
+                        ,SettingOrder=0, order=0,orderManagement=0 , MoveProduct=0,RecieveMoney=0,AddMasrof=0,ReportMasrofat=0
+                       ,AddUser=0 , Permesion=0,BackUp=0,Restore=0,permession_Update=0,permession_Delete=0;
 
-                    if (check_AddClient.Checked == true){ AddClient = 1;}
-                    else if (check_AddClient.Checked == false){ AddClient = 0;}
+                    if (check_AddCategory.Checked == true){ AddCategory = 1;}
+                    else if (check_AddCategory.Checked == false){ AddCategory = 0;}
                     //////
-                    if (Check_DiscountClient.Checked == true){ DiscountClient = 1;}
-                    else if (Check_DiscountClient.Checked == false){ DiscountClient = 0;}
+                    if (Check_AddItem.Checked == true){ AddItem = 1;}
+                    else if (Check_AddItem.Checked == false){ AddItem = 0;}
                     //////
-                    if (Check_PayClient.Checked == true){ PayClient = 1;}
-                    else if (Check_PayClient.Checked == false){ PayClient = 0;}
+                    if (check_AddTable.Checked == true){ AddTable = 1;}
+                    else if (check_AddTable.Checked == false){ AddTable = 0;}
                     //////
-                    if (check_ReportAccountCliet.Checked == true){ ReportAccountCliet = 1;}
-                    else if (check_ReportAccountCliet.Checked == false){ ReportAccountCliet = 0;}
+                    if (Check_AddDelivery.Checked == true){ AddDelivery = 1;}
+                    else if (Check_AddDelivery.Checked == false){ AddDelivery = 0;}
 
 
-                    if (check_SarfPay.Checked == true) { sarfPay = 1; }
-                    else if (check_SarfPay.Checked == false) { sarfPay = 0; }
+                    if (check_AddCaptin.Checked == true) { AddCaptin = 1; }
+                    else if (check_AddCaptin.Checked == false) { AddCaptin = 0; }
 
-                    if (check_ClientData.Checked == true) { ClientData = 1; }
-                    else if (check_ClientData.Checked == false) { ClientData = 0; }
-
-                    p.UpdateUserClient(cmb_Users1.Text, AddClient, DiscountClient, PayClient, DepitClient, ReportAccountCliet, sarfPay, ClientData);
-                    MessageBox.Show(" تم حفظ الصلاحيات للمستخدم");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (cmb_Users1.Text == "")
-                {
-                    MessageBox.Show("لا بد من تحديد إسم الموظف");
-                    return;
-                }
-                else
-                {
-                    int AddSuppliers = 0, ReportSuppliers = 0, DiscountSuppliers = 0, PaySuppliers = 0, REportAccountSuppliers = 0,
-                        DepitSuppliers = 0;
-
-                    if (check_AddSuppliers.Checked == true){ AddSuppliers = 1;}
-
-                    else if (check_AddSuppliers.Checked == false){ AddSuppliers = 0;}
-                    ///////
-                    if (check_ReportSuppliers.Checked == true){ ReportSuppliers = 1;}
-
-                    else if (check_ReportSuppliers.Checked == false){ ReportSuppliers = 0;}
-                    ///////
-                    if (check_DiscountSuppliers.Checked == true){ DiscountSuppliers = 1;}
-
-                    else if (check_DiscountSuppliers.Checked == false){ DiscountSuppliers = 0;}
-                    ////////
-                    if (check_PaySuppliers.Checked == true){ PaySuppliers = 1;}
-
-                    else if (check_PaySuppliers.Checked == false){ PaySuppliers = 0;}
-                    ////////
-                    if (check_REportAccountSuppliers.Checked == true){ REportAccountSuppliers = 1;}
-
-                    else if (check_REportAccountSuppliers.Checked == false){ REportAccountSuppliers = 0;}
-                    //////
-                    if (check_DepitSuppliers.Checked == true){ DepitSuppliers = 1;}
-
-                    else if (check_DepitSuppliers.Checked == false){ DepitSuppliers = 0;}
-                    //////
-                 
-                    p.UpdateUserSuppliers(cmb_Users1.Text, AddSuppliers, ReportSuppliers, DiscountSuppliers, PaySuppliers, REportAccountSuppliers,
-                                         DepitSuppliers);
+                    if (Check_SettingOrder.Checked == true) { SettingOrder = 1; }
+                    else if (Check_SettingOrder.Checked == false) { SettingOrder = 0; }
 
 
-                    MessageBox.Show(" تم حفظ الصلاحيات للمستخدم");
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void simpleButton3_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (cmb_Users1.Text == "")
-                {
-                    MessageBox.Show("لا بد من تحديد إسم المستخدم");
-                    return;
-                }
-                else
-                {
-                    int InvoiceOrder = 0, ReturnOrder = 0, managmentOrder = 0, reb7Order = 0, ReportReturnOrder = 0;
-                       
-
-                    if (check_InvoiceOrder.Checked == true){ InvoiceOrder = 1;}
-
-                    else if (check_InvoiceOrder.Checked == false){ InvoiceOrder = 0;}
-                    ////////
-                    if (check_ReturnOrder.Checked == true){ ReturnOrder = 1;}
-
-                    else if (check_ReturnOrder.Checked == false){ ReturnOrder = 0;}
-                    ///////
-                    if (check_managmentOrder.Checked == true){ managmentOrder = 1;}
-
-                    else if (check_managmentOrder.Checked == false){ managmentOrder = 0;}
-                    ///////
-                    if (check_reb7Order.Checked == true){ reb7Order = 1;}
-
-                    else if (check_reb7Order.Checked == false){ reb7Order = 0;}
-                    ////////
-                    if (check_ReportReturnOrder.Checked == true){ ReportReturnOrder = 1;}
-
-                    else if (check_ReportReturnOrder.Checked == false){ ReportReturnOrder = 0;}
-                    /////////
-                  
-
-                    p.UpdateUserOrder(cmb_Users1.Text, InvoiceOrder, ReturnOrder, managmentOrder, ReportReturnOrder, reb7Order);
-
-                    MessageBox.Show(" تم حفظ الصلاحيات للمستخدم");
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
+                    if (Check_ManagementOrder.Checked == true) { orderManagement = 1; }
+                    else if (Check_ManagementOrder.Checked == false) { orderManagement = 0; }
 
 
-        private void simpleButton4_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (cmb_Users1.Text == "")
-                {
-                    MessageBox.Show("لا بد من تحديد إسم الموظف");
-                    return;
-                }
-                else
-                {
-                    int InvoiceSupplier = 0, ReturnSuppliers = 0, mnagmentSuppliers = 0,ReportReturnSuppliers = 0;
-
-                    if (check_InvoiceSupplier.Checked == true){ InvoiceSupplier = 1;}
-
-                    else if (check_InvoiceSupplier.Checked == false){ InvoiceSupplier = 0;}
-                    //////
-                    if (check_ReturnSuppliers.Checked == true){ ReturnSuppliers = 1;}
-
-                    else if (check_ReturnSuppliers.Checked == false){ ReturnSuppliers = 0;}
-                    /////
-                    if (check_ManagmentSuppliers.Checked == true){ mnagmentSuppliers = 1;}
-
-                    else if (check_ManagmentSuppliers.Checked == false){ mnagmentSuppliers = 0;}
-                    /////
-                    if (check_ReportReturnSuppliers.Checked == true){ ReportReturnSuppliers = 1;}
-
-                    else if (check_ReportReturnSuppliers.Checked == false){ ReportReturnSuppliers = 0;}
-                    ////////
-               
-                    
-                    p.UpdateUserPurshise(cmb_Users1.Text, InvoiceSupplier, ReturnSuppliers, mnagmentSuppliers, ReportReturnSuppliers);
-
-                    MessageBox.Show(" تم حفظ الصلاحيات للمستخدم");
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void simpleButton5_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (cmb_Users1.Text == "")
-                {
-                    MessageBox.Show("لا بد من تحديد إسم الموظف");
-                    
-                    return;
-                }
-                else
-                {
-                    int AddMasrof = 0, ReportMasrof = 0, Add_Stock = 0, AddStockMoney = 0 , PullStockMoney = 0, ReportPullStockMoney = 0,
-                        ReportTransferStock = 0, ReportAddStockMoney = 0; 
-
-                    if (check_AddMasrof.Checked == true){ AddMasrof = 1;}
-                    else if (check_AddMasrof.Checked == false){ AddMasrof = 0;}
-                    //////
-                    if (check_ReportMasrof.Checked == true){ ReportMasrof = 1;}
-                    else if (check_ReportMasrof.Checked == false){ ReportMasrof = 0;}
-                    //////
-                    if (check_AddStock.Checked == true){ Add_Stock = 1;}
-                    else if (check_AddStock.Checked == false){ Add_Stock = 0;}
-                    //////
-                    if (check_AddStockMoney.Checked == true) { AddStockMoney = 1; }
-                    else if (check_AddStockMoney.Checked == false) { AddStockMoney = 0; }
-                    /////
-                    if (check_PullStockMoney.Checked == true){ PullStockMoney = 1;}
-                    else if (check_PullStockMoney.Checked == false){ PullStockMoney = 0;}
-                    ////////
-                    if (check_ReportPullStockMoney.Checked == true){ ReportPullStockMoney = 1;}
-                    else if (check_ReportPullStockMoney.Checked == false){ ReportPullStockMoney = 0;}
-                   /////
-                    if (check_TransferStock.Checked == true){ ReportTransferStock = 1;}
-                    else if (check_TransferStock.Checked == false){ ReportTransferStock = 0;}
-                    /////
-                    if (check_ReportAddStockMoney.Checked == true){ ReportAddStockMoney = 1;}
-                    else if (check_ReportAddStockMoney.Checked == false){ ReportAddStockMoney = 0;}
+                    if (check_Order.Checked == true) { order = 1; }
+                    else if (check_Order.Checked == false) { order = 0; }
 
 
-                
+                    if (Check_MoveItem.Checked == true) { MoveProduct = 1; }
+                    else if (Check_MoveItem.Checked == false) { MoveProduct = 0; }
 
-                    p.UpdateUserStock(cmb_Users1.Text, AddMasrof, ReportMasrof, Add_Stock, AddStockMoney, PullStockMoney, ReportPullStockMoney,
-                                          ReportTransferStock, ReportAddStockMoney);
+
+                    if (check_ReciveMoney.Checked == true) { RecieveMoney = 1; }
+                    else if (check_ReciveMoney.Checked == false) { RecieveMoney = 0; }
+
+
+                    if (check_AddMasrof.Checked == true) { AddMasrof = 1; }
+                    else if (check_AddMasrof.Checked == false) { AddMasrof = 0; }
+
+
+                    if (check_ReportMasrofat.Checked == true) { ReportMasrofat = 1; }
+                    else if (check_ReportMasrofat.Checked == false) { ReportMasrofat = 0; }
+
+
+                    if (check_AddUser.Checked == true) { AddUser = 1; }
+                    else if (check_AddUser.Checked == false) { AddUser = 0; }
+
+
+                    if (check_Permession.Checked == true) { Permesion = 1; }
+                    else if (check_Permession.Checked == false) { Permesion = 0; }
+
+
+                    if (check_BAckUp.Checked == true) { BackUp = 1; }
+                    else if (check_BAckUp.Checked == false) { BackUp = 0; }
 
 
 
-                    MessageBox.Show(" تم حفظ الصلاحيات للمستخدم");
-
-
-
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void Cmb_Branch_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-
-          
-        }
-        void Check()
-        {
-            
-            
-            //check_AddBranch.Checked = false;
-            //check_AddClients.Checked = false;
-            //check_AddSuppliers.Checked = false;
-            //check_AddEmployee.Checked = false;
-            //check_AddEmployeeBranch.Checked = false;
-            //check_AddInstalment.Checked = false;
-            //check_ReportSuppliers.Checked = false;
-            //check_InvoiceOrder.Checked = false;
-            //check_AddProudect.Checked = false;
-            //check_AddPurshase.Checked = false;
-            //check_managmentOrder.Checked = false;
-            //check_AddStore.Checked = false;
-            //check_AddStoreProduct.Checked = false;
-            //check_AddSuppliers.Checked = false;
-            //check_AddTechnical.Checked = false;
-            //check_AddTickets.Checked = false;
-            //check_BookingTimes.Checked = false;
-            //check_CustomerAccountStatment.Checked = false;
-            //check_DiscountSuppliers.Checked = false;
-            //check_DepitClients.Checked = false;
-            //check_DepitSuppliuers.Checked = false;
-            //check_DownloadFinger.Checked = false;
-            //check_reb7Order.Checked = false;
-            //check_ManagmentTickets.Checked = false;
-            //check_Order.Checked = false;
-            //check_PayClients.Checked = false;
-            //check_PaySuppliers.Checked = false;
-            //check_PaySupplies.Checked = false;
-            //check_ReportReturnOrder.Checked = false;
-            //check_RepoDoctorOut.Checked = false;
-            //check_REportAccountSuppliers.Checked = false;
-            //check_ReportDoctorOfCenter.Checked = false;
-            //check_ReportAccountCliet.Checked = false;
-            //check_ReportFinger.Checked = false;
-            //check_ReportInsertStock.Checked = false;
-            //check_ReportInstalment.Checked = false;
-            //check_ReturnOrder.Checked = false;
-            //check_ReportProudect.Checked = false;
-            //check_ReportPullStock.Checked = false;
-            //check_ReportPurshases.Checked = false;
-            //check_ReportSuppliers.Checked = false;
-            //check_ReportTechnical.Checked = false;
-            //check_ReurnPurchise.Checked = false;
-            //check_SearchTickets.Checked = false;
-            //check_TranfairStockToStock.Checked = false;
-            //check_TransfairProduct.Checked = false;
-            //Ckeck_ReciveMoney.Checked = false;
-            //Check_AddDoctor.Checked = false;
-            //Check_DepitClient.Checked = false;
-            //Check_AddShiftTechincal.Checked = false;
-            //Check_AddUserAccount.Checked = false;
-            //Check_Add_CategoryXray.Checked = false;
-            //Check_Add_ShiftEmployee.Checked = false;
-            //Check_Add_Xray.Checked = false;
-            //Check_DiscountClient.Checked = false;
-            //Check_PayClient.Checked = false;
-            //Check_Sarf_Mortbat.Checked = false;
-            //Check_UserPermession.Checked = false;
-
-        }
-
-        private void cmb_Users1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void simpleButton6_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (cmb_Users1.Text == "")
-                {
-                    MessageBox.Show("لا بد من تحديد إسم الموظف");
-
-                    return;
-                }
-                else
-                {
-                    int BackUp = 0, Restore = 0, SettingPrint = 0, ManagmentUser = 0, ManagmentEmployee = 0;
-
-                    if (check_BackUp.Checked == true) { BackUp = 1; }
-                    else if (check_BackUp.Checked == false) { BackUp = 0; }
-                    //////
                     if (check_Restore.Checked == true) { Restore = 1; }
                     else if (check_Restore.Checked == false) { Restore = 0; }
-                    //////
-                    if (check_SettingPrint.Checked == true) { SettingPrint = 1; }
-                    else if (check_SettingPrint.Checked == false) { SettingPrint = 0; }
-                    //////
-                    if (check_ManagmentUser.Checked == true) { ManagmentUser = 1; }
-                    else if (check_ManagmentUser.Checked == false) { ManagmentUser = 0; }
-                    /////
-                    if (check_ManagmentEmployee.Checked == true) { ManagmentEmployee = 1; }
-                    else if (check_ManagmentEmployee.Checked == false) { ManagmentEmployee = 0; }
-                    /////
 
-                    p.UpdateUserFile(cmb_Users1.Text, BackUp, Restore, SettingPrint, ManagmentUser, ManagmentEmployee);
+                    l.Update_UserPermession(Convert.ToInt32(cmb_Users1.SelectedValue), AddCategory, AddItem, AddTable, AddDelivery, 
+                        AddCaptin, SettingOrder, orderManagement,order,MoveProduct, RecieveMoney);
 
-
-
+                    l.Update_UserPermession(  AddMasrof, ReportMasrofat, AddUser,
+                        Permesion, BackUp, Restore, permession_Update, permession_Update);
                     MessageBox.Show(" تم حفظ الصلاحيات للمستخدم");
-
-
-
                 }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
-
         }
+
+
+
+
+
+
+
+
+
     }
 }

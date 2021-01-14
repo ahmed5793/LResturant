@@ -177,5 +177,11 @@ namespace Restuarnt.PL
             Frm_UpdateOrrder uo = new Frm_UpdateOrrder();
             uo.Show();
         }
+
+        private void Btn_UserPermession_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Validate_Users validate_Users = new Validate_Users();
+            validate_Users.Show();
+        }
     }
 }

@@ -31,42 +31,42 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_MainNew));
             DevExpress.Utils.Animation.PushTransition pushTransition1 = new DevExpress.Utils.Animation.PushTransition();
-            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame1 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame2 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame3 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame4 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame5 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame6 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame7 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement10 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame8 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement11 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame9 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement12 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement13 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame10 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement14 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame11 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement15 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame12 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement16 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement17 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame13 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement18 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement19 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame14 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement20 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame15 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement21 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement43 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame31 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement44 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame32 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement45 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame33 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement46 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement47 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame34 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement48 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame35 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement49 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame36 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement50 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement51 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame37 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement52 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame38 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement53 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame39 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement54 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement55 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame40 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement56 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame41 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement57 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame42 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement58 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement59 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame43 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement60 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement61 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame44 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement62 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame45 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement63 = new DevExpress.XtraEditors.TileItemElement();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barAndDockingController1 = new DevExpress.XtraBars.BarAndDockingController(this.components);
             this.Btn_addProduct = new DevExpress.XtraBars.BarButtonItem();
@@ -77,7 +77,7 @@
             this.Btn_AddTables = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_AddDelivery = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_AddCaptin = new DevExpress.XtraBars.BarButtonItem();
-            this.Btn_AddSuppliers = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_AddOrder = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_OrderManagement = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_MoveItems = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_SalesInnvoice = new DevExpress.XtraBars.BarButtonItem();
@@ -141,6 +141,9 @@
             this.Btn_UserPermession = new DevExpress.XtraBars.BarButtonItem();
             this.btnBackUp = new DevExpress.XtraBars.BarButtonItem();
             this.BtnRestore = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_ReciveMoney = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonMiniToolbar1 = new DevExpress.XtraBars.Ribbon.RibbonMiniToolbar(this.components);
             this.Ribon_Customer = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Riboon_AddCustomer = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -153,6 +156,7 @@
             this.Ribon_AddSuppliers = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Ribon_AddSupplierMoney = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Ribon_PaySuppliers = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Ribon_MasrofatManagement = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Ribon_Masrofat = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Ribon_StockDepartment = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -191,8 +195,6 @@
             this.tileItem6 = new DevExpress.XtraEditors.TileItem();
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -218,7 +220,7 @@
             this.Btn_AddTables,
             this.Btn_AddDelivery,
             this.Btn_AddCaptin,
-            this.Btn_AddSuppliers,
+            this.Btn_AddOrder,
             this.Btn_OrderManagement,
             this.Btn_MoveItems,
             this.Btn_SalesInnvoice,
@@ -282,10 +284,11 @@
             this.btnBackUp,
             this.BtnRestore,
             this.barButtonItem17,
-            this.barButtonItem18});
+            this.barButtonItem18,
+            this.Btn_ReciveMoney});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.ribbon.MaxItemId = 97;
+            this.ribbon.MaxItemId = 98;
             this.ribbon.MiniToolbars.Add(this.ribbonMiniToolbar1);
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -508,37 +511,37 @@
             this.Btn_AddCaptin.Name = "Btn_AddCaptin";
             this.Btn_AddCaptin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_AddCaptin_ItemClick);
             // 
-            // Btn_AddSuppliers
+            // Btn_AddOrder
             // 
-            this.Btn_AddSuppliers.Caption = "فاتورة مبيعات";
-            this.Btn_AddSuppliers.Id = 14;
-            this.Btn_AddSuppliers.ImageOptions.Image = global::Restuarnt.Properties.Resources.financial_16x16;
-            this.Btn_AddSuppliers.ImageOptions.LargeImage = global::Restuarnt.Properties.Resources.financial_32x32;
-            this.Btn_AddSuppliers.ItemAppearance.Hovered.BackColor = System.Drawing.Color.DarkGray;
-            this.Btn_AddSuppliers.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
-            this.Btn_AddSuppliers.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Black;
-            this.Btn_AddSuppliers.ItemAppearance.Hovered.Options.UseBackColor = true;
-            this.Btn_AddSuppliers.ItemAppearance.Hovered.Options.UseBorderColor = true;
-            this.Btn_AddSuppliers.ItemAppearance.Hovered.Options.UseFont = true;
-            this.Btn_AddSuppliers.ItemAppearance.Hovered.Options.UseForeColor = true;
-            this.Btn_AddSuppliers.ItemAppearance.Hovered.Options.UseTextOptions = true;
-            this.Btn_AddSuppliers.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.Btn_AddSuppliers.ItemAppearance.Normal.BackColor = System.Drawing.Color.DarkGray;
-            this.Btn_AddSuppliers.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
-            this.Btn_AddSuppliers.ItemAppearance.Normal.ForeColor = System.Drawing.Color.Black;
-            this.Btn_AddSuppliers.ItemAppearance.Normal.Options.UseBackColor = true;
-            this.Btn_AddSuppliers.ItemAppearance.Normal.Options.UseFont = true;
-            this.Btn_AddSuppliers.ItemAppearance.Normal.Options.UseForeColor = true;
-            this.Btn_AddSuppliers.ItemAppearance.Normal.Options.UseTextOptions = true;
-            this.Btn_AddSuppliers.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.Btn_AddSuppliers.ItemAppearance.Pressed.BackColor = System.Drawing.Color.Silver;
-            this.Btn_AddSuppliers.ItemAppearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
-            this.Btn_AddSuppliers.ItemAppearance.Pressed.Options.UseBackColor = true;
-            this.Btn_AddSuppliers.ItemAppearance.Pressed.Options.UseFont = true;
-            this.Btn_AddSuppliers.ItemAppearance.Pressed.Options.UseTextOptions = true;
-            this.Btn_AddSuppliers.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.Btn_AddSuppliers.Name = "Btn_AddSuppliers";
-            this.Btn_AddSuppliers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_AddSuppliers_ItemClick);
+            this.Btn_AddOrder.Caption = "فاتورة مبيعات";
+            this.Btn_AddOrder.Id = 14;
+            this.Btn_AddOrder.ImageOptions.Image = global::Restuarnt.Properties.Resources.financial_16x16;
+            this.Btn_AddOrder.ImageOptions.LargeImage = global::Restuarnt.Properties.Resources.financial_32x32;
+            this.Btn_AddOrder.ItemAppearance.Hovered.BackColor = System.Drawing.Color.DarkGray;
+            this.Btn_AddOrder.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
+            this.Btn_AddOrder.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Black;
+            this.Btn_AddOrder.ItemAppearance.Hovered.Options.UseBackColor = true;
+            this.Btn_AddOrder.ItemAppearance.Hovered.Options.UseBorderColor = true;
+            this.Btn_AddOrder.ItemAppearance.Hovered.Options.UseFont = true;
+            this.Btn_AddOrder.ItemAppearance.Hovered.Options.UseForeColor = true;
+            this.Btn_AddOrder.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.Btn_AddOrder.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_AddOrder.ItemAppearance.Normal.BackColor = System.Drawing.Color.DarkGray;
+            this.Btn_AddOrder.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
+            this.Btn_AddOrder.ItemAppearance.Normal.ForeColor = System.Drawing.Color.Black;
+            this.Btn_AddOrder.ItemAppearance.Normal.Options.UseBackColor = true;
+            this.Btn_AddOrder.ItemAppearance.Normal.Options.UseFont = true;
+            this.Btn_AddOrder.ItemAppearance.Normal.Options.UseForeColor = true;
+            this.Btn_AddOrder.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.Btn_AddOrder.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_AddOrder.ItemAppearance.Pressed.BackColor = System.Drawing.Color.Silver;
+            this.Btn_AddOrder.ItemAppearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
+            this.Btn_AddOrder.ItemAppearance.Pressed.Options.UseBackColor = true;
+            this.Btn_AddOrder.ItemAppearance.Pressed.Options.UseFont = true;
+            this.Btn_AddOrder.ItemAppearance.Pressed.Options.UseTextOptions = true;
+            this.Btn_AddOrder.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_AddOrder.Name = "Btn_AddOrder";
+            this.Btn_AddOrder.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_AddSuppliers_ItemClick);
             // 
             // Btn_OrderManagement
             // 
@@ -1636,6 +1639,7 @@
             this.Btn_UserPermession.ItemAppearance.Pressed.Options.UseTextOptions = true;
             this.Btn_UserPermession.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_UserPermession.Name = "Btn_UserPermession";
+            this.Btn_UserPermession.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_UserPermession_ItemClick);
             // 
             // btnBackUp
             // 
@@ -1700,6 +1704,52 @@
             this.BtnRestore.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.BtnRestore.Name = "BtnRestore";
             this.BtnRestore.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnRestore_ItemClick);
+            // 
+            // barButtonItem17
+            // 
+            this.barButtonItem17.Caption = "barButtonItem17";
+            this.barButtonItem17.Id = 95;
+            this.barButtonItem17.Name = "barButtonItem17";
+            // 
+            // barButtonItem18
+            // 
+            this.barButtonItem18.Caption = "barButtonItem18";
+            this.barButtonItem18.Id = 96;
+            this.barButtonItem18.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.Image")));
+            this.barButtonItem18.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.LargeImage")));
+            this.barButtonItem18.Name = "barButtonItem18";
+            this.barButtonItem18.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem18_ItemClick);
+            // 
+            // Btn_ReciveMoney
+            // 
+            this.Btn_ReciveMoney.Caption = "إستلام النقدية";
+            this.Btn_ReciveMoney.Id = 97;
+            this.Btn_ReciveMoney.ImageOptions.Image = global::Restuarnt.Properties.Resources.financial_16x161;
+            this.Btn_ReciveMoney.ImageOptions.LargeImage = global::Restuarnt.Properties.Resources.financial_32x321;
+            this.Btn_ReciveMoney.ItemAppearance.Hovered.BackColor = System.Drawing.Color.DarkGray;
+            this.Btn_ReciveMoney.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
+            this.Btn_ReciveMoney.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Black;
+            this.Btn_ReciveMoney.ItemAppearance.Hovered.Options.UseBackColor = true;
+            this.Btn_ReciveMoney.ItemAppearance.Hovered.Options.UseBorderColor = true;
+            this.Btn_ReciveMoney.ItemAppearance.Hovered.Options.UseFont = true;
+            this.Btn_ReciveMoney.ItemAppearance.Hovered.Options.UseForeColor = true;
+            this.Btn_ReciveMoney.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.Btn_ReciveMoney.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_ReciveMoney.ItemAppearance.Normal.BackColor = System.Drawing.Color.DarkGray;
+            this.Btn_ReciveMoney.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
+            this.Btn_ReciveMoney.ItemAppearance.Normal.ForeColor = System.Drawing.Color.Black;
+            this.Btn_ReciveMoney.ItemAppearance.Normal.Options.UseBackColor = true;
+            this.Btn_ReciveMoney.ItemAppearance.Normal.Options.UseFont = true;
+            this.Btn_ReciveMoney.ItemAppearance.Normal.Options.UseForeColor = true;
+            this.Btn_ReciveMoney.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.Btn_ReciveMoney.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_ReciveMoney.ItemAppearance.Pressed.BackColor = System.Drawing.Color.Silver;
+            this.Btn_ReciveMoney.ItemAppearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
+            this.Btn_ReciveMoney.ItemAppearance.Pressed.Options.UseBackColor = true;
+            this.Btn_ReciveMoney.ItemAppearance.Pressed.Options.UseFont = true;
+            this.Btn_ReciveMoney.ItemAppearance.Pressed.Options.UseTextOptions = true;
+            this.Btn_ReciveMoney.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_ReciveMoney.Name = "Btn_ReciveMoney";
             // 
             // ribbonMiniToolbar1
             // 
@@ -1772,13 +1822,14 @@
             this.Sales.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.Ribon_AddSuppliers,
             this.Ribon_AddSupplierMoney,
-            this.Ribon_PaySuppliers});
+            this.Ribon_PaySuppliers,
+            this.ribbonPageGroup6});
             this.Sales.Name = "Sales";
             this.Sales.Text = "المبيعات";
             // 
             // Ribon_AddSuppliers
             // 
-            this.Ribon_AddSuppliers.ItemLinks.Add(this.Btn_AddSuppliers);
+            this.Ribon_AddSuppliers.ItemLinks.Add(this.Btn_AddOrder);
             this.Ribon_AddSuppliers.Name = "Ribon_AddSuppliers";
             // 
             // Ribon_AddSupplierMoney
@@ -1791,6 +1842,11 @@
             this.Ribon_PaySuppliers.ItemLinks.Add(this.Btn_MoveItems);
             this.Ribon_PaySuppliers.ItemLinks.Add(this.barButtonItem18);
             this.Ribon_PaySuppliers.Name = "Ribon_PaySuppliers";
+            // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.Btn_ReciveMoney);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             // 
             // Ribon_MasrofatManagement
             // 
@@ -2173,197 +2229,197 @@
             // 
             // tileItem7
             // 
-            tileItemElement1.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            tileItemElement1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement1.Text = "صلاحيات المستخدمين";
-            tileItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            this.tileItem7.Elements.Add(tileItemElement1);
-            tileItemFrame1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            tileItemFrame1.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            tileItemFrame1.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            tileItemFrame1.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileItemFrame1.Appearance.Options.UseBackColor = true;
-            tileItemFrame1.Appearance.Options.UseBorderColor = true;
-            tileItemFrame1.Appearance.Options.UseFont = true;
-            tileItemElement2.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            tileItemElement2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement2.Text = "صلاحيات المستخدمين";
-            tileItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            tileItemFrame1.Elements.Add(tileItemElement2);
-            tileItemFrame2.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileItemFrame2.Appearance.Options.UseFont = true;
-            tileItemElement3.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            tileItemElement3.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement3.Text = "صلاحيات المستخدمين";
-            tileItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            tileItemFrame2.Elements.Add(tileItemElement3);
-            tileItemFrame3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(17)))), ((int)(((byte)(98)))));
-            tileItemFrame3.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(17)))), ((int)(((byte)(98)))));
-            tileItemFrame3.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(17)))), ((int)(((byte)(98)))));
-            tileItemFrame3.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileItemFrame3.Appearance.Options.UseBackColor = true;
-            tileItemFrame3.Appearance.Options.UseBorderColor = true;
-            tileItemFrame3.Appearance.Options.UseFont = true;
-            tileItemElement4.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            tileItemElement4.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement4.Text = "صلاحيات المستخدمين";
-            tileItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            tileItemFrame3.Elements.Add(tileItemElement4);
-            this.tileItem7.Frames.Add(tileItemFrame1);
-            this.tileItem7.Frames.Add(tileItemFrame2);
-            this.tileItem7.Frames.Add(tileItemFrame3);
+            tileItemElement43.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            tileItemElement43.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement43.Text = "صلاحيات المستخدمين";
+            tileItemElement43.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            this.tileItem7.Elements.Add(tileItemElement43);
+            tileItemFrame31.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            tileItemFrame31.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            tileItemFrame31.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            tileItemFrame31.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemFrame31.Appearance.Options.UseBackColor = true;
+            tileItemFrame31.Appearance.Options.UseBorderColor = true;
+            tileItemFrame31.Appearance.Options.UseFont = true;
+            tileItemElement44.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            tileItemElement44.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement44.Text = "صلاحيات المستخدمين";
+            tileItemElement44.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            tileItemFrame31.Elements.Add(tileItemElement44);
+            tileItemFrame32.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemFrame32.Appearance.Options.UseFont = true;
+            tileItemElement45.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            tileItemElement45.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement45.Text = "صلاحيات المستخدمين";
+            tileItemElement45.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            tileItemFrame32.Elements.Add(tileItemElement45);
+            tileItemFrame33.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(17)))), ((int)(((byte)(98)))));
+            tileItemFrame33.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(17)))), ((int)(((byte)(98)))));
+            tileItemFrame33.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(17)))), ((int)(((byte)(98)))));
+            tileItemFrame33.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemFrame33.Appearance.Options.UseBackColor = true;
+            tileItemFrame33.Appearance.Options.UseBorderColor = true;
+            tileItemFrame33.Appearance.Options.UseFont = true;
+            tileItemElement46.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            tileItemElement46.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement46.Text = "صلاحيات المستخدمين";
+            tileItemElement46.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            tileItemFrame33.Elements.Add(tileItemElement46);
+            this.tileItem7.Frames.Add(tileItemFrame31);
+            this.tileItem7.Frames.Add(tileItemFrame32);
+            this.tileItem7.Frames.Add(tileItemFrame33);
             this.tileItem7.Id = 6;
             this.tileItem7.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem7.Name = "tileItem7";
             // 
             // tileItem8
             // 
-            tileItemElement5.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement5.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement5.Text = "حسابات الموردين";
-            tileItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            this.tileItem8.Elements.Add(tileItemElement5);
-            tileItemFrame4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
-            tileItemFrame4.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
-            tileItemFrame4.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
-            tileItemFrame4.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileItemFrame4.Appearance.Options.UseBackColor = true;
-            tileItemFrame4.Appearance.Options.UseBorderColor = true;
-            tileItemFrame4.Appearance.Options.UseFont = true;
-            tileItemElement6.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement6.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement6.Text = "حسابات الموردين";
-            tileItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            tileItemFrame4.Elements.Add(tileItemElement6);
-            tileItemFrame5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(182)))), ((int)(((byte)(246)))));
-            tileItemFrame5.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(182)))), ((int)(((byte)(246)))));
-            tileItemFrame5.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(182)))), ((int)(((byte)(246)))));
-            tileItemFrame5.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileItemFrame5.Appearance.Options.UseBackColor = true;
-            tileItemFrame5.Appearance.Options.UseBorderColor = true;
-            tileItemFrame5.Appearance.Options.UseFont = true;
-            tileItemElement7.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement7.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement7.Text = "حسابات الموردين";
-            tileItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            tileItemFrame5.Elements.Add(tileItemElement7);
-            tileItemFrame6.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(255)))), ((int)(((byte)(65)))));
-            tileItemFrame6.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(255)))), ((int)(((byte)(65)))));
-            tileItemFrame6.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(255)))), ((int)(((byte)(65)))));
-            tileItemFrame6.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileItemFrame6.Appearance.ForeColor = System.Drawing.Color.Black;
-            tileItemFrame6.Appearance.Options.UseBackColor = true;
-            tileItemFrame6.Appearance.Options.UseBorderColor = true;
-            tileItemFrame6.Appearance.Options.UseFont = true;
-            tileItemFrame6.Appearance.Options.UseForeColor = true;
-            tileItemElement8.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement8.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement8.Text = "حسابات الموردين";
-            tileItemElement8.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            tileItemFrame6.Elements.Add(tileItemElement8);
-            this.tileItem8.Frames.Add(tileItemFrame4);
-            this.tileItem8.Frames.Add(tileItemFrame5);
-            this.tileItem8.Frames.Add(tileItemFrame6);
+            tileItemElement47.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement47.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement47.Text = "حسابات الموردين";
+            tileItemElement47.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            this.tileItem8.Elements.Add(tileItemElement47);
+            tileItemFrame34.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
+            tileItemFrame34.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
+            tileItemFrame34.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
+            tileItemFrame34.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemFrame34.Appearance.Options.UseBackColor = true;
+            tileItemFrame34.Appearance.Options.UseBorderColor = true;
+            tileItemFrame34.Appearance.Options.UseFont = true;
+            tileItemElement48.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement48.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement48.Text = "حسابات الموردين";
+            tileItemElement48.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            tileItemFrame34.Elements.Add(tileItemElement48);
+            tileItemFrame35.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(182)))), ((int)(((byte)(246)))));
+            tileItemFrame35.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(182)))), ((int)(((byte)(246)))));
+            tileItemFrame35.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(182)))), ((int)(((byte)(246)))));
+            tileItemFrame35.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemFrame35.Appearance.Options.UseBackColor = true;
+            tileItemFrame35.Appearance.Options.UseBorderColor = true;
+            tileItemFrame35.Appearance.Options.UseFont = true;
+            tileItemElement49.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement49.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement49.Text = "حسابات الموردين";
+            tileItemElement49.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            tileItemFrame35.Elements.Add(tileItemElement49);
+            tileItemFrame36.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(255)))), ((int)(((byte)(65)))));
+            tileItemFrame36.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(255)))), ((int)(((byte)(65)))));
+            tileItemFrame36.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(255)))), ((int)(((byte)(65)))));
+            tileItemFrame36.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemFrame36.Appearance.ForeColor = System.Drawing.Color.Black;
+            tileItemFrame36.Appearance.Options.UseBackColor = true;
+            tileItemFrame36.Appearance.Options.UseBorderColor = true;
+            tileItemFrame36.Appearance.Options.UseFont = true;
+            tileItemFrame36.Appearance.Options.UseForeColor = true;
+            tileItemElement50.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement50.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement50.Text = "حسابات الموردين";
+            tileItemElement50.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            tileItemFrame36.Elements.Add(tileItemElement50);
+            this.tileItem8.Frames.Add(tileItemFrame34);
+            this.tileItem8.Frames.Add(tileItemFrame35);
+            this.tileItem8.Frames.Add(tileItemFrame36);
             this.tileItem8.Id = 7;
             this.tileItem8.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem8.Name = "tileItem8";
             // 
             // tileItem9
             // 
-            tileItemElement9.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement9.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement9.Text = "اضافه منتجات";
-            tileItemElement9.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            this.tileItem9.Elements.Add(tileItemElement9);
-            tileItemFrame7.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(0)))), ((int)(((byte)(13)))));
-            tileItemFrame7.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(0)))), ((int)(((byte)(13)))));
-            tileItemFrame7.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(0)))), ((int)(((byte)(13)))));
-            tileItemFrame7.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileItemFrame7.Appearance.Options.UseBackColor = true;
-            tileItemFrame7.Appearance.Options.UseBorderColor = true;
-            tileItemFrame7.Appearance.Options.UseFont = true;
-            tileItemElement10.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement10.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement10.Text = "اضافه منتجات";
-            tileItemElement10.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            tileItemFrame7.Elements.Add(tileItemElement10);
-            tileItemFrame8.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            tileItemFrame8.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            tileItemFrame8.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            tileItemFrame8.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileItemFrame8.Appearance.Options.UseBackColor = true;
-            tileItemFrame8.Appearance.Options.UseBorderColor = true;
-            tileItemFrame8.Appearance.Options.UseFont = true;
-            tileItemElement11.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement11.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement11.Text = "اضافه منتجات";
-            tileItemElement11.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            tileItemFrame8.Elements.Add(tileItemElement11);
-            tileItemFrame9.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(121)))), ((int)(((byte)(97)))));
-            tileItemFrame9.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(121)))), ((int)(((byte)(97)))));
-            tileItemFrame9.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(121)))), ((int)(((byte)(97)))));
-            tileItemFrame9.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileItemFrame9.Appearance.Options.UseBackColor = true;
-            tileItemFrame9.Appearance.Options.UseBorderColor = true;
-            tileItemFrame9.Appearance.Options.UseFont = true;
-            tileItemElement12.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement12.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement12.Text = "اضافه منتجات";
-            tileItemElement12.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            tileItemFrame9.Elements.Add(tileItemElement12);
-            this.tileItem9.Frames.Add(tileItemFrame7);
-            this.tileItem9.Frames.Add(tileItemFrame8);
-            this.tileItem9.Frames.Add(tileItemFrame9);
+            tileItemElement51.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement51.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement51.Text = "اضافه منتجات";
+            tileItemElement51.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            this.tileItem9.Elements.Add(tileItemElement51);
+            tileItemFrame37.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(0)))), ((int)(((byte)(13)))));
+            tileItemFrame37.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(0)))), ((int)(((byte)(13)))));
+            tileItemFrame37.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(0)))), ((int)(((byte)(13)))));
+            tileItemFrame37.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemFrame37.Appearance.Options.UseBackColor = true;
+            tileItemFrame37.Appearance.Options.UseBorderColor = true;
+            tileItemFrame37.Appearance.Options.UseFont = true;
+            tileItemElement52.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement52.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement52.Text = "اضافه منتجات";
+            tileItemElement52.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            tileItemFrame37.Elements.Add(tileItemElement52);
+            tileItemFrame38.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            tileItemFrame38.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            tileItemFrame38.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            tileItemFrame38.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemFrame38.Appearance.Options.UseBackColor = true;
+            tileItemFrame38.Appearance.Options.UseBorderColor = true;
+            tileItemFrame38.Appearance.Options.UseFont = true;
+            tileItemElement53.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement53.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement53.Text = "اضافه منتجات";
+            tileItemElement53.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            tileItemFrame38.Elements.Add(tileItemElement53);
+            tileItemFrame39.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(121)))), ((int)(((byte)(97)))));
+            tileItemFrame39.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(121)))), ((int)(((byte)(97)))));
+            tileItemFrame39.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(121)))), ((int)(((byte)(97)))));
+            tileItemFrame39.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemFrame39.Appearance.Options.UseBackColor = true;
+            tileItemFrame39.Appearance.Options.UseBorderColor = true;
+            tileItemFrame39.Appearance.Options.UseFont = true;
+            tileItemElement54.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement54.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement54.Text = "اضافه منتجات";
+            tileItemElement54.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            tileItemFrame39.Elements.Add(tileItemElement54);
+            this.tileItem9.Frames.Add(tileItemFrame37);
+            this.tileItem9.Frames.Add(tileItemFrame38);
+            this.tileItem9.Frames.Add(tileItemFrame39);
             this.tileItem9.Id = 8;
             this.tileItem9.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem9.Name = "tileItem9";
             // 
             // tileItem10
             // 
-            tileItemElement13.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement13.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement13.Text = "حسابات العملاء";
-            tileItemElement13.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            this.tileItem10.Elements.Add(tileItemElement13);
-            tileItemFrame10.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(85)))), ((int)(((byte)(72)))));
-            tileItemFrame10.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(85)))), ((int)(((byte)(72)))));
-            tileItemFrame10.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(85)))), ((int)(((byte)(72)))));
-            tileItemFrame10.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileItemFrame10.Appearance.Options.UseBackColor = true;
-            tileItemFrame10.Appearance.Options.UseBorderColor = true;
-            tileItemFrame10.Appearance.Options.UseFont = true;
-            tileItemElement14.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement14.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement14.Text = "حسابات العملاء";
-            tileItemElement14.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            tileItemFrame10.Elements.Add(tileItemElement14);
-            tileItemFrame11.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(125)))), ((int)(((byte)(139)))));
-            tileItemFrame11.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(125)))), ((int)(((byte)(139)))));
-            tileItemFrame11.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(125)))), ((int)(((byte)(139)))));
-            tileItemFrame11.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileItemFrame11.Appearance.Options.UseBackColor = true;
-            tileItemFrame11.Appearance.Options.UseBorderColor = true;
-            tileItemFrame11.Appearance.Options.UseFont = true;
-            tileItemElement15.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement15.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement15.Text = "حسابات العملاء";
-            tileItemElement15.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            tileItemFrame11.Elements.Add(tileItemElement15);
-            tileItemFrame12.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(234)))));
-            tileItemFrame12.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(234)))));
-            tileItemFrame12.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(234)))));
-            tileItemFrame12.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileItemFrame12.Appearance.Options.UseBackColor = true;
-            tileItemFrame12.Appearance.Options.UseBorderColor = true;
-            tileItemFrame12.Appearance.Options.UseFont = true;
-            tileItemElement16.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement16.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement16.Text = "حسابات العملاء";
-            tileItemElement16.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            tileItemFrame12.Elements.Add(tileItemElement16);
-            this.tileItem10.Frames.Add(tileItemFrame10);
-            this.tileItem10.Frames.Add(tileItemFrame11);
-            this.tileItem10.Frames.Add(tileItemFrame12);
+            tileItemElement55.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement55.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement55.Text = "حسابات العملاء";
+            tileItemElement55.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            this.tileItem10.Elements.Add(tileItemElement55);
+            tileItemFrame40.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(85)))), ((int)(((byte)(72)))));
+            tileItemFrame40.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(85)))), ((int)(((byte)(72)))));
+            tileItemFrame40.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(85)))), ((int)(((byte)(72)))));
+            tileItemFrame40.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemFrame40.Appearance.Options.UseBackColor = true;
+            tileItemFrame40.Appearance.Options.UseBorderColor = true;
+            tileItemFrame40.Appearance.Options.UseFont = true;
+            tileItemElement56.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement56.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement56.Text = "حسابات العملاء";
+            tileItemElement56.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            tileItemFrame40.Elements.Add(tileItemElement56);
+            tileItemFrame41.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(125)))), ((int)(((byte)(139)))));
+            tileItemFrame41.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(125)))), ((int)(((byte)(139)))));
+            tileItemFrame41.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(125)))), ((int)(((byte)(139)))));
+            tileItemFrame41.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemFrame41.Appearance.Options.UseBackColor = true;
+            tileItemFrame41.Appearance.Options.UseBorderColor = true;
+            tileItemFrame41.Appearance.Options.UseFont = true;
+            tileItemElement57.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement57.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement57.Text = "حسابات العملاء";
+            tileItemElement57.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            tileItemFrame41.Elements.Add(tileItemElement57);
+            tileItemFrame42.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(234)))));
+            tileItemFrame42.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(234)))));
+            tileItemFrame42.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(234)))));
+            tileItemFrame42.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemFrame42.Appearance.Options.UseBackColor = true;
+            tileItemFrame42.Appearance.Options.UseBorderColor = true;
+            tileItemFrame42.Appearance.Options.UseFont = true;
+            tileItemElement58.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement58.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement58.Text = "حسابات العملاء";
+            tileItemElement58.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            tileItemFrame42.Elements.Add(tileItemElement58);
+            this.tileItem10.Frames.Add(tileItemFrame40);
+            this.tileItem10.Frames.Add(tileItemFrame41);
+            this.tileItem10.Frames.Add(tileItemFrame42);
             this.tileItem10.Id = 9;
             this.tileItem10.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem10.Name = "tileItem10";
@@ -2376,61 +2432,61 @@
             // 
             // tileItem5
             // 
-            tileItemElement17.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement17.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement17.Text = "ادارة المشتريات";
-            tileItemElement17.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            this.tileItem5.Elements.Add(tileItemElement17);
-            tileItemFrame13.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            tileItemFrame13.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            tileItemFrame13.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            tileItemFrame13.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileItemFrame13.Appearance.Options.UseBackColor = true;
-            tileItemFrame13.Appearance.Options.UseBorderColor = true;
-            tileItemFrame13.Appearance.Options.UseFont = true;
-            tileItemElement18.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement18.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement18.Text = "ادارة المشتريات";
-            tileItemElement18.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            tileItemFrame13.Elements.Add(tileItemElement18);
-            this.tileItem5.Frames.Add(tileItemFrame13);
+            tileItemElement59.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement59.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement59.Text = "ادارة المشتريات";
+            tileItemElement59.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            this.tileItem5.Elements.Add(tileItemElement59);
+            tileItemFrame43.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            tileItemFrame43.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            tileItemFrame43.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            tileItemFrame43.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemFrame43.Appearance.Options.UseBackColor = true;
+            tileItemFrame43.Appearance.Options.UseBorderColor = true;
+            tileItemFrame43.Appearance.Options.UseFont = true;
+            tileItemElement60.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement60.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement60.Text = "ادارة المشتريات";
+            tileItemElement60.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            tileItemFrame43.Elements.Add(tileItemElement60);
+            this.tileItem5.Frames.Add(tileItemFrame43);
             this.tileItem5.Id = 4;
             this.tileItem5.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem5.Name = "tileItem5";
             // 
             // tileItem6
             // 
-            tileItemElement19.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement19.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement19.Text = "ادارة المبيعات";
-            tileItemElement19.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            this.tileItem6.Elements.Add(tileItemElement19);
-            tileItemFrame14.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(105)))), ((int)(((byte)(95)))));
-            tileItemFrame14.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(105)))), ((int)(((byte)(95)))));
-            tileItemFrame14.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(105)))), ((int)(((byte)(95)))));
-            tileItemFrame14.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileItemFrame14.Appearance.Options.UseBackColor = true;
-            tileItemFrame14.Appearance.Options.UseBorderColor = true;
-            tileItemFrame14.Appearance.Options.UseFont = true;
-            tileItemElement20.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement20.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement20.Text = "ادارة المبيعات";
-            tileItemElement20.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            tileItemFrame14.Elements.Add(tileItemElement20);
-            tileItemFrame15.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            tileItemFrame15.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            tileItemFrame15.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            tileItemFrame15.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileItemFrame15.Appearance.Options.UseBackColor = true;
-            tileItemFrame15.Appearance.Options.UseBorderColor = true;
-            tileItemFrame15.Appearance.Options.UseFont = true;
-            tileItemElement21.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement21.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement21.Text = "ادارة المبيعات";
-            tileItemElement21.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            tileItemFrame15.Elements.Add(tileItemElement21);
-            this.tileItem6.Frames.Add(tileItemFrame14);
-            this.tileItem6.Frames.Add(tileItemFrame15);
+            tileItemElement61.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement61.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement61.Text = "ادارة المبيعات";
+            tileItemElement61.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            this.tileItem6.Elements.Add(tileItemElement61);
+            tileItemFrame44.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(105)))), ((int)(((byte)(95)))));
+            tileItemFrame44.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(105)))), ((int)(((byte)(95)))));
+            tileItemFrame44.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(105)))), ((int)(((byte)(95)))));
+            tileItemFrame44.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemFrame44.Appearance.Options.UseBackColor = true;
+            tileItemFrame44.Appearance.Options.UseBorderColor = true;
+            tileItemFrame44.Appearance.Options.UseFont = true;
+            tileItemElement62.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement62.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement62.Text = "ادارة المبيعات";
+            tileItemElement62.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            tileItemFrame44.Elements.Add(tileItemElement62);
+            tileItemFrame45.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            tileItemFrame45.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            tileItemFrame45.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            tileItemFrame45.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemFrame45.Appearance.Options.UseBackColor = true;
+            tileItemFrame45.Appearance.Options.UseBorderColor = true;
+            tileItemFrame45.Appearance.Options.UseFont = true;
+            tileItemElement63.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement63.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement63.Text = "ادارة المبيعات";
+            tileItemElement63.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            tileItemFrame45.Elements.Add(tileItemElement63);
+            this.tileItem6.Frames.Add(tileItemFrame44);
+            this.tileItem6.Frames.Add(tileItemFrame45);
             this.tileItem6.Id = 5;
             this.tileItem6.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem6.Name = "tileItem6";
@@ -2450,21 +2506,6 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // barButtonItem17
-            // 
-            this.barButtonItem17.Caption = "barButtonItem17";
-            this.barButtonItem17.Id = 95;
-            this.barButtonItem17.Name = "barButtonItem17";
-            // 
-            // barButtonItem18
-            // 
-            this.barButtonItem18.Caption = "barButtonItem18";
-            this.barButtonItem18.Id = 96;
-            this.barButtonItem18.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.Image")));
-            this.barButtonItem18.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.LargeImage")));
-            this.barButtonItem18.Name = "barButtonItem18";
-            this.barButtonItem18.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem18_ItemClick);
             // 
             // Frm_MainNew
             // 
@@ -2523,7 +2564,7 @@
         public DevExpress.XtraBars.BarButtonItem Btn_AddDelivery;
         public DevExpress.XtraBars.Ribbon.RibbonPageGroup Ribon_Kashf7sabCustomer;
         public DevExpress.XtraBars.Ribbon.RibbonPageGroup Ribon_DebitCustomer;
-        public DevExpress.XtraBars.BarButtonItem Btn_AddSuppliers;
+        public DevExpress.XtraBars.BarButtonItem Btn_AddOrder;
         public DevExpress.XtraBars.BarButtonItem Btn_OrderManagement;
         public DevExpress.XtraBars.Ribbon.RibbonPageGroup Ribon_AddSupplierMoney;
         public DevExpress.XtraBars.Ribbon.RibbonPageGroup Ribon_AddSuppliers;
@@ -2630,5 +2671,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem17;
         private DevExpress.XtraBars.BarButtonItem barButtonItem18;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        public DevExpress.XtraBars.BarButtonItem Btn_ReciveMoney;
     }
 }

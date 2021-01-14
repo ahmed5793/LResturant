@@ -81,8 +81,8 @@ namespace Restuarnt.PL
                 dt2.Clear();
                 dt2 = l.AddUser(txt_User.Text, txt_Pass.Text, txt_Fullname.Text, "true");
                 int x = Convert.ToInt32(dt2.Rows[0][0]);
-                l.Add_UserPermession(x,0,0,0,0,0,0,0,0,0,0);
-                l.Add_UserPermession(0,0,0,0,0,0,0,0,0);
+                l.Add_UserPermession(x,1,1,1,1,1,1,1,1,1,1);
+                l.Add_UserPermession(1,1,1,1,1,1,1,1);
                 MessageBox.Show("تم اضافه المستخدم بنجاح");
                 dataGridViewList.DataSource = l.SelectUsers();
                 txt_Fullname.Text = "";

@@ -284,11 +284,7 @@ namespace Restuarnt.PL
                         DT88.Clear();
                         DT88 = l.Logins(txt_User.Text, txt_Pass.Text);
 
-
-                         
-
                         if (DT88.Rows.Count > 0)
-
                         {
 
                             backgroundWorker1.RunWorkerAsync();
@@ -296,10 +292,8 @@ namespace Restuarnt.PL
                             Program.salesman = "";
                             Program.salesman = DT88.Rows[0][3].ToString();
                             Program.Id_USer = Convert.ToInt32(DT88.Rows[0][0]);
-
-                              Console.Beep();
-                               
-                                    this.Hide();
+                              Console.Beep();                               
+                            this.Hide();
                                    
                             
                             fm.ShowDialog();
@@ -338,73 +332,174 @@ namespace Restuarnt.PL
 
             try
             {
-                //dt2.Clear();
-                //dt2 = l.Select_UserPermession(Program.Id_USer);
-                //if (dt2.Rows.Count >= 1)
-                //{
-                //    if (Convert.ToInt32(dt2.Rows[0][1]) == 0)
-                //    {
-                //        Frm_MainNew.getmain.Btn_addProduct.Enabled = false;
-                //        Frm_MainNew.getmain.tileI_AddItem.Enabled = false;
+                dt2.Clear();
+                dt2 = l.Select_UserPermession(Program.Id_USer);
+                if (dt2.Rows.Count >= 1)
+                {
+                    if (Convert.ToInt32(dt2.Rows[0][1]) == 0)
+                    {
+                        Frm_MainNew.getmain.Btn_AddCategory.Enabled = false;
 
-                //    }
-                //    else if (Convert.ToInt32(dt2.Rows[0][1]) == 1)
-                //    {
-                //        Frm_MainNew.getmain.Btn_addProduct.Enabled = true;
-                //        Frm_MainNew.getmain.tileI_AddItem.Enabled = true;
-                //    }
-                //    ///////
-                //    if (Convert.ToInt32(dt2.Rows[0][2]) == 0)
-                //    {
-                //        Frm_MainNew.getmain.Bnt_Minimum.Enabled = false;
-                //        Frm_MainNew.getmain.tileI_MineItem.Enabled = false;
+                    }
+                    else if (Convert.ToInt32(dt2.Rows[0][1]) == 1)
+                    {
+                        Frm_MainNew.getmain.Btn_AddCategory.Enabled = true;
+                    }
+                    ///////
+                    if (Convert.ToInt32(dt2.Rows[0][2]) == 0)
+                    {
+                        Frm_MainNew.getmain.BtnAdd_Items.Enabled = false;
 
-                //    }
-                //    else if (Convert.ToInt32(dt2.Rows[0][2]) == 1)
-                //    {
-                //        Frm_MainNew.getmain.Bnt_Minimum.Enabled = true;
-                //        Frm_MainNew.getmain.tileI_MineItem.Enabled = true;
-                //    }
-                //    ////////
-                //    if (Convert.ToInt32(dt2.Rows[0][3]) == 0)
-                //    {
-                //        Frm_MainNew.getmain.Btn_BalanceAdjustment.Enabled = false;
-                //    }
-                //    else if (Convert.ToInt32(dt2.Rows[0][3]) == 1)
-                //    {
-                //        Frm_MainNew.getmain.Btn_BalanceAdjustment.Enabled = true;
-                //    }
+                    }
+                    else if (Convert.ToInt32(dt2.Rows[0][2]) == 1)
+                    {
+                        Frm_MainNew.getmain.BtnAdd_Items.Enabled = true;
+                    }
+                    ////////
+                    if (Convert.ToInt32(dt2.Rows[0][3]) == 0)
+                    {
+                        Frm_MainNew.getmain.Btn_AddTables.Enabled = false;
+                    }
+                    else if (Convert.ToInt32(dt2.Rows[0][3]) == 1)
+                    {
+                        Frm_MainNew.getmain.Btn_AddTables.Enabled = true;
+                    }
 
-                //    ///////
-                //    if (Convert.ToInt32(dt2.Rows[0][4]) == 0)
-                //    {
-                //        Frm_MainNew.getmain.Btn_RepAdjustmentbalance.Enabled = false;
-                //    }
-                //    else if (Convert.ToInt32(dt2.Rows[0][4]) == 1)
-                //    {
-                //        Frm_MainNew.getmain.Btn_RepAdjustmentbalance.Enabled = true;
-                //    }
-                //    /////////
-                //    if (Convert.ToInt32(dt2.Rows[0][5]) == 0)
-                //    {
-                //        Frm_MainNew.getmain.Btn_ReportAllProduct.Enabled = false;
-                //    }
-                //    else if (Convert.ToInt32(dt2.Rows[0][5]) == 1)
-                //    {
-                //        Frm_MainNew.getmain.Btn_ReportAllProduct.Enabled = true;
+                    ///////
+                    if (Convert.ToInt32(dt2.Rows[0][4]) == 0)
+                    {
+                        Frm_MainNew.getmain.Btn_AddDelivery.Enabled = false;
+                    }
+                    else if (Convert.ToInt32(dt2.Rows[0][4]) == 1)
+                    {
+                        Frm_MainNew.getmain.Btn_AddDelivery.Enabled = true;
+                    }
+                    /////////
+                    if (Convert.ToInt32(dt2.Rows[0][5]) == 0)
+                    {
+                        Frm_MainNew.getmain.Btn_AddCaptin.Enabled = false;
+                    }
+                    else if (Convert.ToInt32(dt2.Rows[0][5]) == 1)
+                    {
+                        Frm_MainNew.getmain.Btn_AddCaptin.Enabled = true;
+                    }
+                    //////////
+                    
+                    if (Convert.ToInt32(dt2.Rows[0][6]) == 0)
+                    {
+                        Frm_MainNew.getmain.btn_Setting.Enabled = false;
+                    }
+                    else if (Convert.ToInt32(dt2.Rows[0][6]) == 1)
+                    {
+                        Frm_MainNew.getmain.btn_Setting.Enabled = true;
+                    }
 
-                //    }
+                    //////
 
-                //    if (Convert.ToInt32(dt2.Rows[0][6]) == 0)
-                //    {
-                //        Frm_MainNew.getmain.btn_HarkaItems.Enabled = false;
-                //    }
-                //    else if (Convert.ToInt32(dt2.Rows[0][6]) == 1)
-                //    {
-                //        Frm_MainNew.getmain.btn_HarkaItems.Enabled = true;
+                    if (Convert.ToInt32(dt2.Rows[0][7]) == 0)
+                    {
+                        Frm_MainNew.getmain.Btn_OrderManagement.Enabled = false;
+                    }
+                    else if (Convert.ToInt32(dt2.Rows[0][7]) == 1)
+                    {
+                        Frm_MainNew.getmain.Btn_OrderManagement.Enabled = true;
+                    }
 
-                //    }
-                //}
+                    /////////
+                    if (Convert.ToInt32(dt2.Rows[0][8]) == 0)
+                    {
+                        Frm_MainNew.getmain.Btn_AddOrder.Enabled = false;
+                    }
+                    else if (Convert.ToInt32(dt2.Rows[0][8]) == 1)
+                    {
+                        Frm_MainNew.getmain.Btn_AddOrder.Enabled = true;
+                    }
+                    ///////////
+                    if (Convert.ToInt32(dt2.Rows[0][9]) == 0)
+                    {
+                        Frm_MainNew.getmain.Btn_MoveItems.Enabled = false;
+                    }
+                    else if (Convert.ToInt32(dt2.Rows[0][9]) == 1)
+                    {
+                        Frm_MainNew.getmain.Btn_MoveItems.Enabled = true;
+                    }
+
+                    /////////
+                   
+                    if (Convert.ToInt32(dt2.Rows[0][10]) == 0)
+                    {
+                        Frm_MainNew.getmain.Btn_ReciveMoney.Enabled = false;
+                    }
+                    else if (Convert.ToInt32(dt2.Rows[0][10]) == 1)
+                    {
+                        Frm_MainNew.getmain.Btn_ReciveMoney.Enabled = true;
+                    }
+                    ////////
+
+                    if (Convert.ToInt32(dt2.Rows[0][11]) == 0)
+                    {
+                        Frm_MainNew.getmain.Btn_Masrofat.Enabled = false;
+                    }
+                    else if (Convert.ToInt32(dt2.Rows[0][11]) == 1)
+                    {
+                        Frm_MainNew.getmain.Btn_Masrofat.Enabled = true;
+                    }
+
+                    ///////
+                    if (Convert.ToInt32(dt2.Rows[0][12]) == 0)
+                    {
+                        Frm_MainNew.getmain.Btn_reportmasrof.Enabled = false;
+                    }
+                    else if (Convert.ToInt32(dt2.Rows[0][12]) == 1)
+                    {
+                        Frm_MainNew.getmain.Btn_reportmasrof.Enabled = true;
+                    }
+                    //////////
+                    if (Convert.ToInt32(dt2.Rows[0][12]) == 0)
+                    {
+                        Frm_MainNew.getmain.Btn_reportmasrof.Enabled = false;
+                    }
+                    else if (Convert.ToInt32(dt2.Rows[0][12]) == 1)
+                    {
+                        Frm_MainNew.getmain.Btn_reportmasrof.Enabled = true;
+                    }
+                    ///////////
+                    if (Convert.ToInt32(dt2.Rows[0][13]) == 0)
+                    {
+                        Frm_MainNew.getmain.Btn_AddUser.Enabled = false;
+                    }
+                    else if (Convert.ToInt32(dt2.Rows[0][13]) == 1)
+                    {
+                        Frm_MainNew.getmain.Btn_AddUser.Enabled = true;
+                    }
+                    ////////
+                    if (Convert.ToInt32(dt2.Rows[0][14]) == 0)
+                    {
+                        Frm_MainNew.getmain.btn_Permission.Enabled = false;
+                    }
+                    else if (Convert.ToInt32(dt2.Rows[0][14]) == 1)
+                    {
+                        Frm_MainNew.getmain.btn_Permission.Enabled = true;
+                    }
+                    //////
+                    if (Convert.ToInt32(dt2.Rows[0][15]) == 0)
+                    {
+                        Frm_MainNew.getmain.btnBackUp.Enabled = false;
+                    }
+                    else if (Convert.ToInt32(dt2.Rows[0][15]) == 1)
+                    {
+                        Frm_MainNew.getmain.btnBackUp.Enabled = true;
+                    }
+                    ////////
+                    if (Convert.ToInt32(dt2.Rows[0][16]) == 0)
+                    {
+                        Frm_MainNew.getmain.BtnRestore.Enabled = false;
+                    }
+                    else if (Convert.ToInt32(dt2.Rows[0][16]) == 1)
+                    {
+                        Frm_MainNew.getmain.BtnRestore.Enabled = true;
+                    }
+                }
 
 
             }
