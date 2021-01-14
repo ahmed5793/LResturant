@@ -47,7 +47,7 @@
             this.Date = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Total = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Statues = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Update = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Updates = new DevExpress.XtraGrid.Columns.GridColumn();
             this.عرض = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.Delete = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -80,7 +80,7 @@
             this.groupBox2.Controls.Add(this.gridControl2);
             this.groupBox2.Location = new System.Drawing.Point(12, 129);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(851, 371);
+            this.groupBox2.Size = new System.Drawing.Size(837, 355);
             this.groupBox2.TabIndex = 169;
             this.groupBox2.TabStop = false;
             // 
@@ -97,7 +97,7 @@
             this.عرض,
             this.repositoryItemButtonEdit1});
             this.gridControl2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gridControl2.Size = new System.Drawing.Size(845, 352);
+            this.gridControl2.Size = new System.Drawing.Size(831, 336);
             this.gridControl2.TabIndex = 127;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -177,7 +177,7 @@
             this.Date,
             this.Total,
             this.Statues,
-            this.Update,
+            this.Updates,
             this.Delete});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
@@ -239,17 +239,17 @@
             this.Statues.VisibleIndex = 4;
             this.Statues.Width = 103;
             // 
-            // Update
+            // Updates
             // 
-            this.Update.ColumnEdit = this.عرض;
-            this.Update.FieldName = "Update";
-            this.Update.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
-            this.Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Update.ImageOptions.Image")));
-            this.Update.Name = "Update";
-            this.Update.OptionsColumn.AllowEdit = false;
-            this.Update.Visible = true;
-            this.Update.VisibleIndex = 5;
-            this.Update.Width = 110;
+            this.Updates.ColumnEdit = this.عرض;
+            this.Updates.FieldName = "Updates";
+            this.Updates.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
+            this.Updates.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Updates.ImageOptions.Image")));
+            this.Updates.Name = "Updates";
+            this.Updates.OptionsColumn.AllowEdit = false;
+            this.Updates.Visible = true;
+            this.Updates.VisibleIndex = 5;
+            this.Updates.Width = 110;
             // 
             // عرض
             // 
@@ -282,7 +282,7 @@
             // 
             this.FromDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.FromDate.EditValue = new System.DateTime(2021, 1, 14, 1, 43, 50, 0);
-            this.FromDate.Location = new System.Drawing.Point(401, 36);
+            this.FromDate.Location = new System.Drawing.Point(394, 36);
             this.FromDate.Name = "FromDate";
             this.FromDate.Properties.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FromDate.Properties.Appearance.Options.UseFont = true;
@@ -302,7 +302,7 @@
             // 
             this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(54, 32);
+            this.simpleButton1.Location = new System.Drawing.Point(47, 32);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(127, 32);
             this.simpleButton1.TabIndex = 172;
@@ -312,7 +312,7 @@
             // 
             this.ToDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ToDate.EditValue = new System.DateTime(2021, 1, 14, 1, 43, 58, 0);
-            this.ToDate.Location = new System.Drawing.Point(207, 34);
+            this.ToDate.Location = new System.Drawing.Point(200, 34);
             this.ToDate.Name = "ToDate";
             this.ToDate.Properties.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ToDate.Properties.Appearance.Options.UseFont = true;
@@ -333,7 +333,7 @@
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.labelControl1.Location = new System.Drawing.Point(546, 33);
+            this.labelControl1.Location = new System.Drawing.Point(539, 33);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(28, 34);
             this.labelControl1.TabIndex = 174;
@@ -345,7 +345,7 @@
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.labelControl2.Location = new System.Drawing.Point(352, 30);
+            this.labelControl2.Location = new System.Drawing.Point(345, 30);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(32, 36);
             this.labelControl2.TabIndex = 175;
@@ -355,7 +355,7 @@
             // 
             this.searchControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.searchControl1.Client = this.gridControl2;
-            this.searchControl1.Location = new System.Drawing.Point(207, 89);
+            this.searchControl1.Location = new System.Drawing.Point(200, 89);
             this.searchControl1.Name = "searchControl1";
             this.searchControl1.Properties.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchControl1.Properties.Appearance.Options.UseFont = true;
@@ -377,8 +377,10 @@
             this.groupControl1.Controls.Add(this.FromDate);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Location = new System.Drawing.Point(18, 1);
+            this.groupControl1.LookAndFeel.SkinName = "Office 2016 Dark";
+            this.groupControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(845, 122);
+            this.groupControl1.Size = new System.Drawing.Size(831, 122);
             this.groupControl1.TabIndex = 177;
             this.groupControl1.Text = "groupControl1";
             // 
@@ -386,9 +388,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(875, 512);
+            this.ClientSize = new System.Drawing.Size(861, 496);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.groupBox2);
+            this.LookAndFeel.SkinName = "Visual Studio 2013 Blue";
+            this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Name = "Frm_UpdateOrrder";
             this.Text = "Frm_UpdateOrrder";
             this.Load += new System.EventHandler(this.Frm_UpdateOrrder_Load);
@@ -410,25 +414,24 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox2;
         public DevExpress.XtraGrid.GridControl gridControl2;
         public DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraGrid.Columns.GridColumn ID_Order;
-        private DevExpress.XtraGrid.Columns.GridColumn Name_Cust;
-        private DevExpress.XtraGrid.Columns.GridColumn Date;
-        private DevExpress.XtraGrid.Columns.GridColumn Total;
         public DevExpress.XtraGrid.Columns.GridColumn Statues;
-        public DevExpress.XtraGrid.Columns.GridColumn Update;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit عرض;
-        private DevExpress.XtraGrid.Columns.GridColumn Delete;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
-        private DevExpress.XtraEditors.DateEdit FromDate;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.DateEdit ToDate;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.SearchControl searchControl1;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
+        public DevExpress.XtraGrid.Columns.GridColumn Updates;
+        public System.Windows.Forms.GroupBox groupBox2;
+        public DevExpress.XtraGrid.Columns.GridColumn ID_Order;
+        public DevExpress.XtraGrid.Columns.GridColumn Name_Cust;
+        public DevExpress.XtraGrid.Columns.GridColumn Date;
+        public DevExpress.XtraGrid.Columns.GridColumn Total;
+        public DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit عرض;
+        public DevExpress.XtraGrid.Columns.GridColumn Delete;
+        public DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
+        public DevExpress.XtraEditors.DateEdit FromDate;
+        public DevExpress.XtraEditors.SimpleButton simpleButton1;
+        public DevExpress.XtraEditors.DateEdit ToDate;
+        public DevExpress.XtraEditors.LabelControl labelControl1;
+        public DevExpress.XtraEditors.LabelControl labelControl2;
+        public DevExpress.XtraEditors.SearchControl searchControl1;
+        public DevExpress.XtraEditors.GroupControl groupControl1;
     }
 }

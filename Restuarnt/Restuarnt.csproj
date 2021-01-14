@@ -246,6 +246,12 @@
     <Compile Include="PL\Frm_Setting.designer.cs">
       <DependentUpon>Frm_Setting.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_ShowUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ShowUpdate.designer.cs">
+      <DependentUpon>Frm_ShowUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_Stuff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -549,6 +555,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Setting.resx">
       <DependentUpon>Frm_Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ShowUpdate.resx">
+      <DependentUpon>Frm_ShowUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Stuff.resx">
       <DependentUpon>Frm_Stuff.cs</DependentUpon>
