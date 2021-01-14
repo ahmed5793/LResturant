@@ -19,11 +19,23 @@ namespace Restuarnt.PL
         public Frm_UpdateOrrder()
         {
             InitializeComponent();
+            gridControl2.DataSource = o.SELECtALLORDER(DateTime.Now.Date,DateTime.Now.Date);
+
         }
 
         private void Frm_UpdateOrrder_Load(object sender, EventArgs e)
         {
-            gridControl2.DataSource = o.SELECtALLORDER();
+           
+        }
+
+        private void dateEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            gridControl2.DataSource = o.SELECtALLORDER(Convert.ToDateTime(FromDate.EditValue),Convert.ToDateTime(ToDate.EditValue));
         }
     }
 }
