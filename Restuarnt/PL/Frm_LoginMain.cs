@@ -250,73 +250,6 @@ namespace Restuarnt.PL
         private void bunifuThinButton2_Click(object sender, EventArgs e)
         {
 
-            try
-            {
-
-
-                if (Properties.Settings.Default.ProudectKey == "NO")
-                {
-                    frm_SerielNumber FS = new frm_SerielNumber();
-                    FS.ShowDialog();
-                }
-                else
-                {
-
-
-
-
-
-                    if (txt_User.Text == "")
-                    {
-                        MessageBox.Show("PLEASE INSERT USER NAME");
-                        return;
-                    }
-                    if (txt_Pass.Text == "")
-                    {
-                        MessageBox.Show("PLEASE INSERT PASSWORD");
-                        return;
-                    }
-
-                    else
-                    {
-
-                      
-                        DT88.Clear();
-                        DT88 = l.Logins(txt_User.Text, txt_Pass.Text);
-
-                        if (DT88.Rows.Count > 0)
-                        {
-
-                            backgroundWorker1.RunWorkerAsync();
-
-                            Program.salesman = "";
-                            Program.salesman = DT88.Rows[0][3].ToString();
-                            Program.Id_USer = Convert.ToInt32(DT88.Rows[0][0]);
-                              Console.Beep();                               
-                            this.Hide();
-                                   
-                            
-                            fm.ShowDialog();
-
-                        }
-                        else
-                        {
-                            MessageBox.Show("Incorrect password or username");
-                        }
-
-                    }
-
-
-
-
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-
-            }
         }
         
         DataTable dt2 = new DataTable();
@@ -527,6 +460,78 @@ namespace Restuarnt.PL
 
 
             }
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                if (Properties.Settings.Default.ProudectKey == "NO")
+                {
+                    frm_SerielNumber FS = new frm_SerielNumber();
+                    FS.ShowDialog();
+                }
+                else
+                {
+
+
+
+
+
+                    if (txt_User.Text == "")
+                    {
+                        MessageBox.Show("PLEASE INSERT USER NAME");
+                        return;
+                    }
+                    if (txt_Pass.Text == "")
+                    {
+                        MessageBox.Show("PLEASE INSERT PASSWORD");
+                        return;
+                    }
+
+                    else
+                    {
+
+
+                        DT88.Clear();
+                        DT88 = l.Logins(txt_User.Text, txt_Pass.Text);
+
+                        if (DT88.Rows.Count > 0)
+                        {
+
+                            backgroundWorker1.RunWorkerAsync();
+
+                            Program.salesman = "";
+                            Program.salesman = DT88.Rows[0][3].ToString();
+                            Program.Id_USer = Convert.ToInt32(DT88.Rows[0][0]);
+                            Console.Beep();
+                            this.Hide();
+
+
+                            fm.ShowDialog();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Incorrect password or username");
+                        }
+
+                    }
+
+
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+
+            }
+
         }
     }
 }

@@ -81,8 +81,7 @@ namespace Restuarnt.PL
                 dt2.Clear();
                 dt2 = l.AddUser(txt_User.Text, txt_Pass.Text, txt_Fullname.Text, "true");
                 int x = Convert.ToInt32(dt2.Rows[0][0]);
-                l.Add_UserPermession(x,1,1,1,1,1,1,1,1,1,1);
-                l.Add_UserPermession(1,1,1,1,1,1,1,1);
+                l.Add_UserPermession(x,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);
                 MessageBox.Show("تم اضافه المستخدم بنجاح");
                 dataGridViewList.DataSource = l.SelectUsers();
                 txt_Fullname.Text = "";
@@ -96,6 +95,7 @@ namespace Restuarnt.PL
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
             
 
@@ -119,7 +119,13 @@ namespace Restuarnt.PL
 
             try
             {
-               
+                if (txt_User.Text == string.Empty || txt_Pass.Text == string.Empty ||
+                    txt_PassRealy.Text == string.Empty || txt_Fullname.Text == string.Empty)
+                {
+                    MessageBox.Show("من فضلك ادخل البيانات كامله");
+                    return;
+
+                }
 
                 if (txt_Pass.Text == "")
                 {
@@ -134,7 +140,7 @@ namespace Restuarnt.PL
                         return;
 
                     }
-                    l.UpdateUsers(Convert.ToInt32(Txt_IdUser.Text),txt_User.Text, txt_Pass.Text);
+                    l.UpdateUsers(Convert.ToInt32(Txt_IdUser.Text),txt_User.Text, txt_Pass.Text,txt_Fullname.Text);
                     MessageBox.Show("تم التعديل بنجاح", "تعديل بيانات المستخدم", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                     dataGridViewList.DataSource = l.SelectUsers();
@@ -173,8 +179,8 @@ namespace Restuarnt.PL
             txt_Pass.Text = dataGridViewList.CurrentRow.Cells[2].Value.ToString();
             txt_Fullname.Text = dataGridViewList.CurrentRow.Cells[3].Value.ToString();
             txt_PassRealy.Text = txt_Pass.Text;
-            txt_Fullname.Enabled = false;
-            txt_User.Enabled = false;
+            //txt_Fullname.Enabled = false;
+            //txt_User.Enabled = false;
             btn_save.Enabled = false;
             btn_update.Enabled = true;
             btn_delete.Enabled = true;

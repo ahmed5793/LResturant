@@ -212,10 +212,9 @@ namespace Restuarnt.PL
                     else if (check_Restore.Checked == false) { Restore = 0; }
 
                     l.Update_UserPermession(Convert.ToInt32(cmb_Users1.SelectedValue), AddCategory, AddItem, AddTable, AddDelivery, 
-                        AddCaptin, SettingOrder, orderManagement,order,MoveProduct, RecieveMoney);
-
-                    l.Update_UserPermession(  AddMasrof, ReportMasrofat, AddUser,
+                        AddCaptin, SettingOrder, orderManagement,order,MoveProduct, RecieveMoney, AddMasrof, ReportMasrofat, AddUser,
                         Permesion, BackUp, Restore, permession_Update, permession_Update);
+
                     MessageBox.Show(" تم حفظ الصلاحيات للمستخدم");
                 }
             }

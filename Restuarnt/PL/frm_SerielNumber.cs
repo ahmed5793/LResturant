@@ -21,57 +21,57 @@ namespace Restuarnt.PL
      
         public void frm_SerielNumber_Load(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
 
-          
 
-            //string serial = IDENTIFIER("Win32_DisKDrive", "SerialNumber");
-            //string signature = IDENTIFIER("Win32_DisKDrive", "signature");
-            //textBox1.Text = signature;//رقم الهارد
-            //textBox2.Text = serial;//رقم الماذر 0بورد
 
-            //x = (Convert.ToDecimal(signature) * 12345 - 3).ToString();
+                string serial = IDENTIFIER("Win32_DisKDrive", "SerialNumber");
+                string signature = IDENTIFIER("Win32_DisKDrive", "signature");
+                textBox1.Text = signature;//رقم الهارد
+                textBox2.Text = serial;//رقم الماذر 0بورد
 
-            //x = (Convert.ToDecimal(x) + Convert.ToDecimal(signature)).ToString();
-            //}
-            //catch (Exception ex)
-            //{
+                x = (Convert.ToDecimal(signature) * 12345 - 3).ToString();
 
-            //    MessageBox.Show(ex.Message);
-            //}
+                x = (Convert.ToDecimal(x) + Convert.ToDecimal(signature)).ToString();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
 
 
         }
 
-    //    private string IDENTIFIER(string WimClass, string Property)
-      //  {
+        private string IDENTIFIER(string WimClass, string Property)
+        {
 
 
 
 
-            //string result = "";
-            //System.Management.ManagementClass mc = new System.Management.ManagementClass(WimClass);
-            //System.Management.ManagementObjectCollection moc = mc.GetInstances();
-            //foreach (System.Management.ManagementObject mo in moc)
-            //{
-            //    if (result == "")
-            //    {
-            //        try
-            //        {
-            //            result = mo[Property].ToString();
-            //            break;
-            //        }
-            //        catch
-            //        {
+            string result = "";
+            System.Management.ManagementClass mc = new System.Management.ManagementClass(WimClass);
+            System.Management.ManagementObjectCollection moc = mc.GetInstances();
+            foreach (System.Management.ManagementObject mo in moc)
+            {
+                if (result == "")
+                {
+                    try
+                    {
+                        result = mo[Property].ToString();
+                        break;
+                    }
+                    catch
+                    {
 
 
-            //        }
-            //    }
-            //}
-           // return result;
-       // }
-          
+                    }
+                }
+            }
+            return result;
+        }
+
         private void Btn_SelectProduct_Click(object sender, EventArgs e)
         {
             try
@@ -86,7 +86,7 @@ namespace Restuarnt.PL
             if (textBox3.Text==x)
             {
                 MessageBox.Show("تم تفعيل البرنامج بنجاح","تأكيد",MessageBoxButtons.OK,MessageBoxIcon.Information);
-               // Properties.Settings.Default.ProudectKey = "YES";
+                Properties.Settings.Default.ProudectKey = "YES";
                 Properties.Settings.Default.Save();
                     this.Close();
             }

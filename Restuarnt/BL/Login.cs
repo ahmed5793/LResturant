@@ -76,19 +76,21 @@ namespace Restuarnt.BL
 
             }
 
-            internal void UpdateUsers(int id_User, string user_Name, string pass)
+            internal void UpdateUsers(int id_User, string user_Name, string pass,string FullName)
             {
 
                 DataAccessLayer da = new DataAccessLayer();
                 da.open();
-                SqlParameter[] param = new SqlParameter[3];
+                SqlParameter[] param = new SqlParameter[4];
                 param[0] = new SqlParameter("@id", SqlDbType.Int);
                 param[0].Value = id_User;
                 param[1] = new SqlParameter("@pass", SqlDbType.NVarChar, 50);
                 param[1].Value = user_Name;
                 param[2] = new SqlParameter("@userType", SqlDbType.VarChar, 50);
                 param[2].Value = pass;
-                da.excutequery("UpdateUsers", param);
+                param[3] = new SqlParameter("@FullName", SqlDbType.VarChar, 50);
+                param[3].Value = FullName;
+            da.excutequery("UpdateUsers", param);
                 da.close();
             }
 
@@ -182,71 +184,13 @@ namespace Restuarnt.BL
             return dt;
             }
         internal void Add_UserPermession(int Id_User , int Add_Category , int Add_Item ,int Add_Table , int add_Delivery,
-            int Add_Captin ,int SettingOrder, int management_Oreder , int Order ,int Move_Product , int Recive_Money )
-        {
-            DataAccessLayer da = new DataAccessLayer();
-            da.open();
-            SqlParameter[] param = new SqlParameter[11];
-            param[0] = new SqlParameter("@Id_User", SqlDbType.Int);
-            param[0].Value = Id_User;
-            param[1] = new SqlParameter("@Add_Category", SqlDbType.Int);
-            param[1].Value = Add_Category;
-            param[2] = new SqlParameter("@Add_Item", SqlDbType.Int);
-            param[2].Value = Add_Item;
-            param[3] = new SqlParameter("@Add_Table", SqlDbType.Int);
-            param[3].Value = Add_Table;
-            param[4] = new SqlParameter("@Add_Delivery", SqlDbType.Int);
-            param[4].Value = add_Delivery;
-            param[5] = new SqlParameter("@Add_Captin", SqlDbType.Int);
-            param[5].Value = Add_Captin;
-            param[6] = new SqlParameter("@Setting_Order", SqlDbType.Int);
-            param[6].Value = SettingOrder;
-            param[7] = new SqlParameter("@Managemt_Order", SqlDbType.Int);
-            param[7].Value = management_Oreder;
-            param[8] = new SqlParameter("@Orders", SqlDbType.Int);
-            param[8].Value = Order;
-            param[9] = new SqlParameter("@Move_Product", SqlDbType.Int);
-            param[9].Value = Move_Product;
-            param[10] = new SqlParameter("@Recive_Money", SqlDbType.Int);
-            param[10].Value = Recive_Money;
-      
-            da.excutequery("Add_UserPermession", param);
-            da.close();
-        }
-        internal void Add_UserPermession( int Add_Masrof, int Report_Masrofat, int add_User,
+            int Add_Captin ,int SettingOrder, int management_Oreder , int Order ,int Move_Product , int Recive_Money,
+            int Add_Masrof, int Report_Masrofat, int add_User,
           int USer_Permession, int Add_BackUp, int Add_Restore, int UpdateOrder, int DeleteOrder)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[8];
-            
-            param[0] = new SqlParameter("@Add_masrof", SqlDbType.Int);
-            param[0].Value = Add_Masrof;
-            param[1] = new SqlParameter("@Report_Masrofat", SqlDbType.Int);
-            param[1].Value = Report_Masrofat;
-            param[2] = new SqlParameter("@Add_User", SqlDbType.Int);
-            param[2].Value = add_User;
-            param[3] = new SqlParameter("@USer_Permession", SqlDbType.Int);
-            param[3].Value = USer_Permession;
-            param[4] = new SqlParameter("@Add_BackUp", SqlDbType.Int);
-            param[4].Value = Add_BackUp;
-            param[5] = new SqlParameter("@Add_Restore", SqlDbType.Int);
-            param[5].Value = Add_Restore;
-            param[6] = new SqlParameter("@Update_Order", SqlDbType.Int);
-            param[6].Value = UpdateOrder;
-            param[7] = new SqlParameter("@Delete_Order", SqlDbType.Int);
-            param[7].Value = DeleteOrder;
-            da.excutequery("Add_UserPermession",param);
-            da.close();
-         
-        }
-
-        internal void Update_UserPermession(int Id_User, int Add_Category, int Add_Item, int Add_Table, int add_Delivery,
-         int Add_Captin, int SettingOrder, int management_Oreder, int Order, int Move_Product, int Recive_Money)
-        {
-            DataAccessLayer da = new DataAccessLayer();
-            da.open();
-            SqlParameter[] param = new SqlParameter[11];
+            SqlParameter[] param = new SqlParameter[19];
             param[0] = new SqlParameter("@Id_User", SqlDbType.Int);
             param[0].Value = Id_User;
             param[1] = new SqlParameter("@Add_Category", SqlDbType.Int);
@@ -269,37 +213,78 @@ namespace Restuarnt.BL
             param[9].Value = Move_Product;
             param[10] = new SqlParameter("@Recive_Money", SqlDbType.Int);
             param[10].Value = Recive_Money;
+            param[11] = new SqlParameter("@Add_masrof", SqlDbType.Int);
+            param[11].Value = Add_Masrof;
+            param[12] = new SqlParameter("@Report_Masrofat", SqlDbType.Int);
+            param[12].Value = Report_Masrofat;
+            param[13] = new SqlParameter("@Add_User", SqlDbType.Int);
+            param[13].Value = add_User;
+            param[14] = new SqlParameter("@USer_Permession", SqlDbType.Int);
+            param[14].Value = USer_Permession;
+            param[15] = new SqlParameter("@Add_BackUp", SqlDbType.Int);
+            param[15].Value = Add_BackUp;
+            param[16] = new SqlParameter("@Add_Restore", SqlDbType.Int);
+            param[16].Value = Add_Restore;
+            param[17] = new SqlParameter("@Update_Order", SqlDbType.Int);
+            param[17].Value = UpdateOrder;
+            param[18] = new SqlParameter("@Delete_Order", SqlDbType.Int);
+            param[18].Value = DeleteOrder;
 
-            da.excutequery("Update_UserPermession", param);
+            da.excutequery("Add_UserPermession", param);
             da.close();
         }
-        internal void Update_UserPermession(int Add_Masrof, int Report_Masrofat, int add_User,
+       
+
+        internal void Update_UserPermession(int Id_User, int Add_Category, int Add_Item, int Add_Table, int add_Delivery,
+         int Add_Captin, int SettingOrder, int management_Oreder, int Order, int Move_Product, int Recive_Money,
+         int Add_Masrof, int Report_Masrofat, int add_User,
        int USer_Permession, int Add_BackUp, int Add_Restore, int UpdateOrder, int DeleteOrder)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[8];
-
-            param[0] = new SqlParameter("@Add_masrof", SqlDbType.Int);
-            param[0].Value = Add_Masrof;
-            param[1] = new SqlParameter("@Report_Masrofat", SqlDbType.Int);
-            param[1].Value = Report_Masrofat;
-            param[2] = new SqlParameter("@Add_User", SqlDbType.Int);
-            param[2].Value = add_User;
-            param[3] = new SqlParameter("@USer_Permession", SqlDbType.Int);
-            param[3].Value = USer_Permession;
-            param[4] = new SqlParameter("@Add_BackUp", SqlDbType.Int);
-            param[4].Value = Add_BackUp;
-            param[5] = new SqlParameter("@Add_Restore", SqlDbType.Int);
-            param[5].Value = Add_Restore;
-            param[6] = new SqlParameter("@Update_Order", SqlDbType.Int);
-            param[6].Value = UpdateOrder;
-            param[7] = new SqlParameter("@Delete_Order", SqlDbType.Int);
-            param[7].Value = DeleteOrder;
+            SqlParameter[] param = new SqlParameter[19];
+            param[0] = new SqlParameter("@Id_User", SqlDbType.Int);
+            param[0].Value = Id_User;
+            param[1] = new SqlParameter("@Add_Category", SqlDbType.Int);
+            param[1].Value = Add_Category;
+            param[2] = new SqlParameter("@Add_Item", SqlDbType.Int);
+            param[2].Value = Add_Item;
+            param[3] = new SqlParameter("@Add_Table", SqlDbType.Int);
+            param[3].Value = Add_Table;
+            param[4] = new SqlParameter("@Add_Delivery", SqlDbType.Int);
+            param[4].Value = add_Delivery;
+            param[5] = new SqlParameter("@Add_Captin", SqlDbType.Int);
+            param[5].Value = Add_Captin;
+            param[6] = new SqlParameter("@Setting_Order", SqlDbType.Int);
+            param[6].Value = SettingOrder;
+            param[7] = new SqlParameter("@Managemt_Order", SqlDbType.Int);
+            param[7].Value = management_Oreder;
+            param[8] = new SqlParameter("@Orders", SqlDbType.Int);
+            param[8].Value = Order;
+            param[9] = new SqlParameter("@Move_Product", SqlDbType.Int);
+            param[9].Value = Move_Product;
+            param[10] = new SqlParameter("@Recive_Money", SqlDbType.Int);
+            param[10].Value = Recive_Money;
+            param[11] = new SqlParameter("@Add_masrof", SqlDbType.Int);
+            param[11].Value = Add_Masrof;
+            param[12] = new SqlParameter("@Report_Masrofat", SqlDbType.Int);
+            param[12].Value = Report_Masrofat;
+            param[13] = new SqlParameter("@Add_User", SqlDbType.Int);
+            param[13].Value = add_User;
+            param[14] = new SqlParameter("@USer_Permession", SqlDbType.Int);
+            param[14].Value = USer_Permession;
+            param[15] = new SqlParameter("@Add_BackUp", SqlDbType.Int);
+            param[15].Value = Add_BackUp;
+            param[16] = new SqlParameter("@Add_Restore", SqlDbType.Int);
+            param[16].Value = Add_Restore;
+            param[17] = new SqlParameter("@Update_Order", SqlDbType.Int);
+            param[17].Value = UpdateOrder;
+            param[18] = new SqlParameter("@Delete_Order", SqlDbType.Int);
+            param[18].Value = DeleteOrder;
             da.excutequery("Update_UserPermession", param);
             da.close();
-
         }
+        
 
     }
 }

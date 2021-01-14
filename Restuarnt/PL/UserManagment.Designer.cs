@@ -222,6 +222,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(421, 489);
             this.Name = "UserManagment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "إنشاء مستخدم جديد";
             this.Load += new System.EventHandler(this.UserManagment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewList)).EndInit();

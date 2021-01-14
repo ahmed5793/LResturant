@@ -139,6 +139,8 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Management.Instrumentation" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
@@ -785,6 +787,7 @@
     <None Include="Resources\find_32x32.png" />
     <None Include="Resources\financial_32x321.png" />
     <None Include="Resources\financial_16x161.png" />
+    <None Include="Resources\apply_32x32.png" />
     <Content Include="Resources\image-not-found-scaled-1150x6471.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
