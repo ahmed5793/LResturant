@@ -22,7 +22,8 @@ namespace Restuarnt.PL
         {
             InitializeComponent();
             selectUser();
-
+            rdb_all.Checked = true;
+            gridControl1.DataSource = o.SearchMangmentOrders(DateTime.Now.Date, DateTime.Now.Date);
 
         } 
         void selectUser()
@@ -56,7 +57,13 @@ namespace Restuarnt.PL
 
         private void Validate_Users_Load(object sender, EventArgs e)
         {
-           
+            Name_Cust.Caption = "اسم العميل";
+            Name_Cust.FieldName = "اسم العميل";
+            id_take.Caption = "رقم الطلب";
+            id_take.FieldName = "رقم الطلب";
+            id_take.Visible = false;
+          
+
         }
 
 
@@ -70,54 +77,9 @@ namespace Restuarnt.PL
         private void btn_save_Click(object sender, EventArgs e)
         {
 
-            try
-            {
+           
 
-
-                DataTable dt = new DataTable();
-                if (Rdb_orders.Checked == true)
-                {
-                    //btn_PrintOrder.Hide();
-                    //btn_report.Show();
-                    dt = o.SearchMangmentOrders(FromDate.Value, ToDate.Value);
-                    gridControl1.DataSource = dt;
-
-
-                }
-                else if (rdb_delivery.Checked == true)
-                {
-                
-                    dt = o.SearchManamentTOrderDelivery(FromDate.Value, ToDate.Value);
-                    gridControl1.DataSource = dt;
-
-                   
-                }
-                else if (rdb_sala.Checked == true)
-                {
-                   
-                    dt = o.SearchManagmentOrderSala(FromDate.Value, ToDate.Value);
-                    gridControl1.DataSource = dt;
-
-                }
-                else if (rdb_takeaway.Checked == true)
-                {                 
-                    dt = o.SearchManagmentOrderTakwAway(FromDate.Value, ToDate.Value);
-                    gridControl1.DataSource = dt;                   
-                }
-                decimal total = 0;
-                for (int i = 0; i < gridView1.RowCount - 1; i++)
-                {
-                    DataRow r = gridView1.GetDataRow(i);
-                    total += Convert.ToDecimal(r[3]);
-                }
-                txt_rent.Text = Math.Round(total, 1).ToString();
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+             
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -164,26 +126,22 @@ namespace Restuarnt.PL
 
         private void Rdb_orders_CheckedChanged(object sender, EventArgs e)
         {
-            gridControl1.DataSource = null;
-            txt_rent.Text = "0.0";
+            
         }
 
         private void rdb_delivery_CheckedChanged(object sender, EventArgs e)
         {
-            gridControl1.DataSource = null;
-            txt_rent.Text = "0.0";
+            
         }
 
         private void rdb_sala_CheckedChanged(object sender, EventArgs e)
         {
-            gridControl1.DataSource = null;
-            txt_rent.Text = "0.0";
+    
         }
 
         private void rdb_takeaway_CheckedChanged(object sender, EventArgs e)
         {
-            gridControl1.DataSource = null;
-            txt_rent.Text = "0.0";
+            
         }
 
         private void simpleButton7_Click(object sender, EventArgs e)
@@ -296,6 +254,107 @@ namespace Restuarnt.PL
 
                 MessageBox.Show(ex.Message);
             }
+
+        }
+
+        private void rdb_all_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (rdb_all.Checked == true)
+            {
+                gridControl1.DataSource = null;
+                Name_Cust.Caption = "اسم العميل";
+                Name_Cust.FieldName = "اسم العميل";
+                id_take.Caption = "رقم الطلب";
+                id_take.FieldName = "رقم الطلب";
+                id_take.Visible = false;
+                //gridControl1.DataSource = o.SearchMangmentOrders(Convert.ToDateTime(FromDate.EditValue), Convert.ToDateTime(ToDate.EditValue));
+              
+            }
+        }
+
+        private void rdb_sala_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (rdb_sala.Checked == true)
+            {
+                gridControl1.DataSource = null;
+                id_take.Visible = true;
+                Name_Cust.Caption = "رقم الطاوله";
+                Name_Cust.FieldName = "رقم الطاوله";
+                id_take.Caption = "الكابتن";
+                id_take.FieldName = "الكابتن";
+                gridControl1.DataSource = o.SearchManagmentOrderSala(Convert.ToDateTime(FromDate.EditValue), Convert.ToDateTime(ToDate.EditValue));
+                
+
+                
+            }
+        }
+
+        private void rdb_delivery_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (rdb_delivery.Checked == true)
+            {
+                gridControl1.DataSource = null;
+                id_take.Visible = true;
+                Name_Cust.Caption = "اسم العميل";
+                Name_Cust.FieldName = "اسم العميل";
+                id_take.Caption = "اسم الطيار";
+                id_take.FieldName = "اسم الطيار";
+                //gridControl1.DataSource = o.SearchManamentTOrderDelivery(Convert.ToDateTime(FromDate.EditValue), Convert.ToDateTime(ToDate.EditValue));
+                
+            }
+        }
+
+        private void rdb_takeaway_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (rdb_takeaway.Checked == true)
+            {
+                gridControl1.DataSource = null;
+                Name_Cust.Caption = "اسم العميل";
+                Name_Cust.FieldName = "اسم العميل";
+                id_take.Caption = "رقم الطلب";
+                id_take.FieldName = "رقم الطلب";
+                id_take.Visible = false;
+                //gridControl1.DataSource = o.SearchManagmentOrderTakwAway(Convert.ToDateTime(FromDate.EditValue), Convert.ToDateTime(ToDate.EditValue));
+              
+
+
+            }
+        }
+
+        private void simpleButton5_Click_2(object sender, EventArgs e)
+        {
+            if (rdb_all.Checked==true)
+            {
+                gridControl1.DataSource = o.SearchMangmentOrders(Convert.ToDateTime(FromDate.EditValue), Convert.ToDateTime(ToDate.EditValue));
+
+            }
+            else if (rdb_takeaway.Checked == true)
+            {
+              
+                gridControl1.DataSource = o.SearchManagmentOrderTakwAway(Convert.ToDateTime(FromDate.EditValue), Convert.ToDateTime(ToDate.EditValue));
+
+
+
+            }
+           else if (rdb_delivery.Checked == true)
+            {
+             
+                gridControl1.DataSource = o.SearchManamentTOrderDelivery(Convert.ToDateTime(FromDate.EditValue), Convert.ToDateTime(ToDate.EditValue));
+
+            }
+           else if (rdb_sala.Checked == true)
+            {
+               
+                gridControl1.DataSource = o.SearchManagmentOrderSala(Convert.ToDateTime(FromDate.EditValue), Convert.ToDateTime(ToDate.EditValue));
+
+
+
+            }
+        }
+
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
