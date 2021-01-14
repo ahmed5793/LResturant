@@ -245,43 +245,16 @@ namespace Restuarnt.PL
         private void Button2_Click(object sender, EventArgs e)
         {
 
-            if (dataGridViewList.Rows.Count > 0)
-            {
-                if (Rdb_orders.Checked == true)
-            {
-
-               
-
-                    RPT.rptTotalDay ro = new RPT.rptTotalDay();
-                    RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
-
-                    s.crystalReportViewer1.RefreshReport();
-                    ro.SetDatabaseLogon("", "", ".", "Restuarnt");
-                    ro.SetParameterValue("@FromDate", FromDate.Value);
-                    ro.SetParameterValue("@ToDate", ToDate.Value);
-                    ro.SetParameterValue("@total", txt_rent.Text);
-                    s.crystalReportViewer1.ReportSource = ro;
-
-                    System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                    ro.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                    ro.PrintToPrinter(1, true, 0, 0);
-                    ro.Close();
-                    s.Dispose();
-                }
-               
-            }
-            else
-            {
-                MessageBox.Show("لايوجد بيانات للطباعه ");
-            }
         }
 
         private void Btn_PrintOrder_Click(object sender, EventArgs e)
         {
             try
             {
+
                 if (dataGridViewList.Rows.Count > 0)
                 {
+
                     //if (rdb_delivery.Checked == true)
                     //{
                     //    RPT.rptOrders ro = new RPT.rptOrders();

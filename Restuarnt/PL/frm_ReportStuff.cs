@@ -65,10 +65,10 @@ namespace Restuarnt.PL
                         RPT.rptOrderSala rs = new RPT.rptOrderSala();
                         RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
 
-                        s.crystalReportViewer1.RefreshReport();
+                        //s.crystalReportViewer1.RefreshReport();
                         rs.SetDatabaseLogon("", "", ".", "Restuarnt");
                         rs.SetParameterValue("@ID", Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
-                        s.crystalReportViewer1.ReportSource = rs;
+                      //  s.crystalReportViewer1.ReportSource = rs;
                         System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
                         rs.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
                         //  rs.PrintToPrinter(1, true, 0, 0);

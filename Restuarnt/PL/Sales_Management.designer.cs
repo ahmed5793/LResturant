@@ -62,7 +62,10 @@
             this.Date = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Total = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Statues = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.show_print = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.print = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.rdb_all = new System.Windows.Forms.RadioButton();
             this.rdb_takeaway = new System.Windows.Forms.RadioButton();
@@ -85,9 +88,6 @@
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
-            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.عرض)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -100,14 +100,14 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).BeginInit();
             this.SuspendLayout();
             // 
             // عرض
@@ -343,8 +343,8 @@
             this.Date,
             this.Total,
             this.Statues,
-            this.gridColumn1,
-            this.gridColumn2});
+            this.show_print,
+            this.print});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
@@ -356,6 +356,7 @@
             this.gridView1.OptionsSelection.EnableAppearanceFocusedRow = false;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
             // 
             // ID_Order
             // 
@@ -411,17 +412,49 @@
             this.Statues.VisibleIndex = 4;
             this.Statues.Width = 103;
             // 
-            // gridColumn1
+            // show_print
             // 
-            this.gridColumn1.Caption = "معاينه الفاتورة";
-            this.gridColumn1.ColumnEdit = this.repositoryItemButtonEdit1;
-            this.gridColumn1.FieldName = "عرض";
-            this.gridColumn1.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.AllowEdit = false;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 5;
-            this.gridColumn1.Width = 110;
+            this.show_print.Caption = "معاينه الفاتورة";
+            this.show_print.ColumnEdit = this.repositoryItemButtonEdit1;
+            this.show_print.FieldName = "عرض";
+            this.show_print.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
+            this.show_print.Name = "show_print";
+            this.show_print.OptionsColumn.AllowEdit = false;
+            this.show_print.Visible = true;
+            this.show_print.VisibleIndex = 5;
+            this.show_print.Width = 110;
+            // 
+            // repositoryItemButtonEdit1
+            // 
+            this.repositoryItemButtonEdit1.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            serializableAppearanceObject5.BackColor = System.Drawing.Color.Red;
+            serializableAppearanceObject5.Options.UseBackColor = true;
+            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryItemButtonEdit1.LookAndFeel.SkinName = "Office 2019 Dark Gray";
+            this.repositoryItemButtonEdit1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
+            this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
+            // print
+            // 
+            this.print.Caption = "طباعة الفاتورة";
+            this.print.ColumnEdit = this.repositoryItemButtonEdit2;
+            this.print.Name = "print";
+            this.print.Visible = true;
+            this.print.VisibleIndex = 6;
+            // 
+            // repositoryItemButtonEdit2
+            // 
+            this.repositoryItemButtonEdit2.AutoHeight = false;
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            this.repositoryItemButtonEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryItemButtonEdit2.LookAndFeel.SkinName = "Office 2019 Dark Gray";
+            this.repositoryItemButtonEdit2.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.repositoryItemButtonEdit2.Name = "repositoryItemButtonEdit2";
+            this.repositoryItemButtonEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // groupControl1
             // 
@@ -440,11 +473,12 @@
             // 
             // rdb_all
             // 
+            this.rdb_all.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.rdb_all.AutoSize = true;
             this.rdb_all.Checked = true;
             this.rdb_all.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdb_all.Image = ((System.Drawing.Image)(resources.GetObject("rdb_all.Image")));
-            this.rdb_all.Location = new System.Drawing.Point(810, 23);
+            this.rdb_all.Location = new System.Drawing.Point(868, 25);
             this.rdb_all.Name = "rdb_all";
             this.rdb_all.Size = new System.Drawing.Size(109, 126);
             this.rdb_all.TabIndex = 87;
@@ -457,6 +491,7 @@
             // 
             // rdb_takeaway
             // 
+            this.rdb_takeaway.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.rdb_takeaway.AutoSize = true;
             this.rdb_takeaway.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdb_takeaway.Image = ((System.Drawing.Image)(resources.GetObject("rdb_takeaway.Image")));
@@ -472,10 +507,11 @@
             // 
             // rdb_delivery
             // 
+            this.rdb_delivery.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.rdb_delivery.AutoSize = true;
             this.rdb_delivery.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdb_delivery.Image = global::Restuarnt.Properties.Resources.delivery2;
-            this.rdb_delivery.Location = new System.Drawing.Point(271, 27);
+            this.rdb_delivery.Location = new System.Drawing.Point(304, 27);
             this.rdb_delivery.Name = "rdb_delivery";
             this.rdb_delivery.Size = new System.Drawing.Size(142, 122);
             this.rdb_delivery.TabIndex = 86;
@@ -487,10 +523,11 @@
             // 
             // rdb_sala
             // 
+            this.rdb_sala.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.rdb_sala.AutoSize = true;
             this.rdb_sala.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdb_sala.Image = global::Restuarnt.Properties.Resources.restaurant_table_icon_9;
-            this.rdb_sala.Location = new System.Drawing.Point(538, 32);
+            this.rdb_sala.Location = new System.Drawing.Point(588, 34);
             this.rdb_sala.Name = "rdb_sala";
             this.rdb_sala.Size = new System.Drawing.Size(142, 109);
             this.rdb_sala.TabIndex = 85;
@@ -723,38 +760,6 @@
             this.BottomToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.BottomToolStripPanel.Size = new System.Drawing.Size(0, 0);
             // 
-            // repositoryItemButtonEdit1
-            // 
-            this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
-            serializableAppearanceObject5.BackColor = System.Drawing.Color.Red;
-            serializableAppearanceObject5.Options.UseBackColor = true;
-            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.repositoryItemButtonEdit1.LookAndFeel.SkinName = "Office 2019 Dark Gray";
-            this.repositoryItemButtonEdit1.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
-            this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "طباعة الفاتورة";
-            this.gridColumn2.ColumnEdit = this.repositoryItemButtonEdit2;
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 6;
-            // 
-            // repositoryItemButtonEdit2
-            // 
-            this.repositoryItemButtonEdit2.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
-            this.repositoryItemButtonEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.repositoryItemButtonEdit2.LookAndFeel.SkinName = "Office 2019 Dark Gray";
-            this.repositoryItemButtonEdit2.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.repositoryItemButtonEdit2.Name = "repositoryItemButtonEdit2";
-            this.repositoryItemButtonEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
             // Sales_Management
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -781,6 +786,8 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -788,8 +795,6 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -829,7 +834,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn Date;
         private DevExpress.XtraGrid.Columns.GridColumn Total;
         public DevExpress.XtraGrid.Columns.GridColumn Statues;
-        public DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        public DevExpress.XtraGrid.Columns.GridColumn show_print;
         public DevExpress.XtraEditors.GroupControl group;
         public DevExpress.XtraEditors.SimpleButton simpleButton5;
         public DevExpress.XtraEditors.DateEdit ToDate;
@@ -838,7 +843,7 @@
         public DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit عرض;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn print;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit2;
     }
 }

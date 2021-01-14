@@ -808,116 +808,11 @@ namespace Restuarnt.PL
 
         private void Button1_Click_1(object sender, EventArgs e)
         {
-            try
-            {
-                DataTable dt = new DataTable();
-
-                if (Lable_Num.Text != string.Empty)
-                {
-                    for (int i = 0; i < gridView2.RowCount; i++)
-                    {
-                        dt.Clear();
-
-                        DataRow row = FOrder.getmain.gridView2.GetDataRow(i);
-
-
-                        dt = c.VildateDepartmentCategory(Convert.ToInt32(row[0]));
-
-                    }
-                    //if (dt.Rows[0][2].ToString() == "مأكولات")
-                    //{
-                    if (rdb_delivery.Checked == true)
-                    {
-                        RPT.rptCheckenDeliveryMakolat ro = new RPT.rptCheckenDeliveryMakolat();
-                        RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
-
-                        s.crystalReportViewer1.RefreshReport();
-                        ro.SetDatabaseLogon("", "", ".", "Restuarnt");
-                        ro.SetParameterValue("@ID", (Convert.ToInt32(Lable_Num.Text)));
-                        if (ro.Rows.Count > 0)
-                        {
-
-
-                            s.crystalReportViewer1.ReportSource = ro;
-                            System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                            ro.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                            ro.PrintToPrinter(1, true, 0, 0);
-
-                            ro.Close();
-                            s.Dispose();
-                        }
-
-                        //GC.Collect();
-                        //GC.WaitForPendingFinalizers();
-                    }
-                    else if (rdb_sala.Checked == true)
-                    {
-                        RPT.rptCheckenSalaMakolat rs = new RPT.rptCheckenSalaMakolat();
-                        RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
-
-                        s.crystalReportViewer1.RefreshReport();
-                        rs.SetDatabaseLogon("", "", ".", "Restuarnt");
-                        rs.SetParameterValue("@ID", (Convert.ToInt32(Lable_Num.Text)));
-                        if (rs.Rows.Count > 0)
-                        {
-
-
-                            s.crystalReportViewer1.ReportSource = rs;
-                            System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                            rs.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                            rs.PrintToPrinter(1, true, 0, 0);
-
-                            rs.Close();
-                            s.Dispose();
-                        }
-                        //GC.Collect();
-                        //GC.WaitForPendingFinalizers();
-                    }
-                    else if (rdb_takeaway.Checked == true)
-                    {
-                        RPT.rptChekenTakeAway rt = new RPT.rptChekenTakeAway();
-                        RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
-
-
-                        s.crystalReportViewer1.RefreshReport();
-                        rt.SetDatabaseLogon("", "", ".", "Restuarnt");
-                        rt.SetParameterValue("@ID", (Convert.ToInt32(Lable_Num.Text)));
-                        if (rt.Rows.Count > 0)
-                        {
-
-
-                            s.crystalReportViewer1.ReportSource = rt;
-                            System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                            rt.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                            rt.PrintToPrinter(1, true, 0, 0);
-                            rt.Close();
-                            s.Dispose();
-                        }
-                        //GC.Collect();
-                        //GC.WaitForPendingFinalizers();
-                    }
-                    // clear2();
-                }
 
 
 
 
-
-                //}
-
-                else
-                {
-                    MessageBox.Show("لابد من حفظ الفاتورة اولا ");
-                }
-            }
-
-            catch (Exception ex)
-            {
-
-                //MessageBox.Show("لايوجد طابعه متصله");
-                MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
-            }
+   
         }
 
         private void Btn_remove_Click(object sender, EventArgs e)
@@ -1906,101 +1801,7 @@ namespace Restuarnt.PL
         private void simpleButton2_Click(object sender, EventArgs e)
         {
 
-            if (Lable_Num.Text != string.Empty)
-            {
-                DataTable dt1 = new DataTable();
-                for (int i = 0; i < gridView2.RowCount; i++)
-                {
-                    dt1.Clear();
-                    DataRow row = FOrder.getmain.gridView2.GetDataRow(i);
-
-                    dt1 = c.VildateDepartmentCategory(Convert.ToInt32(row[0]));
-
-                }
-
-                //if (dt1.Rows[0][2].ToString() == "مشروبات")
-                //{
-                if (rdb_delivery.Checked == true)
-                {
-                    RPT.rptCheckenDelivery ro = new RPT.rptCheckenDelivery();
-                    RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
-
-                    s.crystalReportViewer1.RefreshReport();
-                    ro.SetDatabaseLogon("", "", ".", "Restuarnt");
-                    ro.SetParameterValue("@ID", (Convert.ToInt32(Lable_Num.Text)));
-                    if (ro.Rows.Count > 0)
-                    {
-
-
-                        s.crystalReportViewer1.ReportSource = ro;
-                        System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                        ro.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                        ro.PrintToPrinter(1, true, 0, 0);
-
-                        ro.Close();
-                        s.Dispose();
-                    }
-                    //GC.Collect();
-                    //GC.WaitForPendingFinalizers();
-                }
-                else if (rdb_sala.Checked == true)
-                {
-                    RPT.rptCheckenSala rs = new RPT.rptCheckenSala();
-                    RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
-
-                    s.crystalReportViewer1.RefreshReport();
-                    rs.SetDatabaseLogon("", "", ".", "Restuarnt");
-                    rs.SetParameterValue("@ID", (Convert.ToInt32(Lable_Num.Text)));
-                    if (rs.Rows.Count > 0)
-                    {
-
-
-                        s.crystalReportViewer1.ReportSource = rs;
-                        System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                        rs.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                        rs.PrintToPrinter(1, true, 0, 0);
-
-                        rs.Close();
-                        s.Dispose();
-                    }
-                    //GC.Collect();
-                    //GC.WaitForPendingFinalizers();
-                }
-                else if (rdb_takeaway.Checked == true)
-                {
-                    RPT.rptChekenTakeAwayDrinks rt = new RPT.rptChekenTakeAwayDrinks();
-                    RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
-
-
-                    s.crystalReportViewer1.RefreshReport();
-                    rt.SetDatabaseLogon("", "", ".", "Restuarnt");
-                    rt.SetParameterValue("@ID", (Convert.ToInt32(Lable_Num.Text)));
-                    if (rt.Rows.Count > 0)
-                    {
-
-
-                        s.crystalReportViewer1.ReportSource = rt;
-                        System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                        rt.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                        rt.PrintToPrinter(1, true, 0, 0);
-                        rt.Close();
-                        s.Dispose();
-                    }
-                    //GC.Collect();
-                    //GC.WaitForPendingFinalizers();
-                }
-                // clear2();
-
-                // }
-
-
-
-
-            }
-            else
-            {
-                MessageBox.Show("لابد من حفظ الفاتورة اولا ");
-            }
+            
 
         }
 
@@ -2567,13 +2368,13 @@ namespace Restuarnt.PL
                         RPT.rptCheckenDeliveryMakolat ro = new RPT.rptCheckenDeliveryMakolat();
                         RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
 
-                        s.crystalReportViewer1.RefreshReport();
+                      //  s.crystalReportViewer1.RefreshReport();
                         ro.SetDatabaseLogon("", "", ".", "Restuarnt");
                         ro.SetParameterValue("@ID", (Convert.ToInt32(Lable_Num.Text)));
                         if (ro.Rows.Count > 0)
                         {
 
-                            s.crystalReportViewer1.ReportSource = ro;
+                          //  s.crystalReportViewer1.ReportSource = ro;
                             System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
                             ro.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
                             ro.PrintToPrinter(1, true, 0, 0);
@@ -2585,14 +2386,14 @@ namespace Restuarnt.PL
                         RPT.rptCheckenDelivery deldrinks = new RPT.rptCheckenDelivery();
                         RPT.Frm_ReportOrder sa = new RPT.Frm_ReportOrder();
 
-                        sa.crystalReportViewer1.RefreshReport();
+                       // sa.crystalReportViewer1.RefreshReport();
                         deldrinks.SetDatabaseLogon("", "", ".", "Restuarnt");
                         deldrinks.SetParameterValue("@ID", (Convert.ToInt32(Lable_Num.Text)));
                         if (deldrinks.Rows.Count > 0)
                         {
 
 
-                            sa.crystalReportViewer1.ReportSource = deldrinks;
+                         //   sa.crystalReportViewer1.ReportSource = deldrinks;
                             System.Drawing.Printing.PrintDocument printDocuments = new System.Drawing.Printing.PrintDocument();
                             deldrinks.PrintOptions.PrinterName = printDocuments.PrinterSettings.PrinterName;
                             deldrinks.PrintToPrinter(1, true, 0, 0);
@@ -2607,14 +2408,14 @@ namespace Restuarnt.PL
                         RPT.rptCheckenSalaMakolat rs = new RPT.rptCheckenSalaMakolat();
                         RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
 
-                        s.crystalReportViewer1.RefreshReport();
+                      //  s.crystalReportViewer1.RefreshReport();
                         rs.SetDatabaseLogon("", "", ".", "Restuarnt");
                         rs.SetParameterValue("@ID", (Convert.ToInt32(Lable_Num.Text)));
                         if (rs.Rows.Count > 0)
                         {
 
 
-                            s.crystalReportViewer1.ReportSource = rs;
+                          ///  s.crystalReportViewer1.ReportSource = rs;
                             System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
                             rs.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
                             rs.PrintToPrinter(1, true, 0, 0);
@@ -2627,14 +2428,14 @@ namespace Restuarnt.PL
                         RPT.rptCheckenSala sala = new RPT.rptCheckenSala();
                         RPT.Frm_ReportOrder sa = new RPT.Frm_ReportOrder();
 
-                        sa.crystalReportViewer1.RefreshReport();
+                       // sa.crystalReportViewer1.RefreshReport();
                         sala.SetDatabaseLogon("", "", ".", "Restuarnt");
                         sala.SetParameterValue("@ID", (Convert.ToInt32(Lable_Num.Text)));
                         if (sala.Rows.Count > 0)
                         {
 
 
-                            sa.crystalReportViewer1.ReportSource = sala;
+                           // sa.crystalReportViewer1.ReportSource = sala;
                             System.Drawing.Printing.PrintDocument printDocumentsala = new System.Drawing.Printing.PrintDocument();
                             sala.PrintOptions.PrinterName = printDocumentsala.PrinterSettings.PrinterName;
                             sala.PrintToPrinter(1, true, 0, 0);
@@ -2651,14 +2452,14 @@ namespace Restuarnt.PL
                         RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
 
 
-                        s.crystalReportViewer1.RefreshReport();
+                       // s.crystalReportViewer1.RefreshReport();
                         rt.SetDatabaseLogon("", "", ".", "Restuarnt");
                         rt.SetParameterValue("@ID", (Convert.ToInt32(Lable_Num.Text)));
                         if (rt.Rows.Count > 0)
                         {
 
 
-                            s.crystalReportViewer1.ReportSource = rt;
+                         //   s.crystalReportViewer1.ReportSource = rt;
                             System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
                             rt.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
                             rt.PrintToPrinter(1, true, 0, 0);
@@ -2670,12 +2471,12 @@ namespace Restuarnt.PL
                         RPT.Frm_ReportOrder stake = new RPT.Frm_ReportOrder();
 
 
-                        stake.crystalReportViewer1.RefreshReport();
+                      //  stake.crystalReportViewer1.RefreshReport();
                         rtake.SetDatabaseLogon("", "", ".", "Restuarnt");
                         rtake.SetParameterValue("@ID", (Convert.ToInt32(Lable_Num.Text)));
                         if (rtake.Rows.Count > 0)
                         {
-                            stake.crystalReportViewer1.ReportSource = rtake;
+                           // stake.crystalReportViewer1.ReportSource = rtake;
                             System.Drawing.Printing.PrintDocument printDocumenttake = new System.Drawing.Printing.PrintDocument();
                             rtake.PrintOptions.PrinterName = printDocumenttake.PrinterSettings.PrinterName;
                             rtake.PrintToPrinter(1, true, 0, 0);
@@ -2820,12 +2621,12 @@ namespace Restuarnt.PL
                             RPT.rptNewRowDAELIVERYMakolat ro = new RPT.rptNewRowDAELIVERYMakolat();
                             RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
 
-                            s.crystalReportViewer1.RefreshReport();
+                           // s.crystalReportViewer1.RefreshReport();
                             ro.SetDatabaseLogon("", "", ".", "Restuarnt");
                             ro.SetParameterValue("@id", (Convert.ToInt32(Lable_Num.Text)));
                             if (ro.Rows.Count > 0)
                             {
-                                s.crystalReportViewer1.ReportSource = ro;
+                              //  s.crystalReportViewer1.ReportSource = ro;
                                 System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
                                 ro.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
                                 ro.PrintToPrinter(1, true, 0, 0);
@@ -2841,14 +2642,14 @@ namespace Restuarnt.PL
                             RPT.rptNewRowDAELIVERY newrowdel = new RPT.rptNewRowDAELIVERY();
                             RPT.Frm_ReportOrder snewrowdel = new RPT.Frm_ReportOrder();
 
-                            snewrowdel.crystalReportViewer1.RefreshReport();
+                           // snewrowdel.crystalReportViewer1.RefreshReport();
                             newrowdel.SetDatabaseLogon("", "", ".", "Restuarnt");
                             newrowdel.SetParameterValue("@id", (Convert.ToInt32(Lable_Num.Text)));
                             if (newrowdel.Rows.Count > 0)
                             {
 
 
-                                snewrowdel.crystalReportViewer1.ReportSource = newrowdel;
+                              //  snewrowdel.crystalReportViewer1.ReportSource = newrowdel;
                                 System.Drawing.Printing.PrintDocument printDocumentnewdel = new System.Drawing.Printing.PrintDocument();
                                 newrowdel.PrintOptions.PrinterName = printDocumentnewdel.PrinterSettings.PrinterName;
                                 newrowdel.PrintToPrinter(1, true, 0, 0);
@@ -2861,96 +2662,7 @@ namespace Restuarnt.PL
                                 //GC.WaitForPendingFinalizers();
                             }
 
-                        }
-                        else if (rdb_sala.Checked == true)
-                        {
-                            RPT.rptNewRowSalaMakolat rs = new RPT.rptNewRowSalaMakolat();
-                            RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
-
-                            s.crystalReportViewer1.RefreshReport();
-                            rs.SetDatabaseLogon("", "", ".", "Restuarnt");
-                            rs.SetParameterValue("@id", (Convert.ToInt32(Lable_Num.Text)));
-                            if (rs.Rows.Count > 0)
-                            {
-                                s.crystalReportViewer1.ReportSource = rs;
-                                System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                                rs.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                                rs.PrintToPrinter(1, true, 0, 0);
-                                rs.Close();
-                                s.Dispose();
-
-
-
-                            }
-                            /////////////////////////////////////////////////////////
-
-                            RPT.rptNewRowSala rsala = new RPT.rptNewRowSala();
-                            RPT.Frm_ReportOrder sla = new RPT.Frm_ReportOrder();
-
-                            sla.crystalReportViewer1.RefreshReport();
-                            rsala.SetDatabaseLogon("", "", ".", "Restuarnt");
-                            rsala.SetParameterValue("@id", (Convert.ToInt32(Lable_Num.Text)));
-                            if (rsala.Rows.Count > 0)
-                            {
-                                sla.crystalReportViewer1.ReportSource = rsala;
-                                System.Drawing.Printing.PrintDocument printDocumentsala = new System.Drawing.Printing.PrintDocument();
-                                rsala.PrintOptions.PrinterName = printDocumentsala.PrinterSettings.PrinterName;
-                                rsala.PrintToPrinter(1, true, 0, 0);
-                                rsala.Close();
-                                sla.Dispose();
-
-
-
-                            }
-                            //GC.Collect();
-                            //GC.WaitForPendingFinalizers();
-
-                        }
-                        else if (rdb_takeaway.Checked == true)
-                        {
-                            RPT.rptNewRowTakeAwayMakolat rt = new RPT.rptNewRowTakeAwayMakolat();
-                            RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
-
-                            s.crystalReportViewer1.RefreshReport();
-                            rt.SetDatabaseLogon("", "", ".", "Restuarnt");
-                            rt.SetParameterValue("@id", (Convert.ToInt32(Lable_Num.Text)));
-                            if (rt.Rows.Count > 0)
-                            {
-                                s.crystalReportViewer1.ReportSource = rt;
-                                System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                                rt.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                                rt.PrintToPrinter(1, true, 0, 0);
-                                // ------------------------------------------------------------------ hold
-                                rt.Close();
-                                s.Dispose();
-
-
-                            }
-                            //////////////////////////////////////////////////////
-                            ///
-
-
-                            RPT.rptNewRowTakeAway rtake = new RPT.rptNewRowTakeAway();
-                            RPT.Frm_ReportOrder snewtake = new RPT.Frm_ReportOrder();
-
-                            snewtake.crystalReportViewer1.RefreshReport();
-                            rtake.SetDatabaseLogon("", "", ".", "Restuarnt");
-                            rtake.SetParameterValue("@id", (Convert.ToInt32(Lable_Num.Text)));
-                            if (rtake.Rows.Count > 0)
-                            {
-                                snewtake.crystalReportViewer1.ReportSource = rtake;
-                                System.Drawing.Printing.PrintDocument printDocumenttakes = new System.Drawing.Printing.PrintDocument();
-                                rtake.PrintOptions.PrinterName = printDocumenttakes.PrinterSettings.PrinterName;
-                                rtake.PrintToPrinter(1, true, 0, 0);
-                                // ------------------------------------------------------------------ hold
-                                rtake.Close();
-                                snewtake.Dispose();
-
-
-
-                            }
-                            //GC.Collect();
-                            //GC.WaitForPendingFinalizers();
+                    
                         }
                         o.DeleteOrderNewRow();
                         // clear2();
