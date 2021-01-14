@@ -129,6 +129,8 @@
     <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v19.2.Extensions, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraRichEdit.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -345,12 +347,6 @@
     </Compile>
     <Compile Include="PL\Frm_Unit.Designer.cs">
       <DependentUpon>Frm_Unit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PL\Frm_UpdateOrrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PL\Frm_UpdateOrrder.Designer.cs">
-      <DependentUpon>Frm_UpdateOrrder.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_ViewPhrchise.cs">
       <SubType>Form</SubType>
@@ -592,9 +588,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Unit.resx">
       <DependentUpon>Frm_Unit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PL\Frm_UpdateOrrder.resx">
-      <DependentUpon>Frm_UpdateOrrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ViewPhrchise.resx">
       <DependentUpon>Frm_ViewPhrchise.cs</DependentUpon>

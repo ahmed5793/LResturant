@@ -60,6 +60,10 @@
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.txt_rent = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.tabPage5.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -68,6 +72,8 @@
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // BottomToolStripPanel
@@ -212,6 +218,10 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.tabPage1.Controls.Add(this.dateEdit1);
+            this.tabPage1.Controls.Add(this.simpleButton6);
+            this.tabPage1.Controls.Add(this.txt_rent);
+            this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.gridControl1);
             this.tabPage1.Controls.Add(this.simpleButton5);
             this.tabPage1.Controls.Add(this.Rdb_orders);
@@ -318,7 +328,7 @@
             this.ToDate.CustomFormat = "dd/MM/yyyy  *  tt mm:hh     ";
             this.ToDate.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ToDate.Location = new System.Drawing.Point(269, 60);
+            this.ToDate.Location = new System.Drawing.Point(311, 58);
             this.ToDate.Name = "ToDate";
             this.ToDate.ShowUpDown = true;
             this.ToDate.Size = new System.Drawing.Size(287, 32);
@@ -330,7 +340,7 @@
             this.FromDate.CustomFormat = "dd/MM/yyyy  *  tt mm:hh     ";
             this.FromDate.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FromDate.Location = new System.Drawing.Point(658, 60);
+            this.FromDate.Location = new System.Drawing.Point(676, 59);
             this.FromDate.Name = "FromDate";
             this.FromDate.ShowUpDown = true;
             this.FromDate.Size = new System.Drawing.Size(287, 32);
@@ -344,7 +354,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(562, 60);
+            this.label3.Location = new System.Drawing.Point(604, 58);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 32);
             this.label3.TabIndex = 215;
@@ -358,7 +368,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(950, 60);
+            this.label1.Location = new System.Drawing.Point(968, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 32);
             this.label1.TabIndex = 214;
@@ -378,9 +388,9 @@
             this.btn_save.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btn_save.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.btn_save.ImageOptions.Image = global::Restuarnt.Properties.Resources.lookup_reference_32x32;
-            this.btn_save.Location = new System.Drawing.Point(105, 54);
+            this.btn_save.Location = new System.Drawing.Point(160, 57);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(129, 38);
+            this.btn_save.Size = new System.Drawing.Size(129, 33);
             this.btn_save.TabIndex = 186;
             this.btn_save.Text = "بحث";
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
@@ -483,7 +493,7 @@
             this.simpleButton5.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.simpleButton5.Location = new System.Drawing.Point(633, 440);
+            this.simpleButton5.Location = new System.Drawing.Point(386, 436);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(213, 38);
             this.simpleButton5.TabIndex = 219;
@@ -500,7 +510,7 @@
             this.gridControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1014, 312);
+            this.gridControl1.Size = new System.Drawing.Size(1014, 310);
             this.gridControl1.TabIndex = 220;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -537,6 +547,67 @@
             this.gridView1.OptionsPrint.PrintPreview = true;
             this.gridView1.OptionsView.ShowFooter = true;
             // 
+            // txt_rent
+            // 
+            this.txt_rent.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txt_rent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_rent.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_rent.Location = new System.Drawing.Point(658, 440);
+            this.txt_rent.Multiline = true;
+            this.txt_rent.Name = "txt_rent";
+            this.txt_rent.ReadOnly = true;
+            this.txt_rent.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_rent.Size = new System.Drawing.Size(192, 34);
+            this.txt_rent.TabIndex = 222;
+            this.txt_rent.Text = "0";
+            this.txt_rent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label2.BackColor = System.Drawing.Color.Red;
+            this.label2.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(851, 440);
+            this.label2.Name = "label2";
+            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label2.Size = new System.Drawing.Size(163, 34);
+            this.label2.TabIndex = 221;
+            this.label2.Text = "إجمالى المبيعات";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // simpleButton6
+            // 
+            this.simpleButton6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.simpleButton6.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton6.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton6.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton6.Appearance.Options.UseBackColor = true;
+            this.simpleButton6.Appearance.Options.UseFont = true;
+            this.simpleButton6.Appearance.Options.UseForeColor = true;
+            this.simpleButton6.Appearance.Options.UseTextOptions = true;
+            this.simpleButton6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton6.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton6.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.simpleButton6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.ImageOptions.Image")));
+            this.simpleButton6.Location = new System.Drawing.Point(105, 433);
+            this.simpleButton6.Name = "simpleButton6";
+            this.simpleButton6.Size = new System.Drawing.Size(213, 38);
+            this.simpleButton6.TabIndex = 223;
+            this.simpleButton6.Text = "حفظ البيانات للمستخدم";
+            // 
+            // dateEdit1
+            // 
+            this.dateEdit1.EditValue = null;
+            this.dateEdit1.Location = new System.Drawing.Point(386, 193);
+            this.dateEdit1.Name = "dateEdit1";
+            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit1.Size = new System.Drawing.Size(212, 20);
+            this.dateEdit1.TabIndex = 224;
+            // 
             // Validate_Users
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -558,6 +629,8 @@
             this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -595,5 +668,9 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        public System.Windows.Forms.TextBox txt_rent;
+        public System.Windows.Forms.Label label2;
+        private DevExpress.XtraEditors.DateEdit dateEdit1;
     }
 }
