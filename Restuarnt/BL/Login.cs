@@ -82,11 +82,11 @@ namespace Restuarnt.BL
                 DataAccessLayer da = new DataAccessLayer();
                 da.open();
                 SqlParameter[] param = new SqlParameter[4];
-                param[0] = new SqlParameter("@id", SqlDbType.Int);
+                param[0] = new SqlParameter("@id_User", SqlDbType.Int);
                 param[0].Value = id_User;
-                param[1] = new SqlParameter("@pass", SqlDbType.NVarChar, 50);
+                param[1] = new SqlParameter("@USerName", SqlDbType.NVarChar, 50);
                 param[1].Value = user_Name;
-                param[2] = new SqlParameter("@userType", SqlDbType.VarChar, 50);
+                param[2] = new SqlParameter("@pass", SqlDbType.VarChar, 50);
                 param[2].Value = pass;
                 param[3] = new SqlParameter("@FullName", SqlDbType.VarChar, 50);
                 param[3].Value = FullName;

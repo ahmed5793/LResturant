@@ -49,7 +49,7 @@ namespace Restuarnt.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("صالة")]
         public string OrderType {
             get {
                 return ((string)(this["OrderType"]));
