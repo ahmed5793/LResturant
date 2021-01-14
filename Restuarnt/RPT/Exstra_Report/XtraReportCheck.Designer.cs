@@ -42,8 +42,8 @@
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
-            this.Txt_CustName = new DevExpress.XtraReports.UI.XRLabel();
+            this.Label_TableNum = new DevExpress.XtraReports.UI.XRLabel();
+            this.Txt_TableNum = new DevExpress.XtraReports.UI.XRLabel();
             this.Txt_OrderDate = new DevExpress.XtraReports.UI.XRLabel();
             this.Txt_IDOrder = new DevExpress.XtraReports.UI.XRLabel();
             this.Txt_OrderType = new DevExpress.XtraReports.UI.XRLabel();
@@ -154,8 +154,8 @@
             this.xrLabel4,
             this.xrLabel3,
             this.xrLabel1,
-            this.xrLabel2,
-            this.Txt_CustName,
+            this.Label_TableNum,
+            this.Txt_TableNum,
             this.Txt_OrderDate,
             this.Txt_IDOrder,
             this.Txt_OrderType,
@@ -214,41 +214,43 @@
             this.xrLabel1.StylePriority.UseFont = false;
             this.xrLabel1.Text = "نوع الفاتورة";
             // 
-            // xrLabel2
+            // Label_TableNum
             // 
-            this.xrLabel2.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            this.Label_TableNum.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrLabel2.BorderWidth = 2F;
-            this.xrLabel2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(185.75F, 76.54173F);
-            this.xrLabel2.Multiline = true;
-            this.xrLabel2.Name = "xrLabel2";
-            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(84.375F, 23F);
-            this.xrLabel2.StylePriority.UseBorders = false;
-            this.xrLabel2.StylePriority.UseBorderWidth = false;
-            this.xrLabel2.StylePriority.UseFont = false;
-            this.xrLabel2.Text = "رقم الطاولة";
+            this.Label_TableNum.BorderWidth = 2F;
+            this.Label_TableNum.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_TableNum.LocationFloat = new DevExpress.Utils.PointFloat(185.75F, 76.54173F);
+            this.Label_TableNum.Multiline = true;
+            this.Label_TableNum.Name = "Label_TableNum";
+            this.Label_TableNum.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.Label_TableNum.SizeF = new System.Drawing.SizeF(84.375F, 23F);
+            this.Label_TableNum.StylePriority.UseBorders = false;
+            this.Label_TableNum.StylePriority.UseBorderWidth = false;
+            this.Label_TableNum.StylePriority.UseFont = false;
+            this.Label_TableNum.Text = "رقم الطاولة";
+            this.Label_TableNum.Visible = false;
             // 
-            // Txt_CustName
+            // Txt_TableNum
             // 
-            this.Txt_CustName.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            this.Txt_TableNum.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.Txt_CustName.BorderWidth = 2F;
-            this.Txt_CustName.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            this.Txt_TableNum.BorderWidth = 2F;
+            this.Txt_TableNum.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Order].[ClientName]")});
-            this.Txt_CustName.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_CustName.LocationFloat = new DevExpress.Utils.PointFloat(1.999967F, 76.54173F);
-            this.Txt_CustName.Multiline = true;
-            this.Txt_CustName.Name = "Txt_CustName";
-            this.Txt_CustName.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Txt_CustName.SizeF = new System.Drawing.SizeF(183.75F, 22.99998F);
-            this.Txt_CustName.StylePriority.UseBorders = false;
-            this.Txt_CustName.StylePriority.UseBorderWidth = false;
-            this.Txt_CustName.StylePriority.UseFont = false;
-            this.Txt_CustName.Text = "إسم العميل";
+            this.Txt_TableNum.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_TableNum.LocationFloat = new DevExpress.Utils.PointFloat(1.999967F, 76.54173F);
+            this.Txt_TableNum.Multiline = true;
+            this.Txt_TableNum.Name = "Txt_TableNum";
+            this.Txt_TableNum.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.Txt_TableNum.SizeF = new System.Drawing.SizeF(183.75F, 22.99998F);
+            this.Txt_TableNum.StylePriority.UseBorders = false;
+            this.Txt_TableNum.StylePriority.UseBorderWidth = false;
+            this.Txt_TableNum.StylePriority.UseFont = false;
+            this.Txt_TableNum.Text = "إسم العميل";
+            this.Txt_TableNum.Visible = false;
             // 
             // Txt_OrderDate
             // 
@@ -387,8 +389,8 @@
         public DevExpress.XtraReports.UI.XRLabel xrLabel4;
         public DevExpress.XtraReports.UI.XRLabel xrLabel3;
         public DevExpress.XtraReports.UI.XRLabel xrLabel1;
-        public DevExpress.XtraReports.UI.XRLabel xrLabel2;
-        public DevExpress.XtraReports.UI.XRLabel Txt_CustName;
+        public DevExpress.XtraReports.UI.XRLabel Label_TableNum;
+        public DevExpress.XtraReports.UI.XRLabel Txt_TableNum;
         public DevExpress.XtraReports.UI.XRLabel Txt_OrderDate;
         public DevExpress.XtraReports.UI.XRLabel Txt_IDOrder;
         public DevExpress.XtraReports.UI.XRLabel Txt_OrderType;
