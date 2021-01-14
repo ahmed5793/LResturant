@@ -344,14 +344,14 @@ namespace Restuarnt.PL
                 }
 
 
-                   
+                FOrder.getmain.clear2();
+                this.Close();
 
 
 
 
-                    FOrder.getmain.clear2();
-                    this.Close();
-                
+
+
 
 
 

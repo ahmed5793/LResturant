@@ -40,71 +40,77 @@ namespace Restuarnt.PL
 
         private void gridView2_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
-            FOrder fo = new FOrder();
-            if (e.Column.Name== "Update")
+            Frm_ShowUpdate fo = new Frm_ShowUpdate();
+            if (e.Column.Name== "Updates")
             {
-                fo.ShowDialog();
-                DataTable dt2 = new DataTable();
-                DataTable dt5 = new DataTable();
+               
+                //DataTable dt2 = new DataTable();
+                //DataTable dt5 = new DataTable();
 
-                
+               
 
                 if (gridView2.RowCount > 0)
                 {
+                    fo.grb_sala.Hide();
+                    fo.grb_customer.Hide();
+                    fo.grb_delivry.Hide();
+                    fo.groupControl1.Enabled = false;
+
+                    fo.grb_customer.Enabled = false;
+                    fo.grb_delivry.Enabled = false;
+                    fo.grb_sala.Enabled = false;
 
 
-                   
 
-
-                    if (gridView2.GetFocusedRowCellValue("نوع الطلب").ToString() == "Delivery")
+                    if (gridView2.GetFocusedRowCellValue(Statues).ToString() == "Delivery")
                     {
-
-                        FOrder.getmain.rdb_delivery.Checked = true;
+                       
+                        fo.rdb_delivery.Checked = true;
                         //cmb_customer.Hide();
                         //textEdit1.Show();
 
                         //textEdit1.Enabled = false;
                         //rdb_clientsave.Enabled = false;
                         //rdb_newclient.Enabled = false;
-
+                      
 
                         //txt_phones.Enabled = false;
                         //txt_address.Enabled = false;
-                        FOrder.getmain.grb_customer.Show();
-                        FOrder.getmain.grb_delivry.Show();
-                        FOrder.getmain.grb_customer.Enabled = false;
-                        dt2.Clear();
-                        dt2 = o.SELECTOrderDetails(Convert.ToInt32(gridView2.GetFocusedRowCellValue(ID_Order)));
+                       fo.grb_customer.Show();
+                       fo.grb_delivry.Show();
 
-                        FOrder.getmain.gridControl2.DataSource = dt2;
+                        // fo.grb_customer.Enabled = false;
+                        fo.dt2.Clear();
+                        fo.dt2 = o.SELECTOrderDetails(Convert.ToInt32(gridView2.GetFocusedRowCellValue(ID_Order)));
 
-                        FOrder.getmain.ID_Dep.Visible = false;
-                        FOrder.getmain.Dep.Visible = false;
-                        FOrder.getmain.ID_Items.Visible = false;
+                       fo.gridControl2.DataSource = fo.dt2;
+
+                       fo.ID_Dep.Visible = false;
+                       fo.Dep.Visible = false;
+                       fo.ID_Items.Visible = false;
 
 
-                        dt5.Clear();
-                        dt5 = o.SELECTOrder(Convert.ToInt32(gridView2.GetFocusedRowCellValue(ID_Order)));
+                        fo.dt5.Clear();
+                        fo.dt5 = o.SELECTOrder(Convert.ToInt32(gridView2.GetFocusedRowCellValue(ID_Order)));
 
-                        foreach (DataRow dr in dt5.Rows)
+                        foreach (DataRow dr in fo.dt5.Rows)
                         {
 
 
 
 
-                            FOrder.getmain.Lable_Num.Text = dr[0].ToString();
-                            FOrder.getmain.txt_cust.Text = dr[1].ToString();
-                            FOrder.getmain.textEdit1.Text = dr[2].ToString();
-                            FOrder.getmain.txt_phones.Text = dr[3].ToString();
-                            FOrder.getmain.txt_address.Text = dr[4].ToString();
-                            FOrder.getmain.timer1.Enabled = false;
-                            FOrder.getmain.lable_date.Text = dr[5].ToString();
+                           fo.Lable_Num.Text = dr[0].ToString();
+                           fo.txt_cust.Text = dr[1].ToString();
+                           fo.textEdit1.Text = dr[2].ToString();
+                           fo.txt_phones.Text = dr[3].ToString();
+                           fo.txt_address.Text = dr[4].ToString();
+                           fo.lable_date.Text = dr[5].ToString();
 
-                            FOrder.getmain.texT.Text = dr[6].ToString();
+                           fo.texT.Text = dr[6].ToString();
 
-                            FOrder.getmain.cmb_delivery.Text = dr[9].ToString();
-                            FOrder.getmain.txt_delivery.Text = dr[10].ToString();
-                            FOrder.getmain.txt_discount.Text = dr[11].ToString();
+                           fo.cmb_delivery.Text = dr[9].ToString();
+                           fo.txt_delivery.Text = dr[10].ToString();
+                           fo.txt_discount.Text = dr[11].ToString();
 
 
 
@@ -119,7 +125,7 @@ namespace Restuarnt.PL
 
 
                     }
-                    else if (gridView2.GetFocusedRowCellValue("نوع الطلب").ToString() == "Table")
+                    else if (gridView2.GetFocusedRowCellValue(Statues).ToString() == "Table")
                     {
 
 
@@ -128,43 +134,45 @@ namespace Restuarnt.PL
                         //   txt_delivery.Enabled = false;
                         //  txt_phones.Enabled = false;
                         //  textEdit1.Enabled = false;
-                        FOrder.getmain.rdb_sala.Enabled = true;
+                        // fo.rdb_sala.Enabled = true;
                         //textEdit1.Enabled = false;
-                        FOrder.getmain.rdb_sala.Checked = true;
+                        fo.grb_sala.Show();
+                        fo.rdb_sala.Checked = true;
                         //  cmb_Table.Enabled = false;
-                        FOrder.getmain.grb_sala.Show();
-                        FOrder.getmain.grb_sala.Enabled = false;
+                      // fo.grb_sala.Show();
+                      // fo.grb_sala.Enabled = false;
+                        fo.grb_customer.Hide();
+                        fo.grb_delivry.Hide();
 
-                        dt2.Clear();
-                        dt2 = o.SELECTOrderDetails(Convert.ToInt32(gridView2.GetFocusedRowCellValue(ID_Order)));
+                        fo.dt2.Clear();
+                        fo.dt2 = o.SELECTOrderDetails(Convert.ToInt32(gridView2.GetFocusedRowCellValue(ID_Order)));
 
-                        FOrder.getmain.gridControl2.DataSource = dt2;
-                        FOrder.getmain.ID_Items.Visible = false;
-                        FOrder.getmain.Dep.Visible = false;
-                        FOrder.getmain.ID_Items.Visible = false;
+                       fo.gridControl2.DataSource = fo.dt2;
+                       fo.ID_Items.Visible = false;
+                       fo.Dep.Visible = false;
+                       fo.ID_Items.Visible = false;
 
-                        dt5.Clear();
-                        dt5 = o.SELECTOrderSala(Convert.ToInt32(gridView2.GetFocusedRowCellValue(ID_Order)));
-                        foreach (DataRow dr in dt5.Rows)
+                        fo.dt5.Clear();
+                        fo.dt5 = o.SELECTOrderSala(Convert.ToInt32(gridView2.GetFocusedRowCellValue(ID_Order)));
+                        foreach (DataRow dr in fo.dt5.Rows)
                         {
 
 
 
-                            FOrder.getmain.Lable_Num.Text = dr[0].ToString();
-                            FOrder.getmain.txt_cust.Text = dr[1].ToString();
-                            FOrder.getmain.textEdit1.Text = dr[2].ToString();
+                           fo.Lable_Num.Text = dr[0].ToString();
+                           fo.txt_cust.Text = dr[1].ToString();
+                           fo.textEdit1.Text = dr[2].ToString();
 
-                            FOrder.getmain.timer1.Enabled = false;
-                            FOrder.getmain.lable_date.Text = dr[3].ToString();
+                           fo.lable_date.Text = dr[3].ToString();
 
 
-                            FOrder.getmain.texT.Text = dr[4].ToString();
+                           fo.texT.Text = dr[4].ToString();
                             //txt_pay.Text = dr[5].ToString();
                             //txt_mark.Text = dr[6].ToString();
                             // cmb_Table.Text = dr[7].ToString();
-                            FOrder.getmain.cmb_Table.Text = dr[7].ToString();
-                            FOrder.getmain.txt_discount.Text = dr[8].ToString();
-                            FOrder.getmain.cmb_stuff.Text = dr[9].ToString();
+                           fo.cmb_Table.Text = dr[7].ToString();
+                           fo.txt_discount.Text = dr[8].ToString();
+                           fo.cmb_stuff.Text = dr[9].ToString();
                         }
 
 
@@ -173,52 +181,56 @@ namespace Restuarnt.PL
 
 
                     }
-                    else if (gridView2.GetFocusedRowCellValue("نوع الطلب").ToString() == "Take away")
+                    else if (gridView2.GetFocusedRowCellValue(Statues).ToString() == "Take away")
                     {
                         //   rdb_delivery.Enabled = false;
-                        FOrder.getmain.rdb_takeaway.Checked = true;
-                        FOrder.getmain.rdb_takeaway.Enabled = true;
+                       fo.rdb_takeaway.Checked = true;
+                    
                         // txt_phones.Enabled = false;
                         // textEdit1.Enabled = false;
-                        //   cmb_customer.Hide();
-                        //  textEdit1.Show();
+                      
+                         // fo.textEdit1.Show();
                         //textEdit1.Enabled = false;
-                        FOrder.getmain.grb_customer.Show();
-                        FOrder.getmain.grb_delivry.Hide();
-                        FOrder.getmain.grb_customer.Enabled = false;
+                       fo.grb_customer.Show();
+                       fo.grb_delivry.Hide();
+                        
+                        fo.grb_sala.Hide();
 
-                        dt2.Clear();
-                        dt2 = o.SELECTOrderDetails(Convert.ToInt32(gridView2.GetFocusedRowCellValue(ID_Order)));
-                        FOrder.getmain.gridControl2.DataSource = dt2;
-                        FOrder.getmain.ID_Items.Visible = false;
-                        FOrder.getmain.Dep.Visible = false;
-                        FOrder.getmain.ID_Items.Visible = false;
-                        dt5.Clear();
-                        dt5 = o.SELECTOrderTakwAway(Convert.ToInt32(gridView2.GetFocusedRowCellValue(ID_Order)));
 
-                        foreach (DataRow dr in dt5.Rows)
+                        fo.dt2.Clear();
+                        fo.dt2 = o.SELECTOrderDetails(Convert.ToInt32(gridView2.GetFocusedRowCellValue(ID_Order)));
+                       fo.gridControl2.DataSource = fo.dt2;
+                       fo.ID_Items.Visible = false;
+                       fo.Dep.Visible = false;
+                       fo.ID_Items.Visible = false;
+                        fo.dt5.Clear();
+                        fo.dt5 = o.SELECTOrderTakwAway(Convert.ToInt32(gridView2.GetFocusedRowCellValue(ID_Order)));
+
+                        foreach (DataRow dr in fo.dt5.Rows)
                         {
 
 
 
-                            FOrder.getmain.Lable_Num.Text = dr[0].ToString();
-                            FOrder.getmain.txt_cust.Text = dr[1].ToString();
-                            FOrder.getmain.textEdit1.Text = dr[2].ToString();
+                           fo.Lable_Num.Text = dr[0].ToString();
+                           fo.txt_cust.Text = dr[1].ToString();
+                           fo.textEdit1.Text = dr[2].ToString();
 
-                            FOrder.getmain.timer1.Enabled = false;
-                            FOrder.getmain.lable_date.Text = dr[3].ToString();
+                           fo.lable_date.Text = dr[3].ToString();
 
-                            FOrder.getmain.texT.Text = dr[4].ToString();
+                           fo.texT.Text = dr[4].ToString();
 
-                            FOrder.getmain.txt_discount.Text = dr[7].ToString();
+                           fo.txt_discount.Text = dr[7].ToString();
 
-
+                            fo.txt_phones.Text = dr[8].ToString();
+                            fo.txt_address.Text = dr[9].ToString();
                         }
 
                     }
-                    FOrder.getmain.totalInvoice();
-                    FOrder.getmain.TOTALFINALYDELIVERY();
-                    FOrder.getmain.TOTALFINALYDISCOUNT();
+                   fo.totalInvoice();
+                   fo.TOTALFINALYDELIVERY();
+                   fo.TOTALFINALYDISCOUNT();
+                    fo.ShowDialog();
+
                 }
 
 
