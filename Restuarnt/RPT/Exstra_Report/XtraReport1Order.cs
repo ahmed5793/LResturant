@@ -16,8 +16,7 @@ namespace Restuarnt.RPT.Exstra_Report
 {
     public partial class XtraReport1Order : DevExpress.XtraReports.UI.XtraReport
     {
-        FOrder fo = new FOrder();
-        Order o = new Order();
+      
         SettingPrint sp = new SettingPrint();
         DataTable dt = new DataTable();
         

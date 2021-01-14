@@ -47,7 +47,7 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             this.txt_rent = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -69,8 +69,6 @@
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -121,7 +119,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 33);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(192, 63);
+            this.tabPage5.Size = new System.Drawing.Size(1020, 484);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "مبيعات الكاشير";
             // 
@@ -139,7 +137,7 @@
             this.simpleButton4.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(3, 4);
+            this.simpleButton4.Location = new System.Drawing.Point(417, 425);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(213, 38);
             this.simpleButton4.TabIndex = 189;
@@ -153,7 +151,7 @@
             this.groupBox5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(6, 11);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(183, 289);
+            this.groupBox5.Size = new System.Drawing.Size(1011, 289);
             this.groupBox5.TabIndex = 59;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "صلاحية المستخدمين داخل قائمة إدارة الاصناف";
@@ -167,7 +165,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 33);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(192, 63);
+            this.tabPage4.Size = new System.Drawing.Size(1020, 484);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "مبيعات الكابتن";
             // 
@@ -185,7 +183,7 @@
             this.simpleButton3.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(16, 9);
+            this.simpleButton3.Location = new System.Drawing.Point(430, 430);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(213, 38);
             this.simpleButton3.TabIndex = 189;
@@ -199,7 +197,7 @@
             this.groupBox4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(5, 20);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(181, 282);
+            this.groupBox4.Size = new System.Drawing.Size(1009, 282);
             this.groupBox4.TabIndex = 64;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "صلاحية المستخدمين داخل قائمة الخزنة ";
@@ -214,7 +212,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 33);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(192, 63);
+            this.tabPage3.Size = new System.Drawing.Size(1020, 484);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "مبيعات الطيار";
             // 
@@ -232,7 +230,7 @@
             this.simpleButton2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(51, -29);
+            this.simpleButton2.Location = new System.Drawing.Point(465, 392);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(213, 38);
             this.simpleButton2.TabIndex = 188;
@@ -246,7 +244,7 @@
             this.groupBox10.ForeColor = System.Drawing.Color.Black;
             this.groupBox10.Location = new System.Drawing.Point(6, 31);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(179, 238);
+            this.groupBox10.Size = new System.Drawing.Size(1007, 238);
             this.groupBox10.TabIndex = 64;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "صلاحية المستخدمين داخل قائمة إدارة الشركات";
@@ -261,7 +259,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(192, 63);
+            this.tabPage2.Size = new System.Drawing.Size(1020, 484);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "مبيعات منفصلة";
             // 
@@ -279,7 +277,7 @@
             this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(7, -5);
+            this.simpleButton1.Location = new System.Drawing.Point(421, 416);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(213, 38);
             this.simpleButton1.TabIndex = 187;
@@ -294,7 +292,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(4, 13);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(183, 279);
+            this.groupBox2.Size = new System.Drawing.Size(1011, 279);
             this.groupBox2.TabIndex = 56;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "صلاحية المستخدم داخل قائمة العملاء";
@@ -302,7 +300,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.tabPage1.Controls.Add(this.dateEdit1);
+            this.tabPage1.Controls.Add(this.simpleButton7);
             this.tabPage1.Controls.Add(this.simpleButton6);
             this.tabPage1.Controls.Add(this.txt_rent);
             this.tabPage1.Controls.Add(this.label2);
@@ -325,17 +323,26 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "كل المبيعات";
             // 
-            // dateEdit1
+            // simpleButton7
             // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(386, 193);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(212, 20);
-            this.dateEdit1.TabIndex = 224;
+            this.simpleButton7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.simpleButton7.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton7.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton7.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton7.Appearance.Options.UseBackColor = true;
+            this.simpleButton7.Appearance.Options.UseFont = true;
+            this.simpleButton7.Appearance.Options.UseForeColor = true;
+            this.simpleButton7.Appearance.Options.UseTextOptions = true;
+            this.simpleButton7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton7.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton7.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.simpleButton7.ImageOptions.Image = global::Restuarnt.Properties.Resources.printer_32x32;
+            this.simpleButton7.Location = new System.Drawing.Point(6, 57);
+            this.simpleButton7.Name = "simpleButton7";
+            this.simpleButton7.Size = new System.Drawing.Size(150, 33);
+            this.simpleButton7.TabIndex = 224;
+            this.simpleButton7.Text = "طباعة التقرير";
+            this.simpleButton7.Click += new System.EventHandler(this.simpleButton7_Click);
             // 
             // simpleButton6
             // 
@@ -350,12 +357,12 @@
             this.simpleButton6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.simpleButton6.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton6.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.simpleButton6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.ImageOptions.Image")));
+            this.simpleButton6.ImageOptions.Image = global::Restuarnt.Properties.Resources.trash_32x32;
             this.simpleButton6.Location = new System.Drawing.Point(105, 433);
             this.simpleButton6.Name = "simpleButton6";
             this.simpleButton6.Size = new System.Drawing.Size(213, 38);
             this.simpleButton6.TabIndex = 223;
-            this.simpleButton6.Text = "حفظ البيانات للمستخدم";
+            this.simpleButton6.Text = "مسح كل الفواتير";
             // 
             // txt_rent
             // 
@@ -447,12 +454,13 @@
             this.simpleButton5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.simpleButton5.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.simpleButton5.ImageOptions.Image = global::Restuarnt.Properties.Resources.print_32x32;
             this.simpleButton5.Location = new System.Drawing.Point(386, 436);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(213, 38);
             this.simpleButton5.TabIndex = 219;
-            this.simpleButton5.Text = "حفظ البيانات للمستخدم";
+            this.simpleButton5.Text = "طباعة الفاتورة المحددة";
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click_1);
             // 
             // Rdb_orders
             // 
@@ -470,6 +478,7 @@
             this.Rdb_orders.TabStop = true;
             this.Rdb_orders.Text = "كل المبيعات";
             this.Rdb_orders.UseVisualStyleBackColor = false;
+            this.Rdb_orders.CheckedChanged += new System.EventHandler(this.Rdb_orders_CheckedChanged);
             // 
             // rdb_delivery
             // 
@@ -485,6 +494,7 @@
             this.rdb_delivery.TabIndex = 189;
             this.rdb_delivery.Text = "مبيعات الدليفرى";
             this.rdb_delivery.UseVisualStyleBackColor = false;
+            this.rdb_delivery.CheckedChanged += new System.EventHandler(this.rdb_delivery_CheckedChanged);
             // 
             // ToDate
             // 
@@ -512,6 +522,7 @@
             this.rdb_sala.TabIndex = 188;
             this.rdb_sala.Text = "مبيعات الصاله";
             this.rdb_sala.UseVisualStyleBackColor = false;
+            this.rdb_sala.CheckedChanged += new System.EventHandler(this.rdb_sala_CheckedChanged);
             // 
             // FromDate
             // 
@@ -539,6 +550,7 @@
             this.rdb_takeaway.TabIndex = 190;
             this.rdb_takeaway.Text = "مبيعات التيك اواى";
             this.rdb_takeaway.UseVisualStyleBackColor = false;
+            this.rdb_takeaway.CheckedChanged += new System.EventHandler(this.rdb_takeaway_CheckedChanged);
             // 
             // label3
             // 
@@ -570,7 +582,7 @@
             // 
             // btn_save
             // 
-            this.btn_save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_save.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_save.Appearance.BackColor = System.Drawing.Color.Black;
             this.btn_save.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.Appearance.ForeColor = System.Drawing.Color.White;
@@ -582,7 +594,7 @@
             this.btn_save.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btn_save.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.btn_save.ImageOptions.Image = global::Restuarnt.Properties.Resources.lookup_reference_32x32;
-            this.btn_save.Location = new System.Drawing.Point(160, 57);
+            this.btn_save.Location = new System.Drawing.Point(176, 57);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(129, 33);
             this.btn_save.TabIndex = 186;
@@ -608,17 +620,18 @@
             this.tabControl1.Size = new System.Drawing.Size(1028, 521);
             this.tabControl1.TabIndex = 1;
             // 
-            // Validate_Users
+            // Sales_Management
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1033, 528);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.Name = "Validate_Users";
+            this.MinimumSize = new System.Drawing.Size(1049, 566);
+            this.Name = "Sales_Management";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "إدارة المبيعات";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Validate_Users_Load);
             this.tabPage5.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
@@ -626,8 +639,6 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.tabControl1.ResumeLayout(false);
@@ -671,6 +682,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton6;
         public System.Windows.Forms.TextBox txt_rent;
         public System.Windows.Forms.Label label2;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton7;
     }
 }

@@ -348,6 +348,12 @@
     <Compile Include="PL\Frm_Unit.Designer.cs">
       <DependentUpon>Frm_Unit.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_UpdateOrrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_UpdateOrrder.Designer.cs">
+      <DependentUpon>Frm_UpdateOrrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_ViewPhrchise.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -589,6 +595,9 @@
     <EmbeddedResource Include="PL\Frm_Unit.resx">
       <DependentUpon>Frm_Unit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_UpdateOrrder.resx">
+      <DependentUpon>Frm_UpdateOrrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ViewPhrchise.resx">
       <DependentUpon>Frm_ViewPhrchise.cs</DependentUpon>
     </EmbeddedResource>
@@ -724,6 +733,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icons-Land-Points-Of-Interest-Restaurant-Blue-2.ico" />
+    <None Include="Resources\trash_32x32.png" />
+    <None Include="Resources\print_32x32.png" />
+    <None Include="Resources\printer_32x32.png" />
     <None Include="Resources\lookup&amp;reference_32x32.png" />
     <None Include="Resources\projectfile_16x16.png" />
     <None Include="Resources\projectfile_32x32.png" />

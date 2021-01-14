@@ -263,6 +263,26 @@ namespace Restuarnt.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap print_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("print_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap printer_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("printer_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap projectfile_16x16 {
             get {
                 object obj = ResourceManager.GetObject("projectfile_16x16", resourceCulture);
@@ -296,6 +316,16 @@ namespace Restuarnt.Properties {
         internal static System.Drawing.Bitmap restaurant_table_icon_91 {
             get {
                 object obj = ResourceManager.GetObject("restaurant-table-icon-91", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trash_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("trash_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
