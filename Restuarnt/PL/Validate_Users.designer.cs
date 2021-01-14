@@ -73,7 +73,6 @@
             this.cmb_Users1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_Users1.Size = new System.Drawing.Size(316, 30);
             this.cmb_Users1.TabIndex = 52;
-            this.cmb_Users1.SelectedIndexChanged += new System.EventHandler(this.cmb_Users1_SelectedIndexChanged);
             this.cmb_Users1.SelectionChangeCommitted += new System.EventHandler(this.cmb_Users1_SelectionChangeCommitted);
             // 
             // label5
