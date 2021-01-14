@@ -130,8 +130,10 @@ namespace Restuarnt.PL
 
         private void Btn_OrderManagement_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Frm_ManagmentOrder frm_ManagmentOrder = new Frm_ManagmentOrder();
-            frm_ManagmentOrder.Show();
+            //Frm_ManagmentOrder frm_ManagmentOrder = new Frm_ManagmentOrder();
+            //frm_ManagmentOrder.Show();
+            Sales_Management sales = new Sales_Management();
+            sales.Show();
         }
 
         private void Btn_MoveItems_ItemClick(object sender, ItemClickEventArgs e)

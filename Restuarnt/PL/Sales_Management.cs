@@ -10,18 +10,16 @@ using System.Windows.Forms;
 using Restuarnt.BL;
 namespace Restuarnt.PL
 {
-    public partial class Validate_Users : Form
+    public partial class Sales_Management : Form
     {
 
         Order o = new Order();
 
 
-        public Validate_Users()
+        public Sales_Management()
         {
             InitializeComponent();
             selectUser();
-
-
 
 
         } 

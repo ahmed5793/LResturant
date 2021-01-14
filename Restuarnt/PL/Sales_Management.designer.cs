@@ -1,6 +1,6 @@
 ﻿namespace Restuarnt.PL
 {
-    partial class Validate_Users
+    partial class Sales_Management
     {
         /// <summary>
         /// Required designer variable.
@@ -28,52 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Validate_Users));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sales_Management));
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.rdb_takeaway = new System.Windows.Forms.RadioButton();
-            this.rdb_delivery = new System.Windows.Forms.RadioButton();
-            this.rdb_sala = new System.Windows.Forms.RadioButton();
+            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.txt_rent = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.Rdb_orders = new System.Windows.Forms.RadioButton();
+            this.rdb_delivery = new System.Windows.Forms.RadioButton();
             this.ToDate = new System.Windows.Forms.DateTimePicker();
+            this.rdb_sala = new System.Windows.Forms.RadioButton();
             this.FromDate = new System.Windows.Forms.DateTimePicker();
+            this.rdb_takeaway = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_save = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.txt_rent = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BottomToolStripPanel
@@ -121,9 +121,30 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 33);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1020, 484);
+            this.tabPage5.Size = new System.Drawing.Size(192, 63);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "مبيعات الكاشير";
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.simpleButton4.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton4.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton4.Appearance.Options.UseBackColor = true;
+            this.simpleButton4.Appearance.Options.UseFont = true;
+            this.simpleButton4.Appearance.Options.UseForeColor = true;
+            this.simpleButton4.Appearance.Options.UseTextOptions = true;
+            this.simpleButton4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton4.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.simpleButton4.Location = new System.Drawing.Point(3, 4);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(213, 38);
+            this.simpleButton4.TabIndex = 189;
+            this.simpleButton4.Text = "حفظ البيانات للمستخدم";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // groupBox5
             // 
@@ -132,7 +153,7 @@
             this.groupBox5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(6, 11);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1011, 289);
+            this.groupBox5.Size = new System.Drawing.Size(183, 289);
             this.groupBox5.TabIndex = 59;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "صلاحية المستخدمين داخل قائمة إدارة الاصناف";
@@ -146,9 +167,30 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 33);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1020, 484);
+            this.tabPage4.Size = new System.Drawing.Size(192, 63);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "مبيعات الكابتن";
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.simpleButton3.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton3.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton3.Appearance.Options.UseBackColor = true;
+            this.simpleButton3.Appearance.Options.UseFont = true;
+            this.simpleButton3.Appearance.Options.UseForeColor = true;
+            this.simpleButton3.Appearance.Options.UseTextOptions = true;
+            this.simpleButton3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton3.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.simpleButton3.Location = new System.Drawing.Point(16, 9);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(213, 38);
+            this.simpleButton3.TabIndex = 189;
+            this.simpleButton3.Text = "حفظ البيانات للمستخدم";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // groupBox4
             // 
@@ -157,7 +199,7 @@
             this.groupBox4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(5, 20);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1009, 282);
+            this.groupBox4.Size = new System.Drawing.Size(181, 282);
             this.groupBox4.TabIndex = 64;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "صلاحية المستخدمين داخل قائمة الخزنة ";
@@ -172,9 +214,30 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 33);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1020, 484);
+            this.tabPage3.Size = new System.Drawing.Size(192, 63);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "مبيعات الطيار";
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton2.Appearance.Options.UseBackColor = true;
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.Appearance.Options.UseForeColor = true;
+            this.simpleButton2.Appearance.Options.UseTextOptions = true;
+            this.simpleButton2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.simpleButton2.Location = new System.Drawing.Point(51, -29);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(213, 38);
+            this.simpleButton2.TabIndex = 188;
+            this.simpleButton2.Text = "حفظ البيانات للمستخدم";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // groupBox10
             // 
@@ -183,7 +246,7 @@
             this.groupBox10.ForeColor = System.Drawing.Color.Black;
             this.groupBox10.Location = new System.Drawing.Point(6, 31);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(1007, 238);
+            this.groupBox10.Size = new System.Drawing.Size(179, 238);
             this.groupBox10.TabIndex = 64;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "صلاحية المستخدمين داخل قائمة إدارة الشركات";
@@ -198,9 +261,30 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1020, 484);
+            this.tabPage2.Size = new System.Drawing.Size(192, 63);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "مبيعات منفصلة";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Appearance.Options.UseForeColor = true;
+            this.simpleButton1.Appearance.Options.UseTextOptions = true;
+            this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(7, -5);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(213, 38);
+            this.simpleButton1.TabIndex = 187;
+            this.simpleButton1.Text = "حفظ البيانات للمستخدم";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // groupBox2
             // 
@@ -210,7 +294,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(4, 13);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1011, 279);
+            this.groupBox2.Size = new System.Drawing.Size(183, 279);
             this.groupBox2.TabIndex = 56;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "صلاحية المستخدم داخل قائمة العملاء";
@@ -241,69 +325,134 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "كل المبيعات";
             // 
-            // tabControl1
+            // dateEdit1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dateEdit1.EditValue = null;
+            this.dateEdit1.Location = new System.Drawing.Point(386, 193);
+            this.dateEdit1.Name = "dateEdit1";
+            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit1.Size = new System.Drawing.Size(212, 20);
+            this.dateEdit1.TabIndex = 224;
+            // 
+            // simpleButton6
+            // 
+            this.simpleButton6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.simpleButton6.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton6.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton6.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton6.Appearance.Options.UseBackColor = true;
+            this.simpleButton6.Appearance.Options.UseFont = true;
+            this.simpleButton6.Appearance.Options.UseForeColor = true;
+            this.simpleButton6.Appearance.Options.UseTextOptions = true;
+            this.simpleButton6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton6.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton6.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.simpleButton6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.ImageOptions.Image")));
+            this.simpleButton6.Location = new System.Drawing.Point(105, 433);
+            this.simpleButton6.Name = "simpleButton6";
+            this.simpleButton6.Size = new System.Drawing.Size(213, 38);
+            this.simpleButton6.TabIndex = 223;
+            this.simpleButton6.Text = "حفظ البيانات للمستخدم";
+            // 
+            // txt_rent
+            // 
+            this.txt_rent.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txt_rent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_rent.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_rent.Location = new System.Drawing.Point(658, 440);
+            this.txt_rent.Multiline = true;
+            this.txt_rent.Name = "txt_rent";
+            this.txt_rent.ReadOnly = true;
+            this.txt_rent.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_rent.Size = new System.Drawing.Size(192, 34);
+            this.txt_rent.TabIndex = 222;
+            this.txt_rent.Text = "0";
+            this.txt_rent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label2.BackColor = System.Drawing.Color.Red;
+            this.label2.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(851, 440);
+            this.label2.Name = "label2";
+            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label2.Size = new System.Drawing.Size(163, 34);
+            this.label2.TabIndex = 221;
+            this.label2.Text = "إجمالى المبيعات";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(4, -1);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tabControl1.RightToLeftLayout = true;
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1028, 521);
-            this.tabControl1.TabIndex = 1;
+            this.gridControl1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridControl1.Location = new System.Drawing.Point(3, 110);
+            this.gridControl1.LookAndFeel.SkinName = "DevExpress Dark Style";
+            this.gridControl1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1014, 310);
+            this.gridControl1.TabIndex = 220;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
             // 
-            // rdb_takeaway
+            // gridView1
             // 
-            this.rdb_takeaway.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.rdb_takeaway.AutoSize = true;
-            this.rdb_takeaway.BackColor = System.Drawing.Color.Yellow;
-            this.rdb_takeaway.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_takeaway.ForeColor = System.Drawing.Color.Black;
-            this.rdb_takeaway.Location = new System.Drawing.Point(208, 6);
-            this.rdb_takeaway.Name = "rdb_takeaway";
-            this.rdb_takeaway.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.rdb_takeaway.Size = new System.Drawing.Size(174, 33);
-            this.rdb_takeaway.TabIndex = 190;
-            this.rdb_takeaway.Text = "مبيعات التيك اواى";
-            this.rdb_takeaway.UseVisualStyleBackColor = false;
+            this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.ColumnFilterButton.Options.UseFont = true;
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Yellow;
+            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView1.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.Row.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.gridView1.Appearance.Row.Options.UseFont = true;
+            this.gridView1.Appearance.Row.Options.UseTextOptions = true;
+            this.gridView1.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.AppearancePrint.HeaderPanel.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.gridView1.AppearancePrint.HeaderPanel.Options.UseFont = true;
+            this.gridView1.AppearancePrint.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView1.AppearancePrint.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.AppearancePrint.Row.Options.UseTextOptions = true;
+            this.gridView1.AppearancePrint.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsBehavior.AutoSelectAllInEditor = false;
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.gridView1.OptionsPrint.PrintPreview = true;
+            this.gridView1.OptionsView.ShowFooter = true;
             // 
-            // rdb_delivery
+            // simpleButton5
             // 
-            this.rdb_delivery.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.rdb_delivery.AutoSize = true;
-            this.rdb_delivery.BackColor = System.Drawing.Color.Yellow;
-            this.rdb_delivery.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_delivery.ForeColor = System.Drawing.Color.Black;
-            this.rdb_delivery.Location = new System.Drawing.Point(633, 6);
-            this.rdb_delivery.Name = "rdb_delivery";
-            this.rdb_delivery.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.rdb_delivery.Size = new System.Drawing.Size(158, 33);
-            this.rdb_delivery.TabIndex = 189;
-            this.rdb_delivery.Text = "مبيعات الدليفرى";
-            this.rdb_delivery.UseVisualStyleBackColor = false;
-            // 
-            // rdb_sala
-            // 
-            this.rdb_sala.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.rdb_sala.AutoSize = true;
-            this.rdb_sala.BackColor = System.Drawing.Color.Yellow;
-            this.rdb_sala.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_sala.ForeColor = System.Drawing.Color.Black;
-            this.rdb_sala.Location = new System.Drawing.Point(437, 6);
-            this.rdb_sala.Name = "rdb_sala";
-            this.rdb_sala.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.rdb_sala.Size = new System.Drawing.Size(145, 33);
-            this.rdb_sala.TabIndex = 188;
-            this.rdb_sala.Text = "مبيعات الصاله";
-            this.rdb_sala.UseVisualStyleBackColor = false;
+            this.simpleButton5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.simpleButton5.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton5.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton5.Appearance.Options.UseBackColor = true;
+            this.simpleButton5.Appearance.Options.UseFont = true;
+            this.simpleButton5.Appearance.Options.UseForeColor = true;
+            this.simpleButton5.Appearance.Options.UseTextOptions = true;
+            this.simpleButton5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton5.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.simpleButton5.Location = new System.Drawing.Point(386, 436);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(213, 38);
+            this.simpleButton5.TabIndex = 219;
+            this.simpleButton5.Text = "حفظ البيانات للمستخدم";
             // 
             // Rdb_orders
             // 
@@ -322,6 +471,21 @@
             this.Rdb_orders.Text = "كل المبيعات";
             this.Rdb_orders.UseVisualStyleBackColor = false;
             // 
+            // rdb_delivery
+            // 
+            this.rdb_delivery.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rdb_delivery.AutoSize = true;
+            this.rdb_delivery.BackColor = System.Drawing.Color.Yellow;
+            this.rdb_delivery.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_delivery.ForeColor = System.Drawing.Color.Black;
+            this.rdb_delivery.Location = new System.Drawing.Point(633, 6);
+            this.rdb_delivery.Name = "rdb_delivery";
+            this.rdb_delivery.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.rdb_delivery.Size = new System.Drawing.Size(158, 33);
+            this.rdb_delivery.TabIndex = 189;
+            this.rdb_delivery.Text = "مبيعات الدليفرى";
+            this.rdb_delivery.UseVisualStyleBackColor = false;
+            // 
             // ToDate
             // 
             this.ToDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -334,6 +498,21 @@
             this.ToDate.Size = new System.Drawing.Size(287, 32);
             this.ToDate.TabIndex = 217;
             // 
+            // rdb_sala
+            // 
+            this.rdb_sala.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rdb_sala.AutoSize = true;
+            this.rdb_sala.BackColor = System.Drawing.Color.Yellow;
+            this.rdb_sala.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_sala.ForeColor = System.Drawing.Color.Black;
+            this.rdb_sala.Location = new System.Drawing.Point(437, 6);
+            this.rdb_sala.Name = "rdb_sala";
+            this.rdb_sala.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.rdb_sala.Size = new System.Drawing.Size(145, 33);
+            this.rdb_sala.TabIndex = 188;
+            this.rdb_sala.Text = "مبيعات الصاله";
+            this.rdb_sala.UseVisualStyleBackColor = false;
+            // 
             // FromDate
             // 
             this.FromDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -345,6 +524,21 @@
             this.FromDate.ShowUpDown = true;
             this.FromDate.Size = new System.Drawing.Size(287, 32);
             this.FromDate.TabIndex = 216;
+            // 
+            // rdb_takeaway
+            // 
+            this.rdb_takeaway.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rdb_takeaway.AutoSize = true;
+            this.rdb_takeaway.BackColor = System.Drawing.Color.Yellow;
+            this.rdb_takeaway.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_takeaway.ForeColor = System.Drawing.Color.Black;
+            this.rdb_takeaway.Location = new System.Drawing.Point(208, 6);
+            this.rdb_takeaway.Name = "rdb_takeaway";
+            this.rdb_takeaway.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.rdb_takeaway.Size = new System.Drawing.Size(174, 33);
+            this.rdb_takeaway.TabIndex = 190;
+            this.rdb_takeaway.Text = "مبيعات التيك اواى";
+            this.rdb_takeaway.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -395,218 +589,24 @@
             this.btn_save.Text = "بحث";
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
-            // simpleButton1
+            // tabControl1
             // 
-            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Black;
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Appearance.Options.UseForeColor = true;
-            this.simpleButton1.Appearance.Options.UseTextOptions = true;
-            this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(421, 416);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(213, 38);
-            this.simpleButton1.TabIndex = 187;
-            this.simpleButton1.Text = "حفظ البيانات للمستخدم";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.Black;
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton2.Appearance.Options.UseBackColor = true;
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Appearance.Options.UseForeColor = true;
-            this.simpleButton2.Appearance.Options.UseTextOptions = true;
-            this.simpleButton2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(465, 392);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(213, 38);
-            this.simpleButton2.TabIndex = 188;
-            this.simpleButton2.Text = "حفظ البيانات للمستخدم";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.simpleButton3.Appearance.BackColor = System.Drawing.Color.Black;
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton3.Appearance.Options.UseBackColor = true;
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.Appearance.Options.UseForeColor = true;
-            this.simpleButton3.Appearance.Options.UseTextOptions = true;
-            this.simpleButton3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton3.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(430, 430);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(213, 38);
-            this.simpleButton3.TabIndex = 189;
-            this.simpleButton3.Text = "حفظ البيانات للمستخدم";
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
-            // 
-            // simpleButton4
-            // 
-            this.simpleButton4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.simpleButton4.Appearance.BackColor = System.Drawing.Color.Black;
-            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton4.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton4.Appearance.Options.UseBackColor = true;
-            this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.Appearance.Options.UseForeColor = true;
-            this.simpleButton4.Appearance.Options.UseTextOptions = true;
-            this.simpleButton4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton4.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(417, 425);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(213, 38);
-            this.simpleButton4.TabIndex = 189;
-            this.simpleButton4.Text = "حفظ البيانات للمستخدم";
-            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
-            // 
-            // simpleButton5
-            // 
-            this.simpleButton5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.simpleButton5.Appearance.BackColor = System.Drawing.Color.Black;
-            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton5.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton5.Appearance.Options.UseBackColor = true;
-            this.simpleButton5.Appearance.Options.UseFont = true;
-            this.simpleButton5.Appearance.Options.UseForeColor = true;
-            this.simpleButton5.Appearance.Options.UseTextOptions = true;
-            this.simpleButton5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton5.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.simpleButton5.Location = new System.Drawing.Point(386, 436);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(213, 38);
-            this.simpleButton5.TabIndex = 219;
-            this.simpleButton5.Text = "حفظ البيانات للمستخدم";
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridControl1.Location = new System.Drawing.Point(3, 110);
-            this.gridControl1.LookAndFeel.SkinName = "DevExpress Dark Style";
-            this.gridControl1.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1014, 310);
-            this.gridControl1.TabIndex = 220;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView1.Appearance.ColumnFilterButton.Options.UseFont = true;
-            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView1.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Yellow;
-            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridView1.Appearance.HeaderPanel.Options.UseForeColor = true;
-            this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView1.Appearance.Row.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.gridView1.Appearance.Row.Options.UseFont = true;
-            this.gridView1.Appearance.Row.Options.UseTextOptions = true;
-            this.gridView1.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView1.AppearancePrint.HeaderPanel.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.gridView1.AppearancePrint.HeaderPanel.Options.UseFont = true;
-            this.gridView1.AppearancePrint.HeaderPanel.Options.UseTextOptions = true;
-            this.gridView1.AppearancePrint.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.AppearancePrint.Row.Options.UseTextOptions = true;
-            this.gridView1.AppearancePrint.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView1.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView1.OptionsBehavior.AutoSelectAllInEditor = false;
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsBehavior.ReadOnly = true;
-            this.gridView1.OptionsPrint.PrintPreview = true;
-            this.gridView1.OptionsView.ShowFooter = true;
-            // 
-            // txt_rent
-            // 
-            this.txt_rent.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txt_rent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_rent.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_rent.Location = new System.Drawing.Point(658, 440);
-            this.txt_rent.Multiline = true;
-            this.txt_rent.Name = "txt_rent";
-            this.txt_rent.ReadOnly = true;
-            this.txt_rent.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_rent.Size = new System.Drawing.Size(192, 34);
-            this.txt_rent.TabIndex = 222;
-            this.txt_rent.Text = "0";
-            this.txt_rent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label2.BackColor = System.Drawing.Color.Red;
-            this.label2.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(851, 440);
-            this.label2.Name = "label2";
-            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label2.Size = new System.Drawing.Size(163, 34);
-            this.label2.TabIndex = 221;
-            this.label2.Text = "إجمالى المبيعات";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // simpleButton6
-            // 
-            this.simpleButton6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.simpleButton6.Appearance.BackColor = System.Drawing.Color.Black;
-            this.simpleButton6.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton6.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton6.Appearance.Options.UseBackColor = true;
-            this.simpleButton6.Appearance.Options.UseFont = true;
-            this.simpleButton6.Appearance.Options.UseForeColor = true;
-            this.simpleButton6.Appearance.Options.UseTextOptions = true;
-            this.simpleButton6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton6.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton6.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.simpleButton6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.ImageOptions.Image")));
-            this.simpleButton6.Location = new System.Drawing.Point(105, 433);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(213, 38);
-            this.simpleButton6.TabIndex = 223;
-            this.simpleButton6.Text = "حفظ البيانات للمستخدم";
-            // 
-            // dateEdit1
-            // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(386, 193);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(212, 20);
-            this.dateEdit1.TabIndex = 224;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(4, -1);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.tabControl1.RightToLeftLayout = true;
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1028, 521);
+            this.tabControl1.TabIndex = 1;
             // 
             // Validate_Users
             // 
@@ -618,7 +618,7 @@
             this.MaximizeBox = false;
             this.Name = "Validate_Users";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "صلاحية المستخدمين";
+            this.Text = "إدارة المبيعات";
             this.Load += new System.EventHandler(this.Validate_Users_Load);
             this.tabPage5.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
@@ -626,11 +626,11 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
