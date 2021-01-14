@@ -171,5 +171,11 @@ namespace Restuarnt.PL
             Restore r = new Restore();
             r.ShowDialog();
         }
+
+        private void barButtonItem18_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_UpdateOrrder uo = new Frm_UpdateOrrder();
+            uo.Show();
+        }
     }
 }
