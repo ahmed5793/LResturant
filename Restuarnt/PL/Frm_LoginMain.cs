@@ -320,11 +320,11 @@ namespace Restuarnt.PL
                     
                     if (Convert.ToInt32(dt2.Rows[0][6]) == 0)
                     {
-                        Frm_MainNew.getmain.btn_Setting.Enabled = false;
+                        Frm_MainNew.getmain.Btn_settingOrder.Enabled = false;
                     }
                     else if (Convert.ToInt32(dt2.Rows[0][6]) == 1)
                     {
-                        Frm_MainNew.getmain.btn_Setting.Enabled = true;
+                        Frm_MainNew.getmain.Btn_settingOrder.Enabled = true;
                     }
 
                     //////
@@ -388,14 +388,7 @@ namespace Restuarnt.PL
                         Frm_MainNew.getmain.Btn_reportmasrof.Enabled = true;
                     }
                     //////////
-                    if (Convert.ToInt32(dt2.Rows[0][12]) == 0)
-                    {
-                        Frm_MainNew.getmain.Btn_reportmasrof.Enabled = false;
-                    }
-                    else if (Convert.ToInt32(dt2.Rows[0][12]) == 1)
-                    {
-                        Frm_MainNew.getmain.Btn_reportmasrof.Enabled = true;
-                    }
+                 
                     ///////////
                     if (Convert.ToInt32(dt2.Rows[0][13]) == 0)
                     {
@@ -408,11 +401,11 @@ namespace Restuarnt.PL
                     ////////
                     if (Convert.ToInt32(dt2.Rows[0][14]) == 0)
                     {
-                        Frm_MainNew.getmain.btn_Permission.Enabled = false;
+                        Frm_MainNew.getmain.Btn_UserPermession.Enabled = false;
                     }
                     else if (Convert.ToInt32(dt2.Rows[0][14]) == 1)
                     {
-                        Frm_MainNew.getmain.btn_Permission.Enabled = true;
+                        Frm_MainNew.getmain.Btn_UserPermession.Enabled = true;
                     }
                     //////
                     if (Convert.ToInt32(dt2.Rows[0][15]) == 0)

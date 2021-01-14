@@ -213,7 +213,7 @@ namespace Restuarnt.PL
 
                     l.Update_UserPermession(Convert.ToInt32(cmb_Users1.SelectedValue), AddCategory, AddItem, AddTable, AddDelivery, 
                         AddCaptin, SettingOrder, orderManagement,order,MoveProduct, RecieveMoney, AddMasrof, ReportMasrofat, AddUser,
-                        Permesion, BackUp, Restore, permession_Update, permession_Update);
+                        Permesion, BackUp, Restore, permession_Update, permession_Delete);
 
                     MessageBox.Show(" تم حفظ الصلاحيات للمستخدم");
                 }
