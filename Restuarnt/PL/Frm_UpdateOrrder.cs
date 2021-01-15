@@ -244,5 +244,14 @@ namespace Restuarnt.PL
                 }
             }
         }
+
+        private void simpleButton6_Click(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("هل تريد حذف جميع الفواتير في البرنامج","",MessageBoxButtons.YesNo,MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) ==DialogResult.Yes)
+            {
+                o.deleteAllOrder();
+            }
+      
+        }
     }
 }

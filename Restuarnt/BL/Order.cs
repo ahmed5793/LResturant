@@ -848,5 +848,27 @@ namespace Restuarnt.BL
             da.close();
             return dt;
         }
+
+        internal DataTable SELECtAllOrderOneDelivery(DateTime FromDate, DateTime ToDate,int ID_Delivery)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[3];
+
+            param[0] = new SqlParameter("@FromDate", SqlDbType.Date);
+            param[0].Value = FromDate;
+
+            param[1] = new SqlParameter("@ToDate", SqlDbType.Date);
+            param[1].Value = ToDate;
+
+            param[2] = new SqlParameter("@ID_Delivery", SqlDbType.Int);
+            param[2].Value = ID_Delivery;
+
+            dt = da.selected("SELECtAllOrderOneDelivery", param);
+            da.close();
+            return dt;
+        }
     }
 }

@@ -266,9 +266,9 @@
             // 
             this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.documentViewer1.IsMetric = true;
-            this.documentViewer1.Location = new System.Drawing.Point(0, 0);
+            this.documentViewer1.Location = new System.Drawing.Point(0, 150);
             this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(800, 450);
+            this.documentViewer1.Size = new System.Drawing.Size(800, 273);
             this.documentViewer1.TabIndex = 0;
             // 
             // documentViewerRibbonController1
@@ -280,7 +280,6 @@
             // ribbonControl1
             // 
             this.ribbonControl1.AutoHideEmptyItems = true;
-            this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.None;
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
@@ -1461,9 +1460,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.documentViewer1);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
-            this.Controls.Add(this.documentViewer1);
             this.Name = "Frm_ReportOrder";
             this.Text = "Frm_ReportOrder";
             this.Load += new System.EventHandler(this.Frm_ReportOrder_Load);
@@ -1477,6 +1476,8 @@
         }
 
         #endregion
+        public DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer1;
+        private DevExpress.XtraPrinting.Preview.DocumentViewerRibbonController documentViewerRibbonController1;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem1;
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem2;
@@ -1546,7 +1547,5 @@
         private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup7;
         private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup8;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
-        public DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer1;
-        protected DevExpress.XtraPrinting.Preview.DocumentViewerRibbonController documentViewerRibbonController1;
     }
 }
