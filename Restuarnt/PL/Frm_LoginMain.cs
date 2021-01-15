@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using Restuarnt.Bl;
+using System.Windows.Input;
 
 namespace Restuarnt.PL
 {
@@ -20,19 +21,7 @@ namespace Restuarnt.PL
             InitializeComponent();
         }
 
-        private void txt_User_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (txt_User.Text == "USER NAME")
-            {
-                txt_User.Text = "";
-
-
-            }
-            else if (txt_User.Text == "")
-            {
-                txt_User.Text = "USER NAME";
-            }
-        }
+       
 
         private void txt_User_Leave(object sender, EventArgs e)
         {
@@ -43,32 +32,8 @@ namespace Restuarnt.PL
             }
         }
 
-        private void txt_Pass_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (txt_Pass.Text != "PASSWORD")
-            {
-                checkBox1.Checked = false;
-                txt_Pass.UseSystemPasswordChar = true;
-            }
-        }
-
-        private void txt_Pass_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (txt_Pass.Text == "PASSWORD")
-            {
-
-                txt_Pass.Text = "";
-                checkBox1.Checked = false;
-                txt_Pass.UseSystemPasswordChar = true;
-
-
-            }
-            else if (txt_Pass.Text == "")
-            {
-                txt_Pass.Text = "PASSWORD";
-
-            }
-        }
+      
+      
 
         private void txt_Pass_TextChanged(object sender, EventArgs e)
         {
@@ -113,127 +78,7 @@ namespace Restuarnt.PL
             }
         }
 
-        private void txt_Pass_KeyDown(object sender, KeyEventArgs e)
-        {
-            #region
-
-            //try
-            //{
-            //    if (e.KeyCode == Keys.Enter)
-            //    {
-
-
-
-            //        if (Properties.Settings.Default.ProudectKey == "NO")
-            //        {
-            //            frm_SerielNumber FS = new frm_SerielNumber();
-            //            FS.ShowDialog();
-            //        }
-            //        else
-            //        {
-
-
-
-
-
-            //            if (txt_User.Text == "")
-            //            {
-            //                MessageBox.Show("PLEASE INSERT USER NAME");
-            //                return;
-            //            }
-            //            if (txt_Pass.Text == "")
-            //            {
-            //                MessageBox.Show("PLEASE INSERT PASSWORD");
-            //                return;
-            //            }
-
-            //            else
-            //            {
-            //                dt.Clear();
-            //                dt = U.Logins(txt_User.Text, txt_Pass.Text);
-
-            //                if (dt.Rows.Count > 0)
-            //                {
-            //                    //DataTable dt50 = new DataTable();
-            //                    //DataTable dt5 = new DataTable();
-
-
-            //                    //    dt50.Clear();
-            //                    //    dt50 = U.SelectCheckUserName(txt_User.Text);
-            //                    //    if (dt50.Rows.Count>0)
-            //                    //    {
-            //                    //        MessageBox.Show("عفوا هذا الاكونت مفتوح من جهاز اخر يرجي غلق الاكونت ثم اعد فتحه مرة اخرى");
-            //                    //        return;
-            //                    //    }
-
-
-            //                    backgroundWorker1.RunWorkerAsync();
-
-
-
-            //                    Program.salesman = dt.Rows[0][1].ToString();
-            //                    Console.Beep();
-            //                    this.Hide();
-            //                    //dt5 = U.SelectCheckUserNameOffline(txt_User.Text);
-            //                    //if (dt5.Rows.Count > 0)
-            //                    //{
-            //                    //    dt50.Clear();
-            //                    //    dt50 = U.SelectCheckUserName(txt_User.Text);
-            //                    //    if (dt50.Rows.Count == 0)
-            //                    //    {
-            //                    //        U.UpdateCheckUserName(txt_User.Text, "Online", Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")), Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")));
-
-            //                    //}
-
-            //                    //}
-
-
-            //                    //else
-            //                    //{
-
-            //                    //    U.AddCheckUserName(txt_User.Text, "Online", Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")),
-            //                    //     Convert.ToDateTime(DateTime.Now.ToString()));
-            //                    //}
-            //                    fm.ShowDialog();
-            //                    Users u = new Users();
-            //                    DataTable dt10 = new DataTable();
-            //                    dt10.Clear();
-
-            //                    dt10 = u.SelectAllCheckUserName();
-
-
-
-
-
-
-
-
-
-
-
-
-            //                }
-            //                else
-            //                {
-            //                    MessageBox.Show("Incorrect password or username");
-            //                }
-
-            //            }
-
-
-
-
-            //        }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-
-            //    MessageBox.Show(ex.Message);
-
-            //}
-            #endregion
-        }
+       
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
@@ -525,6 +370,128 @@ namespace Restuarnt.PL
 
             }
 
+        }
+
+        private void txt_Pass_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_Pass_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            try
+            {
+
+                if (e.KeyCode==Keys.Enter)
+                {
+
+
+                    if (Properties.Settings.Default.ProudectKey == "NO")
+                    {
+                        frm_SerielNumber FS = new frm_SerielNumber();
+                        FS.ShowDialog();
+                    }
+                    else
+                    {
+
+
+
+
+
+                        if (txt_User.Text == "")
+                        {
+                            MessageBox.Show("PLEASE INSERT USER NAME");
+                            return;
+                        }
+                        if (txt_Pass.Text == "")
+                        {
+                            MessageBox.Show("PLEASE INSERT PASSWORD");
+                            return;
+                        }
+
+                        else
+                        {
+
+
+                            DT88.Clear();
+                            DT88 = l.Logins(txt_User.Text, txt_Pass.Text);
+
+                            if (DT88.Rows.Count > 0)
+                            {
+
+                                backgroundWorker1.RunWorkerAsync();
+
+                                Program.salesman = "";
+                                Program.salesman = DT88.Rows[0][3].ToString();
+                                Program.Id_USer = Convert.ToInt32(DT88.Rows[0][0]);
+                                Console.Beep();
+                                this.Hide();
+
+
+                                fm.ShowDialog();
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Incorrect password or username");
+                            }
+
+                        }
+
+                    }
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+
+            }
+
+        }
+
+        private void txt_User_MouseClick(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            if (txt_User.Text == "USER NAME")
+            {
+                txt_User.Text = "";
+
+
+            }
+            else if (txt_User.Text == "")
+            {
+                txt_User.Text = "USER NAME";
+            }
+        }
+
+        private void txt_Pass_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            if (txt_Pass.Text != "PASSWORD")
+            {
+                checkBox1.Checked = false;
+                txt_Pass.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void txt_Pass_MouseClick_1(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+
+            if (txt_Pass.Text == "PASSWORD")
+            {
+
+                txt_Pass.Text = "";
+                checkBox1.Checked = false;
+                txt_Pass.UseSystemPasswordChar = true;
+
+
+            }
+            else if (txt_Pass.Text == "")
+            {
+                txt_Pass.Text = "PASSWORD";
+
+            }
         }
     }
 }

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_LoginMain));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.txt_Pass = new System.Windows.Forms.TextBox();
             this.txt_User = new System.Windows.Forms.TextBox();
@@ -40,8 +42,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -56,6 +56,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(344, 50);
             this.panel1.TabIndex = 12004;
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.simpleButton2.Location = new System.Drawing.Point(261, 6);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(37, 41);
+            this.simpleButton2.TabIndex = 1;
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(299, 5);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(37, 41);
+            this.simpleButton1.TabIndex = 0;
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // checkBox1
             // 
@@ -85,8 +103,9 @@
             this.txt_Pass.TabStop = false;
             this.txt_Pass.Text = "PASSWORD";
             this.txt_Pass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_Pass.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_Pass_MouseClick);
+            this.txt_Pass.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_Pass_MouseClick_1);
             this.txt_Pass.TextChanged += new System.EventHandler(this.txt_Pass_TextChanged);
+            this.txt_Pass.Enter += new System.EventHandler(this.txt_Pass_Enter);
             this.txt_Pass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Pass_KeyDown);
             this.txt_Pass.Leave += new System.EventHandler(this.txt_Pass_Leave);
             this.txt_Pass.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txt_Pass_MouseMove);
@@ -130,7 +149,7 @@
             // simpleButton3
             // 
             this.simpleButton3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.simpleButton3.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton3.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
             this.simpleButton3.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton3.Appearance.ForeColor = System.Drawing.Color.White;
             this.simpleButton3.Appearance.Options.UseBackColor = true;
@@ -145,7 +164,7 @@
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(213, 38);
             this.simpleButton3.TabIndex = 12016;
-            this.simpleButton3.Text = "تسجيل الدخول";
+            this.simpleButton3.Text = "LogIn";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // pictureBox1
@@ -177,24 +196,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 12012;
             this.pictureBox2.TabStop = false;
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(261, 6);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(37, 41);
-            this.simpleButton2.TabIndex = 1;
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(299, 5);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(37, 41);
-            this.simpleButton1.TabIndex = 0;
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // Frm_LoginMain
             // 
