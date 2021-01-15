@@ -19,6 +19,7 @@ namespace Restuarnt.PL
         public Frm_LoginMain()
         {
             InitializeComponent();
+            txt_User.Focus();
         }
 
        

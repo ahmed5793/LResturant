@@ -9,8 +9,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media.Imaging;
+using DevExpress.Charts.Native;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraGrid.Columns;
 using Restuarnt.BL;
 using Restuarnt.RPT.Exstra_Report;
 
@@ -31,7 +33,102 @@ namespace Restuarnt.PL
         Customer cu = new Customer();
         Stuff s = new Stuff();
 
+        void RdbTackAway()
+        {
+            if (rdb_takeaway.Checked == true)
+            {
+                txt_address.Text = "";
+                cmb_customer.Text = "";
 
+                rdb_clientsave.Checked = true;
+                textEdit1.Hide();
+
+                textEdit1.Text = "";
+                txt_phones.Text = "";
+
+                totalInvoice();
+                txt_discount.Text = "0";
+                // textBox12.Show();
+
+                grb_sala.Hide();
+
+                grb_delivry.Hide();
+                txt_delivery.Enabled = false;
+                txt_delivery.Text = "0";
+                grb_customer.Show();
+
+            }
+        }
+
+        void RdbDelivery()
+        {
+            if (rdb_delivery.Checked == true)
+            {
+
+                grb_customer.Show();
+                grb_delivry.Show();
+
+                rdb_clientsave.Checked = true;
+                cmb_customer.Properties.DataSource = cu.SelectCompoCustomer();
+                cmb_customer.Properties.DisplayMember = "Client_Name";
+                cmb_customer.Properties.ValueMember = "Client_ID";
+                 
+                cmb_customer.Text = "";
+                txt_discount.Text = "0";
+                textEdit1.Text = "";
+                txt_phones.Text = "";
+                txt_delivery.Enabled = true;
+                txt_address.Text = "";
+                textEdit1.Hide();
+
+                txt_delivery.Text = Properties.Settings.Default.DeliveryService.ToString();
+
+                InformationClient();
+
+                grb_sala.Hide();
+                totalInvoice();
+                cmb_delivery.DataSource = d.SelectDeliverycomp();
+                cmb_delivery.DisplayMember = "Name";
+                cmb_delivery.ValueMember = "ID_Delivery";
+
+            }
+        }
+
+        void RdbSala()
+        {
+            if (rdb_sala.Checked == true)
+            {
+
+
+                txt_discount.Text = "0";
+
+                cmb_customer.Text = "";
+                txt_delivery.Text = "0";
+                totalInvoice();
+
+                grb_customer.Hide();
+
+                grb_sala.Show();
+
+                grb_delivry.Hide();
+
+                txt_address.Text = "";
+
+                textEdit1.Text = "";
+                txt_phones.Text = "";
+
+                txt_delivery.Text = "0";
+
+                txt_delivery.Enabled = false;
+
+
+                cmb_Table.DataSource = t.SelectTablesCompo();
+                cmb_Table.DisplayMember = "Tables_Number";
+                cmb_Table.ValueMember = "ID_Tables";
+
+            }
+
+        }
         private static FOrder farm;
 
         static void STATUESCllosed(object sender, FormClosedEventArgs e)
@@ -62,7 +159,22 @@ namespace Restuarnt.PL
 
             texT.Hide();
             SelectdataTable();
-
+            if (Properties.Settings.Default.OrderType=="صالة")
+            {
+                rdb_sala.Checked = true;
+            }
+           
+            if (Properties.Settings.Default.OrderType == "دليفرى")
+            {
+                rdb_delivery.Checked = true;
+            }
+            if (Properties.Settings.Default.OrderType== "تيك اواى")
+            {
+                rdb_takeaway.Checked = true;
+            }
+            RdbSala();
+            RdbDelivery();
+            RdbTackAway();
 
             //dataGridView1.Columns[0].Visible = false;
             //dataGridView1.Columns[1].Visible = false;
@@ -96,8 +208,8 @@ namespace Restuarnt.PL
 
             textEdit1.Text = "";
             txt_phones.Text = "";
-            txt_delivery.Enabled = false;
-            // btn_update.Hide();
+          //  txt_delivery.Enabled = false;
+            btn_update.Enabled=false;
             textEdit1.Text = "";
 
         }
@@ -225,12 +337,12 @@ namespace Restuarnt.PL
 
 
 
-            txt_cust.Hide();
-            txt_num.Hide();
-            grb_customer.Hide();
-            grb_delivry.Hide();
+            //txt_cust.Hide();
+            //txt_num.Hide();
+            //grb_customer.Hide();
+            //grb_delivry.Hide();
 
-            grb_sala.Show();
+            //grb_sala.Show();
 
         }
 
@@ -1481,139 +1593,17 @@ namespace Restuarnt.PL
 
         private void rdb_sala_CheckedChanged_1(object sender, EventArgs e)
         {
-
-            if (rdb_sala.Checked == true)
-            {
-
-
-                txt_discount.Text = "0";
-
-                cmb_customer.Text = "";
-                txt_delivery.Text = "0";
-                totalInvoice();
-
-                grb_customer.Hide();
-
-
-                grb_sala.Show();
-
-                grb_delivry.Hide();
-
-
-
-
-                txt_address.Text = "";
-
-
-
-
-                textEdit1.Text = "";
-                txt_phones.Text = "";
-
-                txt_delivery.Text = "0";
-
-                txt_delivery.Enabled = false;
-
-
-                cmb_Table.DataSource = t.SelectTablesCompo();
-                cmb_Table.DisplayMember = "Tables_Number";
-                cmb_Table.ValueMember = "ID_Tables";
-
-
-
-
-
-
-
-
-            }
+            RdbSala();
         }
 
         private void rdb_delivery_CheckedChanged_1(object sender, EventArgs e)
         {
-
-            if (rdb_delivery.Checked == true)
-            {
-
-                grb_customer.Show();
-                grb_delivry.Show();
-                rdb_clientsave.Checked = true;
-                cmb_customer.Properties.DataSource = cu.SelectCompoCustomer();
-                cmb_customer.Properties.DisplayMember = "Client_Name";
-                cmb_customer.Properties.ValueMember = "Client_ID";
-                cmb_customer.Text = "";
-                txt_discount.Text = "0";
-                textEdit1.Text = "";
-                txt_phones.Text = "";
-                txt_delivery.Enabled = true;
-
-
-
-                txt_address.Text = "";
-                textEdit1.Hide();
-
-
-
-
-                InformationClient();
-
-
-
-
-                grb_sala.Hide();
-
-
-
-
-
-
-
-
-
-
-
-                totalInvoice();
-                cmb_delivery.DataSource = d.SelectDeliverycomp();
-                cmb_delivery.DisplayMember = "Name";
-                cmb_delivery.ValueMember = "ID_Delivery";
-
-
-
-
-            }
+            RdbDelivery();
         }
 
         private void rdb_takeaway_CheckedChanged_1(object sender, EventArgs e)
         {
-
-            if (rdb_takeaway.Checked == true)
-            {
-                txt_address.Text = "";
-                cmb_customer.Text = "";
-
-                rdb_clientsave.Checked = true;
-                textEdit1.Hide();
-
-                textEdit1.Text = "";
-                txt_phones.Text = "";
-
-                totalInvoice();
-                txt_discount.Text = "0";
-                // textBox12.Show();
-
-
-
-
-
-
-                grb_sala.Hide();
-
-                grb_delivry.Hide();
-                txt_delivery.Enabled = false;
-                txt_delivery.Text = "0";
-                grb_customer.Show();
-
-            }
+            RdbTackAway();
         }
 
         private void textBox12_MouseHover(object sender, EventArgs e)
@@ -2547,127 +2537,135 @@ namespace Restuarnt.PL
 
             try
             {
-
-                o.DeleteOrderNewRow();
-
-                int x;
-                for (int y = 0; y < gridView2.RowCount; y++)
+                if (Lable_Num.Text != "")
                 {
-                    DataRow row = gridView2.GetDataRow(y);
-                    dt5.Clear();
-                    dt5 = o.VildateQuantity(Convert.ToInt32(Lable_Num.Text), Convert.ToInt32(row[2]), Convert.ToInt32(row[5]));
-                    foreach (DataRow dr in dt5.Rows)
+
+
+                    o.DeleteOrderNewRow();
+
+                    int x;
+                    for (int y = 0; y < gridView2.RowCount; y++)
                     {
-                        x = Convert.ToInt32(row[5]) - Convert.ToInt32(dr[2]);
-
-
-
-                        if (dt5.Rows.Count > 0)
+                        DataRow row = gridView2.GetDataRow(y);
+                        dt5.Clear();
+                        dt5 = o.VildateQuantity(Convert.ToInt32(Lable_Num.Text), Convert.ToInt32(row[2]), Convert.ToInt32(row[5]));
+                        foreach (DataRow dr in dt5.Rows)
                         {
+                            x = Convert.ToInt32(row[5]) - Convert.ToInt32(dr[2]);
+
+
+
+                            if (dt5.Rows.Count > 0)
+                            {
+                                o.AddOrderNewRow(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
+                              x, Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
+
+                            }
+                        }
+                        dt10 = o.VildateOrderDetails(Convert.ToInt32(Lable_Num.Text), Convert.ToInt32(row[2]));
+                        if (dt10.Rows.Count == 0)
+                        {
+
+
                             o.AddOrderNewRow(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
-                          x, Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
-
-                        }
-                    }
-                    dt10 = o.VildateOrderDetails(Convert.ToInt32(Lable_Num.Text), Convert.ToInt32(row[2]));
-                    if (dt10.Rows.Count == 0)
-                    {
-
-
-                        o.AddOrderNewRow(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
-                   Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
-                    }
-
-
-
-
-
-                }
-
-
-                //  ------------------------------------------------------------//
-                o.Delete_ProdFromOrderDetails(Convert.ToInt32(Lable_Num.Text));
-                for (int i = 0; i < gridView2.RowCount; i++)
-                {
-                    DataRow row = gridView2.GetDataRow(i);
-                    o.AddOrderDetails(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
                        Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
-                }
-                o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
-            0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text));
-                t.UpdateSala(Convert.ToInt32(Lable_Num.Text), Convert.ToInt32(cmb_Table.SelectedValue));
-                MessageBox.Show("تم التعديل بنجاح");
+                        }
 
 
 
 
 
-                //  -----------------------------------------------------------------------------------------
-
-                if (Lable_Num.Text != string.Empty)
-                {
+                    }
 
 
-                    dt.Clear();
-                    dt = o.validatePritOrderNewRow(Convert.ToInt32(Lable_Num.Text));
-                    if (dt.Rows.Count > 0)
+                    //  ------------------------------------------------------------//
+                    o.Delete_ProdFromOrderDetails(Convert.ToInt32(Lable_Num.Text));
+                    for (int i = 0; i < gridView2.RowCount; i++)
+                    {
+                        DataRow row = gridView2.GetDataRow(i);
+                        o.AddOrderDetails(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
+                           Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
+                    }
+                    o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
+                0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text));
+                    t.UpdateSala(Convert.ToInt32(Lable_Num.Text), Convert.ToInt32(cmb_Table.SelectedValue));
+                    MessageBox.Show("تم التعديل بنجاح");
+
+
+
+
+
+                    //  -----------------------------------------------------------------------------------------
+
+                    if (Lable_Num.Text != string.Empty)
                     {
 
 
-
-
-                        if (rdb_delivery.Checked == true)
+                        dt.Clear();
+                        dt = o.validatePritOrderNewRow(Convert.ToInt32(Lable_Num.Text));
+                        if (dt.Rows.Count > 0)
                         {
-                            RPT.rptNewRowDAELIVERYMakolat ro = new RPT.rptNewRowDAELIVERYMakolat();
-                            RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
 
-                           // s.crystalReportViewer1.RefreshReport();
-                            ro.SetDatabaseLogon("", "", ".", "Restuarnt");
-                            ro.SetParameterValue("@id", (Convert.ToInt32(Lable_Num.Text)));
-                            if (ro.Rows.Count > 0)
+
+
+
+                            if (rdb_delivery.Checked == true)
                             {
-                              //  s.crystalReportViewer1.ReportSource = ro;
-                                System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                                ro.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                                ro.PrintToPrinter(1, true, 0, 0);
-                                ro.Close();
-                                s.Dispose();
+                                RPT.rptNewRowDAELIVERYMakolat ro = new RPT.rptNewRowDAELIVERYMakolat();
+                                RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
+
+                                // s.crystalReportViewer1.RefreshReport();
+                                ro.SetDatabaseLogon("", "", ".", "Restuarnt");
+                                ro.SetParameterValue("@id", (Convert.ToInt32(Lable_Num.Text)));
+                                if (ro.Rows.Count > 0)
+                                {
+                                    //  s.crystalReportViewer1.ReportSource = ro;
+                                    System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
+                                    ro.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                    ro.PrintToPrinter(1, true, 0, 0);
+                                    ro.Close();
+                                    s.Dispose();
+
+
+                                }
+                                //////////////////////////////////////////////
+                                ///
+
+
+                                RPT.rptNewRowDAELIVERY newrowdel = new RPT.rptNewRowDAELIVERY();
+                                RPT.Frm_ReportOrder snewrowdel = new RPT.Frm_ReportOrder();
+
+                                // snewrowdel.crystalReportViewer1.RefreshReport();
+                                newrowdel.SetDatabaseLogon("", "", ".", "Restuarnt");
+                                newrowdel.SetParameterValue("@id", (Convert.ToInt32(Lable_Num.Text)));
+                                if (newrowdel.Rows.Count > 0)
+                                {
+
+
+                                    //  snewrowdel.crystalReportViewer1.ReportSource = newrowdel;
+                                    System.Drawing.Printing.PrintDocument printDocumentnewdel = new System.Drawing.Printing.PrintDocument();
+                                    newrowdel.PrintOptions.PrinterName = printDocumentnewdel.PrinterSettings.PrinterName;
+                                    newrowdel.PrintToPrinter(1, true, 0, 0);
+                                    newrowdel.Close();
+                                    snewrowdel.Dispose();
+
+
+
+                                    //GC.Collect();
+                                    //GC.WaitForPendingFinalizers();
+                                }
 
 
                             }
-                            //////////////////////////////////////////////
-                            ///
-
-
-                            RPT.rptNewRowDAELIVERY newrowdel = new RPT.rptNewRowDAELIVERY();
-                            RPT.Frm_ReportOrder snewrowdel = new RPT.Frm_ReportOrder();
-
-                           // snewrowdel.crystalReportViewer1.RefreshReport();
-                            newrowdel.SetDatabaseLogon("", "", ".", "Restuarnt");
-                            newrowdel.SetParameterValue("@id", (Convert.ToInt32(Lable_Num.Text)));
-                            if (newrowdel.Rows.Count > 0)
-                            {
-
-
-                              //  snewrowdel.crystalReportViewer1.ReportSource = newrowdel;
-                                System.Drawing.Printing.PrintDocument printDocumentnewdel = new System.Drawing.Printing.PrintDocument();
-                                newrowdel.PrintOptions.PrinterName = printDocumentnewdel.PrinterSettings.PrinterName;
-                                newrowdel.PrintToPrinter(1, true, 0, 0);
-                                newrowdel.Close();
-                                snewrowdel.Dispose();
-
-
-
-                                //GC.Collect();
-                                //GC.WaitForPendingFinalizers();
-                            }
-
-                    
+                            o.DeleteOrderNewRow();
+                            // clear2();
                         }
-                        o.DeleteOrderNewRow();
-                        // clear2();
-                    }
 
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("لا بد من وجود فاتورة مسبقة للتعديل");
                 }
 
 
@@ -2694,6 +2692,7 @@ namespace Restuarnt.PL
 
         private void gridView2_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
+           
             if (e.Column.FieldName == "btn")
             {
 
@@ -2761,7 +2760,7 @@ namespace Restuarnt.PL
                     totalInvoice();
                     TOTALFINALYDISCOUNT();
                     TOTALFINALYDELIVERY();
-
+                    Console.Beep();
                 }
 
             }
@@ -2834,6 +2833,11 @@ namespace Restuarnt.PL
 
 
 
+
+        }
+
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

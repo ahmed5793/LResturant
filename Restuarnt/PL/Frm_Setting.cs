@@ -51,7 +51,19 @@ namespace Restuarnt.PL
                 txtDescription.Text = tbl.Rows[0][2].ToString();
                 txtPhone1.Text = tbl.Rows[0][3].ToString();
                 txtPhone2.Text = tbl.Rows[0][4].ToString();
-            }
+                    if (Properties.Settings.Default.OrderType=="صالة")
+                    {
+                        Rdb_Sala.Checked = true;
+                    }
+                    if (Properties.Settings.Default.OrderType == "دليفرى")
+                    {
+                        Rdb_Deleviry.Checked = true;
+                    }
+                    if (Properties.Settings.Default.OrderType == "تيك اواى")
+                    {
+                        Rdb_TakeAway.Checked = true;
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -178,17 +190,17 @@ namespace Restuarnt.PL
                 Properties.Settings.Default.Save();
                 if (Rdb_Deleviry.Checked==true)
                 {
-                    Properties.Settings.Default.OrderType = Rdb_Deleviry.Text;
+                    Properties.Settings.Default.OrderType ="دليفرى";
                     Properties.Settings.Default.Save();
                 }
                 else if (Rdb_Sala.Checked==true)
                 {
-                    Properties.Settings.Default.OrderType = Rdb_Sala.Text;
+                    Properties.Settings.Default.OrderType ="صالة";
                     Properties.Settings.Default.Save();
                 }
                 else if (Rdb_TakeAway.Checked == true)
                 {
-                    Properties.Settings.Default.OrderType = Rdb_TakeAway.Text;
+                    Properties.Settings.Default.OrderType ="تيك اواى";
                     Properties.Settings.Default.Save();
                 }
 
