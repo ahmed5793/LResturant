@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 using DevExpress.XtraReports.UI;
 using Restuarnt.BL;
 using Restuarnt.RPT.Exstra_Report;
@@ -16,14 +17,23 @@ namespace Restuarnt.PL
     {
 
         Order o = new Order();
+        Delivery d = new Delivery();
 
-
+        Stuff s = new Stuff();
         public Sales_Management()
         {
             InitializeComponent();
             selectUser();
             rdb_all.Checked = true;
             gridControl1.DataSource = o.SearchMangmentOrders(DateTime.Now.Date, DateTime.Now.Date);
+            cmb_delivery.DataSource = d.SelectDeliverycomp();
+            cmb_delivery.DisplayMember = "Name";
+            cmb_delivery.ValueMember = "ID_Delivery";
+
+
+            cmb_stuff.DataSource = s.SelectStuuf();
+            cmb_stuff.DisplayMember = "اسم الكابتن";
+            cmb_stuff.ValueMember = "رقم الكابتن";
 
         } 
         void selectUser()
@@ -62,7 +72,13 @@ namespace Restuarnt.PL
             id_take.Caption = "رقم الطلب";
             id_take.FieldName = "رقم الطلب";
             id_take.Visible = false;
-          
+
+            FromDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            ToDate.Text= DateTime.Now.ToString("dd/MM/yyyy");
+            dateEdit1.Text= DateTime.Now.ToString("dd/MM/yyyy");
+            dateEdit2.Text= DateTime.Now.ToString("dd/MM/yyyy");
+            dateEdit3.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            dateEdit4.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
         }
 
@@ -146,114 +162,10 @@ namespace Restuarnt.PL
 
         private void simpleButton7_Click(object sender, EventArgs e)
         {
-            if (gridView1.RowCount>0)
-            {
-                gridView1.ShowRibbonPrintPreview();
-            }
-            else
-            {
-                MessageBox.Show("لا يوجد داتا لطباعة التقرير");
-            }
         }
 
         private void simpleButton5_Click_1(object sender, EventArgs e)
         {
-            try
-            {
-                if (gridView1.RowCount > 0)
-                {
-                   
-                    DataTable dt5 = new DataTable();
-                    XtraReport1Order ro = new XtraReport1Order();
-                    DataSet1 ds = new DataSet1();
-                    dt5.Clear();
-                    dt5 = o.PrintOrder(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
-                    if (dt5.Rows[0][11].ToString() == "Delivery")
-                    {
-                        dt5.Clear();
-                        dt5 = o.Select_DeliveyMan(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
-                        ro.xrLabel11.Visible = true;
-                        ro.xrLabel10.Visible = true;
-                        ro.xrLabel18.Visible = true;
-                        ro.xrLabel19.Visible = true;
-                        ro.xrLabel19.Text = dt5.Rows[0][1].ToString();
-                    }
-
-                    if (dt5.Rows[0][11].ToString() == "Table")
-                    {
-
-                        dt5.Clear();
-                        dt5 = o.PrintOrderSala(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
-                        ro.xrLabel20.Visible = true;
-                        ro.xrLabel21.Visible = true;
-                        ro.xrLabel21.Text = dt5.Rows[0][1].ToString();
-                    }
-                    dt5.Clear();
-                    dt5 = o.PrintOrder(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
-                   
-                    ds.Tables["Order"].Clear();
-                    for (int i = 0; i < dt5.Rows.Count; i++)
-                    {
-                        ds.Tables["Order"].Rows.Add(dt5.Rows[i][0], dt5.Rows[i][1], dt5.Rows[i][4],
-                        dt5.Rows[i][5], dt5.Rows[i][7], dt5.Rows[i][6], dt5.Rows[i][9], dt5.Rows[i][8],
-                        dt5.Rows[i][2], (dt5.Rows[i][3]), dt5.Rows[i][11], dt5.Rows[i][10], dt5.Rows[i][12]);
-                    }
-                    ro.Txt_Delivery.Visible = true;
-                    ro.DataSource = ds;
-                    ro.Parameters["Id"].Value = Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة"));
-                    ro.Parameters["Id"].Visible = false;
-                    System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                    ro.PrinterName = printDocument.PrinterSettings.PrinterName;
-                    // ro.PrinterName = Properties.Settings.Default.PrinterName;
-                    ro.Print();
-
-                    //كود طباعة امر التشغيل للمطبخ//////////////
-
-                    DataTable dt6 = new DataTable();
-                    XtraReportCheck rc = new XtraReportCheck();
-                    DataSet1 ds1 = new DataSet1();
-                    dt6.Clear();
-                    dt6 = o.PrintOrder(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
-                    if (dt5.Rows[0][11].ToString() == "Table")
-                    {
-                        dt6.Clear();
-
-                        dt6 = o.PrintOrderSala(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
-                        rc.Label_TableNum.Visible = true;
-                        rc.Txt_TableNum.Visible = true;
-                        rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
-                    }
-
-                    dt6.Clear();
-                    dt6 = o.PrintOrder(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
-                    ds.Tables["Order"].Clear();
-                    for (int i = 0; i < dt6.Rows.Count; i++)
-                    {
-                        ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
-                        dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
-                        dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
-                    }
-                    rc.DataSource = ds;
-                    rc.Parameters["Id"].Value = Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة"));
-                    rc.Parameters["Id"].Visible = false;
-                    //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
-                    // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
-                    rc.PrinterName = Properties.Settings.Default.PrinterName;
-                    rc.Print();
-                }
-                else
-                {
-                    MessageBox.Show("لايوجد بيانات للطباعه");
-                }
-
-
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
 
         }
 
@@ -372,9 +284,10 @@ namespace Restuarnt.PL
                         XtraReport1Order ro = new XtraReport1Order();
                         DataSet1 ds = new DataSet1();
                         RPT.Frm_ReportOrder fr = new RPT.Frm_ReportOrder();
+                        fr.documentViewer1.Refresh();
                         dt5.Clear();
                         dt5 = o.PrintOrder(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
-                        if (dt5.Rows[0][11].ToString() == "Delivery")
+                        if (gridView1.GetFocusedRowCellValue(Statues).ToString() == "Delivery")
                         {
                             dt5.Clear();
                             dt5 = o.Select_DeliveyMan(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
@@ -383,10 +296,12 @@ namespace Restuarnt.PL
                             ro.xrLabel18.Visible = true;
                             ro.xrLabel19.Visible = true;
                             ro.xrLabel19.Text = dt5.Rows[0][1].ToString();
+
                         }
 
-                        if (dt5.Rows[0][11].ToString() == "Table")
+                        if (gridView1.GetFocusedRowCellValue(Statues).ToString() == "Table")
                         {
+
 
                             dt5.Clear();
                             dt5 = o.PrintOrderSala(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
@@ -410,7 +325,7 @@ namespace Restuarnt.PL
                         ro.Parameters["Id"].Visible = false;
                         fr.documentViewer1.DocumentSource = ro;
                         fr.Show();
-                        ro.Dispose();
+                       // ro.Dispose();
                         
                         //System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
                         //ro.PrinterName = printDocument.PrinterSettings.PrinterName;
@@ -478,7 +393,7 @@ namespace Restuarnt.PL
                         RPT.Frm_ReportOrder fr = new RPT.Frm_ReportOrder();
                         dt5.Clear();
                         dt5 = o.PrintOrder(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
-                        if (dt5.Rows[0][11].ToString() == "Delivery")
+                        if (gridView1.GetFocusedRowCellValue(Statues).ToString() == "Delivery")
                         {
                             dt5.Clear();
                             dt5 = o.Select_DeliveyMan(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
@@ -489,7 +404,7 @@ namespace Restuarnt.PL
                             ro.xrLabel19.Text = dt5.Rows[0][1].ToString();
                         }
 
-                        if (dt5.Rows[0][11].ToString() == "Table")
+                        if (gridView1.GetFocusedRowCellValue(Statues).ToString() == "Table")
                         {
 
                             dt5.Clear();
@@ -567,6 +482,47 @@ namespace Restuarnt.PL
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton6_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+
+           
+            if (cmb_delivery.Text=="")
+            {
+                XtraMessageBox.Show("من فضلك قم بااختيار اسم الطيار", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                return;
+            }
+
+            gridControl2.DataSource= o.SELECtAllOrderOneDelivery(Convert.ToDateTime(dateEdit1.EditValue), Convert.ToDateTime(dateEdit2.EditValue), Convert.ToInt32(cmb_delivery.SelectedValue));
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        private void simpleButton2_Click_1(object sender, EventArgs e)
+        {
+
+              if (cmb_stuff.Text == "")
+                {
+                    MessageBox.Show("من فضلك قم بااختيار اسم الكابتن");
+                    return;
+                }
+                gridControl3.DataSource = s.REPORTStuff(Convert.ToInt32(cmb_stuff.SelectedValue), Convert.ToDateTime(dateEdit3.EditValue),
+                    Convert.ToDateTime(dateEdit4.EditValue));
+               
+            
+            
         }
     }
 }

@@ -81,9 +81,9 @@ namespace Restuarnt.BL
             SqlParameter[] param = new SqlParameter[3];
             param[0] = new SqlParameter("@idStuff", SqlDbType.Int);
             param[0].Value = idStuff;
-            param[1] = new SqlParameter("@fromDate", SqlDbType.DateTime);
+            param[1] = new SqlParameter("@fromDate", SqlDbType.Date);
             param[1].Value = fromDate;
-            param[2] = new SqlParameter("@todate", SqlDbType.DateTime);
+            param[2] = new SqlParameter("@todate", SqlDbType.Date);
             param[2].Value = todate;
             dt = da.selected("REPORTStuff", param);
             da.close();
