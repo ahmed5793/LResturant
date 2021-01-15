@@ -765,9 +765,9 @@ namespace Restuarnt.BL
 
 
 
-            param[1] = new SqlParameter("@fromDte", SqlDbType.DateTime);
+            param[1] = new SqlParameter("@fromDte", SqlDbType.Date);
             param[1].Value = fromDte;
-            param[2] = new SqlParameter("@todate", SqlDbType.DateTime);
+            param[2] = new SqlParameter("@todate", SqlDbType.Date);
             param[2].Value = todate;
 
 

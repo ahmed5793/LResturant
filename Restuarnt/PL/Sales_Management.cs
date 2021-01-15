@@ -524,5 +524,43 @@ namespace Restuarnt.PL
             
             
         }
+       
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+          
+
+            try
+            {
+                if (rdb_drink.Checked==true)
+                {
+                    gridControl4.DataSource = o.ReportOrderDepartment(rdb_drink.Text, Convert.ToDateTime(dateEdit5.EditValue), Convert.ToDateTime(dateEdit6.EditValue));
+
+                }
+                else if (rdb_eat.Checked==true)
+                {
+                    gridControl4.DataSource = o.ReportOrderDepartment(rdb_eat.Text, Convert.ToDateTime(dateEdit5.EditValue), Convert.ToDateTime(dateEdit6.EditValue));
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void rdb_eat_CheckedChanged(object sender, EventArgs e)
+        {
+            
+           
+        }
+
+        private void rdb_drink_CheckedChanged(object sender, EventArgs e)
+        {
+           
+           
+        }
     }
 }
