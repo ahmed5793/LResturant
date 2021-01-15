@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FOrder));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ID_Dep = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -228,6 +228,7 @@
             this.ID_Dep.Caption = "رقم القسم";
             this.ID_Dep.FieldName = "رقم القسم";
             this.ID_Dep.Name = "ID_Dep";
+            this.ID_Dep.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.ID_Dep.Visible = true;
             this.ID_Dep.VisibleIndex = 0;
             this.ID_Dep.Width = 90;
@@ -237,6 +238,7 @@
             this.Dep.Caption = "القسم";
             this.Dep.FieldName = "القسم";
             this.Dep.Name = "Dep";
+            this.Dep.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.Dep.Visible = true;
             this.Dep.VisibleIndex = 1;
             this.Dep.Width = 90;
@@ -246,6 +248,7 @@
             this.ID_Items.Caption = "رقم الصنف";
             this.ID_Items.FieldName = "رقم الصنف";
             this.ID_Items.Name = "ID_Items";
+            this.ID_Items.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.ID_Items.Visible = true;
             this.ID_Items.VisibleIndex = 2;
             this.ID_Items.Width = 106;
@@ -256,6 +259,7 @@
             this.Item_Name.FieldName = "اسم الصنف";
             this.Item_Name.Name = "Item_Name";
             this.Item_Name.OptionsColumn.AllowSize = false;
+            this.Item_Name.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.Item_Name.OptionsColumn.FixedWidth = true;
             this.Item_Name.OptionsColumn.ReadOnly = true;
             this.Item_Name.Visible = true;
@@ -268,6 +272,7 @@
             this.Price.FieldName = "السعر";
             this.Price.Name = "Price";
             this.Price.OptionsColumn.AllowSize = false;
+            this.Price.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.Price.OptionsColumn.FixedWidth = true;
             this.Price.OptionsColumn.ReadOnly = true;
             this.Price.Visible = true;
@@ -281,6 +286,7 @@
             this.quantity.Name = "quantity";
             this.quantity.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.quantity.OptionsColumn.AllowSize = false;
+            this.quantity.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.quantity.OptionsColumn.FixedWidth = true;
             this.quantity.OptionsColumn.ReadOnly = true;
             this.quantity.Visible = true;
@@ -293,6 +299,7 @@
             this.Total.FieldName = "الأجمالي";
             this.Total.Name = "Total";
             this.Total.OptionsColumn.AllowSize = false;
+            this.Total.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.Total.OptionsColumn.FixedWidth = true;
             this.Total.OptionsColumn.ReadOnly = true;
             this.Total.Visible = true;
@@ -311,6 +318,7 @@
             this.Neg.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("Neg.ImageOptions.SvgImage")));
             this.Neg.Name = "Neg";
             this.Neg.OptionsColumn.AllowSize = false;
+            this.Neg.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.Neg.OptionsColumn.FixedWidth = true;
             this.Neg.OptionsColumn.ReadOnly = true;
             this.Neg.Visible = true;
@@ -339,6 +347,7 @@
             this.Post.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("Post.ImageOptions.SvgImage")));
             this.Post.Name = "Post";
             this.Post.OptionsColumn.AllowSize = false;
+            this.Post.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.Post.OptionsColumn.FixedWidth = true;
             this.Post.OptionsColumn.ReadOnly = true;
             this.Post.Visible = true;
@@ -365,6 +374,7 @@
             this.gridColumn1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("gridColumn1.ImageOptions.Image")));
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowSize = false;
+            this.gridColumn1.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn1.OptionsColumn.FixedWidth = true;
             this.gridColumn1.OptionsColumn.ReadOnly = true;
             this.gridColumn1.Visible = true;
@@ -374,9 +384,9 @@
             // repositoryItemButtonEdit3
             // 
             this.repositoryItemButtonEdit3.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.repositoryItemButtonEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit3.Name = "repositoryItemButtonEdit3";
             this.repositoryItemButtonEdit3.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -682,7 +692,7 @@
             this.label22.ForeColor = System.Drawing.Color.White;
             this.label22.Location = new System.Drawing.Point(470, 21);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(110, 25);
+            this.label22.Size = new System.Drawing.Size(108, 25);
             this.label22.TabIndex = 78;
             this.label22.Text = "خدمه توصيل";
             // 
@@ -774,6 +784,7 @@
             this.groupControl1.Size = new System.Drawing.Size(601, 103);
             this.groupControl1.TabIndex = 118;
             this.groupControl1.Text = "نوع الطلب";
+            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
             // rdb_takeaway
             // 
@@ -808,14 +819,12 @@
             // rdb_sala
             // 
             this.rdb_sala.AutoSize = true;
-            this.rdb_sala.Checked = true;
             this.rdb_sala.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdb_sala.Image = global::Restuarnt.Properties.Resources.restaurant_table_icon_91;
             this.rdb_sala.Location = new System.Drawing.Point(407, 29);
             this.rdb_sala.Name = "rdb_sala";
             this.rdb_sala.Size = new System.Drawing.Size(74, 67);
             this.rdb_sala.TabIndex = 85;
-            this.rdb_sala.TabStop = true;
             this.rdb_sala.Text = "صالة";
             this.rdb_sala.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rdb_sala.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
