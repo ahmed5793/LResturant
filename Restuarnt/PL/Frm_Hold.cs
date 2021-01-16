@@ -48,6 +48,7 @@ namespace Restuarnt.PL
                 id_take.Caption = "رقم الطلب";
                 id_take.FieldName = "رقم الطلب";
                 id_take.Visible = false;
+                DeliveryService.Visible = false;
                 gridControl2.DataSource = o.SELECTOrderRentALLORDER();
             }
         }
@@ -97,6 +98,7 @@ namespace Restuarnt.PL
                 id_take.Caption = "رقم الطلب";
                 id_take.FieldName = "رقم الطلب";
                 id_take.Visible = false;
+                DeliveryService.Visible = false;
                 gridControl2.DataSource = o.SELECTOrderRentTkeAway();
 
 
@@ -109,6 +111,7 @@ namespace Restuarnt.PL
             {
                 gridControl2.DataSource = null;
                 id_take.Visible = true;
+                DeliveryService.Visible = false;
                 Name_Cust.Caption = "رقم الطاوله";
                 Name_Cust.FieldName = "رقم الطاوله";
                 id_take.Caption = "الكابتن";
@@ -132,6 +135,7 @@ namespace Restuarnt.PL
             {
                 gridControl2.DataSource = null;
                 id_take.Visible = true;
+                DeliveryService.Visible = true;
                 Name_Cust.Caption = "اسم العميل";
                 Name_Cust.FieldName = "اسم العميل";
                 id_take.Caption = "اسم الطيار";

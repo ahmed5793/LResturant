@@ -52,7 +52,7 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.عرض = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.controlNavigator1 = new DevExpress.XtraEditors.ControlNavigator();
+            this.DeliveryService = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -69,7 +69,7 @@
             this.groupControl1.Controls.Add(this.rdb_sala);
             this.groupControl1.Location = new System.Drawing.Point(21, 38);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(732, 159);
+            this.groupControl1.Size = new System.Drawing.Size(847, 159);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "groupControl1";
             // 
@@ -79,7 +79,7 @@
             this.rdb_all.Checked = true;
             this.rdb_all.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdb_all.Image = ((System.Drawing.Image)(resources.GetObject("rdb_all.Image")));
-            this.rdb_all.Location = new System.Drawing.Point(582, 32);
+            this.rdb_all.Location = new System.Drawing.Point(709, 23);
             this.rdb_all.Name = "rdb_all";
             this.rdb_all.Size = new System.Drawing.Size(109, 126);
             this.rdb_all.TabIndex = 87;
@@ -125,7 +125,7 @@
             this.rdb_sala.AutoSize = true;
             this.rdb_sala.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdb_sala.Image = global::Restuarnt.Properties.Resources.restaurant_table_icon_9;
-            this.rdb_sala.Location = new System.Drawing.Point(392, 45);
+            this.rdb_sala.Location = new System.Drawing.Point(443, 32);
             this.rdb_sala.Name = "rdb_sala";
             this.rdb_sala.Size = new System.Drawing.Size(142, 109);
             this.rdb_sala.TabIndex = 85;
@@ -158,7 +158,7 @@
             this.groupBox2.Controls.Add(this.gridControl2);
             this.groupBox2.Location = new System.Drawing.Point(2, 203);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(751, 322);
+            this.groupBox2.Size = new System.Drawing.Size(869, 322);
             this.groupBox2.TabIndex = 168;
             this.groupBox2.TabStop = false;
             // 
@@ -176,7 +176,7 @@
             this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.عرض});
             this.gridControl2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gridControl2.Size = new System.Drawing.Size(745, 303);
+            this.gridControl2.Size = new System.Drawing.Size(863, 303);
             this.gridControl2.TabIndex = 127;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -209,6 +209,9 @@
             this.gridView2.Appearance.FocusedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView2.Appearance.FocusedRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView2.Appearance.FocusedRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.gridView2.Appearance.FooterPanel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView2.Appearance.FooterPanel.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.gridView2.Appearance.FooterPanel.Options.UseFont = true;
             this.gridView2.Appearance.HeaderPanel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.gridView2.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Yellow;
             this.gridView2.Appearance.HeaderPanel.Options.UseFont = true;
@@ -250,6 +253,7 @@
             this.Date,
             this.Total,
             this.Statues,
+            this.DeliveryService,
             this.gridColumn1});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
@@ -261,7 +265,6 @@
             this.gridView2.OptionsPrint.PrintPreview = true;
             this.gridView2.OptionsSelection.EnableAppearanceFocusedRow = false;
             this.gridView2.OptionsView.ShowFooter = true;
-            this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView2_RowCellClick);
             this.gridView2.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView2_CellValueChanged);
             // 
@@ -306,6 +309,8 @@
             this.Total.Caption = "الاجمالي";
             this.Total.FieldName = "الاجمالي";
             this.Total.Name = "Total";
+            this.Total.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "الاجمالي", "مبيعات={0:0.##}")});
             this.Total.Visible = true;
             this.Total.VisibleIndex = 4;
             this.Total.Width = 103;
@@ -346,34 +351,32 @@
             // simpleButton1
             // 
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(717, -3);
+            this.simpleButton1.Location = new System.Drawing.Point(835, -3);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(36, 35);
             this.simpleButton1.TabIndex = 169;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // controlNavigator1
+            // DeliveryService
             // 
-            this.controlNavigator1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.controlNavigator1.Location = new System.Drawing.Point(12, 12);
-            this.controlNavigator1.Name = "controlNavigator1";
-            this.controlNavigator1.NavigatableControl = this.gridControl2;
-            this.controlNavigator1.Size = new System.Drawing.Size(225, 19);
-            this.controlNavigator1.TabIndex = 88;
-            this.controlNavigator1.Text = "controlNavigator1";
-            this.controlNavigator1.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.End;
+            this.DeliveryService.Caption = "دليفرى";
+            this.DeliveryService.FieldName = "DeliveryService";
+            this.DeliveryService.Name = "DeliveryService";
+            this.DeliveryService.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DeliveryService", "دليفرى={0:0.##}")});
             // 
             // Frm_Hold
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 530);
+            this.ClientSize = new System.Drawing.Size(880, 530);
             this.ControlBox = false;
-            this.Controls.Add(this.controlNavigator1);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.groupControl1);
+            this.MaximumSize = new System.Drawing.Size(882, 562);
+            this.MinimumSize = new System.Drawing.Size(882, 562);
             this.Name = "Frm_Hold";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Hold";
@@ -410,7 +413,7 @@
         public DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         public DevExpress.XtraGrid.Columns.GridColumn Statues;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.ControlNavigator controlNavigator1;
         public DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn DeliveryService;
     }
 }
