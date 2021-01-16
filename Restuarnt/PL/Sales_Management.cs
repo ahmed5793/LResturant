@@ -434,7 +434,7 @@ namespace Restuarnt.PL
 
                         System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
                         ro.PrinterName = printDocument.PrinterSettings.PrinterName;
-                        ro.PrinterName = Properties.Settings.Default.PrinterName;
+                        ro.PrinterName = Properties.Settings.Default.PrinterOrderClient;
                         ro.Print();
                        
                         ro.Dispose();

@@ -1015,7 +1015,7 @@ namespace Restuarnt.PL
                         else
                         {
                             MessageBox.Show("من فضلك فم بااختيار اصناف الفاتورة اولا");
-
+                            return;
                         }
 
                         clear2();
@@ -1472,7 +1472,7 @@ namespace Restuarnt.PL
                     ro.Parameters["Id"].Visible = false;
                     //System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
                     //ro.PrinterName = printDocument.PrinterSettings.PrinterName;
-                    ro.PrinterName = Properties.Settings.Default.PrinterName;
+                    ro.PrinterName = Properties.Settings.Default.PrinterOrderClient;
                     ro.Print();
                 }
                 else
@@ -1981,7 +1981,7 @@ namespace Restuarnt.PL
                     else
                     {
                         MessageBox.Show("من فضلك فم بااختيار اصناف الفاتورة اولا");
-
+                        return;
                     }
 
                     clear2();
@@ -2539,7 +2539,7 @@ namespace Restuarnt.PL
                     rc.Parameters["Id"].Visible = false;
                     //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
                     // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
-                    rc.PrinterName = Properties.Settings.Default.PrinterName;
+                    rc.PrinterName = Properties.Settings.Default.PrinterOrderClient;
                     rc.Print();
                 }
             }
