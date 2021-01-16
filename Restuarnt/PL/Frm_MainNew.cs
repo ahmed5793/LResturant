@@ -100,7 +100,7 @@ namespace Restuarnt.PL
 
         private void Btn_AddTables_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Table table = new Table();
+            Frm_Tables table = new Frm_Tables();
             table.Show();
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace Restuarnt.PL
 {
-    partial class Frm_DeliveryInformations
+    partial class Frm_Tables
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_DeliveryInformations));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Tables));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -43,38 +43,30 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_update = new DevExpress.XtraEditors.SimpleButton();
             this.btn_save = new DevExpress.XtraEditors.SimpleButton();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txt_phone = new DevExpress.XtraEditors.TextEdit();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.lable_num = new System.Windows.Forms.Label();
-            this.lable = new System.Windows.Forms.Label();
-            this.txt_name = new DevExpress.XtraEditors.TextEdit();
-            this.txt_address = new DevExpress.XtraEditors.TextEdit();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ID_Delivery = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Name_Delivery = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Address = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.phone = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ID_Tables = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Tables_Number = new DevExpress.XtraGrid.Columns.GridColumn();
             this.update = new DevExpress.XtraGrid.Columns.GridColumn();
             this.عرض = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.delete = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.lable_num = new System.Windows.Forms.Label();
+            this.lable = new System.Windows.Forms.Label();
+            this.txt_number = new DevExpress.XtraEditors.TextEdit();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_phone.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_name.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_address.Properties)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.عرض)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_number.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl2
@@ -82,12 +74,12 @@
             this.groupControl2.Controls.Add(this.simpleButton1);
             this.groupControl2.Controls.Add(this.btn_update);
             this.groupControl2.Controls.Add(this.btn_save);
-            this.groupControl2.Location = new System.Drawing.Point(12, 137);
+            this.groupControl2.Location = new System.Drawing.Point(11, 146);
             this.groupControl2.LookAndFeel.SkinName = "Visual Studio 2013 Dark";
             this.groupControl2.LookAndFeel.UseDefaultLookAndFeel = false;
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(755, 70);
-            this.groupControl2.TabIndex = 176;
+            this.groupControl2.Size = new System.Drawing.Size(764, 70);
+            this.groupControl2.TabIndex = 182;
             // 
             // simpleButton1
             // 
@@ -108,7 +100,7 @@
             this.simpleButton1.Size = new System.Drawing.Size(125, 37);
             this.simpleButton1.TabIndex = 119;
             this.simpleButton1.Text = "جديد";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // btn_update
             // 
@@ -129,7 +121,7 @@
             this.btn_update.Size = new System.Drawing.Size(221, 37);
             this.btn_update.TabIndex = 118;
             this.btn_update.Text = "تعديل";
-            this.btn_update.Click += new System.EventHandler(this.simpleButton2_Click);
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // btn_save
             // 
@@ -150,116 +142,7 @@
             this.btn_save.Size = new System.Drawing.Size(221, 37);
             this.btn_save.TabIndex = 117;
             this.btn_save.Text = "اضافة";
-            this.btn_save.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Black;
-            this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(666, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 24);
-            this.label4.TabIndex = 109;
-            this.label4.Text = "اسم الطيار";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Black;
-            this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(684, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 24);
-            this.label2.TabIndex = 106;
-            this.label2.Text = "موبايل";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Black;
-            this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(266, 79);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 24);
-            this.label3.TabIndex = 107;
-            this.label3.Text = "عنوان";
-            // 
-            // txt_phone
-            // 
-            this.txt_phone.Location = new System.Drawing.Point(372, 77);
-            this.txt_phone.Name = "txt_phone";
-            this.txt_phone.Properties.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_phone.Properties.Appearance.Options.UseFont = true;
-            this.txt_phone.Properties.Mask.BeepOnError = true;
-            this.txt_phone.Properties.Mask.EditMask = "(\\d?\\d?\\d?) \\d\\d\\d-\\d\\d\\d\\d\\d";
-            this.txt_phone.Properties.Mask.IgnoreMaskBlank = false;
-            this.txt_phone.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
-            this.txt_phone.Properties.Mask.SaveLiteral = false;
-            this.txt_phone.Size = new System.Drawing.Size(286, 28);
-            this.txt_phone.TabIndex = 105;
-            // 
-            // groupControl1
-            // 
-            this.groupControl1.Controls.Add(this.lable_num);
-            this.groupControl1.Controls.Add(this.lable);
-            this.groupControl1.Controls.Add(this.txt_name);
-            this.groupControl1.Controls.Add(this.txt_address);
-            this.groupControl1.Controls.Add(this.label4);
-            this.groupControl1.Controls.Add(this.label2);
-            this.groupControl1.Controls.Add(this.label3);
-            this.groupControl1.Controls.Add(this.txt_phone);
-            this.groupControl1.Location = new System.Drawing.Point(12, 12);
-            this.groupControl1.LookAndFeel.SkinName = "Visual Studio 2013 Dark";
-            this.groupControl1.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(755, 119);
-            this.groupControl1.TabIndex = 175;
-            // 
-            // lable_num
-            // 
-            this.lable_num.AutoSize = true;
-            this.lable_num.BackColor = System.Drawing.Color.Black;
-            this.lable_num.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lable_num.ForeColor = System.Drawing.Color.White;
-            this.lable_num.Location = new System.Drawing.Point(102, 21);
-            this.lable_num.Name = "lable_num";
-            this.lable_num.Size = new System.Drawing.Size(22, 24);
-            this.lable_num.TabIndex = 113;
-            this.lable_num.Text = "0";
-            // 
-            // lable
-            // 
-            this.lable.AutoSize = true;
-            this.lable.BackColor = System.Drawing.Color.Black;
-            this.lable.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lable.ForeColor = System.Drawing.Color.White;
-            this.lable.Location = new System.Drawing.Point(264, 21);
-            this.lable.Name = "lable";
-            this.lable.Size = new System.Drawing.Size(44, 24);
-            this.lable.TabIndex = 112;
-            this.lable.Text = "الكود";
-            // 
-            // txt_name
-            // 
-            this.txt_name.Location = new System.Drawing.Point(373, 25);
-            this.txt_name.Name = "txt_name";
-            this.txt_name.Properties.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name.Properties.Appearance.Options.UseFont = true;
-            this.txt_name.Size = new System.Drawing.Size(283, 28);
-            this.txt_name.TabIndex = 111;
-            // 
-            // txt_address
-            // 
-            this.txt_address.Location = new System.Drawing.Point(6, 76);
-            this.txt_address.Name = "txt_address";
-            this.txt_address.Properties.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_address.Properties.Appearance.Options.UseFont = true;
-            this.txt_address.Size = new System.Drawing.Size(254, 28);
-            this.txt_address.TabIndex = 110;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // groupBox2
             // 
@@ -267,10 +150,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.gridControl1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 213);
+            this.groupBox2.Location = new System.Drawing.Point(11, 222);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(755, 262);
-            this.groupBox2.TabIndex = 177;
+            this.groupBox2.Size = new System.Drawing.Size(764, 262);
+            this.groupBox2.TabIndex = 183;
             this.groupBox2.TabStop = false;
             // 
             // gridControl1
@@ -286,7 +169,7 @@
             this.عرض,
             this.repositoryItemButtonEdit1});
             this.gridControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gridControl1.Size = new System.Drawing.Size(749, 243);
+            this.gridControl1.Size = new System.Drawing.Size(758, 243);
             this.gridControl1.TabIndex = 127;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -361,10 +244,8 @@
             this.gridView1.AppearancePrint.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView1.AppearancePrint.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.ID_Delivery,
-            this.Name_Delivery,
-            this.Address,
-            this.phone,
+            this.ID_Tables,
+            this.Tables_Number,
             this.update,
             this.delete});
             this.gridView1.GridControl = this.gridControl1;
@@ -379,41 +260,21 @@
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
             // 
-            // ID_Delivery
+            // ID_Tables
             // 
-            this.ID_Delivery.Caption = "رقم الطيار";
-            this.ID_Delivery.FieldName = "رقم الطيار";
-            this.ID_Delivery.Name = "ID_Delivery";
-            this.ID_Delivery.Visible = true;
-            this.ID_Delivery.VisibleIndex = 0;
-            this.ID_Delivery.Width = 102;
+            this.ID_Tables.Caption = "الكود";
+            this.ID_Tables.FieldName = "ID_Tables";
+            this.ID_Tables.Name = "ID_Tables";
+            this.ID_Tables.Width = 102;
             // 
-            // Name_Delivery
+            // Tables_Number
             // 
-            this.Name_Delivery.Caption = "اسم الطيار";
-            this.Name_Delivery.FieldName = "اسم الطيار";
-            this.Name_Delivery.Name = "Name_Delivery";
-            this.Name_Delivery.Visible = true;
-            this.Name_Delivery.VisibleIndex = 1;
-            this.Name_Delivery.Width = 103;
-            // 
-            // Address
-            // 
-            this.Address.Caption = "العنوان";
-            this.Address.FieldName = "العنوان";
-            this.Address.Name = "Address";
-            this.Address.Visible = true;
-            this.Address.VisibleIndex = 2;
-            this.Address.Width = 103;
-            // 
-            // phone
-            // 
-            this.phone.Caption = "رقم الموبايل";
-            this.phone.FieldName = "رقم الموبايل";
-            this.phone.Name = "phone";
-            this.phone.Visible = true;
-            this.phone.VisibleIndex = 3;
-            this.phone.Width = 103;
+            this.Tables_Number.Caption = "رقم الطاولة";
+            this.Tables_Number.FieldName = "رقم الطاولة";
+            this.Tables_Number.Name = "Tables_Number";
+            this.Tables_Number.Visible = true;
+            this.Tables_Number.VisibleIndex = 0;
+            this.Tables_Number.Width = 103;
             // 
             // update
             // 
@@ -424,7 +285,7 @@
             this.update.Name = "update";
             this.update.OptionsColumn.AllowEdit = false;
             this.update.Visible = true;
-            this.update.VisibleIndex = 4;
+            this.update.VisibleIndex = 1;
             this.update.Width = 110;
             // 
             // عرض
@@ -443,7 +304,7 @@
             this.delete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("delete.ImageOptions.Image")));
             this.delete.Name = "delete";
             this.delete.Visible = true;
-            this.delete.VisibleIndex = 5;
+            this.delete.VisibleIndex = 2;
             // 
             // repositoryItemButtonEdit1
             // 
@@ -454,60 +315,111 @@
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
-            // Frm_DeliveryInformations
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.lable_num);
+            this.groupControl1.Controls.Add(this.lable);
+            this.groupControl1.Controls.Add(this.txt_number);
+            this.groupControl1.Controls.Add(this.label4);
+            this.groupControl1.Location = new System.Drawing.Point(11, 21);
+            this.groupControl1.LookAndFeel.SkinName = "Visual Studio 2013 Dark";
+            this.groupControl1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(764, 119);
+            this.groupControl1.TabIndex = 181;
+            // 
+            // lable_num
+            // 
+            this.lable_num.AutoSize = true;
+            this.lable_num.BackColor = System.Drawing.Color.Black;
+            this.lable_num.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lable_num.ForeColor = System.Drawing.Color.White;
+            this.lable_num.Location = new System.Drawing.Point(345, 21);
+            this.lable_num.Name = "lable_num";
+            this.lable_num.Size = new System.Drawing.Size(22, 24);
+            this.lable_num.TabIndex = 113;
+            this.lable_num.Text = "0";
+            // 
+            // lable
+            // 
+            this.lable.AutoSize = true;
+            this.lable.BackColor = System.Drawing.Color.Black;
+            this.lable.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lable.ForeColor = System.Drawing.Color.White;
+            this.lable.Location = new System.Drawing.Point(480, 21);
+            this.lable.Name = "lable";
+            this.lable.Size = new System.Drawing.Size(44, 24);
+            this.lable.TabIndex = 112;
+            this.lable.Text = "الكود";
+            // 
+            // txt_number
+            // 
+            this.txt_number.Location = new System.Drawing.Point(174, 58);
+            this.txt_number.Name = "txt_number";
+            this.txt_number.Properties.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_number.Properties.Appearance.Options.UseFont = true;
+            this.txt_number.Properties.Appearance.Options.UseTextOptions = true;
+            this.txt_number.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txt_number.Size = new System.Drawing.Size(283, 28);
+            this.txt_number.TabIndex = 111;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Black;
+            this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(463, 60);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 24);
+            this.label4.TabIndex = 109;
+            this.label4.Text = "رقم الطاولة";
+            // 
+            // Frm_Tables
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(773, 487);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(786, 505);
             this.Controls.Add(this.groupControl2);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupControl1);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "Frm_DeliveryInformations";
-            this.Text = "Frm_DeliveryInformations";
-            this.Load += new System.EventHandler(this.Frm_DeliveryInformations_Load);
+            this.Name = "Frm_Tables";
+            this.Text = "Frm_Tables";
+            this.Load += new System.EventHandler(this.Frm_Tables_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txt_phone.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_name.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_address.Properties)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.عرض)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_number.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
         public DevExpress.XtraEditors.GroupControl groupControl2;
-        public DevExpress.XtraEditors.SimpleButton btn_save;
-        public System.Windows.Forms.Label label4;
-        public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.Label label3;
-        public DevExpress.XtraEditors.TextEdit txt_phone;
-        public DevExpress.XtraEditors.GroupControl groupControl1;
+        public DevExpress.XtraEditors.SimpleButton simpleButton1;
         public DevExpress.XtraEditors.SimpleButton btn_update;
-        public DevExpress.XtraEditors.TextEdit txt_name;
-        public DevExpress.XtraEditors.TextEdit txt_address;
-        public System.Windows.Forms.Label lable_num;
-        public System.Windows.Forms.Label lable;
+        public DevExpress.XtraEditors.SimpleButton btn_save;
         public System.Windows.Forms.GroupBox groupBox2;
         public DevExpress.XtraGrid.GridControl gridControl1;
         public DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        public DevExpress.XtraGrid.Columns.GridColumn ID_Delivery;
-        public DevExpress.XtraGrid.Columns.GridColumn Name_Delivery;
-        public DevExpress.XtraGrid.Columns.GridColumn Address;
-        public DevExpress.XtraGrid.Columns.GridColumn phone;
+        public DevExpress.XtraGrid.Columns.GridColumn ID_Tables;
+        public DevExpress.XtraGrid.Columns.GridColumn Tables_Number;
         public DevExpress.XtraGrid.Columns.GridColumn update;
         public DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit عرض;
         public DevExpress.XtraGrid.Columns.GridColumn delete;
         public DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
-        public DevExpress.XtraEditors.SimpleButton simpleButton1;
+        public DevExpress.XtraEditors.GroupControl groupControl1;
+        public System.Windows.Forms.Label lable_num;
+        public System.Windows.Forms.Label lable;
+        public DevExpress.XtraEditors.TextEdit txt_number;
+        public System.Windows.Forms.Label label4;
     }
 }

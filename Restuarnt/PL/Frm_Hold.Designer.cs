@@ -49,10 +49,10 @@
             this.Date = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Total = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Statues = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DeliveryService = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.عرض = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.DeliveryService = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -324,6 +324,16 @@
             this.Statues.VisibleIndex = 5;
             this.Statues.Width = 103;
             // 
+            // DeliveryService
+            // 
+            this.DeliveryService.Caption = "دليفرى";
+            this.DeliveryService.FieldName = "DeliveryService";
+            this.DeliveryService.Name = "DeliveryService";
+            this.DeliveryService.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DeliveryService", "دليفرى={0:0.##}")});
+            this.DeliveryService.Visible = true;
+            this.DeliveryService.VisibleIndex = 6;
+            // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "عرض";
@@ -334,7 +344,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 6;
+            this.gridColumn1.VisibleIndex = 7;
             this.gridColumn1.Width = 110;
             // 
             // عرض
@@ -356,14 +366,6 @@
             this.simpleButton1.Size = new System.Drawing.Size(36, 35);
             this.simpleButton1.TabIndex = 169;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // DeliveryService
-            // 
-            this.DeliveryService.Caption = "دليفرى";
-            this.DeliveryService.FieldName = "DeliveryService";
-            this.DeliveryService.Name = "DeliveryService";
-            this.DeliveryService.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DeliveryService", "دليفرى={0:0.##}")});
             // 
             // Frm_Hold
             // 

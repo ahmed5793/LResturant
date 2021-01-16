@@ -42,13 +42,16 @@ namespace Restuarnt.PL
         {
             if (rdb_all.Checked == true)
             {
+              
                 gridControl2.DataSource = null;
+                DeliveryService.Visible = false;
+                DeliveryService.VisibleIndex = -1;
                 Name_Cust.Caption = "اسم العميل";
                 Name_Cust.FieldName = "اسم العميل";
                 id_take.Caption = "رقم الطلب";
                 id_take.FieldName = "رقم الطلب";
                 id_take.Visible = false;
-                DeliveryService.Visible = false;
+              
                 gridControl2.DataSource = o.SELECTOrderRentALLORDER();
             }
         }
@@ -93,12 +96,15 @@ namespace Restuarnt.PL
             if (rdb_takeaway.Checked == true)
             {
                 gridControl2.DataSource = null;
+                DeliveryService.Visible = false;
+                DeliveryService.VisibleIndex = -1;
                 Name_Cust.Caption = "اسم العميل";
                 Name_Cust.FieldName = "اسم العميل";
                 id_take.Caption = "رقم الطلب";
                 id_take.FieldName = "رقم الطلب";
                 id_take.Visible = false;
-                DeliveryService.Visible = false;
+            
+             
                 gridControl2.DataSource = o.SELECTOrderRentTkeAway();
 
 
@@ -112,6 +118,7 @@ namespace Restuarnt.PL
                 gridControl2.DataSource = null;
                 id_take.Visible = true;
                 DeliveryService.Visible = false;
+                DeliveryService.VisibleIndex = -1;
                 Name_Cust.Caption = "رقم الطاوله";
                 Name_Cust.FieldName = "رقم الطاوله";
                 id_take.Caption = "الكابتن";
@@ -136,6 +143,7 @@ namespace Restuarnt.PL
                 gridControl2.DataSource = null;
                 id_take.Visible = true;
                 DeliveryService.Visible = true;
+                DeliveryService.VisibleIndex = 6;
                 Name_Cust.Caption = "اسم العميل";
                 Name_Cust.FieldName = "اسم العميل";
                 id_take.Caption = "اسم الطيار";
@@ -154,6 +162,8 @@ namespace Restuarnt.PL
         {
             gridControl2.DataSource = o.SELECTOrderRentALLORDER();
             rdb_all.Checked = true;
+            DeliveryService.VisibleIndex = -1;
+            DeliveryService.Visible = false;
         }
 
         private void Frm_Hold_FormClosed(object sender, FormClosedEventArgs e)
