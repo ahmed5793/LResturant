@@ -365,7 +365,7 @@ namespace Restuarnt.PL
                     rc.Parameters["Id"].Visible = false;
                     //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
                     // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
-                    rc.PrinterName = Properties.Settings.Default.PrinterName;
+                    rc.PrinterName = Properties.Settings.Default.PrinterOrderClient;
                     rc.Print();
                 }
                 else

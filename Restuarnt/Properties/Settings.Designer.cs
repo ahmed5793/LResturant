@@ -26,12 +26,12 @@ namespace Restuarnt.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string PrinterName {
+        public string PrinterOrderClient {
             get {
-                return ((string)(this["PrinterName"]));
+                return ((string)(this["PrinterOrderClient"]));
             }
             set {
-                this["PrinterName"] = value;
+                this["PrinterOrderClient"] = value;
             }
         }
         
@@ -68,6 +68,90 @@ namespace Restuarnt.Properties {
             }
             set {
                 this["ProudectKey"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PrinterChecken {
+            get {
+                return ((string)(this["PrinterChecken"]));
+            }
+            set {
+                this["PrinterChecken"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PrinterDrinks {
+            get {
+                return ((string)(this["PrinterDrinks"]));
+            }
+            set {
+                this["PrinterDrinks"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PrintCheckenInHold {
+            get {
+                return ((string)(this["PrintCheckenInHold"]));
+            }
+            set {
+                this["PrintCheckenInHold"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PrintCheckenInSave {
+            get {
+                return ((string)(this["PrintCheckenInSave"]));
+            }
+            set {
+                this["PrintCheckenInSave"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PrintOrderInHold {
+            get {
+                return ((string)(this["PrintOrderInHold"]));
+            }
+            set {
+                this["PrintOrderInHold"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PrintOrderInSave {
+            get {
+                return ((string)(this["PrintOrderInSave"]));
+            }
+            set {
+                this["PrintOrderInSave"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CheckenType {
+            get {
+                return ((string)(this["CheckenType"]));
+            }
+            set {
+                this["CheckenType"] = value;
             }
         }
     }

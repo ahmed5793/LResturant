@@ -51,6 +51,7 @@ namespace Restuarnt.PL
                 txtDescription.Text = tbl.Rows[0][2].ToString();
                 txtPhone1.Text = tbl.Rows[0][3].ToString();
                 txtPhone2.Text = tbl.Rows[0][4].ToString();
+                    Txt_DeliveryService.Text = Properties.Settings.Default.DeliveryService.ToString();
                     if (Properties.Settings.Default.OrderType=="صالة")
                     {
                         Rdb_Sala.Checked = true;
@@ -63,6 +64,67 @@ namespace Restuarnt.PL
                     {
                         Rdb_TakeAway.Checked = true;
                     }
+                    /////////////////
+                    if (Properties.Settings.Default.PrintCheckenInHold == "true")
+                    {
+                        check_checkenInHold.Checked = true;
+                    }
+                    if (Properties.Settings.Default.PrintCheckenInHold == "false")
+                    {
+                        
+                        check_checkenInHold.Checked = false;
+                    }
+
+                    ////////////////////////
+                    if (Properties.Settings.Default.PrintOrderInHold == "true")
+                    {
+                        
+                        check_OrderInhold.Checked = true;
+                    }
+                    if (Properties.Settings.Default.PrintOrderInHold == "false")
+                    {
+                        
+                        check_OrderInhold.Checked = false;
+                    }
+
+                    ////////////////////////////
+                    if (Properties.Settings.Default.PrintCheckenInSave == "true")
+                    {
+                        
+                        check_CheckenInSave.Checked = true;
+                    }
+                    if (Properties.Settings.Default.PrintCheckenInSave == "false")
+                    {
+                        
+                        check_CheckenInSave.Checked = false;
+                    }
+                    /////////////////////////////
+                    ///
+                    if (Properties.Settings.Default.PrintOrderInSave == "true")
+                    {
+                        
+                        check_OrderInSave.Checked = true;
+                    }
+                    if (Properties.Settings.Default.PrintOrderInSave == "false")
+                    {
+                        
+                        check_OrderInSave.Checked = false;
+                    }
+                    ///////////////////////
+
+
+                    /////////////////////////
+                    if (Properties.Settings.Default.CheckenType == "collect")
+                    {
+                        
+                        Rdb_Collect.Checked = true;
+                    }
+                    if (Rdb_Seperator.Checked == true)
+                    {
+                        Properties.Settings.Default.CheckenType = "seperator";
+                        Properties.Settings.Default.Save();
+                    }
+
                 }
             }
             catch (Exception ex)
@@ -76,32 +138,43 @@ namespace Restuarnt.PL
         //call to show printers name in combo
         private void showPrinters()
         {
-            try { 
+            try
+            { 
             for (int i = 0; i < PrinterSettings.InstalledPrinters.Count; i++)
             {
                 printerName = PrinterSettings.InstalledPrinters[i];
-                cbxPrinter.Items.Add(printerName);
+                cbxPrinterClient.Items.Add(printerName);
+                Cmb_PrintChecken.Items.Add(printerName);
+                Cmb_PrintDrinks.Items.Add(printerName);
             }
 
-            if (Properties.Settings.Default.PrinterName == "")
+            if (Properties.Settings.Default.PrinterOrderClient == "")
             {
-                cbxPrinter.SelectedIndex = 0;
+                cbxPrinterClient.SelectedIndex = 0;
             }
             else
             {
-                    cbxPrinter.Text = Properties.Settings.Default.PrinterName;
+                    cbxPrinterClient.Text = Properties.Settings.Default.PrinterOrderClient;
                    
             }
-            //if (Properties.Settings.Default.PrintBarcode == "")
-            //{
-            //    cbx_printBarcode.SelectedIndex = 0;
-            //}
-            //else
-            //{
-                
-            //    cbx_printBarcode.Text = Properties.Settings.Default.PrintBarcode;
-            //}
-        }
+            if (Properties.Settings.Default.PrinterChecken == "")
+            {
+                    Cmb_PrintChecken.SelectedIndex = 0;
+            }
+            else
+            {
+                    Cmb_PrintChecken.Text = Properties.Settings.Default.PrinterChecken;
+            }
+
+            if (Properties.Settings.Default.PrinterDrinks == "")
+            {
+                    Cmb_PrintChecken.SelectedIndex = 0;
+            }
+            else
+            {
+                    Cmb_PrintDrinks.Text = Properties.Settings.Default.PrinterDrinks;
+            }
+            }
             catch (Exception ex)
             {
 
@@ -178,27 +251,93 @@ namespace Restuarnt.PL
                 return;
             }
 
-                if (cbxPrinter.Text == "")
+                if (cbxPrinterClient.Text == "")
                 {
                     MessageBox.Show("من فضلك تاكد من بيانات طابعة الفواتير", "تاكيد");
                     return;
                 }
 
-                Properties.Settings.Default.PrinterName = cbxPrinter.Text;
+                Properties.Settings.Default.PrinterOrderClient = cbxPrinterClient.Text;
                 Properties.Settings.Default.Save();
                 Properties.Settings.Default.DeliveryService = Convert.ToDecimal(Txt_DeliveryService.Text);
                 Properties.Settings.Default.Save();
+                Properties.Settings.Default.DeliveryService = Convert.ToDecimal(Txt_DeliveryService.Text);
+                Properties.Settings.Default.Save();
+
+                //////////////////////////
+                if (check_checkenInHold.Checked == true)
+                {
+                    Properties.Settings.Default.PrintCheckenInHold = "true";
+                    Properties.Settings.Default.Save();
+                }
+                if (check_checkenInHold.Checked == false)
+                {
+                    Properties.Settings.Default.PrintCheckenInHold = "false";
+                    Properties.Settings.Default.Save();
+                }
+
+                ////////////////////////
+                if (check_OrderInhold.Checked == true)
+                {
+                    Properties.Settings.Default.PrintOrderInHold = "true";
+                    Properties.Settings.Default.Save();
+                }
+                if (check_OrderInhold.Checked == false)
+                {
+                    Properties.Settings.Default.PrintOrderInHold = "false";
+                    Properties.Settings.Default.Save();
+                }
+
+                ////////////////////////////
+                if (check_CheckenInSave.Checked == true)
+                {
+                    Properties.Settings.Default.PrintCheckenInSave = "true";
+                    Properties.Settings.Default.Save();
+                }
+                if (check_CheckenInSave.Checked == false)
+                {
+                    Properties.Settings.Default.PrintCheckenInSave = "false";
+                    Properties.Settings.Default.Save();
+                }
+                /////////////////////////////
+                ///
+                if (check_OrderInSave.Checked == true)
+                {
+                    Properties.Settings.Default.PrintOrderInSave = "true";
+                    Properties.Settings.Default.Save();
+                }
+                if (check_OrderInSave.Checked == false)
+                {
+                    Properties.Settings.Default.PrintOrderInSave = "false";
+                    Properties.Settings.Default.Save();
+                }
+                ///////////////////////
+             
+
+                /////////////////////////
+                if (Rdb_Collect.Checked == true)
+                {
+                    Properties.Settings.Default.CheckenType ="collect";
+                    Properties.Settings.Default.Save();
+                }
+                if (Rdb_Seperator.Checked == true)
+                {
+                    Properties.Settings.Default.CheckenType = "seperator";
+                    Properties.Settings.Default.Save();
+                }
+
+                ////////////////////////////////////////
                 if (Rdb_Deleviry.Checked==true)
                 {
                     Properties.Settings.Default.OrderType ="دليفرى";
                     Properties.Settings.Default.Save();
                 }
-                else if (Rdb_Sala.Checked==true)
+                if (Rdb_Sala.Checked==true)
                 {
                     Properties.Settings.Default.OrderType ="صالة";
                     Properties.Settings.Default.Save();
                 }
-                else if (Rdb_TakeAway.Checked == true)
+                if (Rdb_TakeAway.Checked == true)
                 {
                     Properties.Settings.Default.OrderType ="تيك اواى";
                     Properties.Settings.Default.Save();
@@ -254,6 +393,36 @@ namespace Restuarnt.PL
         private void txtPhone1_KeyPress(object sender, KeyPressEventArgs e)
         {
             
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

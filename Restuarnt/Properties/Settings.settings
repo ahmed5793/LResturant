@@ -2,7 +2,7 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Restuarnt.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="PrinterName" Type="System.String" Scope="User">
+    <Setting Name="PrinterOrderClient" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="DeliveryService" Type="System.Decimal" Scope="User">
@@ -13,6 +13,27 @@
     </Setting>
     <Setting Name="ProudectKey" Type="System.String" Scope="User">
       <Value Profile="(Default)">NO</Value>
+    </Setting>
+    <Setting Name="PrinterChecken" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PrinterDrinks" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PrintCheckenInHold" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PrintCheckenInSave" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PrintOrderInHold" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PrintOrderInSave" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CheckenType" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>
