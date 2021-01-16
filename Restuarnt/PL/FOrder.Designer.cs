@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FOrder));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ID_Dep = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -89,7 +89,6 @@
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_new = new DevExpress.XtraEditors.SimpleButton();
             this.btn_hold = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_update = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
@@ -157,7 +156,7 @@
             this.gridView2.Appearance.FocusedCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.gridView2.Appearance.FocusedRow.BackColor = System.Drawing.Color.Yellow;
             this.gridView2.Appearance.FocusedRow.BorderColor = System.Drawing.Color.Black;
-            this.gridView2.Appearance.FocusedRow.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView2.Appearance.FocusedRow.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridView2.Appearance.FocusedRow.ForeColor = System.Drawing.Color.Black;
             this.gridView2.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gridView2.Appearance.FocusedRow.Options.UseBorderColor = true;
@@ -175,7 +174,7 @@
             this.gridView2.Appearance.HeaderPanel.Options.UseForeColor = true;
             this.gridView2.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView2.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.Row.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView2.Appearance.Row.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridView2.Appearance.Row.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.gridView2.Appearance.Row.Options.UseFont = true;
             this.gridView2.Appearance.Row.Options.UseTextOptions = true;
@@ -379,9 +378,9 @@
             // repositoryItemButtonEdit3
             // 
             this.repositoryItemButtonEdit3.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.repositoryItemButtonEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit3.Name = "repositoryItemButtonEdit3";
             this.repositoryItemButtonEdit3.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -698,6 +697,7 @@
             this.txt_discount.Text = "0";
             this.txt_discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_discount.Click += new System.EventHandler(this.Txt_discount_Click);
+            this.txt_discount.TextChanged += new System.EventHandler(this.txt_discount_TextChanged);
             this.txt_discount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_discount_KeyPress);
             this.txt_discount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_discount_KeyUp);
             this.txt_discount.Leave += new System.EventHandler(this.Txt_discount_Leave);
@@ -828,11 +828,11 @@
             this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.Location = new System.Drawing.Point(228, 26);
+            this.simpleButton1.Location = new System.Drawing.Point(221, 25);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(146, 37);
             this.simpleButton1.TabIndex = 116;
-            this.simpleButton1.Text = "دفع";
+            this.simpleButton1.Text = "حفظ وسداد";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // simpleButton2
@@ -854,6 +854,7 @@
             this.simpleButton2.Size = new System.Drawing.Size(99, 37);
             this.simpleButton2.TabIndex = 119;
             this.simpleButton2.Text = "مطبخ";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // btn_printInvo
             // 
@@ -879,7 +880,7 @@
             // simpleButton4
             // 
             this.simpleButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.simpleButton4.Appearance.BackColor = System.Drawing.Color.Black;
+            this.simpleButton4.Appearance.BackColor = System.Drawing.Color.DarkRed;
             this.simpleButton4.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton4.Appearance.ForeColor = System.Drawing.Color.White;
             this.simpleButton4.Appearance.Options.UseBackColor = true;
@@ -890,9 +891,9 @@
             this.simpleButton4.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(5, 73);
+            this.simpleButton4.Location = new System.Drawing.Point(9, 73);
             this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(193, 37);
+            this.simpleButton4.Size = new System.Drawing.Size(358, 37);
             this.simpleButton4.TabIndex = 121;
             this.simpleButton4.Text = "(0) الفواتير المتعلقة";
             this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
@@ -932,39 +933,17 @@
             this.btn_hold.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btn_hold.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.btn_hold.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_hold.ImageOptions.Image")));
-            this.btn_hold.Location = new System.Drawing.Point(9, 33);
+            this.btn_hold.Location = new System.Drawing.Point(9, 24);
             this.btn_hold.Name = "btn_hold";
             this.btn_hold.Size = new System.Drawing.Size(189, 37);
             this.btn_hold.TabIndex = 123;
             this.btn_hold.Text = "تعليق";
             this.btn_hold.Click += new System.EventHandler(this.simpleButton3_Click_1);
             // 
-            // btn_update
-            // 
-            this.btn_update.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_update.Appearance.BackColor = System.Drawing.Color.Black;
-            this.btn_update.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_update.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btn_update.Appearance.Options.UseBackColor = true;
-            this.btn_update.Appearance.Options.UseFont = true;
-            this.btn_update.Appearance.Options.UseForeColor = true;
-            this.btn_update.Appearance.Options.UseTextOptions = true;
-            this.btn_update.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btn_update.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btn_update.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.btn_update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_update.ImageOptions.Image")));
-            this.btn_update.Location = new System.Drawing.Point(228, 73);
-            this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(146, 37);
-            this.btn_update.TabIndex = 124;
-            this.btn_update.Text = "تعديل";
-            this.btn_update.Click += new System.EventHandler(this.simpleButton3_Click_2);
-            // 
             // groupControl2
             // 
             this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupControl2.Controls.Add(this.simpleButton4);
-            this.groupControl2.Controls.Add(this.btn_update);
             this.groupControl2.Controls.Add(this.btn_hold);
             this.groupControl2.Controls.Add(this.simpleButton1);
             this.groupControl2.Location = new System.Drawing.Point(15, 627);
@@ -1149,7 +1128,6 @@
         public DevExpress.XtraEditors.SimpleButton simpleButton4;
         public DevExpress.XtraEditors.SimpleButton btn_new;
         public DevExpress.XtraEditors.SimpleButton btn_hold;
-        public DevExpress.XtraEditors.SimpleButton btn_update;
         public DevExpress.XtraGrid.GridControl gridControl2;
         public System.Windows.Forms.GroupBox grb_delivry;
         public System.Windows.Forms.ComboBox cmb_delivery;

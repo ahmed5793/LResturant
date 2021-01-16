@@ -1826,9 +1826,11 @@ namespace Restuarnt.PL
                     o.AddOrderDetails(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
                        Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
                 }
+                dt10.Clear();
+                dt10 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
                 o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
-            Convert.ToDecimal(txt_invo.Text), 0, Convert.ToDecimal(txt_discount.Text));
-                t.UpdateSala(Convert.ToInt32(Lable_Num.Text), Convert.ToInt32(cmb_Table.SelectedValue));
+            Convert.ToDecimal(txt_invo.Text), 0, Convert.ToDecimal(txt_discount.Text),dt10.Rows[0][11],Convert.ToInt32(txt_cust.Text));
+                //  t.UpdateSala(Convert.ToInt32(Lable_Num.Text), Convert.ToInt32(cmb_Table.SelectedValue));
                 MessageBox.Show("تم التعديل بنجاح");
 
                 Frm_UpdateOrrder fop = new Frm_UpdateOrrder();
@@ -1984,22 +1986,6 @@ namespace Restuarnt.PL
           
 
         
-
-
-            //  ------------------------------------------------------------//
-            o.Delete_ProdFromOrderDetails(Convert.ToInt32(Lable_Num.Text));
-            for (int i = 0; i < gridView2.RowCount; i++)
-            {
-                DataRow row = gridView2.GetDataRow(i);
-                o.AddOrderDetails(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
-                   Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
-            }
-            o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
-        Convert.ToDecimal(txt_invo.Text),0, Convert.ToDecimal(txt_discount.Text));
-            t.UpdateSala(Convert.ToInt32(Lable_Num.Text), Convert.ToInt32(cmb_Table.SelectedValue));
-      
-            XtraMessageBox.Show("تم التعديل بنجاح", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
 
 
 

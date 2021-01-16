@@ -38,9 +38,9 @@ namespace Restuarnt.PL
                     {
 
 
-                        o.UpdateOrder(Convert.ToInt32(FOrder.getmain.Lable_Num.Text), Convert.ToDecimal(FOrder.getmain.txt_delivery.Text), Convert.ToDecimal(FOrder.getmain.txt_invo.Text),
-                              Convert.ToDecimal(FOrder.getmain.txt_invo.Text), 0, Convert.ToDecimal(FOrder.getmain.txt_discount.Text));
-                        MessageBox.Show("تم دفع الفاتورة بنجاح");
+                        //o.UpdateOrder(Convert.ToInt32(FOrder.getmain.Lable_Num.Text), Convert.ToDecimal(FOrder.getmain.txt_delivery.Text), Convert.ToDecimal(FOrder.getmain.txt_invo.Text),
+                        //      Convert.ToDecimal(FOrder.getmain.txt_invo.Text), 0, Convert.ToDecimal(FOrder.getmain.txt_discount.Text));
+                        //MessageBox.Show("تم دفع الفاتورة بنجاح");
 
 
 
