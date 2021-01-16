@@ -1829,7 +1829,7 @@ namespace Restuarnt.PL
                 dt10.Clear();
                 dt10 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
                 o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
-            Convert.ToDecimal(txt_invo.Text), 0, Convert.ToDecimal(txt_discount.Text),dt10.Rows[0][11],Convert.ToInt32(txt_cust.Text));
+            Convert.ToDecimal(txt_invo.Text), 0, Convert.ToDecimal(txt_discount.Text),dt10.Rows[0][11].ToString(),Convert.ToInt32(txt_cust.Text));
                 //  t.UpdateSala(Convert.ToInt32(Lable_Num.Text), Convert.ToInt32(cmb_Table.SelectedValue));
                 MessageBox.Show("تم التعديل بنجاح");
 
