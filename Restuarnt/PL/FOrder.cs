@@ -194,7 +194,6 @@ namespace Restuarnt.PL
             ID_Items.Visible = false;
 
           //  txt_delivery.Enabled = false;
-            btn_update.Enabled=false;
 
         }
 
