@@ -140,7 +140,6 @@
             this.gridControl2.TabIndex = 129;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
-            this.gridControl2.Click += new System.EventHandler(this.gridControl2_Click);
             // 
             // gridView2
             // 
@@ -220,8 +219,6 @@
             this.gridView2.OptionsPrint.PrintPreview = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView2_RowCellClick);
-            this.gridView2.RowDeleting += new DevExpress.Data.RowDeletingEventHandler(this.gridView2_RowDeleting);
-            this.gridView2.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView2_RowUpdated);
             // 
             // ID_Dep
             // 
@@ -336,8 +333,6 @@
             this.repositoryItemButtonEdit1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repositoryItemButtonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEdit1_ButtonClick_1);
-            this.repositoryItemButtonEdit1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.repositoryItemButtonEdit1_KeyUp);
             // 
             // Post
             // 
@@ -392,7 +387,7 @@
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(325, 66);
+            this.textEdit1.Location = new System.Drawing.Point(324, 68);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(254, 20);
             this.textEdit1.TabIndex = 97;
@@ -432,7 +427,6 @@
             this.label1.Size = new System.Drawing.Size(84, 24);
             this.label1.TabIndex = 82;
             this.label1.Text = "اسم العميل";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txt_address
             // 
@@ -502,16 +496,15 @@
             this.cmb_customer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmb_customer_KeyDown_1);
             this.cmb_customer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_customer_KeyPress);
             this.cmb_customer.Leave += new System.EventHandler(this.cmb_customer_Leave);
-            this.cmb_customer.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cmb_customer_MouseClick);
             // 
             // grb_delivry
             // 
             this.grb_delivry.Controls.Add(this.cmb_delivery);
-            this.grb_delivry.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grb_delivry.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grb_delivry.ForeColor = System.Drawing.Color.White;
-            this.grb_delivry.Location = new System.Drawing.Point(24, 102);
+            this.grb_delivry.Location = new System.Drawing.Point(24, 96);
             this.grb_delivry.Name = "grb_delivry";
-            this.grb_delivry.Size = new System.Drawing.Size(251, 45);
+            this.grb_delivry.Size = new System.Drawing.Size(235, 51);
             this.grb_delivry.TabIndex = 84;
             this.grb_delivry.TabStop = false;
             this.grb_delivry.Text = "اسم الطيار";
@@ -526,10 +519,10 @@
             this.cmb_delivery.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_delivery.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_delivery.FormattingEnabled = true;
-            this.cmb_delivery.Location = new System.Drawing.Point(6, 13);
+            this.cmb_delivery.Location = new System.Drawing.Point(6, 18);
             this.cmb_delivery.Name = "cmb_delivery";
             this.cmb_delivery.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmb_delivery.Size = new System.Drawing.Size(240, 26);
+            this.cmb_delivery.Size = new System.Drawing.Size(224, 26);
             this.cmb_delivery.TabIndex = 62;
             // 
             // label8
@@ -639,17 +632,15 @@
             this.txt_delivery.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txt_delivery.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_delivery.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_delivery.Location = new System.Drawing.Point(465, 50);
+            this.txt_delivery.Location = new System.Drawing.Point(446, 48);
             this.txt_delivery.Multiline = true;
             this.txt_delivery.Name = "txt_delivery";
             this.txt_delivery.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_delivery.Size = new System.Drawing.Size(115, 34);
+            this.txt_delivery.Size = new System.Drawing.Size(134, 34);
             this.txt_delivery.TabIndex = 79;
             this.txt_delivery.Text = "0";
             this.txt_delivery.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_delivery.Click += new System.EventHandler(this.Txt_delivery_Click);
-            this.txt_delivery.TextChanged += new System.EventHandler(this.Txt_delivery_TextChanged_1);
-            this.txt_delivery.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_delivery_KeyDown);
             this.txt_delivery.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_delivery_KeyPress);
             this.txt_delivery.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_delivery_KeyUp_1);
             this.txt_delivery.Leave += new System.EventHandler(this.Txt_delivery_Leave_1);
@@ -668,8 +659,6 @@
             this.txt_invo.TabIndex = 71;
             this.txt_invo.Text = "0";
             this.txt_invo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_invo.TextChanged += new System.EventHandler(this.Txt_invo_TextChanged);
-            this.txt_invo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_invo_KeyUp);
             // 
             // label24
             // 
@@ -682,7 +671,6 @@
             this.label24.Size = new System.Drawing.Size(67, 24);
             this.label24.TabIndex = 70;
             this.label24.Text = "الاجمالي";
-            this.label24.Click += new System.EventHandler(this.label24_Click);
             // 
             // label22
             // 
@@ -690,7 +678,7 @@
             this.label22.BackColor = System.Drawing.Color.Black;
             this.label22.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(470, 21);
+            this.label22.Location = new System.Drawing.Point(462, 21);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(110, 25);
             this.label22.TabIndex = 78;
@@ -710,8 +698,6 @@
             this.txt_discount.Text = "0";
             this.txt_discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_discount.Click += new System.EventHandler(this.Txt_discount_Click);
-            this.txt_discount.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Txt_discount_MouseClick);
-            this.txt_discount.TextChanged += new System.EventHandler(this.Txt_discount_TextChanged);
             this.txt_discount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_discount_KeyPress);
             this.txt_discount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_discount_KeyUp);
             this.txt_discount.Leave += new System.EventHandler(this.Txt_discount_Leave);
@@ -755,7 +741,6 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(541, 476);
             this.flowLayoutPanel2.TabIndex = 105;
-            this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
             // 
             // texT
             // 
@@ -770,7 +755,6 @@
             this.texT.TabIndex = 106;
             this.texT.Text = "0";
             this.texT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.texT.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TexT_KeyUp_1);
             // 
             // groupControl1
             // 
@@ -784,7 +768,6 @@
             this.groupControl1.Size = new System.Drawing.Size(601, 103);
             this.groupControl1.TabIndex = 118;
             this.groupControl1.Text = "نوع الطلب";
-            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
             // rdb_takeaway
             // 
@@ -871,7 +854,6 @@
             this.simpleButton2.Size = new System.Drawing.Size(99, 37);
             this.simpleButton2.TabIndex = 119;
             this.simpleButton2.Text = "مطبخ";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // btn_printInvo
             // 
@@ -1096,10 +1078,7 @@
             this.Name = "FOrder";
             this.Text = "شاشة الاوردر";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FOrder_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FOrder_FormClosed);
             this.Load += new System.EventHandler(this.FOrder_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FOrder_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
