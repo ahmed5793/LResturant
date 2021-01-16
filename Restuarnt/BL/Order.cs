@@ -180,11 +180,12 @@ namespace Restuarnt.BL
 
         }
       
-        internal void UpdateOrder(int IdOrder,decimal deliveryService,decimal total, decimal pay, decimal rent,decimal discount)
+        internal void UpdateOrder(int IdOrder,decimal deliveryService,decimal total, decimal pay, decimal rent,
+            decimal discount,string Status,int Id_Cust)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[6];
+            SqlParameter[] param = new SqlParameter[8];
             param[0] = new SqlParameter("@IdOrder", SqlDbType.Int);
             param[0].Value = IdOrder;
             param[1] = new SqlParameter("@DeliveryService", SqlDbType.Decimal);
@@ -197,6 +198,10 @@ namespace Restuarnt.BL
             param[4].Value = rent;
             param[5] = new SqlParameter("@Discount", SqlDbType.Decimal);
             param[5].Value = discount;
+            param[6] = new SqlParameter("@Statues", SqlDbType.NVarChar,50);
+            param[6].Value = Status;
+            param[7] = new SqlParameter("@Id_Cust", SqlDbType.Int);
+            param[7].Value = Id_Cust;
             da.excutequery("UpdateOrder", param);
             da.close();
 
@@ -210,10 +215,6 @@ namespace Restuarnt.BL
             SqlParameter[] param = new SqlParameter[1];
             param[0] = new SqlParameter("@idOrder", SqlDbType.Int);
             param[0].Value = idOrder;
-
-            
-
-
             da.excutequery("AddTakeAway", param);
             da.close();
         }
@@ -258,10 +259,6 @@ namespace Restuarnt.BL
             param[0].Value = idOrder;
             param[1] = new SqlParameter("@idDelivery", SqlDbType.Int);
             param[1].Value = idDelivery;
-
-
-
-
             da.excutequery("AddDelivery", param);
             da.close();
         }
@@ -869,6 +866,36 @@ namespace Restuarnt.BL
             dt = da.selected("SELECtAllOrderOneDelivery", param);
             da.close();
             return dt;
+        }
+        internal void Delete_OrderFromDelivery(int idOrder)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@ID_Order", SqlDbType.Int);
+            param[0].Value = idOrder;
+            da.excutequery("Delete_OrderFromDelivery", param);
+            da.close();
+        }
+        internal void Delete_OrderFromTakeAway(int idOrder)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@ID_Order", SqlDbType.Int);
+            param[0].Value = idOrder;
+            da.excutequery("Delete_OrderFromTakeAway", param);
+            da.close();
+        }
+        internal void Delete_OrderFromSala(int idOrder)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@ID_Order", SqlDbType.Int);
+            param[0].Value = idOrder;
+            da.excutequery("Delete_OrderFromDelivery", param);
+            da.close();
         }
     }
 }
