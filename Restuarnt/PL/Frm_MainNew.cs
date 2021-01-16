@@ -106,13 +106,13 @@ namespace Restuarnt.PL
 
         private void Btn_AddDelivery_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Frm_DeliveryInformation frm_Delivery = new Frm_DeliveryInformation();
+            Frm_DeliveryInformations frm_Delivery = new Frm_DeliveryInformations();
             frm_Delivery.Show();
         }
 
         private void Btn_AddCaptin_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Frm_Stuff stuff = new Frm_Stuff();
+            frm_AddStuff stuff = new frm_AddStuff();
             stuff.Show();
         }
 
@@ -144,14 +144,14 @@ namespace Restuarnt.PL
 
         private void Btn_Masrofat_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Frm_RserveDetails d = new Frm_RserveDetails();
+            Frm_Masrofat d = new Frm_Masrofat();
             d.Show();
         }
 
         private void Btn_reportmasrof_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Frm_SearchReserve d = new Frm_SearchReserve();
-            d.Show();
+            Frm_ManagmentMasrofat mm = new Frm_ManagmentMasrofat();
+            mm.Show();
         }
 
         private void Btn_AddUser_ItemClick(object sender, ItemClickEventArgs e)
@@ -182,6 +182,11 @@ namespace Restuarnt.PL
         {
             Validate_Users validate_Users = new Validate_Users();
             validate_Users.Show();
+        }
+
+        private void barButtonItem19_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            
         }
     }
 }

@@ -95,7 +95,7 @@
             // btn_new
             // 
             this.btn_new.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_new.Location = new System.Drawing.Point(513, 123);
+            this.btn_new.Location = new System.Drawing.Point(535, 73);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(132, 40);
             this.btn_new.TabIndex = 12;
@@ -115,7 +115,7 @@
             // btn_update
             // 
             this.btn_update.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_update.Location = new System.Drawing.Point(176, 123);
+            this.btn_update.Location = new System.Drawing.Point(245, 123);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(118, 40);
             this.btn_update.TabIndex = 4;

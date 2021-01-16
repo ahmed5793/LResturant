@@ -20,6 +20,7 @@ namespace Restuarnt.PL
         Delivery d = new Delivery();
 
         Stuff s = new Stuff();
+        BL.Login l = new BL.Login();
         public Sales_Management()
         {
             InitializeComponent();
@@ -41,9 +42,9 @@ namespace Restuarnt.PL
             try
             {
 
-            //cmb_Users1.DataSource = l.SelectUsers();
-            //cmb_Users1.DisplayMember = "اسم المستخدم";
-            //cmb_Users1.ValueMember = "اسم المستخدم";
+                cmb_Users.DataSource = l.SelectComboUsers();
+                cmb_Users.DisplayMember = "UserName";
+                cmb_Users.ValueMember = "ID_User";
 
             }
             catch (Exception ex)
@@ -63,7 +64,7 @@ namespace Restuarnt.PL
             }
          
         }
-
+    
 
         private void Validate_Users_Load(object sender, EventArgs e)
         {
@@ -79,7 +80,10 @@ namespace Restuarnt.PL
             dateEdit2.Text= DateTime.Now.ToString("dd/MM/yyyy");
             dateEdit3.Text = DateTime.Now.ToString("dd/MM/yyyy");
             dateEdit4.Text = DateTime.Now.ToString("dd/MM/yyyy");
-
+            dateEdit5.Text= DateTime.Now.ToString("dd/MM/yyyy");
+            dateEdit6.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            dateEdit7.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            dateEdit8.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
 
@@ -561,6 +565,17 @@ namespace Restuarnt.PL
         {
            
            
+        }
+
+        private void simpleButton3_Click_1(object sender, EventArgs e)
+        {
+            gridControl5.DataSource = l.SelectUserAllOrddr( Convert.ToDateTime(dateEdit7.EditValue), Convert.ToDateTime(dateEdit8.EditValue),Convert.ToInt32(cmb_Users.SelectedValue));
+
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

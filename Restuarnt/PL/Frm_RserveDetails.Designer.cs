@@ -74,6 +74,7 @@
             this.dataGridView1.ShowEditingIcon = false;
             this.dataGridView1.Size = new System.Drawing.Size(683, 142);
             this.dataGridView1.TabIndex = 12;
+            this.dataGridView1.DockChanged += new System.EventHandler(this.dataGridView1_DockChanged);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.DataGridView1_DoubleClick);
             // 
             // groupBox1

@@ -40,7 +40,7 @@ namespace Restuarnt.BL
             da.close();
             return dt;
         }
-        internal void DeleteDelivery(int idStuff)
+        internal void DeleteStuff(int idStuff)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
@@ -50,7 +50,7 @@ namespace Restuarnt.BL
 
 
 
-            da.excutequery("DeleteDelivery", param);
+            da.excutequery("DeleteStuff", param);
             da.close();
         }
         internal void UpdateStuuf(string name , string phone, string address, int id)

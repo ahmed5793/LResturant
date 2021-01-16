@@ -284,7 +284,27 @@ namespace Restuarnt.BL
             da.excutequery("Update_UserPermession", param);
             da.close();
         }
-        
+        internal DataTable SelectUserAllOrddr(DateTime FromDate, DateTime ToDate, int ID_User)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[3];
+
+            param[0] = new SqlParameter("@fromDte", SqlDbType.Date);
+            param[0].Value = FromDate;
+
+            param[1] = new SqlParameter("@todate", SqlDbType.Date);
+            param[1].Value = ToDate;
+
+            param[2] = new SqlParameter("@ID_User", SqlDbType.Int);
+            param[2].Value = ID_User;
+
+            dt = da.selected("SelectUserAllOrddr", param);
+            da.close();
+            return dt;
+        }
 
     }
 }

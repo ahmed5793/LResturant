@@ -103,20 +103,43 @@ namespace Restuarnt.BL
             da.close();
             return dt;
         }
-        internal DataTable SearchFromDate(DateTime FromDate, DateTime ToDate)
+        internal DataTable SearchMasrofatFromDate(DateTime FromDate, DateTime ToDate)
         {
             DataAccessLayer da = new DataAccessLayer();
             SqlParameter[] param = new SqlParameter[2];
             DataTable dt = new DataTable();
-            param[0] = new SqlParameter("@FromDate", SqlDbType.DateTime);
+            param[0] = new SqlParameter("@FromDate", SqlDbType.Date);
             param[0].Value = FromDate;
-            param[1] = new SqlParameter("@ToDate", SqlDbType.DateTime);
+            param[1] = new SqlParameter("@ToDate", SqlDbType.Date);
             param[1].Value = ToDate;
-            dt = da.selected("SearchFromDate", param);
+            dt = da.selected("SearchMasrofatFromDate", param);
             return dt;
 
         }
+        internal DataTable selectTypeMasrof()
+        {
+            DataTable dt = new DataTable();
 
+            DataAccessLayer da = new DataAccessLayer();
+
+            dt = da.selected("selectTypeMasrof", null);
+            da.close();
+            return dt;
+        }
+
+        internal void DeleteTypeMasrof(int idType)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+            da.open();
+            param[0] = new SqlParameter("@idType", SqlDbType.Int);
+            param[0].Value = idType;
+            
+          
+
+            da.excutequery("DeleteTypeMasrof", param);
+            da.close();
+        }
     }
 }
 

@@ -37,12 +37,8 @@ namespace Restuarnt.PL
             try
             {
 
-                if (txt_phone.Text.Length < 11 && txt_phone.Text != "")
-                {
-                    MessageBox.Show(" يرجي التاكد من رقم الهاتف لابد ان يكون (11) رقم");
-                    txt_phone.Focus();
-                }
-                else if (txt_name.Text == "")
+                
+                 if (txt_name.Text == "")
                 {
                     MessageBox.Show("يرجي التاكد من اسم الكابتن");
                 }
@@ -103,33 +99,33 @@ namespace Restuarnt.PL
 
         private void Btn_delete_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (MessageBox.Show("هل تريد الحذف ", "عمليه الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
-                {
+            //try
+            //{
+            //    if (MessageBox.Show("هل تريد الحذف ", "عمليه الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            //    {
                  
-                    s.DeleteDelivery(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
-                    MessageBox.Show("تم المسح  بنجاح", "عمليه الحذف", MessageBoxButtons.OK, MessageBoxIcon.None);
+            //        s.DeleteDelivery(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+            //        MessageBox.Show("تم المسح  بنجاح", "عمليه الحذف", MessageBoxButtons.OK, MessageBoxIcon.None);
                  
                    
-                    dataGridView1.DataSource = s.SelectStuuf();
-                    clears();
-                }
-                else
-                {
-                    MessageBox.Show("تم الغاء عمليه الحذف");
-                    clears();
-                }
+            //        dataGridView1.DataSource = s.SelectStuuf();
+            //        clears();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("تم الغاء عمليه الحذف");
+            //        clears();
+            //    }
 
 
 
 
-            }
+            //}
 
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
 
         }
 

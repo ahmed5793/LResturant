@@ -87,10 +87,9 @@ namespace Restuarnt.PL
 
 
                     dataGridView1.DataSource = d.SelectDeliveryInformation();
-                    btn_delete.Enabled = false;
-                    btn_new.Hide();
+                  
                     btn_update.Enabled = false;
-                    btn_save.Show();
+                    btn_save.Enabled = true;
 
                 }
 

@@ -188,11 +188,23 @@
     <Compile Include="PL\Frm-Prise.Designer.cs">
       <DependentUpon>Frm-Prise.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\frm_AddStuff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frm_AddStuff.Designer.cs">
+      <DependentUpon>frm_AddStuff.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_Category.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PL\Frm_Category.Designer.cs">
       <DependentUpon>Frm_Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_DeliveryInformations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_DeliveryInformations.Designer.cs">
+      <DependentUpon>Frm_DeliveryInformations.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_Hold.cs">
       <SubType>Form</SubType>
@@ -211,6 +223,18 @@
     </Compile>
     <Compile Include="PL\Frm_MainNew.designer.cs">
       <DependentUpon>Frm_MainNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_ManagmentMasrofat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ManagmentMasrofat.Designer.cs">
+      <DependentUpon>Frm_ManagmentMasrofat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_Masrofat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_Masrofat.Designer.cs">
+      <DependentUpon>Frm_Masrofat.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_Notes.cs">
       <SubType>Form</SubType>
@@ -349,6 +373,12 @@
     </Compile>
     <Compile Include="PL\Frm_totalDelivery.Designer.cs">
       <DependentUpon>Frm_totalDelivery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_TypeMasrof.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_TypeMasrof.Designer.cs">
+      <DependentUpon>Frm_TypeMasrof.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_Unit.cs">
       <SubType>Form</SubType>
@@ -528,8 +558,14 @@
     <EmbeddedResource Include="PL\Frm-Prise.resx">
       <DependentUpon>Frm-Prise.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\frm_AddStuff.resx">
+      <DependentUpon>frm_AddStuff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Category.resx">
       <DependentUpon>Frm_Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_DeliveryInformations.resx">
+      <DependentUpon>Frm_DeliveryInformations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Hold.resx">
       <DependentUpon>Frm_Hold.cs</DependentUpon>
@@ -539,6 +575,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_MainNew.resx">
       <DependentUpon>Frm_MainNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ManagmentMasrofat.resx">
+      <DependentUpon>Frm_ManagmentMasrofat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_Masrofat.resx">
+      <DependentUpon>Frm_Masrofat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Notes.resx">
       <DependentUpon>Frm_Notes.cs</DependentUpon>
@@ -608,6 +650,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_totalDelivery.resx">
       <DependentUpon>Frm_totalDelivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_TypeMasrof.resx">
+      <DependentUpon>Frm_TypeMasrof.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Unit.resx">
       <DependentUpon>Frm_Unit.cs</DependentUpon>

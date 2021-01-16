@@ -207,5 +207,10 @@ namespace Restuarnt.PL
             Frm_SearchReserve s = new Frm_SearchReserve();
             s.ShowDialog();
         }
+
+        private void dataGridView1_DockChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

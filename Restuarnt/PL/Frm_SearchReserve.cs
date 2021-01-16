@@ -30,9 +30,9 @@ namespace Restuarnt.PL
         private void Button1_Click(object sender, EventArgs e)
         {
 
-            dt = r.SearchFromDate(FromDate.Value, ToDate.Value);
-            gridControl1.DataSource = dt;
-            total();
+            //dt = r.SearchFromDate(FromDate.Value, ToDate.Value);
+            //gridControl1.DataSource = dt;
+            //total();
 
         }
         internal void total()

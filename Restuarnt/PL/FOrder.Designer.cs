@@ -692,7 +692,7 @@
             this.label22.ForeColor = System.Drawing.Color.White;
             this.label22.Location = new System.Drawing.Point(470, 21);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(108, 25);
+            this.label22.Size = new System.Drawing.Size(110, 25);
             this.label22.TabIndex = 78;
             this.label22.Text = "خدمه توصيل";
             // 
@@ -1012,7 +1012,7 @@
             this.groupControl4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupControl4.Controls.Add(this.gridControl2);
-            this.groupControl4.Location = new System.Drawing.Point(8, 258);
+            this.groupControl4.Location = new System.Drawing.Point(3, 261);
             this.groupControl4.LookAndFeel.SkinName = "Office 2016 Black";
             this.groupControl4.LookAndFeel.UseDefaultLookAndFeel = false;
             this.groupControl4.Name = "groupControl4";

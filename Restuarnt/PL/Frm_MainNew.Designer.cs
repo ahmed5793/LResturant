@@ -144,6 +144,7 @@
             this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_ReciveMoney = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem19 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonMiniToolbar1 = new DevExpress.XtraBars.Ribbon.RibbonMiniToolbar(this.components);
             this.Ribon_Customer = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Riboon_AddCustomer = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -285,10 +286,11 @@
             this.BtnRestore,
             this.barButtonItem17,
             this.barButtonItem18,
-            this.Btn_ReciveMoney});
+            this.Btn_ReciveMoney,
+            this.barButtonItem19});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.ribbon.MaxItemId = 98;
+            this.ribbon.MaxItemId = 99;
             this.ribbon.MiniToolbars.Add(this.ribbonMiniToolbar1);
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -957,7 +959,7 @@
             // 
             // Btn_reportmasrof
             // 
-            this.Btn_reportmasrof.Caption = "تقرير المصروفات";
+            this.Btn_reportmasrof.Caption = "ادارة المصروفات";
             this.Btn_reportmasrof.Id = 39;
             this.Btn_reportmasrof.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_reportmasrof.ImageOptions.Image")));
             this.Btn_reportmasrof.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Btn_reportmasrof.ImageOptions.LargeImage")));
@@ -1750,6 +1752,13 @@
             this.Btn_ReciveMoney.ItemAppearance.Pressed.Options.UseTextOptions = true;
             this.Btn_ReciveMoney.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_ReciveMoney.Name = "Btn_ReciveMoney";
+            // 
+            // barButtonItem19
+            // 
+            this.barButtonItem19.Caption = "ادارة المصروفات";
+            this.barButtonItem19.Id = 98;
+            this.barButtonItem19.Name = "barButtonItem19";
+            this.barButtonItem19.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem19_ItemClick);
             // 
             // ribbonMiniToolbar1
             // 
@@ -2673,5 +2682,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         public DevExpress.XtraBars.BarButtonItem Btn_ReciveMoney;
         public DevExpress.XtraBars.BarButtonItem Btn_settingOrder;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem19;
     }
 }
