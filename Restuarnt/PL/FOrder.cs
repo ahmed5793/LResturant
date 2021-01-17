@@ -714,7 +714,7 @@ namespace Restuarnt.PL
         {
             try
             {
-                if (MessageBox.Show("هل تريد حفظ وسداد الفاتورة", "عمليه الجفظ والسداد", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                if (MessageBox.Show("هل تريد حفظ وسداد الفاتورة", "عمليه الحفظ والسداد", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
                     if (Lable_Num.Text == "")
                     {
@@ -885,131 +885,181 @@ namespace Restuarnt.PL
 
                             }
 
-                            #region كود الطباعة القديم
-                            //// 
-                            //if (rdb_delivery.Checked == true)
-                            //{
-                            //    RPT.rptCheckenDeliveryMakolat ro = new RPT.rptCheckenDeliveryMakolat();
-                            //    RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
-
-                            //    //  s.crystalReportViewer1.RefreshReport();
-                            //    ro.SetDatabaseLogon("", "", ".", "Restuarnt");
-                            //    ro.SetParameterValue("@ID", (Convert.ToInt32(Lable_Num.Text)));
-                            //    if (ro.Rows.Count > 0)
-                            //    {
-
-                            //        //  s.crystalReportViewer1.ReportSource = ro;
-                            //        System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                            //        ro.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                            //        ro.PrintToPrinter(1, true, 0, 0);
-
-                            //        ro.Close();
-                            //        s.Dispose();
-                            //    }
-
-                            //    RPT.rptCheckenDelivery deldrinks = new RPT.rptCheckenDelivery();
-                            //    RPT.Frm_ReportOrder sa = new RPT.Frm_ReportOrder();
-
-                            //    // sa.crystalReportViewer1.RefreshReport();
-                            //    deldrinks.SetDatabaseLogon("", "", ".", "Restuarnt");
-                            //    deldrinks.SetParameterValue("@ID", (Convert.ToInt32(Lable_Num.Text)));
-                            //    if (deldrinks.Rows.Count > 0)
-                            //    {
+                            //////كود الطباعة فى الحفظ والسداد //////
+                            if (Lable_Num.Text != "")
+                            {
+                                DataTable dt6 = new DataTable();
+                                DataSet1 ds = new DataSet1();
+                                ////////////////   كود طباعة امر تشغيل   ///////////
+                                if (Properties.Settings.Default.PrintCheckenInSave == "true")
+                                {
 
 
-                            //        //   sa.crystalReportViewer1.ReportSource = deldrinks;
-                            //        System.Drawing.Printing.PrintDocument printDocuments = new System.Drawing.Printing.PrintDocument();
-                            //        deldrinks.PrintOptions.PrinterName = printDocuments.PrinterSettings.PrinterName;
-                            //        deldrinks.PrintToPrinter(1, true, 0, 0);
+                                    if (Properties.Settings.Default.CheckenType == "collect")
+                                    {
+                                        XtraReportCheck rc = new XtraReportCheck();
+                                        dt6.Clear();
+                                        dt6 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
+                                        if (dt5.Rows[0][11].ToString() == "Table")
+                                        {
+                                            dt6.Clear();
 
-                            //        deldrinks.Close();
-                            //        sa.Dispose();
-                            //    }
+                                            dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                            rc.Label_TableNum.Visible = true;
+                                            rc.Txt_TableNum.Visible = true;
+                                            rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                        }
 
-                            //}
-                            //else if (rdb_sala.Checked == true)
-                            //{
-                            //    RPT.rptCheckenSalaMakolat rs = new RPT.rptCheckenSalaMakolat();
-                            //    RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
+                                        dt6.Clear();
+                                        dt6 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
 
-                            //    //  s.crystalReportViewer1.RefreshReport();
-                            //    rs.SetDatabaseLogon("", "", ".", "Restuarnt");
-                            //    rs.SetParameterValue("@ID", (Convert.ToInt32(Lable_Num.Text)));
-                            //    if (rs.Rows.Count > 0)
-                            //    {
+                                        ds.Tables["Order"].Clear();
+                                        for (int i = 0; i < dt6.Rows.Count; i++)
+                                        {
+                                            ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
+                                            dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
+                                            dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                        }
+                                        rc.DataSource = ds;
+                                        rc.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                        rc.Parameters["Id"].Visible = false;
+                                        //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
+                                        // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                        rc.PrinterName = Properties.Settings.Default.PrinterChecken;
+                                        rc.Print();
+                                        rc.Dispose();
+                                    }
+                                    if (Properties.Settings.Default.CheckenType == "seperator")
+                                    {
+                                        //كود طباعة المشروبات فقط
+                                        #region
+                                        XtraReportCheck rc = new XtraReportCheck();
+                                        dt6.Clear();
+                                        dt6 = o.PrintOrderDeliveryDrinks(Convert.ToInt32(Lable_Num.Text));
+                                        if (dt5.Rows[0][11].ToString() == "Table")
+                                        {
+                                            dt6.Clear();
+
+                                            dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                            rc.Label_TableNum.Visible = true;
+                                            rc.Txt_TableNum.Visible = true;
+                                            rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                        }
+
+                                        dt6.Clear();
+                                        dt6 = o.PrintOrderDeliveryDrinks(Convert.ToInt32(Lable_Num.Text));
+                                        if (dt6.Rows.Count > 0)
+                                        {
+
+                                            ds.Tables["Order"].Clear();
+                                            for (int i = 0; i < dt6.Rows.Count; i++)
+                                            {
+                                                ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
+                                                dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
+                                                dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                            }
+                                            rc.DataSource = ds;
+                                            rc.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                            rc.Parameters["Id"].Visible = false;
+                                            //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
+                                            // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                            rc.PrinterName = Properties.Settings.Default.PrinterDrinks;
+                                            rc.Print();
+                                            rc.Dispose();
+
+                                        }
+                                        #endregion
+
+                                        //كود طباعة الماكولات فقط
+                                        #region
+                                        XtraReportCheck rcmakolat = new XtraReportCheck();
+                                        dt6.Clear();
+                                        dt6 = o.PrintOrderDeliveryMakolat(Convert.ToInt32(Lable_Num.Text));
+                                        if (dt5.Rows[0][11].ToString() == "Table")
+                                        {
+                                            dt6.Clear();
+
+                                            dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                            rcmakolat.Label_TableNum.Visible = true;
+                                            rcmakolat.Txt_TableNum.Visible = true;
+                                            rcmakolat.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                        }
+
+                                        dt6.Clear();
+                                        dt6 = o.PrintOrderDeliveryMakolat(Convert.ToInt32(Lable_Num.Text));
+                                        if (dt6.Rows.Count > 0)
+                                        {
 
 
-                            //        ///  s.crystalReportViewer1.ReportSource = rs;
-                            //        System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                            //        rs.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                            //        rs.PrintToPrinter(1, true, 0, 0);
+                                            ds.Tables["Order"].Clear();
+                                            for (int i = 0; i < dt6.Rows.Count; i++)
+                                            {
+                                                ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
+                                                dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
+                                                dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                            }
+                                            rcmakolat.DataSource = ds;
+                                            rcmakolat.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                            rcmakolat.Parameters["Id"].Visible = false;
+                                            //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
+                                            // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                            rcmakolat.PrinterName = Properties.Settings.Default.PrinterChecken;
+                                            rcmakolat.Print();
+                                            rcmakolat.Dispose();
+                                        }
+                                        #endregion
+                                    }
+                                }
+                                /////كود طباعة فاتورة للعميل ///////
+                                if (Properties.Settings.Default.PrintOrderInSave == "true")
+                                {
+                                    XtraReport1Order ro = new XtraReport1Order();
 
-                            //        rs.Close();
-                            //        s.Dispose();
-                            //    }
+                                    dt5.Clear();
+                                    dt5 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
+                                    if (dt5.Rows[0][11].ToString() == "Table")
+                                    {
+                                        dt5.Clear();
+                                        dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                        ro.xrLabel11.Visible = true;
+                                        ro.xrLabel10.Visible = true;
+                                        ro.xrLabel18.Visible = true;
+                                        ro.xrLabel19.Visible = true;
+                                        ro.xrLabel19.Text = dt5.Rows[0][1].ToString();
+                                    }
 
+                                    if (dt5.Rows[0][11].ToString() == "Delivery")
+                                    {
+                                        dt5.Clear();
+                                        dt5 = o.Select_DeliveyMan(Convert.ToInt32(Lable_Num.Text));
+                                        ro.xrLabel20.Visible = true;
+                                        ro.xrLabel21.Visible = true;
+                                        ro.xrLabel21.Text = dt5.Rows[0][1].ToString();
+                                    }
+                                    dt5.Clear();
+                                    dt5 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
 
-                            //    RPT.rptCheckenSala sala = new RPT.rptCheckenSala();
-                            //    RPT.Frm_ReportOrder sa = new RPT.Frm_ReportOrder();
+                                    ds.Tables["Order"].Clear();
+                                    for (int i = 0; i < dt5.Rows.Count; i++)
+                                    {
+                                        ds.Tables["Order"].Rows.Add(dt5.Rows[i][0], dt5.Rows[i][1], dt5.Rows[i][4],
+                                        dt5.Rows[i][5], dt5.Rows[i][7], dt5.Rows[i][6], dt5.Rows[i][9], dt5.Rows[i][8],
+                                        dt5.Rows[i][2], (dt5.Rows[i][3]), dt5.Rows[i][11], dt5.Rows[i][10], dt5.Rows[i][12]);
+                                    }
+                                    ro.Txt_Delivery.Visible = true;
+                                    ro.DataSource = ds;
+                                    ro.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                    ro.Parameters["Id"].Visible = false;
+                                    //System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
+                                    //ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                    ro.PrinterName = Properties.Settings.Default.PrinterOrderClient;
+                                    ro.Print();
+                                    ro.Dispose();
+                                }
 
-                            //    // sa.crystalReportViewer1.RefreshReport();
-                            //    sala.SetDatabaseLogon("", "", ".", "Restuarnt");
-                            //    sala.SetParameterValue("@ID", (Convert.ToInt32(Lable_Num.Text)));
-                            //    if (sala.Rows.Count > 0)
-                            //    {
+                            }
 
-
-                            //        // sa.crystalReportViewer1.ReportSource = sala;
-                            //        System.Drawing.Printing.PrintDocument printDocumentsala = new System.Drawing.Printing.PrintDocument();
-                            //        sala.PrintOptions.PrinterName = printDocumentsala.PrinterSettings.PrinterName;
-                            //        sala.PrintToPrinter(1, true, 0, 0);
-
-                            //        sala.Close();
-                            //        sa.Dispose();
-                            //    }
-                            //    //GC.Collect();
-                            //    //GC.WaitForPendingFinalizers();
-                            //}
-                            //else if (rdb_takeaway.Checked == true)
-                            //{
-                            //    RPT.rptChekenTakeAway rt = new RPT.rptChekenTakeAway();
-                            //    RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
-
-
-                            //    // s.crystalReportViewer1.RefreshReport();
-                            //    rt.SetDatabaseLogon("", "", ".", "Restuarnt");
-                            //    rt.SetParameterValue("@ID", (Convert.ToInt32(Lable_Num.Text)));
-                            //    if (rt.Rows.Count > 0)
-                            //    {
-
-
-                            //        //   s.crystalReportViewer1.ReportSource = rt;
-                            //        System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                            //        rt.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                            //        rt.PrintToPrinter(1, true, 0, 0);
-                            //        rt.Close();
-                            //        s.Dispose();
-                            //    }
-
-                            //    RPT.rptChekenTakeAwayDrinks rtake = new RPT.rptChekenTakeAwayDrinks();
-                            //    RPT.Frm_ReportOrder stake = new RPT.Frm_ReportOrder();
-
-
-                            //    //  stake.crystalReportViewer1.RefreshReport();
-                            //    rtake.SetDatabaseLogon("", "", ".", "Restuarnt");
-                            //    rtake.SetParameterValue("@ID", (Convert.ToInt32(Lable_Num.Text)));
-                            //    if (rtake.Rows.Count > 0)
-                            //    {
-                            //        // stake.crystalReportViewer1.ReportSource = rtake;
-                            //        System.Drawing.Printing.PrintDocument printDocumenttake = new System.Drawing.Printing.PrintDocument();
-                            //        rtake.PrintOptions.PrinterName = printDocumenttake.PrinterSettings.PrinterName;
-                            //        rtake.PrintToPrinter(1, true, 0, 0);
-                            //        rtake.Close();
-                            //        stake.Dispose();
-                            //    }
-                            //}
-                            #endregion
-
+                            clear2();
 
                         }
                         else
@@ -1018,8 +1068,7 @@ namespace Restuarnt.PL
                             return;
                         }
 
-                        clear2();
-
+                       
                     }
 
 
@@ -1202,78 +1251,187 @@ namespace Restuarnt.PL
                                  Convert.ToInt32(cmb_stuff.SelectedValue));
 
                         }
-                        //  -------كود طباعة الاصناف الزياده فى اتعديل----------------------------------------------------------------------------------
-                        #region
-                        //if (Lable_Num.Text != string.Empty)
-                        //    {
 
 
-                        //        dt.Clear();
-                        //        dt = o.validatePritOrderNewRow(Convert.ToInt32(Lable_Num.Text));
-                        //        if (dt.Rows.Count > 0)
-                        //        {
+                        //////كود الطباعة فى الحفظ والسداد بعد التعديل //////
+                        if (Lable_Num.Text != "")
+                        {
+                            DataTable dt6 = new DataTable();
+                            DataSet1 ds = new DataSet1();
+                            ////////////////   كود طباعة امر تشغيل مجمع بعد التعديل ///////////
+                            if (Properties.Settings.Default.PrintCheckenInSave == "true")
+                            {
+
+                                if (Properties.Settings.Default.CheckenType == "collect")
+                                {
+                                    XtraReportCheck rc = new XtraReportCheck();
+                                    dt6.Clear();
+                                    dt6 = o.PritOrderNewRow(Convert.ToInt32(Lable_Num.Text));
+                                    if (dt5.Rows[0][11].ToString() == "Table")
+                                    {
+                                        dt6.Clear();
+
+                                        dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                        rc.Label_TableNum.Visible = true;
+                                        rc.Txt_TableNum.Visible = true;
+                                        rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                    }
+
+                                    dt6.Clear();
+                                    dt6 = o.PritOrderNewRow(Convert.ToInt32(Lable_Num.Text));
+                                    if (dt6.Rows.Count > 0)
+                                    {
 
 
+                                        ds.Tables["Order"].Clear();
+                                        for (int i = 0; i < dt6.Rows.Count; i++)
+                                        {
+                                            ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
+                                            dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
+                                            dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                        }
+                                        rc.DataSource = ds;
+                                        rc.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                        rc.Parameters["Id"].Visible = false;
+                                        //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
+                                        // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                        rc.PrinterName = Properties.Settings.Default.PrinterChecken;
+                                        rc.Print();
+                                        rc.Dispose();
+                                    }
+                                }
+                                if (Properties.Settings.Default.CheckenType == "seperator")
+                                {
+                                    //كود طباعة المشروبات فقط
+                                    #region
+                                    XtraReportCheck rc = new XtraReportCheck();
+                                    dt6.Clear();
+                                    dt6 = o.PritOrderNewRowDrinks(Convert.ToInt32(Lable_Num.Text));
+                                    if (dt5.Rows[0][11].ToString() == "Table")
+                                    {
+                                        dt6.Clear();
+
+                                        dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                        rc.Label_TableNum.Visible = true;
+                                        rc.Txt_TableNum.Visible = true;
+                                        rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                    }
+
+                                    dt6.Clear();
+                                    dt6 = o.PritOrderNewRowDrinks(Convert.ToInt32(Lable_Num.Text));
+                                    if (dt6.Rows.Count > 0)
+                                    {
+
+                                        ds.Tables["Order"].Clear();
+                                        for (int i = 0; i < dt6.Rows.Count; i++)
+                                        {
+                                            ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
+                                            dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
+                                            dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                        }
+                                        rc.DataSource = ds;
+                                        rc.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                        rc.Parameters["Id"].Visible = false;
+                                        //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
+                                        // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                        rc.PrinterName = Properties.Settings.Default.PrinterDrinks;
+                                        rc.Print();
+                                        rc.Dispose();
+
+                                    }
+                                    #endregion
+
+                                    //كود طباعة الماكولات فقط
+                                    #region
+                                    XtraReportCheck rcmakolat = new XtraReportCheck();
+                                    dt6.Clear();
+                                    dt6 = o.PritOrderNewRowMakolat(Convert.ToInt32(Lable_Num.Text));
+                                    if (dt5.Rows[0][11].ToString() == "Table")
+                                    {
+                                        dt6.Clear();
+
+                                        dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                        rcmakolat.Label_TableNum.Visible = true;
+                                        rcmakolat.Txt_TableNum.Visible = true;
+                                        rcmakolat.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                    }
+
+                                    dt6.Clear();
+                                    dt6 = o.PritOrderNewRowMakolat(Convert.ToInt32(Lable_Num.Text));
+                                    if (dt6.Rows.Count > 0)
+                                    {
 
 
-                        //            if (rdb_delivery.Checked == true)
-                        //            {
-                        //                RPT.rptNewRowDAELIVERYMakolat ro = new RPT.rptNewRowDAELIVERYMakolat();
-                        //                RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
+                                        ds.Tables["Order"].Clear();
+                                        for (int i = 0; i < dt6.Rows.Count; i++)
+                                        {
+                                            ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
+                                            dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
+                                            dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                        }
+                                        rcmakolat.DataSource = ds;
+                                        rcmakolat.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                        rcmakolat.Parameters["Id"].Visible = false;
+                                        //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
+                                        // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                        rcmakolat.PrinterName = Properties.Settings.Default.PrinterChecken;
+                                        rcmakolat.Print();
+                                        rcmakolat.Dispose();
+                                    }
+                                    #endregion
+                                }
+                            }
+                            /////كود طباعة فاتورة للعميل ///////
+                            if (Properties.Settings.Default.PrintOrderInSave == "true")
+                            {
+                                XtraReport1Order ro = new XtraReport1Order();
 
-                        //                // s.crystalReportViewer1.RefreshReport();
-                        //                ro.SetDatabaseLogon("", "", ".", "Restuarnt");
-                        //                ro.SetParameterValue("@id", (Convert.ToInt32(Lable_Num.Text)));
-                        //                if (ro.Rows.Count > 0)
-                        //                {
-                        //                    //  s.crystalReportViewer1.ReportSource = ro;
-                        //                    System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                        //                    ro.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                        //                    ro.PrintToPrinter(1, true, 0, 0);
-                        //                    ro.Close();
-                        //                    s.Dispose();
+                                dt5.Clear();
+                                dt5 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
+                                if (dt5.Rows[0][11].ToString() == "Table")
+                                {
+                                    dt5.Clear();
+                                    dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                    ro.xrLabel11.Visible = true;
+                                    ro.xrLabel10.Visible = true;
+                                    ro.xrLabel18.Visible = true;
+                                    ro.xrLabel19.Visible = true;
+                                    ro.xrLabel19.Text = dt5.Rows[0][1].ToString();
+                                }
 
+                                if (dt5.Rows[0][11].ToString() == "Delivery")
+                                {
+                                    dt5.Clear();
+                                    dt5 = o.Select_DeliveyMan(Convert.ToInt32(Lable_Num.Text));
+                                    ro.xrLabel20.Visible = true;
+                                    ro.xrLabel21.Visible = true;
+                                    ro.xrLabel21.Text = dt5.Rows[0][1].ToString();
+                                }
+                                dt5.Clear();
+                                dt5 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
 
-                        //                }
-                        //                //////////////////////////////////////////////
-                        //                ///
+                                ds.Tables["Order"].Clear();
+                                for (int i = 0; i < dt5.Rows.Count; i++)
+                                {
+                                    ds.Tables["Order"].Rows.Add(dt5.Rows[i][0], dt5.Rows[i][1], dt5.Rows[i][4],
+                                    dt5.Rows[i][5], dt5.Rows[i][7], dt5.Rows[i][6], dt5.Rows[i][9], dt5.Rows[i][8],
+                                    dt5.Rows[i][2], (dt5.Rows[i][3]), dt5.Rows[i][11], dt5.Rows[i][10], dt5.Rows[i][12]);
+                                }
+                                ro.Txt_Delivery.Visible = true;
+                                ro.DataSource = ds;
+                                ro.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                ro.Parameters["Id"].Visible = false;
+                                //System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
+                                //ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                ro.PrinterName = Properties.Settings.Default.PrinterOrderClient;
+                                ro.Print();
+                                ro.Dispose();
+                            }
 
+                        }
 
-                        //                RPT.rptNewRowDAELIVERY newrowdel = new RPT.rptNewRowDAELIVERY();
-                        //                RPT.Frm_ReportOrder snewrowdel = new RPT.Frm_ReportOrder();
-
-                        //                // snewrowdel.crystalReportViewer1.RefreshReport();
-                        //                newrowdel.SetDatabaseLogon("", "", ".", "Restuarnt");
-                        //                newrowdel.SetParameterValue("@id", (Convert.ToInt32(Lable_Num.Text)));
-                        //                if (newrowdel.Rows.Count > 0)
-                        //                {
-
-
-                        //                    //  snewrowdel.crystalReportViewer1.ReportSource = newrowdel;
-                        //                    System.Drawing.Printing.PrintDocument printDocumentnewdel = new System.Drawing.Printing.PrintDocument();
-                        //                    newrowdel.PrintOptions.PrinterName = printDocumentnewdel.PrinterSettings.PrinterName;
-                        //                    newrowdel.PrintToPrinter(1, true, 0, 0);
-                        //                    newrowdel.Close();
-                        //                    snewrowdel.Dispose();
-
-
-
-                        //                    //GC.Collect();
-                        //                    //GC.WaitForPendingFinalizers();
-                        //                }
-
-
-                        //            }
-                        //            o.DeleteOrderNewRow();
-                        //            // clear2();
-                        //        }
-
-                        //    }
-                        #endregion
 
                         clear2();
-
-
                     }
 
                     MessageBox.Show("تم حفظ وسداد الفاتوره بنجاح", "عمليه الحفظ والسداد", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
@@ -1722,7 +1880,7 @@ namespace Restuarnt.PL
                                     o.AddOrderDetails(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
                                        Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
                                 }
-                             
+
                             }
                             o.AddTakeAway(Convert.ToInt32(Lable_Num.Text));
 
@@ -1825,8 +1983,8 @@ namespace Restuarnt.PL
                         else if (rdb_sala.Checked == true)
                         {
                             textEdit1.Text = "عميل نقدى";
-                           
-                          
+
+
                             if (cmb_Table.Text == "")
                             {
                                 MessageBox.Show("من فضلك قم بتسجيل رقم الطاولة ");
@@ -1851,192 +2009,236 @@ namespace Restuarnt.PL
 
                         }
 
-                        #region كود الطباعة القديم
-                        //// 
-                        //if (rdb_delivery.Checked == true)
-                        //{
-                        //    RPT.rptCheckenDeliveryMakolat ro = new RPT.rptCheckenDeliveryMakolat();
-                        //    RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
 
-                        //    //  s.crystalReportViewer1.RefreshReport();
-                        //    ro.SetDatabaseLogon("", "", ".", "Restuarnt");
-                        //    ro.SetParameterValue("@ID", (Convert.ToInt32(Lable_Num.Text)));
-                        //    if (ro.Rows.Count > 0)
-                        //    {
-
-                        //        //  s.crystalReportViewer1.ReportSource = ro;
-                        //        System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                        //        ro.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                        //        ro.PrintToPrinter(1, true, 0, 0);
-
-                        //        ro.Close();
-                        //        s.Dispose();
-                        //    }
-
-                        //    RPT.rptCheckenDelivery deldrinks = new RPT.rptCheckenDelivery();
-                        //    RPT.Frm_ReportOrder sa = new RPT.Frm_ReportOrder();
-
-                        //    // sa.crystalReportViewer1.RefreshReport();
-                        //    deldrinks.SetDatabaseLogon("", "", ".", "Restuarnt");
-                        //    deldrinks.SetParameterValue("@ID", (Convert.ToInt32(Lable_Num.Text)));
-                        //    if (deldrinks.Rows.Count > 0)
-                        //    {
+                        //////كود الطباعة فى التعلليق //////
+                        if (Lable_Num.Text != "")
+                        {
+                            DataTable dt6 = new DataTable();
+                            DataSet1 ds = new DataSet1();
+                            ////////////////   كود طباعة امر تشغيل   ///////////
+                            if (Properties.Settings.Default.PrintCheckenInHold == "true")
+                            {
 
 
-                        //        //   sa.crystalReportViewer1.ReportSource = deldrinks;
-                        //        System.Drawing.Printing.PrintDocument printDocuments = new System.Drawing.Printing.PrintDocument();
-                        //        deldrinks.PrintOptions.PrinterName = printDocuments.PrinterSettings.PrinterName;
-                        //        deldrinks.PrintToPrinter(1, true, 0, 0);
+                                if (Properties.Settings.Default.CheckenType == "collect")
+                                {
+                                    XtraReportCheck rc = new XtraReportCheck();
+                                    dt6.Clear();
+                                    dt6 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
+                                    if (dt5.Rows[0][11].ToString() == "Table")
+                                    {
+                                        dt6.Clear();
 
-                        //        deldrinks.Close();
-                        //        sa.Dispose();
-                        //    }
+                                        dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                        rc.Label_TableNum.Visible = true;
+                                        rc.Txt_TableNum.Visible = true;
+                                        rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                    }
 
-                        //}
-                        //else if (rdb_sala.Checked == true)
-                        //{
-                        //    RPT.rptCheckenSalaMakolat rs = new RPT.rptCheckenSalaMakolat();
-                        //    RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
+                                    dt6.Clear();
+                                    dt6 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
 
-                        //    //  s.crystalReportViewer1.RefreshReport();
-                        //    rs.SetDatabaseLogon("", "", ".", "Restuarnt");
-                        //    rs.SetParameterValue("@ID", (Convert.ToInt32(Lable_Num.Text)));
-                        //    if (rs.Rows.Count > 0)
-                        //    {
+                                    ds.Tables["Order"].Clear();
+                                    for (int i = 0; i < dt6.Rows.Count; i++)
+                                    {
+                                        ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
+                                        dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
+                                        dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                    }
+                                    rc.DataSource = ds;
+                                    rc.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                    rc.Parameters["Id"].Visible = false;
+                                    //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
+                                    // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                    rc.PrinterName = Properties.Settings.Default.PrinterChecken;
+                                    rc.Print();
+                                    rc.Dispose();
+                                }
+                                if (Properties.Settings.Default.CheckenType == "seperator")
+                                {
+                                    //كود طباعة المشروبات فقط
+                                    #region
+                                    XtraReportCheck rc = new XtraReportCheck();
+                                    dt6.Clear();
+                                    dt6 = o.PrintOrderDeliveryDrinks(Convert.ToInt32(Lable_Num.Text));
+                                    if (dt5.Rows[0][11].ToString() == "Table")
+                                    {
+                                        dt6.Clear();
 
+                                        dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                        rc.Label_TableNum.Visible = true;
+                                        rc.Txt_TableNum.Visible = true;
+                                        rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                    }
 
-                        //        ///  s.crystalReportViewer1.ReportSource = rs;
-                        //        System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                        //        rs.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                        //        rs.PrintToPrinter(1, true, 0, 0);
+                                    dt6.Clear();
+                                    dt6 = o.PrintOrderDeliveryDrinks(Convert.ToInt32(Lable_Num.Text));
+                                    if (dt6.Rows.Count > 0)
+                                    {
 
-                        //        rs.Close();
-                        //        s.Dispose();
-                        //    }
+                                        ds.Tables["Order"].Clear();
+                                        for (int i = 0; i < dt6.Rows.Count; i++)
+                                        {
+                                            ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
+                                            dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
+                                            dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                        }
+                                        rc.DataSource = ds;
+                                        rc.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                        rc.Parameters["Id"].Visible = false;
+                                        //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
+                                        // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                        rc.PrinterName = Properties.Settings.Default.PrinterDrinks;
+                                        rc.Print();
+                                        rc.Dispose();
 
+                                    }
+                                    #endregion
 
-                        //    RPT.rptCheckenSala sala = new RPT.rptCheckenSala();
-                        //    RPT.Frm_ReportOrder sa = new RPT.Frm_ReportOrder();
+                                    //كود طباعة الماكولات فقط
+                                    #region
+                                    XtraReportCheck rcmakolat = new XtraReportCheck();
+                                    dt6.Clear();
+                                    dt6 = o.PrintOrderDeliveryMakolat(Convert.ToInt32(Lable_Num.Text));
+                                    if (dt5.Rows[0][11].ToString() == "Table")
+                                    {
+                                        dt6.Clear();
 
-                        //    // sa.crystalReportViewer1.RefreshReport();
-                        //    sala.SetDatabaseLogon("", "", ".", "Restuarnt");
-                        //    sala.SetParameterValue("@ID", (Convert.ToInt32(Lable_Num.Text)));
-                        //    if (sala.Rows.Count > 0)
-                        //    {
+                                        dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                        rcmakolat.Label_TableNum.Visible = true;
+                                        rcmakolat.Txt_TableNum.Visible = true;
+                                        rcmakolat.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                    }
 
-
-                        //        // sa.crystalReportViewer1.ReportSource = sala;
-                        //        System.Drawing.Printing.PrintDocument printDocumentsala = new System.Drawing.Printing.PrintDocument();
-                        //        sala.PrintOptions.PrinterName = printDocumentsala.PrinterSettings.PrinterName;
-                        //        sala.PrintToPrinter(1, true, 0, 0);
-
-                        //        sala.Close();
-                        //        sa.Dispose();
-                        //    }
-                        //    //GC.Collect();
-                        //    //GC.WaitForPendingFinalizers();
-                        //}
-                        //else if (rdb_takeaway.Checked == true)
-                        //{
-                        //    RPT.rptChekenTakeAway rt = new RPT.rptChekenTakeAway();
-                        //    RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
-
-
-                        //    // s.crystalReportViewer1.RefreshReport();
-                        //    rt.SetDatabaseLogon("", "", ".", "Restuarnt");
-                        //    rt.SetParameterValue("@ID", (Convert.ToInt32(Lable_Num.Text)));
-                        //    if (rt.Rows.Count > 0)
-                        //    {
-
-
-                        //        //   s.crystalReportViewer1.ReportSource = rt;
-                        //        System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                        //        rt.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                        //        rt.PrintToPrinter(1, true, 0, 0);
-                        //        rt.Close();
-                        //        s.Dispose();
-                        //    }
-
-                        //    RPT.rptChekenTakeAwayDrinks rtake = new RPT.rptChekenTakeAwayDrinks();
-                        //    RPT.Frm_ReportOrder stake = new RPT.Frm_ReportOrder();
-
-
-                        //    //  stake.crystalReportViewer1.RefreshReport();
-                        //    rtake.SetDatabaseLogon("", "", ".", "Restuarnt");
-                        //    rtake.SetParameterValue("@ID", (Convert.ToInt32(Lable_Num.Text)));
-                        //    if (rtake.Rows.Count > 0)
-                        //    {
-                        //        // stake.crystalReportViewer1.ReportSource = rtake;
-                        //        System.Drawing.Printing.PrintDocument printDocumenttake = new System.Drawing.Printing.PrintDocument();
-                        //        rtake.PrintOptions.PrinterName = printDocumenttake.PrinterSettings.PrinterName;
-                        //        rtake.PrintToPrinter(1, true, 0, 0);
-                        //        rtake.Close();
-                        //        stake.Dispose();
-                        //    }
-                        //}
-                        #endregion
+                                    dt6.Clear();
+                                    dt6 = o.PrintOrderDeliveryMakolat(Convert.ToInt32(Lable_Num.Text));
+                                    if (dt6.Rows.Count > 0)
+                                    {
 
 
+                                        ds.Tables["Order"].Clear();
+                                        for (int i = 0; i < dt6.Rows.Count; i++)
+                                        {
+                                            ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
+                                            dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
+                                            dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                        }
+                                        rcmakolat.DataSource = ds;
+                                        rcmakolat.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                        rcmakolat.Parameters["Id"].Visible = false;
+                                        //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
+                                        // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                        rcmakolat.PrinterName = Properties.Settings.Default.PrinterChecken;
+                                        rcmakolat.Print();
+                                        rcmakolat.Dispose();
+                                    }
+                                    #endregion
+                                }
+                            }
+                            /////كود طباعة فاتورة للعميل ///////
+                            if (Properties.Settings.Default.PrintOrderInHold == "true")
+                            {
+                                XtraReport1Order ro = new XtraReport1Order();
+
+                                dt5.Clear();
+                                dt5 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
+                                if (dt5.Rows[0][11].ToString() == "Table")
+                                {
+                                    dt5.Clear();
+                                    dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                    ro.xrLabel11.Visible = true;
+                                    ro.xrLabel10.Visible = true;
+                                    ro.xrLabel18.Visible = true;
+                                    ro.xrLabel19.Visible = true;
+                                    ro.xrLabel19.Text = dt5.Rows[0][1].ToString();
+                                }
+
+                                if (dt5.Rows[0][11].ToString() == "Delivery")
+                                {
+                                    dt5.Clear();
+                                    dt5 = o.Select_DeliveyMan(Convert.ToInt32(Lable_Num.Text));
+                                    ro.xrLabel20.Visible = true;
+                                    ro.xrLabel21.Visible = true;
+                                    ro.xrLabel21.Text = dt5.Rows[0][1].ToString();
+                                }
+                                dt5.Clear();
+                                dt5 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
+
+                                ds.Tables["Order"].Clear();
+                                for (int i = 0; i < dt5.Rows.Count; i++)
+                                {
+                                    ds.Tables["Order"].Rows.Add(dt5.Rows[i][0], dt5.Rows[i][1], dt5.Rows[i][4],
+                                    dt5.Rows[i][5], dt5.Rows[i][7], dt5.Rows[i][6], dt5.Rows[i][9], dt5.Rows[i][8],
+                                    dt5.Rows[i][2], (dt5.Rows[i][3]), dt5.Rows[i][11], dt5.Rows[i][10], dt5.Rows[i][12]);
+                                }
+                                ro.Txt_Delivery.Visible = true;
+                                ro.DataSource = ds;
+                                ro.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                ro.Parameters["Id"].Visible = false;
+                                //System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
+                                //ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                ro.PrinterName = Properties.Settings.Default.PrinterOrderClient;
+                                ro.Print();
+                                ro.Dispose();
+                            }
+                           
+                        }
+                        clear2();
                     }
                     else
                     {
                         MessageBox.Show("من فضلك فم بااختيار اصناف الفاتورة اولا");
                         return;
                     }
-
-                    clear2();
-       
                 }
-
-
-                if (Lable_Num.Text!="")
+                if (Lable_Num.Text != "")
                 {
-                    
 
-                        o.DeleteOrderNewRow();
 
-                        int x;
-                        for (int y = 0; y < gridView2.RowCount; y++)
+                    o.DeleteOrderNewRow();
+
+                    int x;
+                    for (int y = 0; y < gridView2.RowCount; y++)
+                    {
+                        DataRow row = gridView2.GetDataRow(y);
+                        dt5.Clear();
+                        dt5 = o.VildateQuantity(Convert.ToInt32(Lable_Num.Text), Convert.ToInt32(row[2]), Convert.ToInt32(row[5]));
+                        foreach (DataRow dr in dt5.Rows)
                         {
-                            DataRow row = gridView2.GetDataRow(y);
-                            dt5.Clear();
-                            dt5 = o.VildateQuantity(Convert.ToInt32(Lable_Num.Text), Convert.ToInt32(row[2]), Convert.ToInt32(row[5]));
-                            foreach (DataRow dr in dt5.Rows)
-                            {
-                                x = Convert.ToInt32(row[5]) - Convert.ToInt32(dr[2]);
+                            x = Convert.ToInt32(row[5]) - Convert.ToInt32(dr[2]);
 
 
 
-                                if (dt5.Rows.Count > 0)
-                                {
-                                    o.AddOrderNewRow(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
-                                  x, Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
-
-                                }
-                            }
-                        dt10.Clear();
-                            dt10 = o.VildateOrderDetails(Convert.ToInt32(Lable_Num.Text), Convert.ToInt32(row[2]));
-                            if (dt10.Rows.Count == 0)
+                            if (dt5.Rows.Count > 0)
                             {
                                 o.AddOrderNewRow(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
-                           Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
+                              x, Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
+
                             }
                         }
-
-                        //  ------------------------------------------------------------//
-                        o.Delete_ProdFromOrderDetails(Convert.ToInt32(Lable_Num.Text));
-                        for (int i = 0; i < gridView2.RowCount; i++)
+                        dt10.Clear();
+                        dt10 = o.VildateOrderDetails(Convert.ToInt32(Lable_Num.Text), Convert.ToInt32(row[2]));
+                        if (dt10.Rows.Count == 0)
                         {
-                            DataRow row = gridView2.GetDataRow(i);
-                            o.AddOrderDetails(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
-                               Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
+                            o.AddOrderNewRow(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
+                       Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
                         }
+                    }
+
+                    //  ------------------------------------------------------------//
+                    o.Delete_ProdFromOrderDetails(Convert.ToInt32(Lable_Num.Text));
+                    for (int i = 0; i < gridView2.RowCount; i++)
+                    {
+                        DataRow row = gridView2.GetDataRow(i);
+                        o.AddOrderDetails(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
+                           Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
+                    }
 
 
                     #region delete order from sala or delevery or tackaway
                     dt10.Clear();
                     dt10 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
-                    if (dt10.Rows[0][11].ToString()== "Table")
+                    if (dt10.Rows[0][11].ToString() == "Table")
                     {
                         o.Delete_OrderFromSala(Convert.ToInt32(Lable_Num.Text));
                     }
@@ -2065,7 +2267,7 @@ namespace Restuarnt.PL
                             if (dt.Rows.Count > 0)
                             {
                                 cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
-                               
+
                                 o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
                                 0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text),
                                 "Take away", Convert.ToInt32(cmb_customer.EditValue));
@@ -2082,7 +2284,7 @@ namespace Restuarnt.PL
 
                             cu.AddCustomer(textEdit1.Text, txt_address.Text, txt_phones.Text);
                             txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
-                    
+
                             o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
                               0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text),
                               "Take away", Convert.ToInt32(txt_cust.Text));
@@ -2132,7 +2334,7 @@ namespace Restuarnt.PL
 
                             cu.AddCustomer(textEdit1.Text, txt_address.Text, txt_phones.Text);
                             txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
-                          
+
                             o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
                               0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text),
                               "Delivery", Convert.ToInt32(txt_cust.Text));
@@ -2147,7 +2349,7 @@ namespace Restuarnt.PL
                     else if (rdb_sala.Checked == true)
                     {
                         textEdit1.Text = "عميل نقدى";
-                   
+
                         if (cmb_Table.Text == "")
                         {
                             MessageBox.Show("من فضلك قم بتسجيل رقم الطاولة ");
@@ -2166,77 +2368,188 @@ namespace Restuarnt.PL
                         MessageBox.Show("تم تعليق الفاتوره بعد التعديل بنجاح", "عمليه التعليق", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
 
                     }
-                    //  -------كود طباعة الاصناف الزياده فى اتعديل----------------------------------------------------------------------------------
-                    #region
-                    //if (Lable_Num.Text != string.Empty)
-                    //    {
 
 
-                    //        dt.Clear();
-                    //        dt = o.validatePritOrderNewRow(Convert.ToInt32(Lable_Num.Text));
-                    //        if (dt.Rows.Count > 0)
-                    //        {
+                    //////كود الطباعة فى التعديل //////
+                    if (Lable_Num.Text != "")
+                    {
+                        DataTable dt6 = new DataTable();
+                        DataSet1 ds = new DataSet1();
+                        ////////////////   كود طباعة امر تشغيل مجمع بعد التعديل ///////////
+                        if (Properties.Settings.Default.PrintCheckenInHold == "true")
+                        {
+
+                            if (Properties.Settings.Default.CheckenType == "collect")
+                            {
+                                XtraReportCheck rc = new XtraReportCheck();
+                                dt6.Clear();
+                                dt6 = o.PritOrderNewRow(Convert.ToInt32(Lable_Num.Text));
+                                if (dt5.Rows[0][11].ToString() == "Table")
+                                {
+                                    dt6.Clear();
+
+                                    dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                    rc.Label_TableNum.Visible = true;
+                                    rc.Txt_TableNum.Visible = true;
+                                    rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                }
+
+                                dt6.Clear();
+                                dt6 = o.PritOrderNewRow(Convert.ToInt32(Lable_Num.Text));
+                                if (dt6.Rows.Count > 0)
+                                {
 
 
+                                    ds.Tables["Order"].Clear();
+                                    for (int i = 0; i < dt6.Rows.Count; i++)
+                                    {
+                                        ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
+                                        dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
+                                        dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                    }
+                                    rc.DataSource = ds;
+                                    rc.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                    rc.Parameters["Id"].Visible = false;
+                                    //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
+                                    // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                    rc.PrinterName = Properties.Settings.Default.PrinterChecken;
+                                    rc.Print();
+                                    rc.Dispose();
+                                }
+                            }
+                            if (Properties.Settings.Default.CheckenType == "seperator")
+                            {
+                                //كود طباعة المشروبات فقط
+                                #region
+                                XtraReportCheck rc = new XtraReportCheck();
+                                dt6.Clear();
+                                dt6 = o.PritOrderNewRowDrinks(Convert.ToInt32(Lable_Num.Text));
+                                if (dt5.Rows[0][11].ToString() == "Table")
+                                {
+                                    dt6.Clear();
+
+                                    dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                    rc.Label_TableNum.Visible = true;
+                                    rc.Txt_TableNum.Visible = true;
+                                    rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                }
+
+                                dt6.Clear();
+                                dt6 = o.PritOrderNewRowDrinks(Convert.ToInt32(Lable_Num.Text));
+                                if (dt6.Rows.Count > 0)
+                                {
+
+                                    ds.Tables["Order"].Clear();
+                                    for (int i = 0; i < dt6.Rows.Count; i++)
+                                    {
+                                        ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
+                                        dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
+                                        dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                    }
+                                    rc.DataSource = ds;
+                                    rc.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                    rc.Parameters["Id"].Visible = false;
+                                    //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
+                                    // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                    rc.PrinterName = Properties.Settings.Default.PrinterDrinks;
+                                    rc.Print();
+                                    rc.Dispose();
+
+                                }
+                                #endregion
+
+                                //كود طباعة الماكولات فقط
+                                #region
+                                XtraReportCheck rcmakolat = new XtraReportCheck();
+                                dt6.Clear();
+                                dt6 = o.PritOrderNewRowMakolat(Convert.ToInt32(Lable_Num.Text));
+                                if (dt5.Rows[0][11].ToString() == "Table")
+                                {
+                                    dt6.Clear();
+
+                                    dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                    rcmakolat.Label_TableNum.Visible = true;
+                                    rcmakolat.Txt_TableNum.Visible = true;
+                                    rcmakolat.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                }
+
+                                dt6.Clear();
+                                dt6 = o.PritOrderNewRowMakolat(Convert.ToInt32(Lable_Num.Text));
+                                if (dt6.Rows.Count > 0)
+                                {
 
 
-                    //            if (rdb_delivery.Checked == true)
-                    //            {
-                    //                RPT.rptNewRowDAELIVERYMakolat ro = new RPT.rptNewRowDAELIVERYMakolat();
-                    //                RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
+                                    ds.Tables["Order"].Clear();
+                                    for (int i = 0; i < dt6.Rows.Count; i++)
+                                    {
+                                        ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
+                                        dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
+                                        dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                    }
+                                    rcmakolat.DataSource = ds;
+                                    rcmakolat.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                    rcmakolat.Parameters["Id"].Visible = false;
+                                    //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
+                                    // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                    rcmakolat.PrinterName = Properties.Settings.Default.PrinterChecken;
+                                    rcmakolat.Print();
+                                    rcmakolat.Dispose();
+                                }
+                                #endregion
+                            }
+                        }
+                        /////كود طباعة فاتورة للعميل ///////
+                        if (Properties.Settings.Default.PrintOrderInHold == "true")
+                        {
+                            XtraReport1Order ro = new XtraReport1Order();
 
-                    //                // s.crystalReportViewer1.RefreshReport();
-                    //                ro.SetDatabaseLogon("", "", ".", "Restuarnt");
-                    //                ro.SetParameterValue("@id", (Convert.ToInt32(Lable_Num.Text)));
-                    //                if (ro.Rows.Count > 0)
-                    //                {
-                    //                    //  s.crystalReportViewer1.ReportSource = ro;
-                    //                    System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                    //                    ro.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                    //                    ro.PrintToPrinter(1, true, 0, 0);
-                    //                    ro.Close();
-                    //                    s.Dispose();
+                            dt5.Clear();
+                            dt5 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
+                            if (dt5.Rows[0][11].ToString() == "Table")
+                            {
+                                dt5.Clear();
+                                dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                ro.xrLabel11.Visible = true;
+                                ro.xrLabel10.Visible = true;
+                                ro.xrLabel18.Visible = true;
+                                ro.xrLabel19.Visible = true;
+                                ro.xrLabel19.Text = dt5.Rows[0][1].ToString();
+                            }
 
+                            if (dt5.Rows[0][11].ToString() == "Delivery")
+                            {
+                                dt5.Clear();
+                                dt5 = o.Select_DeliveyMan(Convert.ToInt32(Lable_Num.Text));
+                                ro.xrLabel20.Visible = true;
+                                ro.xrLabel21.Visible = true;
+                                ro.xrLabel21.Text = dt5.Rows[0][1].ToString();
+                            }
+                            dt5.Clear();
+                            dt5 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
 
-                    //                }
-                    //                //////////////////////////////////////////////
-                    //                ///
+                            ds.Tables["Order"].Clear();
+                            for (int i = 0; i < dt5.Rows.Count; i++)
+                            {
+                                ds.Tables["Order"].Rows.Add(dt5.Rows[i][0], dt5.Rows[i][1], dt5.Rows[i][4],
+                                dt5.Rows[i][5], dt5.Rows[i][7], dt5.Rows[i][6], dt5.Rows[i][9], dt5.Rows[i][8],
+                                dt5.Rows[i][2], (dt5.Rows[i][3]), dt5.Rows[i][11], dt5.Rows[i][10], dt5.Rows[i][12]);
+                            }
+                            ro.Txt_Delivery.Visible = true;
+                            ro.DataSource = ds;
+                            ro.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                            ro.Parameters["Id"].Visible = false;
+                            //System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
+                            //ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                            ro.PrinterName = Properties.Settings.Default.PrinterOrderClient;
+                            ro.Print();
+                            ro.Dispose();
+                        }
 
+                    }
 
-                    //                RPT.rptNewRowDAELIVERY newrowdel = new RPT.rptNewRowDAELIVERY();
-                    //                RPT.Frm_ReportOrder snewrowdel = new RPT.Frm_ReportOrder();
-
-                    //                // snewrowdel.crystalReportViewer1.RefreshReport();
-                    //                newrowdel.SetDatabaseLogon("", "", ".", "Restuarnt");
-                    //                newrowdel.SetParameterValue("@id", (Convert.ToInt32(Lable_Num.Text)));
-                    //                if (newrowdel.Rows.Count > 0)
-                    //                {
-
-
-                    //                    //  snewrowdel.crystalReportViewer1.ReportSource = newrowdel;
-                    //                    System.Drawing.Printing.PrintDocument printDocumentnewdel = new System.Drawing.Printing.PrintDocument();
-                    //                    newrowdel.PrintOptions.PrinterName = printDocumentnewdel.PrinterSettings.PrinterName;
-                    //                    newrowdel.PrintToPrinter(1, true, 0, 0);
-                    //                    newrowdel.Close();
-                    //                    snewrowdel.Dispose();
-
-
-
-                    //                    //GC.Collect();
-                    //                    //GC.WaitForPendingFinalizers();
-                    //                }
-
-
-                    //            }
-                    //            o.DeleteOrderNewRow();
-                    //            // clear2();
-                    //        }
-
-                    //    }
-                    #endregion
 
                     clear2();
-                    
+
 
                 }
 
@@ -2245,15 +2558,15 @@ namespace Restuarnt.PL
                 simpleButton4.Text = $"({dt.Rows.Count}) الفواتير المتعلقة";
 
 
+
+
             }
-
-
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
                 MessageBox.Show(ex.StackTrace);
-               
+
 
 
             }
