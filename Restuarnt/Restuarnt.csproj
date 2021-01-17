@@ -368,6 +368,12 @@
     <Compile Include="PL\Frm_Table.Designer.cs">
       <DependentUpon>Frm_Table.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_Tables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_Tables.Designer.cs">
+      <DependentUpon>Frm_Tables.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_totalDelivery.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -647,6 +653,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Table.resx">
       <DependentUpon>Frm_Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_Tables.resx">
+      <DependentUpon>Frm_Tables.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_totalDelivery.resx">
       <DependentUpon>Frm_totalDelivery.cs</DependentUpon>

@@ -59,6 +59,7 @@ namespace Restuarnt.BL
             da.close();
             return dt;
         }
+        
         internal void UpdateTables(int idTable, string TableNumber)
         {
             DataAccessLayer da = new DataAccessLayer();
@@ -119,6 +120,21 @@ namespace Restuarnt.BL
             da.excutequery("UpdateTablesInOrder", param);
             da.close();
         }
+
+        internal DataTable DeleteTables(int iD_Table)
+        {
+            DataTable dt = new DataTable();
+         
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@iD_Table", SqlDbType.Int);
+            param[0].Value = iD_Table;
+            dt = da.selected("DeleteTables", param);
+            da.close();
+            return dt;
+        }
+        
     }
 }
 
