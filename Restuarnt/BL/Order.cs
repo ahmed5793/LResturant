@@ -510,22 +510,6 @@ namespace Restuarnt.BL
             da.close();
             return dt;
         }
-        internal DataTable PritOrderNewRow(int id)
-        {
-            DataTable dt = new DataTable();
-
-            DataAccessLayer da = new DataAccessLayer();
-            da.open();
-            SqlParameter[] param = new SqlParameter[1];
-            param[0] = new SqlParameter("@id", SqlDbType.Int);
-            param[0].Value = id;
-
-
-
-            dt = da.selected("PritOrderNewRow", param);
-            da.close();
-            return dt;
-        }
         internal DataTable validatePritOrderNewRow(int id)
         {
             DataTable dt = new DataTable();
@@ -813,7 +797,73 @@ namespace Restuarnt.BL
             da.close();
             return dt;
         }
+        internal DataTable PrintOrderDeliveryMakolat(int id)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id", SqlDbType.Int);
+            param[0].Value = id;
 
+            dt = da.selected("PrintOrderDeliveryMakolat", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable PrintOrderDeliveryDrinks(int id)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id", SqlDbType.Int);
+            param[0].Value = id;
+
+            dt = da.selected("PrintOrderDeliveryDrinks", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable PritOrderNewRow(int id)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id", SqlDbType.Int);
+            param[0].Value = id;
+
+            dt = da.selected("PritOrderNewRow", param);
+            da.close();
+            return dt;
+        }
+
+        internal DataTable PritOrderNewRowDrinks(int id)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id", SqlDbType.Int);
+            param[0].Value = id;
+
+            dt = da.selected("PritOrderNewRowDrinks", param);
+            da.close();
+            return dt;
+        }
+
+        internal DataTable PritOrderNewRowMakolat(int id)
+        {
+            DataTable dt = new DataTable();
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@id", SqlDbType.Int);
+            param[0].Value = id;
+
+            dt = da.selected("PritOrderNewRowMakolat", param);
+            da.close();
+            return dt;
+        }
         internal DataTable SELECtALLORDER()
         {
             DataTable dt = new DataTable();
