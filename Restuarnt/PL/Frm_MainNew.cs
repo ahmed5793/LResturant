@@ -188,5 +188,11 @@ namespace Restuarnt.PL
         {
             
         }
+
+        private void Btn_ReciveMoney_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_ReportDelete rd = new Frm_ReportDelete();
+            rd.Show();
+        }
     }
 }

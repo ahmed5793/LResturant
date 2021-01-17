@@ -947,5 +947,56 @@ namespace Restuarnt.BL
             da.excutequery("Delete_OrderFromDelivery", param);
             da.close();
         }
+
+        internal DataTable SELECTOrderShowFalse(DateTime FromDate, DateTime ToDate)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+
+            param[0] = new SqlParameter("@fromDate", SqlDbType.Date);
+            param[0].Value = FromDate;
+
+            param[1] = new SqlParameter("@toDate", SqlDbType.Date);
+            param[1].Value = ToDate;
+
+           
+
+            dt = da.selected("SELECTOrderShowFalse", param);
+            da.close();
+            return dt;
+        }
+        internal DataTable SELECTOrderAfterPayShowFalse(DateTime FromDate, DateTime ToDate)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[2];
+
+            param[0] = new SqlParameter("@fromDate", SqlDbType.Date);
+            param[0].Value = FromDate;
+
+            param[1] = new SqlParameter("@toDate", SqlDbType.Date);
+            param[1].Value = ToDate;
+
+          
+
+            dt = da.selected("SELECTOrderAfterPayShowFalse", param);
+            da.close();
+            return dt;
+        }
+        internal void updateShwo(int idOrder)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@idOrder", SqlDbType.Int);
+            param[0].Value = idOrder;
+            da.excutequery("updateShwo", param);
+            da.close();
+        }
     }
 }

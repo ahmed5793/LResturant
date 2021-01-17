@@ -89,6 +89,41 @@ namespace Restuarnt.PL
                 
 
             }
+            else if (e.Column.Name == "delete")
+            {
+                if (MessageBox.Show("هل تريد حذف الفاتورة ونقلها الي سلة المهملات", "عمليه الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                {
+
+                    o.DeleteOrder(Convert.ToInt32(gridView2.GetFocusedRowCellValue(ID_Order)));
+                    MessageBox.Show("تم الحذف بنجاح", "عمليه الحذف", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DataTable dt = new DataTable();
+
+                    dt.Clear();
+                    dt = o.SELECTOrderRentALLORDER();
+                   FOrder.getmain.simpleButton4.Text = $"({dt.Rows.Count}) الفواتير المتعلقة";
+
+
+
+                    if (rdb_all.Checked==true)
+                    {
+                        gridControl2.DataSource = o.SELECTOrderRentALLORDER();
+                    }
+                    else if(rdb_delivery.Checked==true)
+                    {
+                        gridControl2.DataSource = o.SELECTOrderRent();
+                    }
+                    else if(rdb_sala.Checked==true)
+                    {
+                        gridControl2.DataSource = o.SELECTOrderRentSala();
+                    }
+                    else if(rdb_takeaway.Checked==true)
+                    {
+                        gridControl2.DataSource = o.SELECTOrderRentTkeAway();
+                    }
+                }
+            }
+
+            
         }
 
         private void rdb_takeaway_CheckedChanged(object sender, EventArgs e)

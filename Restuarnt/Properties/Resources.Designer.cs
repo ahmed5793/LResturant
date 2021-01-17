@@ -73,6 +73,16 @@ namespace Restuarnt.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _237806 {
+            get {
+                object obj = ResourceManager.GetObject("237806", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _3081371 {
             get {
                 object obj = ResourceManager.GetObject("3081371", resourceCulture);
@@ -266,6 +276,16 @@ namespace Restuarnt.Properties {
         internal static System.Drawing.Bitmap lookup_reference_32x32 {
             get {
                 object obj = ResourceManager.GetObject("lookup&reference_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ORDER {
+            get {
+                object obj = ResourceManager.GetObject("ORDER", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
