@@ -154,7 +154,7 @@
 </value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="editorButtonImageOptions2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="editorButtonImageOptions1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
         dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAMdEVYdFRpdGxlAFRyYXNoO2SaNW0AAAZtSURBVFhH
@@ -228,7 +228,7 @@
   <data name="rdb_takeaway.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAs3SURBVFhHxZgJ
+        vwAADr8BOAVTJAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAs3SURBVFhHxZgJ
         WJTVGsdnWIZlZoBhgGGGERBQNlliG0A2kX3fREQUWQVNVExBosyeLIlMRa1bt1Iy9kwE11xTr5h2r+bV
         VMSy7Ha7lT4teq+a+r/vOYOoZY129bnnef7P+b5zDuf85j3vec/7IcD/ufT396OhoQErmpZh5YomrKJ6
         8QsvYO/evbz/oQBev34D589/idNnBtB/5iz6B3TrNI379sJFJMTHQyAQkISDtQGvfb29+dz/M+ChQ4dR

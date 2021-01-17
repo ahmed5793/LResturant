@@ -1718,9 +1718,7 @@ namespace Restuarnt.PL
                 {
                     cmb_stuff.Enabled = true;
 
-                   
                     rdb_sala.Checked = true;
-
 
                     grb_sala.Show();
 
@@ -1740,9 +1738,11 @@ namespace Restuarnt.PL
 
                         t.UpdateTablesInOrder(Convert.ToInt32(dr[10]), 0);
 
-                        //cmb_Table.DataSource = t.SelectTablesCompo();
-                        //cmb_Table.DisplayMember = "Tables_Number";
-                        //cmb_Table.ValueMember = "ID_Tables";
+                        cmb_Table.DataSource = t.SelectTablesCompo();
+                        cmb_Table.DisplayMember = "Tables_Number";
+                        cmb_Table.ValueMember = "ID_Tables";
+                        cmb_Table.Text = dr[7].ToString();
+
                         Lable_Num.Text = dr[0].ToString();
                         txt_cust.Text = dr[1].ToString();
                         textEdit1.Text = dr[2].ToString();
@@ -1753,7 +1753,6 @@ namespace Restuarnt.PL
 
                         texT.Text = dr[4].ToString();
                 
-                        cmb_Table.Text = dr[7].ToString();
 
                         txt_discount.Text = dr[8].ToString();
                         cmb_stuff.Text = dr[9].ToString();
