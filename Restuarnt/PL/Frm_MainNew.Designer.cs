@@ -1724,7 +1724,7 @@
             // 
             // Btn_ReciveMoney
             // 
-            this.Btn_ReciveMoney.Caption = "إستلام النقدية";
+            this.Btn_ReciveMoney.Caption = "سلة المهملات";
             this.Btn_ReciveMoney.Id = 97;
             this.Btn_ReciveMoney.ImageOptions.Image = global::Restuarnt.Properties.Resources.financial_16x161;
             this.Btn_ReciveMoney.ImageOptions.LargeImage = global::Restuarnt.Properties.Resources.financial_32x321;
@@ -1752,6 +1752,7 @@
             this.Btn_ReciveMoney.ItemAppearance.Pressed.Options.UseTextOptions = true;
             this.Btn_ReciveMoney.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_ReciveMoney.Name = "Btn_ReciveMoney";
+            this.Btn_ReciveMoney.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_ReciveMoney_ItemClick);
             // 
             // barButtonItem19
             // 

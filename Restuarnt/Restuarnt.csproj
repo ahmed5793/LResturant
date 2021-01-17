@@ -170,6 +170,12 @@
     <Compile Include="BL\Tables.cs" />
     <Compile Include="BL\Unit.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
+    <Compile Include="DAL\Frm_ReportDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DAL\Frm_ReportDelete.Designer.cs">
+      <DependentUpon>Frm_ReportDelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\BackUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,6 +253,12 @@
     </Compile>
     <Compile Include="PL\frm_pay.Designer.cs">
       <DependentUpon>frm_pay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_Receive cash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_Receive cash.Designer.cs">
+      <DependentUpon>Frm_Receive cash.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_ReportIncome.cs">
       <SubType>Form</SubType>
@@ -555,6 +567,9 @@
       <DependentUpon>rptNewRowDAELIVERY.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="DAL\Frm_ReportDelete.resx">
+      <DependentUpon>Frm_ReportDelete.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\BackUp.resx">
       <DependentUpon>BackUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -593,6 +608,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\frm_pay.resx">
       <DependentUpon>frm_pay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_Receive cash.resx">
+      <DependentUpon>Frm_Receive cash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ReportIncome.resx">
       <DependentUpon>Frm_ReportIncome.cs</DependentUpon>
@@ -807,6 +825,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icons-Land-Points-Of-Interest-Restaurant-Blue-2.ico" />
+    <None Include="Resources\ORDER.jpg" />
     <None Include="Resources\trash_32x32.png" />
     <None Include="Resources\print_32x32.png" />
     <None Include="Resources\printer_32x32.png" />
@@ -842,6 +861,7 @@
     <None Include="Resources\financial_32x321.png" />
     <None Include="Resources\financial_16x161.png" />
     <None Include="Resources\apply_32x32.png" />
+    <None Include="Resources\237806.png" />
     <Content Include="Resources\image-not-found-scaled-1150x6471.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -33,8 +33,6 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.txt_Pass = new System.Windows.Forms.TextBox();
-            this.txt_User = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -42,10 +40,14 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txt_User = new DevExpress.XtraEditors.TextEdit();
+            this.txt_Pass = new DevExpress.XtraEditors.TextEdit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_User.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Pass.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -63,7 +65,7 @@
             this.simpleButton2.Location = new System.Drawing.Point(257, 5);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(37, 41);
-            this.simpleButton2.TabIndex = 1;
+            this.simpleButton2.TabIndex = 4;
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // simpleButton1
@@ -72,7 +74,7 @@
             this.simpleButton1.Location = new System.Drawing.Point(299, 5);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(37, 41);
-            this.simpleButton1.TabIndex = 0;
+            this.simpleButton1.TabIndex = 3;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // checkBox1
@@ -83,48 +85,12 @@
             this.checkBox1.Location = new System.Drawing.Point(69, 362);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(203, 32);
-            this.checkBox1.TabIndex = 2;
+            this.checkBox1.TabIndex = 100;
             this.checkBox1.TabStop = false;
-            this.checkBox1.Text = "SHOW PASSOWRD";
+            this.checkBox1.Text = "SHOW PASSWORD";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             this.checkBox1.MouseLeave += new System.EventHandler(this.checkBox1_MouseLeave);
-            // 
-            // txt_Pass
-            // 
-            this.txt_Pass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.txt_Pass.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_Pass.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Pass.ForeColor = System.Drawing.Color.White;
-            this.txt_Pass.Location = new System.Drawing.Point(80, 306);
-            this.txt_Pass.Name = "txt_Pass";
-            this.txt_Pass.Size = new System.Drawing.Size(249, 25);
-            this.txt_Pass.TabIndex = 1;
-            this.txt_Pass.TabStop = false;
-            this.txt_Pass.Text = "PASSWORD";
-            this.txt_Pass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_Pass.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_Pass_MouseClick_1);
-            this.txt_Pass.TextChanged += new System.EventHandler(this.txt_Pass_TextChanged);
-            this.txt_Pass.Enter += new System.EventHandler(this.txt_Pass_Enter);
-            this.txt_Pass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Pass_KeyDown);
-            this.txt_Pass.Leave += new System.EventHandler(this.txt_Pass_Leave);
-            this.txt_Pass.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txt_Pass_MouseMove);
-            // 
-            // txt_User
-            // 
-            this.txt_User.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.txt_User.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_User.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_User.ForeColor = System.Drawing.Color.White;
-            this.txt_User.Location = new System.Drawing.Point(82, 233);
-            this.txt_User.Name = "txt_User";
-            this.txt_User.Size = new System.Drawing.Size(247, 25);
-            this.txt_User.TabIndex = 0;
-            this.txt_User.TabStop = false;
-            this.txt_User.Text = "USER NAME";
-            this.txt_User.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_User.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_User_MouseClick);
-            this.txt_User.Leave += new System.EventHandler(this.txt_User_Leave);
             // 
             // panel2
             // 
@@ -159,11 +125,11 @@
             this.simpleButton3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.simpleButton3.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.simpleButton3.ImageOptions.Image = global::Restuarnt.Properties.Resources.apply_32x32;
-            this.simpleButton3.Location = new System.Drawing.Point(59, 448);
+            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.simpleButton3.Location = new System.Drawing.Point(59, 458);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(213, 38);
-            this.simpleButton3.TabIndex = 12016;
+            this.simpleButton3.TabIndex = 2;
             this.simpleButton3.Text = "LogIn";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
@@ -197,6 +163,46 @@
             this.pictureBox2.TabIndex = 12012;
             this.pictureBox2.TabStop = false;
             // 
+            // txt_User
+            // 
+            this.txt_User.Location = new System.Drawing.Point(88, 232);
+            this.txt_User.Name = "txt_User";
+            this.txt_User.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.txt_User.Properties.Appearance.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_User.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txt_User.Properties.Appearance.Options.UseBackColor = true;
+            this.txt_User.Properties.Appearance.Options.UseFont = true;
+            this.txt_User.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_User.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txt_User.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txt_User.Properties.NullText = "User Name";
+            this.txt_User.Properties.NullValuePrompt = "User Name";
+            this.txt_User.Size = new System.Drawing.Size(232, 28);
+            this.txt_User.TabIndex = 0;
+            // 
+            // txt_Pass
+            // 
+            this.txt_Pass.Location = new System.Drawing.Point(86, 308);
+            this.txt_Pass.Name = "txt_Pass";
+            this.txt_Pass.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.txt_Pass.Properties.Appearance.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Pass.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txt_Pass.Properties.Appearance.Options.UseBackColor = true;
+            this.txt_Pass.Properties.Appearance.Options.UseFont = true;
+            this.txt_Pass.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_Pass.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txt_Pass.Properties.ContextImageOptions.Alignment = DevExpress.XtraEditors.ContextImageAlignment.Far;
+            this.txt_Pass.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txt_Pass.Properties.NullText = "PASSWORD";
+            this.txt_Pass.Properties.NullValuePrompt = "PASSWORD";
+            this.txt_Pass.Properties.PasswordChar = '*';
+            this.txt_Pass.Properties.UseSystemPasswordChar = true;
+            this.txt_Pass.Properties.Click += new System.EventHandler(this.txt_Pass_Properties_Click);
+            this.txt_Pass.Size = new System.Drawing.Size(232, 28);
+            this.txt_Pass.TabIndex = 1;
+            this.txt_Pass.Click += new System.EventHandler(this.txt_Pass_Click);
+            this.txt_Pass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Pass_KeyDown);
+            // 
             // Frm_LoginMain
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -205,16 +211,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(352, 522);
             this.ControlBox = false;
+            this.Controls.Add(this.txt_Pass);
             this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.txt_Pass);
-            this.Controls.Add(this.txt_User);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.txt_User);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -226,6 +232,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_User.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Pass.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,8 +246,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox txt_Pass;
-        private System.Windows.Forms.TextBox txt_User;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -247,5 +253,7 @@
      
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.TextEdit txt_User;
+        private DevExpress.XtraEditors.TextEdit txt_Pass;
     }
 }
