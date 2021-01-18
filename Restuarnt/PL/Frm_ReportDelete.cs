@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using Restuarnt.BL;
 
-namespace Restuarnt.DAL
+namespace Restuarnt.pl
 {
     public partial class Frm_ReportDelete : DevExpress.XtraEditors.XtraForm
     {
@@ -52,7 +52,7 @@ namespace Restuarnt.DAL
 
         private void gridView2_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
-            if (e.Column.Name== "Update")
+            if (e.Column.Name== "Updates")
             {
                 if (MessageBox.Show("هل تريد استرجاع الفاتورة", "عمليه استرجاع", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
@@ -69,6 +69,11 @@ namespace Restuarnt.DAL
                     }
                 }
              }
+        }
+
+        private void Frm_ReportDelete_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

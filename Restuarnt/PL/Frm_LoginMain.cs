@@ -40,8 +40,7 @@ namespace Restuarnt.PL
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
-            txt_Pass.Properties.PasswordChar = checkBox1.Checked ? '\0' : '*';
-            txt_Pass.Properties.UseSystemPasswordChar = !checkBox1.Checked;
+          
 
         }
 
@@ -83,21 +82,26 @@ namespace Restuarnt.PL
                     if (Convert.ToInt32(dt2.Rows[0][1]) == 0)
                     {
                         Frm_MainNew.getmain.Btn_AddCategory.Enabled = false;
+                        Frm_MainNew.getmain.item_Category.Enabled = false;
 
                     }
                     else if (Convert.ToInt32(dt2.Rows[0][1]) == 1)
                     {
                         Frm_MainNew.getmain.Btn_AddCategory.Enabled = true;
+                        Frm_MainNew.getmain.item_Category.Enabled = true;
                     }
                     ///////
                     if (Convert.ToInt32(dt2.Rows[0][2]) == 0)
                     {
                         Frm_MainNew.getmain.BtnAdd_Items.Enabled = false;
+                        Frm_MainNew.getmain.Item_Proudct.Enabled = false;
 
                     }
                     else if (Convert.ToInt32(dt2.Rows[0][2]) == 1)
                     {
                         Frm_MainNew.getmain.BtnAdd_Items.Enabled = true;
+                        Frm_MainNew.getmain.Item_Proudct.Enabled = true;
+
                     }
                     ////////
                     if (Convert.ToInt32(dt2.Rows[0][3]) == 0)
@@ -143,29 +147,36 @@ namespace Restuarnt.PL
                     if (Convert.ToInt32(dt2.Rows[0][7]) == 0)
                     {
                         Frm_MainNew.getmain.Btn_OrderManagement.Enabled = false;
+                        Frm_MainNew.getmain.Item_Mangment.Enabled = false;
+
                     }
                     else if (Convert.ToInt32(dt2.Rows[0][7]) == 1)
                     {
                         Frm_MainNew.getmain.Btn_OrderManagement.Enabled = true;
+                        Frm_MainNew.getmain.Item_Mangment.Enabled = true;
                     }
 
                     /////////
                     if (Convert.ToInt32(dt2.Rows[0][8]) == 0)
                     {
                         Frm_MainNew.getmain.Btn_AddOrder.Enabled = false;
+                        Frm_MainNew.getmain.Item_Order.Enabled = false;
                     }
                     else if (Convert.ToInt32(dt2.Rows[0][8]) == 1)
                     {
                         Frm_MainNew.getmain.Btn_AddOrder.Enabled = true;
+                        Frm_MainNew.getmain.Item_Order.Enabled = true;
                     }
                     ///////////
                     if (Convert.ToInt32(dt2.Rows[0][9]) == 0)
                     {
                         Frm_MainNew.getmain.Btn_MoveItems.Enabled = false;
+                        Frm_MainNew.getmain.Item_Move.Enabled = false;
                     }
                     else if (Convert.ToInt32(dt2.Rows[0][9]) == 1)
                     {
                         Frm_MainNew.getmain.Btn_MoveItems.Enabled = true;
+                        Frm_MainNew.getmain.Item_Move.Enabled = true;
                     }
 
                     /////////
@@ -183,10 +194,12 @@ namespace Restuarnt.PL
                     if (Convert.ToInt32(dt2.Rows[0][11]) == 0)
                     {
                         Frm_MainNew.getmain.Btn_Masrofat.Enabled = false;
+                        Frm_MainNew.getmain.item_Masrod.Enabled = false;
                     }
                     else if (Convert.ToInt32(dt2.Rows[0][11]) == 1)
                     {
                         Frm_MainNew.getmain.Btn_Masrofat.Enabled = true;
+                        Frm_MainNew.getmain.item_Masrod.Enabled = true;
                     }
 
                     ///////
@@ -447,7 +460,23 @@ namespace Restuarnt.PL
 
         }
 
-       
+        private void simpleButton4_Click_1(object sender, EventArgs e)
+        {
 
+        }
+
+        private void simpleButton4_MouseHover(object sender, EventArgs e)
+        {
+            txt_Pass.Properties.PasswordChar =  '\0' ;
+            txt_Pass.Properties.UseSystemPasswordChar = false;
+        }
+
+        private void simpleButton4_MouseLeave(object sender, EventArgs e)
+        {
+            txt_Pass.Properties.PasswordChar =  '*';
+            txt_Pass.Properties.UseSystemPasswordChar = true;
+            //txt_Pass.Properties.PasswordChar = checkBox1.Checked ? '\0' : '*';
+            //txt_Pass.Properties.UseSystemPasswordChar = !checkBox1.Checked;
+        }
     }
     }

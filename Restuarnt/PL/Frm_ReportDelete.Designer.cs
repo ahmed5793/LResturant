@@ -1,4 +1,4 @@
-﻿namespace Restuarnt.DAL
+﻿namespace Restuarnt.pl
 {
     partial class Frm_ReportDelete
     {
@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_ReportDelete));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.rdb_order = new System.Windows.Forms.RadioButton();
-            this.rdb_hold = new System.Windows.Forms.RadioButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.ToDate = new DevExpress.XtraEditors.DateEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.FromDate = new DevExpress.XtraEditors.DateEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.rdb_order = new System.Windows.Forms.RadioButton();
+            this.rdb_hold = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -49,12 +49,12 @@
             this.Name_Cust = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Date = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Total = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Statues = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.UserName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Update = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.عرض = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.PAY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.RENT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Statues = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.UserName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Updates = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.عرض = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ToDate.Properties.CalendarTimeProperties)).BeginInit();
@@ -85,40 +85,6 @@
             this.groupControl2.Size = new System.Drawing.Size(921, 146);
             this.groupControl2.TabIndex = 130;
             this.groupControl2.Text = "نوع الطلب";
-            // 
-            // rdb_order
-            // 
-            this.rdb_order.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdb_order.AutoSize = true;
-            this.rdb_order.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_order.Image = global::Restuarnt.Properties.Resources.ORDER;
-            this.rdb_order.Location = new System.Drawing.Point(599, 9);
-            this.rdb_order.Name = "rdb_order";
-            this.rdb_order.Size = new System.Drawing.Size(114, 131);
-            this.rdb_order.TabIndex = 86;
-            this.rdb_order.Text = "ORDER";
-            this.rdb_order.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rdb_order.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.rdb_order.UseVisualStyleBackColor = true;
-            this.rdb_order.CheckedChanged += new System.EventHandler(this.rdb_order_CheckedChanged);
-            // 
-            // rdb_hold
-            // 
-            this.rdb_hold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdb_hold.AutoSize = true;
-            this.rdb_hold.Checked = true;
-            this.rdb_hold.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_hold.Image = global::Restuarnt.Properties.Resources._237806;
-            this.rdb_hold.Location = new System.Drawing.Point(791, 10);
-            this.rdb_hold.Name = "rdb_hold";
-            this.rdb_hold.Size = new System.Drawing.Size(114, 131);
-            this.rdb_hold.TabIndex = 85;
-            this.rdb_hold.TabStop = true;
-            this.rdb_hold.Text = "HOLD";
-            this.rdb_hold.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rdb_hold.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.rdb_hold.UseVisualStyleBackColor = true;
-            this.rdb_hold.CheckedChanged += new System.EventHandler(this.rdb_hold_CheckedChanged);
             // 
             // simpleButton1
             // 
@@ -192,6 +158,40 @@
             this.labelControl1.Size = new System.Drawing.Size(28, 34);
             this.labelControl1.TabIndex = 180;
             this.labelControl1.Text = "من";
+            // 
+            // rdb_order
+            // 
+            this.rdb_order.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdb_order.AutoSize = true;
+            this.rdb_order.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_order.Image = global::Restuarnt.Properties.Resources.ORDER;
+            this.rdb_order.Location = new System.Drawing.Point(599, 9);
+            this.rdb_order.Name = "rdb_order";
+            this.rdb_order.Size = new System.Drawing.Size(114, 131);
+            this.rdb_order.TabIndex = 86;
+            this.rdb_order.Text = "ORDER";
+            this.rdb_order.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rdb_order.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.rdb_order.UseVisualStyleBackColor = true;
+            this.rdb_order.CheckedChanged += new System.EventHandler(this.rdb_order_CheckedChanged);
+            // 
+            // rdb_hold
+            // 
+            this.rdb_hold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdb_hold.AutoSize = true;
+            this.rdb_hold.Checked = true;
+            this.rdb_hold.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_hold.Image = global::Restuarnt.Properties.Resources._237806;
+            this.rdb_hold.Location = new System.Drawing.Point(791, 10);
+            this.rdb_hold.Name = "rdb_hold";
+            this.rdb_hold.Size = new System.Drawing.Size(114, 131);
+            this.rdb_hold.TabIndex = 85;
+            this.rdb_hold.TabStop = true;
+            this.rdb_hold.Text = "HOLD";
+            this.rdb_hold.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rdb_hold.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.rdb_hold.UseVisualStyleBackColor = true;
+            this.rdb_hold.CheckedChanged += new System.EventHandler(this.rdb_hold_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -296,7 +296,7 @@
             this.RENT,
             this.Statues,
             this.UserName,
-            this.Update});
+            this.Updates});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
@@ -347,6 +347,22 @@
             this.Total.VisibleIndex = 3;
             this.Total.Width = 103;
             // 
+            // PAY
+            // 
+            this.PAY.Caption = "المدفوع";
+            this.PAY.FieldName = "المدفوع";
+            this.PAY.Name = "PAY";
+            this.PAY.Visible = true;
+            this.PAY.VisibleIndex = 4;
+            // 
+            // RENT
+            // 
+            this.RENT.Caption = "الباقي";
+            this.RENT.FieldName = "الباقي";
+            this.RENT.Name = "RENT";
+            this.RENT.Visible = true;
+            this.RENT.VisibleIndex = 5;
+            // 
             // Statues
             // 
             this.Statues.Caption = "نوع الطلب";
@@ -364,43 +380,27 @@
             this.UserName.Visible = true;
             this.UserName.VisibleIndex = 7;
             // 
-            // Update
+            // Updates
             // 
-            this.Update.Caption = "استرجاع";
-            this.Update.ColumnEdit = this.عرض;
-            this.Update.FieldName = "عرض";
-            this.Update.ImageOptions.Alignment = System.Drawing.StringAlignment.Far;
-            this.Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("gridColumn1.ImageOptions.Image")));
-            this.Update.Name = "Update";
-            this.Update.OptionsColumn.AllowEdit = false;
-            this.Update.Visible = true;
-            this.Update.VisibleIndex = 8;
-            this.Update.Width = 110;
+            this.Updates.Caption = "استرجاع";
+            this.Updates.ColumnEdit = this.عرض;
+            this.Updates.FieldName = "عرض";
+            this.Updates.ImageOptions.Alignment = System.Drawing.StringAlignment.Far;
+            this.Updates.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Update.ImageOptions.Image")));
+            this.Updates.Name = "Updates";
+            this.Updates.OptionsColumn.AllowEdit = false;
+            this.Updates.Visible = true;
+            this.Updates.VisibleIndex = 8;
+            this.Updates.Width = 110;
             // 
             // عرض
             // 
             this.عرض.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.عرض.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.عرض.Name = "عرض";
             this.عرض.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
-            // PAY
-            // 
-            this.PAY.Caption = "المدفوع";
-            this.PAY.FieldName = "المدفوع";
-            this.PAY.Name = "PAY";
-            this.PAY.Visible = true;
-            this.PAY.VisibleIndex = 4;
-            // 
-            // RENT
-            // 
-            this.RENT.Caption = "الباقي";
-            this.RENT.FieldName = "الباقي";
-            this.RENT.Name = "RENT";
-            this.RENT.Visible = true;
-            this.RENT.VisibleIndex = 5;
             // 
             // Frm_ReportDelete
             // 
@@ -411,6 +411,7 @@
             this.Controls.Add(this.groupControl2);
             this.Name = "Frm_ReportDelete";
             this.Text = "Frm_ReportDelete";
+            this.Load += new System.EventHandler(this.Frm_ReportDelete_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
@@ -446,7 +447,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn RENT;
         public DevExpress.XtraGrid.Columns.GridColumn Statues;
         private DevExpress.XtraGrid.Columns.GridColumn UserName;
-        public DevExpress.XtraGrid.Columns.GridColumn Update;
+        public DevExpress.XtraGrid.Columns.GridColumn Updates;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit عرض;
     }
 }
