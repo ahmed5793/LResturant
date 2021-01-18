@@ -168,7 +168,7 @@ namespace Restuarnt.PL
 
             if (Properties.Settings.Default.PrinterDrinks == "")
             {
-                    Cmb_PrintChecken.SelectedIndex = 0;
+                    Cmb_PrintDrinks.SelectedIndex = 0;
             }
             else
             {
@@ -253,17 +253,28 @@ namespace Restuarnt.PL
 
                 if (cbxPrinterClient.Text == "")
                 {
-                    MessageBox.Show("من فضلك تاكد من بيانات طابعة الفواتير", "تاكيد");
+                    MessageBox.Show("من فضلك تاكد من اختيار طابعة فاتورة العميل", "تاكيد");
+                    return;
+                }
+                if (Cmb_PrintChecken.Text == "")
+                {
+                    MessageBox.Show("من فضلك تاكد من اختيار طابعة للمطبخ   ", "تاكيد");
+                    return;
+                }
+                if (Cmb_PrintDrinks.Text == "")
+                {
+                    MessageBox.Show("من فضلك تاكد من اختيار طابعة للمشروبات   ", "تاكيد");
                     return;
                 }
 
                 Properties.Settings.Default.PrinterOrderClient = cbxPrinterClient.Text;
                 Properties.Settings.Default.Save();
-                Properties.Settings.Default.DeliveryService = Convert.ToDecimal(Txt_DeliveryService.Text);
+                Properties.Settings.Default.PrinterChecken = (Cmb_PrintChecken.Text);
+                Properties.Settings.Default.Save();
+                Properties.Settings.Default.PrinterDrinks = (Cmb_PrintDrinks.Text);
                 Properties.Settings.Default.Save();
                 Properties.Settings.Default.DeliveryService = Convert.ToDecimal(Txt_DeliveryService.Text);
                 Properties.Settings.Default.Save();
-
                 //////////////////////////
                 if (check_checkenInHold.Checked == true)
                 {

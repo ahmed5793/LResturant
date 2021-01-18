@@ -57,9 +57,10 @@
             this.DeliveryService = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.عرض = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.delete = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -265,6 +266,7 @@
             this.DeliveryService,
             this.gridColumn1,
             this.delete});
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
@@ -272,8 +274,10 @@
             this.gridView2.OptionsBehavior.AutoSelectAllInEditor = false;
             this.gridView2.OptionsBehavior.Editable = false;
             this.gridView2.OptionsBehavior.ReadOnly = true;
+            this.gridView2.OptionsNavigation.AutoMoveRowFocus = false;
             this.gridView2.OptionsPrint.PrintPreview = true;
             this.gridView2.OptionsSelection.EnableAppearanceFocusedRow = false;
+            this.gridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
             this.gridView2.OptionsView.ShowFooter = true;
             this.gridView2.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView2_RowCellClick);
             this.gridView2.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView2_CellValueChanged);
@@ -368,20 +372,11 @@
             this.عرض.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.عرض_ButtonClick);
             this.عرض.DoubleClick += new System.EventHandler(this.عرض_DoubleClick);
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(835, -3);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(36, 35);
-            this.simpleButton1.TabIndex = 169;
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
             // delete
             // 
             this.delete.ColumnEdit = this.repositoryItemButtonEdit1;
             this.delete.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
-            this.delete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("gridColumn2.ImageOptions.Image")));
+            this.delete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("delete.ImageOptions.Image")));
             this.delete.Name = "delete";
             this.delete.Visible = true;
             this.delete.VisibleIndex = 8;
@@ -395,12 +390,31 @@
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(835, -2);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(36, 35);
+            this.simpleButton1.TabIndex = 169;
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.simpleButton2.Location = new System.Drawing.Point(793, -2);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(37, 34);
+            this.simpleButton2.TabIndex = 170;
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
             // Frm_Hold
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(880, 530);
             this.ControlBox = false;
+            this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.labelControl1);
@@ -435,18 +449,19 @@
         public System.Windows.Forms.RadioButton rdb_sala;
         private System.Windows.Forms.GroupBox groupBox2;
         private DevExpress.XtraGrid.Columns.GridColumn ID_Order;
-        private DevExpress.XtraGrid.Columns.GridColumn Name_Cust;
         private DevExpress.XtraGrid.Columns.GridColumn Date;
         private DevExpress.XtraGrid.Columns.GridColumn Total;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit عرض;
-        private DevExpress.XtraGrid.Columns.GridColumn id_take;
         public DevExpress.XtraGrid.GridControl gridControl2;
         public DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         public DevExpress.XtraGrid.Columns.GridColumn Statues;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         public DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn DeliveryService;
         private DevExpress.XtraGrid.Columns.GridColumn delete;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
+        public DevExpress.XtraGrid.Columns.GridColumn DeliveryService;
+        public DevExpress.XtraGrid.Columns.GridColumn Name_Cust;
+        public DevExpress.XtraGrid.Columns.GridColumn id_take;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }

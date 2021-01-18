@@ -90,7 +90,7 @@ namespace Restuarnt.RPT {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_id {
+        public CrystalDecisions.Shared.IParameterField Parameter_ID {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }

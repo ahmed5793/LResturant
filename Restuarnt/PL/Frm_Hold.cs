@@ -15,13 +15,36 @@ namespace Restuarnt.PL
 {
     public partial class Frm_Hold : DevExpress.XtraEditors.XtraForm
     {
+        //private static Frm_Hold farm;
+
+        //static void STATUESCllosed(object sender, FormClosedEventArgs e)
+        //{
+        //    farm = null;
+        //}
+        //public static Frm_Hold getmain
+        //{
+        //    get
+        //    {
+        //        if (farm == null)
+        //        {
+        //            farm = new Frm_Hold();
+        //            farm.FormClosed += new FormClosedEventHandler(STATUESCllosed);
+        //        }
+        //        return farm;
+
+        //    }
+        //}
+
         Order o = new Order();
 
 
         public Frm_Hold()
         {
             InitializeComponent();
-         
+            //if (farm==null)
+            //{
+            //    farm = this;
+            //}
 
             Name_Cust.Caption = "اسم العميل";
             Name_Cust.FieldName = "اسم العميل";
@@ -207,9 +230,14 @@ namespace Restuarnt.PL
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            gridControl2.DataSource = null;
+           // gridControl2.DataSource = null;
 
             this.Close();
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

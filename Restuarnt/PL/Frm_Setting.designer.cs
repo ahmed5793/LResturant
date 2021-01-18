@@ -59,14 +59,14 @@
             this.Cmb_PrintDrinks = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.check_checkenInHold = new System.Windows.Forms.CheckBox();
-            this.check_OrderInhold = new System.Windows.Forms.CheckBox();
-            this.check_OrderInSave = new System.Windows.Forms.CheckBox();
-            this.check_CheckenInSave = new System.Windows.Forms.CheckBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.Rdb_Collect = new System.Windows.Forms.RadioButton();
             this.Rdb_Seperator = new System.Windows.Forms.RadioButton();
+            this.check_OrderInSave = new System.Windows.Forms.CheckBox();
+            this.check_CheckenInSave = new System.Windows.Forms.CheckBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.check_OrderInhold = new System.Windows.Forms.CheckBox();
+            this.check_checkenInHold = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -106,6 +106,7 @@
             this.txtAddress.Size = new System.Drawing.Size(214, 36);
             this.txtAddress.TabIndex = 15;
             this.txtAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtAddress.Visible = false;
             // 
             // txtName
             // 
@@ -180,6 +181,7 @@
             this.label3.Size = new System.Drawing.Size(93, 22);
             this.label3.TabIndex = 16;
             this.label3.Text = "عنوان المطعم";
+            this.label3.Visible = false;
             // 
             // label2
             // 
@@ -439,32 +441,46 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "إعدادات الطباعة";
             // 
-            // check_checkenInHold
+            // groupBox3
             // 
-            this.check_checkenInHold.AutoSize = true;
-            this.check_checkenInHold.BackColor = System.Drawing.Color.White;
-            this.check_checkenInHold.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.check_checkenInHold.Location = new System.Drawing.Point(544, 113);
-            this.check_checkenInHold.Name = "check_checkenInHold";
-            this.check_checkenInHold.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.check_checkenInHold.Size = new System.Drawing.Size(148, 28);
-            this.check_checkenInHold.TabIndex = 95;
-            this.check_checkenInHold.Text = "طباعة امر تشغيل";
-            this.check_checkenInHold.UseVisualStyleBackColor = false;
+            this.groupBox3.Controls.Add(this.Rdb_Collect);
+            this.groupBox3.Controls.Add(this.Rdb_Seperator);
+            this.groupBox3.Location = new System.Drawing.Point(6, 197);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(943, 77);
+            this.groupBox3.TabIndex = 88;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "طــبــاعــة آمـــر التــشــغــيــل";
             // 
-            // check_OrderInhold
+            // Rdb_Collect
             // 
-            this.check_OrderInhold.AutoSize = true;
-            this.check_OrderInhold.BackColor = System.Drawing.Color.White;
-            this.check_OrderInhold.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.check_OrderInhold.Location = new System.Drawing.Point(339, 112);
-            this.check_OrderInhold.Name = "check_OrderInhold";
-            this.check_OrderInhold.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.check_OrderInhold.Size = new System.Drawing.Size(167, 28);
-            this.check_OrderInhold.TabIndex = 96;
-            this.check_OrderInhold.Text = "طباعة فاتورة للعميل";
-            this.check_OrderInhold.UseVisualStyleBackColor = false;
-            this.check_OrderInhold.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.Rdb_Collect.AutoSize = true;
+            this.Rdb_Collect.BackColor = System.Drawing.Color.White;
+            this.Rdb_Collect.Checked = true;
+            this.Rdb_Collect.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Rdb_Collect.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Rdb_Collect.Location = new System.Drawing.Point(525, 38);
+            this.Rdb_Collect.Name = "Rdb_Collect";
+            this.Rdb_Collect.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Rdb_Collect.Size = new System.Drawing.Size(396, 28);
+            this.Rdb_Collect.TabIndex = 83;
+            this.Rdb_Collect.TabStop = true;
+            this.Rdb_Collect.Text = "امر التشغيل مجمع (الماكولات والمشروبات مع بعض)";
+            this.Rdb_Collect.UseVisualStyleBackColor = false;
+            // 
+            // Rdb_Seperator
+            // 
+            this.Rdb_Seperator.AutoSize = true;
+            this.Rdb_Seperator.BackColor = System.Drawing.Color.White;
+            this.Rdb_Seperator.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Rdb_Seperator.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Rdb_Seperator.Location = new System.Drawing.Point(21, 38);
+            this.Rdb_Seperator.Name = "Rdb_Seperator";
+            this.Rdb_Seperator.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Rdb_Seperator.Size = new System.Drawing.Size(438, 28);
+            this.Rdb_Seperator.TabIndex = 81;
+            this.Rdb_Seperator.Text = "امر التشغيل منفصل (مشروبات لوحدها والاماكولات لوحدها)";
+            this.Rdb_Seperator.UseVisualStyleBackColor = false;
             // 
             // check_OrderInSave
             // 
@@ -507,46 +523,32 @@
             this.label8.Text = "فى حالة حفظ وسداد الفاتورة";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // groupBox3
+            // check_OrderInhold
             // 
-            this.groupBox3.Controls.Add(this.Rdb_Collect);
-            this.groupBox3.Controls.Add(this.Rdb_Seperator);
-            this.groupBox3.Location = new System.Drawing.Point(6, 197);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(943, 77);
-            this.groupBox3.TabIndex = 88;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "طــبــاعــة آمـــر التــشــغــيــل";
+            this.check_OrderInhold.AutoSize = true;
+            this.check_OrderInhold.BackColor = System.Drawing.Color.White;
+            this.check_OrderInhold.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.check_OrderInhold.Location = new System.Drawing.Point(339, 112);
+            this.check_OrderInhold.Name = "check_OrderInhold";
+            this.check_OrderInhold.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.check_OrderInhold.Size = new System.Drawing.Size(167, 28);
+            this.check_OrderInhold.TabIndex = 96;
+            this.check_OrderInhold.Text = "طباعة فاتورة للعميل";
+            this.check_OrderInhold.UseVisualStyleBackColor = false;
+            this.check_OrderInhold.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
-            // Rdb_Collect
+            // check_checkenInHold
             // 
-            this.Rdb_Collect.AutoSize = true;
-            this.Rdb_Collect.BackColor = System.Drawing.Color.White;
-            this.Rdb_Collect.Checked = true;
-            this.Rdb_Collect.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Rdb_Collect.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Rdb_Collect.Location = new System.Drawing.Point(525, 38);
-            this.Rdb_Collect.Name = "Rdb_Collect";
-            this.Rdb_Collect.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Rdb_Collect.Size = new System.Drawing.Size(396, 28);
-            this.Rdb_Collect.TabIndex = 83;
-            this.Rdb_Collect.TabStop = true;
-            this.Rdb_Collect.Text = "امر التشغيل مجمع (الماكولات والمشروبات مع بعض)";
-            this.Rdb_Collect.UseVisualStyleBackColor = false;
-            // 
-            // Rdb_Seperator
-            // 
-            this.Rdb_Seperator.AutoSize = true;
-            this.Rdb_Seperator.BackColor = System.Drawing.Color.White;
-            this.Rdb_Seperator.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Rdb_Seperator.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Rdb_Seperator.Location = new System.Drawing.Point(21, 38);
-            this.Rdb_Seperator.Name = "Rdb_Seperator";
-            this.Rdb_Seperator.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Rdb_Seperator.Size = new System.Drawing.Size(438, 28);
-            this.Rdb_Seperator.TabIndex = 81;
-            this.Rdb_Seperator.Text = "امر التشغيل منفصل (مشروبات لوحدها والاماكولات لوحدها)";
-            this.Rdb_Seperator.UseVisualStyleBackColor = false;
+            this.check_checkenInHold.AutoSize = true;
+            this.check_checkenInHold.BackColor = System.Drawing.Color.White;
+            this.check_checkenInHold.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.check_checkenInHold.Location = new System.Drawing.Point(544, 113);
+            this.check_checkenInHold.Name = "check_checkenInHold";
+            this.check_checkenInHold.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.check_checkenInHold.Size = new System.Drawing.Size(148, 28);
+            this.check_checkenInHold.TabIndex = 95;
+            this.check_checkenInHold.Text = "طباعة امر تشغيل";
+            this.check_checkenInHold.UseVisualStyleBackColor = false;
             // 
             // Frm_Setting
             // 

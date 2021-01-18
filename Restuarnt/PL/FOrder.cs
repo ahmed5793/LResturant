@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media.Imaging;
 using DevExpress.Charts.Native;
+using DevExpress.Utils.Helpers;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid.Columns;
@@ -714,11 +715,11 @@ namespace Restuarnt.PL
         {
             try
             {
-                if (MessageBox.Show("هل تريد حفظ وسداد الفاتورة", "عمليه الحفظ والسداد", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+               
+                if (Lable_Num.Text == "")
                 {
-                    if (Lable_Num.Text == "")
-                    {
-
+                      if (MessageBox.Show("هل تريد حفظ وسداد الفاتورة", "عمليه الحفظ والسداد", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                      {
 
                         if (gridView2.RowCount > 0)
                         {
@@ -886,32 +887,79 @@ namespace Restuarnt.PL
                             }
 
                             //////كود الطباعة فى الحفظ والسداد //////
-                            if (Lable_Num.Text != "")
+                           
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("من فضلك فم بااختيار اصناف الفاتورة اولا");
+                            return;
+                        }
+
+                        MessageBox.Show("تم حفظ وسداد الفاتوره بنجاح", "عمليه الحفظ والسداد", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        if (Lable_Num.Text != "")
+                        {
+                            DataTable dt6 = new DataTable();
+                            DataSet1 ds = new DataSet1();
+                            ////////////////   كود طباعة امر تشغيل   ///////////
+                            if (Properties.Settings.Default.PrintCheckenInSave == "true")
                             {
-                                DataTable dt6 = new DataTable();
-                                DataSet1 ds = new DataSet1();
-                                ////////////////   كود طباعة امر تشغيل   ///////////
-                                if (Properties.Settings.Default.PrintCheckenInSave == "true")
+
+
+                                if (Properties.Settings.Default.CheckenType == "collect")
                                 {
-
-
-                                    if (Properties.Settings.Default.CheckenType == "collect")
+                                    XtraReportCheck rc = new XtraReportCheck();
+                                    dt6.Clear();
+                                    dt6 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
+                                    if (dt6.Rows[0][11].ToString() == "Table")
                                     {
-                                        XtraReportCheck rc = new XtraReportCheck();
-                                        dt6.Clear();
-                                        dt6 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
-                                        if (dt5.Rows[0][11].ToString() == "Table")
-                                        {
-                                            dt6.Clear();
+                                        dt5.Clear();
 
-                                            dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                        dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                        rc.Label_TableNum.Visible = true;
+                                        rc.Txt_TableNum.Visible = true;
+                                        rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                    }
+
+
+                                    ds.Tables["Order"].Clear();
+                                    for (int i = 0; i < dt6.Rows.Count; i++)
+                                    {
+                                        ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
+                                        dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
+                                        dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                    }
+                                    rc.DataSource = ds;
+                                    rc.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                    rc.Parameters["Id"].Visible = false;
+                                    //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
+                                    // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                    rc.PrinterName = Properties.Settings.Default.PrinterChecken;
+                                    rc.Print();
+                                    rc.Dispose();
+                                }
+                                if (Properties.Settings.Default.CheckenType == "seperator")
+                                {
+                                    //كود طباعة المشروبات فقط
+                                    #region
+                                    XtraReportCheck rc = new XtraReportCheck();
+                                    dt6.Clear();
+                                    dt6 = o.PrintOrderDeliveryDrinks(Convert.ToInt32(Lable_Num.Text));
+                                    if (dt6.Rows.Count > 0)
+                                    {
+
+
+                                        if (dt6.Rows[0][11].ToString() == "Table")
+                                        {
+                                            dt5.Clear();
+
+                                            dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
                                             rc.Label_TableNum.Visible = true;
                                             rc.Txt_TableNum.Visible = true;
                                             rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
                                         }
 
-                                        dt6.Clear();
-                                        dt6 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
+
 
                                         ds.Tables["Order"].Clear();
                                         for (int i = 0; i < dt6.Rows.Count; i++)
@@ -925,154 +973,114 @@ namespace Restuarnt.PL
                                         rc.Parameters["Id"].Visible = false;
                                         //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
                                         // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
-                                        rc.PrinterName = Properties.Settings.Default.PrinterChecken;
+                                        rc.PrinterName = Properties.Settings.Default.PrinterDrinks;
                                         rc.Print();
                                         rc.Dispose();
+
                                     }
-                                    if (Properties.Settings.Default.CheckenType == "seperator")
+                                    #endregion
+
+                                    //كود طباعة الماكولات فقط
+                                    #region
+                                    XtraReportCheck rcmakolat = new XtraReportCheck();
+                                    dt6.Clear();
+                                    dt6 = o.PrintOrderDeliveryMakolat(Convert.ToInt32(Lable_Num.Text));
+                                    if (dt6.Rows.Count > 0)
                                     {
-                                        //كود طباعة المشروبات فقط
-                                        #region
-                                        XtraReportCheck rc = new XtraReportCheck();
-                                        dt6.Clear();
-                                        dt6 = o.PrintOrderDeliveryDrinks(Convert.ToInt32(Lable_Num.Text));
-                                        if (dt5.Rows[0][11].ToString() == "Table")
+
+                                        if (dt6.Rows[0][11].ToString() == "Table")
                                         {
-                                            dt6.Clear();
+                                            dt5.Clear();
 
-                                            dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
-                                            rc.Label_TableNum.Visible = true;
-                                            rc.Txt_TableNum.Visible = true;
-                                            rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
-                                        }
-
-                                        dt6.Clear();
-                                        dt6 = o.PrintOrderDeliveryDrinks(Convert.ToInt32(Lable_Num.Text));
-                                        if (dt6.Rows.Count > 0)
-                                        {
-
-                                            ds.Tables["Order"].Clear();
-                                            for (int i = 0; i < dt6.Rows.Count; i++)
-                                            {
-                                                ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
-                                                dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
-                                                dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
-                                            }
-                                            rc.DataSource = ds;
-                                            rc.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
-                                            rc.Parameters["Id"].Visible = false;
-                                            //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
-                                            // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
-                                            rc.PrinterName = Properties.Settings.Default.PrinterDrinks;
-                                            rc.Print();
-                                            rc.Dispose();
-
-                                        }
-                                        #endregion
-
-                                        //كود طباعة الماكولات فقط
-                                        #region
-                                        XtraReportCheck rcmakolat = new XtraReportCheck();
-                                        dt6.Clear();
-                                        dt6 = o.PrintOrderDeliveryMakolat(Convert.ToInt32(Lable_Num.Text));
-                                        if (dt5.Rows[0][11].ToString() == "Table")
-                                        {
-                                            dt6.Clear();
-
-                                            dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                            dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
                                             rcmakolat.Label_TableNum.Visible = true;
                                             rcmakolat.Txt_TableNum.Visible = true;
                                             rcmakolat.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
                                         }
 
-                                        dt6.Clear();
-                                        dt6 = o.PrintOrderDeliveryMakolat(Convert.ToInt32(Lable_Num.Text));
-                                        if (dt6.Rows.Count > 0)
+
+
+                                        ds.Tables["Order"].Clear();
+                                        for (int i = 0; i < dt6.Rows.Count; i++)
                                         {
-
-
-                                            ds.Tables["Order"].Clear();
-                                            for (int i = 0; i < dt6.Rows.Count; i++)
-                                            {
-                                                ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
-                                                dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
-                                                dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
-                                            }
-                                            rcmakolat.DataSource = ds;
-                                            rcmakolat.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
-                                            rcmakolat.Parameters["Id"].Visible = false;
-                                            //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
-                                            // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
-                                            rcmakolat.PrinterName = Properties.Settings.Default.PrinterChecken;
-                                            rcmakolat.Print();
-                                            rcmakolat.Dispose();
+                                            ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
+                                            dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
+                                            dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
                                         }
-                                        #endregion
+                                        rcmakolat.DataSource = ds;
+                                        rcmakolat.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                        rcmakolat.Parameters["Id"].Visible = false;
+                                        //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
+                                        // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                        rcmakolat.PrinterName = Properties.Settings.Default.PrinterChecken;
+                                        rcmakolat.Print();
+                                        rcmakolat.Dispose();
                                     }
+                                    #endregion
                                 }
-                                /////كود طباعة فاتورة للعميل ///////
-                                if (Properties.Settings.Default.PrintOrderInSave == "true")
+                            }
+                            /////كود طباعة فاتورة للعميل ///////
+                            if (Properties.Settings.Default.PrintOrderInSave == "true")
+                            {
+                                XtraReport1Order ro = new XtraReport1Order();
+
+                                dt5.Clear();
+                                dt5 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
+                                if (dt6.Rows[0][11].ToString() == "Table")
                                 {
-                                    XtraReport1Order ro = new XtraReport1Order();
-
-                                    dt5.Clear();
-                                    dt5 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
-                                    if (dt5.Rows[0][11].ToString() == "Table")
-                                    {
-                                        dt5.Clear();
-                                        dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
-                                        ro.xrLabel11.Visible = true;
-                                        ro.xrLabel10.Visible = true;
-                                        ro.xrLabel18.Visible = true;
-                                        ro.xrLabel19.Visible = true;
-                                        ro.xrLabel19.Text = dt5.Rows[0][1].ToString();
-                                    }
-
-                                    if (dt5.Rows[0][11].ToString() == "Delivery")
-                                    {
-                                        dt5.Clear();
-                                        dt5 = o.Select_DeliveyMan(Convert.ToInt32(Lable_Num.Text));
-                                        ro.xrLabel20.Visible = true;
-                                        ro.xrLabel21.Visible = true;
-                                        ro.xrLabel21.Text = dt5.Rows[0][1].ToString();
-                                    }
-                                    dt5.Clear();
-                                    dt5 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
-
-                                    ds.Tables["Order"].Clear();
-                                    for (int i = 0; i < dt5.Rows.Count; i++)
-                                    {
-                                        ds.Tables["Order"].Rows.Add(dt5.Rows[i][0], dt5.Rows[i][1], dt5.Rows[i][4],
-                                        dt5.Rows[i][5], dt5.Rows[i][7], dt5.Rows[i][6], dt5.Rows[i][9], dt5.Rows[i][8],
-                                        dt5.Rows[i][2], (dt5.Rows[i][3]), dt5.Rows[i][11], dt5.Rows[i][10], dt5.Rows[i][12]);
-                                    }
-                                    ro.Txt_Delivery.Visible = true;
-                                    ro.DataSource = ds;
-                                    ro.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
-                                    ro.Parameters["Id"].Visible = false;
-                                    //System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                                    //ro.PrinterName = printDocument.PrinterSettings.PrinterName;
-                                    ro.PrinterName = Properties.Settings.Default.PrinterOrderClient;
-                                    ro.Print();
-                                    ro.Dispose();
+                                    dt6.Clear();
+                                    dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                    ro.xrLabel11.Visible = true;
+                                    ro.xrLabel10.Visible = true;
+                                    ro.xrLabel18.Visible = true;
+                                    ro.xrLabel19.Visible = true;
+                                    ro.xrLabel19.Text = dt6.Rows[0][1].ToString();
                                 }
 
+                                if (dt5.Rows[0][11].ToString() == "Delivery")
+                                {
+                                    dt6.Clear();
+                                    dt6 = o.Select_DeliveyMan(Convert.ToInt32(Lable_Num.Text));
+                                    ro.xrLabel20.Visible = true;
+                                    ro.xrLabel21.Visible = true;
+                                    ro.xrLabel21.Text = dt6.Rows[0][1].ToString();
+                                }
+                                dt5.Clear();
+                                dt5 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
+                                ds.Tables["Order"].Clear();
+                                for (int i = 0; i < dt5.Rows.Count; i++)
+                                {
+                                    ds.Tables["Order"].Rows.Add(dt5.Rows[i][0], dt5.Rows[i][1], dt5.Rows[i][4],
+                                    dt5.Rows[i][5], dt5.Rows[i][7], dt5.Rows[i][6], dt5.Rows[i][9], dt5.Rows[i][8],
+                                    dt5.Rows[i][2], (dt5.Rows[i][3]), dt5.Rows[i][11], dt5.Rows[i][10], dt5.Rows[i][12]);
+                                }
+                                ro.Txt_Delivery.Visible = true;
+                                ro.DataSource = ds;
+                                ro.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                ro.Parameters["Id"].Visible = false;
+                                //System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
+                                //ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                ro.PrinterName = Properties.Settings.Default.PrinterOrderClient;
+                                ro.Print();
+                                ro.Dispose();
                             }
 
-                            clear2();
-
-                        }
-                        else
-                        {
-                            MessageBox.Show("من فضلك فم بااختيار اصناف الفاتورة اولا");
-                            return;
                         }
 
-                       
-                    }
+                        clear2();
+                      }
+                      else
+                      {
+                        MessageBox.Show("تم الغاء عمليه الحفظ والسداد");
+                        return;
+                      }
+
+                }
 
 
-                    if (Lable_Num.Text != "")
+                 if (Lable_Num.Text != "")
+                 {
+                    if (MessageBox.Show("هل تريد حفظ وسداد الفاتورة", "عمليه الحفظ والسداد", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                     {
 
 
@@ -1251,10 +1259,16 @@ namespace Restuarnt.PL
                                  Convert.ToInt32(cmb_stuff.SelectedValue));
 
                         }
+                    }
 
+                    else
+                    {
+                        MessageBox.Show("تم الغاء عمليه الحفظ والسداد");
+                        return;
+                    }
 
-                        //////كود الطباعة فى الحفظ والسداد بعد التعديل //////
-                        if (Lable_Num.Text != "")
+                    //////كود الطباعة فى الحفظ والسداد بعد التعديل //////
+                    if (Lable_Num.Text != "")
                         {
                             DataTable dt6 = new DataTable();
                             DataSet1 ds = new DataSet1();
@@ -1267,37 +1281,39 @@ namespace Restuarnt.PL
                                     XtraReportCheck rc = new XtraReportCheck();
                                     dt6.Clear();
                                     dt6 = o.PritOrderNewRow(Convert.ToInt32(Lable_Num.Text));
-                                    if (dt5.Rows[0][11].ToString() == "Table")
-                                    {
-                                        dt6.Clear();
-
-                                        dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
-                                        rc.Label_TableNum.Visible = true;
-                                        rc.Txt_TableNum.Visible = true;
-                                        rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
-                                    }
-
-                                    dt6.Clear();
-                                    dt6 = o.PritOrderNewRow(Convert.ToInt32(Lable_Num.Text));
                                     if (dt6.Rows.Count > 0)
                                     {
 
 
-                                        ds.Tables["Order"].Clear();
-                                        for (int i = 0; i < dt6.Rows.Count; i++)
+                                        if (dt6.Rows[0][11].ToString() == "Table")
                                         {
-                                            ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
-                                            dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
-                                            dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                            dt5.Clear();
+
+                                            dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                            rc.Label_TableNum.Visible = true;
+                                            rc.Txt_TableNum.Visible = true;
+                                            rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
                                         }
-                                        rc.DataSource = ds;
-                                        rc.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
-                                        rc.Parameters["Id"].Visible = false;
-                                        //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
-                                        // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
-                                        rc.PrinterName = Properties.Settings.Default.PrinterChecken;
-                                        rc.Print();
-                                        rc.Dispose();
+
+
+
+                                            ds.Tables["Order"].Clear();
+                                            for (int i = 0; i < dt6.Rows.Count; i++)
+                                            {
+                                                ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
+                                                dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
+                                                dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                            }
+                                            rc.DataSource = ds;
+                                            rc.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                            rc.Parameters["Id"].Visible = false;
+                                            //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
+                                            // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                            rc.PrinterName = Properties.Settings.Default.PrinterChecken;
+                                            rc.Print();
+                                            rc.Dispose();
+
+                                        
                                     }
                                 }
                                 if (Properties.Settings.Default.CheckenType == "seperator")
@@ -1307,37 +1323,39 @@ namespace Restuarnt.PL
                                     XtraReportCheck rc = new XtraReportCheck();
                                     dt6.Clear();
                                     dt6 = o.PritOrderNewRowDrinks(Convert.ToInt32(Lable_Num.Text));
-                                    if (dt5.Rows[0][11].ToString() == "Table")
-                                    {
-                                        dt6.Clear();
-
-                                        dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
-                                        rc.Label_TableNum.Visible = true;
-                                        rc.Txt_TableNum.Visible = true;
-                                        rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
-                                    }
-
-                                    dt6.Clear();
-                                    dt6 = o.PritOrderNewRowDrinks(Convert.ToInt32(Lable_Num.Text));
                                     if (dt6.Rows.Count > 0)
                                     {
 
-                                        ds.Tables["Order"].Clear();
-                                        for (int i = 0; i < dt6.Rows.Count; i++)
-                                        {
-                                            ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
-                                            dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
-                                            dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
-                                        }
-                                        rc.DataSource = ds;
-                                        rc.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
-                                        rc.Parameters["Id"].Visible = false;
-                                        //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
-                                        // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
-                                        rc.PrinterName = Properties.Settings.Default.PrinterDrinks;
-                                        rc.Print();
-                                        rc.Dispose();
 
+                                        if (dt6.Rows[0][11].ToString() == "Table")
+                                        {
+                                            dt5.Clear();
+
+                                            dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                            rc.Label_TableNum.Visible = true;
+                                            rc.Txt_TableNum.Visible = true;
+                                            rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                        }
+
+                                      
+
+                                            ds.Tables["Order"].Clear();
+                                            for (int i = 0; i < dt6.Rows.Count; i++)
+                                            {
+                                                ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
+                                                dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
+                                                dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                            }
+                                            rc.DataSource = ds;
+                                            rc.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                            rc.Parameters["Id"].Visible = false;
+                                            //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
+                                            // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                            rc.PrinterName = Properties.Settings.Default.PrinterDrinks;
+                                            rc.Print();
+                                            rc.Dispose();
+
+                                        
                                     }
                                     #endregion
 
@@ -1346,37 +1364,38 @@ namespace Restuarnt.PL
                                     XtraReportCheck rcmakolat = new XtraReportCheck();
                                     dt6.Clear();
                                     dt6 = o.PritOrderNewRowMakolat(Convert.ToInt32(Lable_Num.Text));
-                                    if (dt5.Rows[0][11].ToString() == "Table")
-                                    {
-                                        dt6.Clear();
-
-                                        dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
-                                        rcmakolat.Label_TableNum.Visible = true;
-                                        rcmakolat.Txt_TableNum.Visible = true;
-                                        rcmakolat.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
-                                    }
-
-                                    dt6.Clear();
-                                    dt6 = o.PritOrderNewRowMakolat(Convert.ToInt32(Lable_Num.Text));
                                     if (dt6.Rows.Count > 0)
                                     {
 
 
-                                        ds.Tables["Order"].Clear();
-                                        for (int i = 0; i < dt6.Rows.Count; i++)
+                                        if (dt6.Rows[0][11].ToString() == "Table")
                                         {
-                                            ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
-                                            dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
-                                            dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                            dt5.Clear();
+                                            dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                            rcmakolat.Label_TableNum.Visible = true;
+                                            rcmakolat.Txt_TableNum.Visible = true;
+                                            rcmakolat.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
                                         }
-                                        rcmakolat.DataSource = ds;
-                                        rcmakolat.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
-                                        rcmakolat.Parameters["Id"].Visible = false;
-                                        //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
-                                        // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
-                                        rcmakolat.PrinterName = Properties.Settings.Default.PrinterChecken;
-                                        rcmakolat.Print();
-                                        rcmakolat.Dispose();
+
+                                       
+
+
+                                            ds.Tables["Order"].Clear();
+                                            for (int i = 0; i < dt6.Rows.Count; i++)
+                                            {
+                                                ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
+                                                dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
+                                                dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                            }
+                                            rcmakolat.DataSource = ds;
+                                            rcmakolat.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                            rcmakolat.Parameters["Id"].Visible = false;
+                                            //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
+                                            // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                            rcmakolat.PrinterName = Properties.Settings.Default.PrinterChecken;
+                                            rcmakolat.Print();
+                                            rcmakolat.Dispose();
+                                        
                                     }
                                     #endregion
                                 }
@@ -1390,26 +1409,25 @@ namespace Restuarnt.PL
                                 dt5 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
                                 if (dt5.Rows[0][11].ToString() == "Table")
                                 {
-                                    dt5.Clear();
-                                    dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                    dt6.Clear();
+                                    dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
                                     ro.xrLabel11.Visible = true;
                                     ro.xrLabel10.Visible = true;
                                     ro.xrLabel18.Visible = true;
                                     ro.xrLabel19.Visible = true;
-                                    ro.xrLabel19.Text = dt5.Rows[0][1].ToString();
+                                    ro.xrLabel19.Text = dt6.Rows[0][1].ToString();
                                 }
 
                                 if (dt5.Rows[0][11].ToString() == "Delivery")
                                 {
-                                    dt5.Clear();
-                                    dt5 = o.Select_DeliveyMan(Convert.ToInt32(Lable_Num.Text));
+                                    dt6.Clear();
+                                    dt6 = o.Select_DeliveyMan(Convert.ToInt32(Lable_Num.Text));
                                     ro.xrLabel20.Visible = true;
                                     ro.xrLabel21.Visible = true;
-                                    ro.xrLabel21.Text = dt5.Rows[0][1].ToString();
+                                    ro.xrLabel21.Text = dt6.Rows[0][1].ToString();
                                 }
                                 dt5.Clear();
                                 dt5 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
-
                                 ds.Tables["Order"].Clear();
                                 for (int i = 0; i < dt5.Rows.Count; i++)
                                 {
@@ -1429,28 +1447,33 @@ namespace Restuarnt.PL
                             }
 
                         }
-
+                        o.DeleteOrderNewRow();
 
                         clear2();
-                    }
+                 }
 
-                    MessageBox.Show("تم حفظ وسداد الفاتوره بنجاح", "عمليه الحفظ والسداد", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
 
-                }
-                else
-                {
-                    MessageBox.Show("تم الغاء عمليه الحفظ والسداد");
-                    return;
-                }
+
+                dt.Clear();
+                dt = o.SELECTOrderRentALLORDER();
+                simpleButton4.Text = $"({dt.Rows.Count}) الفواتير المتعلقة";
+
+                //fh.rdb_all.Checked = true;
+                //fh.gridControl2.DataSource = null;
+                //fh.DeliveryService.Visible = false;
+                //fh.DeliveryService.VisibleIndex = -1;
+                //fh.Name_Cust.Caption = "اسم العميل";
+                //fh.Name_Cust.FieldName = "اسم العميل";
+                //fh.id_take.Caption = "رقم الطلب";
+                //fh.id_take.FieldName = "رقم الطلب";
+                //fh.id_take.Visible = false;
+                //fh.gridControl2.DataSource = o.SELECTOrderRentALLORDER();
+
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
                 MessageBox.Show(ex.StackTrace);
-
-
-
             }
 
         }
@@ -1590,8 +1613,8 @@ namespace Restuarnt.PL
                 if (Lable_Num.Text!="")
                 {
                     DataTable dt5 = new DataTable();
-                    XtraReport1Order ro = new XtraReport1Order();
                     DataSet1 ds = new DataSet1();
+                    XtraReport1Order ro = new XtraReport1Order();
 
                     dt5.Clear();
                     dt5 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
@@ -1620,11 +1643,15 @@ namespace Restuarnt.PL
                     ds.Tables["Order"].Clear();
                     for (int i = 0; i < dt5.Rows.Count; i++)
                     {
-                        ds.Tables["Order"].Rows.Add(dt5.Rows[i][0], dt5.Rows[i][1], dt5.Rows[i][4],
-                        dt5.Rows[i][5], dt5.Rows[i][7], dt5.Rows[i][6], dt5.Rows[i][9], dt5.Rows[i][8],
-                        dt5.Rows[i][2], (dt5.Rows[i][3]), dt5.Rows[i][11], dt5.Rows[i][10], dt5.Rows[i][12]);
+                        ds.Tables["Order"].Rows.Add(Convert.ToInt32(dt5.Rows[i][0]),
+                            dt5.Rows[i][1].ToString(), Convert.ToDateTime(dt5.Rows[i][4]),
+                        dt5.Rows[i][5].ToString(), Convert.ToInt32(dt5.Rows[i][7]), Convert.ToDecimal(dt5.Rows[i][6])
+                        , dt5.Rows[i][9].ToString(), Convert.ToDecimal(dt5.Rows[i][8]),
+                        dt5.Rows[i][2].ToString(), (dt5.Rows[i][3].ToString()), dt5.Rows[i][11].ToString()
+                        , Convert.ToDecimal(dt5.Rows[i][10]), Convert.ToDecimal(dt5.Rows[i][12]));
+       
                     }
-                    ro.Txt_Delivery.Visible = true;
+                   // ro.Txt_Delivery.Visible = true;
                     ro.DataSource = ds;
                     ro.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
                     ro.Parameters["Id"].Visible = false;
@@ -1632,6 +1659,7 @@ namespace Restuarnt.PL
                     //ro.PrinterName = printDocument.PrinterSettings.PrinterName;
                     ro.PrinterName = Properties.Settings.Default.PrinterOrderClient;
                     ro.Print();
+                    
                 }
                 else
                 {
@@ -1647,11 +1675,11 @@ namespace Restuarnt.PL
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
+           
+            fh.Show();
 
-            fh.ShowDialog();
 
-
-            if (fh.gridView2.RowCount > 0)
+            if (fh.gridView2.RowCount > 0  )
             {
                 gridControl2.Enabled = true;
                 //rdb_sala.Enabled = false;
@@ -1665,17 +1693,15 @@ namespace Restuarnt.PL
                 flowLayoutPanel1.Enabled = true;
                 flowLayoutPanel2.Enabled = true;
                 txt_discount.Enabled = true;
-
-
                 if (fh.gridView2.GetFocusedRowCellValue("نوع الطلب").ToString() == "Delivery")
                 {
 
                     rdb_delivery.Checked = true;
-                    cmb_customer.Hide();
-                    textEdit1.Show();
+                    cmb_customer.Show();
+                    textEdit1.Hide();
 
                     //textEdit1.Enabled = false;
-                   // rdb_clientsave.Enabled = false;
+                  //  rdb_clientsave.Enabled = false;
                     //rdb_newclient.Enabled = false;
 
 
@@ -1701,7 +1727,7 @@ namespace Restuarnt.PL
                     {
                         Lable_Num.Text = dr[0].ToString();
                         txt_cust.Text = dr[1].ToString();
-                        textEdit1.Text = dr[2].ToString();
+                        cmb_customer.Text = dr[2].ToString();
                         txt_phones.Text = dr[3].ToString();
                         txt_address.Text = dr[4].ToString();
                         timer1.Enabled = false;
@@ -1762,8 +1788,8 @@ namespace Restuarnt.PL
                 {
 
                     rdb_takeaway.Checked = true;
-                    cmb_customer.Hide();
-                    textEdit1.Show();
+                    cmb_customer.Show();
+                    textEdit1.Hide();
                     rdb_clientsave.Checked = true;
                     dt2.Clear();
                     dt2 = o.SELECTOrderDetails(Convert.ToInt32(fh.gridView2.GetFocusedRowCellValue("رقم الفاتورة")));
@@ -1781,7 +1807,7 @@ namespace Restuarnt.PL
 
                         Lable_Num.Text = dr[0].ToString();
                         txt_cust.Text = dr[1].ToString();
-                        textEdit1.Text = dr[2].ToString();
+                        cmb_customer.Text = dr[2].ToString();
 
                         timer1.Enabled = false;
                         lable_date.Text = dr[3].ToString();
@@ -1840,12 +1866,6 @@ namespace Restuarnt.PL
                                         o.AddOrderDetails(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
                                            Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
                                     }
-
-
-
-
-
-
                                 }
 
 
@@ -1895,9 +1915,6 @@ namespace Restuarnt.PL
                                 return;
                             }
 
-
-
-
                             if (rdb_clientsave.Checked == true)
                             {
                                 if (cmb_customer.Text == "" && txt_address.Text == "" && txt_phones.Text == "")
@@ -1914,7 +1931,7 @@ namespace Restuarnt.PL
                                     cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
                                     dt.Clear();
                                     dt = o.AddOrder(Convert.ToInt32(cmb_customer.EditValue), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
-                            0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text), "Delivery", Program.Id_USer, "true");
+                              0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text), "Delivery", Program.Id_USer, "true");
                                     Lable_Num.Text = dt.Rows[0][0].ToString();
 
                                     for (int i = 0; i < gridView2.RowCount; i++)
@@ -2024,18 +2041,15 @@ namespace Restuarnt.PL
                                     XtraReportCheck rc = new XtraReportCheck();
                                     dt6.Clear();
                                     dt6 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
-                                    if (dt5.Rows[0][11].ToString() == "Table")
+                                    if (dt6.Rows[0][11].ToString() == "Table")
                                     {
-                                        dt6.Clear();
+                                        dt5.Clear();
 
-                                        dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                        dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
                                         rc.Label_TableNum.Visible = true;
                                         rc.Txt_TableNum.Visible = true;
                                         rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
                                     }
-
-                                    dt6.Clear();
-                                    dt6 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
 
                                     ds.Tables["Order"].Clear();
                                     for (int i = 0; i < dt6.Rows.Count; i++)
@@ -2060,20 +2074,20 @@ namespace Restuarnt.PL
                                     XtraReportCheck rc = new XtraReportCheck();
                                     dt6.Clear();
                                     dt6 = o.PrintOrderDeliveryDrinks(Convert.ToInt32(Lable_Num.Text));
-                                    if (dt5.Rows[0][11].ToString() == "Table")
-                                    {
-                                        dt6.Clear();
-
-                                        dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
-                                        rc.Label_TableNum.Visible = true;
-                                        rc.Txt_TableNum.Visible = true;
-                                        rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
-                                    }
-
-                                    dt6.Clear();
-                                    dt6 = o.PrintOrderDeliveryDrinks(Convert.ToInt32(Lable_Num.Text));
                                     if (dt6.Rows.Count > 0)
                                     {
+
+
+                                        if (dt6.Rows[0][11].ToString() == "Table")
+                                        {
+                                            dt5.Clear();
+
+                                            dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                            rc.Label_TableNum.Visible = true;
+                                            rc.Txt_TableNum.Visible = true;
+                                            rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                        }
+
 
                                         ds.Tables["Order"].Clear();
                                         for (int i = 0; i < dt6.Rows.Count; i++)
@@ -2090,8 +2104,8 @@ namespace Restuarnt.PL
                                         rc.PrinterName = Properties.Settings.Default.PrinterDrinks;
                                         rc.Print();
                                         rc.Dispose();
-
                                     }
+                                    
                                     #endregion
 
                                     //كود طباعة الماكولات فقط
@@ -2099,20 +2113,21 @@ namespace Restuarnt.PL
                                     XtraReportCheck rcmakolat = new XtraReportCheck();
                                     dt6.Clear();
                                     dt6 = o.PrintOrderDeliveryMakolat(Convert.ToInt32(Lable_Num.Text));
-                                    if (dt5.Rows[0][11].ToString() == "Table")
-                                    {
-                                        dt6.Clear();
+                                  if (dt6.Rows.Count>0)
+                                  {
 
-                                        dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                    
+                                    if (dt6.Rows[0][11].ToString() == "Table")
+                                    {
+                                        dt5.Clear();
+
+                                        dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
                                         rcmakolat.Label_TableNum.Visible = true;
                                         rcmakolat.Txt_TableNum.Visible = true;
                                         rcmakolat.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
                                     }
 
-                                    dt6.Clear();
-                                    dt6 = o.PrintOrderDeliveryMakolat(Convert.ToInt32(Lable_Num.Text));
-                                    if (dt6.Rows.Count > 0)
-                                    {
+                                   
 
 
                                         ds.Tables["Order"].Clear();
@@ -2143,8 +2158,8 @@ namespace Restuarnt.PL
                                 dt5 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
                                 if (dt5.Rows[0][11].ToString() == "Table")
                                 {
-                                    dt5.Clear();
-                                    dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                    dt6.Clear();
+                                    dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
                                     ro.xrLabel11.Visible = true;
                                     ro.xrLabel10.Visible = true;
                                     ro.xrLabel18.Visible = true;
@@ -2154,15 +2169,13 @@ namespace Restuarnt.PL
 
                                 if (dt5.Rows[0][11].ToString() == "Delivery")
                                 {
-                                    dt5.Clear();
-                                    dt5 = o.Select_DeliveyMan(Convert.ToInt32(Lable_Num.Text));
+                                    dt6.Clear();
+                                    dt6 = o.Select_DeliveyMan(Convert.ToInt32(Lable_Num.Text));
                                     ro.xrLabel20.Visible = true;
                                     ro.xrLabel21.Visible = true;
                                     ro.xrLabel21.Text = dt5.Rows[0][1].ToString();
                                 }
-                                dt5.Clear();
-                                dt5 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
-
+                       
                                 ds.Tables["Order"].Clear();
                                 for (int i = 0; i < dt5.Rows.Count; i++)
                                 {
@@ -2190,6 +2203,8 @@ namespace Restuarnt.PL
                         return;
                     }
                 }
+
+
                 if (Lable_Num.Text != "")
                 {
 
@@ -2383,39 +2398,42 @@ namespace Restuarnt.PL
                                 XtraReportCheck rc = new XtraReportCheck();
                                 dt6.Clear();
                                 dt6 = o.PritOrderNewRow(Convert.ToInt32(Lable_Num.Text));
-                                if (dt5.Rows[0][11].ToString() == "Table")
-                                {
-                                    dt6.Clear();
-
-                                    dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
-                                    rc.Label_TableNum.Visible = true;
-                                    rc.Txt_TableNum.Visible = true;
-                                    rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
-                                }
-
-                                dt6.Clear();
-                                dt6 = o.PritOrderNewRow(Convert.ToInt32(Lable_Num.Text));
                                 if (dt6.Rows.Count > 0)
                                 {
 
 
-                                    ds.Tables["Order"].Clear();
-                                    for (int i = 0; i < dt6.Rows.Count; i++)
+                                    if (dt6.Rows[0][11].ToString() == "Table")
                                     {
-                                        ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
-                                        dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
-                                        dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                        dt5.Clear();
+
+                                        dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                        rc.Label_TableNum.Visible = true;
+                                        rc.Txt_TableNum.Visible = true;
+                                        rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
                                     }
-                                    rc.DataSource = ds;
-                                    rc.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
-                                    rc.Parameters["Id"].Visible = false;
-                                    //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
-                                    // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
-                                    rc.PrinterName = Properties.Settings.Default.PrinterChecken;
-                                    rc.Print();
-                                    rc.Dispose();
+
+                                    
+
+
+                                        ds.Tables["Order"].Clear();
+                                        for (int i = 0; i < dt6.Rows.Count; i++)
+                                        {
+                                            ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
+                                            dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
+                                            dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                        }
+                                        rc.DataSource = ds;
+                                        rc.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                        rc.Parameters["Id"].Visible = false;
+                                        //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
+                                        // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                        rc.PrinterName = Properties.Settings.Default.PrinterChecken;
+                                        rc.Print();
+                                        rc.Dispose();
+                                    
                                 }
                             }
+
                             if (Properties.Settings.Default.CheckenType == "seperator")
                             {
                                 //كود طباعة المشروبات فقط
@@ -2423,78 +2441,82 @@ namespace Restuarnt.PL
                                 XtraReportCheck rc = new XtraReportCheck();
                                 dt6.Clear();
                                 dt6 = o.PritOrderNewRowDrinks(Convert.ToInt32(Lable_Num.Text));
-                                if (dt5.Rows[0][11].ToString() == "Table")
-                                {
-                                    dt6.Clear();
-
-                                    dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
-                                    rc.Label_TableNum.Visible = true;
-                                    rc.Txt_TableNum.Visible = true;
-                                    rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
-                                }
-
-                                dt6.Clear();
-                                dt6 = o.PritOrderNewRowDrinks(Convert.ToInt32(Lable_Num.Text));
                                 if (dt6.Rows.Count > 0)
                                 {
 
-                                    ds.Tables["Order"].Clear();
-                                    for (int i = 0; i < dt6.Rows.Count; i++)
-                                    {
-                                        ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
-                                        dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
-                                        dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
-                                    }
-                                    rc.DataSource = ds;
-                                    rc.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
-                                    rc.Parameters["Id"].Visible = false;
-                                    //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
-                                    // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
-                                    rc.PrinterName = Properties.Settings.Default.PrinterDrinks;
-                                    rc.Print();
-                                    rc.Dispose();
 
+                                    if (dt6.Rows[0][11].ToString() == "Table")
+                                    {
+                                        dt5.Clear();
+
+                                        dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                        rc.Label_TableNum.Visible = true;
+                                        rc.Txt_TableNum.Visible = true;
+                                        rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                    }
+
+                                  
+
+                                        ds.Tables["Order"].Clear();
+                                        for (int i = 0; i < dt6.Rows.Count; i++)
+                                        {
+                                            ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
+                                            dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
+                                            dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                        }
+                                        rc.DataSource = ds;
+                                        rc.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                        rc.Parameters["Id"].Visible = false;
+                                        //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
+                                        // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                        rc.PrinterName = Properties.Settings.Default.PrinterDrinks;
+                                        rc.Print();
+                                        rc.Dispose();
+
+                                    
                                 }
                                 #endregion
+
 
                                 //كود طباعة الماكولات فقط
                                 #region
                                 XtraReportCheck rcmakolat = new XtraReportCheck();
                                 dt6.Clear();
                                 dt6 = o.PritOrderNewRowMakolat(Convert.ToInt32(Lable_Num.Text));
-                                if (dt5.Rows[0][11].ToString() == "Table")
-                                {
-                                    dt6.Clear();
-
-                                    dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
-                                    rcmakolat.Label_TableNum.Visible = true;
-                                    rcmakolat.Txt_TableNum.Visible = true;
-                                    rcmakolat.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
-                                }
-
-                                dt6.Clear();
-                                dt6 = o.PritOrderNewRowMakolat(Convert.ToInt32(Lable_Num.Text));
                                 if (dt6.Rows.Count > 0)
                                 {
 
 
-                                    ds.Tables["Order"].Clear();
-                                    for (int i = 0; i < dt6.Rows.Count; i++)
+                                    if (dt6.Rows[0][11].ToString() == "Table")
                                     {
-                                        ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
-                                        dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
-                                        dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                        dt5.Clear();
+
+                                        dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                        rcmakolat.Label_TableNum.Visible = true;
+                                        rcmakolat.Txt_TableNum.Visible = true;
+                                        rcmakolat.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
                                     }
-                                    rcmakolat.DataSource = ds;
-                                    rcmakolat.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
-                                    rcmakolat.Parameters["Id"].Visible = false;
-                                    //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
-                                    // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
-                                    rcmakolat.PrinterName = Properties.Settings.Default.PrinterChecken;
-                                    rcmakolat.Print();
-                                    rcmakolat.Dispose();
+
+
+                                        ds.Tables["Order"].Clear();
+                                        for (int i = 0; i < dt6.Rows.Count; i++)
+                                        {
+                                            ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
+                                            dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
+                                            dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                        }
+                                        rcmakolat.DataSource = ds;
+                                        rcmakolat.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                        rcmakolat.Parameters["Id"].Visible = false;
+                                        //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
+                                        // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                        rcmakolat.PrinterName = Properties.Settings.Default.PrinterChecken;
+                                        rcmakolat.Print();
+                                        rcmakolat.Dispose();
+                                    
                                 }
                                 #endregion
+
                             }
                         }
                         /////كود طباعة فاتورة للعميل ///////
@@ -2506,8 +2528,8 @@ namespace Restuarnt.PL
                             dt5 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
                             if (dt5.Rows[0][11].ToString() == "Table")
                             {
-                                dt5.Clear();
-                                dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                dt6.Clear();
+                                dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
                                 ro.xrLabel11.Visible = true;
                                 ro.xrLabel10.Visible = true;
                                 ro.xrLabel18.Visible = true;
@@ -2517,15 +2539,13 @@ namespace Restuarnt.PL
 
                             if (dt5.Rows[0][11].ToString() == "Delivery")
                             {
-                                dt5.Clear();
-                                dt5 = o.Select_DeliveyMan(Convert.ToInt32(Lable_Num.Text));
+                                dt6.Clear();
+                                dt6 = o.Select_DeliveyMan(Convert.ToInt32(Lable_Num.Text));
                                 ro.xrLabel20.Visible = true;
                                 ro.xrLabel21.Visible = true;
                                 ro.xrLabel21.Text = dt5.Rows[0][1].ToString();
                             }
-                            dt5.Clear();
-                            dt5 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
-
+                     
                             ds.Tables["Order"].Clear();
                             for (int i = 0; i < dt5.Rows.Count; i++)
                             {
@@ -2546,6 +2566,7 @@ namespace Restuarnt.PL
 
                     }
 
+                    o.DeleteOrderNewRow();
 
                     clear2();
 
@@ -2555,6 +2576,18 @@ namespace Restuarnt.PL
                 dt.Clear();
                 dt = o.SELECTOrderRentALLORDER();
                 simpleButton4.Text = $"({dt.Rows.Count}) الفواتير المتعلقة";
+
+
+                //fh.rdb_all.Checked = true;
+                //fh.gridControl2.DataSource = null;
+                //fh.DeliveryService.Visible = false;
+                //fh.DeliveryService.VisibleIndex = -1;
+                //fh.Name_Cust.Caption = "اسم العميل";
+                //fh.Name_Cust.FieldName = "اسم العميل";
+                //fh.id_take.Caption = "رقم الطلب";
+                //fh.id_take.FieldName = "رقم الطلب";
+                //fh.id_take.Visible = false;
+                //fh.gridControl2.DataSource = o.SELECTOrderRentALLORDER();
 
 
 
@@ -2819,42 +2852,124 @@ namespace Restuarnt.PL
         {
             try
             {
-                if (Lable_Num.Text!="")
+                if (Lable_Num.Text != "")
                 {
                     DataTable dt6 = new DataTable();
-                    XtraReportCheck rc = new XtraReportCheck();
                     DataSet1 ds = new DataSet1();
-                    dt6.Clear();
-                    dt6 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
-                    if (dt5.Rows[0][11].ToString() == "Table")
+                    ////////////////   كود طباعة امر تشغيل   ///////////
+                    if (Properties.Settings.Default.PrintCheckenInHold == "true")
                     {
-                        dt6.Clear();
 
-                        dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
-                        rc.Label_TableNum.Visible = true;
-                        rc.Txt_TableNum.Visible = true;
-                        rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+
+                        if (Properties.Settings.Default.CheckenType == "collect")
+                        {
+                            XtraReportCheck rc = new XtraReportCheck();
+                            dt6.Clear();
+                            dt6 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
+                            if (dt6.Rows[0][11].ToString() == "Table")
+                            {
+                                dt5.Clear();
+
+                                dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                rc.Label_TableNum.Visible = true;
+                                rc.Txt_TableNum.Visible = true;
+                                rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                            }
+
+                            ds.Tables["Order"].Clear();
+                            for (int i = 0; i < dt6.Rows.Count; i++)
+                            {
+                                ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
+                                dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
+                                dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                            }
+                            rc.DataSource = ds;
+                            rc.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                            rc.Parameters["Id"].Visible = false;
+                            //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
+                            // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                            rc.PrinterName = Properties.Settings.Default.PrinterChecken;
+                            rc.Print();
+                            rc.Dispose();
+                        }
+                        if (Properties.Settings.Default.CheckenType == "seperator")
+                        {
+                            //كود طباعة المشروبات فقط
+                            #region
+                            XtraReportCheck rc = new XtraReportCheck();
+                            dt6.Clear();
+                            dt6 = o.PrintOrderDeliveryDrinks(Convert.ToInt32(Lable_Num.Text));
+                            if (dt6.Rows.Count > 0)
+                            {
+
+
+                                if (dt6.Rows[0][11].ToString() == "Table")
+                                {
+                                    dt5.Clear();
+
+                                    dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                    rc.Label_TableNum.Visible = true;
+                                    rc.Txt_TableNum.Visible = true;
+                                    rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                }
+
+
+                                ds.Tables["Order"].Clear();
+                                for (int i = 0; i < dt6.Rows.Count; i++)
+                                {
+                                    ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
+                                    dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
+                                    dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                }
+                                rc.DataSource = ds;
+                                rc.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                rc.Parameters["Id"].Visible = false;
+                                //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
+                                // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                rc.PrinterName = Properties.Settings.Default.PrinterDrinks;
+                                rc.Print();
+                                rc.Dispose();
+                            }
+
+                            #endregion
+
+                            //كود طباعة الماكولات فقط
+                            #region
+                            XtraReportCheck rcmakolat = new XtraReportCheck();
+                            dt6.Clear();
+                            dt6 = o.PrintOrderDeliveryMakolat(Convert.ToInt32(Lable_Num.Text));
+                            if (dt6.Rows.Count > 0)
+                            {
+                                if (dt6.Rows[0][11].ToString() == "Table")
+                                {
+                                    dt5.Clear();
+
+                                    dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
+                                    rcmakolat.Label_TableNum.Visible = true;
+                                    rcmakolat.Txt_TableNum.Visible = true;
+                                    rcmakolat.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                }
+                                ds.Tables["Order"].Clear();
+                                for (int i = 0; i < dt6.Rows.Count; i++)
+                                {
+                                    ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
+                                    dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
+                                    dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
+                                }
+                                rcmakolat.DataSource = ds;
+                                rcmakolat.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
+                                rcmakolat.Parameters["Id"].Visible = false;
+                                //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
+                                // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
+                                rcmakolat.PrinterName = Properties.Settings.Default.PrinterChecken;
+                                rcmakolat.Print();
+                                rcmakolat.Dispose();
+                            }
+                            #endregion
+                        }
                     }
-
-                    dt6.Clear();
-                    dt6 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
-
-                    ds.Tables["Order"].Clear();
-                    for (int i = 0; i < dt6.Rows.Count; i++)
-                    {
-                        ds.Tables["Order"].Rows.Add(dt6.Rows[i][0], dt6.Rows[i][1], dt6.Rows[i][4],
-                        dt6.Rows[i][5], dt6.Rows[i][7], dt6.Rows[i][6], dt6.Rows[i][9], dt6.Rows[i][8],
-                        dt6.Rows[i][2], (dt6.Rows[i][3]), dt6.Rows[i][11], dt6.Rows[i][10], dt6.Rows[i][12]);
-                    }
-                    rc.DataSource = ds;
-                    rc.Parameters["Id"].Value = Convert.ToInt32(Lable_Num.Text);
-                    rc.Parameters["Id"].Visible = false;
-                    //System.Drawing.Printing.PrintDocument printDocumentch = new System.Drawing.Printing.PrintDocument();
-                    // ro.PrinterName = printDocument.PrinterSettings.PrinterName;
-                    rc.PrinterName = Properties.Settings.Default.PrinterOrderClient;
-                    rc.Print();
                 }
-            }
+                }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
