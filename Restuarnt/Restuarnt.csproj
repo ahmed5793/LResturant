@@ -108,6 +108,7 @@
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Images.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -172,10 +173,16 @@
     <Compile Include="BL\Tables.cs" />
     <Compile Include="BL\Unit.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
-    <Compile Include="DAL\Frm_ReportDelete.cs">
+    <Compile Include="PL\Frm_DetailsPhone.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DAL\Frm_ReportDelete.Designer.cs">
+    <Compile Include="PL\Frm_DetailsPhone.designer.cs">
+      <DependentUpon>Frm_DetailsPhone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_ReportDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_ReportDelete.Designer.cs">
       <DependentUpon>Frm_ReportDelete.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\BackUp.cs">
@@ -569,7 +576,10 @@
       <DependentUpon>rptNewRowDAELIVERY.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="DAL\Frm_ReportDelete.resx">
+    <EmbeddedResource Include="PL\Frm_DetailsPhone.resx">
+      <DependentUpon>Frm_DetailsPhone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_ReportDelete.resx">
       <DependentUpon>Frm_ReportDelete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\BackUp.resx">

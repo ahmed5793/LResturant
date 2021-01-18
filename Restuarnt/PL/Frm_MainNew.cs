@@ -12,6 +12,7 @@ using Restuarnt.PL;
 using Restuarnt.DAL;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.ClipboardSource.SpreadsheetML;
+using Restuarnt.pl;
 
 namespace Restuarnt.PL
 {
@@ -44,9 +45,7 @@ namespace Restuarnt.PL
             {
                 farm = this;
             }
-            txtDATETIME.Hide();
-            txt_idLogin.Hide();
-            Txt_IDUsers.Hide();
+            
         }
 
      
@@ -77,13 +76,14 @@ namespace Restuarnt.PL
 
         private void Frm_Main_Load(object sender, EventArgs e)
         {
-            barStaticItem1.Caption = Program.salesman;
+            barCheckItem1.Caption= Program.salesman;
         }
      
         private void timer1_Tick(object sender, EventArgs e)
         {
             barCheckItem5.Caption = DateTime.Now.ToShortDateString();
             barCheckItem3.Caption = DateTime.Now.ToLongTimeString();
+
         }
 
         private void Btn_AddCategory_ItemClick(object sender, ItemClickEventArgs e)
@@ -193,6 +193,75 @@ namespace Restuarnt.PL
         {
             Frm_ReportDelete rd = new Frm_ReportDelete();
             rd.Show();
+        }
+
+        private void Frm_MainNew_Load(object sender, EventArgs e)
+        {
+            barCheckItem1.Caption = Program.salesman.ToString();
+
+        }
+
+       
+
+        private void tileItem15_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
+        {
+            Frm_MovedItems frm_Moved = new Frm_MovedItems();
+            frm_Moved.Show();
+        }
+
+        private void tileItem16_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
+        {
+            Frm_Masrofat d = new Frm_Masrofat();
+            d.Show();
+        }
+
+        private void tileItem17_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
+        {
+            Frm_Category category = new Frm_Category();
+            category.Show();
+        }
+
+        private void tileItem18_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
+        {
+            Sales_Management sales = new Sales_Management();
+            sales.Show();
+        }
+
+        private void tileItem19_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
+        {
+            Frm_Menu menu = new Frm_Menu();
+            menu.Show();
+        }
+
+        private void tileItem14_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
+        {
+            FOrder Order = new FOrder();
+            Order.Show();
+        }
+
+        private void accordionControlElement1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Frm_DetailsPhone dp = new Frm_DetailsPhone();
+                dp.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void accordionControlElement4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Application.Restart();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
