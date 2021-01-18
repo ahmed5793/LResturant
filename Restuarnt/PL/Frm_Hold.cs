@@ -230,14 +230,30 @@ namespace Restuarnt.PL
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-           // gridControl2.DataSource = null;
+            gridControl2.DataSource = null;
 
             this.Close();
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Minimized;
+           // WindowState = FormWindowState.Minimized;
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            rdb_all.Checked = true;
+               // gridControl2.DataSource = null;
+                DeliveryService.Visible = false;
+                DeliveryService.VisibleIndex = -1;
+                Name_Cust.Caption = "اسم العميل";
+                Name_Cust.FieldName = "اسم العميل";
+                id_take.Caption = "رقم الطلب";
+                id_take.FieldName = "رقم الطلب";
+                id_take.Visible = false;
+
+                gridControl2.DataSource = o.SELECTOrderRentALLORDER();
+            
         }
     }
 }

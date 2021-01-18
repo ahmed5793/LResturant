@@ -2578,16 +2578,8 @@ namespace Restuarnt.PL
                 simpleButton4.Text = $"({dt.Rows.Count}) الفواتير المتعلقة";
 
 
-                //fh.rdb_all.Checked = true;
-                //fh.gridControl2.DataSource = null;
-                //fh.DeliveryService.Visible = false;
-                //fh.DeliveryService.VisibleIndex = -1;
-                //fh.Name_Cust.Caption = "اسم العميل";
-                //fh.Name_Cust.FieldName = "اسم العميل";
-                //fh.id_take.Caption = "رقم الطلب";
-                //fh.id_take.FieldName = "رقم الطلب";
-                //fh.id_take.Visible = false;
-                //fh.gridControl2.DataSource = o.SELECTOrderRentALLORDER();
+                Frm_Hold master = (Frm_Hold)Application.OpenForms["Frm_Hold"];
+                master.simpleButton3.PerformClick();
 
 
 
