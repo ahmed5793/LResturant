@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using Restuarnt.Bl;
 using System.Windows.Input;
+using System.Data.SqlClient;
+using System.IO;
+
 
 namespace Restuarnt.PL
 {
@@ -262,7 +265,7 @@ namespace Restuarnt.PL
 
         private void Frm_LoginMain_Load(object sender, EventArgs e)
         {
-
+            CreateDataBase();
         }
 
         private void checkBox1_MouseLeave(object sender, EventArgs e)
@@ -278,7 +281,73 @@ namespace Restuarnt.PL
 
             //}
         }
+        private bool CheckDataBase()
+        {
+          
+          
+            SqlConnection con = new SqlConnection(@" server =.;integrated security=true");
 
+            SqlCommand cm = new SqlCommand("",con);
+            SqlDataReader sdr;
+            try
+            {
+
+                cm.CommandText = "exec sys.sp_databases";
+            con.Open();
+            sdr = cm.ExecuteReader();
+            while (sdr.Read())
+            {
+                if (sdr.GetString(0)== "DB_A54A03_Resturant")
+                {
+                    return true;
+                    break;
+                }
+            }
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+            con.Close();
+            cm.Dispose();
+            sdr.Dispose();
+
+
+            return false;
+        }
+        private void CreateDataBase()
+        {
+            bool check = CheckDataBase();
+            try
+            {
+
+           
+            if (check==false)
+            {
+            
+
+                var script = File.ReadAllText(Application.StartupPath + @"\scripts.sql");
+                    var sqlQuary = script.Split(new[] {"GO"}, StringSplitOptions.RemoveEmptyEntries);
+              
+                    
+                    var CONN = new SqlConnection(@"server =.;integrated security=true");
+                    var cmd = new SqlCommand("query",CONN);
+                    CONN.Open();
+                    foreach (var query in sqlQuary)
+                    {
+                        cmd.CommandText = query;
+                        cmd.ExecuteNonQuery();
+                    }
+                    CONN.Close();
+            }
+            }
+            catch (Exception)
+            {
+
+                
+            }
+        }
         private void simpleButton3_Click(object sender, EventArgs e)
         {
             try
