@@ -127,7 +127,7 @@ namespace Restuarnt.PL
         {
             
         }
-        string imagePath = @"Resources\image-not-found-scaled-1150x6471.png";
+        string imagePath = "";
         private void btnChoose_Click(object sender, EventArgs e)
         {
 
@@ -231,5 +231,10 @@ namespace Restuarnt.PL
             gridControl1.DataSource = m.SelectMenu();
             clear();
     }
+
+        private void searchControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

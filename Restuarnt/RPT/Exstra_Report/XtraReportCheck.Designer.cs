@@ -43,6 +43,7 @@
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.Label_TableNum = new DevExpress.XtraReports.UI.XRLabel();
+            this.Txt_TableNum = new DevExpress.XtraReports.UI.XRLabel();
             this.Txt_OrderDate = new DevExpress.XtraReports.UI.XRLabel();
             this.Txt_IDOrder = new DevExpress.XtraReports.UI.XRLabel();
             this.Txt_OrderType = new DevExpress.XtraReports.UI.XRLabel();
@@ -51,7 +52,6 @@
             this.xrTableCell2 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell3 = new DevExpress.XtraReports.UI.XRTableCell();
             this.dataSet11 = new Restuarnt.RPT.Exstra_Report.DataSet1();
-            this.Txt_TableNum = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
@@ -67,19 +67,19 @@
             // 
             // BottomMargin
             // 
-            this.BottomMargin.HeightF = 0F;
+            this.BottomMargin.HeightF = 8.333333F;
             this.BottomMargin.Name = "BottomMargin";
             // 
             // Detail
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable2});
-            this.Detail.HeightF = 33.33333F;
+            this.Detail.HeightF = 31.12501F;
             this.Detail.Name = "Detail";
             // 
             // xrTable2
             // 
-            this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(2.000038F, 0F);
+            this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrTable2.Name = "xrTable2";
             this.xrTable2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
@@ -160,7 +160,7 @@
             this.Txt_IDOrder,
             this.Txt_OrderType,
             this.xrTable1});
-            this.GroupHeader1.HeightF = 137.4999F;
+            this.GroupHeader1.HeightF = 133.9166F;
             this.GroupHeader1.Name = "GroupHeader1";
             // 
             // xrLabel4
@@ -231,6 +231,23 @@
             this.Label_TableNum.StylePriority.UseFont = false;
             this.Label_TableNum.Text = "رقم الطاولة";
             this.Label_TableNum.Visible = false;
+            // 
+            // Txt_TableNum
+            // 
+            this.Txt_TableNum.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.Txt_TableNum.BorderWidth = 2F;
+            this.Txt_TableNum.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_TableNum.LocationFloat = new DevExpress.Utils.PointFloat(1.999967F, 76.54173F);
+            this.Txt_TableNum.Multiline = true;
+            this.Txt_TableNum.Name = "Txt_TableNum";
+            this.Txt_TableNum.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.Txt_TableNum.SizeF = new System.Drawing.SizeF(183.75F, 22.99998F);
+            this.Txt_TableNum.StylePriority.UseBorders = false;
+            this.Txt_TableNum.StylePriority.UseBorderWidth = false;
+            this.Txt_TableNum.StylePriority.UseFont = false;
+            this.Txt_TableNum.Visible = false;
             // 
             // Txt_OrderDate
             // 
@@ -339,23 +356,6 @@
             this.dataSet11.DataSetName = "DataSet1";
             this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Txt_TableNum
-            // 
-            this.Txt_TableNum.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-            | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.Txt_TableNum.BorderWidth = 2F;
-            this.Txt_TableNum.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_TableNum.LocationFloat = new DevExpress.Utils.PointFloat(1.999967F, 76.54173F);
-            this.Txt_TableNum.Multiline = true;
-            this.Txt_TableNum.Name = "Txt_TableNum";
-            this.Txt_TableNum.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Txt_TableNum.SizeF = new System.Drawing.SizeF(183.75F, 22.99998F);
-            this.Txt_TableNum.StylePriority.UseBorders = false;
-            this.Txt_TableNum.StylePriority.UseBorderWidth = false;
-            this.Txt_TableNum.StylePriority.UseFont = false;
-            this.Txt_TableNum.Visible = false;
-            // 
             // XtraReportCheck
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -368,7 +368,7 @@
             this.DataMember = "Order";
             this.DataSource = this.dataSet11;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(0, 3, 0, 0);
+            this.Margins = new System.Drawing.Printing.Margins(0, 3, 0, 8);
             this.PageHeight = 866;
             this.PageWidth = 320;
             this.PaperKind = System.Drawing.Printing.PaperKind.Custom;

@@ -93,9 +93,9 @@ namespace Restuarnt.PL
                         else if (Convert.ToInt32(dt2.Rows[0][9]) == 1) { Check_MoveItem.Checked = true; }
 
                         /////////
-                        if (Convert.ToInt32(dt2.Rows[0][10]) == 0) { check_ReciveMoney.Checked = false; }
+                        if (Convert.ToInt32(dt2.Rows[0][10]) == 0) { check_UpdateOrders.Checked = false; }
 
-                        else if (Convert.ToInt32(dt2.Rows[0][10]) == 1) { check_ReciveMoney.Checked = true; }
+                        else if (Convert.ToInt32(dt2.Rows[0][10]) == 1) { check_UpdateOrders.Checked = true; }
                         ///////
                         if (Convert.ToInt32(dt2.Rows[0][11]) == 0) { check_AddMasrof.Checked = false; }
 
@@ -120,6 +120,11 @@ namespace Restuarnt.PL
                         ////////
                         if (Convert.ToInt32(dt2.Rows[0][16]) == 0) { check_Restore.Checked = false; }
                         else if (Convert.ToInt32(dt2.Rows[0][16]) == 1) { check_Restore.Checked = true; }
+
+                        ////////////
+
+                        if (Convert.ToInt32(dt2.Rows[0][17]) == 0) { check_DeletedOrder.Checked = false; }
+                        else if (Convert.ToInt32(dt2.Rows[0][17]) == 1) { check_DeletedOrder.Checked = true; }
                     }
                 }
 
@@ -183,8 +188,8 @@ namespace Restuarnt.PL
                     else if (Check_MoveItem.Checked == false) { MoveProduct = 0; }
 
 
-                    if (check_ReciveMoney.Checked == true) { RecieveMoney = 1; }
-                    else if (check_ReciveMoney.Checked == false) { RecieveMoney = 0; }
+                    if (check_UpdateOrders.Checked == true) { RecieveMoney = 1; }
+                    else if (check_UpdateOrders.Checked == false) { RecieveMoney = 0; }
 
 
                     if (check_AddMasrof.Checked == true) { AddMasrof = 1; }
@@ -210,6 +215,11 @@ namespace Restuarnt.PL
 
                     if (check_Restore.Checked == true) { Restore = 1; }
                     else if (check_Restore.Checked == false) { Restore = 0; }
+
+
+
+                    if (check_DeletedOrder.Checked == true) { permession_Update = 1; }
+                    else if (check_DeletedOrder.Checked == false) { permession_Update = 0; }
 
                     l.Update_UserPermession(Convert.ToInt32(cmb_Users1.SelectedValue), AddCategory, AddItem, AddTable, AddDelivery, 
                         AddCaptin, SettingOrder, orderManagement,order,MoveProduct, RecieveMoney, AddMasrof, ReportMasrofat, AddUser,

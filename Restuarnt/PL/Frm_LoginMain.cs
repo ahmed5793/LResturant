@@ -249,6 +249,16 @@ namespace Restuarnt.PL
                     {
                         Frm_MainNew.getmain.BtnRestore.Enabled = true;
                     }
+
+                    ///////////////////////
+                    if (Convert.ToInt32(dt2.Rows[0][17]) == 0)
+                    {
+                        Frm_MainNew.getmain.Btn_UpdateOrder.Enabled = false;
+                    }
+                    else if (Convert.ToInt32(dt2.Rows[0][17]) == 1)
+                    {
+                        Frm_MainNew.getmain.Btn_UpdateOrder.Enabled = true;
+                    }
                 }
 
 

@@ -45,7 +45,7 @@
             this.check_Order = new System.Windows.Forms.CheckBox();
             this.Check_ManagementOrder = new System.Windows.Forms.CheckBox();
             this.Check_MoveItem = new System.Windows.Forms.CheckBox();
-            this.check_ReciveMoney = new System.Windows.Forms.CheckBox();
+            this.check_UpdateOrders = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.check_AddCategory = new System.Windows.Forms.CheckBox();
             this.Check_SettingOrder = new System.Windows.Forms.CheckBox();
@@ -53,6 +53,7 @@
             this.Check_AddItem = new System.Windows.Forms.CheckBox();
             this.check_AddTable = new System.Windows.Forms.CheckBox();
             this.Check_AddDelivery = new System.Windows.Forms.CheckBox();
+            this.check_DeletedOrder = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -233,10 +234,11 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Blue;
+            this.groupBox3.Controls.Add(this.check_DeletedOrder);
             this.groupBox3.Controls.Add(this.check_Order);
             this.groupBox3.Controls.Add(this.Check_ManagementOrder);
             this.groupBox3.Controls.Add(this.Check_MoveItem);
-            this.groupBox3.Controls.Add(this.check_ReciveMoney);
+            this.groupBox3.Controls.Add(this.check_UpdateOrders);
             this.groupBox3.Location = new System.Drawing.Point(534, 28);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(214, 277);
@@ -250,7 +252,7 @@
             this.check_Order.BackColor = System.Drawing.Color.Black;
             this.check_Order.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_Order.ForeColor = System.Drawing.Color.White;
-            this.check_Order.Location = new System.Drawing.Point(45, 35);
+            this.check_Order.Location = new System.Drawing.Point(45, 32);
             this.check_Order.Name = "check_Order";
             this.check_Order.Size = new System.Drawing.Size(122, 26);
             this.check_Order.TabIndex = 58;
@@ -263,7 +265,7 @@
             this.Check_ManagementOrder.BackColor = System.Drawing.Color.Black;
             this.Check_ManagementOrder.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Check_ManagementOrder.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Check_ManagementOrder.Location = new System.Drawing.Point(54, 88);
+            this.Check_ManagementOrder.Location = new System.Drawing.Point(54, 78);
             this.Check_ManagementOrder.Name = "Check_ManagementOrder";
             this.Check_ManagementOrder.Size = new System.Drawing.Size(113, 26);
             this.Check_ManagementOrder.TabIndex = 6;
@@ -276,25 +278,25 @@
             this.Check_MoveItem.BackColor = System.Drawing.Color.Black;
             this.Check_MoveItem.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Check_MoveItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Check_MoveItem.Location = new System.Drawing.Point(49, 144);
+            this.Check_MoveItem.Location = new System.Drawing.Point(49, 127);
             this.Check_MoveItem.Name = "Check_MoveItem";
             this.Check_MoveItem.Size = new System.Drawing.Size(118, 26);
             this.Check_MoveItem.TabIndex = 59;
             this.Check_MoveItem.Text = "حركة الاصناف";
             this.Check_MoveItem.UseVisualStyleBackColor = false;
             // 
-            // check_ReciveMoney
+            // check_UpdateOrders
             // 
-            this.check_ReciveMoney.AutoSize = true;
-            this.check_ReciveMoney.BackColor = System.Drawing.Color.Black;
-            this.check_ReciveMoney.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.check_ReciveMoney.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.check_ReciveMoney.Location = new System.Drawing.Point(56, 201);
-            this.check_ReciveMoney.Name = "check_ReciveMoney";
-            this.check_ReciveMoney.Size = new System.Drawing.Size(111, 26);
-            this.check_ReciveMoney.TabIndex = 10;
-            this.check_ReciveMoney.Text = "إستلام النقدية";
-            this.check_ReciveMoney.UseVisualStyleBackColor = false;
+            this.check_UpdateOrders.AutoSize = true;
+            this.check_UpdateOrders.BackColor = System.Drawing.Color.Black;
+            this.check_UpdateOrders.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_UpdateOrders.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.check_UpdateOrders.Location = new System.Drawing.Point(52, 175);
+            this.check_UpdateOrders.Name = "check_UpdateOrders";
+            this.check_UpdateOrders.Size = new System.Drawing.Size(116, 26);
+            this.check_UpdateOrders.TabIndex = 10;
+            this.check_UpdateOrders.Text = "تعديل المبيعات";
+            this.check_UpdateOrders.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
@@ -390,6 +392,19 @@
             this.Check_AddDelivery.Text = "إضافة طيار";
             this.Check_AddDelivery.UseVisualStyleBackColor = false;
             // 
+            // check_DeletedOrder
+            // 
+            this.check_DeletedOrder.AutoSize = true;
+            this.check_DeletedOrder.BackColor = System.Drawing.Color.Black;
+            this.check_DeletedOrder.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_DeletedOrder.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.check_DeletedOrder.Location = new System.Drawing.Point(55, 222);
+            this.check_DeletedOrder.Name = "check_DeletedOrder";
+            this.check_DeletedOrder.Size = new System.Drawing.Size(113, 26);
+            this.check_DeletedOrder.TabIndex = 60;
+            this.check_DeletedOrder.Text = "سلة المهملات";
+            this.check_DeletedOrder.UseVisualStyleBackColor = false;
+            // 
             // Validate_Users
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -443,6 +458,7 @@
         public System.Windows.Forms.CheckBox check_Order;
         public System.Windows.Forms.CheckBox Check_ManagementOrder;
         public System.Windows.Forms.CheckBox Check_MoveItem;
-        public System.Windows.Forms.CheckBox check_ReciveMoney;
+        public System.Windows.Forms.CheckBox check_UpdateOrders;
+        public System.Windows.Forms.CheckBox check_DeletedOrder;
     }
 }

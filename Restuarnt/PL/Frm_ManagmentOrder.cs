@@ -311,20 +311,20 @@ namespace Restuarnt.PL
                     {
                         dt5.Clear();
                         dt5 = o.PrintOrderSala(Convert.ToInt32(dataGridViewList.CurrentRow.Cells[0].Value));
-                        ro.xrLabel11.Visible = true;
-                        ro.xrLabel10.Visible = true;
-                        ro.xrLabel18.Visible = true;
-                        ro.xrLabel19.Visible = true;
-                        ro.xrLabel19.Text = dt5.Rows[0][1].ToString();
+                        ro.Txt_DeliveryService.Visible = true;
+                        ro.Lable_DeliveryService.Visible = true;
+                        ro.Lable_DeliveryName.Visible = true;
+                        ro.Txt_DeliveryName.Visible = true;
+                        ro.Txt_DeliveryName.Text = dt5.Rows[0][1].ToString();
                     }
 
                     if (dt5.Rows[0][11].ToString() == "Table")
                     {
                         dt5.Clear();
                         dt5 = o.Select_DeliveyMan(Convert.ToInt32(dataGridViewList.CurrentRow.Cells[0].Value));
-                        ro.xrLabel20.Visible = true;
-                        ro.xrLabel21.Visible = true;
-                        ro.xrLabel21.Text = dt5.Rows[0][1].ToString();
+                        ro.Lable_TableNum.Visible = true;
+                        ro.Txt_TableNum.Visible = true;
+                        ro.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
                     }
                     dt5.Clear();
                     dt5 = o.PrintOrder(Convert.ToInt32(dataGridViewList.CurrentRow.Cells[0].Value));

@@ -217,7 +217,7 @@
             this.btnBackUp = new DevExpress.XtraBars.BarButtonItem();
             this.BtnRestore = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_UpdateOrder = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_ReciveMoney = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem19 = new DevExpress.XtraBars.BarButtonItem();
             this.barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
@@ -291,6 +291,7 @@
             this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -378,7 +379,7 @@
             this.btnBackUp,
             this.BtnRestore,
             this.barButtonItem17,
-            this.barButtonItem18,
+            this.Btn_UpdateOrder,
             this.Btn_ReciveMoney,
             this.barButtonItem19,
             this.barCheckItem1});
@@ -1801,20 +1802,37 @@
             this.barButtonItem17.Id = 95;
             this.barButtonItem17.Name = "barButtonItem17";
             // 
-            // barButtonItem18
+            // Btn_UpdateOrder
             // 
-            this.barButtonItem18.Caption = "تعديل المبيعات";
-            this.barButtonItem18.Id = 96;
-            this.barButtonItem18.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.Image")));
-            this.barButtonItem18.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.LargeImage")));
-            this.barButtonItem18.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barButtonItem18.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barButtonItem18.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
-            this.barButtonItem18.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem18.ItemAppearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
-            this.barButtonItem18.ItemAppearance.Pressed.Options.UseFont = true;
-            this.barButtonItem18.Name = "barButtonItem18";
-            this.barButtonItem18.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem18_ItemClick);
+            this.Btn_UpdateOrder.Caption = "تعديل المبيعات";
+            this.Btn_UpdateOrder.Id = 96;
+            this.Btn_UpdateOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.Image")));
+            this.Btn_UpdateOrder.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.LargeImage")));
+            this.Btn_UpdateOrder.ItemAppearance.Hovered.BackColor = System.Drawing.Color.DarkGray;
+            this.Btn_UpdateOrder.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
+            this.Btn_UpdateOrder.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Black;
+            this.Btn_UpdateOrder.ItemAppearance.Hovered.Options.UseBackColor = true;
+            this.Btn_UpdateOrder.ItemAppearance.Hovered.Options.UseBorderColor = true;
+            this.Btn_UpdateOrder.ItemAppearance.Hovered.Options.UseFont = true;
+            this.Btn_UpdateOrder.ItemAppearance.Hovered.Options.UseForeColor = true;
+            this.Btn_UpdateOrder.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.Btn_UpdateOrder.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_UpdateOrder.ItemAppearance.Normal.BackColor = System.Drawing.Color.DarkGray;
+            this.Btn_UpdateOrder.ItemAppearance.Normal.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
+            this.Btn_UpdateOrder.ItemAppearance.Normal.ForeColor = System.Drawing.Color.Black;
+            this.Btn_UpdateOrder.ItemAppearance.Normal.Options.UseBackColor = true;
+            this.Btn_UpdateOrder.ItemAppearance.Normal.Options.UseFont = true;
+            this.Btn_UpdateOrder.ItemAppearance.Normal.Options.UseForeColor = true;
+            this.Btn_UpdateOrder.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.Btn_UpdateOrder.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_UpdateOrder.ItemAppearance.Pressed.BackColor = System.Drawing.Color.Silver;
+            this.Btn_UpdateOrder.ItemAppearance.Pressed.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
+            this.Btn_UpdateOrder.ItemAppearance.Pressed.Options.UseBackColor = true;
+            this.Btn_UpdateOrder.ItemAppearance.Pressed.Options.UseFont = true;
+            this.Btn_UpdateOrder.ItemAppearance.Pressed.Options.UseTextOptions = true;
+            this.Btn_UpdateOrder.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.Btn_UpdateOrder.Name = "Btn_UpdateOrder";
+            this.Btn_UpdateOrder.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem18_ItemClick);
             // 
             // Btn_ReciveMoney
             // 
@@ -1934,7 +1952,8 @@
             this.Ribon_AddSuppliers,
             this.Ribon_AddSupplierMoney,
             this.Ribon_PaySuppliers,
-            this.ribbonPageGroup6});
+            this.ribbonPageGroup6,
+            this.ribbonPageGroup7});
             this.Sales.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Sales.ImageOptions.Image")));
             this.Sales.Name = "Sales";
             this.Sales.Text = "المبيعات";
@@ -1952,12 +1971,11 @@
             // Ribon_PaySuppliers
             // 
             this.Ribon_PaySuppliers.ItemLinks.Add(this.Btn_MoveItems);
-            this.Ribon_PaySuppliers.ItemLinks.Add(this.barButtonItem18);
             this.Ribon_PaySuppliers.Name = "Ribon_PaySuppliers";
             // 
             // ribbonPageGroup6
             // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.Btn_ReciveMoney);
+            this.ribbonPageGroup6.ItemLinks.Add(this.Btn_UpdateOrder);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             // 
             // Ribon_MasrofatManagement
@@ -2037,11 +2055,11 @@
             this.ribbonStatusBar.ItemLinks.Add(this.barCheckItem4);
             this.ribbonStatusBar.ItemLinks.Add(this.barCheckItem5);
             this.ribbonStatusBar.ItemLinks.Add(this.barCheckItem1);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 479);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 481);
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1008, 33);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1008, 31);
             // 
             // applicationMenu1
             // 
@@ -3021,7 +3039,6 @@
             // 
             // item_Category
             // 
-            this.item_Category.CurrentFrameIndex = 1;
             tileItemElement9.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
             tileItemElement9.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             tileItemElement9.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
@@ -3129,7 +3146,6 @@
             // 
             // Item_Mangment
             // 
-            this.Item_Mangment.CurrentFrameIndex = 1;
             tileItemElement17.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image16")));
             tileItemElement17.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             tileItemElement17.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
@@ -3286,6 +3302,11 @@
             this.accordionControlElement4.Text = "تبديل المستخدم";
             this.accordionControlElement4.Click += new System.EventHandler(this.accordionControlElement4_Click);
             // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.Btn_ReciveMoney);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            // 
             // Frm_MainNew
             // 
             this.Appearance.BackColor = System.Drawing.Color.Gray;
@@ -3441,7 +3462,6 @@
         public DevExpress.XtraBars.BarButtonItem BtnRestore;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem17;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem18;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         public DevExpress.XtraBars.BarButtonItem Btn_ReciveMoney;
         public DevExpress.XtraBars.BarButtonItem Btn_settingOrder;
@@ -3471,5 +3491,7 @@
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
+        public DevExpress.XtraBars.BarButtonItem Btn_UpdateOrder;
     }
 }

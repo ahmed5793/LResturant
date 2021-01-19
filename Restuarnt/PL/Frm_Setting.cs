@@ -119,10 +119,9 @@ namespace Restuarnt.PL
                         
                         Rdb_Collect.Checked = true;
                     }
-                    if (Rdb_Seperator.Checked == true)
+                    if (Properties.Settings.Default.CheckenType == "seperator")
                     {
-                        Properties.Settings.Default.CheckenType = "seperator";
-                        Properties.Settings.Default.Save();
+                        Rdb_Seperator.Checked = true;
                     }
 
                 }
