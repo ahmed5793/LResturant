@@ -28,6 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Category));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btn_update = new System.Windows.Forms.Button();
@@ -46,6 +57,23 @@
             this.btnChoose = new DevExpress.XtraEditors.SimpleButton();
             this.pictureLogo = new System.Windows.Forms.PictureBox();
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
+            this.lable_num = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ID_Category = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_layoutViewColumn1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.name = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_layoutViewColumn1_1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.department = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_layoutViewColumn1_2 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.Images = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_layoutViewColumn1_3 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.update = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_layoutViewColumn1_4 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.delete = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_layoutViewColumn1_5 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.repositoryItemImageEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageEdit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).BeginInit();
@@ -54,12 +82,21 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn1_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn1_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn1_3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn1_4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn1_5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_name
             // 
             this.txt_name.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name.Location = new System.Drawing.Point(44, 64);
+            this.txt_name.Location = new System.Drawing.Point(41, 128);
             this.txt_name.Name = "txt_name";
             this.txt_name.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_name.Size = new System.Drawing.Size(302, 29);
@@ -71,7 +108,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(350, 64);
+            this.label9.Location = new System.Drawing.Point(347, 128);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 29);
             this.label9.TabIndex = 6;
@@ -83,7 +120,7 @@
             this.btn_update.BackColor = System.Drawing.Color.White;
             this.btn_update.Font = new System.Drawing.Font("Arial", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update.ForeColor = System.Drawing.Color.Black;
-            this.btn_update.Location = new System.Drawing.Point(243, 19);
+            this.btn_update.Location = new System.Drawing.Point(245, 19);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(136, 42);
             this.btn_update.TabIndex = 22;
@@ -97,7 +134,7 @@
             this.btn_add.BackColor = System.Drawing.Color.White;
             this.btn_add.Font = new System.Drawing.Font("Arial", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add.ForeColor = System.Drawing.Color.Black;
-            this.btn_add.Location = new System.Drawing.Point(425, 19);
+            this.btn_add.Location = new System.Drawing.Point(427, 19);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(137, 42);
             this.btn_add.TabIndex = 21;
@@ -113,7 +150,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "مأكولات",
             "مشروبات"});
-            this.comboBox1.Location = new System.Drawing.Point(44, 19);
+            this.comboBox1.Location = new System.Drawing.Point(41, 83);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(302, 32);
             this.comboBox1.TabIndex = 23;
@@ -123,7 +160,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(351, 16);
+            this.label1.Location = new System.Drawing.Point(348, 80);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 29);
             this.label1.TabIndex = 24;
@@ -138,7 +175,7 @@
             this.groupBox4.Location = new System.Drawing.Point(0, 309);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox4.Size = new System.Drawing.Size(811, 203);
+            this.groupBox4.Size = new System.Drawing.Size(815, 267);
             this.groupBox4.TabIndex = 137;
             this.groupBox4.TabStop = false;
             // 
@@ -151,8 +188,12 @@
             this.gridControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControl1.MainView = this.layoutView1;
             this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemButtonEdit1,
+            this.repositoryItemButtonEdit2,
+            this.repositoryItemImageEdit1});
             this.gridControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gridControl1.Size = new System.Drawing.Size(805, 184);
+            this.gridControl1.Size = new System.Drawing.Size(809, 248);
             this.gridControl1.TabIndex = 128;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.layoutView1});
@@ -189,6 +230,13 @@
             this.layoutView1.Appearance.SeparatorLine.ForeColor = System.Drawing.Color.Yellow;
             this.layoutView1.Appearance.SeparatorLine.Options.UseFont = true;
             this.layoutView1.Appearance.SeparatorLine.Options.UseForeColor = true;
+            this.layoutView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.LayoutViewColumn[] {
+            this.ID_Category,
+            this.name,
+            this.department,
+            this.Images,
+            this.update,
+            this.delete});
             this.layoutView1.GridControl = this.gridControl1;
             this.layoutView1.Name = "layoutView1";
             this.layoutView1.OptionsBehavior.ReadOnly = true;
@@ -198,6 +246,13 @@
             // layoutViewCard1
             // 
             this.layoutViewCard1.HeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
+            this.layoutViewCard1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutViewField_layoutViewColumn1,
+            this.layoutViewField_layoutViewColumn1_1,
+            this.layoutViewField_layoutViewColumn1_2,
+            this.layoutViewField_layoutViewColumn1_3,
+            this.layoutViewField_layoutViewColumn1_4,
+            this.layoutViewField_layoutViewColumn1_5});
             this.layoutViewCard1.Name = "layoutViewTemplateCard";
             // 
             // button1
@@ -206,7 +261,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button1.Font = new System.Drawing.Font("Arial", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(602, 19);
+            this.button1.Location = new System.Drawing.Point(604, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(149, 42);
             this.button1.TabIndex = 139;
@@ -220,7 +275,7 @@
             this.btn_delete.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btn_delete.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ForeColor = System.Drawing.Color.White;
-            this.btn_delete.Location = new System.Drawing.Point(65, 19);
+            this.btn_delete.Location = new System.Drawing.Point(67, 19);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(143, 41);
             this.btn_delete.TabIndex = 138;
@@ -231,13 +286,15 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.lable_num);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txt_name);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(346, 31);
+            this.groupBox1.Location = new System.Drawing.Point(350, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(451, 100);
+            this.groupBox1.Size = new System.Drawing.Size(451, 182);
             this.groupBox1.TabIndex = 140;
             this.groupBox1.TabStop = false;
             // 
@@ -251,7 +308,7 @@
             this.groupBox2.Controls.Add(this.btn_update);
             this.groupBox2.Location = new System.Drawing.Point(4, 201);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(800, 70);
+            this.groupBox2.Size = new System.Drawing.Size(804, 70);
             this.groupBox2.TabIndex = 141;
             this.groupBox2.TabStop = false;
             // 
@@ -309,7 +366,7 @@
             this.searchControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.searchControl1.Client = this.gridControl1;
             this.searchControl1.EditValue = "";
-            this.searchControl1.Location = new System.Drawing.Point(247, 281);
+            this.searchControl1.Location = new System.Drawing.Point(249, 281);
             this.searchControl1.Name = "searchControl1";
             this.searchControl1.Properties.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchControl1.Properties.Appearance.Options.UseFont = true;
@@ -320,12 +377,156 @@
             this.searchControl1.Size = new System.Drawing.Size(306, 28);
             this.searchControl1.TabIndex = 145;
             // 
+            // lable_num
+            // 
+            this.lable_num.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lable_num.Location = new System.Drawing.Point(39, 34);
+            this.lable_num.Name = "lable_num";
+            this.lable_num.ReadOnly = true;
+            this.lable_num.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lable_num.Size = new System.Drawing.Size(302, 29);
+            this.lable_num.TabIndex = 25;
+            this.lable_num.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(347, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 29);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "كود الصنف";
+            // 
+            // ID_Category
+            // 
+            this.ID_Category.Caption = "الكود";
+            this.ID_Category.FieldName = "ID_Category";
+            this.ID_Category.LayoutViewField = this.layoutViewField_layoutViewColumn1;
+            this.ID_Category.Name = "ID_Category";
+            // 
+            // layoutViewField_layoutViewColumn1
+            // 
+            this.layoutViewField_layoutViewColumn1.EditorPreferredWidth = 10;
+            this.layoutViewField_layoutViewColumn1.Location = new System.Drawing.Point(0, 0);
+            this.layoutViewField_layoutViewColumn1.Name = "layoutViewField_layoutViewColumn1";
+            this.layoutViewField_layoutViewColumn1.Size = new System.Drawing.Size(114, 20);
+            this.layoutViewField_layoutViewColumn1.TextSize = new System.Drawing.Size(39, 13);
+            // 
+            // name
+            // 
+            this.name.Caption = "الفئات";
+            this.name.FieldName = "الفئات";
+            this.name.LayoutViewField = this.layoutViewField_layoutViewColumn1_1;
+            this.name.Name = "name";
+            // 
+            // layoutViewField_layoutViewColumn1_1
+            // 
+            this.layoutViewField_layoutViewColumn1_1.EditorPreferredWidth = 10;
+            this.layoutViewField_layoutViewColumn1_1.Location = new System.Drawing.Point(0, 20);
+            this.layoutViewField_layoutViewColumn1_1.Name = "layoutViewField_layoutViewColumn1_1";
+            this.layoutViewField_layoutViewColumn1_1.Size = new System.Drawing.Size(114, 20);
+            this.layoutViewField_layoutViewColumn1_1.TextSize = new System.Drawing.Size(39, 13);
+            // 
+            // department
+            // 
+            this.department.Caption = "القسم";
+            this.department.FieldName = "القسم";
+            this.department.LayoutViewField = this.layoutViewField_layoutViewColumn1_2;
+            this.department.Name = "department";
+            // 
+            // layoutViewField_layoutViewColumn1_2
+            // 
+            this.layoutViewField_layoutViewColumn1_2.EditorPreferredWidth = 10;
+            this.layoutViewField_layoutViewColumn1_2.Location = new System.Drawing.Point(0, 40);
+            this.layoutViewField_layoutViewColumn1_2.Name = "layoutViewField_layoutViewColumn1_2";
+            this.layoutViewField_layoutViewColumn1_2.Size = new System.Drawing.Size(114, 20);
+            this.layoutViewField_layoutViewColumn1_2.TextSize = new System.Drawing.Size(39, 13);
+            // 
+            // Images
+            // 
+            this.Images.Caption = "Images";
+            this.Images.ColumnEdit = this.repositoryItemImageEdit1;
+            this.Images.FieldName = "Images";
+            this.Images.LayoutViewField = this.layoutViewField_layoutViewColumn1_3;
+            this.Images.Name = "Images";
+            // 
+            // layoutViewField_layoutViewColumn1_3
+            // 
+            this.layoutViewField_layoutViewColumn1_3.EditorPreferredWidth = 10;
+            this.layoutViewField_layoutViewColumn1_3.Location = new System.Drawing.Point(0, 60);
+            this.layoutViewField_layoutViewColumn1_3.Name = "layoutViewField_layoutViewColumn1_3";
+            this.layoutViewField_layoutViewColumn1_3.Size = new System.Drawing.Size(114, 20);
+            this.layoutViewField_layoutViewColumn1_3.TextSize = new System.Drawing.Size(39, 13);
+            // 
+            // update
+            // 
+            this.update.Caption = "تعديل";
+            this.update.ColumnEdit = this.repositoryItemButtonEdit1;
+            this.update.ImageOptions.Alignment = System.Drawing.StringAlignment.Far;
+            this.update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("update.ImageOptions.Image")));
+            this.update.LayoutViewField = this.layoutViewField_layoutViewColumn1_4;
+            this.update.Name = "update";
+            // 
+            // layoutViewField_layoutViewColumn1_4
+            // 
+            this.layoutViewField_layoutViewColumn1_4.EditorPreferredWidth = 10;
+            this.layoutViewField_layoutViewColumn1_4.Location = new System.Drawing.Point(0, 80);
+            this.layoutViewField_layoutViewColumn1_4.Name = "layoutViewField_layoutViewColumn1_4";
+            this.layoutViewField_layoutViewColumn1_4.Size = new System.Drawing.Size(114, 20);
+            this.layoutViewField_layoutViewColumn1_4.TextSize = new System.Drawing.Size(39, 13);
+            // 
+            // repositoryItemButtonEdit1
+            // 
+            this.repositoryItemButtonEdit1.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
+            this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEdit1_ButtonClick);
+            // 
+            // delete
+            // 
+            this.delete.Caption = "حذف";
+            this.delete.ColumnEdit = this.repositoryItemButtonEdit2;
+            this.delete.ImageOptions.Alignment = System.Drawing.StringAlignment.Far;
+            this.delete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("delete.ImageOptions.Image")));
+            this.delete.LayoutViewField = this.layoutViewField_layoutViewColumn1_5;
+            this.delete.Name = "delete";
+            // 
+            // layoutViewField_layoutViewColumn1_5
+            // 
+            this.layoutViewField_layoutViewColumn1_5.EditorPreferredWidth = 10;
+            this.layoutViewField_layoutViewColumn1_5.Location = new System.Drawing.Point(0, 100);
+            this.layoutViewField_layoutViewColumn1_5.Name = "layoutViewField_layoutViewColumn1_5";
+            this.layoutViewField_layoutViewColumn1_5.Size = new System.Drawing.Size(114, 20);
+            this.layoutViewField_layoutViewColumn1_5.TextSize = new System.Drawing.Size(39, 13);
+            // 
+            // repositoryItemButtonEdit2
+            // 
+            this.repositoryItemButtonEdit2.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.repositoryItemButtonEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryItemButtonEdit2.Name = "repositoryItemButtonEdit2";
+            this.repositoryItemButtonEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEdit2.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEdit2_ButtonClick);
+            // 
+            // repositoryItemImageEdit1
+            // 
+            this.repositoryItemImageEdit1.AutoHeight = false;
+            this.repositoryItemImageEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemImageEdit1.Name = "repositoryItemImageEdit1";
+            // 
             // Frm_Category
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(814, 518);
+            this.ClientSize = new System.Drawing.Size(818, 582);
             this.Controls.Add(this.searchControl1);
             this.Controls.Add(this.btndelete);
             this.Controls.Add(this.btnChoose);
@@ -349,6 +550,15 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn1_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn1_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn1_3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn1_4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_layoutViewColumn1_5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -373,5 +583,22 @@
         private DevExpress.XtraGrid.Views.Layout.LayoutView layoutView1;
         private DevExpress.XtraGrid.Views.Layout.LayoutViewCard layoutViewCard1;
         private DevExpress.XtraEditors.SearchControl searchControl1;
+        private System.Windows.Forms.TextBox lable_num;
+        private System.Windows.Forms.Label label2;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn ID_Category;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_layoutViewColumn1;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn name;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_layoutViewColumn1_1;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn department;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_layoutViewColumn1_2;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn Images;
+        private DevExpress.XtraEditors.Repository.RepositoryItemImageEdit repositoryItemImageEdit1;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_layoutViewColumn1_3;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn update;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_layoutViewColumn1_4;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn delete;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit2;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_layoutViewColumn1_5;
     }
 }

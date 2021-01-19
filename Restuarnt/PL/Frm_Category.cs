@@ -48,7 +48,12 @@ namespace Restuarnt.PL
                 return;
 
             }
-               //convert from image to byte
+            if (imagePath == "")
+            {
+                imagePath = @"Resources\image-not-found-scaled-1150x6471.png";
+
+            }
+            //convert from image to byte
             FileStream filestream = new FileStream(imagePath, FileMode.Open, FileAccess.Read);
             Byte[] bytestream = new Byte[filestream.Length];
             filestream.Read(bytestream, 0, bytestream.Length);
@@ -71,7 +76,7 @@ namespace Restuarnt.PL
             btn_add.Enabled = true;
             pictureLogo.BackgroundImage = Properties.Resources.image_not_found_scaled_1150x647;
             pictureLogo.Image = Properties.Resources.image_not_found_scaled_1150x647;
-            imagePath = @"Resources\image-not-found-scaled-1150x6471.png";
+            imagePath = "";
         }
 
         private void Btn_update_Click(object sender, EventArgs e)
@@ -134,15 +139,7 @@ namespace Restuarnt.PL
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            c.deleteCategory(Convert.ToInt32(layoutView1.GetFocusedRowCellValue("ID_Category")));
-            if (MessageBox.Show("هل تريد المسح", "يرجي العلم في حالة مسح فئة يقوم البرنامج بمسح الاصناف المرتبطه بالفئة ديه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning,MessageBoxDefaultButton.Button2)==DialogResult.Yes)
-
-            {
-                MessageBox.Show("تم المسح  بنجاح", "عمليه المسح", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                gridControl1.DataSource = c.SelectCategory();
-            }
            
-            clear();
         }
         string imagePath = @"Resources\image-not-found-scaled-1150x6471.png";
         private void btnChoose_Click(object sender, EventArgs e)
@@ -166,13 +163,18 @@ namespace Restuarnt.PL
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
         {
+        }
+
+        private void repositoryItemButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+
             if (layoutView1.RowCount > 0)
             {
                 //convert from byte to image
                 byte[] image = (byte[])layoutView1.GetFocusedRowCellValue("Images");
                 MemoryStream f = new MemoryStream(image);
                 pictureLogo.Image = Image.FromStream(f);
-
+                lable_num.Text = layoutView1.GetFocusedRowCellValue(ID_Category).ToString();
                 txt_name.Text = layoutView1.GetFocusedRowCellValue("الفئات").ToString();
                 comboBox1.Text = layoutView1.GetFocusedRowCellValue("القسم").ToString();
 
@@ -182,6 +184,19 @@ namespace Restuarnt.PL
 
                 btn_update.Enabled = true;
             }
+        }
+
+        private void repositoryItemButtonEdit2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            c.deleteCategory(Convert.ToInt32(layoutView1.GetFocusedRowCellValue("ID_Category")));
+            if (MessageBox.Show("هل تريد المسح", "يرجي العلم في حالة مسح فئة يقوم البرنامج بمسح الاصناف المرتبطه بالفئة ديه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+
+            {
+                MessageBox.Show("تم المسح  بنجاح", "عمليه المسح", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                gridControl1.DataSource = c.SelectCategory();
+            }
+
+            clear();
         }
     }
 }
