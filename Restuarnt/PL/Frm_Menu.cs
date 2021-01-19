@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraGrid.Views.Layout;
 using Restuarnt.BL;
 
 
@@ -26,7 +27,6 @@ namespace Restuarnt.PL
             comboBox1.ValueMember = "ID_Category";
        
             btn_update.Enabled = false;
-            btn_delete.Enabled = false;
 
             gridControl1.DataSource = m.SelectMenu();
 
@@ -67,6 +67,12 @@ namespace Restuarnt.PL
                 txt_seeling.Focus();
                 return;
             }
+                if (imagePath=="")
+                {
+                    imagePath = @"Resources\image-not-found-scaled-1150x6471.png";
+
+                }
+
                 //convert image to byte save in db
                 FileStream filestream = new FileStream(imagePath, FileMode.Open, FileAccess.Read);
                 Byte[] bytestream = new Byte[filestream.Length];
@@ -127,7 +133,9 @@ namespace Restuarnt.PL
         {
             
         }
-        string imagePath = "";
+        
+        string imagePath= "";
+         
         private void btnChoose_Click(object sender, EventArgs e)
         {
 
@@ -153,37 +161,21 @@ namespace Restuarnt.PL
 
         void clear()
         {
-            btn_delete.Enabled = false;
             btn_update.Enabled = false;
             btn_add.Enabled = true;
             comboBox1.Enabled = true;
             pictureLogo.BackgroundImage = Properties.Resources.image_not_found_scaled_1150x647; 
             pictureLogo.Image = Properties.Resources.image_not_found_scaled_1150x647;
-            imagePath = @"Resources\image-not-found-scaled-1150x6471.png";
+            imagePath = "";
             txt_name.Clear();
             txt_seeling.Clear();
+            lable_num.Text = "";
         }
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
         {
            
-            if (layoutView1.RowCount > 0)
-            {
-                //convert from byte to image 
- 
-                byte[] image = (byte[])layoutView1.GetFocusedRowCellValue("Images");
-                MemoryStream f = new MemoryStream(image);
-
-               
-                btn_add.Enabled = false;
-                btn_update.Enabled = true;
-                btn_delete.Enabled = true;
-                comboBox1.Text = layoutView1.GetFocusedRowCellValue("الفئه").ToString();
-                txt_name.Text = layoutView1.GetFocusedRowCellValue("اسم الصنف").ToString();
-                txt_seeling.Text = layoutView1.GetFocusedRowCellValue("السعر").ToString();
-                pictureLogo.Image = Image.FromStream(f);
-
-            }
+          
         }
       
         private void button1_Click_1(object sender, EventArgs e)
@@ -194,7 +186,7 @@ namespace Restuarnt.PL
                 return;
 
             }
-         
+           
 
             if (imagePath == "")
             {
@@ -223,17 +215,58 @@ namespace Restuarnt.PL
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            m.deleteMenu( Convert.ToInt32(layoutView1.GetFocusedRowCellValue("Item_ID")));
-        
+            //m.deleteMenu(Convert.ToInt32(layoutView1.GetFocusedRowCellValue("Item_ID")));
 
-        MessageBox.Show("تم المسح  بنجاح", "عمليه المسح", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-           
-            gridControl1.DataSource = m.SelectMenu();
-            clear();
-    }
+
+            //MessageBox.Show("تم المسح  بنجاح", "عمليه المسح", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+
+            //gridControl1.DataSource = m.SelectMenu();
+            //clear();
+        }
 
         private void searchControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+      
+
+        private void repositoryItemButtonEdit2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (MessageBox.Show("هل تريد المسح", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+
+            {
+
+                m.deleteMenu(Convert.ToInt32(layoutView1.GetFocusedRowCellValue("Item_ID")));
+
+
+                MessageBox.Show("تم المسح  بنجاح", "عمليه المسح", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+
+                gridControl1.DataSource = m.SelectMenu();
+                clear();
+            }
+            
+        }
+
+        private void repositoryItemButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (layoutView1.RowCount > 0)
+            {
+                //convert from byte to image 
+
+                byte[] image = (byte[])layoutView1.GetFocusedRowCellValue("Images");
+                MemoryStream f = new MemoryStream(image);
+
+
+                btn_add.Enabled = false;
+                btn_update.Enabled = true;
+                lable_num.Text= layoutView1.GetFocusedRowCellValue(Item_ID).ToString();
+                comboBox1.Text = layoutView1.GetFocusedRowCellValue("الفئه").ToString();
+                txt_name.Text = layoutView1.GetFocusedRowCellValue("اسم الصنف").ToString();
+                txt_seeling.Text = layoutView1.GetFocusedRowCellValue("السعر").ToString();
+                pictureLogo.Image = Image.FromStream(f);
+
+            }
 
         }
     }
