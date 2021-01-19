@@ -190,7 +190,7 @@ namespace Restuarnt.PL
 
             if (imagePath == "")
             {
-                m.UpdateMenu(txt_name.Text, Convert.ToDecimal(txt_seeling.Text), Convert.ToInt32(layoutView1.GetFocusedRowCellValue("Item_ID")), Convert.ToInt32(comboBox1.SelectedValue), (byte[])layoutView1.GetFocusedRowCellValue("Images"));
+                m.UpdateMenu(txt_name.Text, Convert.ToDecimal(txt_seeling.Text), Convert.ToInt32(lable_num.Text), Convert.ToInt32(comboBox1.SelectedValue), (byte[])layoutView1.GetFocusedRowCellValue("Images"));
             }
             else
             {
@@ -199,7 +199,7 @@ namespace Restuarnt.PL
                 Byte[] bytestream = new Byte[filestream.Length];
                 filestream.Read(bytestream, 0, bytestream.Length);
                 filestream.Close();
-                m.UpdateMenu(txt_name.Text, Convert.ToDecimal(txt_seeling.Text), Convert.ToInt32(layoutView1.GetFocusedRowCellValue("Item_ID")), Convert.ToInt32(comboBox1.SelectedValue), bytestream);
+                m.UpdateMenu(txt_name.Text, Convert.ToDecimal(txt_seeling.Text), Convert.ToInt32(lable_num.Text), Convert.ToInt32(comboBox1.SelectedValue), bytestream);
             }
 
             MessageBox.Show("تم التعديل  بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);

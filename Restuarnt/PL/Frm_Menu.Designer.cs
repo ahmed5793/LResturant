@@ -546,9 +546,9 @@
             this.btn_update.ForeColor = System.Drawing.Color.White;
             this.btn_update.Location = new System.Drawing.Point(126, 17);
             this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(149, 42);
+            this.btn_update.Size = new System.Drawing.Size(190, 42);
             this.btn_update.TabIndex = 33;
-            this.btn_update.Text = "تعديل";
+            this.btn_update.Text = "حفظ التعديلات";
             this.btn_update.UseVisualStyleBackColor = false;
             this.btn_update.Click += new System.EventHandler(this.button1_Click_1);
             // 

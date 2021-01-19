@@ -309,8 +309,8 @@ namespace Restuarnt.PL
             {
                 if (sdr.GetString(0)== "DB_A54A03_Resturant")
                 {
-                    return true;
-                    break;
+
+                        return true;
                 }
             }
             }

@@ -23,7 +23,7 @@ namespace Restuarnt.PL
             layoutView1.Columns[0].Visible = false;
             layoutView1.Columns[2].Visible = false;
             btn_update.Enabled = false;
-            btn_delete.Enabled = false;
+           
             
         }
 
@@ -71,7 +71,6 @@ namespace Restuarnt.PL
         void clear()
         {
             txt_name.Clear();
-            btn_delete.Enabled = false;
             btn_update.Enabled = false;
             btn_add.Enabled = true;
             pictureLogo.BackgroundImage = Properties.Resources.image_not_found_scaled_1150x647;
@@ -92,7 +91,7 @@ namespace Restuarnt.PL
 
             if (imagePath == "")
             {
-                c.UpdateCtegory(Convert.ToInt32(layoutView1.GetFocusedRowCellValue("ID_Category")), txt_name.Text, comboBox1.Text,
+                c.UpdateCtegory(Convert.ToInt32(lable_num.Text), txt_name.Text, comboBox1.Text,
                     (byte[])layoutView1.GetFocusedRowCellValue("Images"));
 
             }
@@ -103,7 +102,7 @@ namespace Restuarnt.PL
                 Byte[] bytestream = new Byte[filestream.Length];
                 filestream.Read(bytestream, 0, bytestream.Length);
                 filestream.Close();
-                c.UpdateCtegory(Convert.ToInt32(layoutView1.GetFocusedRowCellValue("ID_Category")), txt_name.Text, comboBox1.Text,bytestream);
+                c.UpdateCtegory(Convert.ToInt32(lable_num.Text), txt_name.Text, comboBox1.Text,bytestream);
             }
             MessageBox.Show("تم التعديل  بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             gridControl1.DataSource = c.SelectCategory();
@@ -179,7 +178,6 @@ namespace Restuarnt.PL
                 comboBox1.Text = layoutView1.GetFocusedRowCellValue("القسم").ToString();
 
 
-                btn_delete.Enabled = true;
                 btn_add.Enabled = false;
 
                 btn_update.Enabled = true;
