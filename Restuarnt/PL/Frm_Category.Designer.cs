@@ -141,7 +141,6 @@
             this.groupBox4.Size = new System.Drawing.Size(811, 203);
             this.groupBox4.TabIndex = 137;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // gridControl1
             // 
