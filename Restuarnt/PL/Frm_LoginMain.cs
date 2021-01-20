@@ -340,7 +340,7 @@ namespace Restuarnt.PL
                 var script = File.ReadAllText(Application.StartupPath + @"\scripts.sql");
                     var sqlQuary = script.Split(new[] {"GO"}, StringSplitOptions.RemoveEmptyEntries);
               
-                    
+                     
                     var CONN = new SqlConnection(@"server =.;integrated security=true");
                     var cmd = new SqlCommand("query",CONN);
                     CONN.Open();
