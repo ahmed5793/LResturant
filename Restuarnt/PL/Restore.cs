@@ -38,7 +38,7 @@ namespace Restuarnt.PL
         {
             if (textBox1.Text != "")
             {
-                string query = "ALTER Database Restuarnt SET OFFLINE WITH ROLLBACK IMMEDIATE;Restore Database Restuarnt from Disk='" + textBox1.Text + "' WITH REPLACE";
+                string query = "ALTER Database DB_A54A03_Resturant SET OFFLINE WITH ROLLBACK IMMEDIATE;Restore Database DB_A54A03_Resturant from Disk='" + textBox1.Text + "' WITH REPLACE";
 
                 con.Open();
                 cmd = new SqlCommand(query, con);

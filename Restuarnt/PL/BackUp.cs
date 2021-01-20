@@ -14,7 +14,7 @@ namespace Restuarnt.PL
 {
     public partial class BackUp : Form
     {
-        SqlConnection con = new SqlConnection(@" server =. ; database=Restuarnt;integrated security=true");
+        SqlConnection con = new SqlConnection(@" server =. ; database=DB_A54A03_Resturant;integrated security=true");
         SqlCommand cmd;
         public BackUp()
         {
@@ -38,8 +38,8 @@ namespace Restuarnt.PL
                 if (textBox1.Text != "")
                 {
 
-                    string fileName = textBox1.Text + "\\Restuarnt " + DateTime.Now.ToShortDateString().Replace('/', '-') + "-" + DateTime.Now.ToLongTimeString().Replace(':', '-');
-                    string sqlQuary = "BackUp Database Restuarnt to Disk= '" + fileName + ".bak '";
+                    string fileName = textBox1.Text + "\\DB_A54A03_Resturant " + DateTime.Now.ToShortDateString().Replace('/', '-') + "-" + DateTime.Now.ToLongTimeString().Replace(':', '-');
+                    string sqlQuary = "BackUp Database DB_A54A03_Resturant to Disk= '" + fileName + ".bak '";
                     cmd = new SqlCommand(sqlQuary, con);
                     con.Open();
                     cmd.ExecuteNonQuery();
