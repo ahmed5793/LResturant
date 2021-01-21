@@ -754,11 +754,12 @@ namespace Restuarnt.PL
 
 
 
-
-
-
                                     }
-
+                                    else
+                                    {
+                                        MessageBox.Show("هذا العميل لم يسجل من قبل من فضلك قم باضافة العميل اولا ");
+                                        return;
+                                    }
 
 
                                 }
@@ -827,6 +828,11 @@ namespace Restuarnt.PL
                                             o.AddOrderDetails(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
                                                Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
                                         }
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("هذا العميل لم يسجل من قبل من فضلك قم باضافة العميل اولا ");
+                                        return;
                                     }
                                 }
                                  if (rdb_newclient.Checked == true)
@@ -1162,7 +1168,11 @@ namespace Restuarnt.PL
                                     cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
 
                                 }
-
+                                else
+                                {
+                                    MessageBox.Show("هذا العميل لم يسجل من قبل من فضلك قم باضافة العميل اولا ");
+                                    return;
+                                }
                                 o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
                                  Convert.ToDecimal(txt_invo.Text), 0, Convert.ToDecimal(txt_discount.Text),
                                 "Take away", Convert.ToInt32(cmb_customer.EditValue));
@@ -1212,7 +1222,11 @@ namespace Restuarnt.PL
                                     cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
 
                                 }
-
+                                else
+                                {
+                                    MessageBox.Show("هذا العميل لم يسجل من قبل من فضلك قم باضافة العميل اولا ");
+                                    return;
+                                }
                                 o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
                                  Convert.ToDecimal(txt_invo.Text),0, Convert.ToDecimal(txt_discount.Text),
                                 "Delivery", Convert.ToInt32(cmb_customer.EditValue));
@@ -1865,6 +1879,11 @@ namespace Restuarnt.PL
                                            Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
                                     }
                                 }
+                                else
+                                {
+                                    MessageBox.Show("هذا العميل لم يسجل من قبل من فضلك قم باضافة العميل اولا ");
+                                    return;
+                                }
 
 
 
@@ -1935,6 +1954,11 @@ namespace Restuarnt.PL
                                         o.AddOrderDetails(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
                                            Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
                                     }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("هذا العميل لم يسجل من قبل من فضلك قم باضافة العميل اولا ");
+                                    return;
                                 }
                             }
                             else if (rdb_newclient.Checked == true)
@@ -2277,6 +2301,11 @@ namespace Restuarnt.PL
                                  0,Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text),
                                 "Take away", Convert.ToInt32(cmb_customer.EditValue));
                             }
+                            else
+                            {
+                                MessageBox.Show("هذا العميل لم يسجل من قبل من فضلك قم باضافة العميل اولا ");
+                                return;
+                            }
                         }
                         else if (rdb_newclient.Checked == true)
                         {
@@ -2325,6 +2354,11 @@ namespace Restuarnt.PL
                                 o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
                                 0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text),
                                 "Delivery", Convert.ToInt32(cmb_customer.EditValue));
+                            }
+                            else
+                            {
+                                MessageBox.Show("هذا العميل لم يسجل من قبل من فضلك قم باضافة العميل اولا ");
+                                return;
                             }
                         }
                         else if (rdb_newclient.Checked == true)
