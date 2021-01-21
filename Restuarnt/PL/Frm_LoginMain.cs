@@ -12,7 +12,10 @@ using Restuarnt.Bl;
 using System.Windows.Input;
 using System.Data.SqlClient;
 using System.IO;
-
+using Microsoft.SqlServer.Server;
+using Microsoft.SqlServer.Management.Smo;
+using Microsoft.SqlServer.Management.Common;
+using System.Collections.Specialized;
 
 namespace Restuarnt.PL
 {
@@ -275,6 +278,7 @@ namespace Restuarnt.PL
 
         private void Frm_LoginMain_Load(object sender, EventArgs e)
         {
+            //CreateDataBase();
             CreateDataBase();
         }
 
@@ -291,73 +295,180 @@ namespace Restuarnt.PL
 
             //}
         }
-        private bool CheckDataBase()
+        //private bool CheckDataBase()
+        //{
+
+
+        //    SqlConnection con = new SqlConnection(@" server =.\SQLExpress;integrated security=true");
+
+        //    SqlCommand cm = new SqlCommand("",con);
+        //    SqlDataReader sdr;
+        //    try
+        //    {
+
+        //        cm.CommandText = "exec sys.sp_databases";
+        //    con.Open();
+        //    sdr = cm.ExecuteReader();
+        //    while (sdr.Read())
+        //    {
+        //        if (sdr.GetString(0)== "DB_A54A03_Resturant")
+        //        {
+
+        //                return true;
+        //        }
+        //    }
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        return false;
+        //    }
+        //    con.Close();
+        //    cm.Dispose();
+        //    sdr.Dispose();
+
+
+        //    return false;
+        //}
+
+        Server server = new Server(".");
+        public void CreateDataBase()
         {
-          
-          
-            SqlConnection con = new SqlConnection(@" server =.;integrated security=true");
-
-            SqlCommand cm = new SqlCommand("",con);
-            SqlDataReader sdr;
-            try
-            {
-
-                cm.CommandText = "exec sys.sp_databases";
-            con.Open();
-            sdr = cm.ExecuteReader();
-            while (sdr.Read())
-            {
-                if (sdr.GetString(0)== "DB_A54A03_Resturant")
-                {
-
-                        return true;
-                }
-            }
-            }
-            catch (Exception)
-            {
-
-                return false;
-            }
-            con.Close();
-            cm.Dispose();
-            sdr.Dispose();
-
-
-            return false;
-        }
-        private void CreateDataBase()
-        {
-            bool check = CheckDataBase();
-            try
-            {
-
-           
-            if (check==false)
-            {
+       
             
 
-                var script = File.ReadAllText(Application.StartupPath + @"\scripts.sql");
-                    var sqlQuary = script.Split(new[] {"GO"}, StringSplitOptions.RemoveEmptyEntries);
-              
-                     
-                    var CONN = new SqlConnection(@"server =.;integrated security=true");
-                    var cmd = new SqlCommand("query",CONN);
-                    CONN.Open();
-                    foreach (var query in sqlQuary)
-                    {
-                        cmd.CommandText = query;
-                        cmd.ExecuteNonQuery();
-                    }
-                    CONN.Close();
-            }
-            }
-            catch (Exception)
-            {
+            DatabaseCollection DB = server.Databases;
+            for (int i = 0; i < DB.Count; i++)
 
+            {
+                if (DB[i].Name== "DB_A54A03_Resturant")
+                {
+                    return;
+                }
+               
+                    
                 
             }
+
+
+            //string dpPath = Application.StartupPath + @"\DB_A54A03_Resturant_data.mdf";
+            string dpPath = @"E:\workss\Restuarnt\LAST_VERSION_KEWIT\last\Restuarnt\bin\Debug\DB_A54A03_Resturant_data.mdf";
+            string dpPathLog = @"E:\workss\Restuarnt\LAST_VERSION_KEWIT\last\Restuarnt\bin\Debug\DB_A54A03_Resturant_log.ldf";
+            StringCollection FilePath = new StringCollection();
+            FilePath.Add(dpPath);
+            FilePath.Add(dpPathLog);
+            server.AttachDatabase("DB_A54A03_Resturant_data", FilePath);
+
+
         }
+
+        //private void CreateDataBase()
+        //{
+        //    bool check = CheckDataBase();
+        //    try
+        //    {
+
+
+        //    if (check==false)
+        //    {
+
+
+
+        //            var script = File.ReadAllText(Application.StartupPath + @"\scripts.sql");
+        //            var sqlQuary = script.Split(new[] {"GO"}, StringSplitOptions.RemoveEmptyEntries);
+
+
+        //            var CONN = new SqlConnection(@"server =.\SQLExpress;integrated security=true");
+        //            var cmd = new SqlCommand("query", CONN);
+        //            CONN.Open();
+
+        //            foreach (var queary in sqlQuary)
+        //            {
+
+
+        //                cmd.CommandText = queary;
+        //                cmd.ExecuteNonQuery();
+        //            }
+
+        //            CONN.Close();
+
+
+        //            //var x = @"server =.\SQLExpress;integrated security=true";
+
+
+
+        //            //var script = File.ReadAllText(Application.StartupPath + @"\scripts.sql");
+        //            //SqlConnection CONN = new SqlConnection(x);
+
+
+        //          // Server server = new Server(new ServerConnection(CONN));
+
+        //            //server.ConnectionContext.ExecuteNonQuery(script);
+
+
+
+
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+
+
+        //    }
+        //}
+
+
+        //private void DeleteDataBase()
+        //{
+        //    bool check = CheckDataBase();
+        //    try
+        //    {
+
+
+        //        if (check == true)
+        //        {
+
+
+        //            var script = File.ReadAllText(Application.StartupPath + @"\scriptsDelete.sql");
+        //            var sqlQuary = script.Split(new[] { "GO" }, StringSplitOptions.RemoveEmptyEntries);
+
+
+        //            var CONN = new SqlConnection(@"server =.\SQLExpress;integrated security=true");
+        //            var cmd = new SqlCommand("query", CONN);
+        //            CONN.Open();
+        //            foreach (var query in sqlQuary)
+        //            {
+        //                cmd.CommandText = query;
+        //                cmd.ExecuteNonQuery();
+        //            }
+
+
+        //            CONN.Close();
+
+
+        //            //var x = @"server =.\SQLExpress;integrated security=true";
+
+        //            //var script = File.ReadAllText(Application.StartupPath + @"\scriptsDelete.sql");
+        //            //SqlConnection CONN = new SqlConnection(x);
+
+
+        //            //Server server = new Server(new ServerConnection(CONN));
+        //            //server.ConnectionContext.ExecuteNonQuery(script);
+
+        //            MessageBox.Show("تم مسح قاعدة البيانات بنجاح");
+
+
+
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+
+
+        //    }
+        //}
+
+
         private void simpleButton3_Click(object sender, EventArgs e)
         {
             try
@@ -557,5 +668,14 @@ namespace Restuarnt.PL
             //txt_Pass.Properties.PasswordChar = checkBox1.Checked ? '\0' : '*';
             //txt_Pass.Properties.UseSystemPasswordChar = !checkBox1.Checked;
         }
+
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            //DeleteDataBase();
+            
+        }
+
+      
     }
     }

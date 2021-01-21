@@ -76,6 +76,7 @@ namespace Restuarnt.PL
             pictureLogo.BackgroundImage = Properties.Resources.image_not_found_scaled_1150x647;
             pictureLogo.Image = Properties.Resources.image_not_found_scaled_1150x647;
             imagePath = "";
+            lable_num.Text = "";
         }
 
         private void Btn_update_Click(object sender, EventArgs e)

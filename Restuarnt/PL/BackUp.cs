@@ -14,7 +14,7 @@ namespace Restuarnt.PL
 {
     public partial class BackUp : Form
     {
-        SqlConnection con = new SqlConnection(@" server =. ; database=DB_A54A03_Resturant;integrated security=true");
+        SqlConnection con = new SqlConnection(@" server =.\SQLEXPRESS; database=DB_A54A03_Resturant;integrated security=true");
         SqlCommand cmd;
         public BackUp()
         {
