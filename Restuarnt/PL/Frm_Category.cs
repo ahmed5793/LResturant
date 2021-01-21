@@ -50,7 +50,7 @@ namespace Restuarnt.PL
             }
             if (imagePath == "")
             {
-                imagePath = @"Resources\image-not-found-scaled-1150x6471.png";
+                imagePath = Application.StartupPath + @"\Resources" + @"\image-not-found-scaled-1150x6471.png";
 
             }
             //convert from image to byte
@@ -81,8 +81,12 @@ namespace Restuarnt.PL
 
         private void Btn_update_Click(object sender, EventArgs e)
         {
-           
-          
+         try
+         {
+
+            
+
+
             if (txt_name.Text == "")
             {
                 MessageBox.Show("من فضلك يرجي ادخال الفئة");
@@ -103,12 +107,20 @@ namespace Restuarnt.PL
                 Byte[] bytestream = new Byte[filestream.Length];
                 filestream.Read(bytestream, 0, bytestream.Length);
                 filestream.Close();
-                c.UpdateCtegory(Convert.ToInt32(lable_num.Text), txt_name.Text, comboBox1.Text,bytestream);
+                c.UpdateCtegory(Convert.ToInt32(lable_num.Text), txt_name.Text, comboBox1.Text, bytestream);
             }
             MessageBox.Show("تم التعديل  بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             gridControl1.DataSource = c.SelectCategory();
             clear();
-          
+        }
+        catch (Exception ex)
+        {
+
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+        }
+
+
         }
 
         private void DataGridViewPR_DoubleClick(object sender, EventArgs e)
@@ -141,7 +153,7 @@ namespace Restuarnt.PL
         {
            
         }
-        string imagePath = @"Resources\image-not-found-scaled-1150x6471.png";
+        string imagePath = "";
         private void btnChoose_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -158,7 +170,7 @@ namespace Restuarnt.PL
         {
             pictureLogo.BackgroundImage = Properties.Resources.image_not_found_scaled_1150x647;
             pictureLogo.Image = Properties.Resources.image_not_found_scaled_1150x647;
-            imagePath = @"Resources\image-not-found-scaled-1150x6471.png";
+        imagePath = Application.StartupPath+ @"\Resources" + @"\image-not-found-scaled-1150x6471.png";
         }
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)

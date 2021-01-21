@@ -434,5 +434,10 @@ namespace Restuarnt.PL
         {
 
         }
+
+        private void Txt_DeliveryService_Click(object sender, EventArgs e)
+        {
+            Txt_DeliveryService.SelectAll();
+        }
     }
 }

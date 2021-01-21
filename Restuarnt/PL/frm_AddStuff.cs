@@ -124,7 +124,7 @@ namespace Restuarnt.PL
             {
                 try
                 {
-                    if (MessageBox.Show("هل تريد حذف الطيار", "عمليه الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                    if (MessageBox.Show("هل تريد حذف الكابتن", "عمليه الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                     {
 
                         s.DeleteStuff(Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_Stuff)));

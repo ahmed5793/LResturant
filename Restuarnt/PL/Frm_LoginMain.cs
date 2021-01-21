@@ -294,29 +294,29 @@ namespace Restuarnt.PL
 
 
             //}
-        }
+       }
         //private bool CheckDataBase()
         //{
 
 
         //    SqlConnection con = new SqlConnection(@" server =.\SQLExpress;integrated security=true");
 
-        //    SqlCommand cm = new SqlCommand("",con);
+        //    SqlCommand cm = new SqlCommand("", con);
         //    SqlDataReader sdr;
         //    try
         //    {
 
         //        cm.CommandText = "exec sys.sp_databases";
-        //    con.Open();
-        //    sdr = cm.ExecuteReader();
-        //    while (sdr.Read())
-        //    {
-        //        if (sdr.GetString(0)== "DB_A54A03_Resturant")
+        //        con.Open();
+        //        sdr = cm.ExecuteReader();
+        //        while (sdr.Read())
         //        {
+        //            if (sdr.GetString(0) == "DB_A54A03_Resturant")
+        //            {
 
         //                return true;
+        //            }
         //        }
-        //    }
         //    }
         //    catch (Exception)
         //    {
@@ -331,142 +331,140 @@ namespace Restuarnt.PL
         //    return false;
         //}
 
-        Server server = new Server(".");
-        public void CreateDataBase()
+
+        //public void CreateDataBase()
+        //{
+
+
+
+        //    DatabaseCollection DB = server.Databases;
+        //    for (int i = 0; i < DB.Count; i++)
+
+        //    {
+        //        if (DB[i].Name == "DB_A54A03_Resturant")
+        //        {
+        //            return;
+        //        }
+
+
+
+        //    }
+
+
+        //    string dpPath = Application.StartupPath + @"\DB_A54A03_Resturant.mdf";
+        //    string dpPathLog = Application.StartupPath + @"\DB_A54A03_Resturant_log.ldf";
+        //    StringCollection FilePath = new StringCollection();
+        //    FilePath.Add(dpPath);
+        //    FilePath.Add(dpPathLog);
+        //    server.AttachDatabase("DB_A54A03_Resturant", FilePath);
+
+
+        //}
+       Server server = new Server(@".\SQLExpress");
+       // Server server = new Server(@".");
+
+        private void CreateDataBase()
         {
-       
-            
-
-            DatabaseCollection DB = server.Databases;
-            for (int i = 0; i < DB.Count; i++)
-
+            //bool check = CheckDataBase();
+            try
             {
-                if (DB[i].Name== "DB_A54A03_Resturant")
+
+
+                //if (check == false)
+                //{
+             
+
+                DatabaseCollection DB = server.Databases;
+                for (int i = 0; i < DB.Count; i++)
+
                 {
-                    return;
+                    if (DB[i].Name == "DB_A54A03_Resturant")
+                    {
+                        return;
+                    }
+
+
+
                 }
-               
-                    
-                
+
+                var script = File.ReadAllText(Application.StartupPath + @"\scripts.sql");
+                var sqlQuary = script.Split(new[] { "GO" }, StringSplitOptions.RemoveEmptyEntries);
+
+
+                var CONN = new SqlConnection(@"server =.\SQLExpress;integrated security=true");
+              //  var CONN = new SqlConnection(@"server =.;integrated security=true");
+                var cmd = new SqlCommand("query", CONN);
+                CONN.Open();
+
+                foreach (var queary in sqlQuary)
+                {
+
+
+                    cmd.CommandText = queary;
+                    cmd.ExecuteNonQuery();
+                }
+
+                CONN.Close();
+
+
+                //var x = @"server =.\SQLExpress;integrated security=true";
+
+
+
+                //var script = File.ReadAllText(Application.StartupPath + @"\scripts.sql");
+                //SqlConnection CONN = new SqlConnection(x);
+
+
+                //Server servers = new Server(new ServerConnection(CONN));
+
+                //servers.ConnectionContext.ExecuteNonQuery(script);
+
+
+
+
+                //}
             }
+            catch (Exception)
+            {
 
 
-            //string dpPath = Application.StartupPath + @"\DB_A54A03_Resturant_data.mdf";
-            string dpPath = @"E:\workss\Restuarnt\LAST_VERSION_KEWIT\last\Restuarnt\bin\Debug\DB_A54A03_Resturant_data.mdf";
-            string dpPathLog = @"E:\workss\Restuarnt\LAST_VERSION_KEWIT\last\Restuarnt\bin\Debug\DB_A54A03_Resturant_log.ldf";
-            StringCollection FilePath = new StringCollection();
-            FilePath.Add(dpPath);
-            FilePath.Add(dpPathLog);
-            server.AttachDatabase("DB_A54A03_Resturant_data", FilePath);
-
-
+            }
         }
 
-        //private void CreateDataBase()
-        //{
-        //    bool check = CheckDataBase();
-        //    try
-        //    {
+
+        private void DeleteDataBase()
+        {
+            try
+            {
 
 
-        //    if (check==false)
-        //    {
+                DatabaseCollection DB = server.Databases;
+                for (int i = 0; i < DB.Count; i++)
 
-
-
-        //            var script = File.ReadAllText(Application.StartupPath + @"\scripts.sql");
-        //            var sqlQuary = script.Split(new[] {"GO"}, StringSplitOptions.RemoveEmptyEntries);
-
-
-        //            var CONN = new SqlConnection(@"server =.\SQLExpress;integrated security=true");
-        //            var cmd = new SqlCommand("query", CONN);
-        //            CONN.Open();
-
-        //            foreach (var queary in sqlQuary)
-        //            {
-
-
-        //                cmd.CommandText = queary;
-        //                cmd.ExecuteNonQuery();
-        //            }
-
-        //            CONN.Close();
-
-
-        //            //var x = @"server =.\SQLExpress;integrated security=true";
+                {
+                    if (DB[i].Name == "DB_A54A03_Resturant")
+                    {
+                        server.KillDatabase("DB_A54A03_Resturant");
+                        MessageBox.Show("تم مسح قاعدة البيانات بنجاح");
+                    }
 
 
 
-        //            //var script = File.ReadAllText(Application.StartupPath + @"\scripts.sql");
-        //            //SqlConnection CONN = new SqlConnection(x);
+                }
 
 
-        //          // Server server = new Server(new ServerConnection(CONN));
-
-        //            //server.ConnectionContext.ExecuteNonQuery(script);
+               
 
 
 
-
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-
-
-        //    }
-        //}
+                
+            }
+            catch (Exception)
+            {
 
 
-        //private void DeleteDataBase()
-        //{
-        //    bool check = CheckDataBase();
-        //    try
-        //    {
-
-
-        //        if (check == true)
-        //        {
-
-
-        //            var script = File.ReadAllText(Application.StartupPath + @"\scriptsDelete.sql");
-        //            var sqlQuary = script.Split(new[] { "GO" }, StringSplitOptions.RemoveEmptyEntries);
-
-
-        //            var CONN = new SqlConnection(@"server =.\SQLExpress;integrated security=true");
-        //            var cmd = new SqlCommand("query", CONN);
-        //            CONN.Open();
-        //            foreach (var query in sqlQuary)
-        //            {
-        //                cmd.CommandText = query;
-        //                cmd.ExecuteNonQuery();
-        //            }
-
-
-        //            CONN.Close();
-
-
-        //            //var x = @"server =.\SQLExpress;integrated security=true";
-
-        //            //var script = File.ReadAllText(Application.StartupPath + @"\scriptsDelete.sql");
-        //            //SqlConnection CONN = new SqlConnection(x);
-
-
-        //            //Server server = new Server(new ServerConnection(CONN));
-        //            //server.ConnectionContext.ExecuteNonQuery(script);
-
-        //            MessageBox.Show("تم مسح قاعدة البيانات بنجاح");
-
-
-
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-
-
-        //    }
-        //}
+            }
+        }
 
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -672,7 +670,7 @@ namespace Restuarnt.PL
 
         private void simpleButton5_Click(object sender, EventArgs e)
         {
-            //DeleteDataBase();
+            DeleteDataBase();
             
         }
 

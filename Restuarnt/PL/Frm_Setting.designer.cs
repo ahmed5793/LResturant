@@ -110,6 +110,7 @@
             // 
             // txtName
             // 
+            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtName.Location = new System.Drawing.Point(570, 372);
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
@@ -345,6 +346,7 @@
             this.Txt_DeliveryService.TabIndex = 88;
             this.Txt_DeliveryService.Text = "0";
             this.Txt_DeliveryService.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Txt_DeliveryService.Click += new System.EventHandler(this.Txt_DeliveryService_Click);
             this.Txt_DeliveryService.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_DeliveryService_KeyPress);
             // 
             // label9

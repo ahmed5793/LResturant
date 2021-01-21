@@ -69,7 +69,7 @@ namespace Restuarnt.PL
             }
                 if (imagePath=="")
                 {
-                    imagePath = @"Resources\image-not-found-scaled-1150x6471.png";
+                    imagePath = Application.StartupPath + @"\Resources" + @"\image-not-found-scaled-1150x6471.png";
 
                 }
 
@@ -156,7 +156,7 @@ namespace Restuarnt.PL
 
             pictureLogo.BackgroundImage = Properties.Resources.image_not_found_scaled_1150x647;
             pictureLogo.Image = Properties.Resources.image_not_found_scaled_1150x647;
-            imagePath = @"Resources\image-not-found-scaled-1150x6471.png";
+            imagePath = Application.StartupPath + @"\Resources" + @"\image-not-found-scaled-1150x6471.png";
         }
 
         void clear()
@@ -268,6 +268,11 @@ namespace Restuarnt.PL
 
             }
 
+        }
+
+        private void txt_seeling_Click(object sender, EventArgs e)
+        {
+            txt_seeling.SelectAll();
         }
     }
 }

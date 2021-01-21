@@ -134,6 +134,7 @@
             this.txt_seeling.TabIndex = 28;
             this.txt_seeling.Text = "0";
             this.txt_seeling.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_seeling.Click += new System.EventHandler(this.txt_seeling_Click);
             this.txt_seeling.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_seeling_KeyPress);
             // 
             // label11
