@@ -86,8 +86,7 @@ namespace Restuarnt.PL
                 if (MessageBox.Show("هل تريد تعديل المصروف ", "عمليه التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
                     MessageBox.Show(" تم العديل بنجاح");
-                    gridControl1.DataSource = r.SelectReserveDetails();
-                    Clear();
+                 
 
 
                 }
@@ -97,6 +96,8 @@ namespace Restuarnt.PL
             {
                     MessageBox.Show("اختيار فاتورة اولا");
             }
+                gridControl1.DataSource = r.SelectReserveDetails();
+                Clear();
             }
             catch (Exception)
             {
@@ -110,6 +111,8 @@ namespace Restuarnt.PL
         private void Frm_ManagmentMasrofat_Load(object sender, EventArgs e)
         {
             FromDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            ToDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            dateTimePicker1.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

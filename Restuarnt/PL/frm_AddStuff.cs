@@ -151,5 +151,10 @@ namespace Restuarnt.PL
                 }
             }
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            clears();
+        }
     }
 }

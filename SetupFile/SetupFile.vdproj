@@ -903,12 +903,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_5F2374CF80C14EFDA744DA8A8061483A"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_6009AD55BB8FFFD7D90E20F56877AC03"
         "OwnerKey" = "8:_3413C31792428B1B8470CFC58B9008D4"
         "MsmSig" = "8:_UNDEFINED"
@@ -1343,6 +1337,12 @@
         {
         "MsmKey" = "8:_96BE9342E33267A2C4B309AF815F45DD"
         "OwnerKey" = "8:_FF7068D6518862F2D89815F3F1B465D9"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_97FC5321C33E411885616118C9969E5B"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -3904,26 +3904,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5F2374CF80C14EFDA744DA8A8061483A"
-            {
-            "SourcePath" = "8:G:\\resturant 2012\\scripts.sql"
-            "TargetName" = "8:scripts.sql"
-            "Tag" = "8:"
-            "Folder" = "8:_6BF22FDBCB2B41C988EA5531C6F84910"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6009AD55BB8FFFD7D90E20F56877AC03"
             {
             "AssemblyRegister" = "3:1"
@@ -4689,6 +4669,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_97FC5321C33E411885616118C9969E5B"
+            {
+            "SourcePath" = "8:..\\Restuarnt\\bin\\Debug\\scripts.sql"
+            "TargetName" = "8:scripts.sql"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22FDBCB2B41C988EA5531C6F84910"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9A0709505E18507FECCA53D7506CF0AA"
@@ -6083,7 +6083,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SetupFile"
         "ProductCode" = "8:{79CE85FF-5AAA-4F28-B43D-19FC0B83FF04}"
-        "PackageCode" = "8:{BA627B23-6666-4FB2-9584-259B09A6F214}"
+        "PackageCode" = "8:{C5C35FFF-A5A4-4FE6-AAD7-4FE1343BEE6F}"
         "UpgradeCode" = "8:{935E2CA3-1DAD-477A-AA6B-8A9718941B7A}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

@@ -174,6 +174,11 @@ namespace Restuarnt.PL
 
         private void DataGridViewList_DoubleClick(object sender, EventArgs e)
         {
+            try
+            {
+                if (dataGridViewList.Rows.Count>0)
+                {
+
             Txt_IdUser.Text = dataGridViewList.CurrentRow.Cells[0].Value.ToString();
             txt_User.Text = dataGridViewList.CurrentRow.Cells[1].Value.ToString();
             txt_Pass.Text = dataGridViewList.CurrentRow.Cells[2].Value.ToString();
@@ -184,6 +189,15 @@ namespace Restuarnt.PL
             btn_save.Enabled = false;
             btn_update.Enabled = true;
             btn_delete.Enabled = true;
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message) ;
+                MessageBox.Show(ex.StackTrace);
+            }
         }
 
         private void Btn_delete_Click(object sender, EventArgs e)

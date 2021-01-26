@@ -16,12 +16,15 @@ using Microsoft.SqlServer.Server;
 using Microsoft.SqlServer.Management.Smo;
 using Microsoft.SqlServer.Management.Common;
 using System.Collections.Specialized;
+using Restuarnt.BL;
 
 namespace Restuarnt.PL
 {
     public partial class Frm_LoginMain : DevExpress.XtraEditors.XtraForm
     {
         BL.Login l = new BL.Login();
+        Order o = new Order();
+        DataTable dt = new DataTable();
         public Frm_LoginMain()
         {
             InitializeComponent();
@@ -483,7 +486,14 @@ namespace Restuarnt.PL
 
 
 
-
+                    dt.Clear();
+                    dt = o.SelectMangmentOrders();
+                    if (dt.Rows.Count > 20)
+                    {
+                        MessageBox.Show("لقد انتهت عدد الفواتير بالنسبة للنسخه التجريبية لابد من تفعيل النسخه المدفوعه");
+                        this.Close();
+                        return;
+                    }
 
                     if (txt_User.Text == "")
                     {

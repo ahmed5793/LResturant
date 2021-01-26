@@ -269,9 +269,11 @@ namespace Restuarnt.PL
 
         private void FOrder_Load(object sender, EventArgs e)
         {
+           
+
             dt.Clear();
             dt = o.SELECTOrderRentALLORDER();
-
+          
             simpleButton4.Text = $"({dt.Rows.Count}) الفواتير المتعلقة";
             ButtonSelectCategory();
             txt_cust.Hide();
@@ -667,12 +669,12 @@ namespace Restuarnt.PL
 
         private void cmb_customer_KeyDown_1(object sender, KeyEventArgs e)
         {
-            InformationClient();
+           // InformationClient();
         }
 
         private void cmb_customer_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
         {
-            InformationClient();
+            //InformationClient();
         }
 
         private void cmb_customer_KeyPress(object sender, KeyPressEventArgs e)
@@ -1738,7 +1740,7 @@ namespace Restuarnt.PL
                     foreach (DataRow dr in dt5.Rows)
                     {
                         Lable_Num.Text = dr[0].ToString();
-                        txt_cust.Text = dr[1].ToString();
+                        cmb_customer.EditValue = dr[1].ToString();
                         cmb_customer.Text = dr[2].ToString();
                         txt_phones.Text = dr[3].ToString();
                         txt_address.Text = dr[4].ToString();
@@ -1814,11 +1816,8 @@ namespace Restuarnt.PL
 
                     foreach (DataRow dr in dt5.Rows)
                     {
-
-
-
                         Lable_Num.Text = dr[0].ToString();
-                        txt_cust.Text = dr[1].ToString();
+                        cmb_customer.EditValue = dr[1].ToString();
                         cmb_customer.Text = dr[2].ToString();
 
                         timer1.Enabled = false;
@@ -2992,6 +2991,16 @@ namespace Restuarnt.PL
                 MessageBox.Show(ex.Message);
                 MessageBox.Show(ex.StackTrace);
             }
+        }
+
+        private void cmb_customer_MouseClick(object sender, MouseEventArgs e)
+        {
+            InformationClient();
+        }
+
+        private void cmb_customer_MouseDown(object sender, MouseEventArgs e)
+        {
+            InformationClient();
         }
     }
 }
