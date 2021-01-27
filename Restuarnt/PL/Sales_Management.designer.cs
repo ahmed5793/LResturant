@@ -326,7 +326,7 @@
             // 
             this.simpleButton5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.simpleButton5.Location = new System.Drawing.Point(251, 29);
+            this.simpleButton5.Location = new System.Drawing.Point(94, 27);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(127, 32);
             this.simpleButton5.TabIndex = 172;
@@ -336,7 +336,7 @@
             // 
             this.ToDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ToDate.EditValue = new System.DateTime(2021, 1, 14, 1, 43, 58, 0);
-            this.ToDate.Location = new System.Drawing.Point(404, 31);
+            this.ToDate.Location = new System.Drawing.Point(231, 30);
             this.ToDate.Name = "ToDate";
             this.ToDate.Properties.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ToDate.Properties.Appearance.Options.UseFont = true;
@@ -345,10 +345,15 @@
             this.ToDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ToDate.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.ToDate.Properties.DisplayFormat.FormatString = "dd/MM/yyyy    hh:mm tt";
+            this.ToDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ToDate.Properties.EditFormat.FormatString = "dd/MM/yyyy   hh:mm tt";
+            this.ToDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.ToDate.Properties.Mask.BeepOnError = true;
+            this.ToDate.Properties.Mask.EditMask = "dd/MM/yyyy   hh:mm tt";
             this.ToDate.Properties.TodayDate = new System.DateTime(2021, 1, 14, 1, 42, 9, 0);
             this.ToDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.ToDate.Size = new System.Drawing.Size(139, 28);
+            this.ToDate.Size = new System.Drawing.Size(226, 28);
             this.ToDate.TabIndex = 173;
             // 
             // labelControl3
@@ -357,7 +362,7 @@
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.labelControl3.Location = new System.Drawing.Point(549, 27);
+            this.labelControl3.Location = new System.Drawing.Point(463, 27);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(32, 36);
             this.labelControl3.TabIndex = 175;
@@ -367,7 +372,7 @@
             // 
             this.FromDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.FromDate.EditValue = new System.DateTime(2021, 1, 14, 1, 43, 50, 0);
-            this.FromDate.Location = new System.Drawing.Point(598, 33);
+            this.FromDate.Location = new System.Drawing.Point(547, 31);
             this.FromDate.Name = "FromDate";
             this.FromDate.Properties.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FromDate.Properties.Appearance.Options.UseFont = true;
@@ -376,10 +381,15 @@
             this.FromDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.FromDate.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.FromDate.Properties.DisplayFormat.FormatString = "dd/MM/yyyy    hh:mm tt";
+            this.FromDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.FromDate.Properties.EditFormat.FormatString = "dd/MM/yyyy   hh:mm tt";
+            this.FromDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.FromDate.Properties.Mask.BeepOnError = true;
+            this.FromDate.Properties.Mask.EditMask = "dd/MM/yyyy   hh:mm tt";
             this.FromDate.Properties.TodayDate = new System.DateTime(2021, 1, 14, 1, 42, 9, 0);
             this.FromDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.FromDate.Size = new System.Drawing.Size(139, 28);
+            this.FromDate.Size = new System.Drawing.Size(254, 28);
             this.FromDate.TabIndex = 170;
             // 
             // labelControl4
@@ -388,7 +398,7 @@
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.labelControl4.Location = new System.Drawing.Point(743, 30);
+            this.labelControl4.Location = new System.Drawing.Point(803, 29);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(28, 34);
             this.labelControl4.TabIndex = 174;
@@ -541,7 +551,11 @@
             // Date
             // 
             this.Date.Caption = "تاريخ الفاتورة";
+            this.Date.DisplayFormat.FormatString = "dd/MM/yyyy   hh:mm tt";
+            this.Date.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.Date.FieldName = "تاريخ الفاتورة";
+            this.Date.GroupFormat.FormatString = "dd/MM/yyyy   hh:mm tt";
+            this.Date.GroupFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.Date.Name = "Date";
             this.Date.Visible = true;
             this.Date.VisibleIndex = 3;
@@ -847,7 +861,11 @@
             // gridColumn14
             // 
             this.gridColumn14.Caption = "تاريخ الفاتورة";
+            this.gridColumn14.DisplayFormat.FormatString = "dd/MM/yyyy   hh:mm tt";
+            this.gridColumn14.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn14.FieldName = "تاريخ الفاتورة";
+            this.gridColumn14.GroupFormat.FormatString = "dd/MM/yyyy   hh:mm tt";
+            this.gridColumn14.GroupFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 2;
@@ -937,7 +955,7 @@
             // 
             this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(223, 64);
+            this.simpleButton1.Location = new System.Drawing.Point(205, 64);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(127, 32);
             this.simpleButton1.TabIndex = 172;
@@ -947,7 +965,7 @@
             // 
             this.dateEdit5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateEdit5.EditValue = new System.DateTime(2021, 1, 14, 1, 43, 58, 0);
-            this.dateEdit5.Location = new System.Drawing.Point(570, 68);
+            this.dateEdit5.Location = new System.Drawing.Point(663, 68);
             this.dateEdit5.Name = "dateEdit5";
             this.dateEdit5.Properties.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateEdit5.Properties.Appearance.Options.UseFont = true;
@@ -956,11 +974,16 @@
             this.dateEdit5.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit5.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.dateEdit5.Properties.DisplayFormat.FormatString = "dd/MM/yyyy    hh:mm tt";
+            this.dateEdit5.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dateEdit5.Properties.EditFormat.FormatString = "dd/MM/yyyy   hh:mm tt";
+            this.dateEdit5.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateEdit5.Properties.Mask.BeepOnError = true;
+            this.dateEdit5.Properties.Mask.EditMask = "dd/MM/yyyy   hh:mm tt";
             this.dateEdit5.Properties.TodayDate = new System.DateTime(2021, 1, 14, 1, 42, 9, 0);
             this.dateEdit5.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dateEdit5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateEdit5.Size = new System.Drawing.Size(139, 28);
+            this.dateEdit5.Size = new System.Drawing.Size(220, 28);
             this.dateEdit5.TabIndex = 173;
             // 
             // labelControl10
@@ -969,7 +992,7 @@
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
             this.labelControl10.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.labelControl10.Location = new System.Drawing.Point(521, 62);
+            this.labelControl10.Location = new System.Drawing.Point(605, 62);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(32, 36);
             this.labelControl10.TabIndex = 175;
@@ -979,7 +1002,7 @@
             // 
             this.dateEdit6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateEdit6.EditValue = new System.DateTime(2021, 1, 14, 1, 43, 50, 0);
-            this.dateEdit6.Location = new System.Drawing.Point(376, 68);
+            this.dateEdit6.Location = new System.Drawing.Point(356, 68);
             this.dateEdit6.Name = "dateEdit6";
             this.dateEdit6.Properties.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateEdit6.Properties.Appearance.Options.UseFont = true;
@@ -988,11 +1011,13 @@
             this.dateEdit6.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit6.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.dateEdit6.Properties.DisplayFormat.FormatString = "dd/MM/yyyy    hh:mm tt";
+            this.dateEdit6.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateEdit6.Properties.Mask.BeepOnError = true;
             this.dateEdit6.Properties.TodayDate = new System.DateTime(2021, 1, 14, 1, 42, 9, 0);
             this.dateEdit6.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dateEdit6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateEdit6.Size = new System.Drawing.Size(139, 28);
+            this.dateEdit6.Size = new System.Drawing.Size(230, 28);
             this.dateEdit6.TabIndex = 170;
             // 
             // labelControl11
@@ -1001,7 +1026,7 @@
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Appearance.Options.UseFont = true;
             this.labelControl11.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.labelControl11.Location = new System.Drawing.Point(715, 65);
+            this.labelControl11.Location = new System.Drawing.Point(889, 63);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(28, 34);
             this.labelControl11.TabIndex = 174;
@@ -1154,7 +1179,11 @@
             // gridColumn4
             // 
             this.gridColumn4.Caption = "تاريخ الفاتورة";
+            this.gridColumn4.DisplayFormat.FormatString = "dd/MM/yyyy   hh:mm tt";
+            this.gridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn4.FieldName = "تاريخ الفاتورة";
+            this.gridColumn4.GroupFormat.FormatString = "dd/MM/yyyy   hh:mm tt";
+            this.gridColumn4.GroupFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 2;
@@ -1271,7 +1300,7 @@
             // 
             this.simpleButton6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.simpleButton6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.ImageOptions.Image")));
-            this.simpleButton6.Location = new System.Drawing.Point(223, 64);
+            this.simpleButton6.Location = new System.Drawing.Point(153, 64);
             this.simpleButton6.Name = "simpleButton6";
             this.simpleButton6.Size = new System.Drawing.Size(127, 32);
             this.simpleButton6.TabIndex = 172;
@@ -1290,11 +1319,16 @@
             this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit1.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.dateEdit1.Properties.DisplayFormat.FormatString = "dd/MM/yyyy   hh:mm tt";
+            this.dateEdit1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dateEdit1.Properties.EditFormat.FormatString = "dd/MM/yyyy   hh:mm tt";
+            this.dateEdit1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateEdit1.Properties.Mask.BeepOnError = true;
+            this.dateEdit1.Properties.Mask.EditMask = "dd/MM/yyyy   hh:mm tt";
             this.dateEdit1.Properties.TodayDate = new System.DateTime(2021, 1, 14, 1, 42, 9, 0);
             this.dateEdit1.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dateEdit1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateEdit1.Size = new System.Drawing.Size(139, 28);
+            this.dateEdit1.Size = new System.Drawing.Size(220, 28);
             this.dateEdit1.TabIndex = 173;
             // 
             // labelControl1
@@ -1313,7 +1347,7 @@
             // 
             this.dateEdit2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateEdit2.EditValue = new System.DateTime(2021, 1, 14, 1, 43, 50, 0);
-            this.dateEdit2.Location = new System.Drawing.Point(376, 68);
+            this.dateEdit2.Location = new System.Drawing.Point(286, 68);
             this.dateEdit2.Name = "dateEdit2";
             this.dateEdit2.Properties.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateEdit2.Properties.Appearance.Options.UseFont = true;
@@ -1322,11 +1356,15 @@
             this.dateEdit2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit2.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.dateEdit2.Properties.DisplayFormat.FormatString = "dd/MM/yyyy   hh:mm tt";
+            this.dateEdit2.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dateEdit2.Properties.EditFormat.FormatString = "dd/MM/yyyy   hh:mm tt";
+            this.dateEdit2.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateEdit2.Properties.Mask.BeepOnError = true;
             this.dateEdit2.Properties.TodayDate = new System.DateTime(2021, 1, 14, 1, 42, 9, 0);
             this.dateEdit2.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dateEdit2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateEdit2.Size = new System.Drawing.Size(139, 28);
+            this.dateEdit2.Size = new System.Drawing.Size(229, 28);
             this.dateEdit2.TabIndex = 170;
             // 
             // labelControl2
@@ -1335,7 +1373,7 @@
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.labelControl2.Location = new System.Drawing.Point(715, 65);
+            this.labelControl2.Location = new System.Drawing.Point(796, 64);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(28, 34);
             this.labelControl2.TabIndex = 174;
@@ -1383,6 +1421,7 @@
             this.gridControl3.TabIndex = 127;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
+            this.gridControl3.Click += new System.EventHandler(this.gridControl3_Click);
             // 
             // gridView3
             // 
@@ -1485,7 +1524,11 @@
             // gridColumn8
             // 
             this.gridColumn8.Caption = "تاريخ الفاتورة";
+            this.gridColumn8.DisplayFormat.FormatString = "dd/MM/yyyy   hh:mm tt";
+            this.gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn8.FieldName = "تاريخ الفاتورة";
+            this.gridColumn8.GroupFormat.FormatString = "dd/MM/yyyy   hh:mm tt";
+            this.gridColumn8.GroupFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 2;
@@ -1592,7 +1635,7 @@
             // 
             this.simpleButton2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(223, 64);
+            this.simpleButton2.Location = new System.Drawing.Point(168, 62);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(127, 32);
             this.simpleButton2.TabIndex = 172;
@@ -1602,7 +1645,7 @@
             // 
             this.dateEdit3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateEdit3.EditValue = new System.DateTime(2021, 1, 14, 1, 43, 58, 0);
-            this.dateEdit3.Location = new System.Drawing.Point(570, 68);
+            this.dateEdit3.Location = new System.Drawing.Point(595, 68);
             this.dateEdit3.Name = "dateEdit3";
             this.dateEdit3.Properties.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateEdit3.Properties.Appearance.Options.UseFont = true;
@@ -1611,11 +1654,16 @@
             this.dateEdit3.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit3.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.dateEdit3.Properties.DisplayFormat.FormatString = "dd/MM/yyyy   hh:mm tt";
+            this.dateEdit3.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dateEdit3.Properties.EditFormat.FormatString = "dd/MM/yyyy   hh:mm tt";
+            this.dateEdit3.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateEdit3.Properties.Mask.BeepOnError = true;
+            this.dateEdit3.Properties.Mask.EditMask = "dd/MM/yyyy   hh:mm tt";
             this.dateEdit3.Properties.TodayDate = new System.DateTime(2021, 1, 14, 1, 42, 9, 0);
             this.dateEdit3.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dateEdit3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateEdit3.Size = new System.Drawing.Size(139, 28);
+            this.dateEdit3.Size = new System.Drawing.Size(227, 28);
             this.dateEdit3.TabIndex = 173;
             // 
             // labelControl7
@@ -1624,7 +1672,7 @@
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.labelControl7.Location = new System.Drawing.Point(521, 62);
+            this.labelControl7.Location = new System.Drawing.Point(528, 62);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(32, 36);
             this.labelControl7.TabIndex = 175;
@@ -1634,7 +1682,7 @@
             // 
             this.dateEdit4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateEdit4.EditValue = new System.DateTime(2021, 1, 14, 1, 43, 50, 0);
-            this.dateEdit4.Location = new System.Drawing.Point(376, 68);
+            this.dateEdit4.Location = new System.Drawing.Point(301, 66);
             this.dateEdit4.Name = "dateEdit4";
             this.dateEdit4.Properties.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateEdit4.Properties.Appearance.Options.UseFont = true;
@@ -1643,11 +1691,16 @@
             this.dateEdit4.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit4.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.dateEdit4.Properties.DisplayFormat.FormatString = "dd/MM/yyyy   hh:mm tt";
+            this.dateEdit4.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dateEdit4.Properties.EditFormat.FormatString = "dd/MM/yyyy   hh:mm tt";
+            this.dateEdit4.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateEdit4.Properties.Mask.BeepOnError = true;
+            this.dateEdit4.Properties.Mask.EditMask = "dd/MM/yyyy   hh:mm tt";
             this.dateEdit4.Properties.TodayDate = new System.DateTime(2021, 1, 14, 1, 42, 9, 0);
             this.dateEdit4.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dateEdit4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateEdit4.Size = new System.Drawing.Size(139, 28);
+            this.dateEdit4.Size = new System.Drawing.Size(221, 28);
             this.dateEdit4.TabIndex = 170;
             // 
             // labelControl8
@@ -1656,7 +1709,7 @@
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
             this.labelControl8.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.labelControl8.Location = new System.Drawing.Point(715, 65);
+            this.labelControl8.Location = new System.Drawing.Point(840, 64);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(28, 34);
             this.labelControl8.TabIndex = 174;
@@ -1817,7 +1870,11 @@
             // gridColumn18
             // 
             this.gridColumn18.Caption = "تاريخ الفاتورة";
+            this.gridColumn18.DisplayFormat.FormatString = "dd/MM/yyyy  hh:mm tt";
+            this.gridColumn18.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn18.FieldName = "تاريخ الفاتورة";
+            this.gridColumn18.GroupFormat.FormatString = "dd/MM/yyyy   hh:mm tt";
+            this.gridColumn18.GroupFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn18.Name = "gridColumn18";
             this.gridColumn18.Visible = true;
             this.gridColumn18.VisibleIndex = 3;
@@ -1915,7 +1972,7 @@
             // 
             this.simpleButton3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(223, 64);
+            this.simpleButton3.Location = new System.Drawing.Point(178, 65);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(127, 32);
             this.simpleButton3.TabIndex = 172;
@@ -1925,7 +1982,7 @@
             // 
             this.dateEdit7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateEdit7.EditValue = new System.DateTime(2021, 1, 14, 1, 43, 58, 0);
-            this.dateEdit7.Location = new System.Drawing.Point(570, 68);
+            this.dateEdit7.Location = new System.Drawing.Point(612, 68);
             this.dateEdit7.Name = "dateEdit7";
             this.dateEdit7.Properties.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateEdit7.Properties.Appearance.Options.UseFont = true;
@@ -1934,11 +1991,16 @@
             this.dateEdit7.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit7.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.dateEdit7.Properties.DisplayFormat.FormatString = "dd/MM/yyyy   hh:mm tt";
+            this.dateEdit7.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dateEdit7.Properties.EditFormat.FormatString = "dd/MM/yyyy   hh:mm tt";
+            this.dateEdit7.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateEdit7.Properties.Mask.BeepOnError = true;
+            this.dateEdit7.Properties.Mask.EditMask = "dd/MM/yyyy   hh:mm tt";
             this.dateEdit7.Properties.TodayDate = new System.DateTime(2021, 1, 14, 1, 42, 9, 0);
             this.dateEdit7.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dateEdit7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateEdit7.Size = new System.Drawing.Size(139, 28);
+            this.dateEdit7.Size = new System.Drawing.Size(229, 28);
             this.dateEdit7.TabIndex = 173;
             // 
             // labelControl12
@@ -1947,7 +2009,7 @@
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl12.Appearance.Options.UseFont = true;
             this.labelControl12.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.labelControl12.Location = new System.Drawing.Point(521, 62);
+            this.labelControl12.Location = new System.Drawing.Point(562, 64);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(32, 36);
             this.labelControl12.TabIndex = 175;
@@ -1957,7 +2019,7 @@
             // 
             this.dateEdit8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateEdit8.EditValue = new System.DateTime(2021, 1, 14, 1, 43, 50, 0);
-            this.dateEdit8.Location = new System.Drawing.Point(376, 68);
+            this.dateEdit8.Location = new System.Drawing.Point(323, 69);
             this.dateEdit8.Name = "dateEdit8";
             this.dateEdit8.Properties.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateEdit8.Properties.Appearance.Options.UseFont = true;
@@ -1966,11 +2028,16 @@
             this.dateEdit8.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit8.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.dateEdit8.Properties.DisplayFormat.FormatString = "dd/MM/yyyy   hh:mm tt";
+            this.dateEdit8.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dateEdit8.Properties.EditFormat.FormatString = "dd/MM/yyyy   hh:mm tt";
+            this.dateEdit8.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateEdit8.Properties.Mask.BeepOnError = true;
+            this.dateEdit8.Properties.Mask.EditMask = "dd/MM/yyyy   hh:mm tt";
             this.dateEdit8.Properties.TodayDate = new System.DateTime(2021, 1, 14, 1, 42, 9, 0);
             this.dateEdit8.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dateEdit8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateEdit8.Size = new System.Drawing.Size(139, 28);
+            this.dateEdit8.Size = new System.Drawing.Size(233, 28);
             this.dateEdit8.TabIndex = 170;
             // 
             // labelControl13
@@ -1979,7 +2046,7 @@
             this.labelControl13.Appearance.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl13.Appearance.Options.UseFont = true;
             this.labelControl13.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.labelControl13.Location = new System.Drawing.Point(715, 65);
+            this.labelControl13.Location = new System.Drawing.Point(847, 63);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(28, 34);
             this.labelControl13.TabIndex = 174;

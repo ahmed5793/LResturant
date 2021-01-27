@@ -262,7 +262,7 @@ namespace Restuarnt.PL
                 else
                 {
                     txt_phones.Text = "";
-                    txt_phones.Text = "";
+                    txt_address.Text = "";
                 }
             }
         }
@@ -684,7 +684,24 @@ namespace Restuarnt.PL
 
         private void cmb_customer_Leave(object sender, EventArgs e)
         {
-            InformationClient();
+            if (rdb_clientsave.Checked == true)
+            {
+
+
+            
+                dt.Clear();
+                dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.EditValue), cmb_customer.Text);
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("هذا العميل لم يسجل من قبل من فضلك قم باضافة العميل اولا ");
+
+                    cmb_customer.Focus();
+                    cmb_customer.Text = "";
+                    return;
+                }
+                InformationClient();
+            }
+           
         }
 
         private void rdb_clientsave_CheckedChanged(object sender, EventArgs e)
@@ -738,9 +755,6 @@ namespace Restuarnt.PL
 
 
 
-                                    dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.EditValue), cmb_customer.Text);
-                                    if (dt.Rows.Count > 0)
-                                    {
                                         cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
                                         dt.Clear();
                                         dt = o.AddOrder(Convert.ToInt32(cmb_customer.EditValue), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
@@ -753,17 +767,6 @@ namespace Restuarnt.PL
                                             o.AddOrderDetails(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
                                                Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
                                         }
-
-
-
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("هذا العميل لم يسجل من قبل من فضلك قم باضافة العميل اولا ");
-                                        return;
-                                    }
-
-
                                 }
                                 else if (rdb_newclient.Checked == true)
                                 {
@@ -815,9 +818,7 @@ namespace Restuarnt.PL
                                         MessageBox.Show("من فضلك قم باادخال بيانات العميل كامله");
                                         return;
                                     }
-                                    dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.EditValue), cmb_customer.Text);
-                                    if (dt.Rows.Count > 0)
-                                    {
+                                   
                                         cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
                                         dt.Clear();
                                         dt = o.AddOrder(Convert.ToInt32(cmb_customer.EditValue), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
@@ -830,12 +831,7 @@ namespace Restuarnt.PL
                                             o.AddOrderDetails(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
                                                Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
                                         }
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("هذا العميل لم يسجل من قبل من فضلك قم باضافة العميل اولا ");
-                                        return;
-                                    }
+                          
                                 }
                                  if (rdb_newclient.Checked == true)
                                 {
@@ -893,9 +889,6 @@ namespace Restuarnt.PL
                                      Convert.ToInt32(cmb_stuff.SelectedValue));
 
                             }
-
-                           
-
                         }
                         else
                         {
@@ -1164,17 +1157,9 @@ namespace Restuarnt.PL
                                     MessageBox.Show("من فضلك قم بالتاكد من بيانات العميل ");
                                     return;
                                 }
-                                dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.EditValue), cmb_customer.Text);
-                                if (dt.Rows.Count > 0)
-                                {
-                                    cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
+                              
+                                cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
 
-                                }
-                                else
-                                {
-                                    MessageBox.Show("هذا العميل لم يسجل من قبل من فضلك قم باضافة العميل اولا ");
-                                    return;
-                                }
                                 o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
                                  Convert.ToDecimal(txt_invo.Text), 0, Convert.ToDecimal(txt_discount.Text),
                                 "Take away", Convert.ToInt32(cmb_customer.EditValue));
@@ -1217,18 +1202,8 @@ namespace Restuarnt.PL
                                     MessageBox.Show("من فضلك قم باادخال بيانات العميل كامله");
                                     return;
                                 }
-                                dt.Clear();
-                                dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.EditValue), cmb_customer.Text);
-                                if (dt.Rows.Count > 0)
-                                {
-                                    cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
+                                cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
 
-                                }
-                                else
-                                {
-                                    MessageBox.Show("هذا العميل لم يسجل من قبل من فضلك قم باضافة العميل اولا ");
-                                    return;
-                                }
                                 o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
                                  Convert.ToDecimal(txt_invo.Text),0, Convert.ToDecimal(txt_discount.Text),
                                 "Delivery", Convert.ToInt32(cmb_customer.EditValue));
@@ -1740,15 +1715,13 @@ namespace Restuarnt.PL
                     foreach (DataRow dr in dt5.Rows)
                     {
                         Lable_Num.Text = dr[0].ToString();
-                        cmb_customer.EditValue = dr[1].ToString();
                         cmb_customer.Text = dr[2].ToString();
+                        cmb_customer.EditValue = dr[1].ToString();
                         txt_phones.Text = dr[3].ToString();
                         txt_address.Text = dr[4].ToString();
                         timer1.Enabled = false;
                         lable_date.Text = dr[5].ToString();
-
                         texT.Text = dr[6].ToString();
-
                         cmb_delivery.Text = dr[9].ToString();
                         txt_delivery.Text = dr[10].ToString();
                         txt_discount.Text = dr[11].ToString();
@@ -1817,8 +1790,8 @@ namespace Restuarnt.PL
                     foreach (DataRow dr in dt5.Rows)
                     {
                         Lable_Num.Text = dr[0].ToString();
-                        cmb_customer.EditValue = dr[1].ToString();
                         cmb_customer.Text = dr[2].ToString();
+                        cmb_customer.EditValue = dr[1].ToString();
 
                         timer1.Enabled = false;
                         lable_date.Text = dr[3].ToString();
@@ -1860,11 +1833,6 @@ namespace Restuarnt.PL
                                     return;
                                 }
 
-
-
-                                dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.EditValue), cmb_customer.Text);
-                                if (dt.Rows.Count > 0)
-                                {
                                     cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
                                     dt.Clear();
                                     dt = o.AddOrder(Convert.ToInt32(cmb_customer.EditValue), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
@@ -1877,12 +1845,7 @@ namespace Restuarnt.PL
                                         o.AddOrderDetails(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
                                            Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
                                     }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("هذا العميل لم يسجل من قبل من فضلك قم باضافة العميل اولا ");
-                                    return;
-                                }
+                              
 
 
 
@@ -1938,9 +1901,7 @@ namespace Restuarnt.PL
                                     MessageBox.Show("من فضلك قم باادخال بيانات العميل كامله");
                                     return;
                                 }
-                                dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.EditValue), cmb_customer.Text);
-                                if (dt.Rows.Count > 0)
-                                {
+                               
                                     cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
                                     dt.Clear();
                                     dt = o.AddOrder(Convert.ToInt32(cmb_customer.EditValue), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
@@ -1953,12 +1914,7 @@ namespace Restuarnt.PL
                                         o.AddOrderDetails(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
                                            Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
                                     }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("هذا العميل لم يسجل من قبل من فضلك قم باضافة العميل اولا ");
-                                    return;
-                                }
+                               
                             }
                             else if (rdb_newclient.Checked == true)
                             {
@@ -2268,7 +2224,6 @@ namespace Restuarnt.PL
                     {
                         o.Delete_OrderFromSala(Convert.ToInt32(Lable_Num.Text));
                         t.UpdateTablesInOrder(Convert.ToInt32(dt5.Rows[0][2]), 0);
-
                     }
                     if (dt10.Rows[0][11].ToString() == "Delivery")
                     {
@@ -2291,20 +2246,13 @@ namespace Restuarnt.PL
                                 MessageBox.Show("من فضلك قم بالتاكد من بيانات العميل ");
                                 return;
                             }
-                            dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.EditValue), cmb_customer.Text);
-                            if (dt.Rows.Count > 0)
-                            {
+                            
                                 cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
 
                                 o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
                                  0,Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text),
                                 "Take away", Convert.ToInt32(cmb_customer.EditValue));
-                            }
-                            else
-                            {
-                                MessageBox.Show("هذا العميل لم يسجل من قبل من فضلك قم باضافة العميل اولا ");
-                                return;
-                            }
+                          
                         }
                         else if (rdb_newclient.Checked == true)
                         {
@@ -2345,20 +2293,13 @@ namespace Restuarnt.PL
                                 MessageBox.Show("من فضلك قم باادخال بيانات العميل كامله");
                                 return;
                             }
-                            dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.EditValue), cmb_customer.Text);
-                            if (dt.Rows.Count > 0)
-                            {
+                            
                                 cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
 
                                 o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
                                 0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text),
                                 "Delivery", Convert.ToInt32(cmb_customer.EditValue));
-                            }
-                            else
-                            {
-                                MessageBox.Show("هذا العميل لم يسجل من قبل من فضلك قم باضافة العميل اولا ");
-                                return;
-                            }
+                           
                         }
                         else if (rdb_newclient.Checked == true)
                         {
@@ -2393,7 +2334,6 @@ namespace Restuarnt.PL
                             MessageBox.Show("من فضلك قم بتسجيل رقم الطاولة ");
                             return;
                         }
-                        t.UpdateTablesInOrder(Convert.ToInt32(cmb_Table.SelectedValue), 1);
                         cu.AddCustomerTakeAway(textEdit1.Text);
                         txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
 
@@ -2403,6 +2343,8 @@ namespace Restuarnt.PL
 
                         o.AddSala(Convert.ToInt32(Lable_Num.Text), Convert.ToInt32(cmb_Table.SelectedValue),
                              Convert.ToInt32(cmb_stuff.SelectedValue));
+                        t.UpdateTablesInOrder(Convert.ToInt32(cmb_Table.SelectedValue), 1);
+
                         MessageBox.Show("تم تعليق الفاتوره بعد التعديل بنجاح", "عمليه التعليق", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
 
                     }
@@ -3001,6 +2943,11 @@ namespace Restuarnt.PL
         private void cmb_customer_MouseDown(object sender, MouseEventArgs e)
         {
             InformationClient();
+        }
+
+        private void groupControl2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

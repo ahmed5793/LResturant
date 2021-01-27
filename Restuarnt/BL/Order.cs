@@ -626,10 +626,10 @@ namespace Restuarnt.BL
             da.open();
             SqlParameter[] param = new SqlParameter[2];
 
-            param[0] = new SqlParameter("@FromDate", SqlDbType.Date);
+            param[0] = new SqlParameter("@FromDate", SqlDbType.DateTime);
             param[0].Value = FromDate;
 
-            param[1] = new SqlParameter("@ToDate", SqlDbType.Date);
+            param[1] = new SqlParameter("@ToDate", SqlDbType.DateTime);
             param[1].Value = ToDate;
         
             dt = da.selected("SearchMangmentOrders", param);
@@ -645,9 +645,9 @@ namespace Restuarnt.BL
             SqlParameter[] param = new SqlParameter[2];
 
 
-            param[0] = new SqlParameter("@FromDate", SqlDbType.Date);
+            param[0] = new SqlParameter("@FromDate", SqlDbType.DateTime);
             param[0].Value = FROMTime;
-            param[1] = new SqlParameter("@ToDate", SqlDbType.Date);
+            param[1] = new SqlParameter("@ToDate", SqlDbType.DateTime);
             param[1].Value = ToTime;
             dt = da.selected("SearchManamentTOrderDelivery", param);
             da.close();
@@ -662,9 +662,9 @@ namespace Restuarnt.BL
             SqlParameter[] param = new SqlParameter[2];
 
 
-            param[0] = new SqlParameter("@FromDate", SqlDbType.Date);
+            param[0] = new SqlParameter("@FromDate", SqlDbType.DateTime);
             param[0].Value = FROMTime;
-            param[1] = new SqlParameter("@ToDate", SqlDbType.Date);
+            param[1] = new SqlParameter("@ToDate", SqlDbType.DateTime);
             param[1].Value = ToTime;
             dt = da.selected("SearchManagmentOrderSala", param);
             da.close();
@@ -679,9 +679,9 @@ namespace Restuarnt.BL
             SqlParameter[] param = new SqlParameter[2];
 
 
-            param[0] = new SqlParameter("@FromDate", SqlDbType.Date);
+            param[0] = new SqlParameter("@FromDate", SqlDbType.DateTime);
             param[0].Value = FROMTime;
-            param[1] = new SqlParameter("@ToDate", SqlDbType.Date);
+            param[1] = new SqlParameter("@ToDate", SqlDbType.DateTime);
             param[1].Value = ToTime;
             dt = da.selected("SearchManagmentOrderTakwAway", param);
             da.close();
@@ -746,9 +746,9 @@ namespace Restuarnt.BL
 
 
 
-            param[1] = new SqlParameter("@fromDte", SqlDbType.Date);
+            param[1] = new SqlParameter("@fromDte", SqlDbType.DateTime);
             param[1].Value = fromDte;
-            param[2] = new SqlParameter("@todate", SqlDbType.Date);
+            param[2] = new SqlParameter("@todate", SqlDbType.DateTime);
             param[2].Value = todate;
 
 
@@ -904,10 +904,10 @@ namespace Restuarnt.BL
             da.open();
             SqlParameter[] param = new SqlParameter[3];
 
-            param[0] = new SqlParameter("@FromDate", SqlDbType.Date);
+            param[0] = new SqlParameter("@FromDate", SqlDbType.DateTime);
             param[0].Value = FromDate;
 
-            param[1] = new SqlParameter("@ToDate", SqlDbType.Date);
+            param[1] = new SqlParameter("@ToDate", SqlDbType.DateTime);
             param[1].Value = ToDate;
 
             param[2] = new SqlParameter("@ID_Delivery", SqlDbType.Int);
@@ -944,7 +944,7 @@ namespace Restuarnt.BL
             SqlParameter[] param = new SqlParameter[1];
             param[0] = new SqlParameter("@ID_Order", SqlDbType.Int);
             param[0].Value = idOrder;
-            da.excutequery("Delete_OrderFromDelivery", param);
+            da.excutequery("Delete_OrderFromSala", param);
             da.close();
         }
 

@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using DevExpress.XtraReports.UI;
 using Restuarnt.BL;
 using Restuarnt.RPT.Exstra_Report;
+using System;
+using System.Data;
+using System.Windows.Forms;
 namespace Restuarnt.PL
 {
     public partial class Sales_Management : Form
@@ -26,7 +20,7 @@ namespace Restuarnt.PL
             InitializeComponent();
             selectUser();
             rdb_all.Checked = true;
-            gridControl1.DataSource = o.SearchMangmentOrders(DateTime.Now.Date, DateTime.Now.Date);
+            gridControl1.DataSource = o.SearchMangmentOrders(DateTime.Now, DateTime.Now);
             cmb_delivery.DataSource = d.SelectDeliverycomp();
             cmb_delivery.DisplayMember = "Name";
             cmb_delivery.ValueMember = "ID_Delivery";
@@ -36,7 +30,7 @@ namespace Restuarnt.PL
             cmb_stuff.DisplayMember = "اسم الكابتن";
             cmb_stuff.ValueMember = "رقم الكابتن";
 
-        } 
+        }
         void selectUser()
         {
             try
@@ -54,7 +48,7 @@ namespace Restuarnt.PL
             }
         }
         private void cmb_Users1_SelectionChangeCommitted(object sender, EventArgs e)
-        {          
+        {
             try
             {
             }
@@ -62,9 +56,9 @@ namespace Restuarnt.PL
             {
                 MessageBox.Show(ex.Message);
             }
-         
+
         }
-    
+
 
         private void Validate_Users_Load(object sender, EventArgs e)
         {
@@ -74,16 +68,16 @@ namespace Restuarnt.PL
             id_take.FieldName = "رقم الطلب";
             id_take.Visible = false;
 
-            FromDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            ToDate.Text= DateTime.Now.ToString("dd/MM/yyyy");
-            dateEdit1.Text= DateTime.Now.ToString("dd/MM/yyyy");
-            dateEdit2.Text= DateTime.Now.ToString("dd/MM/yyyy");
-            dateEdit3.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            dateEdit4.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            dateEdit5.Text= DateTime.Now.ToString("dd/MM/yyyy");
-            dateEdit6.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            dateEdit7.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            dateEdit8.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            FromDate.Text = DateTime.Now.ToString("dd/MM/yyyy  hh:mm tt");
+            ToDate.Text = DateTime.Now.ToString("dd/MM/yyyy  hh:mm tt");
+            dateEdit1.Text = DateTime.Now.ToString("dd/MM/yyyy  hh:mm tt");
+            dateEdit2.Text = DateTime.Now.ToString("dd/MM/yyyy  hh:mm tt");
+            dateEdit3.Text = DateTime.Now.ToString("dd/MM/yyyy  hh:mm tt");
+            dateEdit4.Text = DateTime.Now.ToString("dd/MM/yyyy  hh:mm tt");
+            dateEdit5.Text = DateTime.Now.ToString("dd/MM/yyyy  hh:mm tt");
+            dateEdit6.Text = DateTime.Now.ToString("dd/MM/yyyy  hh:mm tt");
+            dateEdit7.Text = DateTime.Now.ToString("dd/MM/yyyy  hh:mm tt");
+            dateEdit8.Text = DateTime.Now.ToString("dd/MM/yyyy  hh:mm tt");
         }
 
 
@@ -91,15 +85,15 @@ namespace Restuarnt.PL
         private void button4_Click(object sender, EventArgs e)
         {
 
-            
+
         }
 
         private void btn_save_Click(object sender, EventArgs e)
         {
 
-           
 
-             
+
+
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -126,7 +120,7 @@ namespace Restuarnt.PL
         private void Cmb_Branch_SelectionChangeCommitted(object sender, EventArgs e)
         {
 
-          
+
         }
 
         private void cmb_Users1_SelectedIndexChanged(object sender, EventArgs e)
@@ -136,7 +130,7 @@ namespace Restuarnt.PL
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-          
+
         }
 
         private void simpleButton6_Click(object sender, EventArgs e)
@@ -146,22 +140,22 @@ namespace Restuarnt.PL
 
         private void Rdb_orders_CheckedChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void rdb_delivery_CheckedChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void rdb_sala_CheckedChanged(object sender, EventArgs e)
         {
-    
+
         }
 
         private void rdb_takeaway_CheckedChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void simpleButton7_Click(object sender, EventArgs e)
@@ -185,7 +179,7 @@ namespace Restuarnt.PL
                 id_take.FieldName = "رقم الطلب";
                 id_take.Visible = false;
                 //gridControl1.DataSource = o.SearchMangmentOrders(Convert.ToDateTime(FromDate.EditValue), Convert.ToDateTime(ToDate.EditValue));
-              
+
             }
         }
 
@@ -200,9 +194,9 @@ namespace Restuarnt.PL
                 id_take.Caption = "الكابتن";
                 id_take.FieldName = "الكابتن";
                 //gridControl1.DataSource = o.SearchManagmentOrderSala(Convert.ToDateTime(FromDate.EditValue), Convert.ToDateTime(ToDate.EditValue));
-                
 
-                
+
+
             }
         }
 
@@ -217,7 +211,7 @@ namespace Restuarnt.PL
                 id_take.Caption = "اسم الطيار";
                 id_take.FieldName = "اسم الطيار";
                 //gridControl1.DataSource = o.SearchManamentTOrderDelivery(Convert.ToDateTime(FromDate.EditValue), Convert.ToDateTime(ToDate.EditValue));
-                
+
             }
         }
 
@@ -232,7 +226,7 @@ namespace Restuarnt.PL
                 id_take.FieldName = "رقم الطلب";
                 id_take.Visible = false;
                 //gridControl1.DataSource = o.SearchManagmentOrderTakwAway(Convert.ToDateTime(FromDate.EditValue), Convert.ToDateTime(ToDate.EditValue));
-              
+
 
 
             }
@@ -240,28 +234,28 @@ namespace Restuarnt.PL
 
         private void simpleButton5_Click_2(object sender, EventArgs e)
         {
-            if (rdb_all.Checked==true)
+            if (rdb_all.Checked == true)
             {
                 gridControl1.DataSource = o.SearchMangmentOrders(Convert.ToDateTime(FromDate.EditValue), Convert.ToDateTime(ToDate.EditValue));
 
             }
             else if (rdb_takeaway.Checked == true)
             {
-              
+
                 gridControl1.DataSource = o.SearchManagmentOrderTakwAway(Convert.ToDateTime(FromDate.EditValue), Convert.ToDateTime(ToDate.EditValue));
 
 
 
             }
-           else if (rdb_delivery.Checked == true)
+            else if (rdb_delivery.Checked == true)
             {
-             
+
                 gridControl1.DataSource = o.SearchManamentTOrderDelivery(Convert.ToDateTime(FromDate.EditValue), Convert.ToDateTime(ToDate.EditValue));
 
             }
-           else if (rdb_sala.Checked == true)
+            else if (rdb_sala.Checked == true)
             {
-               
+
                 gridControl1.DataSource = o.SearchManagmentOrderSala(Convert.ToDateTime(FromDate.EditValue), Convert.ToDateTime(ToDate.EditValue));
 
 
@@ -279,7 +273,7 @@ namespace Restuarnt.PL
         DataTable dt6 = new DataTable();
         private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
-            if (e.Column.Name=="show_print")
+            if (e.Column.Name == "show_print")
             {
 
                 try
@@ -314,7 +308,7 @@ namespace Restuarnt.PL
                             ro.Txt_TableNum.Visible = true;
                             ro.Txt_TableNum.Text = dt6.Rows[0][1].ToString();
                         }
-                   
+
                         ds.Tables["Order"].Clear();
                         for (int i = 0; i < dt5.Rows.Count; i++)
                         {
@@ -328,8 +322,8 @@ namespace Restuarnt.PL
                         ro.Parameters["Id"].Visible = false;
                         fr.documentViewer1.DocumentSource = ro;
                         fr.Show();
-                       // ro.Dispose();
-                        
+                        // ro.Dispose();
+
                         //System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
                         //ro.PrinterName = printDocument.PrinterSettings.PrinterName;
                         // ro.PrinterName = Properties.Settings.Default.PrinterName;
@@ -383,7 +377,7 @@ namespace Restuarnt.PL
                     MessageBox.Show(ex.Message);
                 }
             }
-            else if(e.Column.Name=="print")
+            else if (e.Column.Name == "print")
             {
                 try
                 {
@@ -434,7 +428,7 @@ namespace Restuarnt.PL
                         ro.PrinterName = printDocument.PrinterSettings.PrinterName;
                         ro.PrinterName = Properties.Settings.Default.PrinterOrderClient;
                         ro.Print();
-                       
+
                         ro.Dispose();
                         ////كود طباعة امر التشغيل للمطبخ//////////////
 
@@ -496,14 +490,14 @@ namespace Restuarnt.PL
             try
             {
 
-           
-            if (cmb_delivery.Text=="")
-            {
-                XtraMessageBox.Show("من فضلك قم بااختيار اسم الطيار", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-                return;
-            }
 
-            gridControl2.DataSource= o.SELECtAllOrderOneDelivery(Convert.ToDateTime(dateEdit1.EditValue), Convert.ToDateTime(dateEdit2.EditValue), Convert.ToInt32(cmb_delivery.SelectedValue));
+                if (cmb_delivery.Text == "")
+                {
+                    XtraMessageBox.Show("من فضلك قم بااختيار اسم الطيار", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                    return;
+                }
+
+                gridControl2.DataSource = o.SELECtAllOrderOneDelivery(Convert.ToDateTime(dateEdit1.EditValue), Convert.ToDateTime(dateEdit2.EditValue), Convert.ToInt32(cmb_delivery.SelectedValue));
             }
             catch (Exception ex)
             {
@@ -515,30 +509,30 @@ namespace Restuarnt.PL
         private void simpleButton2_Click_1(object sender, EventArgs e)
         {
 
-              if (cmb_stuff.Text == "")
-                {
-                    MessageBox.Show("من فضلك قم بااختيار اسم الكابتن");
-                    return;
-                }
-                gridControl3.DataSource = s.REPORTStuff(Convert.ToInt32(cmb_stuff.SelectedValue), Convert.ToDateTime(dateEdit3.EditValue),
-                    Convert.ToDateTime(dateEdit4.EditValue));
-               
-            
-            
+            if (cmb_stuff.Text == "")
+            {
+                MessageBox.Show("من فضلك قم بااختيار اسم الكابتن");
+                return;
+            }
+            gridControl3.DataSource = s.REPORTStuff(Convert.ToInt32(cmb_stuff.SelectedValue), Convert.ToDateTime(dateEdit3.EditValue),
+                Convert.ToDateTime(dateEdit4.EditValue));
+
+
+
         }
-       
+
         private void simpleButton1_Click_1(object sender, EventArgs e)
         {
-          
+
 
             try
             {
-                if (rdb_drink.Checked==true)
+                if (rdb_drink.Checked == true)
                 {
                     gridControl4.DataSource = o.ReportOrderDepartment(rdb_drink.Text, Convert.ToDateTime(dateEdit5.EditValue), Convert.ToDateTime(dateEdit6.EditValue));
 
                 }
-                else if (rdb_eat.Checked==true)
+                else if (rdb_eat.Checked == true)
                 {
                     gridControl4.DataSource = o.ReportOrderDepartment(rdb_eat.Text, Convert.ToDateTime(dateEdit5.EditValue), Convert.ToDateTime(dateEdit6.EditValue));
 
@@ -555,23 +549,28 @@ namespace Restuarnt.PL
 
         private void rdb_eat_CheckedChanged(object sender, EventArgs e)
         {
-            
-           
+
+
         }
 
         private void rdb_drink_CheckedChanged(object sender, EventArgs e)
         {
-           
-           
+
+
         }
 
         private void simpleButton3_Click_1(object sender, EventArgs e)
         {
-            gridControl5.DataSource = l.SelectUserAllOrddr( Convert.ToDateTime(dateEdit7.EditValue), Convert.ToDateTime(dateEdit8.EditValue),Convert.ToInt32(cmb_Users.SelectedValue));
+            gridControl5.DataSource = l.SelectUserAllOrddr(Convert.ToDateTime(dateEdit7.EditValue), Convert.ToDateTime(dateEdit8.EditValue), Convert.ToInt32(cmb_Users.SelectedValue));
 
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridControl3_Click(object sender, EventArgs e)
         {
 
         }

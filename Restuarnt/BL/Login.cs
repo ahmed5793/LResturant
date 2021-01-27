@@ -292,10 +292,10 @@ namespace Restuarnt.BL
             da.open();
             SqlParameter[] param = new SqlParameter[3];
 
-            param[0] = new SqlParameter("@fromDte", SqlDbType.Date);
+            param[0] = new SqlParameter("@fromDte", SqlDbType.DateTime);
             param[0].Value = FromDate;
 
-            param[1] = new SqlParameter("@todate", SqlDbType.Date);
+            param[1] = new SqlParameter("@todate", SqlDbType.DateTime);
             param[1].Value = ToDate;
 
             param[2] = new SqlParameter("@ID_User", SqlDbType.Int);
