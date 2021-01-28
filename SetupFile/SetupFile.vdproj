@@ -1095,6 +1095,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_7A6F3521AAB845F68E0C1DCB34884B78"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_7B472193EB484377BC5AF65065F67A31"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1337,12 +1343,6 @@
         {
         "MsmKey" = "8:_96BE9342E33267A2C4B309AF815F45DD"
         "OwnerKey" = "8:_FF7068D6518862F2D89815F3F1B465D9"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_97FC5321C33E411885616118C9969E5B"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -4281,6 +4281,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7A6F3521AAB845F68E0C1DCB34884B78"
+            {
+            "SourcePath" = "8:..\\Restuarnt\\bin\\Debug\\Scripts.sql"
+            "TargetName" = "8:Scripts.sql"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22FDBCB2B41C988EA5531C6F84910"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7B472193EB484377BC5AF65065F67A31"
             {
             "SourcePath" = "8:..\\Restuarnt\\Resources\\delivery2.jpg"
@@ -4669,26 +4689,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_97FC5321C33E411885616118C9969E5B"
-            {
-            "SourcePath" = "8:..\\Restuarnt\\bin\\Debug\\scripts.sql"
-            "TargetName" = "8:scripts.sql"
-            "Tag" = "8:"
-            "Folder" = "8:_6BF22FDBCB2B41C988EA5531C6F84910"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9A0709505E18507FECCA53D7506CF0AA"

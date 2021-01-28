@@ -688,18 +688,23 @@ namespace Restuarnt.PL
             {
 
 
-            
-                dt.Clear();
-                dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.EditValue), cmb_customer.Text);
-                if (dt.Rows.Count == 0)
+                if (cmb_customer.Text != "")
                 {
-                    MessageBox.Show("هذا العميل لم يسجل من قبل من فضلك قم باضافة العميل اولا ");
 
-                    cmb_customer.Focus();
-                    cmb_customer.Text = "";
-                    return;
+
+                    dt.Clear();
+                    dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.EditValue), cmb_customer.Text);
+                    if (dt.Rows.Count == 0)
+                    {
+                        MessageBox.Show("هذا العميل لم يسجل من قبل من فضلك قم باضافة العميل اولا ");
+
+                        cmb_customer.Focus();
+                        cmb_customer.Text = "";
+                        return;
+                    }
+                    InformationClient();
                 }
-                InformationClient();
+               
             }
            
         }
