@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FOrder));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions8 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject29 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject30 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject31 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject32 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ID_Dep = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -50,12 +50,8 @@
             this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.txt_address = new DevExpress.XtraEditors.TextEdit();
-            this.txt_phones = new DevExpress.XtraEditors.TextEdit();
-            this.rdb_clientsave = new System.Windows.Forms.RadioButton();
-            this.rdb_newclient = new System.Windows.Forms.RadioButton();
-            this.cmb_customer = new DevExpress.XtraEditors.LookUpEdit();
+            this.txt_Name = new DevExpress.XtraEditors.TextEdit();
             this.grb_delivry = new System.Windows.Forms.GroupBox();
             this.cmb_delivery = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -90,6 +86,10 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.grb_customer = new DevExpress.XtraEditors.GroupControl();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmb_customer = new System.Windows.Forms.ComboBox();
             this.grb_sala = new DevExpress.XtraEditors.GroupControl();
             this.groupBox10 = new DevExpress.XtraEditors.GroupControl();
             this.label5 = new System.Windows.Forms.Label();
@@ -98,10 +98,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_address.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_phones.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmb_customer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Name.Properties)).BeginInit();
             this.grb_delivry.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -376,27 +374,11 @@
             // repositoryItemButtonEdit3
             // 
             this.repositoryItemButtonEdit3.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions8.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions8.Image")));
             this.repositoryItemButtonEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions8, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject29, serializableAppearanceObject30, serializableAppearanceObject31, serializableAppearanceObject32, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit3.Name = "repositoryItemButtonEdit3";
             this.repositoryItemButtonEdit3.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(325, 62);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Properties.Appearance.Options.UseTextOptions = true;
-            this.textEdit1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.textEdit1.Properties.LookAndFeel.SkinName = "DevExpress Dark Style";
-            this.textEdit1.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.textEdit1.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.Optimistic;
-            this.textEdit1.Properties.NullText = "اسم العميل";
-            this.textEdit1.Properties.NullValuePrompt = "اسم العميل";
-            this.textEdit1.Size = new System.Drawing.Size(254, 34);
-            this.textEdit1.TabIndex = 97;
             // 
             // txt_address
             // 
@@ -412,79 +394,21 @@
             this.txt_address.Size = new System.Drawing.Size(255, 34);
             this.txt_address.TabIndex = 99;
             // 
-            // txt_phones
+            // txt_Name
             // 
-            this.txt_phones.Location = new System.Drawing.Point(24, 61);
-            this.txt_phones.Name = "txt_phones";
-            this.txt_phones.Properties.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_phones.Properties.Appearance.Options.UseFont = true;
-            this.txt_phones.Properties.Appearance.Options.UseTextOptions = true;
-            this.txt_phones.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.txt_phones.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.Optimistic;
-            this.txt_phones.Properties.Mask.EditMask = "n";
-            this.txt_phones.Properties.NullText = "رقم الموبايل";
-            this.txt_phones.Properties.NullValuePrompt = "رقم الموبايل";
-            this.txt_phones.Size = new System.Drawing.Size(235, 34);
-            this.txt_phones.TabIndex = 98;
-            // 
-            // rdb_clientsave
-            // 
-            this.rdb_clientsave.AutoSize = true;
-            this.rdb_clientsave.Checked = true;
-            this.rdb_clientsave.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_clientsave.Location = new System.Drawing.Point(210, 23);
-            this.rdb_clientsave.Name = "rdb_clientsave";
-            this.rdb_clientsave.Size = new System.Drawing.Size(60, 20);
-            this.rdb_clientsave.TabIndex = 93;
-            this.rdb_clientsave.TabStop = true;
-            this.rdb_clientsave.Text = "مسجل";
-            this.rdb_clientsave.UseVisualStyleBackColor = true;
-            this.rdb_clientsave.CheckedChanged += new System.EventHandler(this.rdb_clientsave_CheckedChanged);
-            // 
-            // rdb_newclient
-            // 
-            this.rdb_newclient.AutoSize = true;
-            this.rdb_newclient.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_newclient.Location = new System.Drawing.Point(309, 23);
-            this.rdb_newclient.Name = "rdb_newclient";
-            this.rdb_newclient.Size = new System.Drawing.Size(52, 20);
-            this.rdb_newclient.TabIndex = 84;
-            this.rdb_newclient.Text = "جديد";
-            this.rdb_newclient.UseVisualStyleBackColor = true;
-            this.rdb_newclient.CheckedChanged += new System.EventHandler(this.rdb_newclient_CheckedChanged);
-            // 
-            // cmb_customer
-            // 
-            this.cmb_customer.Location = new System.Drawing.Point(325, 68);
-            this.cmb_customer.Name = "cmb_customer";
-            this.cmb_customer.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.cmb_customer.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_customer.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.cmb_customer.Properties.AppearanceDropDown.Options.UseTextOptions = true;
-            this.cmb_customer.Properties.AppearanceDropDown.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.cmb_customer.Properties.AppearanceDropDown.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.cmb_customer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search)});
-            this.cmb_customer.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Client_ID", "Name1", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Client_Name", "Name2"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Phone", "Name3", 10, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cmb_customer.Properties.NullText = "اسم العميل";
-            this.cmb_customer.Properties.NullValuePrompt = "اسم العميل";
-            this.cmb_customer.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.StartsWith;
-            this.cmb_customer.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoSuggest;
-            this.cmb_customer.Properties.ShowFooter = false;
-            this.cmb_customer.Properties.ShowHeader = false;
-            this.cmb_customer.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cmb_customer.Size = new System.Drawing.Size(254, 20);
-            this.cmb_customer.TabIndex = 92;
-            this.cmb_customer.EditValueChanged += new System.EventHandler(this.cmb_customer_EditValueChanged);
-            this.cmb_customer.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.cmb_customer_EditValueChanging);
-            this.cmb_customer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmb_customer_KeyDown_1);
-            this.cmb_customer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_customer_KeyPress);
-            this.cmb_customer.Leave += new System.EventHandler(this.cmb_customer_Leave);
-            this.cmb_customer.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cmb_customer_MouseClick);
-            this.cmb_customer.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmb_customer_MouseDown);
+            this.txt_Name.EditValue = "اسم العميل";
+            this.txt_Name.Location = new System.Drawing.Point(14, 46);
+            this.txt_Name.Name = "txt_Name";
+            this.txt_Name.Properties.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Name.Properties.Appearance.Options.UseFont = true;
+            this.txt_Name.Properties.Appearance.Options.UseTextOptions = true;
+            this.txt_Name.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txt_Name.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.Optimistic;
+            this.txt_Name.Properties.Mask.EditMask = "n";
+            this.txt_Name.Properties.NullText = "اسم العميل";
+            this.txt_Name.Properties.NullValuePrompt = "اسم العميل";
+            this.txt_Name.Size = new System.Drawing.Size(263, 34);
+            this.txt_Name.TabIndex = 98;
             // 
             // grb_delivry
             // 
@@ -976,13 +900,13 @@
             // 
             // grb_customer
             // 
-            this.grb_customer.Controls.Add(this.rdb_clientsave);
-            this.grb_customer.Controls.Add(this.rdb_newclient);
-            this.grb_customer.Controls.Add(this.txt_address);
-            this.grb_customer.Controls.Add(this.textEdit1);
-            this.grb_customer.Controls.Add(this.txt_phones);
-            this.grb_customer.Controls.Add(this.grb_delivry);
+            this.grb_customer.Controls.Add(this.label3);
+            this.grb_customer.Controls.Add(this.label2);
+            this.grb_customer.Controls.Add(this.label1);
             this.grb_customer.Controls.Add(this.cmb_customer);
+            this.grb_customer.Controls.Add(this.txt_address);
+            this.grb_customer.Controls.Add(this.txt_Name);
+            this.grb_customer.Controls.Add(this.grb_delivry);
             this.grb_customer.Location = new System.Drawing.Point(3, 105);
             this.grb_customer.LookAndFeel.SkinName = "Visual Studio 2013 Dark";
             this.grb_customer.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -990,6 +914,67 @@
             this.grb_customer.Size = new System.Drawing.Size(601, 154);
             this.grb_customer.TabIndex = 119;
             this.grb_customer.Text = "نوع الطلب";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(421, 80);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 29);
+            this.label3.TabIndex = 102;
+            this.label3.Text = "العنوان";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(105, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 29);
+            this.label2.TabIndex = 101;
+            this.label2.Text = "اسم العميل";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(421, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 29);
+            this.label1.TabIndex = 100;
+            this.label1.Text = "رقم الموبايل";
+            // 
+            // cmb_customer
+            // 
+            this.cmb_customer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmb_customer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_customer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_customer.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_customer.FormattingEnabled = true;
+            this.cmb_customer.Location = new System.Drawing.Point(334, 49);
+            this.cmb_customer.Name = "cmb_customer";
+            this.cmb_customer.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmb_customer.Size = new System.Drawing.Size(255, 26);
+            this.cmb_customer.TabIndex = 63;
+            this.cmb_customer.Text = "رقم الموبايل";
+            this.cmb_customer.DropDown += new System.EventHandler(this.cmb_customer_DropDown);
+            this.cmb_customer.SelectedIndexChanged += new System.EventHandler(this.cmb_customer_SelectedIndexChanged);
+            this.cmb_customer.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
+            this.cmb_customer.Click += new System.EventHandler(this.cmb_customer_Click);
+            this.cmb_customer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBox1_KeyDown);
+            this.cmb_customer.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cmb_customer_KeyUp);
+            this.cmb_customer.MouseClick += new System.Windows.Forms.MouseEventHandler(this.comboBox1_MouseClick);
+            this.cmb_customer.MouseDown += new System.Windows.Forms.MouseEventHandler(this.comboBox1_MouseDown);
+            this.cmb_customer.MouseEnter += new System.EventHandler(this.cmb_customer_MouseEnter);
+            this.cmb_customer.MouseHover += new System.EventHandler(this.cmb_customer_MouseHover);
+            this.cmb_customer.MouseMove += new System.Windows.Forms.MouseEventHandler(this.cmb_customer_MouseMove);
+            this.cmb_customer.MouseUp += new System.Windows.Forms.MouseEventHandler(this.cmb_customer_MouseUp);
             // 
             // grb_sala
             // 
@@ -1067,10 +1052,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_address.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_phones.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmb_customer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Name.Properties)).EndInit();
             this.grb_delivry.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
@@ -1110,20 +1093,16 @@
         public System.Windows.Forms.Label label7;
         public System.Windows.Forms.Label lable_date;
         public System.Windows.Forms.TextBox texT;
-        public System.Windows.Forms.RadioButton rdb_clientsave;
-        public System.Windows.Forms.RadioButton rdb_newclient;
         public System.Windows.Forms.Label label8;
         public System.Windows.Forms.ComboBox cmb_stuff;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        public DevExpress.XtraEditors.LookUpEdit cmb_customer;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         public DevExpress.XtraEditors.SimpleButton simpleButton1;
         public System.Windows.Forms.RadioButton rdb_takeaway;
         public System.Windows.Forms.RadioButton rdb_delivery;
         public System.Windows.Forms.RadioButton rdb_sala;
         public DevExpress.XtraEditors.TextEdit txt_address;
-        public DevExpress.XtraEditors.TextEdit txt_phones;
-        public DevExpress.XtraEditors.TextEdit textEdit1;
+        public DevExpress.XtraEditors.TextEdit txt_Name;
         public DevExpress.XtraEditors.SimpleButton simpleButton2;
         public DevExpress.XtraEditors.SimpleButton btn_printInvo;
         public DevExpress.XtraEditors.SimpleButton simpleButton4;
@@ -1154,5 +1133,9 @@
         public DevExpress.XtraEditors.GroupControl grb_sala;
         public DevExpress.XtraEditors.GroupControl groupBox10;
         public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.ComboBox cmb_customer;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label1;
     }
 }

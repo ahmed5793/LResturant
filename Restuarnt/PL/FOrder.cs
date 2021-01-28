@@ -39,19 +39,18 @@ namespace Restuarnt.PL
             {
                 grb_customer.Show();
 
-                cmb_customer.Properties.DataSource = cu.SelectCompoCustomer();
-                cmb_customer.Properties.DisplayMember = "Client_Name";
-                cmb_customer.Properties.ValueMember = "Client_ID";
+                cmb_customer.DataSource = cu.SelectCompoCustomer();
+                cmb_customer.DisplayMember = "Phone";
+                cmb_customer.ValueMember = "Client_ID";
+                cmb_customer.SelectedIndex = -1;
                 InformationClient();
 
                 txt_address.Text = "";
                 cmb_customer.Text = "";
 
-                rdb_clientsave.Checked = true;
-                textEdit1.Hide();
+               
                 cmb_customer.Show();
-                textEdit1.Text = "";
-                txt_phones.Text = "";
+                txt_Name.Text = "";
 
                 totalInvoice();
                 txt_discount.Text = "0";
@@ -62,7 +61,7 @@ namespace Restuarnt.PL
                 grb_delivry.Hide();
                 txt_delivery.Enabled = false;
                 txt_delivery.Text = "0";
-                textEdit1.Text = "";
+              
 
             }
         }
@@ -75,18 +74,17 @@ namespace Restuarnt.PL
                 grb_customer.Show();
                 grb_delivry.Show();
 
-                rdb_clientsave.Checked = true;
-                cmb_customer.Properties.DataSource = cu.SelectCompoCustomer();
-                cmb_customer.Properties.DisplayMember = "Client_Name";
-                cmb_customer.Properties.ValueMember = "Client_ID";
+                cmb_customer.DataSource = cu.SelectCompoCustomer();
+                cmb_customer.DisplayMember = "Phone";
+                cmb_customer.ValueMember = "Client_ID";
                  
                 cmb_customer.Text = "";
                 txt_discount.Text = "0";
-                textEdit1.Text = "";
-                txt_phones.Text = "";
+               
+                txt_Name.Text = "";
                 txt_delivery.Enabled = true;
                 txt_address.Text = "";
-                textEdit1.Hide();
+                
                 cmb_customer.Show();
                 txt_delivery.Text = Properties.Settings.Default.DeliveryService.ToString();
 
@@ -122,8 +120,8 @@ namespace Restuarnt.PL
 
                 txt_address.Text = "";
 
-                textEdit1.Text = "";
-                txt_phones.Text = "";
+               
+                txt_Name.Text = "";
 
                 txt_delivery.Text = "0";
 
@@ -253,15 +251,15 @@ namespace Restuarnt.PL
         {
             if (cmb_customer.Text != "")
             {
-                dt = cu.SelectPhoneAdress(Convert.ToInt32(cmb_customer.EditValue));
+                dt = cu.SelectPhoneAdress(Convert.ToInt32(cmb_customer.SelectedValue));
                 if (dt.Rows.Count > 0)
                 {
-                    txt_phones.Text = dt.Rows[0][0].ToString();
+                    txt_Name.Text = dt.Rows[0][0].ToString();
                     txt_address.Text = dt.Rows[0][1].ToString();
                 }
                 else
                 {
-                    txt_phones.Text = "";
+                    txt_Name.Text = "";
                     txt_address.Text = "";
                 }
             }
@@ -269,7 +267,7 @@ namespace Restuarnt.PL
 
         private void FOrder_Load(object sender, EventArgs e)
         {
-           
+            
 
             dt.Clear();
             dt = o.SELECTOrderRentALLORDER();
@@ -310,10 +308,7 @@ namespace Restuarnt.PL
             TOTALFINALYDELIVERY();
 
         }
-        private void Cmb_customer_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            InformationClient();
-        }
+       
         public void TOTALFINALYDELIVERY()
         {
             Decimal X = 0;
@@ -379,16 +374,15 @@ namespace Restuarnt.PL
         {
             txt_delivery.Text = "0";
             timer1.Enabled = true;
-            textEdit1.Text = "";
+            txt_Name.Text = "";
 
             //txt_pay.Text = "0";
             //txt_mark.Text = "0";
             txt_invo.Text = "0";
-            txt_phones.Text = "";
+            txt_Name.Text = "";
             txt_delivery.Clear();
             Lable_Num.Text = "";
             rdb_takeaway.Checked = true;
-            textEdit1.Text = "";
             dt2.Clear();
         }
         public void clear2()
@@ -412,8 +406,8 @@ namespace Restuarnt.PL
                 RdbTackAway();
             }
             txt_address.Text = "";
-            textEdit1.Text = "";
-            txt_phones.Text = "";
+         
+            txt_Name.Text = "";
             txt_discount.Text = "0";
             flowLayoutPanel1.Enabled = true;
             flowLayoutPanel2.Enabled = true;
@@ -450,8 +444,8 @@ namespace Restuarnt.PL
 
             cmb_customer.Enabled = false;
             txt_delivery.Enabled = false;
-            textEdit1.Enabled = false;
-            txt_phones.Enabled = false;
+      
+            txt_Name.Enabled = false;
             cmb_delivery.Enabled = false;
             cmb_Table.Enabled = false;
             rdb_delivery.Enabled = false;
@@ -459,7 +453,7 @@ namespace Restuarnt.PL
             rdb_takeaway.Enabled = false;
             timer1.Enabled = false;
             txt_discount.Enabled = false;
-            textEdit1.Enabled = false;
+           
         }
 
 
@@ -641,7 +635,7 @@ namespace Restuarnt.PL
         }
         private void Txt_phone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == '.' && txt_phones.Text.ToString().IndexOf('.') > -1)
+            if (e.KeyChar == '.' && txt_Name.Text.ToString().IndexOf('.') > -1)
             {
                 e.Handled = true;
             }
@@ -682,55 +676,30 @@ namespace Restuarnt.PL
             InformationClient();
         }
 
-        private void cmb_customer_Leave(object sender, EventArgs e)
-        {
-            if (rdb_clientsave.Checked == true)
-            {
-
-
-                if (cmb_customer.Text != "")
-                {
-
-
-                    dt.Clear();
-                    dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.EditValue), cmb_customer.Text);
-                    if (dt.Rows.Count == 0)
-                    {
-                        MessageBox.Show("هذا العميل لم يسجل من قبل من فضلك قم باضافة العميل اولا ");
-
-                        cmb_customer.Focus();
-                        cmb_customer.Text = "";
-                        return;
-                    }
-                    InformationClient();
-                }
-               
-            }
-           
-        }
+      
 
         private void rdb_clientsave_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdb_clientsave.Checked == true)
-            {
-                cmb_customer.Show();
-                textEdit1.Hide();
-                txt_address.Text = "";
-                textEdit1.Text = "";
-                txt_phones.Text = "";
-            }
+            //if (rdb_clientsave.Checked == true)
+            //{
+            //    cmb_customer.Show();
+            //    textEdit1.Hide();
+            //    txt_address.Text = "";
+            //    textEdit1.Text = "";
+            //    txt_Name.Text = "";
+            //}
         }
 
         private void rdb_newclient_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdb_newclient.Checked == true)
-            {
-                cmb_customer.Hide();
-                textEdit1.Show();
-                txt_address.Text = "";
-                textEdit1.Text = "";
-                txt_phones.Text = "";
-            }
+            //if (rdb_newclient.Checked == true)
+            //{
+            //    cmb_customer.Hide();
+            //    textEdit1.Show();
+            //    txt_address.Text = "";
+            //    textEdit1.Text = "";
+            //    txt_Name.Text = "";
+            //}
         }
 
         Frm_Hold fh = new Frm_Hold();
@@ -750,19 +719,28 @@ namespace Restuarnt.PL
                             if (rdb_takeaway.Checked == true)
                             {
 
-                                if (rdb_clientsave.Checked == true)
-                                {
                                     if (cmb_customer.Text == "")
                                     {
                                         MessageBox.Show("من فضلك قم بالتاكد من بيانات العميل ");
                                         return;
                                     }
+                                dt.Clear();
+                                dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), cmb_customer.Text);
+                                if (dt.Rows.Count == 0)
+                                {
+                                    cu.AddCustomer(txt_Name.Text, txt_address.Text, cmb_customer.Text);
+                                    txt_cust.Clear();
+                                    txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
+                                }
+                                else
+                                {
+                                    cu.UpdateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), txt_address.Text, cmb_customer.Text, txt_Name.Text);
+                                    txt_cust.Clear();
+                                    txt_cust.Text = cmb_customer.SelectedValue.ToString();
+                                }
 
-
-
-                                        cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
                                         dt.Clear();
-                                        dt = o.AddOrder(Convert.ToInt32(cmb_customer.EditValue), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
+                                        dt = o.AddOrder(Convert.ToInt32(txt_cust.Text), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
                                 Convert.ToDecimal(txt_invo.Text), 0, Convert.ToDecimal(txt_discount.Text), "Take away", Program.Id_USer, "true");
                                         Lable_Num.Text = dt.Rows[0][0].ToString();
 
@@ -772,40 +750,10 @@ namespace Restuarnt.PL
                                             o.AddOrderDetails(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
                                                Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
                                         }
-                                }
-                                else if (rdb_newclient.Checked == true)
-                                {
-
-
-                                    //else if (dt.Rows.Count == 0)
-                                    //{
-                                    if (textEdit1.Text == "")
-                                    {
-                                        MessageBox.Show("من فضلك قم بكتابه بيانات العميل");
-                                        return;
-                                    }
-
-                                    //else if (dt.Rows.Count == 0)
-                                    //{
-
-                                    cu.AddCustomer(textEdit1.Text, txt_address.Text, txt_phones.Text);
-                                    txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
-                                    dt.Clear();
-                                    dt = o.AddOrder(Convert.ToInt32(txt_cust.Text), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
-                                     Convert.ToDecimal(txt_invo.Text), 0, Convert.ToDecimal(txt_discount.Text), "Take away", Program.Id_USer, "true");
-                                    Lable_Num.Text = dt.Rows[0][0].ToString();
-
-                                    for (int i = 0; i < gridView2.RowCount; i++)
-                                    {
-                                        DataRow row = gridView2.GetDataRow(i);
-                                        o.AddOrderDetails(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
-                                           Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
-                                    }
-
-                                }
+                            
                                 o.AddTakeAway(Convert.ToInt32(Lable_Num.Text));
 
-                            }
+                        }
                             else if (rdb_delivery.Checked == true)
                             {
 
@@ -816,17 +764,28 @@ namespace Restuarnt.PL
                                     return;
                                 }
 
-                                if (rdb_clientsave.Checked == true)
-                                {
-                                    if (cmb_customer.Text == "" || txt_address.Text == "" || txt_phones.Text == "")
+                            
+                                    if (cmb_customer.Text == "" || txt_address.Text == "" || txt_Name.Text == "")
                                     {
                                         MessageBox.Show("من فضلك قم باادخال بيانات العميل كامله");
                                         return;
                                     }
-                                   
-                                        cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
-                                        dt.Clear();
-                                        dt = o.AddOrder(Convert.ToInt32(cmb_customer.EditValue), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
+                                 dt.Clear();
+                                dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), cmb_customer.Text);
+                                if (dt.Rows.Count == 0)
+                                {
+                                    cu.AddCustomer(txt_Name.Text, txt_address.Text, cmb_customer.Text);
+                                    txt_cust.Clear();
+                                    txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
+                                }
+                                else
+                                {
+                                    cu.UpdateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), txt_address.Text, cmb_customer.Text, txt_Name.Text);
+                                    txt_cust.Clear();
+                                    txt_cust.Text = cmb_customer.SelectedValue.ToString();
+                                }
+                                dt.Clear();
+                                        dt = o.AddOrder(Convert.ToInt32(txt_cust.Text), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
                                  Convert.ToDecimal(txt_invo.Text), 0, Convert.ToDecimal(txt_discount.Text), "Delivery", Program.Id_USer, "true");
                                         Lable_Num.Text = dt.Rows[0][0].ToString();
 
@@ -837,39 +796,12 @@ namespace Restuarnt.PL
                                                Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
                                         }
                           
-                                }
-                                 if (rdb_newclient.Checked == true)
-                                {
-
-                                    if (textEdit1.Text == "" || txt_phones.Text == "" || txt_address.Text == "")
-                                    {
-                                        MessageBox.Show("من فضلك قم بكتابه بيانات العميل");
-                                        return;
-                                    }
-                                    cu.AddCustomer(textEdit1.Text, txt_address.Text, txt_phones.Text);
-                                    txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
-                                    dt.Clear();
-                                    dt = o.AddOrder(Convert.ToInt32(txt_cust.Text), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
-                                     Convert.ToDecimal(txt_invo.Text), 0, Convert.ToDecimal(txt_discount.Text), "Delivery", Program.Id_USer, "true");
-                                    Lable_Num.Text = dt.Rows[0][0].ToString();
-
-                                    for (int i = 0; i < gridView2.RowCount; i++)
-                                    {
-                                        DataRow row = gridView2.GetDataRow(i);
-                                        o.AddOrderDetails(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
-                                           Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
-                                    }
-
-
-
-                                }
+                                
                                 o.AddDelivery(Convert.ToInt32(Lable_Num.Text), Convert.ToInt32(cmb_delivery.SelectedValue));
-
-
                             }
                             else if (rdb_sala.Checked == true)
                             {
-                                textEdit1.Text = "عميل نقدى";
+                                txt_Name.Text = "عميل نقدى";
 
 
                                 if (cmb_Table.Text == "")
@@ -878,7 +810,8 @@ namespace Restuarnt.PL
                                     return;
                                 }
                                 t.UpdateTablesInOrder(Convert.ToInt32(cmb_Table.SelectedValue), 0);
-                                cu.AddCustomerTakeAway(textEdit1.Text);
+                                cu.AddCustomerTakeAway(txt_Name.Text);
+                                txt_cust.Clear();
                                 txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
                                 dt.Clear();
                                 dt = o.AddOrder(Convert.ToInt32(txt_cust.Text), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
@@ -1154,38 +1087,32 @@ namespace Restuarnt.PL
 
                         if (rdb_takeaway.Checked == true)
                         {
-                            if (rdb_clientsave.Checked == true)
-                            {
+                            
 
                                 if (cmb_customer.Text == "")
                                 {
                                     MessageBox.Show("من فضلك قم بالتاكد من بيانات العميل ");
                                     return;
                                 }
-                              
-                                cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
+                            dt.Clear();
+                            dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), cmb_customer.Text);
+                            if (dt.Rows.Count == 0)
+                            {
+                                cu.AddCustomer(txt_Name.Text, txt_address.Text, cmb_customer.Text);
+                                txt_cust.Clear();
+                                txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
+                            }
+                            else
+                            {
+                                cu.UpdateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), txt_address.Text, cmb_customer.Text, txt_Name.Text);
+                                txt_cust.Clear();
+                                txt_cust.Text = cmb_customer.SelectedValue.ToString();
+                            }
 
                                 o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
                                  Convert.ToDecimal(txt_invo.Text), 0, Convert.ToDecimal(txt_discount.Text),
-                                "Take away", Convert.ToInt32(cmb_customer.EditValue));
-                            }
-                            else if (rdb_newclient.Checked == true)
-                            {
-
-                                if (textEdit1.Text == "")
-                                {
-                                    MessageBox.Show("من فضلك قم بكتابه بيانات العميل");
-                                    return;
-                                }
-
-                                cu.AddCustomer(textEdit1.Text, txt_address.Text, txt_phones.Text);
-                                txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
-
-                                o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
-                                   Convert.ToDecimal(txt_invo.Text), 0, Convert.ToDecimal(txt_discount.Text),
-                                  "Take away", Convert.ToInt32(txt_cust.Text));
-
-                            }
+                                "Take away", Convert.ToInt32(txt_cust.Text));
+                            
                             o.AddTakeAway(Convert.ToInt32(Lable_Num.Text));
 
                         }
@@ -1200,37 +1127,30 @@ namespace Restuarnt.PL
                                 return;
                             }
 
-                            if (rdb_clientsave.Checked == true)
+                            dt.Clear();
+                            dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), cmb_customer.Text);
+                            if (dt.Rows.Count == 0)
                             {
-                                if (cmb_customer.Text == "" || txt_address.Text == "" || txt_phones.Text == "")
+                                cu.AddCustomer(txt_Name.Text, txt_address.Text, cmb_customer.Text);
+                                txt_cust.Clear();
+                                txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
+                            }
+                            else
+                            {
+                                cu.UpdateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), txt_address.Text, cmb_customer.Text, txt_Name.Text);
+                                txt_cust.Clear();
+                                txt_cust.Text = cmb_customer.SelectedValue.ToString();
+                            }
+                            if (cmb_customer.Text == "" || txt_address.Text == "" || txt_Name.Text == "")
                                 {
                                     MessageBox.Show("من فضلك قم باادخال بيانات العميل كامله");
                                     return;
                                 }
-                                cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
 
                                 o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
                                  Convert.ToDecimal(txt_invo.Text),0, Convert.ToDecimal(txt_discount.Text),
-                                "Delivery", Convert.ToInt32(cmb_customer.EditValue));
-                            }
-                            else if (rdb_newclient.Checked == true)
-                            {
-
-                                if (textEdit1.Text == "" || txt_phones.Text == "" || txt_address.Text == "")
-                                {
-                                    MessageBox.Show("من فضلك قم بكتابه بيانات العميل");
-                                    return;
-                                }
-
-
-                                cu.AddCustomer(textEdit1.Text, txt_address.Text, txt_phones.Text);
-                                txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
-
-                                o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
-                                   Convert.ToDecimal(txt_invo.Text), 0, Convert.ToDecimal(txt_discount.Text),
-                                  "Delivery", Convert.ToInt32(txt_cust.Text));
-
-                            }
+                                "Delivery", Convert.ToInt32(txt_cust.Text));
+                            
                             o.AddDelivery(Convert.ToInt32(Lable_Num.Text), Convert.ToInt32(cmb_delivery.SelectedValue));
 
 
@@ -1238,7 +1158,7 @@ namespace Restuarnt.PL
 
                         else if (rdb_sala.Checked == true)
                         {
-                            textEdit1.Text = "عميل نقدى";
+                            txt_Name.Text = "عميل نقدى";
 
                             if (cmb_Table.Text == "")
                             {
@@ -1251,7 +1171,8 @@ namespace Restuarnt.PL
                                 return;
                             }
                             t.UpdateTablesInOrder(Convert.ToInt32(cmb_Table.SelectedValue), 0);
-                            cu.AddCustomerTakeAway(textEdit1.Text);
+                            cu.AddCustomerTakeAway(txt_Name.Text);
+                            txt_cust.Clear();
                             txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
 
                             o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
@@ -1479,102 +1400,78 @@ namespace Restuarnt.PL
         private void rdb_delivery_CheckedChanged_1(object sender, EventArgs e)
         {
             RdbDelivery();
+            cmb_customer.SelectedIndex = -1;
         }
 
         private void rdb_takeaway_CheckedChanged_1(object sender, EventArgs e)
         {
             RdbTackAway();
+            cmb_customer.SelectedIndex = -1;
         }
 
         private void textBox12_MouseHover(object sender, EventArgs e)
         {
-            textEdit1.Select();
-            if (textEdit1.Text == "اسم العميل")
-            {
-                textEdit1.Text = "";
-            }
+            
         }
 
         private void textBox12_Leave(object sender, EventArgs e)
         {
-            if (textEdit1.Text == "")
-            {
-                textEdit1.Text = "اسم العميل";
-            }
+           
         }
 
         private void txt_phones_MouseHover(object sender, EventArgs e)
         {
-            txt_phones.Select();
-            if (txt_phones.Text == "موبايل")
+            txt_Name.Select();
+            if (txt_Name.Text == "موبايل")
             {
-                txt_phones.Text = "";
+                txt_Name.Text = "";
             }
         }
 
         private void txt_phones_Leave(object sender, EventArgs e)
         {
-            if (txt_phones.Text == "")
+            if (txt_Name.Text == "")
             {
-                txt_phones.Text = "موبايل";
+                txt_Name.Text = "موبايل";
             }
         }
         private void txt_address_MouseHover(object sender, EventArgs e)
         {
-            textEdit1.Select();
-            if (textEdit1.Text == "العنوان")
-            {
-                textEdit1.Text = "";
-            }
+           
         }
         private void txt_address_Leave(object sender, EventArgs e)
         {
-            if (textEdit1.Text == "")
-            {
-                textEdit1.Text = "العنوان";
-            }
+            
         }
 
         private void txt_phones_MouseLeave(object sender, EventArgs e)
         {
-            if (txt_phones.Text == "")
+            if (txt_Name.Text == "")
             {
-                txt_phones.Text = "موبايل";
+                txt_Name.Text = "موبايل";
             }
         }
         private void txt_phones_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txt_phones.Select();
-            if (txt_phones.Text == "موبايل")
+            txt_Name.Select();
+            if (txt_Name.Text == "موبايل")
             {
-                txt_phones.Text = "";
+                txt_Name.Text = "";
             }
         }
         private void txt_phones_MouseDown(object sender, MouseEventArgs e)
         {
-            textEdit1.Select();
-            if (txt_phones.Text == "موبايل")
-            {
-                txt_phones.Text = "";
-            }
+           
         }
 
         private void txt_address_KeyPress(object sender, KeyPressEventArgs e)
         {
-            textEdit1.Select();
-            if (textEdit1.Text == "العنوان")
-            {
-                textEdit1.Text = "";
-            }
+           
         }
 
         private void textBox12_KeyPress(object sender, KeyPressEventArgs e)
         {
-            textEdit1.Select();
-            if (textEdit1.Text == "اسم العميل")
-            {
-                textEdit1.Text = "";
-            }
+           
         }
 
         private void simpleButton5_Click(object sender, EventArgs e)
@@ -1692,7 +1589,7 @@ namespace Restuarnt.PL
 
                     rdb_delivery.Checked = true;
                     cmb_customer.Show();
-                    textEdit1.Hide();
+                    
 
                     //textEdit1.Enabled = false;
                   //  rdb_clientsave.Enabled = false;
@@ -1720,9 +1617,10 @@ namespace Restuarnt.PL
                     foreach (DataRow dr in dt5.Rows)
                     {
                         Lable_Num.Text = dr[0].ToString();
-                        cmb_customer.Text = dr[2].ToString();
-                        cmb_customer.EditValue = dr[1].ToString();
-                        txt_phones.Text = dr[3].ToString();
+                        cmb_customer.Text = dr[3].ToString();
+                        cmb_customer.ValueMember = dr[1].ToString();
+                        txt_cust.Text = dr[1].ToString();
+                        txt_Name.Text = dr[2].ToString();
                         txt_address.Text = dr[4].ToString();
                         timer1.Enabled = false;
                         lable_date.Text = dr[5].ToString();
@@ -1763,7 +1661,7 @@ namespace Restuarnt.PL
 
                         Lable_Num.Text = dr[0].ToString();
                         txt_cust.Text = dr[1].ToString();
-                        textEdit1.Text = dr[2].ToString();
+                        txt_Name.Text = dr[2].ToString();
 
                         timer1.Enabled = false;
                         lable_date.Text = dr[3].ToString();
@@ -1781,8 +1679,7 @@ namespace Restuarnt.PL
 
                     rdb_takeaway.Checked = true;
                     cmb_customer.Show();
-                    textEdit1.Hide();
-                    rdb_clientsave.Checked = true;
+                   
                     dt2.Clear();
                     dt2 = o.SELECTOrderDetails(Convert.ToInt32(fh.gridView2.GetFocusedRowCellValue("رقم الفاتورة")));
                     gridControl2.DataSource = dt2;
@@ -1795,8 +1692,9 @@ namespace Restuarnt.PL
                     foreach (DataRow dr in dt5.Rows)
                     {
                         Lable_Num.Text = dr[0].ToString();
-                        cmb_customer.Text = dr[2].ToString();
-                        cmb_customer.EditValue = dr[1].ToString();
+                        txt_Name.Text = dr[2].ToString();
+                        cmb_customer.SelectedValue = dr[1].ToString();
+                 txt_cust.Text = dr[1].ToString();
 
                         timer1.Enabled = false;
                         lable_date.Text = dr[3].ToString();
@@ -1804,7 +1702,7 @@ namespace Restuarnt.PL
                         texT.Text = dr[4].ToString();
 
                         txt_discount.Text = dr[7].ToString();
-                        txt_phones.Text = dr[8].ToString();
+                        cmb_customer.Text = dr[8].ToString();
                         txt_address.Text = dr[9].ToString();
 
                     }
@@ -1830,18 +1728,29 @@ namespace Restuarnt.PL
                         if (rdb_takeaway.Checked == true)
                         {
 
-                            if (rdb_clientsave.Checked == true)
-                            {
-                                if (cmb_customer.Text == "")
+                                if (txt_Name.Text == "")
                                 {
                                     MessageBox.Show("من فضلك قم بالتاكد من بيانات العميل ");
                                     return;
                                 }
 
-                                    cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
-                                    dt.Clear();
-                                    dt = o.AddOrder(Convert.ToInt32(cmb_customer.EditValue), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
-                            0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text), "Take away", Program.Id_USer, "true");
+                                dt.Clear();
+                                dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), cmb_customer.Text);
+                                if (dt.Rows.Count == 0)
+                                {
+                                    cu.AddCustomer(txt_Name.Text, txt_address.Text, cmb_customer.Text);
+                                    txt_cust.Clear();
+                                    txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
+                                }
+                                else
+                                {
+                                    cu.UpdateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), txt_address.Text, cmb_customer.Text, txt_Name.Text);
+                                     txt_cust.Clear();
+                                    txt_cust.Text = cmb_customer.SelectedValue.ToString();
+                                }
+                                dt.Clear();
+                                dt = o.AddOrder(Convert.ToInt32(txt_cust.Text), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
+                                0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text), "Take away", Program.Id_USer, "true");
                                     Lable_Num.Text = dt.Rows[0][0].ToString();
 
                                     for (int i = 0; i < gridView2.RowCount; i++)
@@ -1850,41 +1759,8 @@ namespace Restuarnt.PL
                                         o.AddOrderDetails(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
                                            Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
                                     }
-                              
-
-
-
-                            }
-                            else if (rdb_newclient.Checked == true)
-                            {
-
-
-                                //else if (dt.Rows.Count == 0)
-                                //{
-                                if (textEdit1.Text == "")
-                                {
-                                    MessageBox.Show("من فضلك قم بكتابه بيانات العميل");
-                                    return;
-                                }
-
-                                //else if (dt.Rows.Count == 0)
-                                //{
-
-                                cu.AddCustomer(textEdit1.Text, txt_address.Text, txt_phones.Text);
-                                txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
-                                dt.Clear();
-                                dt = o.AddOrder(Convert.ToInt32(txt_cust.Text), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
-                                0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text), "Take away", Program.Id_USer, "true");
-                                Lable_Num.Text = o.LasIdOrder().Rows[0][0].ToString();
-
-                                for (int i = 0; i < gridView2.RowCount; i++)
-                                {
-                                    DataRow row = gridView2.GetDataRow(i);
-                                    o.AddOrderDetails(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
-                                       Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
-                                }
-
-                            }
+                             
+                            
                             o.AddTakeAway(Convert.ToInt32(Lable_Num.Text));
 
                             MessageBox.Show("تم تعليق الفاتوره بنجاح", "عمليه التعليق", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
@@ -1899,17 +1775,28 @@ namespace Restuarnt.PL
                                 return;
                             }
 
-                            if (rdb_clientsave.Checked == true)
-                            {
-                                if (cmb_customer.Text == "" || txt_address.Text == "" || txt_phones.Text == "")
+                          
+                                if (cmb_customer.Text == "" || txt_address.Text == "" || txt_Name.Text == "")
                                 {
                                     MessageBox.Show("من فضلك قم باادخال بيانات العميل كامله");
                                     return;
                                 }
-                               
-                                    cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
-                                    dt.Clear();
-                                    dt = o.AddOrder(Convert.ToInt32(cmb_customer.EditValue), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
+                                dt.Clear();
+                                dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), cmb_customer.Text);
+                                if (dt.Rows.Count == 0)
+                                {
+                                    cu.AddCustomer(txt_Name.Text, txt_address.Text, cmb_customer.Text);
+                                    txt_cust.Clear();
+                                    txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
+                                }
+                                else
+                                {
+                                    cu.UpdateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), txt_address.Text, cmb_customer.Text, txt_Name.Text);
+                                    txt_cust.Clear();
+                                    txt_cust.Text = cmb_customer.SelectedValue.ToString();
+                                }
+                                dt.Clear();
+                                dt = o.AddOrder(Convert.ToInt32(txt_cust.Text), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
                               0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text), "Delivery", Program.Id_USer, "true");
                                     Lable_Num.Text = dt.Rows[0][0].ToString();
 
@@ -1920,45 +1807,7 @@ namespace Restuarnt.PL
                                            Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
                                     }
                                
-                            }
-                            else if (rdb_newclient.Checked == true)
-                            {
-
-
-                                //else if (dt.Rows.Count == 0)
-                                //{
-                                if (textEdit1.Text == "" || txt_phones.Text == "" || txt_address.Text == "")
-                                {
-                                    MessageBox.Show("من فضلك قم بكتابه بيانات العميل");
-                                    return;
-                                }
-
-                                //else if (dt.Rows.Count == 0)
-                                //{
-
-                                cu.AddCustomer(textEdit1.Text, txt_address.Text, txt_phones.Text);
-                                txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
-                                dt.Clear();
-                                dt = o.AddOrder(Convert.ToInt32(txt_cust.Text), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
-                                0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text), "Delivery", Program.Id_USer, "true");
-                                Lable_Num.Text = o.LasIdOrder().Rows[0][0].ToString();
-
-                                for (int i = 0; i < gridView2.RowCount; i++)
-                                {
-                                    DataRow row = gridView2.GetDataRow(i);
-                                    o.AddOrderDetails(Convert.ToInt32(row[2]), Convert.ToDecimal(row[4]),
-                                       Convert.ToInt32(row[5]), Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(row[6]));
-                                }
-                                //MessageBox.Show("تم تعليق الفاتوره بنجاح", "عمليه التعليق", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-
-                                //o.AddDelivery(Convert.ToInt32(Lable_Num.Text), Convert.ToInt32(cmb_delivery.SelectedValue));
-
-
-
-                                //}
-
-
-                            }
+                            
                             o.AddDelivery(Convert.ToInt32(Lable_Num.Text), Convert.ToInt32(cmb_delivery.SelectedValue));
 
                             MessageBox.Show("تم تعليق الفاتوره بنجاح", "عمليه التعليق", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
@@ -1969,7 +1818,7 @@ namespace Restuarnt.PL
 
                         else if (rdb_sala.Checked == true)
                         {
-                            textEdit1.Text = "عميل نقدى";
+                            txt_Name.Text = "عميل نقدى";
 
 
                             if (cmb_Table.Text == "")
@@ -1978,7 +1827,8 @@ namespace Restuarnt.PL
                                 return;
                             }
                             t.UpdateTablesInOrder(Convert.ToInt32(cmb_Table.SelectedValue), 1);
-                            cu.AddCustomerTakeAway(textEdit1.Text);
+                            cu.AddCustomerTakeAway(txt_Name.Text);
+                            txt_cust.Clear();
                             txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
                             dt.Clear();
                             dt = o.AddOrder(Convert.ToInt32(txt_cust.Text), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
@@ -2243,39 +2093,33 @@ namespace Restuarnt.PL
 
                     if (rdb_takeaway.Checked == true)
                     {
-                        if (rdb_clientsave.Checked == true)
-                        {
+                        
 
                             if (cmb_customer.Text == "")
                             {
                                 MessageBox.Show("من فضلك قم بالتاكد من بيانات العميل ");
                                 return;
                             }
-                            
-                                cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
-
-                                o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
-                                 0,Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text),
-                                "Take away", Convert.ToInt32(cmb_customer.EditValue));
-                          
-                        }
-                        else if (rdb_newclient.Checked == true)
-                        {
-
-                            if (textEdit1.Text == "")
+                            dt.Clear();
+                            dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), cmb_customer.Text);
+                            if (dt.Rows.Count == 0)
                             {
-                                MessageBox.Show("من فضلك قم بكتابه بيانات العميل");
-                                return;
+                                cu.AddCustomer(txt_Name.Text, txt_address.Text, cmb_customer.Text);
+                                txt_cust.Clear();
+                                txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
+                            }
+                            else
+                            {
+                                cu.UpdateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), txt_address.Text, cmb_customer.Text, txt_Name.Text);
+                                txt_cust.Clear();
+                                txt_cust.Text = cmb_customer.SelectedValue.ToString();
                             }
 
-                            cu.AddCustomer(textEdit1.Text, txt_address.Text, txt_phones.Text);
-                            txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
-
                             o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
-                               0,Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text),
-                              "Take away", Convert.ToInt32(txt_cust.Text));
-
-                        }
+                                 0,Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text),
+                                "Take away", Convert.ToInt32(txt_cust.Text));
+                          
+                        
                         o.AddTakeAway(Convert.ToInt32(Lable_Num.Text));
 
                         MessageBox.Show("تم تعليق الفاتوره بعد التعديل بنجاح", "عمليه التعليق", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
@@ -2291,55 +2135,47 @@ namespace Restuarnt.PL
                             return;
                         }
 
-                        if (rdb_clientsave.Checked == true)
-                        {
-                            if (cmb_customer.Text == "" && txt_address.Text == "" && txt_phones.Text == "")
+                      
+                            if (cmb_customer.Text == "" || txt_address.Text == "" || txt_Name.Text == "")
                             {
                                 MessageBox.Show("من فضلك قم باادخال بيانات العميل كامله");
                                 return;
                             }
-                            
-                                cu.UpdateCustomer(Convert.ToInt32(cmb_customer.EditValue), txt_address.Text, txt_phones.Text);
 
-                                o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
-                                0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text),
-                                "Delivery", Convert.ToInt32(cmb_customer.EditValue));
-                           
-                        }
-                        else if (rdb_newclient.Checked == true)
-                        {
-
-                            if (textEdit1.Text == "" || txt_phones.Text == "" || txt_address.Text == "")
+                            dt.Clear();
+                            dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), cmb_customer.Text);
+                            if (dt.Rows.Count == 0)
                             {
-                                MessageBox.Show("من فضلك قم بكتابه بيانات العميل");
-                                return;
+                                cu.AddCustomer(txt_Name.Text, txt_address.Text, cmb_customer.Text);
+                                txt_cust.Clear();
+                                txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
                             }
-
-
-                            cu.AddCustomer(textEdit1.Text, txt_address.Text, txt_phones.Text);
-                            txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
-
+                            else
+                            {
+                                cu.UpdateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), txt_address.Text, cmb_customer.Text, txt_Name.Text);
+                                txt_cust.Clear();
+                                txt_cust.Text = cmb_customer.SelectedValue.ToString();
+                            }
                             o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
-                              0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text),
-                              "Delivery", Convert.ToInt32(txt_cust.Text));
-
-                        }
+                                0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text),
+                                "Delivery", Convert.ToInt32(txt_cust.Text));
+                           
+                        
                         MessageBox.Show("تم تعليق الفاتوره بعد التعديل بنجاح", "عمليه التعليق", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                         o.AddDelivery(Convert.ToInt32(Lable_Num.Text), Convert.ToInt32(cmb_delivery.SelectedValue));
-
-
                     }
 
                     else if (rdb_sala.Checked == true)
                     {
-                        textEdit1.Text = "عميل نقدى";
+                        txt_Name.Text = "عميل نقدى";
 
                         if (cmb_Table.Text == "")
                         {
                             MessageBox.Show("من فضلك قم بتسجيل رقم الطاولة ");
                             return;
                         }
-                        cu.AddCustomerTakeAway(textEdit1.Text);
+                        cu.AddCustomerTakeAway(txt_Name.Text);
+                        txt_cust.Clear();
                         txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
 
                         o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
@@ -2953,6 +2789,66 @@ namespace Restuarnt.PL
         private void groupControl2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            InformationClient();
+        }
+
+        private void comboBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            InformationClient();
+        }
+
+        private void comboBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            InformationClient();
+        }
+
+        private void comboBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            InformationClient();
+        }
+
+        private void cmb_customer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cmb_customer_KeyUp(object sender, KeyEventArgs e)
+        {
+           
+        }
+
+        private void cmb_customer_MouseUp(object sender, MouseEventArgs e)
+        {
+           
+        }
+
+        private void cmb_customer_MouseEnter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cmb_customer_MouseHover(object sender, EventArgs e)
+        {
+            InformationClient();
+        }
+
+        private void cmb_customer_MouseMove(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void cmb_customer_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void cmb_customer_DropDown(object sender, EventArgs e)
+        {
+           
         }
     }
 }

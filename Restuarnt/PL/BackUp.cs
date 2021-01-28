@@ -16,6 +16,8 @@ namespace Restuarnt.PL
     {
         SqlConnection con = new SqlConnection(@" server =.\SQLEXPRESS; database=DB_A54A03_Resturant;integrated security=true");
         SqlCommand cmd;
+     //   SqlConnection con = new SqlConnection(@" server =.; database=DB_A54A03_Resturant;integrated security=true");
+
         public BackUp()
         {
             InitializeComponent();

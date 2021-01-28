@@ -28,18 +28,19 @@ namespace Restuarnt.BL
             da.excutequery("AddCustomer", param);
             da.close();
         }
-        internal void UpdateCustomer(int id, string address, string phone)
+        internal void UpdateCustomer(int id, string address, string phone,string Name)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[3];
+            SqlParameter[] param = new SqlParameter[4];
             param[0] = new SqlParameter("@id", SqlDbType.Int);
             param[0].Value = id;
             param[1] = new SqlParameter("@Adsress", SqlDbType.NVarChar, 250);
             param[1].Value = address;
             param[2] = new SqlParameter("@phone", SqlDbType.VarChar, 100);
             param[2].Value = phone;
-   
+            param[3] = new SqlParameter("@Name", SqlDbType.NVarChar, 50);
+            param[3].Value = Name;
 
             da.excutequery("UpdateCustomer", param);
             da.close();
@@ -58,7 +59,7 @@ namespace Restuarnt.BL
             da.close();
         }
 
-        internal DataTable VildateCustomer(int id,string name)
+        internal DataTable VildateCustomer(int id,string @Phone)
         {
             DataTable dt = new DataTable();
 
@@ -67,8 +68,8 @@ namespace Restuarnt.BL
             SqlParameter[] param = new SqlParameter[2];
             param[0] = new SqlParameter("@id", SqlDbType.Int);
             param[0].Value = id;
-            param[1] = new SqlParameter("@name", SqlDbType.NVarChar,250);
-            param[1].Value = name;
+            param[1] = new SqlParameter("@Phone", SqlDbType.VarChar,50);
+            param[1].Value = Phone;
 
 
             dt = da.selected("VildateCustomer", param);
