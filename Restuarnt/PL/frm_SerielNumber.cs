@@ -17,23 +17,29 @@ namespace Restuarnt.PL
         {
             InitializeComponent();
         }
-        string x = "0";
+        string x;
+        public void valid()
+        {
+
+           
+            string serial = IDENTIFIER("Win32_DisKDrive", "SerialNumber");
+            string signature = IDENTIFIER("Win32_DisKDrive", "signature");
+            textBox1.Text = signature;//رقم الهارد
+            textBox2.Text = serial;//رقم الماذر 0بورد
+
+            //x = (Convert.ToDecimal(signature) * 12345 - 3).ToString();
+            //x = serial +"Titonasser1994";
+            x = $"{serial}Titonasser1994";
+            //x = (Convert.ToDecimal(x) + Convert.ToDecimal(signature)).ToString();
+        }
+      
      
         public void frm_SerielNumber_Load(object sender, EventArgs e)
         {
             try
             {
+                valid();
 
-
-
-                string serial = IDENTIFIER("Win32_DisKDrive", "SerialNumber");
-                string signature = IDENTIFIER("Win32_DisKDrive", "signature");
-                textBox1.Text = signature;//رقم الهارد
-                textBox2.Text = serial;//رقم الماذر 0بورد
-
-                x = (Convert.ToDecimal(signature) * 12345 - 3).ToString();
-
-                x = (Convert.ToDecimal(x) + Convert.ToDecimal(signature)).ToString();
             }
             catch (Exception ex)
             {
@@ -83,6 +89,7 @@ namespace Restuarnt.PL
                 MessageBox.Show("من فضلك قم باادخال كود التفعيل لتسجيل عمليه الدخول", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+                valid();
             if (textBox3.Text==x)
             {
                 MessageBox.Show("تم تفعيل البرنامج بنجاح","تأكيد",MessageBoxButtons.OK,MessageBoxIcon.Information);

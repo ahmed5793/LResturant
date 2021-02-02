@@ -45,8 +45,10 @@ namespace Restuarnt.PL
             tbl = st.SelectSettingPrintOrder();
 
             if (tbl.Rows.Count >0)
-            {
-                txtName.Text = tbl.Rows[0][0].ToString();
+                {
+                    byte[] image = (byte[])tbl.Rows[0][0];
+                    MemoryStream f = new MemoryStream(image);
+                    pictureLogo.Image = Image.FromStream(f);
                 txtAddress.Text = tbl.Rows[0][1].ToString();
                 txtDescription.Text = tbl.Rows[0][2].ToString();
                 txtPhone1.Text = tbl.Rows[0][3].ToString();
@@ -222,16 +224,6 @@ namespace Restuarnt.PL
             //    MessageBox.Show(ex.Message);
             //}
         }
-      //  string imagePath = "";
-        private void btnChoose_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void btndelete_Click(object sender, EventArgs e)
-        {
-
-        }
         //function to convert image to byte and save it in DB
         private void saveImage(string stmt, string paramaterName, string message)
         {
@@ -244,11 +236,11 @@ namespace Restuarnt.PL
             try
             {
 
-            if (txtName.Text == "")
-            {
-                MessageBox.Show("من فضلك اكتب اسم الشركة", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            //if (txtName.Text == "")
+            //{
+            //    MessageBox.Show("من فضلك اكتب اسم الشركة", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    return;
+            //}
 
                 if (cbxPrinterClient.Text == "")
                 {
@@ -357,11 +349,39 @@ namespace Restuarnt.PL
              tbl = st.SelectSettingPrintOrder();
             if (tbl.Rows.Count > 0)
             {
-                st.UpdateSettingPrint(txtName.Text, txtAddress.Text, txtDescription.Text, txtPhone1.Text, txtPhone2.Text);
-            }
+                    if (imagePath == "")
+                    {
+                        st.UpdateSettingPrint((byte[])tbl.Rows[0][0], txtAddress.Text, txtDescription.Text, txtPhone1.Text, txtPhone2.Text);
+
+                        // m.UpdateMenu(txt_name.Text, Convert.ToDecimal(txt_seeling.Text), Convert.ToInt32(lable_num.Text), Convert.ToInt32(comboBox1.SelectedValue), (byte[])layoutView1.GetFocusedRowCellValue("Images"));
+                    }
+                    else
+                    {
+
+                        FileStream filestream = new FileStream(imagePath, FileMode.Open, FileAccess.Read);
+                        Byte[] bytestream = new Byte[filestream.Length];
+                        filestream.Read(bytestream, 0, bytestream.Length);
+                        filestream.Close();
+                        st.UpdateSettingPrint(bytestream, txtAddress.Text, txtDescription.Text, txtPhone1.Text, txtPhone2.Text);
+
+                    }
+
+                }
             else
             {
-                st.AddSettingPrint(txtName.Text, txtAddress.Text, txtDescription.Text, txtPhone1.Text, txtPhone2.Text);
+
+                    if (imagePath == "")
+                    {
+                        imagePath = Application.StartupPath + @"\Resources" + @"\image-not-found-scaled-1150x6471.png";
+
+                    }
+
+                    //convert image to byte save in db
+                    FileStream filestream = new FileStream(imagePath, FileMode.Open, FileAccess.Read);
+                    Byte[] bytestream = new Byte[filestream.Length];
+                    filestream.Read(bytestream, 0, bytestream.Length);
+                    filestream.Close();
+                    st.AddSettingPrint(bytestream, txtAddress.Text, txtDescription.Text, txtPhone1.Text, txtPhone2.Text);
             }
                 MessageBox.Show("تم الحفظ بنجاح", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -438,6 +458,31 @@ namespace Restuarnt.PL
         private void Txt_DeliveryService_Click(object sender, EventArgs e)
         {
             Txt_DeliveryService.SelectAll();
+        }
+
+        private void btnChoose_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "All Files (*.*) | *.*";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+
+                imagePath = openFileDialog.FileName.ToString();
+                pictureLogo.Image = null;
+                pictureLogo.ImageLocation = imagePath;
+            }
+        }
+        string imagePath = "";
+        private void btndelete_Click(object sender, EventArgs e)
+        {
+            pictureLogo.BackgroundImage = Properties.Resources.image_not_found_scaled_1150x647;
+            pictureLogo.Image = Properties.Resources.image_not_found_scaled_1150x647;
+            imagePath = Application.StartupPath + @"\Resources" + @"\image-not-found-scaled-1150x6471.png";
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

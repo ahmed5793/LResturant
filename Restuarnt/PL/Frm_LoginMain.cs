@@ -281,7 +281,7 @@ namespace Restuarnt.PL
 
         private void Frm_LoginMain_Load(object sender, EventArgs e)
         {
-            //CreateDataBase();
+            
             CreateDataBase();
         }
 
@@ -486,14 +486,14 @@ namespace Restuarnt.PL
 
 
 
-                    dt.Clear();
-                    dt = o.SelectMangmentOrders();
-                    if (dt.Rows.Count > 20)
-                    {
-                        MessageBox.Show("لقد انتهت عدد الفواتير بالنسبة للنسخه التجريبية لابد من تفعيل النسخه المدفوعه");
-                        this.Close();
-                        return;
-                    }
+                    //dt.Clear();
+                    //dt = o.SelectMangmentOrders();
+                    //if (dt.Rows.Count > 20)
+                    //{
+                    //    MessageBox.Show("لقد انتهت عدد الفواتير بالنسبة للنسخه التجريبية لابد من تفعيل النسخه المدفوعه");
+                    //    this.Close();
+                    //    return;
+                    //}
 
                     if (txt_User.Text == "")
                     {

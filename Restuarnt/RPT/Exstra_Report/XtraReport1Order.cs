@@ -11,6 +11,7 @@ using Restuarnt.BL;
 using Restuarnt.PL;
 using DevExpress.ClipboardSource.SpreadsheetML;
 using Restuarnt.Bl;
+using System.IO;
 
 namespace Restuarnt.RPT.Exstra_Report
 {
@@ -27,8 +28,11 @@ namespace Restuarnt.RPT.Exstra_Report
           dt= sp.SelectSettingPrintOrder();
             if (dt.Rows.Count>0)
             {
+                byte[] image = (byte[])dt.Rows[0][0];
+                MemoryStream f = new MemoryStream(image);
+                xrPictureBox1.Image = Image.FromStream(f);
 
-                Txt_CompanyName.Text = dt.Rows[0][0].ToString();
+                //Txt_CompanyName.Text = dt.Rows[0][0].ToString();
                 TxtMessage.Text = dt.Rows[0][2].ToString();
                 Txt_Delivery.Text = dt.Rows[0][3].ToString();
             }

@@ -11,14 +11,14 @@ namespace Restuarnt.Bl
 {
     class SettingPrint
     {
-        internal void AddSettingPrint(string Name_Company, string Addres, string Bottom_Note, string Phone1, string Phone2)
+        internal void AddSettingPrint(byte [] @LOGO, string Addres, string Bottom_Note, string Phone1, string Phone2)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
             SqlParameter[] param = new SqlParameter[5];
 
-            param[0] = new SqlParameter("@Name_Company", SqlDbType.NVarChar, 200);
-            param[0].Value = Name_Company;
+            param[0] = new SqlParameter("@LOGO", SqlDbType.Image);
+            param[0].Value = LOGO;
             param[1] = new SqlParameter("@Addres", SqlDbType.NVarChar, 200);
             param[1].Value = Addres;
             param[2] = new SqlParameter("Bottom_Note", SqlDbType.NVarChar, 250);
@@ -31,14 +31,14 @@ namespace Restuarnt.Bl
             da.excutequery("AddSettingPrint", param);
             da.close();
         }
-        internal void UpdateSettingPrint(string Name_Company, string Addres,string Bottom_Note, string Phone1,string Phone2)
+        internal void UpdateSettingPrint(byte[] LOGO, string Addres,string Bottom_Note, string Phone1,string Phone2)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
             SqlParameter[] param = new SqlParameter[5];
 
-            param[0] = new SqlParameter("@Name_Company", SqlDbType.NVarChar, 200);
-            param[0].Value = Name_Company;
+            param[0] = new SqlParameter("@LOGO", SqlDbType.Image);
+            param[0].Value = LOGO;
             param[1] = new SqlParameter("@Addres", SqlDbType.NVarChar, 200);
             param[1].Value = Addres;
             param[2] = new SqlParameter("Bottom_Note", SqlDbType.NVarChar, 250);

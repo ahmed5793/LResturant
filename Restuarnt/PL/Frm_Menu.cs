@@ -274,5 +274,10 @@ namespace Restuarnt.PL
         {
             txt_seeling.SelectAll();
         }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
