@@ -35,6 +35,7 @@
             this.Txt_key = new DevExpress.XtraEditors.TextEdit();
             this.txt_proudect = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Txt_key.Properties)).BeginInit();
@@ -50,7 +51,7 @@
             this.groupControl1.Controls.Add(this.Txt_key);
             this.groupControl1.Controls.Add(this.txt_proudect);
             this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Location = new System.Drawing.Point(12, 12);
+            this.groupControl1.Location = new System.Drawing.Point(12, 47);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(478, 165);
             this.groupControl1.TabIndex = 5;
@@ -62,7 +63,8 @@
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(163, 39);
             this.simpleButton1.TabIndex = 10;
-            this.simpleButton1.Text = "Generiate";
+            this.simpleButton1.Text = "Register";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // labelControl3
             // 
@@ -85,6 +87,7 @@
             // 
             this.txt_proudect.Location = new System.Drawing.Point(148, 41);
             this.txt_proudect.Name = "txt_proudect";
+            this.txt_proudect.Properties.ReadOnly = true;
             this.txt_proudect.Size = new System.Drawing.Size(304, 20);
             this.txt_proudect.TabIndex = 1;
             // 
@@ -98,14 +101,26 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Proudect ID";
             // 
+            // simpleButton2
+            // 
+            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.simpleButton2.Location = new System.Drawing.Point(448, -5);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(39, 39);
+            this.simpleButton2.TabIndex = 11;
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
             // Regeistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(503, 194);
+            this.ClientSize = new System.Drawing.Size(499, 224);
+            this.ControlBox = false;
+            this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.groupControl1);
             this.Name = "Regeistration";
             this.Text = "Regeistration";
+            this.Load += new System.EventHandler(this.Regeistration_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -123,5 +138,6 @@
         private DevExpress.XtraEditors.TextEdit Txt_key;
         private DevExpress.XtraEditors.TextEdit txt_proudect;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }

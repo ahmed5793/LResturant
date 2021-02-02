@@ -37,14 +37,14 @@
             this.Txt_key = new DevExpress.XtraEditors.TextEdit();
             this.Txt_Day = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_Licence = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.Cmb_Licence = new DevExpress.XtraEditors.ComboBoxEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_proudect.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Txt_key.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Txt_Day.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Licence.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cmb_Licence.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -52,7 +52,7 @@
             this.groupControl1.Appearance.ForeColor = System.Drawing.Color.Blue;
             this.groupControl1.Appearance.Options.UseForeColor = true;
             this.groupControl1.Controls.Add(this.simpleButton1);
-            this.groupControl1.Controls.Add(this.txt_Licence);
+            this.groupControl1.Controls.Add(this.Cmb_Licence);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.Txt_key);
             this.groupControl1.Controls.Add(this.Txt_Day);
@@ -126,27 +126,28 @@
             this.labelControl4.TabIndex = 5;
             this.labelControl4.Text = "Experience Day";
             // 
-            // txt_Licence
+            // Cmb_Licence
             // 
-            this.txt_Licence.Location = new System.Drawing.Point(148, 80);
-            this.txt_Licence.Name = "txt_Licence";
-            this.txt_Licence.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.Cmb_Licence.Location = new System.Drawing.Point(148, 80);
+            this.Cmb_Licence.Name = "Cmb_Licence";
+            this.Cmb_Licence.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txt_Licence.Properties.Items.AddRange(new object[] {
+            this.Cmb_Licence.Properties.Items.AddRange(new object[] {
             "FULL",
             "TRIAL"});
-            this.txt_Licence.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.txt_Licence.Size = new System.Drawing.Size(304, 20);
-            this.txt_Licence.TabIndex = 9;
+            this.Cmb_Licence.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.Cmb_Licence.Size = new System.Drawing.Size(304, 20);
+            this.Cmb_Licence.TabIndex = 9;
             // 
             // simpleButton1
             // 
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(196, 191);
+            this.simpleButton1.Location = new System.Drawing.Point(178, 195);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(163, 39);
             this.simpleButton1.TabIndex = 10;
             this.simpleButton1.Text = "Generiate";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // Generate
             // 
@@ -156,13 +157,14 @@
             this.Controls.Add(this.groupControl1);
             this.Name = "Generate";
             this.Text = "Generate";
+            this.Load += new System.EventHandler(this.Generate_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_proudect.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Txt_key.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Txt_Day.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Licence.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cmb_Licence.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -171,7 +173,7 @@
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.ComboBoxEdit txt_Licence;
+        private DevExpress.XtraEditors.ComboBoxEdit Cmb_Licence;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit Txt_key;
         private DevExpress.XtraEditors.TextEdit Txt_Day;

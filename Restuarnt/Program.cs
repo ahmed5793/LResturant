@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Restuarnt.PL;
+using Restuarnt.Serila;
 
 namespace Restuarnt
 {
@@ -21,8 +22,8 @@ namespace Restuarnt
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //  Application.Run(new Frm_MainNew());
-             Application.Run(new frm_SerielNumber());
+              Application.Run(new Frm_LoginMain());
+             //Application.Run(new Home());
         }
     }
 }
