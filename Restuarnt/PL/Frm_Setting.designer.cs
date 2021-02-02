@@ -86,30 +86,29 @@
             // 
             // txtPhone1
             // 
-            this.txtPhone1.Location = new System.Drawing.Point(15, 371);
+            this.txtPhone1.Location = new System.Drawing.Point(6, 137);
             this.txtPhone1.Name = "txtPhone1";
-            this.txtPhone1.Size = new System.Drawing.Size(275, 36);
+            this.txtPhone1.Size = new System.Drawing.Size(275, 32);
             this.txtPhone1.TabIndex = 19;
             this.txtPhone1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPhone1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone1_KeyPress);
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(10, 433);
+            this.txtDescription.Location = new System.Drawing.Point(6, 185);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(275, 67);
+            this.txtDescription.Size = new System.Drawing.Size(275, 32);
             this.txtDescription.TabIndex = 17;
             this.txtDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(17, 116);
+            this.txtAddress.Location = new System.Drawing.Point(624, 70);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(155, 32);
+            this.txtAddress.Size = new System.Drawing.Size(240, 32);
             this.txtAddress.TabIndex = 15;
             this.txtAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtAddress.Visible = false;
             // 
             // btnSaveOrder
             // 
@@ -117,9 +116,9 @@
             this.btnSaveOrder.Appearance.Options.UseFont = true;
             this.btnSaveOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveOrder.ImageOptions.Image")));
             this.btnSaveOrder.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightTop;
-            this.btnSaveOrder.Location = new System.Drawing.Point(382, 517);
+            this.btnSaveOrder.Location = new System.Drawing.Point(421, 532);
             this.btnSaveOrder.Name = "btnSaveOrder";
-            this.btnSaveOrder.Size = new System.Drawing.Size(128, 46);
+            this.btnSaveOrder.Size = new System.Drawing.Size(128, 34);
             this.btnSaveOrder.TabIndex = 23;
             this.btnSaveOrder.Text = "حفظ ";
             this.btnSaveOrder.Click += new System.EventHandler(this.btnSaveOrder_Click);
@@ -144,7 +143,8 @@
             this.label4.BackColor = System.Drawing.Color.Black;
             this.label4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(298, 378);
+            this.label4.Location = new System.Drawing.Point(285, 141);
+            this.label4.Margin = new System.Windows.Forms.Padding(3);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 22);
             this.label4.TabIndex = 20;
@@ -156,7 +156,8 @@
             this.label6.BackColor = System.Drawing.Color.Black;
             this.label6.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(291, 453);
+            this.label6.Location = new System.Drawing.Point(285, 191);
+            this.label6.Margin = new System.Windows.Forms.Padding(3);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label6.Size = new System.Drawing.Size(150, 22);
@@ -169,12 +170,12 @@
             this.label3.BackColor = System.Drawing.Color.Black;
             this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(178, 120);
+            this.label3.Location = new System.Drawing.Point(870, 74);
+            this.label3.Margin = new System.Windows.Forms.Padding(3);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 22);
+            this.label3.Size = new System.Drawing.Size(75, 22);
             this.label3.TabIndex = 16;
-            this.label3.Text = "عنوان المطعم";
-            this.label3.Visible = false;
+            this.label3.Text = "إسم المكان";
             // 
             // label5
             // 
@@ -260,17 +261,29 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btndelete);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.btnChoose);
             this.groupBox2.Controls.Add(this.Rdb_Sala);
             this.groupBox2.Controls.Add(this.Rdb_Deleviry);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.Txt_DeliveryService);
             this.groupBox2.Controls.Add(this.Rdb_TakeAway);
+            this.groupBox2.Controls.Add(this.pictureLogo);
             this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.txtPhone1);
+            this.groupBox2.Controls.Add(this.txtDescription);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.txtAddress);
+            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(4, 296);
+            this.groupBox2.Location = new System.Drawing.Point(2, 285);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(954, 67);
+            this.groupBox2.Size = new System.Drawing.Size(954, 232);
             this.groupBox2.TabIndex = 87;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "نوع الاوردر";
+            this.groupBox2.Text = "بيانات الفاتورة";
             // 
             // Rdb_Sala
             // 
@@ -319,7 +332,7 @@
             // Txt_DeliveryService
             // 
             this.Txt_DeliveryService.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Txt_DeliveryService.Location = new System.Drawing.Point(10, 532);
+            this.Txt_DeliveryService.Location = new System.Drawing.Point(128, 91);
             this.Txt_DeliveryService.Multiline = true;
             this.Txt_DeliveryService.Name = "Txt_DeliveryService";
             this.Txt_DeliveryService.Size = new System.Drawing.Size(153, 31);
@@ -335,7 +348,8 @@
             this.label9.BackColor = System.Drawing.Color.Black;
             this.label9.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(169, 537);
+            this.label9.Location = new System.Drawing.Point(287, 92);
+            this.label9.Margin = new System.Windows.Forms.Padding(3);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 22);
             this.label9.TabIndex = 89;
@@ -417,10 +431,8 @@
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.Cmb_PrintChecken);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtAddress);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(4, 5);
+            this.groupBox1.Location = new System.Drawing.Point(2, -1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(954, 285);
             this.groupBox1.TabIndex = 88;
@@ -539,36 +551,36 @@
             // 
             // btndelete
             // 
-            this.btndelete.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.btndelete.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btndelete.Appearance.BackColor = System.Drawing.Color.Yellow;
+            this.btndelete.Appearance.BackColor2 = System.Drawing.Color.Yellow;
             this.btndelete.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.btndelete.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btndelete.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btndelete.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btndelete.Appearance.Options.UseBackColor = true;
             this.btndelete.Appearance.Options.UseBorderColor = true;
             this.btndelete.Appearance.Options.UseFont = true;
             this.btndelete.Appearance.Options.UseForeColor = true;
             this.btndelete.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.btndelete.Location = new System.Drawing.Point(651, 537);
+            this.btndelete.Location = new System.Drawing.Point(510, 188);
             this.btndelete.Name = "btndelete";
-            this.btndelete.Size = new System.Drawing.Size(97, 30);
+            this.btndelete.Size = new System.Drawing.Size(103, 30);
             this.btndelete.TabIndex = 92;
             this.btndelete.Text = "مسح الصورة";
             this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // btnChoose
             // 
-            this.btnChoose.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.btnChoose.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btnChoose.Appearance.BackColor = System.Drawing.Color.Yellow;
+            this.btnChoose.Appearance.BackColor2 = System.Drawing.Color.Yellow;
             this.btnChoose.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.btnChoose.Appearance.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChoose.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnChoose.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btnChoose.Appearance.Options.UseBackColor = true;
             this.btnChoose.Appearance.Options.UseBorderColor = true;
             this.btnChoose.Appearance.Options.UseFont = true;
             this.btnChoose.Appearance.Options.UseForeColor = true;
             this.btnChoose.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.btnChoose.Location = new System.Drawing.Point(774, 537);
+            this.btnChoose.Location = new System.Drawing.Point(510, 133);
             this.btnChoose.Name = "btnChoose";
             this.btnChoose.Size = new System.Drawing.Size(103, 30);
             this.btnChoose.TabIndex = 91;
@@ -579,9 +591,9 @@
             // 
             this.pictureLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureLogo.Image = global::Restuarnt.Properties.Resources.image_not_found_scaled_1150x647;
-            this.pictureLogo.Location = new System.Drawing.Point(593, 369);
+            this.pictureLogo.Location = new System.Drawing.Point(624, 108);
             this.pictureLogo.Name = "pictureLogo";
-            this.pictureLogo.Size = new System.Drawing.Size(313, 162);
+            this.pictureLogo.Size = new System.Drawing.Size(240, 112);
             this.pictureLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureLogo.TabIndex = 90;
             this.pictureLogo.TabStop = false;
@@ -592,11 +604,12 @@
             this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(911, 437);
+            this.label2.Location = new System.Drawing.Point(898, 159);
+            this.label2.Margin = new System.Windows.Forms.Padding(3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 22);
+            this.label2.Size = new System.Drawing.Size(47, 22);
             this.label2.TabIndex = 93;
-            this.label2.Text = "لوجو";
+            this.label2.Text = "لوجو ";
             this.label2.Visible = false;
             // 
             // Frm_Setting
@@ -605,29 +618,19 @@
             this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(978, 568);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.btndelete);
-            this.Controls.Add(this.btnChoose);
-            this.Controls.Add(this.pictureLogo);
+            this.ClientSize = new System.Drawing.Size(959, 568);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.Txt_DeliveryService);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.btnSaveOrder);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtPhone1);
-            this.Controls.Add(this.label4);
             this.Font = new System.Drawing.Font("Droid Arabic Kufi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.LookAndFeel.SkinName = "DevExpress Dark Style";
             this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(988, 600);
+            this.MaximumSize = new System.Drawing.Size(969, 600);
             this.MdiChildCaptionFormatString = "";
-            this.MinimumSize = new System.Drawing.Size(988, 600);
+            this.MinimumSize = new System.Drawing.Size(969, 600);
             this.Name = "Frm_Setting";
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -641,7 +644,6 @@
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
