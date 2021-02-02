@@ -25,11 +25,13 @@ namespace Restuarnt.PL
             string serial = IDENTIFIER("Win32_DisKDrive", "SerialNumber");
             string signature = IDENTIFIER("Win32_DisKDrive", "signature");
             textBox1.Text = signature;//رقم الهارد
-            textBox2.Text = serial;//رقم الماذر 0بورد
+            //رقم الماذر 0بورد
 
             //x = (Convert.ToDecimal(signature) * 12345 - 3).ToString();
             //x = serial +"Titonasser1994";
-            x = $"{serial}Titonasser1994";
+          
+           
+
             //x = (Convert.ToDecimal(x) + Convert.ToDecimal(signature)).ToString();
         }
       
