@@ -32,7 +32,7 @@ namespace Restuarnt.RPT.Exstra_Report
                 MemoryStream f = new MemoryStream(image);
                 xrPictureBox1.Image = Image.FromStream(f);
 
-                //Txt_CompanyName.Text = dt.Rows[0][0].ToString();
+                xrLabel10.Text = dt.Rows[0][1].ToString();
                 TxtMessage.Text = dt.Rows[0][2].ToString();
                 Txt_Delivery.Text = dt.Rows[0][3].ToString();
             }
