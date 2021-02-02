@@ -537,6 +537,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_393A30E6A63EB94E501CC6EA10DAA776"
+        "OwnerKey" = "8:_FE2F8DA98E71419BBAB76C70077835C8"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_3BC5F4D0A37F43DAA7DAFB66DB51F820"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -2049,12 +2055,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_DC4D35A9A5FE4F678D7ECFCD31364ECB"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_DDC54E41DE0D5A1ECDA6B468BF3BA485"
         "OwnerKey" = "8:_FE2F8DA98E71419BBAB76C70077835C8"
         "MsmSig" = "8:_UNDEFINED"
@@ -2259,6 +2259,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_EF98D002E64F4536AABC0760214F9689"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_F2B058FA3DD542A68E7FB8F289DE48A1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -2363,6 +2369,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_FE2F8DA98E71419BBAB76C70077835C8"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_393A30E6A63EB94E501CC6EA10DAA776"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -3446,6 +3458,37 @@
                     }
                 }
             "SourcePath" = "8:Microsoft.SqlServer.SqlTDiagM.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22FDBCB2B41C988EA5531C6F84910"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_393A30E6A63EB94E501CC6EA10DAA776"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:FoxLearn.License, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_393A30E6A63EB94E501CC6EA10DAA776"
+                    {
+                    "Name" = "8:FoxLearn.License.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:FoxLearn.License.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_6BF22FDBCB2B41C988EA5531C6F84910"
@@ -5604,26 +5647,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DC4D35A9A5FE4F678D7ECFCD31364ECB"
-            {
-            "SourcePath" = "8:..\\Restuarnt\\bin\\Debug\\scripts.sql"
-            "TargetName" = "8:scripts.sql"
-            "Tag" = "8:"
-            "Folder" = "8:_6BF22FDBCB2B41C988EA5531C6F84910"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DDC54E41DE0D5A1ECDA6B468BF3BA485"
             {
             "AssemblyRegister" = "3:1"
@@ -5794,6 +5817,26 @@
             "TargetName" = "8:restaurant-table-icon-9.jpg"
             "Tag" = "8:"
             "Folder" = "8:_99E68DCF11244703AE1441F5A13635F7"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EF98D002E64F4536AABC0760214F9689"
+            {
+            "SourcePath" = "8:..\\Restuarnt\\bin\\Debug\\scripts.sql"
+            "TargetName" = "8:scripts.sql"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22FDBCB2B41C988EA5531C6F84910"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -6083,7 +6126,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SetupFile"
         "ProductCode" = "8:{79CE85FF-5AAA-4F28-B43D-19FC0B83FF04}"
-        "PackageCode" = "8:{20BD133B-549E-4D5F-8D7F-8051E3CAD048}"
+        "PackageCode" = "8:{9F203618-F57F-4DC2-9546-EAC64BED6C89}"
         "UpgradeCode" = "8:{935E2CA3-1DAD-477A-AA6B-8A9718941B7A}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

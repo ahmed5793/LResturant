@@ -281,8 +281,8 @@ namespace Restuarnt.PL
 
         private void Frm_LoginMain_Load(object sender, EventArgs e)
         {
-            Properties.Settings.Default.Reset();
-            Properties.Settings.Default.Save();
+            //Properties.Settings.Default.Reset();
+            //Properties.Settings.Default.Save();
             CreateDataBase();
             if (Properties.Settings.Default.ProudectKey == "NO")
             {
