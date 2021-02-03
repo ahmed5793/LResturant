@@ -1618,7 +1618,7 @@ namespace Restuarnt.PL
                     {
                         Lable_Num.Text = dr[0].ToString();
                         cmb_customer.Text = dr[3].ToString();
-                        cmb_customer.ValueMember = dr[1].ToString();
+                       // cmb_customer.ValueMember = dr[1].ToString();
                         txt_cust.Text = dr[1].ToString();
                         txt_Name.Text = dr[2].ToString();
                         txt_address.Text = dr[4].ToString();

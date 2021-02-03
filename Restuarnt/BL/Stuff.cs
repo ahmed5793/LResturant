@@ -18,12 +18,12 @@ namespace Restuarnt.BL
             DataAccessLayer da = new DataAccessLayer();
             da.open();
             SqlParameter[] param = new SqlParameter[3];
-            param[0] = new SqlParameter("@stuufName", SqlDbType.NVarChar, 100);
+            param[0] = new SqlParameter("@stuufName", SqlDbType.NVarChar, 250);
             param[0].Value = name;
-            param[1] = new SqlParameter("@phone", SqlDbType.NVarChar, 50);
-            param[1].Value = address;
-            param[2] = new SqlParameter("@Address", SqlDbType.VarChar, 50);
-            param[2].Value = phone;
+            param[1] = new SqlParameter("@phone", SqlDbType.VarChar,50);
+            param[1].Value = phone;
+            param[2] = new SqlParameter("@Address", SqlDbType.NVarChar, 250);
+            param[2].Value = address;
           
             da.excutequery("AddStuuf", param);
             da.close();
@@ -60,10 +60,10 @@ namespace Restuarnt.BL
             SqlParameter[] param = new SqlParameter[4];
             param[0] = new SqlParameter("@stuufName", SqlDbType.NVarChar, 100);
             param[0].Value = name;
-            param[1] = new SqlParameter("@phone", SqlDbType.NVarChar, 50);
-            param[1].Value = address;
-            param[2] = new SqlParameter("@Address", SqlDbType.VarChar, 50);
-            param[2].Value = phone;
+            param[1] = new SqlParameter("@phone", SqlDbType.VarChar, 50);
+            param[1].Value = phone;
+            param[2] = new SqlParameter("@Address", SqlDbType.NVarChar, 250);
+            param[2].Value = address;
             param[3] = new SqlParameter("@iDStuff", SqlDbType.Int);
             param[3].Value = id;
             da.excutequery("UpdateStuuf", param);

@@ -36,7 +36,7 @@ namespace Restuarnt.PL
                 {
 
 
-                    s.AddStuuf(txt_name.Text, txt_address.Text, txt_phone.Text);
+                    s.AddStuuf(txt_name.Text, txt_phone.Text, txt_address.Text);
                     MessageBox.Show("تم الاضافه  بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     clears();
 
@@ -84,7 +84,7 @@ namespace Restuarnt.PL
                 if (MessageBox.Show("هل تريد تعديل البيانات ", "عمليه التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
 
-                    s.UpdateStuuf(txt_name.Text, txt_address.Text, txt_phone.Text, Convert.ToInt32(lable_num.Text));
+                    s.UpdateStuuf(txt_name.Text, txt_phone.Text, txt_address.Text, Convert.ToInt32(lable_num.Text));
                     MessageBox.Show("تم تعديل البيانات  بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     clears();
 
