@@ -283,8 +283,13 @@ namespace Restuarnt.PL
         {
             //Properties.Settings.Default.Reset();
             //Properties.Settings.Default.Save();
-            CreateDataBase();
-          
+            // CreateDataBase();
+
+            if (Properties.Settings.Default.ProudectKey == "NO")
+            {
+                Serila.Regeistration FS = new Serila.Regeistration();
+                FS.ShowDialog();
+            }
 
         }
 
@@ -366,8 +371,8 @@ namespace Restuarnt.PL
 
 
         //}
-       Server server = new Server(@".\SQLExpress");
-       // Server server = new Server(@".");
+     //  Server server = new Server(@".\SQLExpress");
+        Server server = new Server(@".");
 
         private void CreateDataBase()
         {
@@ -397,8 +402,8 @@ namespace Restuarnt.PL
                 var sqlQuary = script.Split(new[] { "GO" }, StringSplitOptions.RemoveEmptyEntries);
 
 
-                var CONN = new SqlConnection(@"server =.\SQLExpress;integrated security=true");
-             //   var CONN = new SqlConnection(@"server =.;integrated security=true");
+              //  var CONN = new SqlConnection(@"server =.\SQLExpress;integrated security=true");
+                var CONN = new SqlConnection(@"server =.;integrated security=true");
                 var cmd = new SqlCommand("query", CONN);
                 CONN.Open();
 
@@ -480,14 +485,7 @@ namespace Restuarnt.PL
 
 
 
-                if (Properties.Settings.Default.ProudectKey == "NO")
-                {
-                    Serila.Regeistration FS = new Serila.Regeistration();
-                    FS.ShowDialog();
-                }
-                else
-                {
-
+              
 
 
                     //dt.Clear();
@@ -541,7 +539,7 @@ namespace Restuarnt.PL
 
 
 
-                }
+                
                 
             }
             catch (Exception ex)

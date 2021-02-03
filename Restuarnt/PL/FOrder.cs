@@ -511,7 +511,7 @@ namespace Restuarnt.PL
 
                 btn.Image = Image.FromStream(f);
 
-                btn.Image = (Image)(new Bitmap(Image.FromStream(f), new Size(130, 60)));
+                btn.Image = (Image)(new Bitmap(Image.FromStream(f), new Size(150, 70)));
                 btn.ImageAlign = ContentAlignment.MiddleCenter;
                 btn.TextImageRelation = TextImageRelation.ImageAboveText;
                 // btn2.TextAlign = ContentAlignment.BottomCenter;
@@ -519,12 +519,12 @@ namespace Restuarnt.PL
                 btn.Name = "btn" + dt.Rows[i][0];
                 btn.Tag = dt.Rows[i][0];
                 btn.Text = dt.Rows[i][1].ToString();
-                btn.Font = new Font("AL-Mateen", 24f, FontStyle.Bold);
+                btn.Font = new Font("AL-Mateen", 16f, FontStyle.Bold);
                 btn.UseCompatibleTextRendering = true;
                 btn.ForeColor = Color.Black;
                 btn.BackColor = Color.Yellow;
-                btn.Height = 105;
-                btn.Width = 150;
+                btn.Height = 110;
+                btn.Width = 170;
                 btn.Click += items;
                 flowLayoutPanel1.Controls.Add(btn);
             }
