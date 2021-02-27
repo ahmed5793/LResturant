@@ -165,7 +165,7 @@ namespace Restuarnt.PL
             {
                 farm = this;
             }
-
+           // permision();
             texT.Hide();
             SelectdataTable();
             if (Properties.Settings.Default.OrderType=="صالة")
@@ -264,10 +264,46 @@ namespace Restuarnt.PL
                 }
             }
         }
+        void permision()
+        {
+          BL.Login l = new BL.Login();
+            DataTable dperm = new DataTable();
+            dperm.Clear();
+            dperm = l.Select_UserPermession(Program.Id_USer);
+            if (dperm.Rows.Count >= 1)
+            {
+                if (Convert.ToInt32(dperm.Rows[0][19]) == 0)
+                {
 
+                    Post.Visible = false;
+
+                }
+                else if (Convert.ToInt32(dperm.Rows[0][19]) == 1)
+                {
+                    Post.Visible = true;
+
+                }
+
+                if (Convert.ToInt32(dperm.Rows[0][20]) == 0)
+                {
+                   gridColumn1.Visible = false;
+                   
+
+                }
+                else if (Convert.ToInt32(dperm.Rows[0][20]) == 1)
+                {
+                    gridColumn1.Visible = true;
+                }
+
+               
+
+            }
+        }
         private void FOrder_Load(object sender, EventArgs e)
         {
-            
+         
+
+
 
             dt.Clear();
             dt = o.SELECTOrderRentALLORDER();
@@ -566,7 +602,7 @@ namespace Restuarnt.PL
             dt2.Rows.Add(r);
             Console.Beep();
             gridControl2.DataSource = dt2;
-
+             
 
             ID_Dep.Visible = false;
             Dep.Visible = false;
@@ -1566,7 +1602,7 @@ namespace Restuarnt.PL
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-           
+            
             fh.ShowDialog();
 
 
@@ -1711,6 +1747,7 @@ namespace Restuarnt.PL
                 totalInvoice();
                 TOTALFINALYDELIVERY();
                 TOTALFINALYDISCOUNT();
+                permision();
             }
 
 

@@ -45,6 +45,7 @@ namespace Restuarnt.PL
             //{
             //    farm = this;
             //}
+            permision();
 
             Name_Cust.Caption = "اسم العميل";
             Name_Cust.FieldName = "اسم العميل";
@@ -55,7 +56,31 @@ namespace Restuarnt.PL
           
            
         }
+        void permision()
+        {
+            BL.Login l = new BL.Login();
+            DataTable dperm = new DataTable();
+            dperm.Clear();
+            dperm = l.Select_UserPermession(Program.Id_USer);
+            if (dperm.Rows.Count >= 1)
+            {
+              
+               
 
+                if (Convert.ToInt32(dperm.Rows[0][21]) == 0)
+                {
+                    delete.Visible = false;
+
+                }
+                else if (Convert.ToInt32(dperm.Rows[0][21]) == 1)
+                {
+                    delete.Visible = true;
+                }
+
+            }
+        }
+
+      
         private void labelControl1_Click(object sender, EventArgs e)
         {
             
@@ -63,6 +88,7 @@ namespace Restuarnt.PL
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
+           
             if (rdb_all.Checked == true)
             {
               
@@ -242,17 +268,17 @@ namespace Restuarnt.PL
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            rdb_all.Checked = true;
-               // gridControl2.DataSource = null;
-                DeliveryService.Visible = false;
-                DeliveryService.VisibleIndex = -1;
-                Name_Cust.Caption = "اسم العميل";
-                Name_Cust.FieldName = "اسم العميل";
-                id_take.Caption = "رقم الطلب";
-                id_take.FieldName = "رقم الطلب";
-                id_take.Visible = false;
+            //rdb_all.Checked = true;
+            //   // gridControl2.DataSource = null;
+            //    DeliveryService.Visible = false;
+            //    DeliveryService.VisibleIndex = -1;
+            //    Name_Cust.Caption = "اسم العميل";
+            //    Name_Cust.FieldName = "اسم العميل";
+            //    id_take.Caption = "رقم الطلب";
+            //    id_take.FieldName = "رقم الطلب";
+            //    id_take.Visible = false;
 
-                gridControl2.DataSource = o.SELECTOrderRentALLORDER();
+            //    gridControl2.DataSource = o.SELECTOrderRentALLORDER();
             
         }
     }

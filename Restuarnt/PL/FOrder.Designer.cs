@@ -44,12 +44,12 @@
             this.Price = new DevExpress.XtraGrid.Columns.GridColumn();
             this.quantity = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Total = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Neg = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.neg = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.Post = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.repositoryItemButtonMins = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemButtonEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.repositoryItemButtonremove = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.txt_address = new DevExpress.XtraEditors.TextEdit();
             this.txt_Name = new DevExpress.XtraEditors.TextEdit();
             this.grb_delivry = new System.Windows.Forms.GroupBox();
@@ -96,8 +96,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonMins)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonremove)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_address.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Name.Properties)).BeginInit();
             this.grb_delivry.SuspendLayout();
@@ -128,8 +128,8 @@
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1,
-            this.repositoryItemButtonEdit2,
-            this.repositoryItemButtonEdit3});
+            this.repositoryItemButtonMins,
+            this.repositoryItemButtonremove});
             this.gridControl2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.gridControl2.Size = new System.Drawing.Size(596, 249);
             this.gridControl2.TabIndex = 129;
@@ -200,7 +200,7 @@
             this.Price,
             this.quantity,
             this.Total,
-            this.Neg,
+            this.neg,
             this.Post,
             this.gridColumn1});
             this.gridView2.GridControl = this.gridControl2;
@@ -220,7 +220,11 @@
             this.ID_Dep.Caption = "رقم القسم";
             this.ID_Dep.FieldName = "رقم القسم";
             this.ID_Dep.Name = "ID_Dep";
+            this.ID_Dep.OptionsColumn.AllowEdit = false;
+            this.ID_Dep.OptionsColumn.AllowMove = false;
+            this.ID_Dep.OptionsColumn.AllowShowHide = false;
             this.ID_Dep.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.ID_Dep.OptionsColumn.ReadOnly = true;
             this.ID_Dep.Visible = true;
             this.ID_Dep.VisibleIndex = 0;
             this.ID_Dep.Width = 90;
@@ -230,7 +234,11 @@
             this.Dep.Caption = "القسم";
             this.Dep.FieldName = "القسم";
             this.Dep.Name = "Dep";
+            this.Dep.OptionsColumn.AllowEdit = false;
+            this.Dep.OptionsColumn.AllowMove = false;
+            this.Dep.OptionsColumn.AllowShowHide = false;
             this.Dep.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.Dep.OptionsColumn.ReadOnly = true;
             this.Dep.Visible = true;
             this.Dep.VisibleIndex = 1;
             this.Dep.Width = 90;
@@ -240,7 +248,11 @@
             this.ID_Items.Caption = "رقم الصنف";
             this.ID_Items.FieldName = "رقم الصنف";
             this.ID_Items.Name = "ID_Items";
+            this.ID_Items.OptionsColumn.AllowEdit = false;
+            this.ID_Items.OptionsColumn.AllowMove = false;
+            this.ID_Items.OptionsColumn.AllowShowHide = false;
             this.ID_Items.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.ID_Items.OptionsColumn.ReadOnly = true;
             this.ID_Items.Visible = true;
             this.ID_Items.VisibleIndex = 2;
             this.ID_Items.Width = 106;
@@ -250,6 +262,9 @@
             this.Item_Name.Caption = "اسم الصنف";
             this.Item_Name.FieldName = "اسم الصنف";
             this.Item_Name.Name = "Item_Name";
+            this.Item_Name.OptionsColumn.AllowEdit = false;
+            this.Item_Name.OptionsColumn.AllowMove = false;
+            this.Item_Name.OptionsColumn.AllowShowHide = false;
             this.Item_Name.OptionsColumn.AllowSize = false;
             this.Item_Name.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.Item_Name.OptionsColumn.FixedWidth = true;
@@ -263,6 +278,9 @@
             this.Price.Caption = "السعر";
             this.Price.FieldName = "السعر";
             this.Price.Name = "Price";
+            this.Price.OptionsColumn.AllowEdit = false;
+            this.Price.OptionsColumn.AllowMove = false;
+            this.Price.OptionsColumn.AllowShowHide = false;
             this.Price.OptionsColumn.AllowSize = false;
             this.Price.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.Price.OptionsColumn.FixedWidth = true;
@@ -276,7 +294,10 @@
             this.quantity.Caption = "الكمية";
             this.quantity.FieldName = "الكمية";
             this.quantity.Name = "quantity";
+            this.quantity.OptionsColumn.AllowEdit = false;
             this.quantity.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.quantity.OptionsColumn.AllowMove = false;
+            this.quantity.OptionsColumn.AllowShowHide = false;
             this.quantity.OptionsColumn.AllowSize = false;
             this.quantity.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.quantity.OptionsColumn.FixedWidth = true;
@@ -290,6 +311,9 @@
             this.Total.Caption = "الأجمالي";
             this.Total.FieldName = "الأجمالي";
             this.Total.Name = "Total";
+            this.Total.OptionsColumn.AllowEdit = false;
+            this.Total.OptionsColumn.AllowMove = false;
+            this.Total.OptionsColumn.AllowShowHide = false;
             this.Total.OptionsColumn.AllowSize = false;
             this.Total.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.Total.OptionsColumn.FixedWidth = true;
@@ -298,24 +322,27 @@
             this.Total.VisibleIndex = 6;
             this.Total.Width = 40;
             // 
-            // Neg
+            // neg
             // 
-            this.Neg.AppearanceCell.BackColor = System.Drawing.Color.OrangeRed;
-            this.Neg.AppearanceCell.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Neg.AppearanceCell.Options.UseBackColor = true;
-            this.Neg.AppearanceCell.Options.UseFont = true;
-            this.Neg.ColumnEdit = this.repositoryItemButtonEdit1;
-            this.Neg.FieldName = "btn";
-            this.Neg.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
-            this.Neg.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("Neg.ImageOptions.SvgImage")));
-            this.Neg.Name = "Neg";
-            this.Neg.OptionsColumn.AllowSize = false;
-            this.Neg.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.Neg.OptionsColumn.FixedWidth = true;
-            this.Neg.OptionsColumn.ReadOnly = true;
-            this.Neg.Visible = true;
-            this.Neg.VisibleIndex = 7;
-            this.Neg.Width = 25;
+            this.neg.AppearanceCell.BackColor = System.Drawing.Color.OrangeRed;
+            this.neg.AppearanceCell.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.neg.AppearanceCell.Options.UseBackColor = true;
+            this.neg.AppearanceCell.Options.UseFont = true;
+            this.neg.ColumnEdit = this.repositoryItemButtonEdit1;
+            this.neg.FieldName = "btn";
+            this.neg.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
+            this.neg.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("neg.ImageOptions.SvgImage")));
+            this.neg.Name = "neg";
+            this.neg.OptionsColumn.AllowEdit = false;
+            this.neg.OptionsColumn.AllowMove = false;
+            this.neg.OptionsColumn.AllowShowHide = false;
+            this.neg.OptionsColumn.AllowSize = false;
+            this.neg.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.neg.OptionsColumn.FixedWidth = true;
+            this.neg.OptionsColumn.ReadOnly = true;
+            this.neg.Visible = true;
+            this.neg.VisibleIndex = 7;
+            this.neg.Width = 25;
             // 
             // repositoryItemButtonEdit1
             // 
@@ -331,11 +358,14 @@
             // 
             // Post
             // 
-            this.Post.ColumnEdit = this.repositoryItemButtonEdit2;
+            this.Post.ColumnEdit = this.repositoryItemButtonMins;
             this.Post.FieldName = "post";
             this.Post.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
             this.Post.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("Post.ImageOptions.SvgImage")));
             this.Post.Name = "Post";
+            this.Post.OptionsColumn.AllowEdit = false;
+            this.Post.OptionsColumn.AllowMove = false;
+            this.Post.OptionsColumn.AllowShowHide = false;
             this.Post.OptionsColumn.AllowSize = false;
             this.Post.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.Post.OptionsColumn.FixedWidth = true;
@@ -344,25 +374,28 @@
             this.Post.VisibleIndex = 8;
             this.Post.Width = 25;
             // 
-            // repositoryItemButtonEdit2
+            // repositoryItemButtonMins
             // 
-            this.repositoryItemButtonEdit2.AutoHeight = false;
-            this.repositoryItemButtonEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repositoryItemButtonMins.AutoHeight = false;
+            this.repositoryItemButtonMins.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Minus)});
-            this.repositoryItemButtonEdit2.LookAndFeel.SkinMaskColor = System.Drawing.Color.Red;
-            this.repositoryItemButtonEdit2.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Red;
-            this.repositoryItemButtonEdit2.LookAndFeel.SkinName = "Office 2010 Silver";
-            this.repositoryItemButtonEdit2.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.repositoryItemButtonEdit2.Name = "repositoryItemButtonEdit2";
-            this.repositoryItemButtonEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonMins.LookAndFeel.SkinMaskColor = System.Drawing.Color.Red;
+            this.repositoryItemButtonMins.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Red;
+            this.repositoryItemButtonMins.LookAndFeel.SkinName = "Office 2010 Silver";
+            this.repositoryItemButtonMins.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.repositoryItemButtonMins.Name = "repositoryItemButtonMins";
+            this.repositoryItemButtonMins.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // gridColumn1
             // 
-            this.gridColumn1.ColumnEdit = this.repositoryItemButtonEdit3;
+            this.gridColumn1.ColumnEdit = this.repositoryItemButtonremove;
             this.gridColumn1.FieldName = "Remove";
             this.gridColumn1.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
             this.gridColumn1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("gridColumn1.ImageOptions.Image")));
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.OptionsColumn.AllowMove = false;
+            this.gridColumn1.OptionsColumn.AllowShowHide = false;
             this.gridColumn1.OptionsColumn.AllowSize = false;
             this.gridColumn1.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn1.OptionsColumn.FixedWidth = true;
@@ -371,14 +404,14 @@
             this.gridColumn1.VisibleIndex = 9;
             this.gridColumn1.Width = 25;
             // 
-            // repositoryItemButtonEdit3
+            // repositoryItemButtonremove
             // 
-            this.repositoryItemButtonEdit3.AutoHeight = false;
+            this.repositoryItemButtonremove.AutoHeight = false;
             editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            this.repositoryItemButtonEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repositoryItemButtonremove.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.repositoryItemButtonEdit3.Name = "repositoryItemButtonEdit3";
-            this.repositoryItemButtonEdit3.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonremove.Name = "repositoryItemButtonremove";
+            this.repositoryItemButtonremove.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // txt_address
             // 
@@ -890,7 +923,7 @@
             this.groupControl4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupControl4.Controls.Add(this.gridControl2);
-            this.groupControl4.Location = new System.Drawing.Point(3, 261);
+            this.groupControl4.Location = new System.Drawing.Point(3, 258);
             this.groupControl4.LookAndFeel.SkinName = "Office 2016 Black";
             this.groupControl4.LookAndFeel.UseDefaultLookAndFeel = false;
             this.groupControl4.Name = "groupControl4";
@@ -1050,8 +1083,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonMins)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonremove)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_address.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Name.Properties)).EndInit();
             this.grb_delivry.ResumeLayout(false);
@@ -1111,12 +1144,8 @@
         public DevExpress.XtraGrid.GridControl gridControl2;
         public System.Windows.Forms.GroupBox grb_delivry;
         public System.Windows.Forms.ComboBox cmb_delivery;
-        private DevExpress.XtraGrid.Columns.GridColumn Neg;
+        private DevExpress.XtraGrid.Columns.GridColumn neg;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
-        private DevExpress.XtraGrid.Columns.GridColumn Post;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit3;
         private DevExpress.XtraEditors.GroupControl groupControl4;
         public DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         public DevExpress.XtraGrid.Columns.GridColumn ID_Dep;
@@ -1137,5 +1166,9 @@
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label label1;
+        public DevExpress.XtraGrid.Columns.GridColumn Post;
+        public DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonMins;
+        public DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        public DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonremove;
     }
 }

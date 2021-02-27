@@ -42,6 +42,7 @@
             this.check_AddMasrof = new System.Windows.Forms.CheckBox();
             this.check_ReportMasrofat = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.check_DeletedOrder = new System.Windows.Forms.CheckBox();
             this.check_Order = new System.Windows.Forms.CheckBox();
             this.Check_ManagementOrder = new System.Windows.Forms.CheckBox();
             this.Check_MoveItem = new System.Windows.Forms.CheckBox();
@@ -53,12 +54,16 @@
             this.Check_AddItem = new System.Windows.Forms.CheckBox();
             this.check_AddTable = new System.Windows.Forms.CheckBox();
             this.Check_AddDelivery = new System.Windows.Forms.CheckBox();
-            this.check_DeletedOrder = new System.Windows.Forms.CheckBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.check_MinsQua = new System.Windows.Forms.CheckBox();
+            this.check_DeleteItem = new System.Windows.Forms.CheckBox();
+            this.check_DeleteOrderHold = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmb_Users1
@@ -74,6 +79,7 @@
             this.cmb_Users1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_Users1.Size = new System.Drawing.Size(316, 30);
             this.cmb_Users1.TabIndex = 52;
+            this.cmb_Users1.SelectedIndexChanged += new System.EventHandler(this.cmb_Users1_SelectedIndexChanged);
             this.cmb_Users1.SelectionChangeCommitted += new System.EventHandler(this.cmb_Users1_SelectionChangeCommitted);
             // 
             // label5
@@ -113,6 +119,7 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.groupBox6);
             this.groupBox2.Controls.Add(this.groupBox5);
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.groupBox3);
@@ -134,9 +141,9 @@
             this.groupBox5.Controls.Add(this.check_Permession);
             this.groupBox5.Controls.Add(this.check_BAckUp);
             this.groupBox5.Controls.Add(this.check_Restore);
-            this.groupBox5.Location = new System.Drawing.Point(19, 28);
+            this.groupBox5.Location = new System.Drawing.Point(4, 28);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(214, 277);
+            this.groupBox5.Size = new System.Drawing.Size(188, 277);
             this.groupBox5.TabIndex = 66;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "قسم إدارة المستخدمين";
@@ -147,7 +154,7 @@
             this.check_AddUser.BackColor = System.Drawing.Color.Black;
             this.check_AddUser.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_AddUser.ForeColor = System.Drawing.Color.White;
-            this.check_AddUser.Location = new System.Drawing.Point(36, 35);
+            this.check_AddUser.Location = new System.Drawing.Point(18, 35);
             this.check_AddUser.Name = "check_AddUser";
             this.check_AddUser.Size = new System.Drawing.Size(154, 26);
             this.check_AddUser.TabIndex = 58;
@@ -160,7 +167,7 @@
             this.check_Permession.BackColor = System.Drawing.Color.Black;
             this.check_Permession.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_Permession.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.check_Permession.Location = new System.Drawing.Point(35, 88);
+            this.check_Permession.Location = new System.Drawing.Point(17, 88);
             this.check_Permession.Name = "check_Permession";
             this.check_Permession.Size = new System.Drawing.Size(155, 26);
             this.check_Permession.TabIndex = 6;
@@ -173,7 +180,7 @@
             this.check_BAckUp.BackColor = System.Drawing.Color.Black;
             this.check_BAckUp.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_BAckUp.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.check_BAckUp.Location = new System.Drawing.Point(31, 144);
+            this.check_BAckUp.Location = new System.Drawing.Point(13, 144);
             this.check_BAckUp.Name = "check_BAckUp";
             this.check_BAckUp.Size = new System.Drawing.Size(159, 26);
             this.check_BAckUp.TabIndex = 59;
@@ -186,7 +193,7 @@
             this.check_Restore.BackColor = System.Drawing.Color.Black;
             this.check_Restore.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_Restore.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.check_Restore.Location = new System.Drawing.Point(21, 201);
+            this.check_Restore.Location = new System.Drawing.Point(3, 201);
             this.check_Restore.Name = "check_Restore";
             this.check_Restore.Size = new System.Drawing.Size(178, 26);
             this.check_Restore.TabIndex = 10;
@@ -198,9 +205,9 @@
             this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.groupBox4.Controls.Add(this.check_AddMasrof);
             this.groupBox4.Controls.Add(this.check_ReportMasrofat);
-            this.groupBox4.Location = new System.Drawing.Point(273, 28);
+            this.groupBox4.Location = new System.Drawing.Point(198, 28);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(214, 277);
+            this.groupBox4.Size = new System.Drawing.Size(151, 277);
             this.groupBox4.TabIndex = 65;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "قسم المصروفات";
@@ -211,7 +218,7 @@
             this.check_AddMasrof.BackColor = System.Drawing.Color.Black;
             this.check_AddMasrof.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_AddMasrof.ForeColor = System.Drawing.Color.White;
-            this.check_AddMasrof.Location = new System.Drawing.Point(49, 54);
+            this.check_AddMasrof.Location = new System.Drawing.Point(17, 53);
             this.check_AddMasrof.Name = "check_AddMasrof";
             this.check_AddMasrof.Size = new System.Drawing.Size(125, 26);
             this.check_AddMasrof.TabIndex = 58;
@@ -224,7 +231,7 @@
             this.check_ReportMasrofat.BackColor = System.Drawing.Color.Black;
             this.check_ReportMasrofat.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_ReportMasrofat.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.check_ReportMasrofat.Location = new System.Drawing.Point(38, 117);
+            this.check_ReportMasrofat.Location = new System.Drawing.Point(6, 116);
             this.check_ReportMasrofat.Name = "check_ReportMasrofat";
             this.check_ReportMasrofat.Size = new System.Drawing.Size(136, 26);
             this.check_ReportMasrofat.TabIndex = 6;
@@ -239,12 +246,25 @@
             this.groupBox3.Controls.Add(this.Check_ManagementOrder);
             this.groupBox3.Controls.Add(this.Check_MoveItem);
             this.groupBox3.Controls.Add(this.check_UpdateOrders);
-            this.groupBox3.Location = new System.Drawing.Point(534, 28);
+            this.groupBox3.Location = new System.Drawing.Point(607, 28);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(214, 277);
+            this.groupBox3.Size = new System.Drawing.Size(178, 277);
             this.groupBox3.TabIndex = 64;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "قسم المبيعات";
+            // 
+            // check_DeletedOrder
+            // 
+            this.check_DeletedOrder.AutoSize = true;
+            this.check_DeletedOrder.BackColor = System.Drawing.Color.Black;
+            this.check_DeletedOrder.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_DeletedOrder.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.check_DeletedOrder.Location = new System.Drawing.Point(40, 225);
+            this.check_DeletedOrder.Name = "check_DeletedOrder";
+            this.check_DeletedOrder.Size = new System.Drawing.Size(113, 26);
+            this.check_DeletedOrder.TabIndex = 60;
+            this.check_DeletedOrder.Text = "سلة المهملات";
+            this.check_DeletedOrder.UseVisualStyleBackColor = false;
             // 
             // check_Order
             // 
@@ -252,7 +272,7 @@
             this.check_Order.BackColor = System.Drawing.Color.Black;
             this.check_Order.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_Order.ForeColor = System.Drawing.Color.White;
-            this.check_Order.Location = new System.Drawing.Point(45, 32);
+            this.check_Order.Location = new System.Drawing.Point(30, 35);
             this.check_Order.Name = "check_Order";
             this.check_Order.Size = new System.Drawing.Size(122, 26);
             this.check_Order.TabIndex = 58;
@@ -265,7 +285,7 @@
             this.Check_ManagementOrder.BackColor = System.Drawing.Color.Black;
             this.Check_ManagementOrder.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Check_ManagementOrder.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Check_ManagementOrder.Location = new System.Drawing.Point(54, 78);
+            this.Check_ManagementOrder.Location = new System.Drawing.Point(39, 81);
             this.Check_ManagementOrder.Name = "Check_ManagementOrder";
             this.Check_ManagementOrder.Size = new System.Drawing.Size(113, 26);
             this.Check_ManagementOrder.TabIndex = 6;
@@ -278,7 +298,7 @@
             this.Check_MoveItem.BackColor = System.Drawing.Color.Black;
             this.Check_MoveItem.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Check_MoveItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Check_MoveItem.Location = new System.Drawing.Point(49, 127);
+            this.Check_MoveItem.Location = new System.Drawing.Point(34, 130);
             this.Check_MoveItem.Name = "Check_MoveItem";
             this.Check_MoveItem.Size = new System.Drawing.Size(118, 26);
             this.Check_MoveItem.TabIndex = 59;
@@ -291,7 +311,7 @@
             this.check_UpdateOrders.BackColor = System.Drawing.Color.Black;
             this.check_UpdateOrders.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_UpdateOrders.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.check_UpdateOrders.Location = new System.Drawing.Point(52, 175);
+            this.check_UpdateOrders.Location = new System.Drawing.Point(37, 178);
             this.check_UpdateOrders.Name = "check_UpdateOrders";
             this.check_UpdateOrders.Size = new System.Drawing.Size(116, 26);
             this.check_UpdateOrders.TabIndex = 10;
@@ -392,18 +412,57 @@
             this.Check_AddDelivery.Text = "إضافة طيار";
             this.Check_AddDelivery.UseVisualStyleBackColor = false;
             // 
-            // check_DeletedOrder
+            // groupBox6
             // 
-            this.check_DeletedOrder.AutoSize = true;
-            this.check_DeletedOrder.BackColor = System.Drawing.Color.Black;
-            this.check_DeletedOrder.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.check_DeletedOrder.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.check_DeletedOrder.Location = new System.Drawing.Point(55, 222);
-            this.check_DeletedOrder.Name = "check_DeletedOrder";
-            this.check_DeletedOrder.Size = new System.Drawing.Size(113, 26);
-            this.check_DeletedOrder.TabIndex = 60;
-            this.check_DeletedOrder.Text = "سلة المهملات";
-            this.check_DeletedOrder.UseVisualStyleBackColor = false;
+            this.groupBox6.BackColor = System.Drawing.Color.Blue;
+            this.groupBox6.Controls.Add(this.check_MinsQua);
+            this.groupBox6.Controls.Add(this.check_DeleteItem);
+            this.groupBox6.Controls.Add(this.check_DeleteOrderHold);
+            this.groupBox6.Location = new System.Drawing.Point(355, 28);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(250, 277);
+            this.groupBox6.TabIndex = 65;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "التحكم في الفاتورة";
+            // 
+            // check_MinsQua
+            // 
+            this.check_MinsQua.AutoSize = true;
+            this.check_MinsQua.BackColor = System.Drawing.Color.Black;
+            this.check_MinsQua.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_MinsQua.ForeColor = System.Drawing.Color.White;
+            this.check_MinsQua.Location = new System.Drawing.Point(45, 32);
+            this.check_MinsQua.Name = "check_MinsQua";
+            this.check_MinsQua.Size = new System.Drawing.Size(123, 26);
+            this.check_MinsQua.TabIndex = 58;
+            this.check_MinsQua.Text = "نقص في الكمية";
+            this.check_MinsQua.UseVisualStyleBackColor = false;
+            // 
+            // check_DeleteItem
+            // 
+            this.check_DeleteItem.AutoSize = true;
+            this.check_DeleteItem.BackColor = System.Drawing.Color.Black;
+            this.check_DeleteItem.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_DeleteItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.check_DeleteItem.Location = new System.Drawing.Point(6, 116);
+            this.check_DeleteItem.Name = "check_DeleteItem";
+            this.check_DeleteItem.Size = new System.Drawing.Size(209, 26);
+            this.check_DeleteItem.TabIndex = 6;
+            this.check_DeleteItem.Text = "مسح صنف من شاشه التعليق";
+            this.check_DeleteItem.UseVisualStyleBackColor = false;
+            // 
+            // check_DeleteOrderHold
+            // 
+            this.check_DeleteOrderHold.AutoSize = true;
+            this.check_DeleteOrderHold.BackColor = System.Drawing.Color.Black;
+            this.check_DeleteOrderHold.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_DeleteOrderHold.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.check_DeleteOrderHold.Location = new System.Drawing.Point(45, 187);
+            this.check_DeleteOrderHold.Name = "check_DeleteOrderHold";
+            this.check_DeleteOrderHold.Size = new System.Drawing.Size(147, 26);
+            this.check_DeleteOrderHold.TabIndex = 59;
+            this.check_DeleteOrderHold.Text = "مسح فاتورة متعلقة";
+            this.check_DeleteOrderHold.UseVisualStyleBackColor = false;
             // 
             // Validate_Users
             // 
@@ -429,6 +488,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -460,5 +521,9 @@
         public System.Windows.Forms.CheckBox Check_MoveItem;
         public System.Windows.Forms.CheckBox check_UpdateOrders;
         public System.Windows.Forms.CheckBox check_DeletedOrder;
+        private System.Windows.Forms.GroupBox groupBox6;
+        public System.Windows.Forms.CheckBox check_MinsQua;
+        public System.Windows.Forms.CheckBox check_DeleteItem;
+        public System.Windows.Forms.CheckBox check_DeleteOrderHold;
     }
 }

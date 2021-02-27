@@ -61,7 +61,6 @@
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -287,6 +286,11 @@
             this.ID_Order.Caption = "رقم الفاتورة";
             this.ID_Order.FieldName = "رقم الفاتورة";
             this.ID_Order.Name = "ID_Order";
+            this.ID_Order.OptionsColumn.AllowEdit = false;
+            this.ID_Order.OptionsColumn.AllowMove = false;
+            this.ID_Order.OptionsColumn.AllowShowHide = false;
+            this.ID_Order.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.ID_Order.OptionsColumn.ReadOnly = true;
             this.ID_Order.Visible = true;
             this.ID_Order.VisibleIndex = 0;
             this.ID_Order.Width = 102;
@@ -296,6 +300,11 @@
             this.Name_Cust.Caption = "اسم العميل";
             this.Name_Cust.FieldName = "اسم العميل";
             this.Name_Cust.Name = "Name_Cust";
+            this.Name_Cust.OptionsColumn.AllowEdit = false;
+            this.Name_Cust.OptionsColumn.AllowMove = false;
+            this.Name_Cust.OptionsColumn.AllowShowHide = false;
+            this.Name_Cust.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.Name_Cust.OptionsColumn.ReadOnly = true;
             this.Name_Cust.Visible = true;
             this.Name_Cust.VisibleIndex = 1;
             this.Name_Cust.Width = 103;
@@ -305,6 +314,11 @@
             this.id_take.Caption = "رقم الطلب";
             this.id_take.FieldName = "رقم الطلب";
             this.id_take.Name = "id_take";
+            this.id_take.OptionsColumn.AllowEdit = false;
+            this.id_take.OptionsColumn.AllowMove = false;
+            this.id_take.OptionsColumn.AllowShowHide = false;
+            this.id_take.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.id_take.OptionsColumn.ReadOnly = true;
             this.id_take.Visible = true;
             this.id_take.VisibleIndex = 2;
             this.id_take.Width = 103;
@@ -314,6 +328,11 @@
             this.Date.Caption = "تاريخ الفاتورة";
             this.Date.FieldName = "تاريخ الفاتورة";
             this.Date.Name = "Date";
+            this.Date.OptionsColumn.AllowEdit = false;
+            this.Date.OptionsColumn.AllowMove = false;
+            this.Date.OptionsColumn.AllowShowHide = false;
+            this.Date.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.Date.OptionsColumn.ReadOnly = true;
             this.Date.Visible = true;
             this.Date.VisibleIndex = 3;
             this.Date.Width = 103;
@@ -323,6 +342,11 @@
             this.Total.Caption = "الاجمالي";
             this.Total.FieldName = "الاجمالي";
             this.Total.Name = "Total";
+            this.Total.OptionsColumn.AllowEdit = false;
+            this.Total.OptionsColumn.AllowMove = false;
+            this.Total.OptionsColumn.AllowShowHide = false;
+            this.Total.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.Total.OptionsColumn.ReadOnly = true;
             this.Total.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "الاجمالي", "مبيعات={0:0.##}")});
             this.Total.Visible = true;
@@ -334,6 +358,10 @@
             this.Statues.Caption = "نوع الطلب";
             this.Statues.FieldName = "نوع الطلب";
             this.Statues.Name = "Statues";
+            this.Statues.OptionsColumn.AllowEdit = false;
+            this.Statues.OptionsColumn.AllowMove = false;
+            this.Statues.OptionsColumn.AllowShowHide = false;
+            this.Statues.OptionsColumn.ReadOnly = true;
             this.Statues.Visible = true;
             this.Statues.VisibleIndex = 5;
             this.Statues.Width = 103;
@@ -343,6 +371,10 @@
             this.DeliveryService.Caption = "دليفرى";
             this.DeliveryService.FieldName = "DeliveryService";
             this.DeliveryService.Name = "DeliveryService";
+            this.DeliveryService.OptionsColumn.AllowEdit = false;
+            this.DeliveryService.OptionsColumn.AllowMove = false;
+            this.DeliveryService.OptionsColumn.AllowShowHide = false;
+            this.DeliveryService.OptionsColumn.ReadOnly = true;
             this.DeliveryService.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DeliveryService", "دليفرى={0:0.##}")});
             this.DeliveryService.Visible = true;
@@ -357,6 +389,10 @@
             this.gridColumn1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("gridColumn1.ImageOptions.Image")));
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.OptionsColumn.AllowMove = false;
+            this.gridColumn1.OptionsColumn.AllowShowHide = false;
+            this.gridColumn1.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn1.OptionsColumn.ReadOnly = true;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 7;
             this.gridColumn1.Width = 110;
@@ -378,6 +414,11 @@
             this.delete.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
             this.delete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("delete.ImageOptions.Image")));
             this.delete.Name = "delete";
+            this.delete.OptionsColumn.AllowEdit = false;
+            this.delete.OptionsColumn.AllowMove = false;
+            this.delete.OptionsColumn.AllowShowHide = false;
+            this.delete.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.delete.OptionsColumn.ReadOnly = true;
             this.delete.Visible = true;
             this.delete.VisibleIndex = 8;
             // 
@@ -409,34 +450,12 @@
             this.simpleButton2.Visible = false;
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.simpleButton3.Appearance.BackColor = System.Drawing.Color.Black;
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton3.Appearance.Options.UseBackColor = true;
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.Appearance.Options.UseForeColor = true;
-            this.simpleButton3.Appearance.Options.UseTextOptions = true;
-            this.simpleButton3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton3.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(12, -2);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(178, 27);
-            this.simpleButton3.TabIndex = 171;
-            this.simpleButton3.Text = "Refresh";
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
-            // 
             // Frm_Hold
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(880, 530);
             this.ControlBox = false;
-            this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.groupBox2);
@@ -486,6 +505,5 @@
         public DevExpress.XtraGrid.Columns.GridColumn Name_Cust;
         public DevExpress.XtraGrid.Columns.GridColumn id_take;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        public DevExpress.XtraEditors.SimpleButton simpleButton3;
     }
 }

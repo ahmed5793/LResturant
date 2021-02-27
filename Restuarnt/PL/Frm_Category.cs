@@ -199,13 +199,15 @@ namespace Restuarnt.PL
 
         private void repositoryItemButtonEdit2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            c.deleteCategory(Convert.ToInt32(layoutView1.GetFocusedRowCellValue("ID_Category")));
             if (MessageBox.Show("هل تريد المسح", "يرجي العلم في حالة مسح فئة يقوم البرنامج بمسح الاصناف المرتبطه بالفئة ديه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
 
             {
+                c.deleteCategory(Convert.ToInt32(layoutView1.GetFocusedRowCellValue("ID_Category")));
+
                 MessageBox.Show("تم المسح  بنجاح", "عمليه المسح", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 gridControl1.DataSource = c.SelectCategory();
             }
+           
 
             clear();
         }

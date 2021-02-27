@@ -263,5 +263,11 @@ namespace Restuarnt.PL
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void accordionControlElement2_Click(object sender, EventArgs e)
+        {
+            Serila.About ab = new Serila.About();
+            ab.ShowDialog();
+        }
     }
 }

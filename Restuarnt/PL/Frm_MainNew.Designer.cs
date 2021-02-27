@@ -234,6 +234,7 @@
             this.Ribon_AddSupplierMoney = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Ribon_PaySuppliers = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Ribon_MasrofatManagement = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Ribon_Masrofat = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Ribon_StockDepartment = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -291,7 +292,7 @@
             this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -1806,8 +1807,8 @@
             // 
             this.Btn_UpdateOrder.Caption = "تعديل المبيعات";
             this.Btn_UpdateOrder.Id = 96;
-            this.Btn_UpdateOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.Image")));
-            this.Btn_UpdateOrder.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.LargeImage")));
+            this.Btn_UpdateOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_UpdateOrder.ImageOptions.Image")));
+            this.Btn_UpdateOrder.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Btn_UpdateOrder.ImageOptions.LargeImage")));
             this.Btn_UpdateOrder.ItemAppearance.Hovered.BackColor = System.Drawing.Color.DarkGray;
             this.Btn_UpdateOrder.ItemAppearance.Hovered.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Bold);
             this.Btn_UpdateOrder.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Black;
@@ -1977,6 +1978,11 @@
             // 
             this.ribbonPageGroup6.ItemLinks.Add(this.Btn_UpdateOrder);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.Btn_ReciveMoney);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             // 
             // Ribon_MasrofatManagement
             // 
@@ -2913,7 +2919,6 @@
             // 
             // Item_Move
             // 
-            this.Item_Move.CurrentFrameIndex = 1;
             tileItemElement1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             tileItemElement1.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             tileItemElement1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
@@ -2972,7 +2977,6 @@
             // 
             // item_Masrod
             // 
-            this.item_Masrod.CurrentFrameIndex = 1;
             tileItemElement5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             tileItemElement5.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             tileItemElement5.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
@@ -3087,7 +3091,6 @@
             // 
             // Item_Proudct
             // 
-            this.Item_Proudct.CurrentFrameIndex = 1;
             tileItemElement13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image12")));
             tileItemElement13.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             tileItemElement13.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
@@ -3146,6 +3149,7 @@
             // 
             // Item_Mangment
             // 
+            this.Item_Mangment.CurrentFrameIndex = 1;
             tileItemElement17.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image16")));
             tileItemElement17.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             tileItemElement17.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
@@ -3189,7 +3193,6 @@
             // 
             // Item_Order
             // 
-            this.Item_Order.CurrentFrameIndex = 1;
             tileItemElement20.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image19")));
             tileItemElement20.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             tileItemElement20.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
@@ -3259,13 +3262,13 @@
             this.accordionControlSeparator2,
             this.accordionControlSeparator1,
             this.accordionControlElement1,
-            this.accordionControlElement4});
+            this.accordionControlElement4,
+            this.accordionControlElement2});
             this.accordionControl1.Location = new System.Drawing.Point(0, 186);
             this.accordionControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
             this.accordionControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.accordionControl1.Name = "accordionControl1";
-            this.accordionControl1.OptionsMinimizing.State = DevExpress.XtraBars.Navigation.AccordionControlState.Minimized;
-            this.accordionControl1.Size = new System.Drawing.Size(48, 288);
+            this.accordionControl1.Size = new System.Drawing.Size(250, 288);
             this.accordionControl1.TabIndex = 7;
             this.accordionControl1.Text = "accordionControl1";
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
@@ -3302,10 +3305,18 @@
             this.accordionControlElement4.Text = "تبديل المستخدم";
             this.accordionControlElement4.Click += new System.EventHandler(this.accordionControlElement4_Click);
             // 
-            // ribbonPageGroup7
+            // accordionControlElement2
             // 
-            this.ribbonPageGroup7.ItemLinks.Add(this.Btn_ReciveMoney);
-            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            this.accordionControlElement2.Expanded = true;
+            this.accordionControlElement2.HeaderTemplate.AddRange(new DevExpress.XtraBars.Navigation.HeaderElementInfo[] {
+            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Text),
+            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.HeaderControl),
+            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.ContextButtons),
+            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Image, DevExpress.XtraBars.Navigation.HeaderElementAlignment.Right)});
+            this.accordionControlElement2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement2.ImageOptions.Image")));
+            this.accordionControlElement2.Name = "accordionControlElement2";
+            this.accordionControlElement2.Text = "About";
+            this.accordionControlElement2.Click += new System.EventHandler(this.accordionControlElement2_Click);
             // 
             // Frm_MainNew
             // 
@@ -3493,5 +3504,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         public DevExpress.XtraBars.BarButtonItem Btn_UpdateOrder;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
     }
 }

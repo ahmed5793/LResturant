@@ -93,10 +93,7 @@ namespace Restuarnt.PL
                         else if (Convert.ToInt32(dt2.Rows[0][9]) == 1) { Check_MoveItem.Checked = true; }
 
                         /////////
-                        if (Convert.ToInt32(dt2.Rows[0][10]) == 0) { check_UpdateOrders.Checked = false; }
-
-                        else if (Convert.ToInt32(dt2.Rows[0][10]) == 1) { check_UpdateOrders.Checked = true; }
-                        ///////
+                    
                         if (Convert.ToInt32(dt2.Rows[0][11]) == 0) { check_AddMasrof.Checked = false; }
 
                         else if (Convert.ToInt32(dt2.Rows[0][11]) == 1) { check_AddMasrof.Checked = true; }
@@ -121,10 +118,26 @@ namespace Restuarnt.PL
                         if (Convert.ToInt32(dt2.Rows[0][16]) == 0) { check_Restore.Checked = false; }
                         else if (Convert.ToInt32(dt2.Rows[0][16]) == 1) { check_Restore.Checked = true; }
 
-                        ////////////
 
-                        if (Convert.ToInt32(dt2.Rows[0][17]) == 0) { check_DeletedOrder.Checked = false; }
-                        else if (Convert.ToInt32(dt2.Rows[0][17]) == 1) { check_DeletedOrder.Checked = true; }
+                        ////////////
+                        if (Convert.ToInt32(dt2.Rows[0][17]) == 0) { check_UpdateOrders.Checked = false; }
+
+                        else if (Convert.ToInt32(dt2.Rows[0][17]) == 1) { check_UpdateOrders.Checked = true; }
+                        ///////
+
+                        if (Convert.ToInt32(dt2.Rows[0][18]) == 0) { check_DeletedOrder.Checked = false; }
+                        else if (Convert.ToInt32(dt2.Rows[0][18]) == 1) { check_DeletedOrder.Checked = true; }
+                        ////////////
+                        ///
+
+                        if (Convert.ToInt32(dt2.Rows[0][19]) == 0) { check_MinsQua.Checked = false; }
+                        else if (Convert.ToInt32(dt2.Rows[0][19]) == 1) { check_MinsQua.Checked = true; }
+                        ////////////
+                        if (Convert.ToInt32(dt2.Rows[0][20]) == 0) { check_DeleteItem.Checked = false; }
+                        else if (Convert.ToInt32(dt2.Rows[0][20]) == 1) { check_DeleteItem.Checked = true; }
+                        ////////////
+                        if (Convert.ToInt32(dt2.Rows[0][21]) == 0) { check_DeleteOrderHold.Checked = false; }
+                        else if (Convert.ToInt32(dt2.Rows[0][21]) == 1) { check_DeleteOrderHold.Checked = true; }
                     }
                 }
 
@@ -154,7 +167,8 @@ namespace Restuarnt.PL
                 {
                     int AddCategory = 0, AddItem = 0, AddTable = 0, AddDelivery = 0, AddCaptin = 0
                         ,SettingOrder=0, order=0,orderManagement=0 , MoveProduct=0,RecieveMoney=0,AddMasrof=0,ReportMasrofat=0
-                       ,AddUser=0 , Permesion=0,BackUp=0,Restore=0,permession_Update=0,permession_Delete=0;
+                       ,AddUser=0 , Permesion=0,BackUp=0,Restore=0,permession_Update=0,permession_Delete=0 ,minsQua=0,deleteItem=0,
+                       deleteOrderHold=0;
 
                     if (check_AddCategory.Checked == true){ AddCategory = 1;}
                     else if (check_AddCategory.Checked == false){ AddCategory = 0;}
@@ -188,8 +202,8 @@ namespace Restuarnt.PL
                     else if (Check_MoveItem.Checked == false) { MoveProduct = 0; }
 
 
-                    if (check_UpdateOrders.Checked == true) { RecieveMoney = 1; }
-                    else if (check_UpdateOrders.Checked == false) { RecieveMoney = 0; }
+                    if (check_UpdateOrders.Checked == true) { permession_Update = 1; }
+                    else if (check_UpdateOrders.Checked == false) { permession_Update = 0; }
 
 
                     if (check_AddMasrof.Checked == true) { AddMasrof = 1; }
@@ -218,12 +232,22 @@ namespace Restuarnt.PL
 
 
 
-                    if (check_DeletedOrder.Checked == true) { permession_Update = 1; }
-                    else if (check_DeletedOrder.Checked == false) { permession_Update = 0; }
+                    if (check_DeletedOrder.Checked == true) { permession_Delete = 1; }
+                    else if (check_DeletedOrder.Checked == false) { permession_Delete = 0; }
+
+                    if (check_MinsQua.Checked == true) { minsQua = 1; }
+                    else if (check_MinsQua.Checked == false) { minsQua = 0; }
+
+
+                    if (check_DeleteItem.Checked == true) { deleteItem = 1; }
+                    else if (check_DeleteItem.Checked == false) { deleteItem = 0; }
+
+                    if (check_DeleteOrderHold.Checked == true) { deleteOrderHold = 1; }
+                    else if (check_DeleteOrderHold.Checked == false) { deleteOrderHold = 0; }
 
                     l.Update_UserPermession(Convert.ToInt32(cmb_Users1.SelectedValue), AddCategory, AddItem, AddTable, AddDelivery, 
                         AddCaptin, SettingOrder, orderManagement,order,MoveProduct, RecieveMoney, AddMasrof, ReportMasrofat, AddUser,
-                        Permesion, BackUp, Restore, permession_Update, permession_Delete);
+                        Permesion, BackUp, Restore, permession_Update, permession_Delete,minsQua,deleteItem,deleteOrderHold);
 
                     MessageBox.Show(" تم حفظ الصلاحيات للمستخدم");
                 }
@@ -234,13 +258,9 @@ namespace Restuarnt.PL
             }
         }
 
+        private void cmb_Users1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-
-
-
-
-
-
-
+        }
     }
 }

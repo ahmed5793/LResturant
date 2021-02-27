@@ -80,6 +80,8 @@
             // 
             this.Txt_key.Location = new System.Drawing.Point(148, 76);
             this.Txt_key.Name = "Txt_key";
+            this.Txt_key.Properties.PasswordChar = '*';
+            this.Txt_key.Properties.UseSystemPasswordChar = true;
             this.Txt_key.Size = new System.Drawing.Size(304, 20);
             this.Txt_key.TabIndex = 7;
             // 

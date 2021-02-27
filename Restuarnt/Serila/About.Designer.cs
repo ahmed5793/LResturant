@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.txt_name = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.Txt_key = new DevExpress.XtraEditors.LabelControl();
+            this.txt_Licence = new DevExpress.XtraEditors.LabelControl();
+            this.txt_proudect = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_proudect = new DevExpress.XtraEditors.LabelControl();
-            this.txt_Licence = new DevExpress.XtraEditors.LabelControl();
-            this.Txt_key = new DevExpress.XtraEditors.LabelControl();
-            this.txt_name = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +57,57 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(525, 179);
             this.groupControl1.TabIndex = 5;
+            // 
+            // txt_name
+            // 
+            this.txt_name.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txt_name.Appearance.Options.UseForeColor = true;
+            this.txt_name.Location = new System.Drawing.Point(200, 38);
+            this.txt_name.Name = "txt_name";
+            this.txt_name.Size = new System.Drawing.Size(5, 13);
+            this.txt_name.TabIndex = 16;
+            this.txt_name.Text = "?";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl6.Appearance.Options.UseForeColor = true;
+            this.labelControl6.Location = new System.Drawing.Point(59, 38);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(73, 13);
+            this.labelControl6.TabIndex = 15;
+            this.labelControl6.Text = "Proudect Name";
+            // 
+            // Txt_key
+            // 
+            this.Txt_key.Appearance.ForeColor = System.Drawing.Color.White;
+            this.Txt_key.Appearance.Options.UseForeColor = true;
+            this.Txt_key.Location = new System.Drawing.Point(200, 148);
+            this.Txt_key.Name = "Txt_key";
+            this.Txt_key.Size = new System.Drawing.Size(5, 13);
+            this.Txt_key.TabIndex = 14;
+            this.Txt_key.Text = "?";
+            this.Txt_key.Click += new System.EventHandler(this.Txt_key_Click);
+            // 
+            // txt_Licence
+            // 
+            this.txt_Licence.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txt_Licence.Appearance.Options.UseForeColor = true;
+            this.txt_Licence.Location = new System.Drawing.Point(200, 104);
+            this.txt_Licence.Name = "txt_Licence";
+            this.txt_Licence.Size = new System.Drawing.Size(5, 13);
+            this.txt_Licence.TabIndex = 12;
+            this.txt_Licence.Text = "?";
+            // 
+            // txt_proudect
+            // 
+            this.txt_proudect.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txt_proudect.Appearance.Options.UseForeColor = true;
+            this.txt_proudect.Location = new System.Drawing.Point(200, 68);
+            this.txt_proudect.Name = "txt_proudect";
+            this.txt_proudect.Size = new System.Drawing.Size(5, 13);
+            this.txt_proudect.TabIndex = 11;
+            this.txt_proudect.Text = "?";
             // 
             // labelControl3
             // 
@@ -88,63 +139,14 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Proudect ID";
             // 
-            // txt_proudect
-            // 
-            this.txt_proudect.Appearance.ForeColor = System.Drawing.Color.White;
-            this.txt_proudect.Appearance.Options.UseForeColor = true;
-            this.txt_proudect.Location = new System.Drawing.Point(200, 68);
-            this.txt_proudect.Name = "txt_proudect";
-            this.txt_proudect.Size = new System.Drawing.Size(5, 13);
-            this.txt_proudect.TabIndex = 11;
-            this.txt_proudect.Text = "?";
-            // 
-            // txt_Licence
-            // 
-            this.txt_Licence.Appearance.ForeColor = System.Drawing.Color.White;
-            this.txt_Licence.Appearance.Options.UseForeColor = true;
-            this.txt_Licence.Location = new System.Drawing.Point(200, 104);
-            this.txt_Licence.Name = "txt_Licence";
-            this.txt_Licence.Size = new System.Drawing.Size(5, 13);
-            this.txt_Licence.TabIndex = 12;
-            this.txt_Licence.Text = "?";
-            // 
-            // Txt_key
-            // 
-            this.Txt_key.Appearance.ForeColor = System.Drawing.Color.White;
-            this.Txt_key.Appearance.Options.UseForeColor = true;
-            this.Txt_key.Location = new System.Drawing.Point(200, 148);
-            this.Txt_key.Name = "Txt_key";
-            this.Txt_key.Size = new System.Drawing.Size(5, 13);
-            this.Txt_key.TabIndex = 14;
-            this.Txt_key.Text = "?";
-            this.Txt_key.Click += new System.EventHandler(this.Txt_key_Click);
-            // 
-            // txt_name
-            // 
-            this.txt_name.Appearance.ForeColor = System.Drawing.Color.White;
-            this.txt_name.Appearance.Options.UseForeColor = true;
-            this.txt_name.Location = new System.Drawing.Point(200, 38);
-            this.txt_name.Name = "txt_name";
-            this.txt_name.Size = new System.Drawing.Size(5, 13);
-            this.txt_name.TabIndex = 16;
-            this.txt_name.Text = "?";
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl6.Appearance.Options.UseForeColor = true;
-            this.labelControl6.Location = new System.Drawing.Point(59, 38);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(73, 13);
-            this.labelControl6.TabIndex = 15;
-            this.labelControl6.Text = "Proudect Name";
-            // 
             // About
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(549, 205);
             this.Controls.Add(this.groupControl1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "About";
             this.Text = "About";
             this.Load += new System.EventHandler(this.About_Load);

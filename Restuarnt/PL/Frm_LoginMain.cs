@@ -190,14 +190,7 @@ namespace Restuarnt.PL
 
                     /////////
 
-                    if (Convert.ToInt32(dt2.Rows[0][10]) == 0)
-                    {
-                        Frm_MainNew.getmain.Btn_ReciveMoney.Enabled = false;
-                    }
-                    else if (Convert.ToInt32(dt2.Rows[0][10]) == 1)
-                    {
-                        Frm_MainNew.getmain.Btn_ReciveMoney.Enabled = true;
-                    }
+
                     ////////
 
                     if (Convert.ToInt32(dt2.Rows[0][11]) == 0)
@@ -268,6 +261,20 @@ namespace Restuarnt.PL
                     {
                         Frm_MainNew.getmain.Btn_UpdateOrder.Enabled = true;
                     }
+
+                    if (Convert.ToInt32(dt2.Rows[0][18]) == 0)
+                    {
+                        Frm_MainNew.getmain.Btn_ReciveMoney.Enabled = false;
+                    }
+                    else if (Convert.ToInt32(dt2.Rows[0][18]) == 1)
+                    {
+                        Frm_MainNew.getmain.Btn_ReciveMoney.Enabled = true;
+                    }
+
+
+
+
+                   
                 }
 
 
@@ -485,69 +492,83 @@ namespace Restuarnt.PL
 
 
 
-              
 
 
-                    //dt.Clear();
-                    //dt = o.SelectMangmentOrders();
-                    //if (dt.Rows.Count > 20)
-                    //{
-                    //    MessageBox.Show("لقد انتهت عدد الفواتير بالنسبة للنسخه التجريبية لابد من تفعيل النسخه المدفوعه");
-                    //    this.Close();
-                    //    return;
-                    //}
 
-                    if (txt_User.Text == "")
+                //dt.Clear();
+                //dt = o.SelectMangmentOrders();
+                //if (dt.Rows.Count > 20)
+                //{
+                //    MessageBox.Show("لقد انتهت عدد الفواتير بالنسبة للنسخه التجريبية لابد من تفعيل النسخه المدفوعه");
+                //    this.Close();
+                //    return;
+                //}
+
+                if (txt_User.Text == "")
+                {
+                    MessageBox.Show("PLEASE INSERT USER NAME");
+                    return;
+                }
+                if (txt_Pass.Text == "")
+                {
+                    MessageBox.Show("PLEASE INSERT PASSWORD");
+                    return;
+                }
+
+                else
+                {
+
+
+                    DT88.Clear();
+                    DT88 = l.Logins(txt_User.Text, txt_Pass.Text);
+
+                    if (DT88.Rows.Count > 0)
                     {
-                        MessageBox.Show("PLEASE INSERT USER NAME");
-                        return;
-                    }
-                    if (txt_Pass.Text == "")
-                    {
-                        MessageBox.Show("PLEASE INSERT PASSWORD");
-                        return;
-                    }
 
+
+
+
+
+
+
+
+
+
+
+                        backgroundWorker1.RunWorkerAsync();
+
+                        Program.salesman = "";
+                        Program.salesman = DT88.Rows[0][3].ToString();
+                        Program.Id_USer = Convert.ToInt32(DT88.Rows[0][0]);
+                        Console.Beep();
+                        this.Hide();
+
+
+                        fm.ShowDialog();
+
+                    }
                     else
                     {
-
-
-                        DT88.Clear();
-                        DT88 = l.Logins(txt_User.Text, txt_Pass.Text);
-
-                        if (DT88.Rows.Count > 0)
-                        {
-
-                            backgroundWorker1.RunWorkerAsync();
-
-                            Program.salesman = "";
-                            Program.salesman = DT88.Rows[0][3].ToString();
-                            Program.Id_USer = Convert.ToInt32(DT88.Rows[0][0]);
-                            Console.Beep();
-                            this.Hide();
-
-
-                            fm.ShowDialog();
-
-                        }
-                        else
-                        {
-                            MessageBox.Show("Incorrect password or username");
-                        }
-
+                        MessageBox.Show("Incorrect password or username");
                     }
 
 
 
-                
-                
-            }
+
+
+                }
+
+                }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
 
             }
+
+
+
+
 
         }
 

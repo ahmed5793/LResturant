@@ -186,11 +186,12 @@ namespace Restuarnt.BL
         internal void Add_UserPermession(int Id_User , int Add_Category , int Add_Item ,int Add_Table , int add_Delivery,
             int Add_Captin ,int SettingOrder, int management_Oreder , int Order ,int Move_Product , int Recive_Money,
             int Add_Masrof, int Report_Masrofat, int add_User,
-          int USer_Permession, int Add_BackUp, int Add_Restore, int UpdateOrder, int DeleteOrder)
+          int USer_Permession, int Add_BackUp, int Add_Restore, int UpdateOrder, int DeleteOrder,
+        int  minsQuantity ,int DeleteItemHold ,int DeleteOrderHold )
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[19];
+            SqlParameter[] param = new SqlParameter[22];
             param[0] = new SqlParameter("@Id_User", SqlDbType.Int);
             param[0].Value = Id_User;
             param[1] = new SqlParameter("@Add_Category", SqlDbType.Int);
@@ -229,7 +230,12 @@ namespace Restuarnt.BL
             param[17].Value = UpdateOrder;
             param[18] = new SqlParameter("@Delete_Order", SqlDbType.Int);
             param[18].Value = DeleteOrder;
-
+            param[19] = new SqlParameter("@minsQuantity", SqlDbType.Int);
+            param[19].Value = minsQuantity;
+            param[20] = new SqlParameter("@DeleteItemHold", SqlDbType.Int);
+            param[20].Value = DeleteItemHold;
+            param[21] = new SqlParameter("@DeleteOrderHold", SqlDbType.Int);
+            param[21].Value = DeleteOrderHold;
             da.excutequery("Add_UserPermession", param);
             da.close();
         }
@@ -238,11 +244,12 @@ namespace Restuarnt.BL
         internal void Update_UserPermession(int Id_User, int Add_Category, int Add_Item, int Add_Table, int add_Delivery,
          int Add_Captin, int SettingOrder, int management_Oreder, int Order, int Move_Product, int Recive_Money,
          int Add_Masrof, int Report_Masrofat, int add_User,
-       int USer_Permession, int Add_BackUp, int Add_Restore, int UpdateOrder, int DeleteOrder)
+       int USer_Permession, int Add_BackUp, int Add_Restore, int UpdateOrder, int DeleteOrder,
+       int minsQuantity, int DeleteItemHold, int DeleteOrderHold)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[19];
+            SqlParameter[] param = new SqlParameter[22];
             param[0] = new SqlParameter("@Id_User", SqlDbType.Int);
             param[0].Value = Id_User;
             param[1] = new SqlParameter("@Add_Category", SqlDbType.Int);
@@ -281,6 +288,12 @@ namespace Restuarnt.BL
             param[17].Value = UpdateOrder;
             param[18] = new SqlParameter("@Delete_Order", SqlDbType.Int);
             param[18].Value = DeleteOrder;
+            param[19] = new SqlParameter("@minsQuantity", SqlDbType.Int);
+            param[19].Value = minsQuantity;
+            param[20] = new SqlParameter("@DeleteItemHold", SqlDbType.Int);
+            param[20].Value = DeleteItemHold;
+            param[21] = new SqlParameter("@DeleteOrderHold", SqlDbType.Int);
+            param[21].Value = DeleteOrderHold;
             da.excutequery("Update_UserPermession", param);
             da.close();
         }
