@@ -256,7 +256,7 @@ namespace Restuarnt.PL
 
                 byte[] image = (byte[])layoutView1.GetFocusedRowCellValue("Images");
                 MemoryStream f = new MemoryStream(image);
-
+                pictureLogo.Image = Image.FromStream(f);
 
                 btn_add.Enabled = false;
                 btn_update.Enabled = true;
@@ -264,7 +264,7 @@ namespace Restuarnt.PL
                 comboBox1.Text = layoutView1.GetFocusedRowCellValue("الفئه").ToString();
                 txt_name.Text = layoutView1.GetFocusedRowCellValue("اسم الصنف").ToString();
                 txt_seeling.Text = layoutView1.GetFocusedRowCellValue("السعر").ToString();
-                pictureLogo.Image = Image.FromStream(f);
+                
 
             }
 
@@ -276,6 +276,11 @@ namespace Restuarnt.PL
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }

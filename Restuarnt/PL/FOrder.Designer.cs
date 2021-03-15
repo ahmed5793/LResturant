@@ -580,7 +580,7 @@
             this.txt_delivery.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txt_delivery.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_delivery.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_delivery.Location = new System.Drawing.Point(446, 48);
+            this.txt_delivery.Location = new System.Drawing.Point(443, 49);
             this.txt_delivery.Multiline = true;
             this.txt_delivery.Name = "txt_delivery";
             this.txt_delivery.RightToLeft = System.Windows.Forms.RightToLeft.No;
