@@ -1159,12 +1159,12 @@
             this.tileViewcategory.OptionsTiles.ItemPadding = new System.Windows.Forms.Padding(6);
             this.tileViewcategory.OptionsTiles.ItemSize = new System.Drawing.Size(170, 120);
             this.tileViewcategory.OptionsTiles.LayoutMode = DevExpress.XtraGrid.Views.Tile.TileViewLayoutMode.Kanban;
-            this.tileViewcategory.OptionsTiles.Padding = new System.Windows.Forms.Padding(30);
+            this.tileViewcategory.OptionsTiles.Padding = new System.Windows.Forms.Padding(18);
             this.tileViewcategory.OptionsTiles.RowCount = 0;
             this.tileViewcategory.OptionsTiles.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
             this.tileViewcategory.OptionsTiles.VerticalContentAlignment = DevExpress.Utils.VertAlignment.Top;
             tileViewItemElement1.Appearance.Normal.BackColor = System.Drawing.SystemColors.HotTrack;
-            tileViewItemElement1.Appearance.Normal.Font = new System.Drawing.Font("Droid Sans Arabic", 11.75F, System.Drawing.FontStyle.Bold);
+            tileViewItemElement1.Appearance.Normal.Font = new System.Drawing.Font("Droid Sans Arabic", 17.75F, System.Drawing.FontStyle.Bold);
             tileViewItemElement1.Appearance.Normal.FontSizeDelta = 2;
             tileViewItemElement1.Appearance.Normal.FontStyleDelta = System.Drawing.FontStyle.Bold;
             tileViewItemElement1.Appearance.Normal.ForeColor = System.Drawing.Color.White;
@@ -1175,7 +1175,7 @@
             tileViewItemElement1.RowIndex = 1;
             tileViewItemElement1.Text = "Ctegory_Name";
             tileViewItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement1.TextLocation = new System.Drawing.Point(0, 5);
+            tileViewItemElement1.TextLocation = new System.Drawing.Point(0, -1);
             tileViewItemElement2.Column = this.Images;
             tileViewItemElement2.ImageOptions.ImageBorder = DevExpress.XtraEditors.TileItemElementImageBorderMode.SingleBorder;
             tileViewItemElement2.ImageOptions.ImageBorderColor = System.Drawing.Color.Red;
@@ -1195,7 +1195,7 @@
             this.tileViewcategory.TileRows.Add(tableRowDefinition3);
             this.tileViewcategory.TileRows.Add(tableRowDefinition4);
             tileViewItemElement3.Appearance.Normal.BackColor = System.Drawing.SystemColors.HotTrack;
-            tileViewItemElement3.Appearance.Normal.Font = new System.Drawing.Font("Droid Sans Arabic", 17.75F, System.Drawing.FontStyle.Bold);
+            tileViewItemElement3.Appearance.Normal.Font = new System.Drawing.Font("Droid Sans Arabic", 11.75F, System.Drawing.FontStyle.Bold);
             tileViewItemElement3.Appearance.Normal.FontSizeDelta = 2;
             tileViewItemElement3.Appearance.Normal.FontStyleDelta = System.Drawing.FontStyle.Bold;
             tileViewItemElement3.Appearance.Normal.ForeColor = System.Drawing.Color.White;
@@ -1206,7 +1206,7 @@
             tileViewItemElement3.RowIndex = 1;
             tileViewItemElement3.Text = "Ctegory_Name";
             tileViewItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement3.TextLocation = new System.Drawing.Point(0, 5);
+            tileViewItemElement3.TextLocation = new System.Drawing.Point(0, -1);
             tileViewItemElement4.Column = this.Images;
             tileViewItemElement4.ImageOptions.ImageBorder = DevExpress.XtraEditors.TileItemElementImageBorderMode.SingleBorder;
             tileViewItemElement4.ImageOptions.ImageBorderColor = System.Drawing.Color.Red;
@@ -1299,7 +1299,7 @@
             tileViewItemElement6.Appearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(130)))), ((int)(((byte)(68)))));
             tileViewItemElement6.Appearance.Normal.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(71)))), ((int)(((byte)(115)))));
             tileViewItemElement6.Appearance.Normal.BorderColor = System.Drawing.Color.Black;
-            tileViewItemElement6.Appearance.Normal.Font = new System.Drawing.Font("Arial", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileViewItemElement6.Appearance.Normal.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             tileViewItemElement6.Appearance.Normal.FontSizeDelta = 1;
             tileViewItemElement6.Appearance.Normal.FontStyleDelta = System.Drawing.FontStyle.Bold;
             tileViewItemElement6.Appearance.Normal.ForeColor = System.Drawing.Color.White;
@@ -1321,7 +1321,7 @@
             tileViewItemElement7.Appearance.Normal.BackColor = System.Drawing.Color.Red;
             tileViewItemElement7.Appearance.Normal.BackColor2 = System.Drawing.Color.Yellow;
             tileViewItemElement7.Appearance.Normal.BorderColor = System.Drawing.Color.Red;
-            tileViewItemElement7.Appearance.Normal.Font = new System.Drawing.Font("Droid Sans Arabic", 11.75F, System.Drawing.FontStyle.Bold);
+            tileViewItemElement7.Appearance.Normal.Font = new System.Drawing.Font("Droid Sans Arabic", 21.75F, System.Drawing.FontStyle.Bold);
             tileViewItemElement7.Appearance.Normal.FontSizeDelta = 2;
             tileViewItemElement7.Appearance.Normal.FontStyleDelta = System.Drawing.FontStyle.Bold;
             tileViewItemElement7.Appearance.Normal.ForeColor = System.Drawing.Color.Black;
@@ -1392,7 +1392,7 @@
             tileViewItemElement10.Appearance.Normal.BackColor = System.Drawing.Color.Red;
             tileViewItemElement10.Appearance.Normal.BackColor2 = System.Drawing.Color.Yellow;
             tileViewItemElement10.Appearance.Normal.BorderColor = System.Drawing.Color.Red;
-            tileViewItemElement10.Appearance.Normal.Font = new System.Drawing.Font("Droid Sans Arabic", 11.75F, System.Drawing.FontStyle.Bold);
+            tileViewItemElement10.Appearance.Normal.Font = new System.Drawing.Font("Droid Sans Arabic", 13.75F, System.Drawing.FontStyle.Bold);
             tileViewItemElement10.Appearance.Normal.FontSizeDelta = 2;
             tileViewItemElement10.Appearance.Normal.FontStyleDelta = System.Drawing.FontStyle.Bold;
             tileViewItemElement10.Appearance.Normal.ForeColor = System.Drawing.Color.Black;

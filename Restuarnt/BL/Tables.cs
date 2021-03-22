@@ -134,7 +134,21 @@ namespace Restuarnt.BL
             da.close();
             return dt;
         }
-        
+
+        internal DataTable validateTableOrder(int iD_Table)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@iD_Table", SqlDbType.Int);
+            param[0].Value = iD_Table;
+            dt = da.selected("validateTableOrder", param);
+            da.close();
+            return dt;
+        }
+
     }
 }
 

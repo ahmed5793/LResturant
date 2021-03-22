@@ -768,8 +768,8 @@ namespace Restuarnt.PL
             //}
         }
 
-    
 
+        DataTable dtcu = new DataTable();
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             try
@@ -794,9 +794,10 @@ namespace Restuarnt.PL
                                 dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), cmb_customer.Text);
                                 if (dt.Rows.Count == 0)
                                 {
-                                    cu.AddCustomer(txt_Name.Text, txt_address.Text, cmb_customer.Text);
+                                    dtcu.Clear();
+                                    dtcu = cu.AddCustomer(txt_Name.Text, txt_address.Text, cmb_customer.Text);
                                     txt_cust.Clear();
-                                    txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
+                                    txt_cust.Text = dtcu.Rows[0][0].ToString();
                                 }
                                 else
                                 {
@@ -840,9 +841,12 @@ namespace Restuarnt.PL
                                 dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), cmb_customer.Text);
                                 if (dt.Rows.Count == 0)
                                 {
-                                    cu.AddCustomer(txt_Name.Text, txt_address.Text, cmb_customer.Text);
+                                    dtcu.Clear();
+                                    dtcu = cu.AddCustomer(txt_Name.Text, txt_address.Text, cmb_customer.Text);
                                     txt_cust.Clear();
-                                    txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
+                                    txt_cust.Text = dtcu.Rows[0][0].ToString();
+
+                               
                                 }
                                 else
                                 {
@@ -876,9 +880,12 @@ namespace Restuarnt.PL
                                     return;
                                 }
                                 t.UpdateTablesInOrder(Convert.ToInt32(cmb_Table.SelectedValue), 0);
-                                cu.AddCustomerTakeAway(txt_Name.Text);
+                                dtcu.Clear();
+                                dtcu = cu.AddCustomerTakeAway(txt_Name.Text);
                                 txt_cust.Clear();
-                                txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
+                                txt_cust.Text = dtcu.Rows[0][0].ToString();
+                     
+                            
                                 dt.Clear();
                                 dt = o.AddOrder(Convert.ToInt32(txt_cust.Text), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
                                 Convert.ToDecimal(txt_invo.Text), 0, Convert.ToDecimal(txt_discount.Text), "Table", Program.Id_USer, "true");
@@ -1814,10 +1821,11 @@ namespace Restuarnt.PL
                                 dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), cmb_customer.Text);
                                 if (dt.Rows.Count == 0)
                                 {
-                                    cu.AddCustomer(txt_Name.Text, txt_address.Text, cmb_customer.Text);
-                                    txt_cust.Clear();
-                                    txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
-                                }
+                                dtcu.Clear();
+                                dtcu = cu.AddCustomer(txt_Name.Text, txt_address.Text, cmb_customer.Text);
+                                txt_cust.Clear();
+                                txt_cust.Text = dtcu.Rows[0][0].ToString();
+                            }
                                 else
                                 {
                                     cu.UpdateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), txt_address.Text, cmb_customer.Text, txt_Name.Text);
@@ -1861,10 +1869,11 @@ namespace Restuarnt.PL
                                 dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), cmb_customer.Text);
                                 if (dt.Rows.Count == 0)
                                 {
-                                    cu.AddCustomer(txt_Name.Text, txt_address.Text, cmb_customer.Text);
-                                    txt_cust.Clear();
-                                    txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
-                                }
+                                dtcu.Clear();
+                                dtcu = cu.AddCustomer(txt_Name.Text, txt_address.Text, cmb_customer.Text);
+                                txt_cust.Clear();
+                                txt_cust.Text = dtcu.Rows[0][0].ToString();
+                            }
                                 else
                                 {
                                     cu.UpdateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), txt_address.Text, cmb_customer.Text, txt_Name.Text);
@@ -1902,10 +1911,21 @@ namespace Restuarnt.PL
                                 MessageBox.Show("من فضلك قم بتسجيل رقم الطاولة ");
                                 return;
                             }
-                            t.UpdateTablesInOrder(Convert.ToInt32(cmb_Table.SelectedValue), 1);
-                            cu.AddCustomerTakeAway(txt_Name.Text);
+                            dt.Clear();
+                            dt = t.validateTableOrder(Convert.ToInt32(cmb_Table.SelectedValue));
+                            if (dt.Rows.Count>0)
+                            {
+                                t.UpdateTablesInOrder(Convert.ToInt32(cmb_Table.SelectedValue), 1);
+                            }
+                            else
+                            {
+                                MessageBox.Show("تم حجز الطاولة في هذا الوقت");
+                                return;
+                            }
+                        
+                            dtcu = cu.AddCustomerTakeAway(txt_Name.Text);
                             txt_cust.Clear();
-                            txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
+                            txt_cust.Text = dtcu.Rows[0][0].ToString();
                             dt.Clear();
                             dt = o.AddOrder(Convert.ToInt32(txt_cust.Text), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
                             0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text), "Table", Program.Id_USer, "true");

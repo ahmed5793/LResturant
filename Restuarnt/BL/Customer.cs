@@ -12,9 +12,10 @@ namespace Restuarnt.BL
 {
     class Customer
     {
-        internal void AddCustomer(string name, string address, string phone)
+        internal DataTable AddCustomer(string name, string address, string phone)
         {
             DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
             da.open();
             SqlParameter[] param = new SqlParameter[3];
             param[0] = new SqlParameter("@name", SqlDbType.NVarChar, 300);
@@ -25,8 +26,9 @@ namespace Restuarnt.BL
             param[2].Value = phone;
 
 
-            da.excutequery("AddCustomer", param);
+          dt=  da.selected("AddCustomer", param);
             da.close();
+            return dt;
         }
         internal void UpdateCustomer(int id, string address, string phone,string Name)
         {
@@ -45,8 +47,9 @@ namespace Restuarnt.BL
             da.excutequery("UpdateCustomer", param);
             da.close();
         }
-        internal void AddCustomerTakeAway(string name)
+        internal DataTable AddCustomerTakeAway(string name)
         {
+            DataTable dt = new DataTable();
             DataAccessLayer da = new DataAccessLayer();
             da.open();
             SqlParameter[] param = new SqlParameter[1];
@@ -55,8 +58,9 @@ namespace Restuarnt.BL
      
 
 
-            da.excutequery("AddCustomerTakeAway", param);
+           dt= da.selected("AddCustomerTakeAway", param);
             da.close();
+            return dt;
         }
 
         internal DataTable VildateCustomer(int id,string @Phone)
