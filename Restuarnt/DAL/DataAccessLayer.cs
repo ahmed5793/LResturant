@@ -16,9 +16,10 @@ namespace Restuarnt.DAL
         internal DataAccessLayer()
         {
             //  con = new SqlConnection(@"Server =.\SQLExpress;  Database = DB_A54A03_Resturant; integrated security=true");
-              con = new SqlConnection(@" server =.; database=DB_A54A03_Resturant;integrated security=true");
+             // con = new SqlConnection(@" server =.; database=DB_A54A03_Resturant;integrated security=true");
 
-            //  con = new SqlConnection("Data Source=sql5069.site4now.net; database=DB_A54A03_Resturant;User Id=DB_A54A03_Resturant_admin;Password=@TitoNasser1994;MultipleActiveResultSets=True;Max Pool Size=200;");
+              con = new SqlConnection("Data Source=SQL5103.site4now.net;Initial Catalog=DB_A54A03_Restuarnt;User Id=DB_A54A03_Restuarnt_admin;Password=Titonasser1994;MultipleActiveResultSets=True;Max Pool Size=200;");
+          
 
         }
 
