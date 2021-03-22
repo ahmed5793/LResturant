@@ -1103,7 +1103,7 @@ namespace Restuarnt.PL
 
                         dt10.Clear();
                         dt10 = o.validatePayOrder(Convert.ToInt32(Lable_Num.Text));
-                        if (dt10.Rows.Count>0)
+                        if (dt10.Rows.Count==0)
                         {
                             MessageBox.Show("تم سداد الفاتورة من قبل");
                             return;
