@@ -166,6 +166,7 @@ namespace Restuarnt.PL
                 farm = this;
             }
            // permision();
+       
             texT.Hide();
             SelectdataTable();
             if (Properties.Settings.Default.OrderType=="صالة")
@@ -191,6 +192,7 @@ namespace Restuarnt.PL
             ID_Dep.Visible = false;
             Dep.Visible = false;
             ID_Items.Visible = false;
+            cmb_customer.SelectedIndex = -1;
 
           //  txt_delivery.Enabled = false;
 
@@ -221,7 +223,7 @@ namespace Restuarnt.PL
             dt2.Columns.Add("السعر");
             dt2.Columns.Add("الكمية");
             dt2.Columns.Add("الأجمالي");
-            dt2.Columns.Add("زيادة");
+            
             gridControl2.DataSource = dt2;
         }
 
@@ -445,8 +447,8 @@ namespace Restuarnt.PL
          
             txt_Name.Text = "";
             txt_discount.Text = "0";
-            flowLayoutPanel1.Enabled = true;
-            flowLayoutPanel2.Enabled = true;
+            //flowLayoutPanel1.Enabled = true;
+            //flowLayoutPanel2.Enabled = true;
             dt2.Clear();
             txt_delivery.Text = "0";
             txt_invo.Text = "0";
@@ -473,8 +475,8 @@ namespace Restuarnt.PL
         {
 
 
-            flowLayoutPanel1.Enabled = false;
-            flowLayoutPanel2.Controls.Clear();
+            //flowLayoutPanel1.Enabled = false;
+            //flowLayoutPanel2.Controls.Clear();
             btn_hold.Enabled = false;
             gridControl2.Enabled = false;
 
@@ -530,52 +532,61 @@ namespace Restuarnt.PL
             d.Show();
         }
 
-
         public void ButtonSelectCategory()
         {
-            flowLayoutPanel1.Controls.Clear();
+            // flowLayoutPanel1.Controls.Clear();
 
 
-            dt = c.SelectCategoryCompo();
+            //dt = c.SelectCategoryCompo();
 
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                Button btn = new Button();
+            //for (int i = 0; i < dt.Rows.Count; i++)
+            //{
+            //    Button btn = new Button();
 
-                byte[] image = (byte[])dt.Rows[i][2];
-                MemoryStream f = new MemoryStream(image);
+            //    byte[] image = (byte[])dt.Rows[i][2];
+            //    MemoryStream f = new MemoryStream(image);
 
-                btn.Image = Image.FromStream(f);
+            //    btn.Image = Image.FromStream(f);
 
-                btn.Image = (Image)(new Bitmap(Image.FromStream(f), new Size(150, 70)));
-                btn.ImageAlign = ContentAlignment.MiddleCenter;
-                btn.TextImageRelation = TextImageRelation.ImageAboveText;
-                // btn2.TextAlign = ContentAlignment.BottomCenter;
+            //    btn.Image = (Image)(new Bitmap(Image.FromStream(f), new Size(150, 70)));
+            //    btn.ImageAlign = ContentAlignment.MiddleCenter;
+            //    btn.TextImageRelation = TextImageRelation.ImageAboveText;
+            //    // btn2.TextAlign = ContentAlignment.BottomCenter;
 
-                btn.Name = "btn" + dt.Rows[i][0];
-                btn.Tag = dt.Rows[i][0];
-                btn.Text = dt.Rows[i][1].ToString();
-                btn.Font = new Font("AL-Mateen", 16f, FontStyle.Bold);
-                btn.UseCompatibleTextRendering = true;
-                btn.ForeColor = Color.Black;
-                btn.BackColor = Color.Yellow;
-                btn.Height = 110;
-                btn.Width = 170;
-                btn.Click += items;
-                flowLayoutPanel1.Controls.Add(btn);
-            }
+            //    btn.Name = "btn" + dt.Rows[i][0];
+            //    btn.Tag = dt.Rows[i][0];
+            //    btn.Text = dt.Rows[i][1].ToString();
+            //    btn.Font = new Font("AL-Mateen", 16f, FontStyle.Bold);
+            //    btn.UseCompatibleTextRendering = true;
+            //    btn.ForeColor = Color.Black;
+            //    btn.BackColor = Color.Yellow;
+            //    btn.Height = 110;
+            //    btn.Width = 170;
+            //    btn.Click += items;
+
+   
+   //           items();
+            gridCategory.DataSource = c.SelectCategoryCompo();
+        
+            //    flowLayoutPanel1.Controls.Add(btn);
+
+
+            //}
+
+            // gridCategory.DataSource = c.SelectCategoryCompo();
         }
 
-        public void DataRow(object sender, EventArgs e)
+        public void DataRow()
         {
-            Button btn = sender as Button;
-            Button btn2 = sender as Button;
+           
+            //Button btn = sender as Button;
+            //Button btn2 = sender as Button;
 
             int quantity = 1;
             for (int i = 0; i < gridView2.RowCount; i++)
             {
                 DataRow row = gridView2.GetDataRow(i);
-                if (btn2.Tag.ToString() == row[2].ToString())
+                if (tileViewItem.GetFocusedRowCellValue("Item_ID").ToString() == row[2].ToString())
                 {
                     //MessageBox.Show("هذا الصنف متسجل حاليا");
                     //return;
@@ -587,22 +598,30 @@ namespace Restuarnt.PL
                     TOTALFINALYDISCOUNT();
                     Console.Beep();
                     return;
+
                 }
             }
+
+            //dt2.Columns.Add("رقم القسم");
+            //dt2.Columns.Add("القسم");
+            //dt2.Columns.Add("رقم الصنف");
+            //dt2.Columns.Add("اسم الصنف");
+            //dt2.Columns.Add("السعر");
+            //dt2.Columns.Add("الكمية");
+            //dt2.Columns.Add("الأجمالي");
+
+
             DataRow r = dt2.NewRow();
-            r[0] = btn.Tag;
-            r[1] = btn.Text;
-            r[2] = btn2.Tag;
-            r[3] = btn2.Text;
-
-            r[4] = m.PriceMenu(Convert.ToInt32(btn2.Tag)).Rows[0][0];
+            r[0] = tileViewcategory.GetFocusedRowCellValue("ID_Category");
+            r[1] = tileViewcategory.GetFocusedRowCellDisplayText("Ctegory_Name");
+            r[2] = tileViewItem.GetFocusedRowCellValue("Item_ID");
+            r[3] = tileViewItem.GetFocusedRowCellDisplayText("Item_Name");
+            r[4] = tileViewItem.GetFocusedRowCellValue("price");
             r[5] = quantity;
-
-
             dt2.Rows.Add(r);
+            
             Console.Beep();
             gridControl2.DataSource = dt2;
-             
 
             ID_Dep.Visible = false;
             Dep.Visible = false;
@@ -614,44 +633,55 @@ namespace Restuarnt.PL
             totalInvoice();
             TOTALFINALYDELIVERY();
             TOTALFINALYDISCOUNT();
+         
+
+
+
         }
-        public void items(object sender, EventArgs E)
+        public void items()
         {
             try
             {
-                flowLayoutPanel2.Controls.Clear();
-                Button btn = sender as Button;
 
-                dt = o.SelectCtegoryOrder(Convert.ToInt32(btn.Tag));
-                
-                // btn2.BackgroundImageLayout = ImageLayout.Stretch;
-                //  btn2.Size = btn2.BackgroundImage.Size;
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    Button btn2 = new Button();
+                //   gridItem.DataSource = null;
+             //   tileViewItem.Click += DataRow;
+                gridItem.DataSource= o.SelectCtegoryOrder(Convert.ToInt32(tileViewcategory.GetFocusedRowCellValue("ID_Category")));
+               
+                //flowLayoutPanel2.Controls.Clear();
+                //Button btn = sender as Button;
 
-                    byte[] image = (byte[])dt.Rows[i][2];
-                    MemoryStream f = new MemoryStream(image);
+                //dt = o.SelectCtegoryOrder(Convert.ToInt32(btn.Tag));
 
-                    btn2.Image = Image.FromStream(f);
+                //// btn2.BackgroundImageLayout = ImageLayout.Stretch;
+                ////  btn2.Size = btn2.BackgroundImage.Size;
+                //for (int i = 0; i < dt.Rows.Count; i++)
+                //{
+                //    Button btn2 = new Button();
 
-                    btn2.Image = (Image)(new Bitmap(Image.FromStream(f), new Size(162, 110)));
-                    btn2.ImageAlign = ContentAlignment.MiddleCenter;
-                    btn2.TextImageRelation = TextImageRelation.ImageAboveText;
-                    // btn2.TextAlign = ContentAlignment.BottomCenter;
+                //    byte[] image = (byte[])dt.Rows[i][2];
+                //    MemoryStream f = new MemoryStream(image);
 
-                    btn2.Name = "btn" + dt.Rows[i][0];
-                    btn2.Tag = dt.Rows[i][0];
-                    btn2.Text = dt.Rows[i][1].ToString();
-                    btn2.Font = new Font("AL-Mateen", 15f, FontStyle.Bold);
-                    btn2.UseCompatibleTextRendering = true;
-                    btn2.BackColor = Color.Yellow;
-                    btn2.ForeColor = Color.Black;
-                    btn2.Height = 150;
-                    btn2.Width = 190;
-                    btn2.Click += DataRow;
-                    flowLayoutPanel2.Controls.Add(btn2);
-                }
+                //    btn2.Image = Image.FromStream(f);
+
+                //    btn2.Image = (Image)(new Bitmap(Image.FromStream(f), new Size(162, 110)));
+                //    btn2.ImageAlign = ContentAlignment.MiddleCenter;
+                //    btn2.TextImageRelation = TextImageRelation.ImageAboveText;
+                //    // btn2.TextAlign = ContentAlignment.BottomCenter;
+
+                //    btn2.Name = "btn" + dt.Rows[i][0];
+                //    btn2.Tag = dt.Rows[i][0];
+                //    btn2.Text = dt.Rows[i][1].ToString();
+                //    btn2.Font = new Font("AL-Mateen", 15f, FontStyle.Bold);
+                //    btn2.UseCompatibleTextRendering = true;
+                //    btn2.BackColor = Color.Yellow;
+                //    btn2.ForeColor = Color.Black;
+                //    btn2.Height = 150;
+                //    btn2.Width = 190;
+
+                //    flowLayoutPanel2.Controls.Add(btn2);
+
+
+                //}
             }
             catch (Exception ex)
             {
@@ -738,7 +768,7 @@ namespace Restuarnt.PL
             //}
         }
 
-        Frm_Hold fh = new Frm_Hold();
+    
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
@@ -1528,7 +1558,8 @@ namespace Restuarnt.PL
             {
                 rdb_takeaway.Checked = true;
                 RdbTackAway();
-            }            
+            }
+            cmb_customer.SelectedIndex = -1;
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -1602,9 +1633,17 @@ namespace Restuarnt.PL
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-            
-            fh.ShowDialog();
+            Frm_Hold fh = new Frm_Hold();
+           /// fh.MdiParent = this;
+           // fh.Show(this);
 
+            //fh.TopLevel = false;
+            //xtraTabPage2.Controls.Add(fh);
+            //fh.Dock = DockStyle.Fill;
+            //xtraTabPage2.Focus();
+            //fh.Focus();
+            fh.ShowDialog();
+           
 
             if (fh.gridView2.RowCount > 0  )
             {
@@ -1617,8 +1656,8 @@ namespace Restuarnt.PL
                // cmb_delivery.Enabled = false;
               //  btn_update.Enabled = true;
 
-                flowLayoutPanel1.Enabled = true;
-                flowLayoutPanel2.Enabled = true;
+                //flowLayoutPanel1.Enabled = true;
+                //flowLayoutPanel2.Enabled = true;
                 txt_discount.Enabled = true;
                 if (fh.gridView2.GetFocusedRowCellValue("نوع الطلب").ToString() == "Delivery")
                 {
@@ -2840,12 +2879,12 @@ namespace Restuarnt.PL
 
         private void comboBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            InformationClient();
+            //InformationClient();
         }
 
         private void comboBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            InformationClient();
+            //InformationClient();
         }
 
         private void cmb_customer_SelectedIndexChanged(object sender, EventArgs e)
@@ -2858,11 +2897,6 @@ namespace Restuarnt.PL
            
         }
 
-        private void cmb_customer_MouseUp(object sender, MouseEventArgs e)
-        {
-           
-        }
-
         private void cmb_customer_MouseEnter(object sender, EventArgs e)
         {
             
@@ -2870,12 +2904,7 @@ namespace Restuarnt.PL
 
         private void cmb_customer_MouseHover(object sender, EventArgs e)
         {
-            InformationClient();
-        }
-
-        private void cmb_customer_MouseMove(object sender, MouseEventArgs e)
-        {
-            
+            //InformationClient();
         }
 
         private void cmb_customer_Click(object sender, EventArgs e)
@@ -2886,6 +2915,48 @@ namespace Restuarnt.PL
         private void cmb_customer_DropDown(object sender, EventArgs e)
         {
            
+        }
+
+        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void flowLayoutPanel2_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void FOrder_Deactivate(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void gridItem_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void gridCategory_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void tileViewcategory_ItemClick(object sender, DevExpress.XtraGrid.Views.Tile.TileViewItemClickEventArgs e)
+        {
+
+            items();
+           // gridCategory.DataSource = c.SelectCategoryCompo();
+        }
+
+        private void tileViewcategory_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tileViewItem_ItemClick(object sender, DevExpress.XtraGrid.Views.Tile.TileViewItemClickEventArgs e)
+        {
+            DataRow();
         }
     }
 }

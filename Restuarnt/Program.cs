@@ -22,7 +22,7 @@ namespace Restuarnt
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           //  Application.Run(new Home());
+          //   Application.Run(new FOrder());
            Application.Run(new Frm_LoginMain());
         }
     }

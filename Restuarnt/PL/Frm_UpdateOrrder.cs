@@ -25,7 +25,8 @@ namespace Restuarnt.PL
 
         private void Frm_UpdateOrrder_Load(object sender, EventArgs e)
         {
-           
+            FromDate.EditValue = DateTime.Now;
+            ToDate.EditValue = DateTime.Now;
         }
 
         private void dateEdit1_EditValueChanged(object sender, EventArgs e)
