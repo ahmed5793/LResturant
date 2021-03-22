@@ -998,5 +998,19 @@ namespace Restuarnt.BL
             da.excutequery("updateShwo", param);
             da.close();
         }
+
+        internal DataTable validatePayOrder(int iD_order)
+        {
+            DataTable dt = new DataTable();
+
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@iD_order", SqlDbType.Int);
+            param[0].Value = iD_order;
+            dt = da.selected("validatePayOrder", param);
+            da.close();
+            return dt;
+        }
     }
 }
