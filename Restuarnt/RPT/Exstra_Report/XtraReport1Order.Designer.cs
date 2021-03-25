@@ -121,7 +121,7 @@
             this.xrLabel15.BorderWidth = 2F;
             this.xrLabel15.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Order].[TotProd]")});
-            this.xrLabel15.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.xrLabel15.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(9.999998F, 0F);
             this.xrLabel15.Multiline = true;
             this.xrLabel15.Name = "xrLabel15";
@@ -171,7 +171,7 @@
             this.xrLabel8.BorderWidth = 2F;
             this.xrLabel8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Order].[price]")});
-            this.xrLabel8.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.xrLabel8.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(1.525879E-05F, 0F);
             this.xrLabel8.Multiline = true;
             this.xrLabel8.Name = "xrLabel8";
@@ -202,7 +202,7 @@
             this.xrLabel9.BorderWidth = 2F;
             this.xrLabel9.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Order].[Quantity]")});
-            this.xrLabel9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(1.525879E-05F, 0F);
             this.xrLabel9.Multiline = true;
             this.xrLabel9.Name = "xrLabel9";
@@ -223,7 +223,7 @@
             this.xrTableCell6.BorderWidth = 2F;
             this.xrTableCell6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Order].[Item_Name]")});
-            this.xrTableCell6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTableCell6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.xrTableCell6.Multiline = true;
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.StylePriority.UseBorders = false;
@@ -237,9 +237,9 @@
             this.xrLine1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLine1.BorderWidth = 2F;
             this.xrLine1.LineWidth = 2F;
-            this.xrLine1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 81.75005F);
+            this.xrLine1.LocationFloat = new DevExpress.Utils.PointFloat(2F, 81.75008F);
             this.xrLine1.Name = "xrLine1";
-            this.xrLine1.SizeF = new System.Drawing.SizeF(302F, 8.675766F);
+            this.xrLine1.SizeF = new System.Drawing.SizeF(295.7501F, 8.675766F);
             this.xrLine1.StylePriority.UseBorders = false;
             this.xrLine1.StylePriority.UseBorderWidth = false;
             // 
@@ -923,9 +923,9 @@
             this.DataMember = "Order";
             this.DataSource = this.dataSet11;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(0, 3, 0, 19);
+            this.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 19);
             this.PageHeight = 866;
-            this.PageWidth = 320;
+            this.PageWidth = 300;
             this.PaperKind = System.Drawing.Printing.PaperKind.Custom;
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.Id});
