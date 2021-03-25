@@ -25,7 +25,8 @@ namespace Restuarnt.RPT.Exstra_Report
         {
             
             InitializeComponent();
-          dt= sp.SelectSettingPrintOrder();
+            dt.Clear();
+            dt= sp.SelectSettingPrintOrder();
             if (dt.Rows.Count>0)
             {
                 byte[] image = (byte[])dt.Rows[0][0];
