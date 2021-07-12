@@ -179,10 +179,11 @@ namespace Restuarnt.PL
 
         private void repositoryItemButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
+            
 
             if (layoutView1.RowCount > 0)
             {
-                //convert from byte to image
+                //// convert from byte to image
                 byte[] image = (byte[])layoutView1.GetFocusedRowCellValue("Images");
                 MemoryStream f = new MemoryStream(image);
                 pictureLogo.Image = Image.FromStream(f);

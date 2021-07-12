@@ -409,7 +409,10 @@ namespace Restuarnt.PL
                             dt6 = o.PrintOrderSala(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الفاتورة")));
                             ro.Lable_TableNum.Visible = true;
                             ro.Txt_TableNum.Visible = true;
+                            ro.xrLabel11.Visible = true;
+                            ro.txtcaptin.Visible = true;
                             ro.Txt_TableNum.Text = dt6.Rows[0][1].ToString();
+                            ro.txtcaptin.Text = dt6.Rows[0][3].ToString();
                         }
 
                         ds.Tables["Order"].Clear();
@@ -572,6 +575,61 @@ namespace Restuarnt.PL
 
         private void gridControl3_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btn_report_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (gridView1.RowCount > 0)
+                {
+                    if (rdb_all.Checked == true)
+                    {
+                        decimal total = 0;
+                        for (int i = 0; i < gridView1.RowCount; i++)
+                        {
+                            DataRow r = gridView1.GetDataRow(i);
+                            total += Convert.ToDecimal(r[4]);
+                        }
+                        RPT.rptTotalDay ro = new RPT.rptTotalDay();
+                        RPT.Frm_ReportOrder s = new RPT.Frm_ReportOrder();
+
+                        //s.crystalReportViewer1.RefreshReport();
+                        ro.SetDatabaseLogon("", "", ".", "DB_A54A03_Resturant");
+                        ro.SetParameterValue("@FromDate", FromDate.EditValue);
+                        ro.SetParameterValue("@ToDate", ToDate.EditValue);
+                        ro.SetParameterValue("@total", total);
+                        //s.crystalReportViewer1.ReportSource = ro;
+
+                        System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
+                        ro.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
+                        ro.PrintToPrinter(1, true, 0, 0);
+                        ro.Close();
+                        s.Dispose();
+                    }
+                    else
+                    {
+                        MessageBox.Show("لا بد من اختيار كل المبيعات لطباعة تقرير المبيعات");
+                        return;
+                    }
+
+
+                }
+                else
+                {
+                    MessageBox.Show("لايوجد بيانات للطباعه ");
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
 
         }
     }

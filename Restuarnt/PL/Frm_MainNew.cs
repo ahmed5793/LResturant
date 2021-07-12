@@ -13,6 +13,7 @@ using Restuarnt.DAL;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.ClipboardSource.SpreadsheetML;
 using Restuarnt.pl;
+using System.Data.SqlClient;
 
 namespace Restuarnt.PL
 {
@@ -38,6 +39,8 @@ namespace Restuarnt.PL
 
             }
         }
+  
+
         public Frm_MainNew()
         {
             InitializeComponent();
@@ -61,12 +64,43 @@ namespace Restuarnt.PL
 
             //txt_idLogin.Text = l.LastIDLogin().Rows[0][0].ToString();
             //l.ADDLogOut(Convert.ToInt32(txt_idLogin.Text), Txt_IDUsers.Text, txtDATETIME.Text);
+            //if (Properties.Settings.Default.BackupPath != "")
+            //{
+
+                
+            //     string fileName = Properties.Settings.Default.BackupPath + "\\DB_A54A03_Resturant " + DateTime.Now.ToShortDateString().Replace('/', '-') + "-" + DateTime.Now.ToLongTimeString().Replace(':', '-');
+            //    string sqlQuary = "BackUp Database DB_A54A03_Resturant to Disk= '" + fileName + ".bak '";
+               
+            //    cmd = new SqlCommand(sqlQuary, con);
+            //    con.Open();
+            //    cmd.ExecuteNonQuery();
+            //    con.Close();
+            //    //MessageBox.Show("تم إنشاء نسخة إحتياطية بنجاح", "إنشاء النسخة الاحتياطية", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    //this.Close();
+
+            //}
+            
             Application.Exit();
         }
 
         private void Frm_Main_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+            if (Properties.Settings.Default.BackupPath != "")
+            {
+
+                SqlConnection con = new SqlConnection(@" server =.; database=DB_A54A03_Resturant;integrated security=true");
+                SqlCommand cmd;
+                string fileName = Properties.Settings.Default.BackupPath + "\\DB_A54A03_Resturant " + DateTime.Now.ToShortDateString().Replace('/', '-') + "-" + DateTime.Now.ToLongTimeString().Replace(':', '-');
+                string sqlQuary = "BackUp Database DB_A54A03_Resturant to Disk= '" + fileName + ".bak '";
+
+                cmd = new SqlCommand(sqlQuary, con);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+                //MessageBox.Show("تم إنشاء نسخة إحتياطية بنجاح", "إنشاء النسخة الاحتياطية", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //this.Close();
+
+            }
         }
 
 

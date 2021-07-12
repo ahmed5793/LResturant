@@ -43,6 +43,8 @@ namespace Restuarnt.PL
 
                     string fileName = textBox1.Text + "\\DB_A54A03_Resturant " + DateTime.Now.ToShortDateString().Replace('/', '-') + "-" + DateTime.Now.ToLongTimeString().Replace(':', '-');
                     string sqlQuary = "BackUp Database DB_A54A03_Resturant to Disk= '" + fileName + ".bak '";
+                    Properties.Settings.Default.BackupPath = textBox1.Text;
+                    Properties.Settings.Default.Save();
                     cmd = new SqlCommand(sqlQuary, con);
                     con.Open();
                     cmd.ExecuteNonQuery();

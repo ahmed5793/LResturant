@@ -13,7 +13,8 @@ namespace Restuarnt.PL
 {
     public partial class Restore : Form
     {
-        SqlConnection con = new SqlConnection(@"server =. database=master;integrated security = true");
+
+        SqlConnection con = new SqlConnection(@"server =.; database=master;integrated security = true");
         SqlCommand cmd;
         public Restore()
         {

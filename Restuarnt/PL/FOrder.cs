@@ -422,6 +422,8 @@ namespace Restuarnt.PL
             Lable_Num.Text = "";
             rdb_takeaway.Checked = true;
             dt2.Clear();
+            Post.Visible = true;
+            gridColumn1.Visible = true;
         }
         public void clear2()
         {
@@ -444,7 +446,8 @@ namespace Restuarnt.PL
                 RdbTackAway();
             }
             txt_address.Text = "";
-         
+            lable_date.Text = DateTime.Now.ToShortDateString() + "     " + DateTime.Now.ToLongTimeString();
+            timer1.Start();
             txt_Name.Text = "";
             txt_discount.Text = "0";
             //flowLayoutPanel1.Enabled = true;
@@ -453,6 +456,11 @@ namespace Restuarnt.PL
             txt_delivery.Text = "0";
             txt_invo.Text = "0";
             Lable_Num.Text = "";
+            txt_delivery.Text = "0";
+            Post.Visible = true;
+            gridColumn1.Visible = true;
+            Post.VisibleIndex = 8;
+            gridColumn1.VisibleIndex = 9;
         }
 
         private void Txt_delivery_Leave_1(object sender, EventArgs e)
@@ -774,9 +782,10 @@ namespace Restuarnt.PL
         {
             try
             {
-                
 
-               
+                txt_delivery.Text = "0";
+
+
                 if (Lable_Num.Text == "")
                 {
                       if (MessageBox.Show("هل تريد حفظ وسداد الفاتورة", "عمليه الحفظ والسداد", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
@@ -791,26 +800,26 @@ namespace Restuarnt.PL
                             if (rdb_takeaway.Checked == true)
                             {
 
-                                    if (cmb_customer.Text == "")
-                                    {
-                                        MessageBox.Show("من فضلك قم بالتاكد من بيانات العميل ");
-                                        return;
-                                    }
-                                dt.Clear();
-                                dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), cmb_customer.Text);
-                                if (dt.Rows.Count == 0)
-                                {
+                                    //if (cmb_customer.Text == "")
+                                    //{
+                                    //    MessageBox.Show("من فضلك قم بالتاكد من بيانات العميل ");
+                                    //    return;
+                                    //}
+                                //dt.Clear();
+                                //dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), cmb_customer.Text);
+                                //if (dt.Rows.Count == 0)
+                                //{
                                     dtcu.Clear();
                                     dtcu = cu.AddCustomer(txt_Name.Text, txt_address.Text, cmb_customer.Text);
                                     txt_cust.Clear();
                                     txt_cust.Text = dtcu.Rows[0][0].ToString();
-                                }
-                                else
-                                {
-                                    cu.UpdateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), txt_address.Text, cmb_customer.Text, txt_Name.Text);
-                                    txt_cust.Clear();
-                                    txt_cust.Text = cmb_customer.SelectedValue.ToString();
-                                }
+                                //}
+                                //else
+                                //{
+                                //    cu.UpdateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), txt_address.Text, cmb_customer.Text, txt_Name.Text);
+                                //    txt_cust.Clear();
+                                //    txt_cust.Text = cmb_customer.SelectedValue.ToString();
+                                //}
 
                                         dt.Clear();
                                         dt = o.AddOrder(Convert.ToInt32(txt_cust.Text), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
@@ -838,7 +847,7 @@ namespace Restuarnt.PL
                                 }
 
                             
-                                    if (cmb_customer.Text == "" || txt_address.Text == "" || txt_Name.Text == "")
+                                    if (cmb_customer.Text == "" || txt_address.Text == "")
                                     {
                                         MessageBox.Show("من فضلك قم باادخال بيانات العميل كامله");
                                         return;
@@ -937,7 +946,11 @@ namespace Restuarnt.PL
                                         dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
                                         rc.Label_TableNum.Visible = true;
                                         rc.Txt_TableNum.Visible = true;
+                                        rc.xrLabel6.Visible = true;
+                                        rc.Txt_Captin.Visible = true;
+
                                         rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                        rc.Txt_Captin.Text = dt5.Rows[0][3].ToString();
                                     }
 
 
@@ -975,7 +988,11 @@ namespace Restuarnt.PL
                                             dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
                                             rc.Label_TableNum.Visible = true;
                                             rc.Txt_TableNum.Visible = true;
+                                            rc.xrLabel6.Visible = true;
+                                            rc.Txt_Captin.Visible = true;
+
                                             rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                            rc.Txt_Captin.Text = dt5.Rows[0][3].ToString();
                                         }
 
 
@@ -1014,7 +1031,11 @@ namespace Restuarnt.PL
                                             dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
                                             rcmakolat.Label_TableNum.Visible = true;
                                             rcmakolat.Txt_TableNum.Visible = true;
+                                            rcmakolat.xrLabel6.Visible = true;
+                                            rcmakolat.Txt_Captin.Visible = true;
+
                                             rcmakolat.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                            rcmakolat.Txt_Captin.Text = dt5.Rows[0][3].ToString();
                                         }
 
 
@@ -1063,7 +1084,10 @@ namespace Restuarnt.PL
 
                                     ro.Lable_TableNum.Visible = true;
                                     ro.Txt_TableNum.Visible = true;
+                                    ro.xrLabel11.Visible = true;
+                                    ro.txtcaptin.Visible = true;
                                     ro.Txt_TableNum.Text = dt6.Rows[0][1].ToString();
+                                    ro.txtcaptin.Text = dt6.Rows[0][3].ToString();
                                 }
                                 ds.Tables["Order"].Clear();
                                 for (int i = 0; i < dt5.Rows.Count; i++)
@@ -1174,25 +1198,25 @@ namespace Restuarnt.PL
                         {
                             
 
-                                if (cmb_customer.Text == "")
-                                {
-                                    MessageBox.Show("من فضلك قم بالتاكد من بيانات العميل ");
-                                    return;
-                                }
-                            dt.Clear();
-                            dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), cmb_customer.Text);
-                            if (dt.Rows.Count == 0)
-                            {
+                                //if (cmb_customer.Text == "")
+                                //{
+                                //    MessageBox.Show("من فضلك قم بالتاكد من بيانات العميل ");
+                                //    return;
+                                //}
+                            //dt.Clear();
+                            //dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), cmb_customer.Text);
+                            //if (dt.Rows.Count == 0)
+                            //{
                                 cu.AddCustomer(txt_Name.Text, txt_address.Text, cmb_customer.Text);
                                 txt_cust.Clear();
                                 txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
-                            }
-                            else
-                            {
-                                cu.UpdateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), txt_address.Text, cmb_customer.Text, txt_Name.Text);
-                                txt_cust.Clear();
-                                txt_cust.Text = cmb_customer.SelectedValue.ToString();
-                            }
+                            //}
+                            //else
+                            //{
+                            //    cu.UpdateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), txt_address.Text, cmb_customer.Text, txt_Name.Text);
+                            //    txt_cust.Clear();
+                            //    txt_cust.Text = cmb_customer.SelectedValue.ToString();
+                            //}
 
                                 o.UpdateOrder(Convert.ToInt32(Lable_Num.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
                                  Convert.ToDecimal(txt_invo.Text), 0, Convert.ToDecimal(txt_discount.Text),
@@ -1216,7 +1240,7 @@ namespace Restuarnt.PL
                             dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), cmb_customer.Text);
                             if (dt.Rows.Count == 0)
                             {
-                                cu.AddCustomer(txt_Name.Text, txt_address.Text, cmb_customer.Text);
+                                cu.AddCustomer("Delivery Customer", txt_address.Text, cmb_customer.Text);
                                 txt_cust.Clear();
                                 txt_cust.Text = cu.LastIdCustomer().Rows[0][0].ToString();
                             }
@@ -1226,7 +1250,7 @@ namespace Restuarnt.PL
                                 txt_cust.Clear();
                                 txt_cust.Text = cmb_customer.SelectedValue.ToString();
                             }
-                            if (cmb_customer.Text == "" || txt_address.Text == "" || txt_Name.Text == "")
+                            if (cmb_customer.Text == "" || txt_address.Text == "" )
                                 {
                                     MessageBox.Show("من فضلك قم باادخال بيانات العميل كامله");
                                     return;
@@ -1299,10 +1323,14 @@ namespace Restuarnt.PL
                                             dt5.Clear();
 
                                             dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
-                                            rc.Label_TableNum.Visible = true;
-                                            rc.Txt_TableNum.Visible = true;
-                                            rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
-                                        }
+                                        rc.Label_TableNum.Visible = true;
+                                        rc.Txt_TableNum.Visible = true;
+                                        rc.xrLabel6.Visible = true;
+                                        rc.Txt_Captin.Visible = true;
+
+                                        rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                        rc.Txt_Captin.Text = dt5.Rows[0][3].ToString();
+                                    }
 
 
 
@@ -1341,10 +1369,14 @@ namespace Restuarnt.PL
                                             dt5.Clear();
 
                                             dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
-                                            rc.Label_TableNum.Visible = true;
-                                            rc.Txt_TableNum.Visible = true;
-                                            rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
-                                        }
+                                        rc.Label_TableNum.Visible = true;
+                                        rc.Txt_TableNum.Visible = true;
+                                        rc.xrLabel6.Visible = true;
+                                        rc.Txt_Captin.Visible = true;
+
+                                        rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                        rc.Txt_Captin.Text = dt5.Rows[0][3].ToString();
+                                    }
 
                                       
 
@@ -1381,10 +1413,14 @@ namespace Restuarnt.PL
                                         {
                                             dt5.Clear();
                                             dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
-                                            rcmakolat.Label_TableNum.Visible = true;
-                                            rcmakolat.Txt_TableNum.Visible = true;
-                                            rcmakolat.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
-                                        }
+                                        rcmakolat.Label_TableNum.Visible = true;
+                                        rcmakolat.Txt_TableNum.Visible = true;
+                                        rcmakolat.xrLabel6.Visible = true;
+                                        rcmakolat.Txt_Captin.Visible = true;
+
+                                        rcmakolat.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                        rcmakolat.Txt_Captin.Text = dt5.Rows[0][3].ToString();
+                                    }
 
                                        
 
@@ -1432,10 +1468,13 @@ namespace Restuarnt.PL
                                     dt6.Clear();
                                    dt6 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
 
-                                    ro.Lable_TableNum.Visible = true;
-                                    ro.Txt_TableNum.Visible = true;
-                                    ro.Txt_TableNum.Text = dt6.Rows[0][1].ToString();
-                                }
+                                ro.Lable_TableNum.Visible = true;
+                                ro.Txt_TableNum.Visible = true;
+                                ro.xrLabel11.Visible = true;
+                                ro.txtcaptin.Visible = true;
+                                ro.Txt_TableNum.Text = dt6.Rows[0][1].ToString();
+                                ro.txtcaptin.Text = dt6.Rows[0][3].ToString();
+                            }
                                 dt5.Clear();
                                 dt5 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
                                 ds.Tables["Order"].Clear();
@@ -1457,8 +1496,9 @@ namespace Restuarnt.PL
 
                         }
                         o.DeleteOrderNewRow();
+               
 
-                        clear2();
+                    clear2();
                  }
 
 
@@ -1466,8 +1506,8 @@ namespace Restuarnt.PL
                 dt.Clear();
                 dt = o.SELECTOrderRentALLORDER();
                 simpleButton4.Text = $"({dt.Rows.Count}) الفواتير المتعلقة";
+                txt_delivery.Text = Properties.Settings.Default.DeliveryService.ToString();
 
-             
             }
             catch (Exception ex)
             {
@@ -1561,6 +1601,7 @@ namespace Restuarnt.PL
 
         private void simpleButton5_Click(object sender, EventArgs e)
         {
+            txt_delivery.Text = "0";
             clear2();
             if (Properties.Settings.Default.OrderType == "صالة")
             {
@@ -1613,7 +1654,10 @@ namespace Restuarnt.PL
 
                         ro.Lable_TableNum.Visible = true;
                         ro.Txt_TableNum.Visible = true;
+                        ro.xrLabel11.Visible = true;
+                        ro.txtcaptin.Visible = true;
                         ro.Txt_TableNum.Text = dt6.Rows[0][1].ToString();
+                        ro.txtcaptin.Text = dt6.Rows[0][3].ToString();
                     }
                     dt5.Clear();
                     dt5 = o.PrintOrder(Convert.ToInt32(Lable_Num.Text));
@@ -1662,7 +1706,8 @@ namespace Restuarnt.PL
             //xtraTabPage2.Focus();
             //fh.Focus();
             fh.ShowDialog();
-           
+
+            txt_delivery.Text = "0";
 
             if (fh.gridView2.RowCount > 0  )
             {
@@ -1816,6 +1861,8 @@ namespace Restuarnt.PL
 
             try
             {
+                txt_delivery.Text = "0";
+
                 if (Lable_Num.Text == "")
                 {
                     if (gridView2.RowCount > 0)
@@ -1823,27 +1870,27 @@ namespace Restuarnt.PL
                         if (rdb_takeaway.Checked == true)
                         {
 
-                                if (txt_Name.Text == "")
-                                {
-                                    MessageBox.Show("من فضلك قم بالتاكد من بيانات العميل ");
-                                    return;
-                                }
+                            //if (txt_Name.Text == "")
+                            //{
+                            //    MessageBox.Show("من فضلك قم بالتاكد من بيانات العميل ");
+                            //    return;
+                            //}
 
-                                dt.Clear();
-                                dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), cmb_customer.Text);
-                                if (dt.Rows.Count == 0)
-                                {
+                            //dt.Clear();
+                            //dt = cu.VildateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), cmb_customer.Text);
+                            //if (dt.Rows.Count == 0)
+                            //{
                                 dtcu.Clear();
                                 dtcu = cu.AddCustomer(txt_Name.Text, txt_address.Text, cmb_customer.Text);
                                 txt_cust.Clear();
                                 txt_cust.Text = dtcu.Rows[0][0].ToString();
-                            }
-                                else
-                                {
-                                    cu.UpdateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), txt_address.Text, cmb_customer.Text, txt_Name.Text);
-                                     txt_cust.Clear();
-                                    txt_cust.Text = cmb_customer.SelectedValue.ToString();
-                                }
+                             // }
+                                //else
+                                //{
+                                //    cu.UpdateCustomer(Convert.ToInt32(cmb_customer.SelectedValue), txt_address.Text, cmb_customer.Text, txt_Name.Text);
+                                //     txt_cust.Clear();
+                                //    txt_cust.Text = cmb_customer.SelectedValue.ToString();
+                                //}
                                 dt.Clear();
                                 dt = o.AddOrder(Convert.ToInt32(txt_cust.Text), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
                                 0, Convert.ToDecimal(txt_invo.Text), Convert.ToDecimal(txt_discount.Text), "Take away", Program.Id_USer, "true");
@@ -1931,12 +1978,13 @@ namespace Restuarnt.PL
                             }
                             else
                             {
-                                MessageBox.Show("تم حجز الطاولة في هذا الوقت");
+                                MessageBox.Show("لا بد من التاكد من رقم الطاولة");
                                 return;
                             }
-                        
+                            txt_Name.Text = "عميل صاله";
                             dtcu = cu.AddCustomerTakeAway(txt_Name.Text);
                             txt_cust.Clear();
+                            txt_Name.Text = "اسم العميل";
                             txt_cust.Text = dtcu.Rows[0][0].ToString();
                             dt.Clear();
                             dt = o.AddOrder(Convert.ToInt32(txt_cust.Text), Convert.ToDateTime(lable_date.Text), Convert.ToDecimal(txt_delivery.Text), Convert.ToDecimal(txt_invo.Text),
@@ -1977,7 +2025,11 @@ namespace Restuarnt.PL
                                         dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
                                         rc.Label_TableNum.Visible = true;
                                         rc.Txt_TableNum.Visible = true;
+                                        rc.xrLabel6.Visible = true;
+                                        rc.Txt_Captin.Visible = true;
+
                                         rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                        rc.Txt_Captin.Text = dt5.Rows[0][3].ToString();
                                     }
 
                                     ds.Tables["Order"].Clear();
@@ -2014,7 +2066,11 @@ namespace Restuarnt.PL
                                             dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
                                             rc.Label_TableNum.Visible = true;
                                             rc.Txt_TableNum.Visible = true;
+                                            rc.xrLabel6.Visible = true;
+                                            rc.Txt_Captin.Visible = true;
+
                                             rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                            rc.Txt_Captin.Text = dt5.Rows[0][3].ToString();
                                         }
 
 
@@ -2053,8 +2109,12 @@ namespace Restuarnt.PL
                                         dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
                                         rcmakolat.Label_TableNum.Visible = true;
                                         rcmakolat.Txt_TableNum.Visible = true;
-                                        rcmakolat.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
-                                    }
+                                            rcmakolat.xrLabel6.Visible = true;
+                                            rcmakolat.Txt_Captin.Visible = true;
+
+                                            rcmakolat.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                            rcmakolat.Txt_Captin.Text = dt5.Rows[0][3].ToString();
+                                        }
 
                                    
 
@@ -2103,7 +2163,10 @@ namespace Restuarnt.PL
 
                                     ro.Lable_TableNum.Visible = true;
                                     ro.Txt_TableNum.Visible = true;
+                                    ro.xrLabel11.Visible = true;
+                                    ro.txtcaptin.Visible = true;
                                     ro.Txt_TableNum.Text = dt6.Rows[0][1].ToString();
+                                    ro.txtcaptin.Text = dt6.Rows[0][3].ToString();
                                 }
                                 ds.Tables["Order"].Clear();
                                 for (int i = 0; i < dt5.Rows.Count; i++)
@@ -2324,7 +2387,11 @@ namespace Restuarnt.PL
                                         dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
                                         rc.Label_TableNum.Visible = true;
                                         rc.Txt_TableNum.Visible = true;
+                                        rc.xrLabel6.Visible = true;
+                                        rc.Txt_Captin.Visible = true;
+
                                         rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                        rc.Txt_Captin.Text = dt5.Rows[0][3].ToString();
                                     }
 
                                     
@@ -2367,7 +2434,11 @@ namespace Restuarnt.PL
                                         dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
                                         rc.Label_TableNum.Visible = true;
                                         rc.Txt_TableNum.Visible = true;
+                                        rc.xrLabel6.Visible = true;
+                                        rc.Txt_Captin.Visible = true;
+
                                         rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                        rc.Txt_Captin.Text = dt5.Rows[0][3].ToString();
                                     }
 
                                   
@@ -2409,7 +2480,11 @@ namespace Restuarnt.PL
                                         dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
                                         rcmakolat.Label_TableNum.Visible = true;
                                         rcmakolat.Txt_TableNum.Visible = true;
+                                        rcmakolat.xrLabel6.Visible = true;
+                                        rcmakolat.Txt_Captin.Visible = true;
+
                                         rcmakolat.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                        rcmakolat.Txt_Captin.Text = dt5.Rows[0][3].ToString();
                                     }
 
 
@@ -2459,7 +2534,10 @@ namespace Restuarnt.PL
 
                                 ro.Lable_TableNum.Visible = true;
                                 ro.Txt_TableNum.Visible = true;
+                                ro.xrLabel11.Visible = true;
+                                ro.txtcaptin.Visible = true;
                                 ro.Txt_TableNum.Text = dt6.Rows[0][1].ToString();
+                                ro.txtcaptin.Text = dt6.Rows[0][3].ToString();
                             }
                             ds.Tables["Order"].Clear();
                             for (int i = 0; i < dt5.Rows.Count; i++)
@@ -2491,6 +2569,8 @@ namespace Restuarnt.PL
                 dt.Clear();
                 dt = o.SELECTOrderRentALLORDER();
                 simpleButton4.Text = $"({dt.Rows.Count}) الفواتير المتعلقة";
+                txt_delivery.Text = Properties.Settings.Default.DeliveryService.ToString();
+
 
                 ////////////      كود التحكم فى فورمة اخرى     /////////////
                 //Frm_Hold master = (Frm_Hold)Application.OpenForms["Frm_Hold"];
@@ -2660,10 +2740,14 @@ namespace Restuarnt.PL
             #endregion   
 
         }
+        Frm_Quantity q = new Frm_Quantity();
 
         private void gridView2_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
-           
+            try
+            {
+
+            
             if (e.Column.FieldName == "btn")
             {
 
@@ -2735,6 +2819,38 @@ namespace Restuarnt.PL
                 }
 
             }
+            //if (e.Column.Name== "quantity")
+            //{
+
+            //    q.ShowDialog();
+
+                    
+            //        if (q.txt_Quantity.Text != string.Empty && q.txt_Quantity.Text != "0")
+            //    {
+                    
+            //                gridView1.GetFocusedRowCellValue("الكمية") = (q.txt_Quantity.Text);
+                        
+                    
+                
+
+            //        q.txt_Quantity.Clear();
+            //        totalProudect();
+
+            //        totalInvoice();
+
+            //        TOTALFINALYDELIVERY();
+            //        TOTALFINALYDISCOUNT();
+
+
+            //    }
+            //}
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+            }
         }
 
 
@@ -2780,7 +2896,11 @@ namespace Restuarnt.PL
                                 dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
                                 rc.Label_TableNum.Visible = true;
                                 rc.Txt_TableNum.Visible = true;
+                                rc.xrLabel6.Visible = true;
+                                rc.Txt_Captin.Visible = true;
+
                                 rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                rc.Txt_Captin.Text = dt5.Rows[0][3].ToString();
                             }
 
                             ds.Tables["Order"].Clear();
@@ -2817,7 +2937,11 @@ namespace Restuarnt.PL
                                     dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
                                     rc.Label_TableNum.Visible = true;
                                     rc.Txt_TableNum.Visible = true;
+                                    rc.xrLabel6.Visible = true;
+                                    rc.Txt_Captin.Visible = true;
+
                                     rc.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                    rc.Txt_Captin.Text = dt5.Rows[0][3].ToString();
                                 }
 
 
@@ -2854,7 +2978,11 @@ namespace Restuarnt.PL
                                     dt5 = o.PrintOrderSala(Convert.ToInt32(Lable_Num.Text));
                                     rcmakolat.Label_TableNum.Visible = true;
                                     rcmakolat.Txt_TableNum.Visible = true;
+                                    rcmakolat.xrLabel6.Visible = true;
+                                    rcmakolat.Txt_Captin.Visible = true;
+
                                     rcmakolat.Txt_TableNum.Text = dt5.Rows[0][1].ToString();
+                                    rcmakolat.Txt_Captin.Text = dt5.Rows[0][3].ToString();
                                 }
                                 ds.Tables["Order"].Clear();
                                 for (int i = 0; i < dt6.Rows.Count; i++)

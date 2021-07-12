@@ -22,8 +22,8 @@ namespace Restuarnt
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-          //   Application.Run(new FOrder());
-           Application.Run(new Frm_LoginMain());
+             Application.Run(new Frm_LoginMain());
+           // Application.Run(new Home());
         }
     }
 }
